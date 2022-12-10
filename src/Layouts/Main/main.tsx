@@ -8,7 +8,7 @@ function Main() {
         <main>
             {/* <span style={{ top: `${coords[1] - 40}px`, left: `${coords[0] - 40}px` }} className='cursor-cross'></span> */}
             <span style={{ left: `${coords[0] - 40}px` }} className='cursor-cross Y-axis'></span>
-            <span style={{ top: `${coords[0] - 40}px` }} className='cursor-cross X-axis'></span>
+            <span style={{ top: `${coords[1] - 40}px` }} className='cursor-cross X-axis'></span>
         </main>
     );
 }
