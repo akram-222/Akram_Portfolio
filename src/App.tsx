@@ -6,7 +6,7 @@ import Header from './Layouts/Header/header';
 
 function App() {
   return (
-    <div className="container">
+    <div className="container dark-theme">
       <Logo />
      <Header />
       <Aside />

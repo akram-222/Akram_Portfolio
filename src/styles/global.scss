@@ -17,12 +17,12 @@ a.link {
   list-style: none;
   text-decoration: none;
   font-weight: 500;
-  color: #595959;
+  color: var(--text-primary);
   transition: color 0.1s;
   cursor:default;
   &__color--effect:hover {
     cursor: pointer;
-    color: #ffffffb0;
+    color: var(--text-secondary);
     transition: color 0.1s;
   }
 }
