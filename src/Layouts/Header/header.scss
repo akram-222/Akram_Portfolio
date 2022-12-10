@@ -5,13 +5,23 @@
   justify-content: start;
   gap: 1rem;
   padding-left: 1rem;
+  background-color: #162018;
   li {
     list-style: none;
+    height: 100%;
+    line-height: 250%;
     a {
-      color: #607d8b;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
+      color: #595959;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color .3s;
+    height: 100%;
+     &:hover{
+        color: #fff;
+        transition: color .3s;
     }
+    }
+   
   }
 }
