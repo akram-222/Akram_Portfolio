@@ -12,16 +12,11 @@
     height: 100%;
     line-height: 250%;
     a {
-      color: #595959;
     text-decoration: none;
     font-size: 12px;
     font-weight: 500;
     transition: color .2s;
     height: 100%;
-     &:hover{
-        color: #fff;
-        transition: color .2s;
-    }
     }
    
   }

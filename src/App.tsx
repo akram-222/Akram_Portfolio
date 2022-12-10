@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Logo from './Components/Logo/logo';
 import Aside from './Layouts/Aside/aside';
 import Header from './Layouts/Header/header';

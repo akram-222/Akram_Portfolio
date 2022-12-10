@@ -5,10 +5,18 @@ function Aside() {
     return (
         <aside>
             <ul>
-                <li><BsFillGrid1X2Fill /></li>
-                <li><BsFillCloudDrizzleFill /></li>
-                <li><BsFillCameraReelsFill /></li>
-                <li><BsFillGearFill /></li>                
+                <li>
+                    <a href='#d' className='link'><BsFillGrid1X2Fill /></a>
+                </li>
+                <li>
+                    <a href='#d' className='link'><BsFillCloudDrizzleFill /></a>
+                </li>
+                <li>
+                    <a href='#d' className='link'><BsFillCameraReelsFill /></a>
+                </li>
+                <li>
+                    <a href='#d' className='link'><BsFillGearFill /></a>
+                </li>
             </ul>
         </aside>
     );
