@@ -9,7 +9,7 @@ function Aside() {
         <aside>
             <ul>
                 <li>
-                    <a href='#d' className='link'><ImCompass2 size={20} style={{ transform: `rotate(${(coords[0]+coords[1]) / 4}deg)` }} /></a>
+                    <a href='#d' className='link'><ImCompass2 size={20} style={{ transform: `rotate(${(coords.x+coords.y) / 4}deg)` }} /></a>
                 </li>
                 <li>
                     <a href='#d' className='link link__color--effect today-flights'>{new Date().getDate()}</a>
