@@ -1,17 +1,10 @@
-import React,{useEffect,useState} from 'react';
 import './aside.scss';
-import { BsFillGrid1X2Fill, BsFillGearFill, BsFillCameraReelsFill, BsZoomIn } from "react-icons/bs"
+import { BsFillGearFill, BsFillCameraReelsFill, BsZoomIn } from "react-icons/bs"
 // import { MousePostion } from "../../Utils/mousePositions"
 import { ImCompass2 } from 'react-icons/im'
+import { useMouseCoords } from '../../Contexts/MousePostion';
 function Aside() {
-    const [coords, setCoords] = useState([0, 0])
-    useEffect(() => {
-        document.addEventListener('mousemove', (e) => {
-            setCoords([e.pageX, e.pageY]);
-            console.log(coords)
-            return coords
-        })
-    }, [coords])
+    const { coords } = useMouseCoords()
     return (
         <aside>
             <ul>
