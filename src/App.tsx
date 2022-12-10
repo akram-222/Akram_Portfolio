@@ -4,6 +4,7 @@ import Logo from './Components/Logo/logo';
 import { MouseCoordsContextProvider } from './Contexts/MousePostion';
 import Aside from './Layouts/Aside/aside';
 import Header from './Layouts/Header/header';
+import Main from './Layouts/Main/main';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Logo />
         <Header />
         <Aside />
-        <main>main</main>
+        <Main />
       </div>
     </MouseCoordsContextProvider>
     
