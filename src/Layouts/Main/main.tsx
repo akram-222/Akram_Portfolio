@@ -6,7 +6,7 @@ import './main.scss';
 function Main() {
     const {coords} = useMouseCoords()
     return (
-        <main>
+        <main id='main-container'>
             {/* <span style={{ left: `${coords.x - 40}px` }} className='cursor-cross Y-axis'></span>
             <span style={{ top: `${coords.y - 40}px` }} className='cursor-cross X-axis'></span> */}
         <CursorCross coords={coords} />

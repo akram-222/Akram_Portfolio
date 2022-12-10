@@ -5,7 +5,8 @@ const MOUSECOORDS = createContext({coords:{x:0,y:0}});
 export function MouseCoordsContextProvider({ children }) {
     const [coords, setCoords] = useState({ x: 0, y: 0 })
     useEffect(() => {
-        document.addEventListener('mousemove', (e) => {
+        let mainContainer = document.getElementById('main-container') as HTMLElement;
+        mainContainer.addEventListener('mousemove', (e) => {
             setCoords({ x: e.pageX, y: e.pageY });
             // console.log(coords)
             return coords
