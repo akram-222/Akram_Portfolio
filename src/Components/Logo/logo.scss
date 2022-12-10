@@ -1,7 +1,10 @@
 span.logo{
+  background-color: #162018;
+  padding: 3px;
   img{
       width: 100%;
     filter: contrast(0.3);
     height: 100%;
+    transform: rotate(45deg);
 }
 }

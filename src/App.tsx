@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Logo from './Components/Logo/logo';
+import Aside from './Layouts/Aside/aside';
 import Header from './Layouts/Header/header';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div className="container">
       <Logo />
      <Header />
-      <aside>aside</aside>
+      <Aside />
       <main>main</main>
     </div>
   );

@@ -6,6 +6,7 @@
   gap: 1rem;
   padding-left: 1rem;
   background-color: #162018;
+  border-bottom: 1px solid #303030;
   li {
     list-style: none;
     height: 100%;
@@ -15,11 +16,11 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 500;
-    transition: color .3s;
+    transition: color .2s;
     height: 100%;
      &:hover{
         color: #fff;
-        transition: color .3s;
+        transition: color .2s;
     }
     }
    

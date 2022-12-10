@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template-columns: 50px auto;
+    grid-template-columns: 40px auto;
     grid-template-rows: 40px auto;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -12,3 +12,6 @@
     /* padding: 10px; */
 }
 
+a{
+    list-style: none;
+}
