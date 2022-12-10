@@ -16,10 +16,10 @@ function Aside() {
         <aside>
             <ul>
                 <li>
-                    <a href='#d' className='link'><ImCompass2 size={20} style={{ transform: `rotate(${coords[0] - coords[1]}deg)` }} /></a>
+                    <a href='#d' className='link'><ImCompass2 size={20} style={{ transform: `rotate(${(coords[0]+coords[1]) / 4}deg)` }} /></a>
                 </li>
                 <li>
-                    <a href='#d' className='link'><BsFillGrid1X2Fill /></a>
+                    <a href='#d' className='link'>{new Date().getDate()}</a>
                 </li>
 
                 <li>

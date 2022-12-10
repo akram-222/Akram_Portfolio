@@ -15,9 +15,12 @@
 
 a.link {
   list-style: none;
+  text-decoration: none;
+  font-weight: 500;
   color: #595959;
+  transition: color 0.1s;
   &:hover {
     color: #ffffffb0;
-    transition: color 0.2s;
+    transition: color 0.1s;
   }
 }
