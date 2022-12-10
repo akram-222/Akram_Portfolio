@@ -19,18 +19,18 @@ function Aside() {
                     <a href='#d' className='link'><ImCompass2 size={20} style={{ transform: `rotate(${(coords[0]+coords[1]) / 4}deg)` }} /></a>
                 </li>
                 <li>
-                    <a href='#d' className='link'>{new Date().getDate()}</a>
+                    <a href='#d' className='link link__color--effect'>{new Date().getDate()}</a>
                 </li>
 
                 <li>
-                    <a href='#d' className='link'><BsFillCloudDrizzleFill /></a>
+                    <a href='#d' className='link link__color--effect'><BsFillCloudDrizzleFill /></a>
                 </li>
 
                 <li>
-                    <a href='#d' className='link'><BsFillCameraReelsFill /></a>
+                    <a href='#d' className='link link__color--effect'><BsFillCameraReelsFill /></a>
                 </li>
                 <li>
-                    <a href='#d' className='link'><BsFillGearFill /></a>
+                    <a href='#d' className='link link__color--effect'><BsFillGearFill /></a>
                 </li>
             </ul>
         </aside>

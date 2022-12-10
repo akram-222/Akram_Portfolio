@@ -5,9 +5,8 @@ export const MousePostion = () => {
     useEffect(() => {
         document.addEventListener('mousemove', (e) => {
             setCoords([e.pageX, e.pageY]);
-            console.log(coords)
+            // console.log(coords)
             return coords
         })
     }, [coords])
-
 }

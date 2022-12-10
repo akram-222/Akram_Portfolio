@@ -19,7 +19,9 @@ a.link {
   font-weight: 500;
   color: #595959;
   transition: color 0.1s;
-  &:hover {
+  cursor:default;
+  &__color--effect:hover {
+    cursor: pointer;
     color: #ffffffb0;
     transition: color 0.1s;
   }
