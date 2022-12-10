@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 
-const MOUSECOORDS = createContext({coords:[0,0]});
+const MOUSECOORDS = createContext({coords:{x:0,y:0}});
 
 export function MouseCoordsContextProvider({ children }) {
-    const [coords, setCoords] = useState([0, 0])
+    const [coords, setCoords] = useState({ x: 0, y: 0 })
     useEffect(() => {
         document.addEventListener('mousemove', (e) => {
-            setCoords([e.pageX, e.pageY]);
+            setCoords({ x: e.pageX, y: e.pageY });
             // console.log(coords)
             return coords
         })
