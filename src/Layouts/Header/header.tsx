@@ -5,7 +5,7 @@ function Header() {
     return (
         <header>
             <nav className='header-nav'>
-                <li><a href='#d' className='link'>C3 AI Decision Advantage Dashboard</a></li>
+                <li className='link'>C3 AI Decision Advantage Dashboard</li>
             </nav>
         </header>
     );

@@ -11,12 +11,8 @@
     list-style: none;
     height: 100%;
     line-height: 3;
-    a {
-    text-decoration: none;
-    font-size: var(--fs-small);
     font-weight: 500;
     height: 100%;
-    }
-   
+    color: var(--text-primary)
   }
 }
