@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import './aside.scss';
-import { BsFillGrid1X2Fill, BsFillGearFill, BsFillCameraReelsFill, BsFillCloudDrizzleFill } from "react-icons/bs"
+import { BsFillGrid1X2Fill, BsFillGearFill, BsFillCameraReelsFill, BsZoomIn } from "react-icons/bs"
 // import { MousePostion } from "../../Utils/mousePositions"
 import { ImCompass2 } from 'react-icons/im'
 function Aside() {
@@ -19,11 +19,11 @@ function Aside() {
                     <a href='#d' className='link'><ImCompass2 size={20} style={{ transform: `rotate(${(coords[0]+coords[1]) / 4}deg)` }} /></a>
                 </li>
                 <li>
-                    <a href='#d' className='link link__color--effect'>{new Date().getDate()}</a>
+                    <a href='#d' className='link link__color--effect today-flights'>{new Date().getDate()}</a>
                 </li>
 
                 <li>
-                    <a href='#d' className='link link__color--effect'><BsFillCloudDrizzleFill /></a>
+                    <a href='#d' className='link link__color--effect'><BsZoomIn /></a>
                 </li>
 
                 <li>
