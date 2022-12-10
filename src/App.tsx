@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import Logo from './Components/Logo/logo';
+import Header from './Layouts/Header/header';
 
 function App() {
   return (
     <div className="container">
       <Logo />
-      <header>header</header>
+     <Header />
       <aside>aside</aside>
       <main>main</main>
     </div>
