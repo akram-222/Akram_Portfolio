@@ -31,3 +31,25 @@ a.link {
     transition: color 0.1s;
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    border-color: var(--bg-tertiary);
+}

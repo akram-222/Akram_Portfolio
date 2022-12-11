@@ -4,11 +4,11 @@ export const TopKPIs = () => {
         <section className="topKPIs__section">
             <h3>Top KPIs</h3>
             <div className="topKPIs__layout">
-                <div className="topKPIs__layout--normal">1</div>
-                <div className="topKPIs__layout--normal">2</div>
+                <div>1</div>
+                <div>2</div>
                 <div className="topKPIs__layout--grow">3</div>
-                <div className="topKPIs__layout--normal">4</div>
-                <div className="topKPIs__layout--normal">5</div>
+                
+                <div>3</div>
             </div>
         </section>
     )
