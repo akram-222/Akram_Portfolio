@@ -1,7 +1,7 @@
 import React from "react";
 import useChart from "./useChart";
 import { dataSet } from "./data";
-
+import "./chartView.scss";
 export function ChartView() {
   const canvasRef = React.useRef(null);
   const [data, setData] = React.useState(dataSet);
@@ -72,21 +72,22 @@ export function ChartView() {
 
   return (
     <>
-
       <canvas ref={canvasRef} width="400" height="200" />
 
-       {Object.keys(dataSet).map((key) => (
-        <Button
-          key={key}
-          handleToggleBars={handleToggleBars}
-          options={{
-            caption: key,
-            bgColor: data[key].bgColor,
-            borderColor: data[key].borderColor,
-            isVisible: data[key].isVisible,
-          }}
-        />
-      ))} 
+      <div className="chartView__controls">
+        {Object.keys(dataSet).map((key) => (
+          <Button
+            key={key}
+            handleToggleBars={handleToggleBars}
+            options={{
+              caption: key,
+              bgColor: data[key].bgColor,
+              borderColor: data[key].borderColor,
+              isVisible: data[key].isVisible,
+            }}
+          />
+        ))}{" "}
+      </div>
     </>
   );
 }
