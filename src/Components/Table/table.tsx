@@ -18,7 +18,7 @@ export const FlightSchedulesTable = () => {
                     <section className="row-fadeIn-wrapper">
                         <article className="row fadeIn nfl">
                             <ul>
-                                <li><a href="#s">{flight.airline_icao}</a><span className="small">(fadeIn)</span></li>
+                                <li><a href="#s">{flight.airline_icao}</a><span className="small">({flight.flight_number})</span></li>
                                 <li>{flight.status}</li>
                                 <li>{flight.arr_gate}</li>
                                 <li>{flight.duration}</li>

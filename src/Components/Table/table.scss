@@ -45,11 +45,11 @@ $text: rgba(255, 255, 255, 0.9);
 .wrapper {
 	width: 100%;
 	max-width: 1000px;
-	margin: 20px auto 100px auto;
+	// margin: 20px auto 100px auto;
 	padding: 0;
 	background: $light-bg;
 	color: $text;
-	overflow: hidden;
+	overflow: auto;
 	position: relative;
 }
 
@@ -91,7 +91,7 @@ $text: rgba(255, 255, 255, 0.9);
 	transition: all 0.2s ease-out;
 	border-top: 1px solid darken($light-bg, 100%);
 }
-.row:hover {
+.row:not(.title):hover {
 	background-color: lighten($dark-bg, 10%);
 	height: 65px;
 	@media only screen and (max-width: 767px) {
@@ -102,18 +102,12 @@ $text: rgba(255, 255, 255, 0.9);
 	}
 }
 .title {
-	padding: 10px 0 5px 0;
-	height: 45px;
-	font-size: 0;
+	padding: 5px;
 	background-color: $light-bg;
 	border-left: 3px solid lighten($light-bg, 100%);
 
 }
-.title:hover {
-	height: 45px;
-	background-color: $light-bg;
-	border-left: 3px solid lighten($light-bg, 100%);
-}
+
 
 .title-hide {
 	@media only screen and (max-width: 767px) {

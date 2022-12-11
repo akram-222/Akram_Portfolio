@@ -7,7 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
 }
-
+*{
+  user-select: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -34,7 +36,7 @@ a.link {
 
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 7px;
   height: 4px;
 }
 
