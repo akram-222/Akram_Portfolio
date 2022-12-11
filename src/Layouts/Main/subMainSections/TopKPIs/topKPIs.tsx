@@ -15,11 +15,11 @@ export const TopKPIs = () => {
                     <span className="topKPI__timestamp">Last 30 days</span>
                 </div>
 
-                <div className="topKPIs__layout--grow topKPI">
+                <div className=" topKPI">
                     <h4 className="topKPI__header">High Risk Targets universitigated <AiOutlineInfoCircle size={15}/></h4>
                     <span className="topKPI__current">8</span>
                     <span className="topKPI__change"><BsFillCaretDownFill />5 (.5%)</span>
-                    <div className="topKPI__change--chart">chart</div>
+                    <div className="topKPI__change--chart"><ChartView /></div>
                     <span className="topKPI__timestamp">Last 30 days</span>
                 </div>
             </div>

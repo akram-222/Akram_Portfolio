@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles.css";
 import useChart from "./useChart";
 import { dataSet } from "./data";
 
