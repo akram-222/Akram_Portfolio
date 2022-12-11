@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import useChart from "./useChart";
 import { dataSet } from "./data";
 
@@ -76,7 +75,7 @@ export function ChartView() {
 
       <canvas ref={canvasRef} width="400" height="200" />
 
-      {/* {Object.keys(dataSet).map((key) => (
+       {Object.keys(dataSet).map((key) => (
         <Button
           key={key}
           handleToggleBars={handleToggleBars}
@@ -87,36 +86,37 @@ export function ChartView() {
             isVisible: data[key].isVisible,
           }}
         />
-      ))} */}
+      ))} 
     </>
   );
 }
 
-// const Button = (props) => (
-//   <button
-//     style={{
-//       marginTop: "32px",
-//       marginLeft: "24px",
-//       outline: "none",
-//       borderColor: props.options.isVisible
-//         ? props.options.borderColor
-//         : "#bfbfbf",
-//       backgroundColor: props.options.isVisible
-//         ? props.options.bgColor
-//         : "#efefef",
-//       color: props.options.isVisible ? "#444" : "#666",
-//       transitionDuration: ".2s",
-//       transitionProperty: "box-shadow",
-//     }}
-//     onClick={() => props.handleToggleBars(props.options.caption)}
-//     onFocus={(event) => {
-//       event.target.style.boxShadow = `0 0 0 2px ${props.options.borderColor}`;
-//     }}
-//     onBlur={(event) => {
-//       event.target.style.boxShadow = "initial";
-//     }}
-//   >
-//     {props.options.caption}
-//   </button>
-// );
+const Button = (props) => (
+  <button
+    style={{
+      marginTop: "5px",
+      marginLeft: "5px",
+      outline: "none",
+      padding: ".3rem",
+      borderColor: props.options.isVisible
+        ? props.options.borderColor
+        : "#bfbfbf",
+      backgroundColor: props.options.isVisible
+        ? props.options.bgColor
+        : "#efefef",
+      color: props.options.isVisible ? "#444" : "#666",
+      transitionDuration: ".2s",
+      transitionProperty: "box-shadow",
+    }}
+    onClick={() => props.handleToggleBars(props.options.caption)}
+    onFocus={(event) => {
+      event.target.style.boxShadow = `0 0 0 2px ${props.options.borderColor}`;
+    }}
+    onBlur={(event) => {
+      event.target.style.boxShadow = "initial";
+    }}
+  >
+    
+  </button>
+);
 
