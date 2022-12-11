@@ -2,55 +2,59 @@
   color: #fff;
   padding: 0.3rem 1rem;
   background: var(--bg-primary);
-  margin: .6rem;
+  margin: 0.6rem;
   position: relative;
   .topKPIs__layout {
+      background-color: var(--bg-primary);
     width: 100%;
     display: flex;
-    gap: 5px;
+    gap: 15px;
     margin-top: 0.7rem;
     overflow-x: auto;
+    position: absolute;
+    left: 0;
     .topKPIs__layout--grow {
-    flex-grow: 1;
-    min-width: 500px;
+      flex-grow: 1;
+      max-width: unset;
     }
     > div {
-    background-color: var(--bg-secondary);
-    min-height: 150px;
-    max-width: 250px;
-    flex-shrink: 0;
-    flex-basis: 250px;
-    padding: .5rem;
+      // background-color: var(--bg-secondary);
+      min-height: 150px;
+      max-width: 250px;
+      flex-shrink: 0;
+      flex-basis: 250px;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      h4 {
+        color: var(--text-primary);
+        font-size: var(--fs-small);
+        text-transform: uppercase;
         display: flex;
-    flex-direction: column;
-    h4{
-          color: var(--text-primary);
-    font-size: var(--fs-small);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: .4rem
+        align-items: center;
+        gap: 0.4rem;
+      }
     }
+    span.topKPI__current {
+      font-weight: bold;
+      font-size: var(--fs-medium);
+      color: var(--text-secondary);
     }
-    span.topKPI__current{
-          font-weight: bold;
-    font-size: var(--fs-medium);
-    color: var(--text-secondary);
+    span.topKPI__change {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      color: var(--text-danger);
     }
-    span.topKPI__change{
-          display: flex;
-    align-items: center;
-        font-weight: bold;
-    color: var(--text-danger);
-    }
-    div.topKPI__change--chart{
+    div.topKPI__change--chart {
       flex-grow: 1;
-    background: #162018;
-    margin-top: .5rem;
+      background: var(--bg-secondary);
+      margin-top: 0.5rem;
+      border-radius: .4rem;
     }
-    span.topKPI__timestamp{
-          color: var(--text-primary);
-    font-weight: bold;
+    span.topKPI__timestamp {
+      color: var(--text-primary);
+      font-weight: bold;
     }
   }
 }
