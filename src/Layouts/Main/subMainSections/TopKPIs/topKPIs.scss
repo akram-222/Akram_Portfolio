@@ -16,7 +16,7 @@
     }
     > div {
     background-color: var(--bg-secondary);
-    min-height: 120px;
+    min-height: 150px;
     max-width: 250px;
     flex-shrink: 0;
     flex-basis: 250px;
@@ -36,6 +36,21 @@
           font-weight: bold;
     font-size: var(--fs-medium);
     color: var(--text-secondary);
+    }
+    span.topKPI__change{
+          display: flex;
+    align-items: center;
+        font-weight: bold;
+    color: var(--text-danger);
+    }
+    div.topKPI__change--chart{
+      flex-grow: 1;
+    background: #162018;
+    margin-top: .5rem;
+    }
+    span.topKPI__timestamp{
+          color: var(--text-primary);
+    font-weight: bold;
     }
   }
 }
