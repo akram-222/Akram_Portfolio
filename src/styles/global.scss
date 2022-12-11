@@ -34,24 +34,22 @@ a.link {
 
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  border:1px solid var(--bg-tertiary);
   
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--bg-secondary);
-    border: 1px solid var(--bg-tertiary);
+    background:  var(--bg-tertiary);
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    // border-color: var(--bg-tertiary);
-    background-color: transparent;
-}
+// ::-webkit-scrollbar-thumb:hover {
+//     border-color: var(--bg-secondary);
+// }
