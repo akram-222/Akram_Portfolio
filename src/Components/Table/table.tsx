@@ -1,29 +1,34 @@
 
 import "./table.scss";
+import { tabledata } from "./data";
 export const FlightSchedulesTable = () => {
     return (
         <section className="wrapper">
-            <main className="row title">
+            <div className="row title">
                 <ul>
-                    <li>Nombre</li>
-                    <li>Programa Educativo</li>
-                    <li><span className="title-hide"></span>Embargo Editorial</li>
-                    <li>Folio</li>
-                    <li>Constancia</li>
+                    <li>Flight NO.</li>
+                    <li>Status</li>
+                    <li>Arr Gate</li>
+                    <li>Duration</li>
+                    <li>Delayed</li>
                 </ul>
-            </main>
-            <section className="row-fadeIn-wrapper">
-                <article className="row fadeIn nfl">
-                    <ul>
-                        <li><a href="#s">NFL</a><span className="small">(fadeIn)</span></li>
-                        <li>$50</li>
-                        <li>12</li>
-                        <li>48</li>
-                        <li>2:00ET</li>
-                    </ul>
-                </article>
-            </section>
-            <section className="row-fadeOut-wrapper">
+            </div>
+            {tabledata.map(flight => {
+                return (
+                    <section className="row-fadeIn-wrapper">
+                        <article className="row fadeIn nfl">
+                            <ul>
+                                <li><a href="#s">{flight.airline_icao}</a><span className="small">(fadeIn)</span></li>
+                                <li>{flight.status}</li>
+                                <li>{flight.arr_gate}</li>
+                                <li>{flight.duration}</li>
+                                <li>{flight.delayed}</li>
+                            </ul>
+                        </article>
+                    </section>
+                )
+            })}
+            {/* <section className="row-fadeOut-wrapper">
                 <article className="row nfl">
                     <ul>
                         <li><a href="#d">NFL</a><span className="small">(fadeOut)</span></li>
@@ -36,19 +41,7 @@ export const FlightSchedulesTable = () => {
                         <li>Elaboración de Texto: </li>
                     </ul>
                 </article>
-            </section>
-            <article className="row nfl">
-                <ul>
-                    <li><a href="#d">NHL</a></li>
-                    <li>$50</li>
-                    <li>12</li>
-                    <li>48</li>
-                    <li>12:00ET</li>
-                </ul>
-                <ul className="more-content">
-                    <li>This 1665-player contest boasts a $300,000.00 prize pool and pays out the top 300 finishing positions. First place wins $100,000.00. Good luck!</li>
-                </ul>
-            </article>
+            </section> */}
         </section>
     )
 }

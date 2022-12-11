@@ -102,11 +102,12 @@ $text: rgba(255, 255, 255, 0.9);
 	}
 }
 .title {
-	padding: 25px 0 5px 0;
+	padding: 10px 0 5px 0;
 	height: 45px;
 	font-size: 0;
 	background-color: $light-bg;
 	border-left: 3px solid lighten($light-bg, 100%);
+
 }
 .title:hover {
 	height: 45px;
