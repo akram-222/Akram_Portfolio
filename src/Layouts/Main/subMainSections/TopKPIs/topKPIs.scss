@@ -21,11 +21,21 @@
     flex-shrink: 0;
     flex-basis: 250px;
     padding: .5rem;
+        display: flex;
+    flex-direction: column;
     h4{
           color: var(--text-primary);
     font-size: var(--fs-small);
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: .4rem
     }
+    }
+    span.topKPI__current{
+          font-weight: bold;
+    font-size: var(--fs-medium);
+    color: var(--text-secondary);
     }
   }
 }
