@@ -14,13 +14,34 @@
     position: absolute;
     background: #162018b0;
     border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    border: 1px solid transparent;
+    animation: flash .4s infinite ease-in-out;
+    transform-origin: center center;
+        font-size: var(--fs-medium);
+    // font-weight: bold;
+    color: var(--text-danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        }
+    .indicate-1{
+            width: 45px;
+    height: 45px;
     right: 10px;
     bottom: 20px;
-    border: 1px solid transparent;
-    animation: flash .2s infinite ease-in-out;
-        }
+    }
+        .indicate-2{
+    width: 25px;
+    height: 25px;
+    right: 85px;
+    top: 15px;
+    }
+            .indicate-3{
+    width: 35px;
+    height: 35px;
+    bottom: 32px;
+    left: 33px;
+    }
     }
 }
 
