@@ -7,6 +7,7 @@ export function ChartView() {
   const [data, setData] = React.useState(dataSet);
 
   const handleToggleBars = (color) => {
+    // canvasRef.height = 100
     setData((prev) => ({
       ...prev,
 
@@ -34,7 +35,6 @@ export function ChartView() {
       datasets: [
         {
           label: "# of Votes",
-
           data: Object.keys(data)
             .filter((key) => data[key].isVisible)
             .map((key) => data[key].value),
@@ -52,17 +52,22 @@ export function ChartView() {
       ],
     },
     options: {
+      
+      maintainAspectRatio: false,
+      responsive: false,
       legend: {
-        display: true,
+        display: false,
         labels: {
           fontColor: "#ff0000",
         },
       },
+
       scales: {
         yAxes: [
           {
             ticks: {
               beginAtZero: true,
+              fontSize: 10
             },
           },
         ],
@@ -72,8 +77,6 @@ export function ChartView() {
 
   return (
     <>
-      <canvas ref={canvasRef} width="400" height="200" />
-
       <div className="chartView__controls">
         {Object.keys(dataSet).map((key) => (
           <Button
@@ -88,6 +91,7 @@ export function ChartView() {
           />
         ))}{" "}
       </div>
+      <canvas ref={canvasRef} width="185px" height="100px" />
     </>
   );
 }
