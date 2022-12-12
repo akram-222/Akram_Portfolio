@@ -51,10 +51,14 @@
       width: 70%;
       height: 70%;
       transition: all 0.3s;
+      flex-direction: column;
+      background: var(--bg-primary);
     }
-    .d-none{
-        display: none;
-    }
+
+  }
+  .tooltip-link{
+    font-size: var(--fs-small);
+    color: #03a9f4;
   }
 }
 
