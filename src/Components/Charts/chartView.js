@@ -52,7 +52,6 @@ export function ChartView() {
       ],
     },
     options: {
-      
       maintainAspectRatio: false,
       responsive: false,
       legend: {
@@ -67,7 +66,16 @@ export function ChartView() {
           {
             ticks: {
               beginAtZero: true,
-              fontSize: 10
+              fontSize: 10,
+            },
+          },
+        ],
+        xAxes: [
+          {
+            ticks: {
+              minor: {
+                fontSize: 10,
+              },
             },
           },
         ],
@@ -102,7 +110,7 @@ const Button = (props) => (
       marginTop: "5px",
       marginLeft: "5px",
       outline: "none",
-      padding: ".3rem",
+      padding: "0.2rem",
       borderColor: props.options.isVisible
         ? props.options.borderColor
         : "#bfbfbf",
