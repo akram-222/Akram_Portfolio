@@ -6,6 +6,7 @@ export const IllustrationShow = () => {
     let expandIndicator = (e): void => {
         let indicators = indicatorsContainer.current!.querySelectorAll('.indicator-expand');
         if (e.target.classList.contains('indicate')) {
+            if (e.target.classList.contains('indicator-expand')) return;
             [...indicators].map(indicator => indicator.classList.remove('indicator-expand'))
             e.target.classList.add('indicator-expand')
             e.target.innerHTML = e.target.dataset.info
