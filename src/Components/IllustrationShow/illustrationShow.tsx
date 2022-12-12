@@ -11,9 +11,9 @@ export const IllustrationShow = () => {
             e.target.innerHTML = e.target.dataset.info
         }
         [...indicators].map(
-            indicator: extends {dataset:} => {
+            indicator=> {
                 indicator.classList.remove('indicator-expand')
-                indicator.innerHTML = indicator.dataset.number
+                // indicator.innerHTML = indicator.dataset.number
             }
         )
         // e.target.innerHTML = e.target.dataset.number
