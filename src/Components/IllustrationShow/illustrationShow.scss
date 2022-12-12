@@ -1,56 +1,62 @@
-.illustrationShow-container{
-    background-size: cover;
-    background-position: left;
-    transition: all 0.3s;
-    margin: 0.5rem;
-    border-radius: 5px;
-    background-repeat: no-repeat;
+.illustrationShow-container {
+  background-size: cover;
+  background-position: left;
+  transition: all 0.3s;
+  margin: 0.5rem;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  .indicators-container {
     height: 100%;
-    width: 100%;
-    position: relative;
-    .indicators-container{
-        .indicate{
-    cursor: pointer;
-    position: absolute;
-    background: #162018b0;
-    border-radius: 100%;
-    border: 1px solid transparent;
-    animation: flash .4s infinite ease-in-out;
-    transform-origin: center center;
-        font-size: var(--fs-medium);
-    // font-weight: bold;
-    color: var(--text-danger);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover{
-        animation-play-state: paused;
+    .indicate {
+      cursor: pointer;
+      position: absolute;
+      background: #162018b0;
+      border-radius: 100%;
+      border: 1px solid transparent;
+      animation: flash 0.4s infinite ease-in-out;
+      transform-origin: center center;
+      font-size: var(--fs-medium);
+      color: var(--text-danger);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
     }
-        }
 
-    .indicate-1{
-            width: 45px;
-    height: 45px;
-    right: 10px;
-    bottom: 20px;
+    .indicate-1 {
+      width: 45px;
+      height: 45px;
+      right: 10px;
+      bottom: 20px;
     }
-        .indicate-2{
-    width: 25px;
-    height: 25px;
-    right: 85px;
-    top: 15px;
+    .indicate-2 {
+      width: 25px;
+      height: 25px;
+      right: 85px;
+      top: 15px;
     }
-            .indicate-3{
-    width: 35px;
-    height: 35px;
-    bottom: 32px;
-    left: 33px;
+    .indicate-3 {
+      width: 35px;
+      height: 35px;
+      bottom: 32px;
+      left: 33px;
     }
+    .indicator-expand {
+      animation-play-state: paused;
+      z-index: 2;
+      border-radius: 5px;
+      width: 70%;
+      height: 70%;
+      transition: all 0.3s;
     }
+  }
 }
 
 @keyframes flash {
-    100%{
-        border-color: var(--text-primary);
-    }
+  100% {
+    border-color: var(--text-primary);
+  }
 }
