@@ -61,10 +61,10 @@
       text-align: center;
       .tooltip-image {
         width: 100%;
-        display: none;
+        // display: none;
         height: 100%;
         border-radius: 5px;
-        position: absolute;
+        // position: absolute;
         z-index: -1;
         left: 110%;
         top: 10%;
@@ -118,18 +118,20 @@
       // }
     }
   }
-  .triangle {
-  display: inline-block;
-  margin: 0 5px;
-  vertical-align: middle;
-}
-.triangle-0 {
+//   .triangle {
+//   display: inline-block;
+//   margin: 0 5px;
+//   vertical-align: middle;
+// }
+.triangle{
+    position: absolute;
     width: 60px;
     height: 60px;
-    border-bottom: solid 0px rgb(22 32 24);
-    border-left: solid 60px rgb(55 74 59 / 70%);
+    border-bottom: solid 0px rgb(22, 32, 24);
+    border-left: solid 60px rgba(55, 74, 59, 0.7);
     border-top: solid 40px transparent;
     border-bottom-left-radius: 100px !important;
+    right: -55%;
 }
 }
 

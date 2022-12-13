@@ -14,7 +14,8 @@ export const IllustrationShow = () => {
            <section class="tooltip">
             <h5 class="tooltip-header">
                 ${e.target.dataset.info}
-                <img class="tooltip-image triangle triangle-0" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Tail_rotor_S-61.jpg" alt="" />
+                <div class="tooltip-image-wrapper triangle">
+                <img class="tooltip-image " src="https://upload.wikimedia.org/wikipedia/commons/9/93/Tail_rotor_S-61.jpg" alt="" /></div>
             </h5>
             <div class="tooltip-info">
             <p class="tooltip-description">The tail rotor is a smaller rotor mounted vertically or near-vertically at the tail of a traditional single-rotor helicopter</p>
