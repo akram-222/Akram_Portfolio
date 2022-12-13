@@ -11,10 +11,19 @@ export const IllustrationShow = () => {
             [...indicators].map(indicator => indicator.classList.remove('indicator-expand'))
             e.target.classList.add('indicator-expand')
             e.target.innerHTML = `
-            <h5>${e.target.dataset.info}</h5>
-            <a class="tooltip-link" href="https://en.wikipedia.org/wiki/Tail_rotor">More Info</a>
-            `
+           <section class="tooltip">
+            <h5 class="tooltip-header">
+                ${e.target.dataset.info}
+                <img class="tooltip-image triangle triangle-0" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Tail_rotor_S-61.jpg" alt="" />
+            </h5>
+            <div class="tooltip-info">
+            <p class="tooltip-description">The tail rotor is a smaller rotor mounted vertically or near-vertically at the tail of a traditional single-rotor helicopter</p>
+                <a class="tooltip-link" href="https://en.wikipedia.org/wiki/Tail_rotor">More Info</a>
+            </div>
+           </section>
             
+            `
+
         }
         [...indicators].map(
             (indicator) => {

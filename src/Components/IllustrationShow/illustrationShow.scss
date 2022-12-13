@@ -51,15 +51,86 @@
       width: 70%;
       height: 70%;
       transition: all 0.3s;
-      flex-direction: column;
+      display: block;
       background: var(--bg-primary);
     }
+  }
+  .tooltip {
+    padding: 0.5rem;
+    .tooltip-header {
+      text-align: center;
+      .tooltip-image {
+        width: 100%;
+        display: none;
+        height: 100%;
+        border-radius: 5px;
+        position: absolute;
+        z-index: -1;
+        left: 110%;
+        top: 10%;
+        filter: brightness(0.5);
+      }
+      &:hover .tooltip-image {
+        display: block !important;
+      }
+      // &::after,
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   background: transparent;
+      //   width: 119px;
+      //   height: 100px;
+      // }
+      // &::after {
+      //   right: -49px;
+      //   top: 62px;
+      //   transform: rotate(61deg);
+      // }
+      // &::before {
+      //   top: 0px;
+      //   right: -100px;
+      //   border-bottom: 2px solid;
+      //   transform: rotate(60deg);
+      //   border-bottom-right-radius: 21px;
+      // }
+    }
+    .tooltip-info {
+      .tooltip-link {
+        font-size: var(--fs-small);
+        color: #03a9f4;
+        &:hover .tooltip-image {
+          display: block;
+        }
+      }
 
+      .tooltip-description {
+        font-size: var(--fs-small);
+        color: var(--text-secondary);
+        height: 50px;
+        overflow: auto;
+        margin: 0.4rem 0 0 0;
+        &::-webkit-scrollbar {
+          width: 3px;
+        }
+      }
+      // &:hover .tooltip-image{
+      //   display: block !important;
+      // }
+    }
   }
-  .tooltip-link{
-    font-size: var(--fs-small);
-    color: #03a9f4;
-  }
+  .triangle {
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+.triangle-0 {
+    width: 60px;
+    height: 60px;
+    border-bottom: solid 0px rgb(22 32 24);
+    border-left: solid 60px rgb(55 74 59 / 70%);
+    border-top: solid 40px transparent;
+    border-bottom-left-radius: 100px !important;
+}
 }
 
 @keyframes flash {
