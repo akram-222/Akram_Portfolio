@@ -7,16 +7,16 @@
     justify-content: center;
     align-items: center;
     &-1 {
-      bottom: 13px;
-      right: 10px;
+      bottom: 15px;
+      right: 140px;
     }
     &-2 {
       top: 5px;
-      left: 62px;
+      left: 103px;
     }
     &-3 {
-      top: 10px;
-      right: 10px;
+      top: 30px;
+      right: 0px;
     }
     &::before {
       /* //rotated squre */
@@ -84,6 +84,7 @@
     margin: auto;
   }
   .hint-content {
+    backdrop-filter: blur(10px);
     color: #fff;
     width: 300px;
     position: absolute;
