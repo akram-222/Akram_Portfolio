@@ -1,15 +1,15 @@
 import React from 'react';
 import { CursorCross } from '../../Components/Cursor-cross/cursor-cross';
 import './main.scss';
-import { MapContainer } from './subMainSections/mapContainer/mapContainer';
+import { AirLines } from './subMainSections/airLines/airLines';
 import { TopKPIs } from './subMainSections/TopKPIs/topKPIs';
 
 function Main() {
     return (
         <main id='main-container'>
-            <CursorCross/>
+            <CursorCross />
             <TopKPIs />
-            <MapContainer />
+            <AirLines />
         </main>
     );
 }
