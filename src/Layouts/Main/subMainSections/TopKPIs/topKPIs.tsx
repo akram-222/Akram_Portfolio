@@ -11,6 +11,9 @@ export const TopKPIs = () => {
                     <IllustrationShow />
                 </div>
                 <div className="topKPI">
+
+                </div>
+                <div className="topKPI">
                     <h4 className="topKPI__header">
                         High Risk Targets  <AiOutlineInfoCircle size={15} />
                     </h4>
@@ -22,7 +25,7 @@ export const TopKPIs = () => {
                     </div>
                     <span className="topKPI__timestamp">Last 30 days</span>
                 </div>
-
+             
                 <div className=" topKPI">
                     <h4 className="topKPI__header">
                         High Risk Targets  <AiOutlineInfoCircle size={15} />

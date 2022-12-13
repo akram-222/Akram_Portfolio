@@ -1,6 +1,7 @@
 import React from 'react';
 import { CursorCross } from '../../Components/Cursor-cross/cursor-cross';
 import './main.scss';
+import { MapContainer } from './subMainSections/mapContainer/mapContainer';
 import { TopKPIs } from './subMainSections/TopKPIs/topKPIs';
 
 function Main() {
@@ -8,7 +9,7 @@ function Main() {
         <main id='main-container'>
             <CursorCross/>
             <TopKPIs />
-            <div id='map-container'></div>
+            <MapContainer />
         </main>
     );
 }
