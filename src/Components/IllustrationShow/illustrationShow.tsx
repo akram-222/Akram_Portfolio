@@ -1,12 +1,13 @@
 import "./illustrationShow.scss"
 import plane from "../../assests/plane.jpg"
+import { Tooltip } from "../Tooltip/tooltip"
 export const IllustrationShow = () => {
 
 
 
     return (
         <div className="illustrationShow-container" style={{ backgroundImage: `url(${plane})` }}>
-            <div className="item-hints">
+            {/* <div className="item-hints">
                 <div className="hint hint-1" data-position="4">
                     <span className="hint-radius"></span>
                     <span className="hint-dot"></span>
@@ -28,8 +29,8 @@ export const IllustrationShow = () => {
                         <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                     </div>
                 </div>
-            </div>
-
+            </div> */}
+{/* <Tooltip /> */}
         </div>
     )
 }
