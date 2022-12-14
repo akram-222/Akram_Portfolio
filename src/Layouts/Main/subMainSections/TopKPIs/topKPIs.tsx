@@ -4,14 +4,13 @@ import "./topKPIs.scss";
 import { IllustrationShow } from "../../../../Components/IllustrationShow/illustrationShow";
 export const TopKPIs = () => {
     return (
-        <section className="topKPIs__section">
+        <section className="topKPIs__section main-sub-section">
             <h3>Top KPIs</h3>
-            <div className="topKPIs__layout">
-                <div className="topKPIs__layout--grow topKPI" >
+            <div className="topKPIs__layout main-sub-section-flex">
+                <div className="topKPIs__layout--grow topKPI " >
                     <IllustrationShow />
                 </div>
                 <div className="topKPI">
-
                 </div>
                 <div className="topKPI">
                     <h4 className="topKPI__header">
@@ -25,7 +24,6 @@ export const TopKPIs = () => {
                     </div>
                     <span className="topKPI__timestamp">Last 30 days</span>
                 </div>
-             
                 <div className=" topKPI">
                     <h4 className="topKPI__header">
                         High Risk Targets  <AiOutlineInfoCircle size={15} />

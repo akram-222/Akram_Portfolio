@@ -6,9 +6,12 @@ export function MouseCoordsContextProvider({ children }) {
     const [coords, setCoords] = useState({ x: 0, y: 0 })
     useEffect(() => {
         let mainContainer = document.getElementById('map-container')! as HTMLElement;
-        mainContainer.addEventListener('mousemove', (e) => {
-            setCoords({ x: e.pageX, y: e.pageY });
-            // console.log(coords)
+        mainContainer?.addEventListener('mousemove', (e) => {
+
+            let x = (e.pageX - mainContainer.offsetLeft);
+            let y = (e.pageY - mainContainer.offsetTop);
+            setCoords({ x: x, y: y });
+            console.log( e)
             return coords
         })
     }, [coords])
