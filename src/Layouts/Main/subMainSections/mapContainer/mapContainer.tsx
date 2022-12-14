@@ -1,40 +1,19 @@
-import { useEffect, useState } from "react";
-import { CursorCross } from "../../../../Components/Cursor-cross/cursor-cross"
-import Map from "../../../../Map/map";
-// import Map from "../../../../Map"
-import { loadMapApi } from "../../../../Utils/googleMapsUtils";
+import { GoogleMap, useLoadScript } from "@react-google-maps/api"
 import "./mapContainer.scss"
+
 export const MapContainer = () => {
-    const [scriptLoaded, setScriptLoaded] = useState(false);
-    const [distanceInKm, setDistanceInKm] = useState<number>(-1);
-
-    useEffect(() => {
-        const googleMapScript = loadMapApi();
-        googleMapScript.addEventListener('load', function () {
-            setScriptLoaded(true);
-        });
-    }, []);
-
-    const renderDistanceSentence = () => {
-        return (
-            <div className='distance-info'>
-                {`Distance between selected marker and home address is ${distanceInKm}km.`}
-            </div>
-        );
-    };
+    const { isLoaded } = useLoadScript({ googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY! })
+    if (!isLoaded) return <div>Loading...</div>
     return (
         <>
-            {/* <CursorCross /> */}
-            {/* <div id='map-container' className='map-container'>map container</div> */}
-            {/* <div className='map-container'>map container</div> */}
-            {scriptLoaded && (
-                <Map
-                    mapType={google.maps.MapTypeId.ROADMAP}
-                    mapTypeControl={true}
-                    setDistanceInKm={setDistanceInKm}
-                />
-            )}
-            {distanceInKm > -1 && renderDistanceSentence()}
+            <div className='map-container'>
+                <Map />
+            </div>
+
         </>
     )
+}
+
+function Map() {
+    return <GoogleMap zoom={10} center={{ lat: 44, lng: -80 }} mapContainerClassName="map-container"></GoogleMap>
 }
