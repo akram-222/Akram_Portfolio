@@ -1,23 +1,24 @@
-import React from 'react';
-import './App.scss';
-import Logo from './Components/Logo/logo';
-import { MouseCoordsContextProvider } from './Contexts/MousePostion';
-import Aside from './Layouts/Aside/aside';
-import Header from './Layouts/Header/header';
-import Main from './Layouts/Main/main';
+import './App.css';
 
-function App() {
+import { useState } from 'react';
+const App = () => {
+  const [showSidebar, onSetShowSidebar] = useState(false);
   return (
-    <MouseCoordsContextProvider>
-      <div className="container dark-theme">
-        <Logo />
-        <Header />
-        <Aside />
-        <Main />
-      </div>
-    </MouseCoordsContextProvider>
-    
+    <div className="flex">
+      <Sidebar
+        onSidebarHide={() => {
+          onSetShowSidebar(false);
+        }}
+        showSidebar={showSidebar}
+      />
+      <Content
+        onSidebarHide={() => {
+          onSetShowSidebar(true);
+        }}
+      />
+    </div>
   );
 }
+
 
 export default App;
