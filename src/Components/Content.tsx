@@ -7,7 +7,7 @@ import IconButton from "./IconButton";
 import NameCard from "./NameCard";
 import Satisfication from "./Satisfication";
 import Segmentation from "./Segmentation";
-import TopCountries from "./TopCountries";
+import TopCountries from "./Repos";
 
 function Content({ onSidebarHide }) {
     return (

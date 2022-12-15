@@ -55,3 +55,8 @@ background: #1d1d1d;
 .sidebar-item:hover {
  color:#a1a0a0;
 }
+
+.text-ellipsis{
+      text-overflow: ellipsis;
+      overflow: hidden;
+}
