@@ -1,6 +1,9 @@
+import { useGitHubRepos } from "../Contexts/GitHubAPIContext";
 import Icon from "./Icon";
 
 export default function AddComponent() {
+    const { gitHubRepos } = useGitHubRepos();
+    console.log(gitHubRepos)
     return (
         <div>
             <div className="w-full h-20 add-component-head" />
