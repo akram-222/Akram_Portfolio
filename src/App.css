@@ -60,3 +60,6 @@ background: #1d1d1d;
       text-overflow: ellipsis;
       overflow: hidden;
 }
+.fill-white{
+  fill: white
+}
