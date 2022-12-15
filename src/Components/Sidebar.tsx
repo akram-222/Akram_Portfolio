@@ -87,7 +87,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
                                 Admin updated 09:12 am November 08,2020
                             </div>
                             <animated.div className="text-right text-gray-400 text-xs">
-                                {precentage.interpolate((i) => `${Math.round(i)}%`)}
+                                {precentage.to((i) => `${Math.round(i)}%`)}
                             </animated.div>
                             <div className="w-full text-gray-300">
                                 <svg
