@@ -1,5 +1,12 @@
+import AddComponent from "./AddComponent";
+import { employeeData } from "./employeeData";
+import Graph from "./Graph";
 import Icon from "./Icon";
 import IconButton from "./IconButton";
+import NameCard from "./NameCard";
+import Satisfication from "./Satisfication";
+import Segmentation from "./Segmentation";
+import TopCountries from "./TopCountries";
 
 function Content({ onSidebarHide }) {
     return (

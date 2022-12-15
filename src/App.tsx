@@ -1,6 +1,8 @@
 import './App.css';
 
 import { useState } from 'react';
+import Sidebar from './Components/Sidebar';
+import Content from './Components/Content';
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   return (
