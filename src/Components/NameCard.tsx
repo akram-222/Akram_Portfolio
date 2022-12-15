@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useSpring,animated } from "react-spring";
 import Icon from "./Icon";
 import Image from "./Image";
@@ -16,9 +17,7 @@ function NameCard({
         barPlayhead: 1,
         from: { transactions: 0, barPlayhead: 0 },
     });
-    function clsx(arg0: string, arg1: string, arg2: string): string | import("@react-spring/shared/dist/declarations/src/fluids").FluidValue<string, any> | undefined {
-        throw new Error("Function not implemented.");
-    }
+  
 
     return (
         <div className="w-full p-2 lg:w-1/3">
@@ -45,7 +44,7 @@ function NameCard({
                     >
                         <rect width="200" height="6" rx="3" fill="#2D2D2D" />
                         <animated.rect
-                            width={barPlayhead.interpolate(
+                            width={barPlayhead.to(
                                 (i) => i * (tasksCompleted / 5) * 200,
                             )}
                             height="6"
@@ -76,7 +75,7 @@ function NameCard({
                             'text-lg',
                         )}
                     >
-                        {transactions.interpolate((i) => `$${i.toFixed(2)}`)}
+                        {transactions.to((i) => `$${i.toFixed(2)}`)}
                     </animated.div>
                     <div className="text-sm ">Last 6 month</div>
                 </div>

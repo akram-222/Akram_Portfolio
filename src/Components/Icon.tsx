@@ -1,7 +1,7 @@
+import clsx from "clsx";
+
 function Icon({ path = 'options', className = 'w-4 h-4' }) {
-    function clsx(className: string): string | undefined {
-        throw new Error("Function not implemented.");
-    }
+ 
 
     return (
         <img

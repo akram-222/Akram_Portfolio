@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useState } from "react";
 import { config, useSpring,animated } from "react-spring";
 import Icon from "./Icon";
@@ -15,9 +16,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
         from: { dashOffset: 113.113, indicatorWidth: 0, precentage: 0 },
         config: config.molasses,
     });
-    function clsx(arg0: string, arg1: string): string | undefined {
-        throw new Error("Function not implemented.");
-    }
+
 
     return (
         <div

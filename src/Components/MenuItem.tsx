@@ -1,9 +1,8 @@
+import clsx from "clsx";
 import SidebarIcons from "./SidebarIcons";
 
 function MenuItem({ item: { id, title, notifications }, onClick, selected }) {
-    function clsx(arg0: string, arg1: string): string | undefined {
-        throw new Error("Function not implemented.");
-    }
+
 
     return (
         <div
