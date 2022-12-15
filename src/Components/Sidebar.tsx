@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { config, useSpring } from "react-spring";
+import { config, useSpring,animated } from "react-spring";
 import Icon from "./Icon";
 import IconButton from "./IconButton";
+import Image from "./Image";
 import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
 
