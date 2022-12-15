@@ -149,7 +149,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
                 <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 sidebar-separator-bottom">
                     <Image path="mock_faces_8" className="w-10 h-10" />
                     <div className="block sm:hidden xl:block ml-2 font-bold ">
-                        Jerry Wilson
+                        Akram Ashraf
                     </div>
                     <div className="flex-grow block sm:hidden xl:block" />
                     <Icon
