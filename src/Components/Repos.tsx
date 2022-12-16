@@ -16,17 +16,18 @@ export default function Repos() {
       <div className="">
         totals:{" "}
         <span className="text-sm text-premium-yellow">
-          {gitHubData.isLoading ? "wait..." : gitHubData.total_count}
-          {/* {`${OctokitRes(5, 1)?.items?.length} from ${OctokitRes(5, 1)?.total_count}`} */}
+          {gitHubData.isLoading
+            ? "wait..."
+            : `${gitHubData?.items?.length} from ${gitHubData?.total_count}`}
         </span>
       </div>
-      {/* {OctokitRes(5, 1)?.items?.map(
+      {gitHubData?.items?.map(
         ({ name, has_issues, svn_url }, index: number) => (
           <div className="flex items-center mt-3" key={index}>
-            <div className="">{index + 1}</div> */}
+            <div className="">{index + 1}</div>
 
-      {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
-      {/* <div className="ml-2 whitespace-nowrap text-ellipsis mr-3">
+            {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
+            <div className="ml-2 whitespace-nowrap text-ellipsis mr-3">
               {name}
             </div>
             <div className="flex-grow" />
@@ -49,7 +50,7 @@ export default function Repos() {
             <Icon path="res-react-dash-options" className="w-2 h-2" />
           </div>
         )
-      )}  */}
+      )}
 
       {/* <div className="flex-grow" /> */}
       <div className="flex justify-center mt-4">
