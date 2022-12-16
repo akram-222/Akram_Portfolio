@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react";
 import { Octokit } from "@octokit/core";
-import { useEffect, useState } from "react";
 const octokit = new Octokit({
   baseUrl: "https://api.github.com",
 });
@@ -20,15 +20,17 @@ export const githubAPI = {
   },
 };
 
-///////////////
+// ///////////////
 
 export const OctokitRes = (per_page: number, page: number) => {
-  const [res, setRes] = useState<any>();
+  const [res, setRes] = useState(null);
+//   const [Load, isLoad] = useState<boolean>(true);
   useEffect(() => {
     githubAPI
       .getReposByName("ak-ram", per_page, page)
       .then((res) => {
         setRes(res);
+        // isLoad(false);
       })
       .catch((reason) => {
         new Error("error with githubAPI in App.tsx file" + reason);
