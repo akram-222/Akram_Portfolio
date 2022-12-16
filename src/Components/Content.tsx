@@ -7,7 +7,7 @@ import IconButton from "./IconButton";
 import NameCard from "./NameCard";
 import Satisfication from "./Satisfication";
 import Segmentation from "./Segmentation";
-import Repos from "./Repos";
+import Repos from "./GitHubRepos";
 
 function Content({ onSidebarHide }) {
   return (
