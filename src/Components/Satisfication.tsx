@@ -46,10 +46,10 @@ function Satisfication() {
                     />
 
                     <animated.circle
-                        cx={dashOffset.interpolate(
+                        cx={dashOffset.to(
                             (x) => 350 + 250 * Math.cos(map(x, 785.4, 0, pi, tau)),
                         )}
-                        cy={dashOffset.interpolate(
+                        cy={dashOffset.to(
                             (x) => 350 + 250 * Math.sin(map(x, 785.4, 0, pi, tau)),
                         )}
                         r="12"
