@@ -1,19 +1,18 @@
-
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { DevBlogsContextProvider } from './Contexts/DEVAPIContext';
-import { GitHubReposContextProvider } from './Contexts/GitHubAPIContext';
-import "./index.css"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
+import { GITHUBOCTOKITAPICONTEXT } from "./Contexts/OCTOKITAPIContext";
+import "./index.css";
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <DevBlogsContextProvider>
-      <GitHubReposContextProvider>
+    <GITHUBOCTOKITAPICONTEXT per_page={6}>
+      <DevBlogsContextProvider>
         <App />
-      </GitHubReposContextProvider>
-    </DevBlogsContextProvider>
+      </DevBlogsContextProvider>
+    </GITHUBOCTOKITAPICONTEXT>
   </React.StrictMode>
 );
