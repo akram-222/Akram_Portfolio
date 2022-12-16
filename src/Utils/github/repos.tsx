@@ -7,12 +7,13 @@ const octokit = new Octokit({
   auth: process.env.REACT_APP_GITHUB_ACCESS_TOKEN,
 });
 
-const UserRepos = () => {
+const UserRepos = (per_page:number) => {
   const [repos, setRepos] = useState([]);
   useEffect(() => {
     async function getRepos() {
       const { data } = await octokit.request(
-        "GET /user/repos{?visibility,affiliation,type,sort,direction,per_page,page,since,before}",
+        `GET /user/repos?per_page=${per_page}`,
+
         {}
       );
       setRepos(data);
