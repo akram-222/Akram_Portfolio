@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect, createContext } from "react";
 import { Octokit } from "@octokit/core";
-
 const OctokitContext = createContext();
 export function GITHUBOCTOKITAPICONTEXT({ children }) {
   const [load, isLoad] = useState({ isLoading: true });
@@ -8,7 +7,7 @@ export function GITHUBOCTOKITAPICONTEXT({ children }) {
 
   useEffect(() => {
     const octokit = new Octokit({
-      auth: "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",
+      auth: process.env.REACT_APP_ACCESS_TOKEN,
     });
     const githubAPI = {
       async getUser() {
