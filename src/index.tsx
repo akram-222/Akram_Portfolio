@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <GITHUBOCTOKITAPICONTEXT per_page={6}>
+    <GITHUBOCTOKITAPICONTEXT inputName={'Ak-ram'} per_page={6} currentPage={2}>
       <DevBlogsContextProvider>
         <App />
       </DevBlogsContextProvider>
