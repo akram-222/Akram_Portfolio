@@ -11,14 +11,14 @@ const App = () => {
   useEffect(() => {
     githubAPI.getReposByName('ak-ram', 10, 1).then(res => {
       setRepos(res)
-      console.log(repos)
     }).catch((reason) => {
-      new Error("error with githubAPI in App.tsx file")
+      new Error("error with githubAPI in App.tsx file" + reason)
     });
-
+console.log(repos)
   }, [repos])
   return (
     <div className="flex">
+      
       <Sidebar
         onSidebarHide={() => {
           onSetShowSidebar(false);
