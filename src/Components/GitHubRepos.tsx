@@ -1,11 +1,8 @@
-import { useOctokitResponse } from "../Contexts/OCTOKITAPIContext";
 import Icon from "./Icon";
 // import Image from "./Image";
-
+import UserRepos from "../Utils/github/repos"
 export default function Repos() {
-  const {  gitHubData } = useOctokitResponse();
-  console.log(gitHubData);
-
+  console.log(UserRepos())
   return (
     <div className="flex p-4 flex-col h-full overflow-y-auto">
       <div className="flex justify-between items-center">
@@ -14,18 +11,18 @@ export default function Repos() {
       </div>
       <div className="">
         Result:{" "}
-        <span className="text-sm text-premium-yellow">
+        {/* <span className="text-sm text-premium-yellow">
           {gitHubData.isLoading
             ? "wait..."
             : `${gitHubData?.items?.length} of ${gitHubData?.total_count}`}
-        </span>
+        </span> */}
       </div>
-      {gitHubData?.items?.map(
+      {/* {gitHubData?.items?.map(
         ({ name, has_issues, svn_url }, index: number) => (
           <div className="flex items-center mt-3" key={index}>
             <div className="">{index + 1}</div>
 
-            {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
+            <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" />
             <div className="ml-2 whitespace-nowrap text-ellipsis mr-3">
               {name}
             </div>
@@ -49,7 +46,7 @@ export default function Repos() {
             <Icon path="res-react-dash-options" className="w-2 h-2" />
           </div>
         )
-      )}
+      )} */}
 
       {/* <div className="flex-grow" /> */}
       <div className="flex justify-center mt-4">
