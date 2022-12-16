@@ -22,19 +22,18 @@ export const githubAPI = {
 
 ///////////////
 
-export const OctokitRes = () => {
-  const [repos, setRepos] = useState<any>();
-
+export const OctokitRes = (per_page: number, page: number) => {
+  const [res, setRes] = useState<any>();
   useEffect(() => {
     githubAPI
-      .getReposByName("ak-ram", 10, 1)
+      .getReposByName("ak-ram", per_page, page)
       .then((res) => {
-        setRepos(res);
+        setRes(res);
       })
       .catch((reason) => {
         new Error("error with githubAPI in App.tsx file" + reason);
       });
-    console.log(repos);
-  }, [repos]);
-  return repos;
+    console.log(res);
+  }, [res, page, per_page]);
+  return res;
 };
