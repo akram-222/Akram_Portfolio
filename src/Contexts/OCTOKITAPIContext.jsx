@@ -2,38 +2,33 @@ import { useContext, useState, useEffect, createContext } from "react";
 import { Octokit } from "@octokit/core";
 
 const OctokitContext = createContext();
-export function GITHUBOCTOKITAPICONTEXT({inputName, per_page,currentPage, children }) {
+export function GITHUBOCTOKITAPICONTEXT({ children }) {
   const [load, isLoad] = useState({ isLoading: true });
   const [gitHubData, setGitHubData] = useState(load);
 
   useEffect(() => {
     const octokit = new Octokit({
-      baseUrl: "https://api.github.com",
+      auth: "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",
     });
     const githubAPI = {
-      async getReposByName(inputName, per_page, currentPage) {
-        const { data } = await octokit.request("GET /search/repositories", {
-          // q: inputName + "+in:name",
-          q: inputName + "+in:name",
-          sort: "stars",
-          per_page: per_page,
-          page: currentPage,
-        });
-        return data;
+      async getUser() {
+        const { data } = await octokit.request("GET /user");
+        setGitHubData(data);
+        console.log(data);
       },
     };
     githubAPI
-      .getReposByName(inputName, per_page, currentPage)
+      .getUser()
       .then((res) => {
         isLoad({ isLoading: false });
         res = { ...res, ...load };
         setGitHubData(res);
-        console.log(gitHubData)
+        console.log(gitHubData);
       })
       .catch((reason) => {
         new Error("error with githubAPI in App.tsx file" + reason);
       });
-  }, [gitHubData, per_page, load]);
+  }, []);
 
   return (
     <OctokitContext.Provider value={{ gitHubData }}>
