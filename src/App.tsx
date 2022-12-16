@@ -1,24 +1,14 @@
-import './App.css';
+import "./App.css";
 
-import { useEffect, useState } from 'react';
-import Sidebar from './Components/Sidebar';
-import Content from './Components/Content';
-import { githubAPI } from './Contexts/api';
+import { useState } from "react";
+import Sidebar from "./Components/Sidebar";
+import Content from "./Components/Content";
+import { OctokitRes } from "./Contexts/api";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
-  const [repos, setRepos] = useState<any>()
-
-  useEffect(() => {
-    githubAPI.getReposByName('ak-ram', 10, 1).then(res => {
-      setRepos(res)
-    }).catch((reason) => {
-      new Error("error with githubAPI in App.tsx file" + reason)
-    });
-console.log(repos)
-  }, [repos])
+console.log(OctokitRes())
   return (
     <div className="flex">
-      
       <Sidebar
         onSidebarHide={() => {
           onSetShowSidebar(false);
@@ -32,7 +22,6 @@ console.log(repos)
       />
     </div>
   );
-}
+};
 
-
-export default App
+export default App;
