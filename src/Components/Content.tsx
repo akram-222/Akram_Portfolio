@@ -1,4 +1,3 @@
-import moment from "moment";
 import AddComponent from "./AddComponent";
 import { employeeData } from "./employeeData";
 import Graph from "./Graph";
@@ -35,10 +34,11 @@ function Content({ onSidebarHide }) {
                   className="w-3 h-3"
                 />
                 <div className="ml-2">
-                  {moment().diff(
+                  444
+                  {/* {moment().diff(
                     moment([2020, 5, 26]).format("YYYY"),
                     "years"
-                  ) + ` Years of Coding`}
+                  ) + ` Years of Coding`} */}
                 </div>
               </div>
             </div>
