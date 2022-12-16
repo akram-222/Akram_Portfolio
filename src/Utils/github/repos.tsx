@@ -13,7 +13,9 @@ const UserRepos = () => {
     async function getRepos() {
       const { data } = await octokit.request(
         "GET /user/repos{?visibility,affiliation,type,sort,direction,per_page,page,since,before}",
-        {}
+        {
+            
+        }
       );
       setRepos(data);
       console.log(repos);
