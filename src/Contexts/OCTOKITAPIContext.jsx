@@ -2,7 +2,7 @@ import { useContext, useState, useEffect, createContext } from "react";
 import { Octokit } from "@octokit/core";
 
 const OctokitContext = createContext();
-export function GITHUBOCTOKITAPICONTEXT({ per_page, children }) {
+export function GITHUBOCTOKITAPICONTEXT({inputName, per_page,currentPage, children }) {
   const [load, isLoad] = useState({ isLoading: true });
   const [gitHubData, setGitHubData] = useState(load);
 
@@ -13,6 +13,7 @@ export function GITHUBOCTOKITAPICONTEXT({ per_page, children }) {
     const githubAPI = {
       async getReposByName(inputName, per_page, currentPage) {
         const { data } = await octokit.request("GET /search/repositories", {
+          // q: inputName + "+in:name",
           q: inputName + "+in:name",
           sort: "stars",
           per_page: per_page,
@@ -22,11 +23,12 @@ export function GITHUBOCTOKITAPICONTEXT({ per_page, children }) {
       },
     };
     githubAPI
-      .getReposByName("ak-ram", per_page, 1)
+      .getReposByName(inputName, per_page, currentPage)
       .then((res) => {
         isLoad({ isLoading: false });
         res = { ...res, ...load };
         setGitHubData(res);
+        console.log(gitHubData)
       })
       .catch((reason) => {
         new Error("error with githubAPI in App.tsx file" + reason);
