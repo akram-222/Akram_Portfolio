@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/core";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { BsLink45Deg, BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs";
 import { VscRepoForked } from "react-icons/vsc";
 import Icon from "./Icon";
@@ -14,7 +14,8 @@ export default function Repos() {
   const [repoConfig, setRepoConfig] = useState({ per_page: 5 });
   const [isLoad, setLoad] = useState(true);
   const [isRepoDeleted, setIsDeleted] = useState(false);
-  const [isHidden,setIsHidden] = useState(true)
+  const [isHidden, setIsHidden] = useState(true);
+  const inputOfRepoName = useRef<HTMLInputElement>(null)
   useEffect(() => {
     async function getRepos() {
       const { data } = await octokit.request(
@@ -28,6 +29,7 @@ export default function Repos() {
     getRepos();
   }, [repoConfig, isRepoDeleted]);
 
+  ///// ------------ Delete repo
   async function deleteRepo(event) {
     // await octokit.request(
     //   `DELETE /repos/{owner}/{repo}`, // Fix Issue
@@ -37,6 +39,18 @@ export default function Repos() {
     //   }
     // );
     console.log("event is fired", event.target.dataset.reponame);
+  }
+
+  ///// ------------- Create Repo
+  async function createRepo(event) {
+    // await octokit.request("POST /user/repos", {
+    //   name: "Hello-World",
+    //   description: "This is your first repo!",
+    //   homepage: "https://github.com",
+    //   private: false,
+    //   is_template: true,
+    // });
+    console.log("event is fired", inputOfRepoName?.current?.value);
   }
 
   let UIReposList = repos?.map(
@@ -93,9 +107,16 @@ export default function Repos() {
     <div className="flex p-4 flex-col h-full overflow-y-auto relative">
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
-        <BsPlusCircle className="w-5 h-5 cursor-pointer	" onClick={()=> setIsHidden(!isHidden)} />
+        <BsPlusCircle
+          className="w-5 h-5 cursor-pointer	"
+          onClick={() => setIsHidden(!isHidden)}
+        />
 
-        <div className={`${isHidden? 'hidden':""} right-10 z-10 p-3 add-new-repo absolute top-5 bg-[#050708] rounded-lg`}>
+        <div
+          className={`${
+            isHidden ? "hidden" : ""
+          } right-10 z-10 p-3 add-new-repo absolute top-5 bg-[#050708] rounded-lg`}
+        >
           <form>
             <label
               htmlFor="website-admin"
@@ -103,25 +124,21 @@ export default function Repos() {
             >
               Repo name:
             </label>
-            <label
-              htmlFor="search"
-              className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-            >
-              Search
-            </label>
+
             <div className="relative">
               <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
                 <VscRepoForked className="text-green-500" />
-                {/* <span className="w-5 h-5 text-gray-500 dark:text-gray-400"> ak-ram/ </span> */}
               </div>
               <input
                 type="search"
                 id="search"
                 className="outline-none block w-full p-2 pl-8 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                 placeholder="new-repo"
+                ref={inputOfRepoName}
                 required
               />
               <button
+              onClick={(e)=> createRepo(e)}
                 type="submit"
                 className="text-white absolute right-2.5 bottom-1 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-1 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
               >
