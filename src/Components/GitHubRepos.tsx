@@ -35,13 +35,13 @@ export default function Repos() {
 
   ///// ------------ Delete repo
   async function deleteRepo(event) {
-    // await octokit.request(
-    //   `DELETE /repos/{owner}/{repo}`, // Fix Issue
-    //   {
-    //     owner: "ak-ram",
-    //     repo: `${event.target.dataset.reponame}`
-    //   }
-    // );
+    await octokit.request(
+      `DELETE /repos/{owner}/{repo}`, // Fix Issue
+      {
+        owner: "ak-ram",
+        repo: `${event.target.dataset.reponame}`
+      }
+    );
     console.log("event is fired", event.target.dataset.reponame);
   }
 
@@ -135,8 +135,14 @@ export default function Repos() {
           </div>
           <div className="px-3 py-2 flex flex-col">
             <p>This Repo will permenantly delete</p>
-            <button className="mt-3 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded text-sm px-2 py-1 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-               Delete
+            <button className="mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded text-sm px-2 py-1 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" 
+            data-reponame={name} 
+            onClick={(event) => {
+              deleteRepo(event)
+              setIsDeleted(true)
+      }}
+      >
+              Delete
             </button>
           </div>
           <div data-popper-arrow></div>
