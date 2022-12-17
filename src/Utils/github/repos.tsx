@@ -6,15 +6,16 @@ import { useEffect, useState } from "react";
 const octokit = new Octokit({
   auth: process.env.REACT_APP_GITHUB_ACCESS_TOKEN,
 });
+interface RepoConfigInterface {
+  per_page: number;
+  visibility: "all" | "private" | "public";
+  sort: "created" | "updated" | "pushed" | "full_name";
+  direction: "asc" | "desc";
+  page: number;
+  since: string;
+}
 
-const UserRepos = (
-  per_page: number = 5,
-  visibility: "all" | "private" | "public" = "public",
-  sort: "created" | "updated" | "pushed" | "full_name" = "updated",
-  direction: "asc" | "desc" = "asc",
-  page: number = 1,
-  since: string = "2022-12-16T00:14:27Z"
-) => {
+const UserRepos = ({per_page,visibility,sort,since,direction,page}: RepoConfigInterface) => {
   const [repos, setRepos] = useState([]);
   useEffect(() => {
     async function getRepos() {
