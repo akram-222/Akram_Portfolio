@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/core";
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { BsLink45Deg, BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs";
 import { VscRepoForked } from "react-icons/vsc";
 import Icon from "./Icon";
@@ -15,7 +15,7 @@ export default function Repos() {
   const [isLoad, setLoad] = useState(true);
   const [isRepoDeleted, setIsDeleted] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
-  const inputOfRepoName = useRef<HTMLInputElement>(null)
+  const inputOfRepoName = useRef<HTMLInputElement>(null);
   useEffect(() => {
     async function getRepos() {
       const { data } = await octokit.request(
@@ -50,6 +50,10 @@ export default function Repos() {
       private: false,
       is_template: true,
     });
+    if (inputOfRepoName.current!) {
+      inputOfRepoName.current.value = "";
+    }
+    setIsHidden(true);
     console.log("event is fired", inputOfRepoName?.current?.value);
   }
 
@@ -138,7 +142,7 @@ export default function Repos() {
                 required
               />
               <button
-              onClick={()=> createRepo()}
+                onClick={() => createRepo()}
                 type="button"
                 className="text-white absolute right-2.5 bottom-1 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-1 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
               >
