@@ -5,7 +5,7 @@ export default function Repos() {
   let currentRepos = UserRepos({
     // since: "2022-12-16T00:14:27Z",
     page: 1,
-    per_page: 9,
+    per_page: 25,
     sort: "updated",
     direction: "asc",
     visibility: "public",
@@ -25,7 +25,7 @@ export default function Repos() {
       </div>
 
       {currentRepos?.map(({ name, has_issues, svn_url }, index: number) => (
-        <div className="flex items-center mt-3" key={index}>
+        <div className="flex items-center mt-3 relative" key={index}>
           <div className="">{index + 1}</div>
 
           {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
