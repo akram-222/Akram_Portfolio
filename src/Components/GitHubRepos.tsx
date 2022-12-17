@@ -1,5 +1,6 @@
 import { Octokit } from "@octokit/core";
 import { useEffect, useState } from "react";
+import { BsLink45Deg, BsThreeDotsVertical } from "react-icons/bs"
 import Icon from "./Icon";
 import Spinner from "./Spinner";
 // import Image from "./Image";
@@ -18,9 +19,10 @@ export default function Repos() {
         `GET /user/repos?visibility=all&per_page=${repoConfig.per_page || 5}`, // Fix Issue
         {}
       );
-      console.log(repoConfig);
+
       setRepos(data);
       setLoad(false)
+
     }
     getRepos();
   }, [repoConfig, isRepoDeleted]);
@@ -37,21 +39,22 @@ export default function Repos() {
     console.log('event is fired', event.target.dataset.reponame)
   }
 
-  let UIReposList = repos?.map(({ name, has_issues, svn_url }, index: number) => (
+  let UIReposList = repos?.map(({ size, name, has_issues, svn_url }, index: number) => (
     <div className="flex items-center mt-3 relative" key={index}>
       <div className="">{index + 1}</div>
 
       {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
-      <div className="ml-2 whitespace-nowrap text-ellipsis mr-3">
+      <div className="ml-2 whitespace-nowrap text-ellipsis mr-3 w-28" >
         {name}
       </div>
       <div className="flex-grow" />
+      <span className={`mr-2 text-sm whitespace-nowrap ${size > 2000 ? "text-red-500" : size < 500 ? "text-green-500" : "text-premium-yellow"}`}>{size} kb</span>
       <div className="">
         <a
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
           href={svn_url}
         >
-          Visit
+          <BsLink45Deg />
         </a>
       </div>
       <Icon
@@ -62,7 +65,7 @@ export default function Repos() {
         }
         className="w-4 h-4 mx-3"
       />
-      <Icon path="res-react-dash-options" className="w-2 h-2" />
+      <BsThreeDotsVertical className="w-2 h-2" />
       {/* <button data-reponame={name} onClick={(event) => {
         deleteRepo(event)
         setIsDeleted(true)
@@ -91,6 +94,7 @@ export default function Repos() {
           onClick={() => {
             setLoad(true)
             setRepoConfig({ ...repoConfig, per_page: repoConfig.per_page + 5 })
+            console.log(repos);
           }}
           className="text-white bg-[#050708] hover:bg-[#050708]/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 mr-2 mb-2"
         >
