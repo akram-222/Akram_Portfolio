@@ -72,12 +72,12 @@ export default function Repos() {
         <div className="">{index + 1}</div>
 
         {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
-        <div className="ml-2 whitespace-nowrap text-ellipsis mr-3 w-28">
+        <div className="ml-2 whitespace-nowrap text-ellipsis mr-3 w-30">
           {name}
         </div>
         <div className="flex-grow" />
         <span
-          className={`repo-size mr-2 text-sm whitespace-nowrap ${
+          className={`repo-size mr-3 text-sm whitespace-nowrap ${
             size > 2000
               ? "text-red-500"
               : size < 500
@@ -101,7 +101,7 @@ export default function Repos() {
               ? "res-react-dash-country-up"
               : "res-react-dash-country-down"
           }
-          className="w-4 h-4 mx-3"
+          className="w-4 h-4 mx-1"
         />
         {/* <BsThreeDotsVertical className="w-2 h-2" /> */}
         {/* <button data-reponame={name} onClick={(event) => {
@@ -119,7 +119,7 @@ export default function Repos() {
           onClick={(e) =>
             e?.currentTarget?.nextElementSibling?.classList.toggle("invisible")
           }
-          className="dark:text-red-500 px-5 py-2.5 text-center"
+          className="dark:text-red-500 px-1 text-center"
         >
           <AiOutlineDelete />
         </button>
