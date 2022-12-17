@@ -4,6 +4,7 @@ import { BsLink45Deg, BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs";
 import { VscRepoForked } from "react-icons/vsc";
 import Icon from "./Icon";
 import Spinner from "./Spinner";
+import ToastSuccess from "./toastSuccess";
 // import Image from "./Image";
 export default function Repos() {
   const octokit = new Octokit({
@@ -14,6 +15,7 @@ export default function Repos() {
   const [repoConfig, setRepoConfig] = useState({ per_page: 5 });
   const [isLoad, setLoad] = useState(true);
   const [isRepoDeleted, setIsDeleted] = useState(false);
+  const [isRepoAdded, setIsAdded] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
   const inputOfRepoName = useRef<HTMLInputElement>(null);
   useEffect(() => {
@@ -54,6 +56,7 @@ export default function Repos() {
       inputOfRepoName.current.value = "";
     }
     setIsHidden(true);
+    setIsAdded(true)
     console.log("event is fired", inputOfRepoName?.current?.value);
   }
 
@@ -109,6 +112,7 @@ export default function Repos() {
 
   return (
     <div className="flex p-4 flex-col h-full overflow-y-auto relative">
+      <ToastSuccess className={`${isRepoAdded ? "":"hidden"}`}/>
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
         <BsPlusCircle
