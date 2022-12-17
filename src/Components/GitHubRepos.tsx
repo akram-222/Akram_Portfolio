@@ -31,17 +31,17 @@ export default function Repos() {
       setLoad(false);
     }
     getRepos();
-  }, [repoConfig, isRepoDeleted]);
+  }, [repoConfig, isRepoDeleted, isRepoAdded]);
 
   ///// ------------ Delete repo
   async function deleteRepo(event) {
-    await octokit.request(
-      `DELETE /repos/{owner}/{repo}`, // Fix Issue
-      {
-        owner: "ak-ram",
-        repo: `${event.target.dataset.reponame}`
-      }
-    );
+    // await octokit.request(
+    //   `DELETE /repos/{owner}/{repo}`, // Fix Issue
+    //   {
+    //     owner: "ak-ram",
+    //     repo: `${event.target.dataset.reponame}`
+    //   }
+    // );
     console.log("event is fired", event.target.dataset.reponame);
   }
 
@@ -126,7 +126,9 @@ export default function Repos() {
           data-popover
           id="popover-hover"
           role="tooltip"
-          className={`invisible absolute z-10 inline-block w-64 text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800`}
+          className={`${
+            isRepoDeleted ? "invisible opacity-0" : ""
+          } invisible absolute z-10 inline-block w-64 text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800`}
         >
           <div className="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
             <h3 className="font-semibold dark:text-red-500 dark:text-white">
@@ -135,13 +137,14 @@ export default function Repos() {
           </div>
           <div className="px-3 py-2 flex flex-col">
             <p>This Repo will permenantly delete</p>
-            <button className="mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded text-sm px-2 py-1 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" 
-            data-reponame={name} 
-            onClick={(event) => {
-              deleteRepo(event)
-              setIsDeleted(true)
-      }}
-      >
+            <button
+              className={`mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded text-sm px-2 py-1 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800`}
+              data-reponame={name}
+              onClick={(event) => {
+                deleteRepo(event);
+                setIsDeleted(true);
+              }}
+            >
               Delete
             </button>
           </div>
