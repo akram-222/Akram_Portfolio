@@ -42,14 +42,14 @@ export default function Repos() {
   }
 
   ///// ------------- Create Repo
-  async function createRepo(event) {
-    // await octokit.request("POST /user/repos", {
-    //   name: "Hello-World",
-    //   description: "This is your first repo!",
-    //   homepage: "https://github.com",
-    //   private: false,
-    //   is_template: true,
-    // });
+  async function createRepo() {
+    await octokit.request("POST /user/repos", {
+      name: `${inputOfRepoName?.current?.value}`,
+      description: "This is your first repo!",
+      homepage: "https://github.com",
+      private: false,
+      is_template: true,
+    });
     console.log("event is fired", inputOfRepoName?.current?.value);
   }
 
@@ -130,16 +130,16 @@ export default function Repos() {
                 <VscRepoForked className="text-green-500" />
               </div>
               <input
-                type="search"
-                id="search"
+                type="text"
+                id="createNewRepoInput"
                 className="outline-none block w-full p-2 pl-8 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                 placeholder="new-repo"
                 ref={inputOfRepoName}
                 required
               />
               <button
-              onClick={(e)=> createRepo(e)}
-                type="submit"
+              onClick={()=> createRepo()}
+                type="button"
                 className="text-white absolute right-2.5 bottom-1 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-1 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
               >
                 New
