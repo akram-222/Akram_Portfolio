@@ -4,6 +4,7 @@ import { BsLink45Deg, BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs";
 import { VscRepoForked } from "react-icons/vsc";
 import Icon from "./Icon";
 import Spinner from "./Spinner";
+import ToastDanger from "./toastDanger";
 import ToastSuccess from "./toastSuccess";
 // import Image from "./Image";
 export default function Repos() {
@@ -15,6 +16,7 @@ export default function Repos() {
   const [repoConfig, setRepoConfig] = useState({ per_page: 5 });
   const [isLoad, setLoad] = useState(true);
   const [isRepoDeleted, setIsDeleted] = useState(false);
+  const [isDeleteBtnActive, setDeleteBtnActivation] = useState(false);
   const [isRepoAdded, setIsAdded] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
   const inputOfRepoName = useRef<HTMLInputElement>(null);
@@ -56,7 +58,7 @@ export default function Repos() {
       inputOfRepoName.current.value = "";
     }
     setIsHidden(true);
-    setIsAdded(true)
+    setIsAdded(true);
     console.log("event is fired", inputOfRepoName?.current?.value);
   }
 
@@ -105,14 +107,49 @@ export default function Repos() {
         deleteRepo(event)
         setIsDeleted(true)
       }
-      }>Del</button> */}
+      }>Del</button>  */}
+
+        {/* //////////////// */}
+
+        <button
+          data-popover-target="popover-hover"
+          data-popover-trigger="hover"
+          type="button"
+          onClick={(e) =>
+            e?.currentTarget?.nextElementSibling?.classList.toggle("invisible")
+          }
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Delete
+        </button>
+        <div
+          data-popover
+          id="popover-hover"
+          role="tooltip"
+          className={`invisible absolute z-10 inline-block w-64 text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800`}
+        >
+          <div className="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+            <h3 className="font-semibold dark:text-red-500 dark:text-white">
+              Confirm Deletion
+            </h3>
+          </div>
+          <div className="px-3 py-2 flex flex-col">
+            <p>This Repo will permenantly delete</p>
+            <button className="mt-3 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded text-sm px-2 py-1 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+               Delete
+            </button>
+          </div>
+          <div data-popper-arrow></div>
+        </div>
+        {/* ///////////////////////// */}
       </div>
     )
   );
 
   return (
     <div className="flex p-4 flex-col h-full overflow-y-auto relative">
-      <ToastSuccess className={`${isRepoAdded ? "":"hidden"}`}/>
+      <ToastSuccess className={`${isRepoAdded ? "" : "hidden"}`} />
+      <ToastDanger className={`${isRepoDeleted ? "" : "hidden"}`} />
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
         <BsPlusCircle
@@ -154,26 +191,7 @@ export default function Repos() {
               </button>
             </div>
           </form>
-
-          {/* <label
-          htmlFor="website-admin"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Repo name:
-        </label>
-        <div className="flex">
-          <span className="inline-flex items-center px-1 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-            @
-          </span>
-          <input
-            type="text"
-            id="website-admin"
-            className="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-1  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            placeholder="elonmusk"
-          />
-        </div> */}
         </div>
-        {/* <Icon path="res-react-dash-plus" className="w-5 h-5" /> */}
       </div>
       <div className="">favourites</div>
 
