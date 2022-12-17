@@ -1,10 +1,9 @@
 import Icon from "./Icon";
 // import Image from "./Image";
 import UserRepos from "../Utils/github/repos"
-import { useEffect, useState } from "react";
 export default function Repos() {
-  let currentRepos = UserRepos(12);
-  const [count, setCount] = useState(5)
+  let currentRepos = UserRepos(18, "public", "updated");
+  console.log(currentRepos)
   return (
     <div className="flex p-4 flex-col h-full overflow-y-auto">
       <div className="flex justify-between items-center">
@@ -56,10 +55,9 @@ export default function Repos() {
       <div className="flex justify-center mt-4">
         <button
           type="button"
-          onClick={() => setCount(count + 5)}
           className="text-white bg-[#050708] hover:bg-[#050708]/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 mr-2 mb-2"
         >
-          Fetch 5 more {count}
+          Fetch 5 more
 
         </button>
       </div>
