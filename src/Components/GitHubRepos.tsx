@@ -8,14 +8,14 @@ export default function Repos() {
     auth: process.env.REACT_APP_GITHUB_ACCESS_TOKEN,
   });
 
-
   const [repos, setRepos] = useState([]);
   const [repoConfig, setRepoConfig] = useState({ per_page: 5 })
   const [isLoad, setLoad] = useState(true)
+  const [isRepoDeleted, setIsDeleted] = useState(false)
   useEffect(() => {
     async function getRepos() {
       const { data } = await octokit.request(
-        `GET /user/repos?per_page=${repoConfig.per_page || 5}`, // Fix Issue
+        `GET /user/repos?visibility=all&per_page=${repoConfig.per_page || 5}`, // Fix Issue
         {}
       );
       console.log(repoConfig);
@@ -23,8 +23,53 @@ export default function Repos() {
       setLoad(false)
     }
     getRepos();
-  }, [repoConfig]);
+  }, [repoConfig, isRepoDeleted]);
 
+
+  async function deleteRepo(event) {
+    // await octokit.request(
+    //   `DELETE /repos/{owner}/{repo}`, // Fix Issue
+    //   {
+    //     owner: "ak-ram",
+    //     repo: `${event.target.dataset.reponame}`
+    //   }
+    // );
+    console.log('event is fired', event.target.dataset.reponame)
+  }
+
+  let UIReposList = repos?.map(({ name, has_issues, svn_url }, index: number) => (
+    <div className="flex items-center mt-3 relative" key={index}>
+      <div className="">{index + 1}</div>
+
+      {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
+      <div className="ml-2 whitespace-nowrap text-ellipsis mr-3">
+        {name}
+      </div>
+      <div className="flex-grow" />
+      <div className="">
+        <a
+          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          href={svn_url}
+        >
+          Visit
+        </a>
+      </div>
+      <Icon
+        path={
+          has_issues
+            ? "res-react-dash-country-up"
+            : "res-react-dash-country-down"
+        }
+        className="w-4 h-4 mx-3"
+      />
+      <Icon path="res-react-dash-options" className="w-2 h-2" />
+      {/* <button data-reponame={name} onClick={(event) => {
+        deleteRepo(event)
+        setIsDeleted(true)
+      }
+      }>Del</button> */}
+    </div>
+  ))
 
 
   return (
@@ -37,34 +82,7 @@ export default function Repos() {
         favourites
       </div>
 
-      {repos?.map(({ name, has_issues, svn_url }, index: number) => (
-        <div className="flex items-center mt-3 relative" key={index}>
-          <div className="">{index + 1}</div>
-
-          {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
-          <div className="ml-2 whitespace-nowrap text-ellipsis mr-3">
-            {name}
-          </div>
-          <div className="flex-grow" />
-          <div className="">
-            <a
-              className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              href={svn_url}
-            >
-              Visit
-            </a>
-          </div>
-          <Icon
-            path={
-              has_issues
-                ? "res-react-dash-country-up"
-                : "res-react-dash-country-down"
-            }
-            className="w-4 h-4 mx-3"
-          />
-          <Icon path="res-react-dash-options" className="w-2 h-2" />
-        </div>
-      ))}
+      {UIReposList}
 
       {/* <div className="flex-grow" /> */}
       <div className="flex justify-center mt-4 relative">
