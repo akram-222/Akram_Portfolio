@@ -1,6 +1,6 @@
 import { Octokit } from "@octokit/core";
 import { useEffect, useState } from "react";
-import { BsLink45Deg, BsThreeDotsVertical } from "react-icons/bs"
+import { BsLink45Deg, BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs"
 import Icon from "./Icon";
 import Spinner from "./Spinner";
 // import Image from "./Image";
@@ -40,7 +40,7 @@ export default function Repos() {
   }
 
   let UIReposList = repos?.map(({ size, name, has_issues, svn_url }, index: number) => (
-    <div className="flex items-center mt-3 relative" key={index}>
+    <div className="flex items-center mt-3 relative show-repo-size" key={index}>
       <div className="">{index + 1}</div>
 
       {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
@@ -48,7 +48,7 @@ export default function Repos() {
         {name}
       </div>
       <div className="flex-grow" />
-      <span className={`mr-2 text-sm whitespace-nowrap ${size > 2000 ? "text-red-500" : size < 500 ? "text-green-500" : "text-premium-yellow"}`}>{size} kb</span>
+      <span className={`repo-size mr-2 text-sm whitespace-nowrap ${size > 2000 ? "text-red-500" : size < 500 ? "text-green-500" : "text-premium-yellow"}`}>{size} kb</span>
       <div className="">
         <a
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
@@ -76,10 +76,17 @@ export default function Repos() {
 
 
   return (
-    <div className="flex p-4 flex-col h-full overflow-y-auto">
+    <div className="flex p-4 flex-col h-full overflow-y-auto relative">
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
-        <Icon path="res-react-dash-plus" className="w-5 h-5" />
+        <BsPlusCircle className="w-5 h-5" />
+        <div className="add-new-repo absolute top-5 bg-[#050708] p-4 rounded-xl text-center">
+          <label>
+            Repo name:<input type="text" />
+            <button>Create</button>
+          </label>
+        </div>
+        {/* <Icon path="res-react-dash-plus" className="w-5 h-5" /> */}
       </div>
       <div className="">
         favourites
