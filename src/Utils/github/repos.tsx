@@ -12,7 +12,7 @@ const UserRepos = ({
   per_page,
   visibility,
   sort,
-  since,
+  // since,
   direction,
   page,
 }: RepoConfigInterface) => {
@@ -20,7 +20,7 @@ const UserRepos = ({
   useEffect(() => {
     async function getRepos() {
       const { data } = await octokit.request(
-        `GET /user/repos?per_page=${per_page}&visibility=${visibility}&sort=${sort}&since=${since}&direction=${direction}&page=${page}`,
+        `GET /user/repos?per_page=${per_page}&visibility=${visibility}&sort=${sort}&direction=${direction}&page=${page}`,
 
         {}
       );

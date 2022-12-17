@@ -4,5 +4,5 @@ export interface RepoConfigInterface {
   sort: "created" | "updated" | "pushed" | "full_name";
   direction: "asc" | "desc";
   page: number;
-  since: string;
+  // since: string;
 }

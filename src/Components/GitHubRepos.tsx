@@ -3,9 +3,9 @@ import Icon from "./Icon";
 import UserRepos from "../Utils/github/repos";
 export default function Repos() {
   let currentRepos = UserRepos({
-    since: "2022-12-16T00:14:27Z",
+    // since: "2022-12-16T00:14:27Z",
     page: 1,
-    per_page: 5,
+    per_page: 9,
     sort: "updated",
     direction: "asc",
     visibility: "public",
