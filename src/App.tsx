@@ -8,16 +8,16 @@ const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   return (
     <div className="flex">
+      <BrowserRouter>
       <Sidebar
         onSidebarHide={() => {
           onSetShowSidebar(false);
         }}
         showSidebar={showSidebar}
       />
-      <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/dashboard"
             element={
               <Dashboard
                 onSidebarHide={() => {

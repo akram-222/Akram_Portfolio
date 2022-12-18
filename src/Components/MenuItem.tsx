@@ -11,7 +11,7 @@ function MenuItem({ item: { id, title, notifications }, onClick, selected }) {
       onClick={() => onClick(id)}
     >
       <SidebarIcons id={id} />
-      <Link to={"./"} className="block sm:hidden xl:block ml-2">
+      <Link to={title.toLowerCase()} className="block sm:hidden xl:block ml-2">
         {title}
       </Link>
       <div className="block sm:hidden xl:block flex-grow" />
