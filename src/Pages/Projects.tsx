@@ -41,11 +41,12 @@ const Projects = ({ onSidebarHide }) => {
       <div className="flex w-full">
         <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
           {repos &&
-            repos?.map(({ name, id, created_at, language,fork },i) => (
+            repos?.map(({ name, id, created_at, language,fork,visibility },i) => (
               <ProjectItem
                 name={name}
                 key={id}
                 fork={fork}
+                visibility={visibility}
                 i={i}
                 createdAt={created_at}
                 language={language}
