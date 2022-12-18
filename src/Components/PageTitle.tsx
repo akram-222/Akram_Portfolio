@@ -3,7 +3,7 @@ import IconButton from "./IconButton";
 
 const PageTitle = ({ onSidebarHide, title, subtitle, premium_star }) => {
   return (
-    <div className="sm:flex-grow flex justify-between">
+    <div className="sm:flex-grow flex w-full justify-between">
       <div className="">
         <div className="flex items-center">
           <div className="text-3xl font-bold text-white">{title}</div>
