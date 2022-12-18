@@ -1,21 +1,30 @@
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import {  BsCalendarDate } from "react-icons/bs";
-import {HiOutlineLocationMarker} from "react-icons/hi"
-const ProjectItem = () => {
+import { BsCalendarDate } from "react-icons/bs";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+const ProjectItem = ({ name, createdAt, language, fork, i }) => {
   return (
-    <div className={`border relative mr-auto w-full md:w-[45%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3 mb-8`}>
-      <div className=" text-white flex items-center absolute rounded-full p-3 shadow-xl bg-sidebar-card-top left-4 -top-6">
-      <AiOutlineFundProjectionScreen size={30} />
+    <div
+      className={`border relative mr-auto w-full md:w-[45%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3 mb-8`}
+    >
+      <div className="w-12 h-12 text-center flex justify-center text-white flex items-center absolute rounded-full p-3 shadow-xl bg-sidebar-card-top left-4 -top-6">
+        {/* <AiOutlineFundProjectionScreen size={30} /> */}
+        <span className="font-bold text-2xl text-blue-400">{i + 1}</span>
       </div>
       <div className="mt-8">
-        <p className="text-xl font-semibold my-2">Web Design</p>
+        <p className="text-xl font-semibold my-2">{name}</p>
         <div className="flex space-x-2 text-gray-400 text-sm">
-         <HiOutlineLocationMarker size={20}/>
-          <p>Core UI Team</p>
+          <HiOutlineLocationMarker size={20} />
+          <p>{fork ? "Fork" : language}</p>
         </div>
         <div className="flex space-x-2 text-gray-400 text-sm my-3">
-          <BsCalendarDate size={18}/>
-          <p>3 Weeks Left</p>
+          <BsCalendarDate size={18} />
+          <p>
+            {new Date(createdAt).toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })}
+          </p>
         </div>
         <div className="border-t-2 border-[#353535]"></div>
 
