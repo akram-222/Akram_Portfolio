@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/core";
+
 import { useEffect, useState, useRef } from "react";
 import { BsLink45Deg, BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -7,11 +7,10 @@ import Icon from "./Icon";
 import Spinner from "./Spinner";
 import ToastDanger from "./toastDanger";
 import ToastSuccess from "./toastSuccess";
+import { octokit } from "../Utils/github/OctokitConstructor";
+import { __createNewRepo } from "../Utils/github/createNewRepo";
 // import Image from "./Image";
 export default function Repos() {
-  const octokit = new Octokit({
-    auth: process.env.REACT_APP_GITHUB_ACCESS_TOKEN,
-  });
 
   const [repos, setRepos] = useState([]);
   const [repoConfig, setRepoConfig] = useState({ per_page: 5 });
@@ -48,13 +47,7 @@ export default function Repos() {
 
   ///// ------------- Create Repo
   async function createRepo() {
-    await octokit.request("POST /user/repos", {
-      name: `${inputOfRepoName?.current?.value}`,
-      description: "This is your first repo!",
-      homepage: "https://github.com",
-      private: false,
-      is_template: true,
-    });
+    __createNewRepo(inputOfRepoName?.current?.value!)
     if (inputOfRepoName.current!) {
       inputOfRepoName.current.value = "";
     }
@@ -146,7 +139,7 @@ export default function Repos() {
                 setIsDeleted(true);
               }}
             >
-             Delete
+              Delete
             </button>
           </div>
           <div data-popper-arrow></div>
