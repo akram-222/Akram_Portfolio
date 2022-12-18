@@ -1,7 +1,7 @@
 import { octokit } from "./OctokitConstructor";
 
 export async function __getNotifications() {
-  await octokit
+  return await octokit
     .request(
       //   "GET /notifications{?all,participating,since,before,page,per_page}",
       `GET /notifications?since=${new Date(
@@ -9,6 +9,5 @@ export async function __getNotifications() {
       ).toISOString()}&per_page=20`,
       {}
     )
-    .then(({ data }) => console.log(data));
-  console.log("Notifications is here");
+    .then(({ data }) => data);
 }

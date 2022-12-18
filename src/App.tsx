@@ -1,25 +1,34 @@
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { useState } from "react";
 import Sidebar from "./Components/Sidebar";
-import Content from "./Components/Content";
+import Dashboard from "./Components/dashboard";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   return (
-   
-      <div className="flex">
-        <Sidebar
-          onSidebarHide={() => {
-            onSetShowSidebar(false);
-          }}
-          showSidebar={showSidebar}
-        />
-        <Content
-          onSidebarHide={() => {
-            onSetShowSidebar(true);
-          }}
-        />
-      </div>
+    <div className="flex">
+      <Sidebar
+        onSidebarHide={() => {
+          onSetShowSidebar(false);
+        }}
+        showSidebar={showSidebar}
+      />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Dashboard
+                onSidebarHide={() => {
+                  onSetShowSidebar(true);
+                }}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 

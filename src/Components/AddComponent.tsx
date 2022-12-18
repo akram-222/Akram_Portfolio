@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { __getNotifications } from "../Utils/github/__getNotifications";
 import Icon from "./Icon";
-
+import NameCard from "./NameCard";
 export default function AddComponent() {
-    const [notifications,setNotifications] = useState(__getNotifications)
-    useEffect(()=>{
-        __getNotifications()
-    },[notifications])
+  const [notifications, setNotifications] = useState([]);
+  const getNotifications = async () => {
+    __getNotifications().then((data) => {
+      setNotifications(data);
+    });
+  };
+
   return (
     <div>
       <div className="w-full h-20 add-component-head" />
@@ -49,7 +52,10 @@ export default function AddComponent() {
           <Icon path="res-react-dash-add-component" className="w-5 h-5" />
           <div
             className="ml-2"
-            // onClick={() => __getNotifications()}
+            onClick={() => {
+              getNotifications();
+              console.log(notifications);
+            }}
           >
             Add Component
           </div>
@@ -65,6 +71,24 @@ export default function AddComponent() {
           </div>
         </div>
       </div>
+      {/* <div className="notifications-container">
+        {notifications &&
+          notifications.map(({id}) => {
+            return (
+              <NameCard
+                key={id}
+                id={1}
+                name={"name"}
+                position={"position"}
+                transactionAmount={id}
+                rise={true}
+                tasksCompleted={3}
+                imgId={2}
+                className="w-full border-b border-gray-700"
+              />
+            );
+          })}
+      </div> */}
     </div>
   );
 }

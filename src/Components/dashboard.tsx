@@ -8,7 +8,7 @@ import Satisfication from "./Satisfication";
 import Segmentation from "./Segmentation";
 import Repos from "./GitHubRepos";
 
-function Content({ onSidebarHide }) {
+function Dashboard({ onSidebarHide }) {
   return (
     <div className="flex w-full">
       <div className="w-full h-screen hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
@@ -72,7 +72,8 @@ function Content({ onSidebarHide }) {
             transactions,
             rise,
             tasksCompleted,
-            imgId,
+            imgId
+            
           }) => (
             <NameCard
               key={id}
@@ -83,6 +84,7 @@ function Content({ onSidebarHide }) {
               rise={rise}
               tasksCompleted={tasksCompleted}
               imgId={imgId}
+              className="w-full p-2 lg:w-1/3"
             />
           )
         )}
@@ -109,7 +111,7 @@ function Content({ onSidebarHide }) {
           </div>
         </div>
         <div className="w-full p-2 lg:w-1/3">
-          <div className="rounded-lg bg-card overflow-hidden h-80">
+          <div className="rounded-lg bg-card overflow-auto h-80">
             <AddComponent />
           </div>
         </div>
@@ -118,4 +120,4 @@ function Content({ onSidebarHide }) {
   );
 }
 
-export default Content;
+export default Dashboard;
