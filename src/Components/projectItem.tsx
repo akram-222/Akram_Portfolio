@@ -13,7 +13,7 @@ const ProjectItem = ({ name, createdAt, language, fork, visibility, i }) => {
       <div className="mt-6">
      <div className=" flex justify-between items-center">
             <span className="text-xl font-semibold my-2 whitespace-nowrap overflow-hidden w-2/3 text-ellipsis">{name}</span>
-        <span>{visibility}</span>
+        <span className="text-green-500 border py-1 px-2 rounded-full text-sm border-[#353535]">{visibility}</span>
      </div>
         <div className="flex space-x-2 text-gray-400 text-sm">
           <HiOutlineLocationMarker size={20} />
