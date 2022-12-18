@@ -64,18 +64,28 @@ const ProjectItem = () => {
         <div className="flex justify-between">
           <div className="my-2">
             <p className="font-semibold text-base mb-2">Team Member</p>
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 relative">
               <img
                 alt="some"
                 src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                className="w-6 h-6 rounded-full"
+                className="w-6 h-6 left-0 absolute rounded-full"
+              />
+              <img
+                alt="some"
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                className="w-6 h-6 left-2 absolute rounded-full"
+              />
+              <img
+                alt="some"
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                className="w-6 h-6 left-6 absolute rounded-full"
               />
             </div>
           </div>
           <div className="my-2">
             <p className="font-semibold text-base mb-2">Progress</p>
             <div className="text-base text-gray-400 font-semibold">
-              <p>76%</p>
+              <p className="text-center">76%</p>
             </div>
           </div>
         </div>
