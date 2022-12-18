@@ -15,7 +15,13 @@ const Dashboard = ({ onSidebarHide }) => {
         <PageTitle
           onSidebarHide={onSidebarHide}
           title="Dashboard"
-          subtitle="333"
+          subtitle={
+            <>
+              {" "}
+              <span className="text-green-500 mr-2">Status :</span>
+              <span className="text-gray-500">Performs military service</span>
+            </>
+          }
           premium_star="Front-end"
         />
         <div className="w-full sm:w-56 mt-4 sm:mt-0 relative">

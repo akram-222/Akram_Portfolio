@@ -7,15 +7,16 @@ const Projects = ({ onSidebarHide }) => {
         onSidebarHide={onSidebarHide}
         title="Projects"
         subtitle={
-          <span>
-            Reach me at:{" "}
-            <a
+          <>
+            {" "}
+            <span className="text-green-500 mr-2">Follow :</span>
+             <a
               className="text-sm text-blue-400 hover:underline"
               href="https://www.github.com/ak-ram"
             >
               GitHub Profile
             </a>
-          </span>
+          </>
         }
         premium_star="GitHub Repos"
       />
