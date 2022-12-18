@@ -1,9 +1,15 @@
 import Icon from "./Icon";
 import IconButton from "./IconButton";
 
-const PageTitle = ({ onSidebarHide, title, subtitle, premium_star }) => {
+const PageTitle = ({
+  onSidebarHide,
+  title,
+  subtitle,
+  premium_star,
+  className,
+}) => {
   return (
-    <div className="sm:flex-grow flex w-full justify-between">
+    <div className={`${className} sm:flex-grow flex w-full justify-between`}>
       <div className="">
         <div className="flex items-center">
           <div className="text-3xl font-bold text-white">{title}</div>

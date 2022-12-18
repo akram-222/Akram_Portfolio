@@ -13,6 +13,7 @@ const Dashboard = ({ onSidebarHide }) => {
     <>
       <div className="w-full sm:flex p-2 items-end">
         <PageTitle
+        className={""}
           onSidebarHide={onSidebarHide}
           title="Dashboard"
           subtitle={

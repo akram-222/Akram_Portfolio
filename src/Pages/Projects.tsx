@@ -5,12 +5,13 @@ const Projects = ({ onSidebarHide }) => {
   return (
     <div className="items-end p-2 sm:flex w-full flex-wrap">
       <PageTitle
+        className={"mb-10"}
         onSidebarHide={onSidebarHide}
         title="Projects"
         subtitle={
           <>
             <span className="text-green-500 mr-2">Follow :</span>
-             <a
+            <a
               className="text-sm text-blue-400 hover:underline"
               href="https://www.github.com/ak-ram"
             >
@@ -20,7 +21,14 @@ const Projects = ({ onSidebarHide }) => {
         }
         premium_star="GitHub Repos"
       />
-      <ProjectItem />
+      <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
+        <ProjectItem />
+        <ProjectItem />
+        <ProjectItem />
+        <ProjectItem />
+        <ProjectItem />
+      </div>
+      <div className="filters">Filters</div>
     </div>
   );
 };
