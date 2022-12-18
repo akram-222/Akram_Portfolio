@@ -21,7 +21,7 @@ const Projects = ({ onSidebarHide }) => {
         }
         premium_star="GitHub Repos"
       />
-     <div className="flex">
+     <div className="flex w-full">
           <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
         <ProjectItem />
         <ProjectItem />

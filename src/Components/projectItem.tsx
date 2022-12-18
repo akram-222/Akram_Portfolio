@@ -1,7 +1,7 @@
 const ProjectItem = () => {
   return (
-    <div className="relative mr-auto w-full md:w-[45%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-gray-700 py-6 my-2">
-      <div className=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-green-500 left-4 -top-6">
+    <div className="relative mr-auto w-full md:w-[45%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-gray-700 py-3 my-4">
+      <div className=" text-white flex items-center absolute rounded-full p-3 shadow-xl bg-green-500 left-4 -top-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 w-8"
