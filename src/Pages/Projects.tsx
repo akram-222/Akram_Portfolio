@@ -21,16 +21,18 @@ const Projects = ({ onSidebarHide }) => {
         }
         premium_star="GitHub Repos"
       />
-     <div className="flex w-full">
-          <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
+      <div className="flex w-full">
+        <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
+          <ProjectItem />
+          <ProjectItem />
+          <ProjectItem />
+          <ProjectItem />
+          <ProjectItem />
+        </div>
+        <div className="filters w-1/3 dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
+          Filters
+        </div>
       </div>
-      <div className="filters w-1/3 dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">Filters</div>
-     </div>
     </div>
   );
 };

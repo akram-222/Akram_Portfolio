@@ -3,8 +3,8 @@ import {  BsCalendarDate } from "react-icons/bs";
 import {HiOutlineLocationMarker} from "react-icons/hi"
 const ProjectItem = () => {
   return (
-    <div className="relative mr-auto w-full md:w-[45%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-gray-700 py-3 mb-8">
-      <div className=" text-white flex items-center absolute rounded-full p-3 shadow-xl bg-green-500 left-4 -top-6">
+    <div className={`border relative mr-auto w-full md:w-[45%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3 mb-8`}>
+      <div className=" text-white flex items-center absolute rounded-full p-3 shadow-xl bg-sidebar-card-top left-4 -top-6">
       <AiOutlineFundProjectionScreen size={30} />
       </div>
       <div className="mt-8">
@@ -17,7 +17,7 @@ const ProjectItem = () => {
           <BsCalendarDate size={18}/>
           <p>3 Weeks Left</p>
         </div>
-        <div className="border-t-2 "></div>
+        <div className="border-t-2 border-[#353535]"></div>
 
         <div className="flex justify-between">
           <div className="my-2">
