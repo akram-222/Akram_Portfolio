@@ -29,7 +29,7 @@ const Projects = ({ onSidebarHide }) => {
         <ProjectItem />
         <ProjectItem />
       </div>
-      <div className="filters w-1/3 dark:bg-[#171717] rounded-lg px-4 py-4">Filters</div>
+      <div className="filters w-1/3 dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">Filters</div>
      </div>
     </div>
   );
