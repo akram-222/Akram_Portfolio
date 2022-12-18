@@ -9,7 +9,7 @@ function Segmentation() {
 
                 <Icon path="res-react-dash-options" className="w-2 h-2" />
             </div>
-            <div className="mt-3">Top most 4 Languages</div>
+            <div className="mt-3">Used Languages :</div>
             {segmentationData.map(({ c1, c2, c3, color }) => (
                 <div className="flex items-center" key={c1}>
                     <div
