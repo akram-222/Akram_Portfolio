@@ -1,14 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import { BsLink45Deg, BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs";
-import { AiOutlineDelete } from "react-icons/ai";
-import { VscRepoForked } from "react-icons/vsc";
-import Icon from "./Icon";
-import Spinner from "./Spinner";
+import { BsPlusCircle } from "react-icons/bs";
 import ToastDanger from "./toastDanger";
 import ToastSuccess from "./toastSuccess";
 import { octokit } from "../Utils/github/OctokitConstructor";
 import { __createNewRepo } from "../Utils/github/__createNewRepo";
-import { __deleteRepo } from "../Utils/github/__deleteRepo";
 import RepoItem from "./repoItem";
 import FetchMoreReposBtn from "./FetchMoreReposBtn";
 import AddQuickRepo from "./addQuickRepo";
