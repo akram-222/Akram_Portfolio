@@ -40,7 +40,7 @@ const Projects = ({ onSidebarHide }) => {
         }
         premium_star="GitHub Repos"
       />
-      <div className="flex w-full flex-col md:flex-row">
+      <div className="flex w-full flex-col lg:flex-row">
         <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
           {isLoad ? (
             <Skelton number={5} className="mb-2 w-full md:w-[45%]" />
@@ -60,7 +60,7 @@ const Projects = ({ onSidebarHide }) => {
             )
           )}
         </div>
-        <div className="order-first md:order-last filters w-[50%] dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
+        <div className="order-first lg:order-last filters flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
           Filters
         </div>
       </div>
