@@ -2,7 +2,8 @@ import { BsCalendarDate, BsCodeSlash } from "react-icons/bs";
 const ProjectItem = ({ name, createdAt, language, fork, visibility, i }) => {
   return (
     <div
-      className={`border add-component-head relative mr-auto w-full md:w-[45%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
+
+      className={`border add-component-head relative w-full md:w-[45%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
     >
       {/* <div className="w-12 h-12 text-center flex justify-center text-white flex items-center absolute rounded-full p-3 shadow-xl bg-sidebar-card-top left-4 -top-6"> */}
       {/* <AiOutlineFundProjectionScreen size={30} /> */}
