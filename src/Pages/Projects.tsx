@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import PageTitle from "../Components/PageTitle";
 import ProjectItem from "../Components/projectItem";
+import Skelton from "../Components/Skelton";
+import Spinner from "../Components/Spinner";
 import { octokit } from "../Utils/github/OctokitConstructor";
 
 const Projects = ({ onSidebarHide }) => {
@@ -40,18 +42,23 @@ const Projects = ({ onSidebarHide }) => {
       />
       <div className="flex w-full">
         <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
-          {repos &&
-            repos?.map(({ name, id, created_at, language,fork,visibility },i) => (
-              <ProjectItem
-                name={name}
-                key={id}
-                fork={fork}
-                visibility={visibility}
-                i={i}
-                createdAt={created_at}
-                language={language}
-              />
-            ))}
+          {isLoad ? (
+            <Skelton number={5} className="mb-2 w-full md:w-[45%]" />
+          ) : (
+            repos?.map(
+              ({ name, id, created_at, language, fork, visibility }, i) => (
+                <ProjectItem
+                  name={name}
+                  key={id}
+                  fork={fork}
+                  visibility={visibility}
+                  i={i}
+                  createdAt={created_at}
+                  language={language}
+                />
+              )
+            )
+          )}
         </div>
         <div className="filters w-1/3 dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
           Filters
