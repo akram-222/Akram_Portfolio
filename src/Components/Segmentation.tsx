@@ -9,7 +9,7 @@ function Segmentation() {
 
                 <Icon path="res-react-dash-options" className="w-2 h-2" />
             </div>
-            <div className="mt-3">All users</div>
+            <div className="mt-3">Used Languages :</div>
             {segmentationData.map(({ c1, c2, c3, color }) => (
                 <div className="flex items-center" key={c1}>
                     <div
@@ -33,9 +33,10 @@ function Segmentation() {
                                 background: c3,
                             }}
                         >
-                            {c1 === 'Other' && (
+                            {/* {c1 === 'JavaScript' && (
                                 <img src="https://assets.codepen.io/3685267/res-react-dash-user-card.svg" alt="" />
-                            )}
+                            
+                            )} */}
                         </div>
                     </div>
                 </div>
