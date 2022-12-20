@@ -11,7 +11,7 @@ const NotFoundRoute=()=>{
           <p className="mb-8">But dont worry, you can find plenty of other things on our <Link to="/dashboard" className="hover:underline text-blue-600">dashboard</Link>
 .</p>
    
-   <p className="mb-4">Aslo you can search about what is in your mind from <Link to="/dashboard" className="hover:underline text-blue-600">here</Link></p>
+   <p className="mb-4">Aslo you can search about what is in your mind from <Link to="/search" className="hover:underline text-blue-600">here</Link></p>
     </div>
      
   </div>
