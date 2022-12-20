@@ -70,7 +70,7 @@ const Projects = ({ onSidebarHide }) => {
             
           />
         </div>
-        <div className="order-first lg:order-last filters flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
+        <div className="order-first lg:order-last filters lg:flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
           Filters
         </div>
       </div>
