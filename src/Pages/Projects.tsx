@@ -10,7 +10,7 @@ const Projects = ({ onSidebarHide }) => {
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
   useEffect(() => {
-    __getListOfRepos().then((fetchedRepos) => {
+    __getListOfRepos({per_page:3}).then((fetchedRepos) => {
       setRepos(fetchedRepos);
       setLoad(false);
     });

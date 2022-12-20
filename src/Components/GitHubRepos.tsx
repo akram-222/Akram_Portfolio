@@ -4,6 +4,7 @@ import ToastDanger from "./toastDanger";
 import ToastSuccess from "./toastSuccess";
 import { octokit } from "../Utils/github/OctokitConstructor";
 import { __createNewRepo } from "../Utils/github/__createNewRepo";
+import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import RepoItem from "./repoItem";
 import FetchMoreReposBtn from "./FetchMoreReposBtn";
 import AddQuickRepo from "./addQuickRepo";
@@ -17,16 +18,13 @@ export default function Repos() {
   const [isRepoAdded, setIsAdded] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
   const inputOfRepoName = useRef<HTMLInputElement>(null);
+
+  ///// -------------Git repos list
   useEffect(() => {
-    async function getRepos() {
-      const { data } = await octokit.request(
-        `GET /user/repos?visibility=all&per_page=${repoConfig.per_page || 5}`, // Fix Issue
-        {}
-      );
-      setRepos(data);
+    __getListOfRepos(repoConfig).then((fetchedRepos) => {
+      setRepos(fetchedRepos);
       setLoad(false);
-    }
-    getRepos();
+    });
   }, [repoConfig, isRepoDeleted, isRepoAdded]);
 
   ///// ------------- Create Repo

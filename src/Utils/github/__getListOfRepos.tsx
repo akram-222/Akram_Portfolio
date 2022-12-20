@@ -1,12 +1,12 @@
 import { octokit } from "./OctokitConstructor";
 
-export async function __getListOfRepos() {
- return await octokit
+export async function __getListOfRepos(repoConfig) {
+  return await octokit
     .request(
-      `GET /user/repos?visibility=all`, // Fix Issue
+      `GET /user/repos?visibility=all&per_page=${repoConfig.per_page || 5}`, // Fix Issue
       {}
     )
-    .then(({data}) => data);
+    .then(({ data }) => data);
 
   console.log("List Of Repos fetched");
 }
