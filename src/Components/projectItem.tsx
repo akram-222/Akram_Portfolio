@@ -23,7 +23,15 @@ const ProjectItem = ({ name, createdAt, language, fork, visibility, i }) => {
         </div>
         <div className="flex space-x-2 text-gray-400 text-sm">
           <BsCodeSlash size={20} />
-          <p>{fork ? "Fork" : language ? language : "Empty Repo"}</p>
+          <p>
+            {fork
+              ? "Fork"
+              : language
+              ? language
+              : name.toLowerCase() === "Ak-ram".toLocaleLowerCase()
+              ? "README Profile"
+              : "Empty Repo"}
+          </p>
         </div>
         <div className="flex space-x-2 text-gray-400 text-sm my-3">
           <BsCalendarDate size={18} />
