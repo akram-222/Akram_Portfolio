@@ -22,7 +22,7 @@ const ProjectItem = ({ name, createdAt, language, fork, visibility, i,repoConfig
   ? i + 1 + repoConfig.per_page * 2
   : repoConfig.page === 4
   ? i + 1 + repoConfig.per_page * 3
-  : ""}. {name.replace('-'," ")}
+  : i+1}. {name.replace('-'," ")}
           </span>
           <span
             className={`${
