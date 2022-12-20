@@ -1,5 +1,7 @@
 import { BsCalendarDate, BsCodeSlash } from "react-icons/bs";
-const ProjectItem = ({ name, createdAt, language, fork, visibility, i }) => {
+const ProjectItem = ({ name, createdAt, language, fork, visibility, i,repoConfig }) => {
+
+  const indexingSys = (i + 1) + (repoConfig.per_page * (repoConfig.page-1))
   return (
     // <div
     //   className={`border relative w-full sm:w-[49%] xl:w-[32%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
@@ -14,7 +16,7 @@ const ProjectItem = ({ name, createdAt, language, fork, visibility, i }) => {
       <div className="">
         <div className=" flex justify-between items-center">
           <span className="text-white font-semibold my-2 whitespace-nowrap overflow-hidden w-2/3 text-ellipsis">
-            {i + 1}. {name.replace('-'," ")}
+            {indexingSys}. {name.replace('-'," ")}
           </span>
           <span
             className={`${
