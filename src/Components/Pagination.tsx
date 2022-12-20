@@ -1,7 +1,15 @@
-const Pagination = ({ isLoad, setLoad, setRepoConfig, repoConfig, repos }) => {
+const Pagination = ({
+  className,
+  isLoad,
+  setLoad,
+  setRepoConfig,
+  repoConfig,
+  repos,
+}) => {
   return (
-    <nav aria-label="Page navigation" className="w-fit mt-8 mx-auto">
-      <ul className="inline-flex -space-x-px">
+    <nav aria-label="Page navigation" className={`${className} mt-8 flex`}>
+      current page: {repoConfig.page}
+      <ul className="inline-flex -space-x-px w-fit mx-auto ">
         <li>
           <a
             href="#"
@@ -10,13 +18,14 @@ const Pagination = ({ isLoad, setLoad, setRepoConfig, repoConfig, repos }) => {
               setLoad(true);
               setRepoConfig({
                 ...repoConfig,
-                per_page: repoConfig.per_page - 1,
+                page: repoConfig.page === 1 ? 1: repoConfig.page - 1,
               });
             }}
           >
             Previous
           </a>
         </li>
+
         <li>
           <a
             href="#"
@@ -87,7 +96,7 @@ const Pagination = ({ isLoad, setLoad, setRepoConfig, repoConfig, repos }) => {
               setLoad(true);
               setRepoConfig({
                 ...repoConfig,
-                per_page: repoConfig.per_page + 1,
+                page: repoConfig.page + 1,
               });
             }}
           >

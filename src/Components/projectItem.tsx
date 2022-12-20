@@ -14,7 +14,7 @@ const ProjectItem = ({ name, createdAt, language, fork, visibility, i }) => {
       <div className="">
         <div className=" flex justify-between items-center">
           <span className="text-white font-semibold my-2 whitespace-nowrap overflow-hidden w-2/3 text-ellipsis">
-            {i + 1}. {name}
+            {i + 1}. {name.replace('-'," ")}
           </span>
           <span
             className={`${

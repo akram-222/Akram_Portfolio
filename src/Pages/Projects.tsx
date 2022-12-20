@@ -7,7 +7,7 @@ import Pagination from "../Components/Pagination";
 import { octokit } from "../Utils/github/OctokitConstructor";
 
 const Projects = ({ onSidebarHide }) => {
-  const [repoConfig, setRepoConfig] = useState({ per_page: 10 });
+  const [repoConfig, setRepoConfig] = useState({ per_page: 9 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
   useEffect(() => {
@@ -55,18 +55,19 @@ const Projects = ({ onSidebarHide }) => {
               )
             )
           )}
+          <Pagination
+            isLoad={isLoad}
+            setLoad={setLoad}
+            repoConfig={repoConfig}
+            setRepoConfig={setRepoConfig}
+            repos={repos}
+            className="w-full"
+          />
         </div>
         <div className="order-first lg:order-last filters flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
           Filters
         </div>
       </div>
-      <Pagination
-        isLoad={isLoad}
-        setLoad={setLoad}
-        repoConfig={repoConfig}
-        setRepoConfig={setRepoConfig}
-        repos={repos}
-      />
     </div>
   );
 };
