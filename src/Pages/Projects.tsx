@@ -51,6 +51,7 @@ const Projects = ({ onSidebarHide }) => {
                   i={i}
                   createdAt={created_at}
                   language={language}
+                  repoConfig={repoConfig}
                 />
               )
             )
