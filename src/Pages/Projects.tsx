@@ -7,7 +7,7 @@ import Pagination from "../Components/Pagination";
 import { octokit } from "../Utils/github/OctokitConstructor";
 
 const Projects = ({ onSidebarHide }) => {
-  const [repoConfig, setRepoConfig] = useState({ per_page: 9 });
+  const [repoConfig, setRepoConfig] = useState({ per_page: 12 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
   useEffect(() => {

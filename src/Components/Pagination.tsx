@@ -8,7 +8,6 @@ const Pagination = ({
 }) => {
   return (
     <nav aria-label="Page navigation" className={`${className} mt-8 flex`}>
-      current page: {repoConfig.page}
       <ul className="inline-flex -space-x-px w-fit mx-auto ">
         <li>
           <a
@@ -59,8 +58,7 @@ const Pagination = ({
         <li>
           <a
             href="#"
-            aria-current="page"
-            className="px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+            className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             onClick={() => {
               setLoad(true);
               setRepoConfig({
@@ -72,6 +70,7 @@ const Pagination = ({
             3
           </a>
         </li>
+
         <li>
           <a
             href="#"
