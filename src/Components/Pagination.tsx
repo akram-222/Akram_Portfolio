@@ -18,7 +18,7 @@ const Pagination = ({
               setLoad(true);
               setRepoConfig({
                 ...repoConfig,
-                page: repoConfig.page === 1 ? 1: repoConfig.page - 1,
+                page: repoConfig.page === 1 ? 1 : repoConfig.page - 1,
               });
             }}
           >
@@ -96,7 +96,7 @@ const Pagination = ({
               setLoad(true);
               setRepoConfig({
                 ...repoConfig,
-                page: repoConfig.page + 1,
+                page: repoConfig.page === 4 ? 4 : repoConfig.page + 1,
               });
             }}
           >
