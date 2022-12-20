@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PageTitle from "../Components/PageTitle";
 import ProjectItem from "../Components/projectItem";
 import Skelton from "../Components/Skelton";
-import Spinner from "../Components/Spinner";
+import Pagination from "../Components/Pagination";
 import { octokit } from "../Utils/github/OctokitConstructor";
 
 const Projects = ({ onSidebarHide }) => {
@@ -64,6 +64,7 @@ const Projects = ({ onSidebarHide }) => {
           Filters
         </div>
       </div>
+      <Pagination />
     </div>
   );
 };
