@@ -3,8 +3,9 @@ import ProjectItem from "./projectItem";
 const Skelton = ({ className, number }) => {
   return (
     <>
-      {new Array(number).fill("").map(() => (
+      {new Array(number).fill("").map((item,index) => (
         <div
+        key={index}
           role="status"
           className={`${className} h-32 p-3 max-w-sm rounded border border-gray-200 shadow animate-pulse dark:border-gray-700`}
         >

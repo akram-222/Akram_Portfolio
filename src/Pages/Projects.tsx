@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PageTitle from "../Components/PageTitle";
 import ProjectItem from "../Components/projectItem";
 import Skelton from "../Components/Skelton";
+import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { octokit } from "../Utils/github/OctokitConstructor";
 
@@ -9,16 +10,10 @@ const Projects = ({ onSidebarHide }) => {
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
   useEffect(() => {
-    async function getRepos() {
-      const { data } = await octokit.request(
-        `GET /user/repos?visibility=all`, // Fix Issue
-        {}
-      );
-      setRepos(data);
+    __getListOfRepos().then((fetchedRepos) => {
+      setRepos(fetchedRepos);
       setLoad(false);
-      console.log(repos);
-    }
-    getRepos();
+    });
   }, []);
 
   return (
