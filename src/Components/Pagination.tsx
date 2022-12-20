@@ -1,4 +1,4 @@
-const Pagination = () => {
+const Pagination = ({ isLoad, setLoad, setRepoConfig, repoConfig, repos }) => {
   return (
     <nav aria-label="Page navigation" className="w-fit mt-8 mx-auto">
       <ul className="inline-flex -space-x-px">
@@ -6,6 +6,13 @@ const Pagination = () => {
           <a
             href="#"
             className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            onClick={() => {
+              setLoad(true);
+              setRepoConfig({
+                ...repoConfig,
+                per_page: repoConfig.per_page - 1,
+              });
+            }}
           >
             Previous
           </a>
@@ -55,6 +62,13 @@ const Pagination = () => {
           <a
             href="#"
             className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            onClick={() => {
+              setLoad(true);
+              setRepoConfig({
+                ...repoConfig,
+                per_page: repoConfig.per_page + 1,
+              });
+            }}
           >
             Next
           </a>

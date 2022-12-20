@@ -7,14 +7,15 @@ import Pagination from "../Components/Pagination";
 import { octokit } from "../Utils/github/OctokitConstructor";
 
 const Projects = ({ onSidebarHide }) => {
+  const [repoConfig, setRepoConfig] = useState({ per_page: 7 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
   useEffect(() => {
-    __getListOfRepos({per_page:3}).then((fetchedRepos) => {
+    __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
       setLoad(false);
     });
-  }, []);
+  }, [repoConfig]);
 
   return (
     <div className="items-end p-2 sm:flex w-full flex-wrap">
@@ -59,7 +60,13 @@ const Projects = ({ onSidebarHide }) => {
           Filters
         </div>
       </div>
-      <Pagination />
+      <Pagination
+        isLoad={isLoad}
+        setLoad={setLoad}
+        repoConfig={repoConfig}
+        setRepoConfig={setRepoConfig}
+        repos={repos}
+      />
     </div>
   );
 };
