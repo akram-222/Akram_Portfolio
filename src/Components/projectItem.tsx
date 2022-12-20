@@ -8,7 +8,7 @@ const ProjectItem = ({ name, createdAt, language, fork, visibility, i,repoConfig
     //   className={`border relative w-full sm:w-[49%] xl:w-[32%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
     // >
     <div
-      className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white rounded shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
+      className={`h-[130.43px] border relative w-full xs:w-[49%] md:w-[32%] bg-white rounded shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
     >
       {/* <div className="w-12 h-12 text-center flex justify-center text-white flex items-center absolute rounded-full p-3 shadow-xl bg-sidebar-card-top left-4 -top-6"> */}
       {/* <AiOutlineFundProjectionScreen size={30} /> */}

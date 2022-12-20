@@ -18,9 +18,9 @@ const Projects = ({ onSidebarHide }) => {
   }, [repoConfig]);
 
   return (
-    <div className="items-end p-2 sm:flex w-full flex-wrap">
+    <div className="flex-col items-start p-2 w-full h-full flex-wrap">
       <PageTitle
-        className={"mb-10"}
+        className={"mb-10 h-fit"}
         onSidebarHide={onSidebarHide}
         title="Projects"
         subtitle={
@@ -36,7 +36,7 @@ const Projects = ({ onSidebarHide }) => {
         }
         premium_star="GitHub Repos"
       />
-      <div className="flex w-full flex-col lg:flex-row">
+      <div className="flex h-full w-full flex-col lg:flex-row">
         <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
           
           {isLoad ? (
