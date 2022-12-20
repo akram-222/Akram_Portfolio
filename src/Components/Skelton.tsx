@@ -3,6 +3,7 @@ import ProjectItem from "./projectItem";
 const Skelton = ({ className, number }) => {
   return (
     <>
+  
       {new Array(number).fill("").map((item, index) => (
         <div
           key={index}
