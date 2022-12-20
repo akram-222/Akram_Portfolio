@@ -2,24 +2,20 @@ import { useEffect, useState } from "react";
 import PageTitle from "../Components/PageTitle";
 import ProjectItem from "../Components/projectItem";
 import Skelton from "../Components/Skelton";
-import Spinner from "../Components/Spinner";
+import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
+import Pagination from "../Components/Pagination";
 import { octokit } from "../Utils/github/OctokitConstructor";
 
 const Projects = ({ onSidebarHide }) => {
+  const [repoConfig, setRepoConfig] = useState({ per_page: 12 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
   useEffect(() => {
-    async function getRepos() {
-      const { data } = await octokit.request(
-        `GET /user/repos?visibility=all`, // Fix Issue
-        {}
-      );
-      setRepos(data);
+    __getListOfRepos(repoConfig).then((fetchedRepos) => {
+      setRepos(fetchedRepos);
       setLoad(false);
-      console.log(repos);
-    }
-    getRepos();
-  }, []);
+    });
+  }, [repoConfig]);
 
   return (
     <div className="items-end p-2 sm:flex w-full flex-wrap">
@@ -59,6 +55,14 @@ const Projects = ({ onSidebarHide }) => {
               )
             )
           )}
+          <Pagination
+            isLoad={isLoad}
+            setLoad={setLoad}
+            repoConfig={repoConfig}
+            setRepoConfig={setRepoConfig}
+            repos={repos}
+            className="w-full"
+          />
         </div>
         <div className="order-first lg:order-last filters flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
           Filters
