@@ -25,67 +25,24 @@ const Pagination = ({
           </a>
         </li>
 
-        <li>
-          <a
-            href="#"
-            className="dark:focus:bg-gray-700 px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            onClick={() => {
-              setLoad(true);
-              setRepoConfig({
-                ...repoConfig,
-                page: 1,
-              });
-            }}
-          >
-            1
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="dark:focus:bg-gray-700 px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            onClick={() => {
-              setLoad(true);
-              setRepoConfig({
-                ...repoConfig,
-                page: 2,
-              });
-            }}
-          >
-            2
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="dark:focus:bg-gray-700 px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            onClick={() => {
-              setLoad(true);
-              setRepoConfig({
-                ...repoConfig,
-                page: 3,
-              });
-            }}
-          >
-            3
-          </a>
-        </li>
 
-        <li>
+{[1,2,3,4].map((item)=> <li>
           <a
             href="#"
-            className="dark:focus:bg-gray-700 px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="dark:focus:bg-gray-700 dark:focus:text-white px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             onClick={() => {
               setLoad(true);
               setRepoConfig({
                 ...repoConfig,
-                page: 4,
+                page: item,
               });
             }}
           >
-            4
+            {item}
           </a>
-        </li>
+        </li>)}
+
+
 
         <li>
           <a
