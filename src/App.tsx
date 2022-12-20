@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Sidebar from "./Components/Sidebar";
+import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
 import Dashboard from "./Pages/Dashboard";
 const App = () => {
@@ -42,6 +43,8 @@ const App = () => {
                   />
                 }
               />
+              <Route path="/*"
+              element = {<NotFoundRoute />} />
             </Routes>
           </div>
         </div>
