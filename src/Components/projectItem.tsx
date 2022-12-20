@@ -1,7 +1,7 @@
 import { BsCalendarDate, BsCodeSlash } from "react-icons/bs";
 const ProjectItem = ({ name, createdAt, language, fork, visibility, i,repoConfig }) => {
 
-  const indexingSys = (i + 1) + (repoConfig.per_page * (repoConfig.page-1))
+  const indexingSys = ((i + 1) + (repoConfig.per_page * (repoConfig.page-1))) || (i+1)
   return (
     // <div
     //   className={`border relative w-full sm:w-[49%] xl:w-[32%] bg-white rounded-lg shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}

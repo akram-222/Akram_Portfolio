@@ -11,7 +11,7 @@ const Pagination = ({
       <ul className="inline-flex -space-x-px w-fit mx-auto ">
         <li>
           <a
-            href="#"
+            href="#d"
             className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-[#171717] dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             onClick={() => {
               setLoad(true);
