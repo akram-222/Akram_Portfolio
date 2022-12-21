@@ -31,16 +31,16 @@ const Combobox = ()=>{
 
       <input type="checkbox" name="show_more" id="show_more" className="hidden" />
       <div className={`${isCollapsed?"hidden" :""} absolute rounded shadow bg-white overflow-hidden flex-col w-full mt-1 border border-gray-200`}>
-        <div className="cursor-pointer group">
+        <div className="cursor-pointer group" onClick={()=> setCollapsing(true)}>
           <a href="#d" className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">Python</a>
         </div>
-        <div className="cursor-pointer group border-t">
+        <div className="cursor-pointer group border-t" onClick={()=> setCollapsing(true)}>
           <a href="#d" className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 border-blue-600 group-hover:bg-gray-100">Javascript</a>
         </div>
-        <div className="cursor-pointer group border-t">
+        <div className="cursor-pointer group border-t" onClick={()=> setCollapsing(true)}>
           <a href="#d" className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">Node</a>
         </div>
-        <div className="cursor-pointer group border-t">
+        <div className="cursor-pointer group border-t" onClick={()=> setCollapsing(true)}>
           <a href="#d" className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">PHP</a>
         </div>
       </div>
