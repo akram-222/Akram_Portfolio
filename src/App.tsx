@@ -10,7 +10,7 @@ import Search from "./Pages/Search";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   return (
-    <div className="flex dark">
+    <div className="flex">
       <BrowserRouter>
         <Sidebar
           onSidebarHide={() => {
