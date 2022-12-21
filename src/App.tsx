@@ -5,9 +5,10 @@ import Sidebar from "./Components/Sidebar";
 import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
 import Dashboard from "./Pages/Dashboard";
-import Search from "./Pages/Search"
+import Search from "./Pages/Search";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
+
   return (
     <div className="flex">
       <BrowserRouter>
@@ -24,16 +25,20 @@ const App = () => {
           </div>
           <div className=" h-screen flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
             <Routes>
-              <Route
-                path="/dashboard"
-                element={
-                  <Dashboard
-                    onSidebarHide={() => {
-                      onSetShowSidebar(true);
-                    }}
-                  />
-                }
-              />
+              {["/", "/dashboard"].map((path, index) => (
+                <Route
+                  path={path}
+                  element={
+                    <Dashboard
+                      onSidebarHide={() => {
+                        onSetShowSidebar(true);
+                      }}
+                    />
+                  }
+                  key={index}
+                />
+              ))}
+
               <Route
                 path="/projects"
                 element={
@@ -44,10 +49,9 @@ const App = () => {
                   />
                 }
               />
-              <Route path="/search"
-                element = {<Search />} />
-              <Route path="/*"
-              element = {<NotFoundRoute />} />
+
+              <Route path="/search" element={<Search />} />
+              <Route path="/*" element={<NotFoundRoute />} />
             </Routes>
           </div>
         </div>
