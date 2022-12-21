@@ -18,9 +18,9 @@ const Projects = ({ onSidebarHide }) => {
   }, [repoConfig]);
 
   return (
-    <div className="items-end p-2 sm:flex w-full flex-wrap">
+    <div className="flex-col items-start p-2 w-full h-full flex-wrap">
       <PageTitle
-        className={"mb-10"}
+        className={"mb-10 h-fit"}
         onSidebarHide={onSidebarHide}
         title="Projects"
         subtitle={
@@ -36,10 +36,14 @@ const Projects = ({ onSidebarHide }) => {
         }
         premium_star="GitHub Repos"
       />
-      <div className="flex w-full flex-col lg:flex-row">
+      <div className="flex h-full w-full flex-col lg:flex-row">
         <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
+          
           {isLoad ? (
-            <Skelton number={5} className="mb-2 w-full md:w-[45%]" />
+           <Skelton 
+            number={repoConfig.per_page}
+            className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717] dark:border-[#353535]`}
+            />
           ) : (
             repos?.map(
               ({ name, id, created_at, language, fork, visibility }, i) => (
@@ -63,9 +67,10 @@ const Projects = ({ onSidebarHide }) => {
             setRepoConfig={setRepoConfig}
             repos={repos}
             className="w-full"
+            
           />
         </div>
-        <div className="order-first lg:order-last filters flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
+        <div className="order-first lg:order-last filters lg:flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
           Filters
         </div>
       </div>

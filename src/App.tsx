@@ -2,8 +2,10 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Sidebar from "./Components/Sidebar";
+import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
 import Dashboard from "./Pages/Dashboard";
+import Search from "./Pages/Search"
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   return (
@@ -42,6 +44,10 @@ const App = () => {
                   />
                 }
               />
+              <Route path="/search"
+                element = {<Search />} />
+              <Route path="/*"
+              element = {<NotFoundRoute />} />
             </Routes>
           </div>
         </div>

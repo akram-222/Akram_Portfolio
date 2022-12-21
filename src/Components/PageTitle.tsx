@@ -9,7 +9,7 @@ const PageTitle = ({
   className,
 }) => {
   return (
-    <div className={`${className} sm:flex-grow flex w-full justify-between`}>
+    <div className={`${className} flex w-full justify-between`}>
       <div className="">
         <div className="flex items-center">
           <div className="text-3xl font-bold text-white">{title}</div>
