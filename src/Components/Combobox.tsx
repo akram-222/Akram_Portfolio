@@ -14,17 +14,17 @@ const Combobox = ()=>{
     return(
         <div className="">
   <div className="max-w-md mx-auto">
-    <label htmlFor="select" className="font-semibold block py-2">Select Language:</label>
+    <label htmlFor="select" className="block py-2">Select Language:</label>
 
     <div className="relative">
-      <div className="h-10 bg-white flex border border-gray-200 rounded items-center">
-        <input onInput={handleSearchValue} value={value} name="select" id="select" placeholder="Choose Language" className="px-4 appearance-none outline-none text-gray-800 w-full"  />
-        <button onClick={resetSearchValue} className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-gray-600">
+      <div className="dark:bg-gray-800 h-10 bg-white flex rounded items-center">
+        <input onInput={handleSearchValue} value={value} name="select" id="select" placeholder="Choose Language" className="dark:bg-gray-800 px-1.5 appearance-none outline-none text-gray-200 w-full"  />
+        <button onClick={resetSearchValue} className="border-r dark:border-gray-700 cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-gray-600">
           <IoIosClose size={25} />
         </button>
         <label onClick={()=> setCollapsing(!isCollapsed)} 
         htmlFor="show_more" 
-        className="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-gray-600 mr-2">
+        className="cursor-pointer outline-none focus:outline-none  border-gray-200 transition-all text-gray-300 hover:text-gray-600 mr-2 ml-1">
           <IoIosArrowDown size={18}/>
         </label>
       </div>
