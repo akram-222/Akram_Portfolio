@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PageTitle from "../Components/PageTitle";
+import Filter from "../Components/Filter";
 import ProjectItem from "../Components/projectItem";
 import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
@@ -71,7 +72,7 @@ const Projects = ({ onSidebarHide }) => {
           />
         </div>
         <div className="order-first lg:order-last filters lg:flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
-          Filters
+          <Filter />
         </div>
       </div>
     </div>
