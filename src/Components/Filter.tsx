@@ -20,6 +20,8 @@ const Filter=()=> {
                 <div className="languages mt-2">
                     <RadioItem language="JavaScript" hint="React | Angular | Vue"/>
                     <RadioItem language="TypeScript" hint=""/>
+                    <RadioItem language="Css" hint="Scss | 3rd parties: Tailwind, MUI"/>
+                    <RadioItem language="HTML" hint=""/>
                 </div>
             </div> 
         </div>
