@@ -16,7 +16,7 @@ const App = () => {
     } else {
         document.documentElement.classList.remove('dark')
     }
-  },[localStorage])
+  },[localStorage.getItem('color-theme')])
   return (
     <div className="flex">
       <BrowserRouter>
