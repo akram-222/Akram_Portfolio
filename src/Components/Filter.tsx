@@ -1,5 +1,6 @@
 import {FaFilter} from 'react-icons/fa';
 import RadioItem from "./RadioItem"
+import Combobox from "./Combobox"
 const Filter=()=> {
     return (
         <> 
@@ -16,11 +17,7 @@ const Filter=()=> {
             </div>
             <div className='divider border-b my-4 dark:border-[#353535]'></div>
             <div className="">
-                <span className="block text-sm font-medium text-gray-900 dark:text-white"> Language</span>
-                <div className="languages mt-2">
-                    <RadioItem language="JavaScript" hint="React | Angular | Vue"/>
-                    <RadioItem language="TypeScript" hint=""/>
-                </div>
+                <Combobox />
             </div> 
         </div>
         </>
