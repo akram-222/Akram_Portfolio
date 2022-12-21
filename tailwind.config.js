@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+      "card":"#171717",
+      "white": "#ffffff",
+    },
+    },
     screens: {
       xs: "450px",
       sm: "640px",
@@ -21,6 +26,7 @@ module.exports = {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
+     
   },
   plugins: [],
 };

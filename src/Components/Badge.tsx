@@ -5,7 +5,7 @@ const Badge = ({ visibility }) => {
   return (
     <span
       className={`${
-        visibility === "public" ? "text-green-400" : "text-rose-400"
+        visibility === "public" ? "dark:text-green-400" : "dark:text-rose-400"
       } font-bold inline-flex items-center rounded-full text-sm text-white`}
     >
       {visibility === "private" ? (
