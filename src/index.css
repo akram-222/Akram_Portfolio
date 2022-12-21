@@ -12,6 +12,10 @@ body{
   background-color: #1e1e1e;
 }
 
+*{
+  outline: none;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
