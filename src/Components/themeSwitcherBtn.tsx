@@ -22,7 +22,7 @@ const ThemeSwitcherBtn=()=>{
 } 
     },[])
     return(
-    <button onClick={()=> changeMode()} type="button" className="text-gray-500 dark:text-gray-400 hover:bg-gray-700 dark:hover:bg-gray-100 rounded-lg text-sm p-2.5">
+    <button onClick={()=> changeMode()} type="button" className={`text-gray-500 dark:text-gray-400 rounded-lg text-sm p-2.5`}>
          {isDark ?  <BsSun size={30}/>:<BsMoon size={30}/> }
     </button>
     )
