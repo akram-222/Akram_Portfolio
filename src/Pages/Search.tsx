@@ -1,34 +1,12 @@
-import React, { useEffect } from "react";
+import { useState } from "react";
 
 function Search() {
-  useEffect(() => {});
-  const show_search_4 = ()=>{}
-//   const show_search_4 = (el) => {
-//     document
-//       .getElementById("div1_search_4")
-//       .classList.toggle("translate-x-full");
-//     const setting_search_4 = document.getElementById("setting_search_4");
-//     if (setting_search_4.classList.contains("block")) {
-//       setting_search_4.classList.remove("block");
-//       setting_search_4.classList.add("hidden");
-//     } else {
-//       setting_search_4.classList.remove("hidden");
-//       setting_search_4.classList.add("block");
-//     }
-//     const close_search_4 = document.getElementById("close_search_4");
-//     console.log(close_search_4.classList.contains("hidden"));
-//     if (!close_search_4.classList.contains("hidden")) {
-//       close_search_4.classList.remove("block");
-//       close_search_4.classList.add("hidden");
-//     } else {
-//       close_search_4.classList.remove("hidden");
-//       close_search_4.classList.add("block");
-//     }
-//   };
+  const [isSearchOptionHidden, setSearchOptionHidden] = useState(true);
+  const toggleSearchOptionVisibility = ()=> setSearchOptionHidden(!isSearchOptionHidden)
   return (
     <>
-      <div className="py-12 px-4">
-        <div className="lg:max-w-[356px] md:max-w-[696px] max-w-[375px] w-full mx-auto bg-white py-7 overflow-hidden">
+      <div className="py-12 px-4 h-full w-full">
+        <div className="h-full w-full mx-auto bg-white py-7 overflow-y-auto overflow-x-hidden">
           <div className="flex justify-between px-3 pb-5 border-b border-gray-100">
             <div className="flex items-center gap-2">
               <svg
@@ -62,7 +40,9 @@ function Search() {
             </div>
             <div id="target_search_4">
               <div className="relative w-full">
-                <button onClick={show_search_4}>
+                <button
+                  onClick={toggleSearchOptionVisibility}
+                >
                   <div id="setting_search_4" className="block">
                     <svg
                       width={20}
@@ -82,15 +62,17 @@ function Search() {
                   <div id="close_search_4" className="hidden"></div>
                 </button>
                 <div
-                  className="lg:min-w-[356px] md:min-w-[696px] min-w-[320px] w-full translate-x-full top-0 transition-all duration-300 ease-linear absolute right-[-12px] bg-white py-4"
-                  id="div1_search_4"
+                  className={`${
+                    isSearchOptionHidden ? "" : " translate-x-full"
+                  } lg:min-w-[356px] md:min-w-[696px] min-w-[320px] w-full top-0 transition-all duration-300 ease-linear absolute right-[-12px] bg-white py-4"
+                  id="div1_search_4`}
                 >
                   <div className="flex justify-between items-center px-4">
                     <p className="text-base font-semibold leading-none text-gray-800 pb-5 border-b border-gray-100 py-5">
                       Search Preferences
                     </p>
                     <svg
-                      onClick={show_search_4}
+                      onClick={toggleSearchOptionVisibility}
                       className="cursor-pointer"
                       xmlns="http://www.w3.org/2000/svg"
                       width={20}
@@ -110,9 +92,7 @@ function Search() {
                   <div className="pb-5 border-b border-gray-100">
                     <div className="flex justify-between items-center pt-4 px-4 py-3">
                       <div>
-                        <p className="text-sm leading-none text-gray-600">
-                          Projects
-                        </p>
+                        <p className="  leading-none text-gray-600">Projects</p>
                       </div>
                       <div>
                         <label
@@ -137,9 +117,7 @@ function Search() {
                     </div>
                     <div className="flex justify-between pt-4 px-4 py-3">
                       <div>
-                        <p className="text-sm leading-none text-gray-600">
-                          Users
-                        </p>
+                        <p className="  leading-none text-gray-600">Users</p>
                       </div>
                       <div>
                         <label
@@ -164,9 +142,7 @@ function Search() {
                     </div>
                     <div className="flex justify-between pt-4 px-4 py-3">
                       <div>
-                        <p className="text-sm leading-none text-gray-600">
-                          Programs
-                        </p>
+                        <p className="  leading-none text-gray-600">Programs</p>
                       </div>
                       <div>
                         <label
@@ -191,9 +167,7 @@ function Search() {
                     </div>
                     <div className="flex justify-between pt-4 px-4 py-3">
                       <div>
-                        <p className="text-sm leading-none text-gray-600">
-                          Targets
-                        </p>
+                        <p className="  leading-none text-gray-600">Targets</p>
                       </div>
                       <div>
                         <label
@@ -218,7 +192,7 @@ function Search() {
                     </div>
                     <div className="flex justify-between pt-4 px-4 py-3">
                       <div>
-                        <p className="text-sm leading-none text-gray-600">
+                        <p className="  leading-none text-gray-600">
                           Referrals
                         </p>
                       </div>
@@ -245,13 +219,13 @@ function Search() {
                     </div>
                   </div>
                   <div
-                    onClick={show_search_4}
+                    onClick={toggleSearchOptionVisibility}
                     className="lg:flex-row flex-col flex lg:mt-8 justify-end gap-3 px-3 w-full"
                   >
-                    <button className="lg:max-w-[100px] w-full rounded text-indigo-700 border border-indigo-700 font-medium hover:bg-indigo-50 duration-200 py-3 px-3">
+                    <button className="lg:max-w-[100px] w-full rounded text-indigo-700 border border-indigo-700   hover:bg-indigo-50 duration-200 py-3 px-3">
                       Cancel
                     </button>
-                    <button className="lg:max-w-[150px] w-full rounded border border-indigo-700 font-medium text-white hover:bg-indigo-600 bg-indigo-700 duration-200 py-3 px-3">
+                    <button className="lg:max-w-[150px] w-full rounded border border-indigo-700   text-white hover:bg-indigo-600 bg-indigo-700 duration-200 py-3 px-3">
                       Save Changes
                     </button>
                   </div>
@@ -259,15 +233,13 @@ function Search() {
               </div>
             </div>
           </div>
-          <div className="overflow-y-scroll h-[400px]">
+          <div className="overflow-y-scroll">
             <div className="px-3 pb-5 border-b border-gray-100">
               <div className="pt-6">
                 <p className="text-base font-semibold leading-none text-gray-800">
                   Latest Searches
                 </p>
-                <p className="text-sm font-medium leading-none text-gray-800 pt-4">
-                  Projects
-                </p>
+                <p className="    leading-none text-gray-800 pt-4">Projects</p>
               </div>
               <div className="flex pt-5 gap-3">
                 <div className="w-8 h-8">
@@ -299,10 +271,8 @@ function Search() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-gray-800">
-                    Project Alpha
-                  </p>
-                  <p className="text-xs text-gray-600 pt-0.5">
+                  <p className="    text-gray-800">Project Alpha</p>
+                  <p className="  text-gray-600 pt-0.5">
                     Trading tool for stoks and funds
                   </p>
                 </div>
@@ -333,10 +303,8 @@ function Search() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-gray-800">
-                    CNN News Report
-                  </p>
-                  <p className="text-xs text-gray-600 pt-0.5">
+                  <p className="    text-gray-800">CNN News Report</p>
+                  <p className="  text-gray-600 pt-0.5">
                     News and communications
                   </p>
                 </div>
@@ -367,10 +335,10 @@ function Search() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-gray-800">
+                  <p className="    text-gray-800">
                     Project Beta Ideation and Research
                   </p>
-                  <p className="text-xs text-gray-600 pt-0.5">
+                  <p className="  text-gray-600 pt-0.5">
                     News and communications
                   </p>
                 </div>
@@ -378,83 +346,58 @@ function Search() {
             </div>
             <div className="px-3 pt-4">
               <div>
-                <p className="text-sm font-medium text-gray-800">Users</p>
+                <p className="    text-gray-800">Users</p>
                 <div className="flex pt-5 gap-3">
-                  <div >
-                    <img
-                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Mask%20Group.png"
-                      
-                    />
+                  <div>
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Mask%20Group.png" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-800">
-                      CNN News Report
-                    </p>
-                    <p className="text-xs text-gray-600 pt-0.5">
+                    <p className="    text-gray-800">CNN News Report</p>
+                    <p className="  text-gray-600 pt-0.5">
                       News and communications
                     </p>
                   </div>
                 </div>
                 <div className="flex pt-5 gap-3">
-                  <div >
-                    <img
-                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/2.png"
-                      
-                    />
+                  <div>
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/2.png" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-800">
-                      Frankie Streich
-                    </p>
-                    <p className="text-xs text-gray-600 pt-0.5">
+                    <p className="    text-gray-800">Frankie Streich</p>
+                    <p className="  text-gray-600 pt-0.5">
                       Global Research Designer
                     </p>
                   </div>
                 </div>
                 <div className="flex pt-5 gap-3">
-                  <div >
-                    <img
-                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/4.png"
-                      
-                    />
+                  <div>
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/4.png" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-800">
-                      Jenny Wilson
-                    </p>
-                    <p className="text-xs text-gray-600 pt-0.5">
+                    <p className="    text-gray-800">Jenny Wilson</p>
+                    <p className="  text-gray-600 pt-0.5">
                       Lead Quality Analyst
                     </p>
                   </div>
                 </div>
                 <div className="flex pt-5 gap-3">
-                  <div >
-                    <img
-                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/5.png"
-                      
-                    />
+                  <div>
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/5.png" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-800">
-                      Arlene McCoy
-                    </p>
-                    <p className="text-xs text-gray-600 pt-0.5">
+                    <p className="    text-gray-800">Arlene McCoy</p>
+                    <p className="  text-gray-600 pt-0.5">
                       Legacy Group Officer
                     </p>
                   </div>
                 </div>
                 <div className="flex pt-5 gap-3">
-                  <div >
-                    <img
-                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3.png"
-                      
-                    />
+                  <div>
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3.png" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-800">
-                      Sherri Gottlieb
-                    </p>
-                    <p className="text-xs text-gray-600 pt-0.5">
+                    <p className="    text-gray-800">Sherri Gottlieb</p>
+                    <p className="  text-gray-600 pt-0.5">
                       Product Operations Manager
                     </p>
                   </div>
