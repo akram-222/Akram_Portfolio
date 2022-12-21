@@ -8,6 +8,9 @@ const Combobox = ()=>{
           setValue(target.value);
           setCollapsing(false)
     }
+    const resetSearchValue = (e)=>{
+      setValue("")
+    }
     return(
         <div className="">
   <div className="max-w-md mx-auto">
@@ -15,8 +18,8 @@ const Combobox = ()=>{
 
     <div className="relative">
       <div className="h-10 bg-white flex border border-gray-200 rounded items-center">
-        <input onInput={handleSearchValue} value={value} name="select" id="select" className="px-4 appearance-none outline-none text-gray-800 w-full"  />
-        <button className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-gray-600">
+        <input onInput={handleSearchValue} value={value} name="select" id="select" placeholder="Choose Language" className="px-4 appearance-none outline-none text-gray-800 w-full"  />
+        <button onClick={resetSearchValue} className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-gray-600">
           <IoIosClose size={25} />
         </button>
         <label onClick={()=> setCollapsing(!isCollapsed)} 
