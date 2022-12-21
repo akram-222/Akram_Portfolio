@@ -8,7 +8,7 @@ const sidebarItems = [
     [
         { id: '4', title: 'Skills', notifications: false },
         { id: '5', title: 'Status', notifications: false },
-        { id: '6', title: 'Setting', notifications: false },
+        { id: '6', title: 'Settings', notifications: false },
         // { id: '7', title: 'Reports', notifications: false },
         // { id: '8', title: 'Settings', notifications: false },
     ],

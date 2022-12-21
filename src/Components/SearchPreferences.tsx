@@ -31,6 +31,10 @@ const SearchPreferences = ({isSearchOptionHidden,toggleSearchOptionVisibility})=
                   <div className="border-b border-gray-100">
                    
                    <SearchPreferenceInput />
+                   <SearchPreferenceInput />
+                   <SearchPreferenceInput />
+                   <SearchPreferenceInput />
+                   <SearchPreferenceInput />
                   </div>
                   <div
                     onClick={toggleSearchOptionVisibility}

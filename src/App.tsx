@@ -5,11 +5,12 @@ import Sidebar from "./Components/Sidebar";
 import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
 import Dashboard from "./Pages/Dashboard";
+import Settings from "./Pages/Settings";
 import Search from "./Pages/Search";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   return (
-    <div className="flex">
+    <div className="flex dark">
       <BrowserRouter>
         <Sidebar
           onSidebarHide={() => {
@@ -47,6 +48,7 @@ const App = () => {
                 }
               />
               <Route path="/search" element={<Search />} />
+              <Route path="/settings" element={<Settings />} />
               <Route path="/*" element={<NotFoundRoute />} />
             </Routes>
           </div>
