@@ -5,9 +5,12 @@ const ThemeSwitcherBtn=()=>{
     const changeMode = ()=>{
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     localStorage.setItem('color-theme',"light");
+    document.documentElement.classList.add('dark');
     setMode(false)
 } else {
    localStorage.setItem('color-theme',"dark")
+           document.documentElement.classList.remove('dark');
+
    setMode(true)
 } 
     }
