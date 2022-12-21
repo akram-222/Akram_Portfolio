@@ -9,7 +9,7 @@ const Combobox = ()=>{
 
     <div className="relative">
       <div className="h-10 bg-white flex border border-gray-200 rounded items-center">
-        <input value="Javascript" name="select" id="select" className="px-4 appearance-none outline-none text-gray-800 w-full" checked />
+        <input value="Javascript" name="select" id="select" className="px-4 appearance-none outline-none text-gray-800 w-full"  />
         <button className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-gray-600">
           <IoIosClose size={25} />
         </button>
@@ -18,7 +18,7 @@ const Combobox = ()=>{
         </label>
       </div>
 
-      <input type="checkbox" name="show_more" id="show_more" className="hidden peer" checked />
+      <input type="checkbox" name="show_more" id="show_more" className="hidden peer" />
       <div className={`${isCollapsed?"peer-checked:flex" :""} absolute rounded shadow bg-white overflow-hidden hidden flex-col w-full mt-1 border border-gray-200`}>
         <div className="cursor-pointer group">
           <a className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">Python</a>
