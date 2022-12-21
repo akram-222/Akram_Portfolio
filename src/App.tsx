@@ -8,7 +8,6 @@ import Dashboard from "./Pages/Dashboard";
 import Search from "./Pages/Search";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
-
   return (
     <div className="flex">
       <BrowserRouter>
@@ -18,7 +17,6 @@ const App = () => {
           }}
           showSidebar={showSidebar}
         />
-        {/* <ScreenLayout> */}
         <div className="flex w-full">
           <div className="w-full h-screen hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
             .
@@ -38,7 +36,6 @@ const App = () => {
                   key={index}
                 />
               ))}
-
               <Route
                 path="/projects"
                 element={
@@ -49,14 +46,11 @@ const App = () => {
                   />
                 }
               />
-
               <Route path="/search" element={<Search />} />
               <Route path="/*" element={<NotFoundRoute />} />
             </Routes>
           </div>
         </div>
-
-        {/* </ScreenLayout> */}
       </BrowserRouter>
     </div>
   );
