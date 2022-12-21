@@ -18,6 +18,7 @@ function Search() {
             <div className="">
               <div className="relative w-full">
                 <button
+                className=" h-10"
                   onClick={toggleSearchOptionVisibility}
                 >
                   <BsGear size={20}/>

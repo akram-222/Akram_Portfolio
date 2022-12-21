@@ -6,7 +6,7 @@ const SearchPreferences = ({isSearchOptionHidden,toggleSearchOptionVisibility})=
                   id="div1_search_4`}
                 >
                   <div className="flex justify-between items-center px-4">
-                    <p className="text-base font-semibold leading-none  pb-5 border-b border-gray-100 py-5">
+                    <p className="text-base font-semibold leading-none border-b border-gray-100 py-5">
                       Search Preferences
                     </p>
                     <svg
@@ -27,7 +27,7 @@ const SearchPreferences = ({isSearchOptionHidden,toggleSearchOptionVisibility})=
                       <line x1={6} y1={6} x2={18} y2={18} />
                     </svg>
                   </div>
-                  <div className="pb-5 border-b border-gray-100">
+                  <div className="border-b border-gray-100">
                     <div className="flex justify-between items-center pt-4 px-4 py-3">
                       <div>
                         <p className="leading-none ">Projects</p>
@@ -158,12 +158,12 @@ const SearchPreferences = ({isSearchOptionHidden,toggleSearchOptionVisibility})=
                   </div>
                   <div
                     onClick={toggleSearchOptionVisibility}
-                    className="lg:flex-row flex-col flex lg:mt-8 justify-end gap-3 px-3 w-full"
+                    className="lg:flex-row flex-col flex my-5 justify-center gap-3 w-full"
                   >
-                    <button className="lg:max-w-[100px] w-full rounded text-indigo-700 border border-indigo-700   hover:bg-indigo-50 duration-200 py-3 px-3">
+                    <button className="lg:max-w-[100px] w-full rounded text-indigo-700 border border-indigo-700   hover:bg-indigo-50 duration-200 py-2">
                       Cancel
                     </button>
-                    <button className="lg:max-w-[150px] w-full rounded border border-indigo-700   text-white hover:bg-indigo-600 bg-indigo-700 duration-200 py-3 px-3">
+                    <button className="lg:max-w-[150px] w-full rounded border border-indigo-700   text-white hover:bg-indigo-600 bg-indigo-700 duration-200 py-2">
                       Save Changes
                     </button>
                   </div>
