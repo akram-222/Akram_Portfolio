@@ -3,6 +3,7 @@ import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import { IoIosClose } from "react-icons/io";
 const Calendar = ({ isHidden, setIsHidden }) => {
   const [isDateUpdate, setDateUpdate] = useState(false);
+  const [sinceValue, setSinceValue] = useState(true);
   const [day, setDay] = useState(new Date().getDate());
   const [month, setMonth] = useState(new Date().getMonth());
   const [year] = useState(new Date().getFullYear());
@@ -58,7 +59,10 @@ const Calendar = ({ isHidden, setIsHidden }) => {
       >
         <div className=" xs:max-w-sm md:max-w-md shadow-lg">
           <div className="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
-            <span className="flex flex-row-reverse -my-3 -mx-2 mb-2 border-b dark:border-gray-700">
+            <span className="flex justify-between items-center -my-3 -mx-2 mb-2 dark:bg-gray-700 px-2">
+              <span className="dark:text-green-400 font-bold">
+                Strive & let success chase you
+              </span>
               <IoIosClose
                 size={35}
                 className=" cursor-pointer dark:text-gray-500 dark:hover:text-rose-400 "
@@ -138,14 +142,20 @@ const Calendar = ({ isHidden, setIsHidden }) => {
                   {timeTick}
                 </span>
                 <span className="focus:outline-none text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 mt-2">
-                  Fetched Repos will be:
+                  This Setting will Fetch:
                 </span>
-                <p className="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">
-                  Created before{" "}
+                <p className="text-sm leading-4 leading-none text-gray-600 dark:text-gray-300">
+                  All Repos which created{" "}
+                  <span
+                    onClick={() => setSinceValue(!sinceValue)}
+                    className="cursor-pointer text-rose-400 text-base underline underline-offset-1 ml-1"
+                  >
+                    {sinceValue ? "after" : "before"}
+                  </span>
                   <span
                     className={`${
                       isDateUpdate === true ? "animate-ping-once" : ""
-                    } text-xs dark:bg-[#171717] dark:text-blue-400`}
+                    } text-xs dark:bg-[#171717] dark:text-blue-400 ml-2`}
                   >
                     {handleUpdatedDate("numeric", "long", "2-digit")}
                   </span>
