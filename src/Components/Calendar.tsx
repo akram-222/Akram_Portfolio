@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 const Calendar = ({ isHidden }) => {
   const [day, setDay] = useState(new Date().getDate());
-  const [month, setMonth] = useState(new Date().getMonth()+1);
+  const [month, setMonth] = useState(new Date().getMonth());
   const [year] = useState(new Date().getFullYear());
   const [timeTick, setTimeTick] = useState(
     new Date().toLocaleTimeString("en-US", {})
@@ -11,10 +11,10 @@ const Calendar = ({ isHidden }) => {
   const monthDays: number[] = []; // Fix Issue => What is "not assignable to parameter of type never" error in TypeScript?
   const updatedDate = new Date(year, month, day);
   
-  const daysPerMonth: string = updatedDate.toLocaleDateString("en-Us", {
+  const daysPerMonth: string = new Date(year,month,0).toLocaleDateString("en-Us", {
     day: "2-digit",
   });
-  const currentMonth: string = updatedDate.toLocaleDateString("en-Us", {
+  const currentDate: string = updatedDate.toLocaleDateString("en-Us", {
     month: "long",
     year: "numeric",
     day:"2-digit"
@@ -44,7 +44,7 @@ const Calendar = ({ isHidden }) => {
                 tabIndex={0}
                 className="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800"
               >
-                {currentMonth} 
+                {currentDate} 
               </span>
               <div className="flex items-center">
                 <button
