@@ -11,7 +11,7 @@ const Calendar = ({ isHidden }) => {
   const monthDays: number[] = []; // Fix Issue => What is "not assignable to parameter of type never" error in TypeScript?
   const updatedDate = new Date(year, month, day);
   
-  const daysPerMonth: string = new Date(year, month, 0).toLocaleDateString("en-Us", {
+  const daysPerMonth: string = updatedDate.toLocaleDateString("en-Us", {
     day: "2-digit",
   });
   const currentMonth: string = updatedDate.toLocaleDateString("en-Us", {
@@ -78,6 +78,7 @@ const Calendar = ({ isHidden }) => {
                 return (
                   <div
                     key={`${day}__${i}`}
+                    onClick={()=> setDay(+day)}
                     className={`${
                       day.toString().length
                         ? "dark:hover:bg-[#050708]/40  cursor-pointer dark:hover:text-blue-400"
