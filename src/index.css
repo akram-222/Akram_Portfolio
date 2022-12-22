@@ -2,24 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-
-
-body{
-  font-family: 'Nunito', sans-serif;
-  color:#676767;
+body {
+  font-family: "Nunito", sans-serif;
+  color: #676767;
   background-color: #1e1e1e;
 }
 
-*{
+* {
   outline: none;
 }
 
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
-  height:7px;
+  height: 7px;
 }
 
 /* Track */
@@ -33,3 +31,31 @@ body{
   border-radius: 1rem;
 }
 
+/* Removing input background colour for Chrome autocomplete? */
+/* https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1f2937 inset !important;
+  -webkit-text-fill-color: white;
+  box-shadow: 0 0 0 30px #1f2937 inset !important;
+  caret-color: white;
+}
+
+input[type="radio"] + label span {
+  transition: background 0.2s, transform 0.2s;
+}
+
+input[type="radio"] + label span:hover,
+input[type="radio"] + label:hover span {
+  transform: scale(1.2);
+}
+
+input[type="radio"]:checked + label span {
+  background-color: #60a5fa;
+}
+
+input[type="radio"]:checked + label {
+  color: #60a5fa;
+}
