@@ -1,4 +1,9 @@
 const Calendar = ({isHidden}) => {
+    const weekdays=["Sat","Sun","Mon","Tue","Wed","Thr","Fri"];
+    const monthDays:number[]=[]; // Fix Issue => What is "not assignable to parameter of type never" error in TypeScript?
+    for(let i:number=0;i<=30;i++){
+        monthDays.push(i)
+    }
   return (
     <>
       <div className={`${isHidden ? "" : ""} absolute w-full h-full top-0 left-0 z-10 calendar-backdrop flex items-center justify-center py-8 px-4`}>
@@ -55,7 +60,14 @@ const Calendar = ({isHidden}) => {
               </div>
             </div>
             <div className="flex items-center justify-between pt-12 overflow-x-auto">
-              <table className="w-full">
+                    <div className="day-name w-full flex justify-between dark:text-gray-100">
+                       {weekdays.map(day=><span>{day}</span>)}
+                    </div>
+                    <div className="monthDays">
+                        {monthDays.map(day=><span>{day}</span>)}
+                    </div>
+              
+              {/* <table className="w-full">
                 <thead>
                   <tr>
                     <th>
@@ -127,8 +139,8 @@ const Calendar = ({isHidden}) => {
                         </p>
                       </div>
                     </td>
-                    <td className="pt-6">
-                      <div className="px-2 py-2 cursor-pointer flex w-full justify-center">
+                    <td className="pt-6 dark:hover:bg-[#050708]/40">
+                      <div className="px-2 py-2  cursor-pointer flex w-full justify-center">
                         <p className="text-base text-gray-500 dark:text-gray-100 font-medium">
                           2
                         </p>
@@ -347,7 +359,7 @@ const Calendar = ({isHidden}) => {
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table> */}
             </div>
           </div>
           <div className="md:py-8 py-5 md:px-16 px-5 dark:bg-gray-700 bg-gray-50 rounded-b">
