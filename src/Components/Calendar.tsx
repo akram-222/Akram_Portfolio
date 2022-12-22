@@ -69,7 +69,7 @@ const Calendar = ({isHidden}) => {
                    
                      {["","","",...monthDays].map(day=>{
                         return(
-                            <div className={`${day.toString().length ? "dark:hover:bg-[#050708]/40  cursor-pointer dark:hover:text-blue-400":""} w-8 h-8 flex items-center justify-center`}>{day}</div>
+                            <div className={`${day.toString().length ? "dark:hover:bg-[#050708]/40  cursor-pointer dark:hover:text-blue-400":""} rounded w-8 h-8 flex items-center justify-center`}>{day}</div>
                         )
                     })}
                {/* <table className="w-full">
