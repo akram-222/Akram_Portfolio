@@ -45,6 +45,7 @@ const Calendar = ({ isHidden }) => {
     setInterval(() => {
       setTimeTick(new Date().toLocaleTimeString("en-US", {}));
     }, 1000);
+    console.log(handleUpdatedDate());
   }, []);
 
   return (
@@ -78,7 +79,7 @@ const Calendar = ({ isHidden }) => {
                   aria-label="calendar forward"
                   className="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100"
                   onClick={() => {
-                    setMonth(month - 1);
+                    setMonth(month + 1);
                     setDay(1);
                   }}
                 >
@@ -112,13 +113,6 @@ const Calendar = ({ isHidden }) => {
                     className={`${
                       day.toString().length
                         ? "dark:hover:bg-[#050708]/40 cursor-pointer dark:hover:text-blue-400"
-                        : ""
-                    } ${
-                      //  (+handleUpdatedDate(undefined,undefined,"2-digit") === new Date().getDate())
-                      //  ===
-                      //  (+day===+handleUpdatedDate(undefined,undefined,"2-digit"))
-                      day === new Date().getDate()
-                        ? "dark:bg-[#050708]/40 dark:text-rose-400 dark:hover:text-rose-400 animate-pulse"
                         : ""
                     } 
                      rounded w-8 h-8 flex items-center justify-center`}
