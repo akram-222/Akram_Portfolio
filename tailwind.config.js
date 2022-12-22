@@ -11,7 +11,10 @@ module.exports = {
     },
     screens:{
        xs: "450px",
-    }
+    },
+    animation: {
+        'ping-once': 'ping .2s linear 1',
+      }
     },
     screens: {
       ...defaultTheme.screens
