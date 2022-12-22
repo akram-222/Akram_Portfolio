@@ -54,7 +54,7 @@ const handleUpdatedDate = (y?:"numeric", m?:"long", d?:"2-digit"|"numeric")=>{
                 tabIndex={0}
                 className="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800"
               >
-                {handleUpdatedDate("numeric","long","2-digit")} 
+                {handleUpdatedDate("numeric","long")} 
               </span>
               <div className="flex items-center">
                 <button
