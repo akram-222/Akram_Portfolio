@@ -1,6 +1,8 @@
 
 
-
+.calendar-backdrop{
+  backdrop-filter: blur(1px) grayscale(1) brightness(.7)
+}
 
 .bg-card{
   background-color:#171717;
