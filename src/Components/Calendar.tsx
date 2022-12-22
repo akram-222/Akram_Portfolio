@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 const Calendar = ({ isHidden }) => {
+  const [day, setDay] = useState(new Date().getDate());
   const [month, setMonth] = useState(new Date().getMonth()+1);
   const [year] = useState(new Date().getFullYear());
   const [timeTick, setTimeTick] = useState(
@@ -8,16 +9,15 @@ const Calendar = ({ isHidden }) => {
   );
   const weekdays = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thr", "Fri"];
   const monthDays: number[] = []; // Fix Issue => What is "not assignable to parameter of type never" error in TypeScript?
-  const updatedDate = new Date(year, month, 0);
-  const daysPerMonth: string = updatedDate.toLocaleDateString("en-Us", {
+  const updatedDate = new Date(year, month, day);
+  
+  const daysPerMonth: string = new Date(year, month, 0).toLocaleDateString("en-Us", {
     day: "2-digit",
   });
   const currentMonth: string = updatedDate.toLocaleDateString("en-Us", {
     month: "long",
-  });
-
-  const currentYear: string = updatedDate.toLocaleDateString("en-Us", {
     year: "numeric",
+    day:"2-digit"
   });
 
   for (let i: number = 1; i <= +daysPerMonth; i++) {
@@ -37,14 +37,14 @@ const Calendar = ({ isHidden }) => {
           isHidden ? "" : ""
         } absolute w-full h-full top-0 left-0 z-10 calendar-backdrop flex items-center justify-center py-8 px-4`}
       >
-        <div className="max-w-sm w-full shadow-lg">
+        <div className=" xs:max-w-sm md:max-w-md shadow-lg">
           <div className="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
             <div className="flex items-center justify-between">
               <span
                 tabIndex={0}
                 className="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800"
               >
-                {currentMonth} {currentYear}
+                {currentMonth} 
               </span>
               <div className="flex items-center">
                 <button
@@ -106,7 +106,7 @@ const Calendar = ({ isHidden }) => {
                   Fetched Repos will be
                 </span>
                 <p className="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">
-                  All Repos which created from 1/1/2022 to 1/1/2023
+                  All Repos which created before 1/1/2023
                 </p>
               </div>
             </div>
