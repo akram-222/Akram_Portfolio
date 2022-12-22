@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 const Calendar = ({ isHidden }) => {
-  const [month, setMonth] = useState(new Date().getMonth());
+  const [month, setMonth] = useState(new Date().getMonth()+1);
   const [year] = useState(new Date().getFullYear());
   const [timeTick, setTimeTick] = useState(
     new Date().toLocaleTimeString("en-US", {})
