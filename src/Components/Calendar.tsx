@@ -123,7 +123,7 @@ const Calendar = ({ isHidden, setIsHidden }) => {
                     onMouseUp={(e) => {
                       setTimeout(() => {
                         setDateUpdate(false);
-                      }, 200);
+                      }, 300);
                       e.currentTarget.classList.remove("animate-ping-once");
                     }}
                     className={`${
