@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
+import { IoIosClose } from "react-icons/io";
 const Calendar = ({ isHidden, setIsHidden }) => {
   const [isDateUpdate, setDateUpdate] = useState(false);
   const [day, setDay] = useState(new Date().getDate());
@@ -57,7 +58,13 @@ const Calendar = ({ isHidden, setIsHidden }) => {
       >
         <div className=" xs:max-w-sm md:max-w-md shadow-lg">
           <div className="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
-            <span onClick={() => setIsHidden(!isHidden)}>close</span>
+            <span className="flex flex-row-reverse -my-3 -mx-2 mb-2 border-b dark:border-gray-700">
+              <IoIosClose
+                size={35}
+                className=" cursor-pointer dark:text-gray-500 dark:hover:text-rose-400 "
+                onClick={() => setIsHidden(!isHidden)}
+              />
+            </span>
             <div className="flex items-center justify-between">
               <span
                 tabIndex={0}
@@ -72,13 +79,13 @@ const Calendar = ({ isHidden, setIsHidden }) => {
                     setDay(1);
                   }}
                   aria-label="calendar backward"
-                  className="focus:text-gray-400 hover:text-gray-400 text-gray-800 dark:text-gray-100"
+                  className="dark:hover:bg-gray-700 focus:text-gray-400 hover:text-gray-400 text-gray-800 dark:text-gray-100"
                 >
                   <BiChevronLeft size={25} />
                 </button>
                 <button
                   aria-label="calendar forward"
-                  className="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100"
+                  className="dark:hover:bg-gray-700 focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100"
                   onClick={() => {
                     setMonth(month + 1);
                     setDay(1);
