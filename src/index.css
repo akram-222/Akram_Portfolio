@@ -42,3 +42,20 @@ input:-webkit-autofill:active {
   box-shadow: 0 0 0 30px #1f2937 inset !important;
   caret-color: white;
 }
+
+input[type="radio"] + label span {
+  transition: background 0.2s, transform 0.2s;
+}
+
+input[type="radio"] + label span:hover,
+input[type="radio"] + label:hover span {
+  transform: scale(1.2);
+}
+
+input[type="radio"]:checked + label span {
+  background-color: #60a5fa;
+}
+
+input[type="radio"]:checked + label {
+  color: #60a5fa;
+}

@@ -57,6 +57,7 @@ const Combobox = () => {
             {["Python", "JavaScript", "PHP", "Rust"].map((language) => {
               return (
                 <div
+                  key={language}
                   className="cursor-pointer group block border-l-4 dark:bg-card dark:border-b dark:border-b-[#353535] border-l-transparent dark:hover:text-blue-400 hover:border-blue-600 p-2"
                   onClick={() => {
                     setCollapsing(true);
