@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
-const Calendar = ({ isHidden }) => {
+const Calendar = ({ isHidden, setIsHidden }) => {
   const [isDateUpdate, setDateUpdate] = useState(false);
   const [day, setDay] = useState(new Date().getDate());
   const [month, setMonth] = useState(new Date().getMonth());
@@ -52,11 +52,12 @@ const Calendar = ({ isHidden }) => {
     <>
       <div
         className={`${
-          isHidden ? "" : ""
+          isHidden ? "hidden" : ""
         } absolute w-full h-full top-0 left-0 z-10 calendar-backdrop flex items-center justify-center py-8 px-4`}
       >
         <div className=" xs:max-w-sm md:max-w-md shadow-lg">
           <div className="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
+            <span onClick={() => setIsHidden(!isHidden)}>close</span>
             <div className="flex items-center justify-between">
               <span
                 tabIndex={0}
