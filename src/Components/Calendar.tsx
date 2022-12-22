@@ -100,13 +100,11 @@ const Calendar = ({ isHidden }) => {
                 <span className="block mb-2 text-xs font-light leading-3 text-gray-500 dark:text-gray-300">
                   {timeTick}
                 </span>
-                <a
-                  href="#d"
-                  tabIndex={0}
+                <span
                   className="focus:outline-none text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 mt-2"
                 >
                   Fetched Repos will be
-                </a>
+                </span>
                 <p className="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">
                   All Repos which created from 1/1/2022 to 1/1/2023
                 </p>
