@@ -96,6 +96,9 @@ const handleUpdatedDate = (y?:"numeric", m?:"long", d?:"2-digit"|"numeric")=>{
                         ? "dark:hover:bg-[#050708]/40 cursor-pointer dark:hover:text-blue-400"
                         : ""
                     } ${
+                      //  (+handleUpdatedDate(undefined,undefined,"2-digit") === new Date().getDate())
+                      //  === 
+                      //  (+day===+handleUpdatedDate(undefined,undefined,"2-digit"))
                       day === new Date().getDate()
                         ? "dark:bg-[#050708]/40 dark:text-rose-400 dark:hover:text-rose-400 animate-pulse"
                         : ""
