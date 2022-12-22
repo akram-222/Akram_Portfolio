@@ -148,7 +148,7 @@ const Calendar = ({ isHidden, setIsHidden }) => {
                   All Repos which created{" "}
                   <span
                     onClick={() => setSinceValue(!sinceValue)}
-                    className="cursor-pointer text-rose-400 text-base underline underline-offset-1 ml-1"
+                    className="tracking-[.1em] cursor-pointer text-rose-400 text-base underline underline-offset-1 ml-1"
                   >
                     {sinceValue ? "after" : "before"}
                   </span>
