@@ -9,16 +9,26 @@ const Calendar = ({ isHidden }) => {
   );
   const weekdays = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thr", "Fri"];
   const monthDays: number[] = []; // Fix Issue => What is "not assignable to parameter of type never" error in TypeScript?
-  const updatedDate = new Date(year, month, day);
+  // const updatedDate = new Date(year, month, day);
   
   const daysPerMonth: string = new Date(year,month,0).toLocaleDateString("en-Us", {
     day: "2-digit",
   });
-  const currentDate: string = updatedDate.toLocaleDateString("en-Us", {
-    month: "long",
-    year: "numeric",
-    day:"2-digit"
-  });
+  // const currentDate: string = updatedDate.toLocaleDateString("en-Us", {
+  //   month: "long",
+  //   year: "numeric",
+  //   day:"2-digit"
+  // });
+
+const handleUpdatedDate = (y?:"numeric", m?:"long", d?:"2-digit"|"numeric")=>{
+  let res = (new Date(year, month, day).toLocaleDateString("en-Us", {
+    month: m!,
+    year: y!,
+    day:d!
+  }))
+  return res
+}
+
 
   for (let i: number = 1; i <= +daysPerMonth; i++) {
     monthDays.push(i);
@@ -44,7 +54,7 @@ const Calendar = ({ isHidden }) => {
                 tabIndex={0}
                 className="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800"
               >
-                {currentDate} 
+                {handleUpdatedDate("numeric","long","2-digit")} 
               </span>
               <div className="flex items-center">
                 <button
@@ -109,7 +119,7 @@ const Calendar = ({ isHidden }) => {
                   Fetched Repos will be
                 </span>
                 <p className="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">
-                  All Repos which created before 1/1/2023
+                  All Repos which created before {handleUpdatedDate("numeric","long","2-digit")}
                 </p>
               </div>
             </div>
