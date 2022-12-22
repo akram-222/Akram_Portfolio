@@ -1,7 +1,10 @@
+import {useState} from "react"
 import { FaFilter } from "react-icons/fa";
 import RadioItem from "./RadioItem";
 import Combobox from "./Combobox";
+import Calendar from "./Calendar";
 const Filter = () => {
+  const [isHidden,setIsHidden] = useState(true)
   return (
     <>
       <header>
@@ -55,8 +58,9 @@ const Filter = () => {
           <span className="block mb-2 font-medium">Creation Date:</span>
           <div className="flex items-center gap-2 visibility-list ml-4">
             <Combobox options={["before", "after"]} />
-            3002332
+            <button onClick={()=> setIsHidden(!isHidden)} className="border dark:border-[#353535] p-1.5 rounded dark:hover:text-blue-400 mx-1">Date</button>
           </div>
+          <Calendar isHidden={isHidden}/>
         </div>
       </div>
     </>
