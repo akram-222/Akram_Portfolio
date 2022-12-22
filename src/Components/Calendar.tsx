@@ -65,7 +65,7 @@ const Calendar = ({ isHidden, setIsHidden }) => {
               </span>
               <IoIosClose
                 size={35}
-                className=" cursor-pointer dark:text-gray-500 dark:hover:text-rose-400 "
+                className="cursor-pointer dark:text-gray-500 dark:hover:text-rose-400 "
                 onClick={() => setIsHidden(!isHidden)}
               />
             </span>
@@ -115,13 +115,17 @@ const Calendar = ({ isHidden, setIsHidden }) => {
                 return (
                   <div
                     key={`${day}__${i}`}
-                    onClick={() => {
-                      setDay(+day);
+                    onClick={() => setDay(+day)}
+                    onMouseDown={(e) => {
+                      setDateUpdate(true);
+                      e.currentTarget.classList.add("animate-ping-once");
                     }}
-                    onMouseDown={() => setDateUpdate(true)}
-                    onMouseUp={() =>
-                      setTimeout(() => setDateUpdate(false), 200)
-                    }
+                    onMouseUp={(e) => {
+                      setTimeout(() => {
+                        setDateUpdate(false);
+                      }, 300);
+                      e.currentTarget.classList.remove("animate-ping-once");
+                    }}
                     className={`${
                       day.toString().length
                         ? "dark:hover:bg-[#050708]/40 cursor-pointer dark:hover:text-blue-400"
@@ -155,7 +159,7 @@ const Calendar = ({ isHidden, setIsHidden }) => {
                   <span
                     className={`${
                       isDateUpdate === true ? "animate-ping-once" : ""
-                    } text-xs dark:bg-[#171717] dark:text-blue-400 ml-2`}
+                    } dark:bg-[#171717] dark:text-blue-400 ml-2`}
                   >
                     {handleUpdatedDate("numeric", "long", "2-digit")}
                   </span>
