@@ -48,6 +48,8 @@ const Calendar = ({ isHidden }) => {
               </span>
               <div className="flex items-center">
                 <button
+                
+                onClick={() => {setMonth(month - 1);setDay(1)}}
                   aria-label="calendar backward"
                   className="focus:text-gray-400 hover:text-gray-400 text-gray-800 dark:text-gray-100"
                 >
@@ -56,7 +58,7 @@ const Calendar = ({ isHidden }) => {
                 <button
                   aria-label="calendar forward"
                   className="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100"
-                  onClick={() => setMonth(month + 1)}
+                  onClick={() => {setMonth(month - 1);setDay(1)}}
                 >
                   <BiChevronRight size={25} />
                 </button>
@@ -81,7 +83,7 @@ const Calendar = ({ isHidden }) => {
                     onClick={()=> setDay(+day)}
                     className={`${
                       day.toString().length
-                        ? "dark:hover:bg-[#050708]/40  cursor-pointer dark:hover:text-blue-400"
+                        ? "dark:hover:bg-[#050708]/40 cursor-pointer dark:hover:text-blue-400"
                         : ""
                     } ${
                       day === new Date().getDate()
@@ -89,7 +91,7 @@ const Calendar = ({ isHidden }) => {
                         : ""
                     } rounded w-8 h-8 flex items-center justify-center`}
                   >
-                    {day}
+                    {typeof day === "number" ?day:null}
                   </div>
                 );
               })}
