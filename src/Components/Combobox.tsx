@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoIosClose, IoIosArrowDown } from "react-icons/io";
-const Combobox = () => {
+const Combobox = ({ options }) => {
   const [isCollapsed, setCollapsing] = useState(true);
   const [value, setValue] = useState<string>("");
   const handleSearchValue = (e) => {
@@ -13,11 +13,7 @@ const Combobox = () => {
   };
   return (
     <div className="">
-      <div className="max-w-md mx-auto">
-        <label htmlFor="select" className="block pb-1">
-          Select Language:
-        </label>
-
+      <div className="">
         <div className="relative">
           <div className="dark:bg-gray-800 h-10 bg-white flex rounded items-center">
             <input
@@ -25,7 +21,7 @@ const Combobox = () => {
               value={value}
               name="select"
               id="select"
-              placeholder="Choose Language"
+              placeholder="Choose Option"
               className="dark:bg-gray-800 px-1.5 appearance-none outline-none text-gray-200 w-full"
             />
             <button
@@ -54,17 +50,17 @@ const Combobox = () => {
               isCollapsed ? "hidden" : ""
             } absolute dark:border-[#353535] rounded shadow bg-white overflow-hidden flex-col w-full mt-1 border border-gray-200`}
           >
-            {["Python", "JavaScript", "PHP", "Rust"].map((language) => {
+            {options?.map((option) => {
               return (
                 <div
-                  key={language}
+                  key={option}
                   className="cursor-pointer group block border-l-4 dark:bg-card dark:border-b dark:border-b-[#353535] border-l-transparent dark:hover:text-blue-400 hover:border-blue-600 p-2"
                   onClick={() => {
                     setCollapsing(true);
-                    setValue(language);
+                    setValue(option);
                   }}
                 >
-                  {language}
+                  {option}
                 </div>
               );
             })}
