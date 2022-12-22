@@ -59,9 +59,19 @@ const Calendar = ({isHidden}) => {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col gap-3 items-center justify-between pt-12 overflow-x-auto">
+            <div className="flex gap-4 items-center flex-wrap pt-12 overflow-x-auto">
                  
-               <table className="w-full">
+                 {weekdays.map(day=>{
+                        return(
+                            <div className="w-8 h-8 flex items-center dark:text-gray-100 justify-center">{day}</div>
+                        )
+                    })}
+                     {["","","",...monthDays].map(day=>{
+                        return(
+                            <div className="w-8 h-8 flex items-center justify-center dark:hover:bg-[#050708]/40 cursor-pointer dark:hover:text-blue-400">{day}</div>
+                        )
+                    })}
+               {/* <table className="w-full">
                 <thead>
                   <tr>
                     {weekdays.map(day=>{
@@ -95,7 +105,7 @@ const Calendar = ({isHidden}) => {
                         </p>
                       </div>
                     </td>
-                    <td className="pt-6 dark:hover:bg-[#050708]/40">
+                    <td className="pt-6">
                       <div className="px-2 py-2  cursor-pointer flex w-full justify-center">
                         <p className="text-base text-gray-500 dark:text-gray-100 font-medium">
                           2
@@ -315,10 +325,10 @@ const Calendar = ({isHidden}) => {
                     </td>
                   </tr>
                 </tbody>
-              </table> 
+              </table>  */}
             </div>
           </div>
-          <div className="md:py-8 py-5 md:px-16 px-5 dark:bg-gray-700 bg-gray-50 rounded-b">
+          <div className="p-5 dark:bg-gray-700 bg-gray-50 rounded-b">
             <div className="px-4">
               <div className="border-b pb-4 border-gray-400 border-dashed">
                 <p className="text-xs font-light leading-3 text-gray-500 dark:text-gray-300">
