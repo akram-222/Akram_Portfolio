@@ -1,12 +1,26 @@
 import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 const Calendar = ({ isHidden }) => {
+  const [month, setMonth] = useState(new Date().getMonth());
+  const [year] = useState(new Date().getFullYear());
   const [timeTick, setTimeTick] = useState(
     new Date().toLocaleTimeString("en-US", {})
   );
   const weekdays = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thr", "Fri"];
   const monthDays: number[] = []; // Fix Issue => What is "not assignable to parameter of type never" error in TypeScript?
-  for (let i: number = 1; i <= 30; i++) {
+  const updatedDate = new Date(year, month, 0);
+  const daysPerMonth: string = updatedDate.toLocaleDateString("en-Us", {
+    day: "2-digit",
+  });
+  const currentMonth: string = updatedDate.toLocaleDateString("en-Us", {
+    month: "long",
+  });
+
+  const currentYear: string = updatedDate.toLocaleDateString("en-Us", {
+    year: "numeric",
+  });
+
+  for (let i: number = 1; i <= +daysPerMonth; i++) {
     monthDays.push(i);
   }
 
@@ -30,7 +44,7 @@ const Calendar = ({ isHidden }) => {
                 tabIndex={0}
                 className="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800"
               >
-                October 2020
+                {currentMonth} {currentYear}
               </span>
               <div className="flex items-center">
                 <button
@@ -42,24 +56,28 @@ const Calendar = ({ isHidden }) => {
                 <button
                   aria-label="calendar forward"
                   className="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100"
+                  onClick={() => setMonth(month + 1)}
                 >
                   <BiChevronRight size={25} />
                 </button>
               </div>
             </div>
-            <div className="flex gap-x-4 gap-y-2 items-center flex-wrap pt-6 overflow-x-auto">
-              {weekdays.map((day) => {
+            <div className="flex gap-x-4 gap-y-2 px-3 items-center flex-wrap pt-6 overflow-x-auto">
+              {weekdays.map((day, i) => {
                 return (
-                  <div className="w-8 h-8 flex items-center dark:text-gray-100 justify-center">
+                  <div
+                    key={`${day}__${i}`}
+                    className="w-8 h-8 flex items-center dark:text-gray-100 justify-center"
+                  >
                     {day}
                   </div>
                 );
               })}
 
-              {["", "", "", ...monthDays].map((day,i) => {
+              {["", "", "", ...monthDays].map((day, i) => {
                 return (
                   <div
-                  key={`${day}__${i}`}
+                    key={`${day}__${i}`}
                     className={`${
                       day.toString().length
                         ? "dark:hover:bg-[#050708]/40  cursor-pointer dark:hover:text-blue-400"
@@ -78,10 +96,10 @@ const Calendar = ({ isHidden }) => {
           </div>
           <div className="p-5 dark:bg-gray-700 bg-gray-50 rounded-b">
             <div className="px-4">
-              <div className="border-b pb-4 border-gray-400 border-dashed">
-                <p className="mb-2 text-xs font-light leading-3 text-gray-500 dark:text-gray-300">
+              <div className="">
+                <span className="block mb-2 text-xs font-light leading-3 text-gray-500 dark:text-gray-300">
                   {timeTick}
-                </p>
+                </span>
                 <a
                   href="#d"
                   tabIndex={0}
