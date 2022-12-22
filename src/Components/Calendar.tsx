@@ -1,4 +1,4 @@
-import {BiChevronRight,BiChevronLeft} from "react-icons/bi"
+import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 const Calendar = ({ isHidden }) => {
   const weekdays = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thr", "Fri"];
   const monthDays: number[] = []; // Fix Issue => What is "not assignable to parameter of type never" error in TypeScript?
@@ -26,13 +26,13 @@ const Calendar = ({ isHidden }) => {
                   aria-label="calendar backward"
                   className="focus:text-gray-400 hover:text-gray-400 text-gray-800 dark:text-gray-100"
                 >
-                  <BiChevronLeft size={25}/>
+                  <BiChevronLeft size={25} />
                 </button>
                 <button
                   aria-label="calendar forward"
                   className="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100"
                 >
-                  <BiChevronRight size={25}/>
+                  <BiChevronRight size={25} />
                 </button>
               </div>
             </div>
@@ -51,6 +51,10 @@ const Calendar = ({ isHidden }) => {
                     className={`${
                       day.toString().length
                         ? "dark:hover:bg-[#050708]/40  cursor-pointer dark:hover:text-blue-400"
+                        : ""
+                    } ${
+                      day === new Date().getDate()
+                        ? "dark:bg-[#050708]/40 dark:text-rose-400 dark:hover:text-rose-400 font-semibold"
                         : ""
                     } rounded w-8 h-8 flex items-center justify-center`}
                   >
