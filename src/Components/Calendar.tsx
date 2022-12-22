@@ -116,7 +116,7 @@ const handleUpdatedDate = (y?:"numeric", m?:"long", d?:"2-digit"|"numeric")=>{
                 <span
                   className="focus:outline-none text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 mt-2"
                 >
-                  Fetched Repos will be
+                  Fetched Repos will be:
                 </span>
                 <p className="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">
                   All Repos which created before {handleUpdatedDate("numeric","long","2-digit")}
