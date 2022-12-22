@@ -14,7 +14,7 @@ const Combobox = () => {
   return (
     <div className="">
       <div className="max-w-md mx-auto">
-        <label htmlFor="select" className="block py-2">
+        <label htmlFor="select" className="block pb-1">
           Select Language:
         </label>
 
