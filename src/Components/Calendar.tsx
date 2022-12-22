@@ -1,7 +1,7 @@
 const Calendar = ({isHidden}) => {
     const weekdays=["Sat","Sun","Mon","Tue","Wed","Thr","Fri"];
     const monthDays:number[]=[]; // Fix Issue => What is "not assignable to parameter of type never" error in TypeScript?
-    for(let i:number=0;i<=30;i++){
+    for(let i:number=1;i<=30;i++){
         monthDays.push(i)
     }
   return (
@@ -59,66 +59,22 @@ const Calendar = ({isHidden}) => {
                 </button>
               </div>
             </div>
-            <div className="flex items-center justify-between pt-12 overflow-x-auto">
-                    <div className="day-name w-full flex justify-between dark:text-gray-100">
-                       {weekdays.map(day=><span>{day}</span>)}
-                    </div>
-                    <div className="monthDays">
-                        {monthDays.map(day=><span>{day}</span>)}
-                    </div>
-              
-              {/* <table className="w-full">
+            <div className="flex flex-col gap-3 items-center justify-between pt-12 overflow-x-auto">
+                 
+               <table className="w-full">
                 <thead>
                   <tr>
-                    <th>
+                    {weekdays.map(day=>{
+                        return(
+                            <th>
                       <div className="w-full flex justify-center">
                         <p className="text-base font-medium text-center text-gray-800 dark:text-gray-100">
-                          Mo
+                          {day}
                         </p>
                       </div>
                     </th>
-                    <th>
-                      <div className="w-full flex justify-center">
-                        <p className="text-base font-medium text-center text-gray-800 dark:text-gray-100">
-                          Tu
-                        </p>
-                      </div>
-                    </th>
-                    <th>
-                      <div className="w-full flex justify-center">
-                        <p className="text-base font-medium text-center text-gray-800 dark:text-gray-100">
-                          We
-                        </p>
-                      </div>
-                    </th>
-                    <th>
-                      <div className="w-full flex justify-center">
-                        <p className="text-base font-medium text-center text-gray-800 dark:text-gray-100">
-                          Th
-                        </p>
-                      </div>
-                    </th>
-                    <th>
-                      <div className="w-full flex justify-center">
-                        <p className="text-base font-medium text-center text-gray-800 dark:text-gray-100">
-                          Fr
-                        </p>
-                      </div>
-                    </th>
-                    <th>
-                      <div className="w-full flex justify-center">
-                        <p className="text-base font-medium text-center text-gray-800 dark:text-gray-100">
-                          Sa
-                        </p>
-                      </div>
-                    </th>
-                    <th>
-                      <div className="w-full flex justify-center">
-                        <p className="text-base font-medium text-center text-gray-800 dark:text-gray-100">
-                          Su
-                        </p>
-                      </div>
-                    </th>
+                        )
+                    })}
                   </tr>
                 </thead>
                 <tbody>
@@ -359,7 +315,7 @@ const Calendar = ({isHidden}) => {
                     </td>
                   </tr>
                 </tbody>
-              </table> */}
+              </table> 
             </div>
           </div>
           <div className="md:py-8 py-5 md:px-16 px-5 dark:bg-gray-700 bg-gray-50 rounded-b">
