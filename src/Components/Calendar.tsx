@@ -155,7 +155,7 @@ const Calendar = ({ isHidden, setIsHidden }) => {
                   <span
                     className={`${
                       isDateUpdate === true ? "animate-ping-once" : ""
-                    } text-xs dark:bg-[#171717] dark:text-blue-400 ml-2`}
+                    } dark:bg-[#171717] dark:text-blue-400 ml-2`}
                   >
                     {handleUpdatedDate("numeric", "long", "2-digit")}
                   </span>
