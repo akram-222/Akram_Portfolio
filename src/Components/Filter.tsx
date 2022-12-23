@@ -10,12 +10,19 @@ const Filter = () => {
   const [isHidden, setIsHidden] = useState(true);
   const [isEmojiComponentHidden, SetIsEmojiComponentHidden] = useState(true);
   const [isCollapsed, setCollapsed] = useState(true);
-  const showEmojiList = (lastWrittenChar)=>{
-  if(lastWrittenChar.data === ":"){
-    SetIsEmojiComponentHidden(false);
-    console.log('showwww')
-  }  
-  }
+  const showEmojiList = (event) => {
+    if (
+      event.currentTarget.textContent.length === 1 &&
+      event.currentTarget.textContent.charAt(0) === ":"
+    ) {
+      SetIsEmojiComponentHidden(false);
+    } else {
+      SetIsEmojiComponentHidden(true);
+    }
+    console.log(
+      event.currentTarget.textContent.indexOf(event.nativeEvent.data)
+    );
+  };
   return (
     <div
       className={`${
@@ -34,25 +41,18 @@ const Filter = () => {
           className={`lg:hidden cursor-pointer text-premium-yellow`}
         />
       </header>
-      <div
- 
-      >
-        <div className="my-3">
+      <div>
+        <div className="my-3 relative">
           <span className="block mb-2 font-medium">By project name:</span>
-          {/* <input
-            onInput={(e) => __getEmoji(e.nativeEvent)}
-            placeholder="ex; amazon"
-            type="search"
-            className="block w-full p-1.5 text-gray-900 border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          /> */}
+
           <div
-            onInput={(e) => showEmojiList(e.nativeEvent)}
+            onInput={(e) => showEmojiList(e)}
             contentEditable={true}
-            className="h-10 flex items-center block w-full p-1.5 dark:text-gray-400 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className=" h-10 flex items-center block w-full p-1.5 dark:text-gray-400 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             type : to use emojis
           </div>
-          <EmojiComponent isEmojiComponentHidden={isEmojiComponentHidden}/>
+          <EmojiComponent isEmojiComponentHidden={isEmojiComponentHidden} />
         </div>
         <div className="my-3">
           <span className="block pb-1">Select Language:</span>
