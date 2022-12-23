@@ -18,7 +18,7 @@ const RepoItem = ({
 
       {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
       <div
-        data-hint={`Created in: ${new Date(createdAt).toLocaleDateString(
+        data-hint={`⌛ Since : ${new Date(createdAt).toLocaleDateString(
           "en-US",
           { year: "2-digit", month: "short" }
         )}`}

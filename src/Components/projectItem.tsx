@@ -22,7 +22,7 @@ const ProjectItem = ({
           </span>
 
           {/* {visibility} */}
-          <button className="cursor-help showHint" data-hint={visibility}>
+          <button className="cursor-help showHint" data-hint={visibility + ' repo'}>
             <Badge visibility={visibility} />
           </button>
         </div>
