@@ -22,7 +22,7 @@ const RepoItem = ({
           "en-US",
           { year: "2-digit", month: "short" }
         )}`}
-        className="showHint flex-grow ml-2 whitespace-nowrap text-ellipsis mr-3 w-30"
+        className="showHint cursor-help flex-grow ml-2 whitespace-nowrap text-ellipsis mr-3 w-30"
       >
         {name}
       </div>
