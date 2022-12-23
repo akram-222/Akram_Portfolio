@@ -13,8 +13,11 @@ const EmojiComponent = ({ isEmojiComponentHidden }) => {
     >
       {Object.keys(emojis)
         ?.slice(0, 5)
-        .map((emojiKey) => (
-          <div className="flex items-center border-b dark:border-gray-700 gap-2 px-3 py-2 dark:hover:bg-[#1f6feb] cursor-pointer">
+        .map((emojiKey, i) => (
+          <div
+            key={`${emojiKey}__${i}`}
+            className="flex items-center border-b dark:border-gray-700 gap-2 px-3 py-2 dark:hover:bg-[#1f6feb] cursor-pointer"
+          >
             <img className="w-5 h-5" src={emojis[emojiKey]} alt="emoji" />
             <span className="font-bold text-lg text-white">{emojiKey}</span>
           </div>

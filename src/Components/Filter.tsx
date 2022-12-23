@@ -5,23 +5,20 @@ import Combobox from "./Combobox";
 import EmojiComponent from "./emojiComponent";
 import Calendar from "./Calendar";
 import { BsChevronExpand } from "react-icons/bs";
-import { __getEmoji } from "../Utils/github/__getEmoji";
 const Filter = () => {
   const [isHidden, setIsHidden] = useState(true);
   const [isEmojiComponentHidden, SetIsEmojiComponentHidden] = useState(true);
   const [isCollapsed, setCollapsed] = useState(true);
-  const showEmojiList = (event) => {
+  const showEmojiList = (event: React.SyntheticEvent) => {
+    let divTextContent = event.currentTarget as HTMLInputElement;
     if (
-      event.currentTarget.textContent.length === 1 &&
-      event.currentTarget.textContent.charAt(0) === ":"
+      divTextContent.textContent!.length === 1 &&
+      divTextContent.textContent!.charAt(0) === ":"
     ) {
       SetIsEmojiComponentHidden(false);
     } else {
       SetIsEmojiComponentHidden(true);
     }
-    console.log(
-      event.currentTarget.textContent.indexOf(event.nativeEvent.data)
-    );
   };
   return (
     <div
@@ -48,10 +45,9 @@ const Filter = () => {
           <div
             onInput={(e) => showEmojiList(e)}
             contentEditable={true}
-            className=" h-10 flex items-center block w-full p-1.5 dark:text-gray-400 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          >
-            type : to use emojis
-          </div>
+            className=" h-10 flex items-center block w-full p-1.5 dark:text-gray-500 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="⭐️ Type : to add emojis"
+          ></div>
           <EmojiComponent isEmojiComponentHidden={isEmojiComponentHidden} />
         </div>
         <div className="my-3">
