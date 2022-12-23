@@ -79,11 +79,5 @@
 } */
 
 .hint::before {
-  position: absolute;
-  content: "";
-  width: 10px;
-  top: -4px;
-  height: 10px;
-  background: #2563eb;
   transform: rotate3d(1, 1, 1, 45deg);
 }
