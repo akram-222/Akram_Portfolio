@@ -22,7 +22,7 @@ const ProjectItem = ({
           </span>
 
           {/* {visibility} */}
-          <button className="showHint" data-hint="welcome">
+          <button className="showHint" data-hint={visibility}>
             <Badge visibility={visibility} />
           </button>
         </div>

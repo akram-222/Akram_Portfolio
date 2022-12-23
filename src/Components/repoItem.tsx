@@ -3,20 +3,27 @@ import { BsLink45Deg } from "react-icons/bs";
 import Icon from "./Icon";
 
 const RepoItem = ({
-    children,
+  children,
   index,
   name,
   size,
   has_issues,
   svn_url,
   isRepoDeleted,
+  createdAt,
 }) => {
   return (
     <div className="flex items-center mt-3 relative show-repo-size" key={index}>
       <div className="">{index + 1}</div>
 
       {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}
-      <div className="ml-2 whitespace-nowrap text-ellipsis mr-3 w-30">
+      <div
+        data-hint={`Created in: ${new Date(createdAt).toLocaleDateString(
+          "en-US",
+          { year: "2-digit", month: "short" }
+        )}`}
+        className="showHint flex-grow ml-2 whitespace-nowrap text-ellipsis mr-3 w-30"
+      >
         {name}
       </div>
       <div className="flex-grow" />
@@ -75,9 +82,9 @@ const RepoItem = ({
           </h3>
         </div>
         <div className="px-3 py-2 flex flex-col">
-            <p>This Repo will permenantly delete</p>
-           {children}
-          </div> 
+          <p>This Repo will permenantly delete</p>
+          {children}
+        </div>
         <div data-popper-arrow></div>
       </div>
       {/* ///////////////////////// */}
