@@ -39,11 +39,10 @@ const Projects = ({ onSidebarHide }) => {
       />
       <div className="flex h-full w-full flex-col lg:flex-row">
         <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
-          
           {isLoad ? (
-           <Skelton 
-            number={repoConfig.per_page}
-            className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717] dark:border-[#353535]`}
+            <Skelton
+              number={repoConfig.per_page}
+              className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717] dark:border-[#353535]`}
             />
           ) : (
             repos?.map(
@@ -68,7 +67,6 @@ const Projects = ({ onSidebarHide }) => {
             setRepoConfig={setRepoConfig}
             repos={repos}
             className="w-full"
-            
           />
         </div>
         <div className="order-first lg:order-last filters lg:flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">

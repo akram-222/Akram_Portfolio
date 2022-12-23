@@ -8,7 +8,12 @@ const Filter = () => {
   const [isHidden, setIsHidden] = useState(true);
   const [isCollapsed, setCollapsed] = useState(true);
   return (
-    <>
+    <div
+      className={`${
+        isCollapsed ? "xs:h-full" : "xs:h-6"
+      } lg:h-full transition-[height] overflow-y-hidden
+        ease-in-out  duration-[2s]`}
+    >
       <header className="flex items-center justify-between">
         <h3 className="flex gap-2 items-center text-blue-400 font-semibold ">
           <FaFilter />
@@ -17,15 +22,16 @@ const Filter = () => {
         <BsChevronExpand
           onClick={() => setCollapsed(!isCollapsed)}
           size={23}
-          className="cursor-pointer text-premium-yellow"
+          className={`lg:hidden cursor-pointer text-premium-yellow`}
         />
       </header>
       <div
-        className={`${
-          isCollapsed ? "h-full" : "h-0"
-        } transition-[height] overflow-hidden`}
+      // className={`${
+      //   isCollapsed ? "xs:h-full" : "xs:h-0"
+      // } lg:h-full transition-[height] overflow-y-hidden
+      // ease-in-out  duration-[10s]`}
       >
-        <div className="mt-3">
+        <div className="my-3">
           <span className="block mb-2 font-medium">By project name:</span>
           <input
             placeholder="ex; amazon"
@@ -33,14 +39,12 @@ const Filter = () => {
             className="block w-full p-1.5 text-gray-900 border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
         </div>
-        <div className="divider border-b my-3 dark:border-[#353535]"></div>
-        <div className="">
+        <div className="my-3">
           <span className="block pb-1">Select Language:</span>
           <Combobox options={["Python", "JavaScript", "PHP", "Rust"]} />
         </div>
         {/* Visibility */}
-        <div className="divider border-b my-3 dark:border-[#353535]"></div>
-        <div className="">
+        <div className="my-3">
           <span className="block mb-2 font-medium">Visibility:</span>
           <div className="visibility-list ml-4">
             <fieldset id="visibility-group">
@@ -51,7 +55,6 @@ const Filter = () => {
           </div>
         </div>
         {/* Sorting */}
-        <div className="divider border-b my-3 dark:border-[#353535]"></div>
         <div className="">
           <span className="block mb-2 font-medium">Sorting by:</span>
           <div className="sorting-list ml-4">
@@ -64,7 +67,7 @@ const Filter = () => {
           </div>
         </div>
         {/* Creatoin Date */}
-        <div className="divider border-b my-3 dark:border-[#353535]"></div>
+        <div className="divider border-dashed border-b my-3 dark:border-[#353535]"></div>
         <div className="">
           <span className="block mb-2 font-medium">Creation Date:</span>
           <div className="flex items-center gap-2 visibility-list ml-4">
@@ -79,7 +82,7 @@ const Filter = () => {
           <Calendar isHidden={isHidden} setIsHidden={setIsHidden} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
