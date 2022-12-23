@@ -13,7 +13,7 @@ const ProjectItem = ({
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
     <div
-      className={`scale-up-center h-[130.43px] border relative w-full xs:w-[49%] md:w-[32%] bg-white rounded shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
+      className={`h-[130.43px] border relative w-full xs:w-[49%] md:w-[32%] bg-white rounded shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
     >
       <div className="">
         <div className="flex justify-between items-center">
