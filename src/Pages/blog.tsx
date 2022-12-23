@@ -8,8 +8,8 @@ const Blog = ({onSidebarHide}) => {
   subtitle={""}
   premium_star={"DEV.to articles"}
   className="mb-10 h-fit"/>
-  {devBlogs && devBlogs?.map(({title})=>{
-      return(<div className="w-[32%] dark:bg-card h-[100px] blog-item">
+  {devBlogs && devBlogs?.map(({title},i)=>{
+      return(<div key={i} className="w-[32%] dark:bg-card h-[100px] blog-item">
           <h3>{title}</h3>
       </div>)
   })}
