@@ -3,18 +3,29 @@ import { FaFilter } from "react-icons/fa";
 import RadioItem from "./RadioItem";
 import Combobox from "./Combobox";
 import Calendar from "./Calendar";
+import { BsChevronExpand } from "react-icons/bs";
 const Filter = () => {
   const [isHidden, setIsHidden] = useState(true);
+  const [isCollapsed, setCollapsed] = useState(true);
   return (
     <>
-      <header>
+      <header className="flex items-center justify-between">
         <h3 className="flex gap-2 items-center text-blue-400 font-semibold ">
           <FaFilter />
           <span>Filters</span>
         </h3>
+        <BsChevronExpand
+          onClick={() => setCollapsed(!isCollapsed)}
+          size={23}
+          className="cursor-pointer text-premium-yellow"
+        />
       </header>
-      <div className="mt-3 ">
-        <div className="">
+      <div
+        className={`${
+          isCollapsed ? "h-full" : "h-0"
+        } transition-[height] overflow-hidden`}
+      >
+        <div className="mt-3">
           <span className="block mb-2 font-medium">By project name:</span>
           <input
             placeholder="ex; amazon"
