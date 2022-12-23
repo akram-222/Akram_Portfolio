@@ -25,13 +25,18 @@ const EmojiComponent = ({
     img.className = "ml-1 w-5 h-5";
     img.src = `${emojiValue}`;
     inputFeild.current!.append(img);
-  };
+    setIsEmojiComponentHidden(true);
+    let divTextContent = inputFeild.current as HTMLInputElement;
+    if((divTextContent.childNodes[0] as Text).data === ":") {
+      divTextContent.childNodes[0].remove();
+    }
+  }
   return (
     <>
       <div
         onInput={(e) => showEmojiList(e)}
         contentEditable={true}
-        className=" h-10 flex items-center block w-full p-1.5 dark:text-gray-500 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        className=" h-10 flex items-center block w-full p-2 dark:text-gray-200 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="⭐️ Type : to add emojis"
         ref={inputFeild}
       ></div>
