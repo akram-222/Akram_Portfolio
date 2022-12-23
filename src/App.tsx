@@ -8,6 +8,8 @@ import Dashboard from "./Pages/Dashboard";
 import Settings from "./Pages/Settings";
 import Search from "./Pages/Search";
 import Tooltip from "./Components/Tooltip";
+import Blog from "./Pages/blog";
+import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   useEffect(() => {
@@ -23,52 +25,64 @@ const App = () => {
     }
   }, []);
   return (
-    <div className="flex">
-      <Tooltip />
-      <BrowserRouter>
-        <Sidebar
-          onSidebarHide={() => {
-            onSetShowSidebar(false);
-          }}
-          showSidebar={showSidebar}
-        />
-        <div className="flex w-full">
-          <div className="w-full h-screen hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
-            .
-          </div>
-          <div className=" h-screen flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
-            <Routes>
-              {["/", "/dashboard"].map((path, index) => (
+    <DevBlogsContextProvider>
+      <div className="flex">
+        <Tooltip />
+        <BrowserRouter>
+          <Sidebar
+            onSidebarHide={() => {
+              onSetShowSidebar(false);
+            }}
+            showSidebar={showSidebar}
+          />
+          <div className="flex w-full">
+            <div className="w-full h-screen hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
+              .
+            </div>
+            <div className=" h-screen flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
+              <Routes>
+                {["/", "/dashboard"].map((path, index) => (
+                  <Route
+                    path={path}
+                    element={
+                      <Dashboard
+                        onSidebarHide={() => {
+                          onSetShowSidebar(true);
+                        }}
+                      />
+                    }
+                    key={index}
+                  />
+                ))}
                 <Route
-                  path={path}
+                  path="/projects"
                   element={
-                    <Dashboard
+                    <Projects
                       onSidebarHide={() => {
                         onSetShowSidebar(true);
                       }}
                     />
                   }
-                  key={index}
                 />
-              ))}
-              <Route
-                path="/projects"
-                element={
-                  <Projects
-                    onSidebarHide={() => {
-                      onSetShowSidebar(true);
-                    }}
-                  />
-                }
-              />
-              <Route path="/search" element={<Search />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/*" element={<NotFoundRoute />} />
-            </Routes>
+                <Route path="/search" element={<Search />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route
+                  path="/blog"
+                  element={
+                    <Blog
+                      onSidebarHide={() => {
+                        onSetShowSidebar(true);
+                      }}
+                    />
+                  }
+                />
+                <Route path="/*" element={<NotFoundRoute />} />
+              </Routes>
+            </div>
           </div>
-        </div>
-      </BrowserRouter>
-    </div>
+        </BrowserRouter>
+      </div>
+    </DevBlogsContextProvider>
   );
 };
 
