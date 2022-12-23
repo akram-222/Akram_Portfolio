@@ -2,14 +2,23 @@ import { useState } from "react";
 import { IoIosClose, IoIosArrowDown } from "react-icons/io";
 const Combobox = ({ options }) => {
   const [isCollapsed, setCollapsing] = useState(true);
+  const [filteredRes, setFilteredRes] = useState(options);
   const [value, setValue] = useState<string>("");
-  const handleSearchValue = (e) => {
-    const target = e.target as HTMLTextAreaElement;
+  const filterOptionsArray = (receivedValue: string): void => {
+    const res = options.filter((item: string) =>
+      item.toLowerCase().includes(receivedValue.toLowerCase())
+    );
+    setFilteredRes(res);
+  };
+  const handleSearchValue = (e: React.SyntheticEvent): void => {
+    const target = e.currentTarget as HTMLInputElement;
     setValue(target.value);
     setCollapsing(false);
+    filterOptionsArray(target.value);
   };
   const resetSearchValue = () => {
     setValue("");
+    filterOptionsArray("");
   };
   return (
     <div className="">
@@ -50,20 +59,21 @@ const Combobox = ({ options }) => {
               isCollapsed ? "hidden" : ""
             } absolute dark:border-[#353535] rounded shadow bg-white overflow-hidden flex-col w-full mt-1 border border-gray-200`}
           >
-            {options?.map((option) => {
-              return (
-                <div
-                  key={option}
-                  className="cursor-pointer group block border-l-4 dark:bg-card dark:border-b dark:border-b-[#353535] border-l-transparent dark:hover:text-blue-400 hover:border-blue-600 p-2"
-                  onClick={() => {
-                    setCollapsing(true);
-                    setValue(option);
-                  }}
-                >
-                  {option}
-                </div>
-              );
-            })}
+            {filteredRes &&
+              filteredRes?.map((option: number | string) => {
+                return (
+                  <div
+                    key={option}
+                    className="cursor-pointer group block border-l-4 dark:bg-card dark:border-b dark:border-b-[#353535] border-l-transparent dark:hover:text-blue-400 hover:border-blue-600 p-2"
+                    onClick={() => {
+                      setCollapsing(true);
+                      setValue(option as string);
+                    }}
+                  >
+                    {option}
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>
