@@ -37,8 +37,8 @@ const Projects = ({ onSidebarHide }) => {
         }
         premium_star="GitHub Repos"
       />
-      <div className="flex h-full w-full flex-col lg:flex-row">
-        <div className="projects-list w-full lg:w-2/3 flex flex-wrap gap-2">
+      <div className="flex  w-full flex-col lg:flex-row">
+        <div className="projects-list w-full flex flex-wrap gap-2">
           {isLoad ? (
             <Skelton
               number={repoConfig.per_page}
