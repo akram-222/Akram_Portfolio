@@ -20,11 +20,6 @@ const Calendar = ({ isHidden, setIsHidden }) => {
       day: "2-digit",
     }
   );
-  // const currentDate: string = updatedDate.toLocaleDateString("en-Us", {
-  //   month: "long",
-  //   year: "numeric",
-  //   day:"2-digit"
-  // });
 
   const handleUpdatedDate = (
     y?: "numeric",
@@ -47,7 +42,7 @@ const Calendar = ({ isHidden, setIsHidden }) => {
     setInterval(() => {
       setTimeTick(new Date().toLocaleTimeString("en-US", {}));
     }, 1000);
-    console.log(handleUpdatedDate());
+    handleUpdatedDate();
   }, []);
 
   return (
