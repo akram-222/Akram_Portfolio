@@ -62,5 +62,6 @@ input[type="radio"]:checked + label {
 
 [contentEditable="true"]:empty:before {
   content: attr(placeholder);
+  color:#888;
 /* opacity: 0.6; */
 }
