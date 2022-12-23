@@ -4,6 +4,7 @@ import RadioItem from "./RadioItem";
 import Combobox from "./Combobox";
 import Calendar from "./Calendar";
 import { BsChevronExpand } from "react-icons/bs";
+import { __getEmoji } from "../Utils/github/__getEmoji";
 const Filter = () => {
   const [isHidden, setIsHidden] = useState(true);
   const [isCollapsed, setCollapsed] = useState(true);
@@ -34,6 +35,7 @@ const Filter = () => {
         <div className="my-3">
           <span className="block mb-2 font-medium">By project name:</span>
           <input
+            onInput={(e) => __getEmoji(e.nativeEvent)}
             placeholder="ex; amazon"
             type="search"
             className="block w-full p-1.5 text-gray-900 border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
