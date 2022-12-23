@@ -22,7 +22,7 @@ const EmojiComponent = ({
   };
   const appendEmoji = (emojiValue: string) => {
     let img = document.createElement("img");
-    img.className = "ml-1 w-5 h-5";
+    img.className = "mx-1 w-5 h-5";
     img.src = `${emojiValue}`;
     inputFeild.current!.append(img);
     setIsEmojiComponentHidden(true);
