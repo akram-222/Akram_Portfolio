@@ -56,9 +56,12 @@ const Combobox = ({ options }) => {
           />
           <div
             className={`${
-              isCollapsed ? "hidden" : ""
+              isCollapsed || !filteredRes.length ? "hidden" : ""
             } absolute dark:border-[#353535] rounded shadow bg-white overflow-hidden flex-col w-full mt-1 border border-gray-200`}
           >
+            {/* Bug: when filteredRes is empty array [], then the border of the parent element appear as a strong line in the UI,
+                Solve: add `|| !filteredRes.length` in line 59 to hide the whole parent in case of mismatching results
+             */}
             {filteredRes &&
               filteredRes?.map((option: number | string) => {
                 return (
