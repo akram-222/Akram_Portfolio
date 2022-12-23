@@ -49,10 +49,10 @@ const Calendar = ({ isHidden, setIsHidden }) => {
     <>
       <div
         className={`${
-          isHidden ? "hidden" : ""
+          isHidden ? "hidden " : ""
         } absolute w-full h-full top-0 left-0 z-10 calendar-backdrop flex items-center justify-center py-8 px-4`}
       >
-        <div className=" xs:max-w-sm md:max-w-md shadow-lg">
+        <div className="slide-top xs:max-w-sm md:max-w-md shadow-lg">
           <div className="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
             <span className="flex justify-between items-center -my-3 -mx-2 mb-2 dark:bg-gray-700 px-2">
               <span className="dark:text-green-400 font-bold">
