@@ -22,7 +22,9 @@ const ProjectItem = ({
           </span>
 
           {/* {visibility} */}
-          <Badge visibility={visibility} />
+          <button className="showHint" data-hint="welcome">
+            <Badge visibility={visibility} />
+          </button>
         </div>
         <div className="flex space-x-2 text-gray-400 text-sm">
           <BsCodeSlash size={20} />
