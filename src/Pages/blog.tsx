@@ -6,7 +6,7 @@ const Blog = ({onSidebarHide}) => {
       <PageTitle  onSidebarHide={onSidebarHide}
   title={"Blog"}
   subtitle={""}
-  premium_star={"DEV.to Blog"}
+  premium_star={"DEV.to articles"}
   className="mb-10 h-fit"/>
   {devBlogs && devBlogs?.map(({title})=>{
       return(<div className="w-[32%] dark:bg-card h-[100px] blog-item">
