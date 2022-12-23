@@ -7,19 +7,19 @@ import Calendar from "./Calendar";
 import { BsChevronExpand } from "react-icons/bs";
 const Filter = () => {
   const [isHidden, setIsHidden] = useState(true);
-  const [isEmojiComponentHidden, SetIsEmojiComponentHidden] = useState(true);
+  const [isEmojiComponentHidden, setIsEmojiComponentHidden] = useState(true);
   const [isCollapsed, setCollapsed] = useState(true);
-  const showEmojiList = (event: React.SyntheticEvent) => {
-    let divTextContent = event.currentTarget as HTMLInputElement;
-    if (
-      divTextContent.textContent!.length === 1 &&
-      divTextContent.textContent!.charAt(0) === ":"
-    ) {
-      SetIsEmojiComponentHidden(false);
-    } else {
-      SetIsEmojiComponentHidden(true);
-    }
-  };
+  // const showEmojiList = (event: React.SyntheticEvent) => {
+  //   let divTextContent = event.currentTarget as HTMLInputElement;
+  //   if (
+  //     divTextContent.textContent!.length === 1 &&
+  //     divTextContent.textContent!.charAt(0) === ":"
+  //   ) {
+  //     SetIsEmojiComponentHidden(false);
+  //   } else {
+  //     SetIsEmojiComponentHidden(true);
+  //   }
+  // };
   return (
     <div
       className={`${
@@ -42,13 +42,16 @@ const Filter = () => {
         <div className="my-3 relative">
           <span className="block mb-2 font-medium">By project name:</span>
 
-          <div
+          {/* <div
             onInput={(e) => showEmojiList(e)}
             contentEditable={true}
             className=" h-10 flex items-center block w-full p-1.5 dark:text-gray-500 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="⭐️ Type : to add emojis"
-          ></div>
-          <EmojiComponent isEmojiComponentHidden={isEmojiComponentHidden} />
+          ></div> */}
+          <EmojiComponent
+            setIsEmojiComponentHidden={setIsEmojiComponentHidden}
+            isEmojiComponentHidden={isEmojiComponentHidden}
+          />
         </div>
         <div className="my-3">
           <span className="block pb-1">Select Language:</span>
