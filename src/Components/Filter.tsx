@@ -27,10 +27,7 @@ const Filter = () => {
         />
       </header>
       <div
-      // className={`${
-      //   isCollapsed ? "xs:h-full" : "xs:h-0"
-      // } lg:h-full transition-[height] overflow-y-hidden
-      // ease-in-out  duration-[10s]`}
+ 
       >
         <div className="my-3">
           <span className="block mb-2 font-medium">By project name:</span>
