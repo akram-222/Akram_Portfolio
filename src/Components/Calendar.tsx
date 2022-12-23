@@ -99,7 +99,11 @@ const Calendar = ({ isHidden, setIsHidden }) => {
                 </button>
               </div>
             </div>
-            <div className="flex gap-x-4 gap-y-2 px-3 items-center flex-wrap pt-6 overflow-x-auto">
+            {/* 
+              Bug: Upscaling elements of days on clicking, which lead to expanding the parent and appear it's scroll bar for milliseconds as a flasing.
+              Solve: Add overflow-hidden class in line 106 instead of overflow-x-auto
+             */}
+            <div className="flex gap-x-4 gap-y-2 px-3 items-center flex-wrap pt-6 overflow-hidden">
               {weekdays.map((day, i) => {
                 return (
                   <div
