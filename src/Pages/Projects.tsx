@@ -5,7 +5,6 @@ import ProjectItem from "../Components/projectItem";
 import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
-import { __getEmojiList } from "../Utils/github/__gitEmojiList";
 
 const Projects = ({ onSidebarHide }) => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 12 });
@@ -16,7 +15,6 @@ const Projects = ({ onSidebarHide }) => {
       setRepos(fetchedRepos);
       setLoad(false);
     });
-    __getEmojiList().then((emojis) => console.log(emojis));
   }, [repoConfig]);
 
   return (
