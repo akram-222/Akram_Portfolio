@@ -40,7 +40,7 @@ const Filter = () => {
           <div
             onInput={(e) => __getEmoji(e.currentTarget,e.nativeEvent)}
             contentEditable={true}
-            className="flex items-center block w-full p-1.5 dark:text-gray-400 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="h-10 flex items-center block w-full p-1.5 dark:text-gray-400 font-semibold border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             type : to use emojis
           </div>
