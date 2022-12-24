@@ -11,6 +11,9 @@ const Notifications = ({ onSidebarHide }) => {
       console.log(notificationsList);
     });
   }, []);
+  const calcUpdatedNotificationDateInHours = (updatedAt: string) => {
+    return new Date().getHours() - 12 - (new Date(updatedAt).getHours() - 12);
+  };
   return (
     <>
       <PageTitle
@@ -61,7 +64,7 @@ const Notifications = ({ onSidebarHide }) => {
                   return (
                     <tr
                       key={i}
-                      className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                      className="bg-white border-l-2 border-b dark:hover:border-l-[#1f6feb] dark:bg-gray-900 dark:border-gray-800 dark:hover:bg-[#1b2c43] dark:hover:bg-gray-600"
                     >
                       <td className="p-4 w-4">
                         <div className="flex items-center">
@@ -78,25 +81,24 @@ const Notifications = ({ onSidebarHide }) => {
                           </label>
                         </div>
                       </td>
-                      <td className="flex items-center justify-center h-14">
-                        <FaRegDotCircle size={25} />
+                      <td className="p-4 w-4">
+                        <div className="flex items-center justify-center "><FaRegDotCircle size={25} /></div>
                       </td>
                       <th
                         scope="row"
-                        className=" py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        className="expanded py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                       >
-                        <div className="top_part">
+                        <div className="top_part whitespace-nowrap">
                           {login}/{name}
                           <span className="mx-2 dark:text-gray-400">#{id}</span>
                         </div>
-                        <div className="bottom_part expanded">[{title}]</div>
+                        <div className="bottom_part">[{title}]</div>
                       </th>
                       <td className="py-4 px-6">+10</td>
                       <td className="py-4 px-6">{reason}</td>
                       <td className="py-4 px-6">
-                        {new Date().getHours() -
-                          12 -
-                          (new Date(updated_at).getHours() - 12)}{" "}
+                        {calcUpdatedNotificationDateInHours(updated_at)}
+                        {" "}
                         hours ago
                       </td>
                     </tr>
