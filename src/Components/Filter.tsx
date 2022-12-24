@@ -26,7 +26,6 @@ const Filter = () => {
       <div className={`${isCollapsed ? "xs:hidden" : ""} lg:block`}>
         <div className="my-3 relative">
           <span className="block mb-2 font-medium">By project name:</span>
-
           <EmojiComponent
             setIsEmojiComponentHidden={setIsEmojiComponentHidden}
             isEmojiComponentHidden={isEmojiComponentHidden}

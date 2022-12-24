@@ -1,19 +1,7 @@
-//     <div classNameName="flex flex-wrap gap-2">
-//       <PageTitle  onSidebarHide={onSidebarHide}
-//   title={"Blog"}
-//   subtitle={""}
-//   premium_star={"DEV.to articles"}
-//   classNameName="mb-10 h-fit"/>
-//   {devBlogs && devBlogs?.map(({title},i)=>{
-//       return(<div key={i} classNameName="w-[32%] dark:bg-card h-[100px] blog-item">
-//           <h3>{title}</h3>
-//       </div>
-
 import { useDevBlogs } from "../Contexts/DEVAPIContext";
 import PageTitle from "../Components/PageTitle";
-import BlogCard from "../Components/BlogCard";
-import BlogTopicItem from "../Components/BlogTopicItem";
 import PinArticle from "../Components/PinArticle";
+import RadioItem from "../Components/RadioItem";
 const Blog = ({ onSidebarHide }) => {
   const { devBlogs } = useDevBlogs();
   console.log(devBlogs);
@@ -36,7 +24,7 @@ const Blog = ({ onSidebarHide }) => {
                   key={i}
                   className={`md:w-${
                     i + 1
-                  }/3 lg:w-1/3 xs:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
+                  }/3 lg:w-1/3 md:h-56 xs:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
                   title={title}
                   createdAt={created_at}
                   user={user}
@@ -46,34 +34,29 @@ const Blog = ({ onSidebarHide }) => {
         <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
           <div className="w-full lg:w-2/3">
             {devBlogs &&
-              devBlogs?.map(
-                (
-                  { title, cover_image, created_at, description, user },
-                  i: number
-                ) => (
-                  <BlogCard
-                    key={i}
-                    title={title}
-                    coverImage={cover_image}
-                    createdAt={created_at}
-                    description={description}
-                    user={user}
-                  />
-                )
-              )}
+              devBlogs?.map(({ title, created_at, user }, i: number) => (
+                <PinArticle
+                  key={i}
+                  className={`w-full`}
+                  title={title}
+                  createdAt={created_at}
+                  user={user}
+                />
+              ))}
           </div>
 
           <div className="w-full lg:w-1/3 px-3">
             <div className="mb-4">
-              <h5 className="font-bold text-lg uppercase text-gray-700 px-1 mb-2">
+              <h5 className="mb-4 font-bold relative text-lg text-blue-400 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-blue-400">
                 Popular Topics
               </h5>
-              <ul>
-                <BlogTopicItem
-                  topic={"SCSS"}
-                  numberOfArticles={devBlogs?.length}
+              {["SCSS", "React router dom", "CSS"]?.map((topic, i) => (
+                <RadioItem
+                  key={i}
+                  option={`${topic} ----- ( ${devBlogs.length} articles )`}
+                  name="article-topics"
                 />
-              </ul>
+              ))}
             </div>
             {/* <div className="p-1 mt-4 mb-4">
             <h5 className="font-bold text-lg uppercase text-gray-700 mb-2">
