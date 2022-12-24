@@ -3,8 +3,8 @@ import Badge from "./Badge";
 const PinArticle = ({ className, title, coverImage, createdAt, user }) => {
   return (
     <a
-      className={`${className} h-64 rounded dark:bg-gray-800 mb-4 md:mb-0 w-full relative inline-block`}
-      href="./blog.html"
+      className={`${className} inspiration__geometry--pattern h-60 mb-4 md:mb-0 w-full relative inline-block`}
+      href="#d"
     >
       <div
         className="absolute left-0 bottom-0 w-full h-full z-10"
@@ -21,7 +21,7 @@ const PinArticle = ({ className, title, coverImage, createdAt, user }) => {
         <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">
           Tech
         </span>
-        <h2 className="text-2xl font-semibold text-gray-100 leading-tight">
+        <h2 className=" xs:text-[3.5vw] md:text-[2.6vw] lg:text-[1.5vw] font-semibold text-gray-100 leading-tight">
           {title}
         </h2>
         <div className="flex mt-3">
