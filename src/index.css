@@ -474,3 +474,21 @@ input[type="radio"]:checked + label {
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
   border: 1px solid #36393e;
 }
+
+.pinArticleWall{
+  background-size: cover;
+}
+
+.pinArticleWall-1{
+  background-position:bottom;
+  background-image: url('https://images.prismic.io/mparticle/3e7e9828-7aeb-4a3c-be49-6bd21e75a96a_TEMPLATE_+Tagged+Blog_Resources_News+Image+%402x+%281%29.png?auto=compress%2Cformat&rect=0%2C1%2C1465%2C822&w=1230&h=690');
+}
+
+.pinArticleWall-2{
+  background-image: url('https://thumbs.dreamstime.com/b/blog-text-sign-icon-logo-dark-background-white-132714819.jpg');
+}
+
+
+.pinArticleWall-3{
+  background-image: url('https://thumbs.dreamstime.com/b/blog-text-sign-icon-logo-dark-background-white-132714819.jpg');
+}

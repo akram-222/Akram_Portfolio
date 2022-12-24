@@ -24,7 +24,7 @@ const Blog = ({ onSidebarHide }) => {
                   key={i}
                   className={`md:w-${
                     i + 1
-                  }/3 lg:w-1/3 md:h-56 xs:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
+                  }/3 pinArticleWall pinArticleWall-${i+1} lg:w-1/3 md:h-56 xs:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
                   title={title}
                   createdAt={created_at}
                   user={user}
@@ -37,7 +37,7 @@ const Blog = ({ onSidebarHide }) => {
               devBlogs?.map(({ title, created_at, user }, i: number) => (
                 <PinArticle
                   key={i}
-                  className={`w-full`}
+                  className={`w-full inspiration__geometry--pattern`}
                   title={title}
                   createdAt={created_at}
                   user={user}
