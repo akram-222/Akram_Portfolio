@@ -1,6 +1,6 @@
 // ISSUE: Multiple radio button groups in one form
 // https://stackoverflow.com/questions/28543752/multiple-radio-button-groups-in-one-form
-const RadioItem = ({ option, name,className }) => {
+const RadioItem = ({ option, name, className }) => {
   return (
     <div className={`flex items-center ${className}`}>
       <input id={option} type="radio" name={name} className="hidden" />
