@@ -30,7 +30,7 @@ const Blog = ({ onSidebarHide }) => {
                     i + 1
                   }/3 h-44 pinArticleWall pinArticleWall-${
                     i + 1
-                  } lg:w-1/3 md:h-56 md:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
+                  } tilt-in-right-1 lg:w-1/3 md:h-56 md:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
                   title={title}
                   createdAt={created_at}
                   user={user}
@@ -46,7 +46,7 @@ const Blog = ({ onSidebarHide }) => {
                 ({ title, created_at, user, url, tag_list }, i: number) => (
                   <PinArticle
                     key={i}
-                    className={`w-full inspiration__geometry--pattern`}
+                    className={`w-full inspiration__geometry--pattern tilt-in-left-1`}
                     title={title}
                     createdAt={created_at}
                     user={user}
@@ -56,7 +56,7 @@ const Blog = ({ onSidebarHide }) => {
                 )
               )}
           </div>
-          <div className="w-full lg:w-1/3 px-3">
+          <div className="w-full lg:w-1/3 px-3 tilt-in-right-1">
             <div className="w-full dark:bg-[#171717] p-4 mt-4 mb-4">
               <h5 className="mx-auto xs:w-fit sm:w-full mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
                 Subscribe
