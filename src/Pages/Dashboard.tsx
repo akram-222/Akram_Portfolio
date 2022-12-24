@@ -7,6 +7,7 @@ import NameCard from "../Components/NameCard";
 import PageTitle from "../Components/PageTitle";
 import Satisfication from "../Components/Satisfication";
 import Segmentation from "../Components/Segmentation";
+import Chart from "../Components/Chart";
 
 const Dashboard = ({ onSidebarHide }) => {
   return (
@@ -122,8 +123,9 @@ const Dashboard = ({ onSidebarHide }) => {
       )}
 
       <div className="w-full p-2 lg:w-2/3">
-        <div className="rounded-lg bg-card sm:h-80 h-60">
-          <Graph />
+        <div className="flex rounded-lg bg-card sm:h-80 h-60">
+          {/* <Graph /> */}
+          <Chart />
         </div>
       </div>
       <div className="w-full p-2 lg:w-1/3">
