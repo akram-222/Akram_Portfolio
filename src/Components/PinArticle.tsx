@@ -1,11 +1,11 @@
 const PinArticle = ({ className, title, createdAt, user }) => {
   return (
     <a
-      className={`${className} inspiration__geometry--pattern h-60 mb-4 md:mb-0 w-full relative inline-block`}
+      className={`${className} rounded-xl inspiration__geometry--pattern h-60 mb-4 md:mb-0 w-full relative inline-block`}
       href="#d"
     >
       <div
-        className="bg-gradient-to-tr from-[#101010] absolute left-0 bottom-0 w-full h-full z-10"
+        className="rounded-xl bg-gradient-to-tr from-[#101010] absolute left-0 bottom-0 w-full h-full z-10"
         style={{}}
       ></div>
       <div className="p-4 absolute bottom-0 left-0 w-full z-20">
