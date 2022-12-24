@@ -19,7 +19,7 @@ const Blog = ({ onSidebarHide }) => {
           {devBlogs &&
             devBlogs
               ?.slice(2, 5)
-              .map(({ title, created_at, user }, i: number) => (
+              .map(({ title, created_at, user, url, tag_list }, i: number) => (
                 <PinArticle
                   key={i}
                   className={`md:w-${
@@ -30,36 +30,29 @@ const Blog = ({ onSidebarHide }) => {
                   title={title}
                   createdAt={created_at}
                   user={user}
+                  url={url}
+                  tagList={tag_list}
                 />
               ))}
         </div>
         <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
           <div className="w-full lg:w-2/3">
             {devBlogs &&
-              devBlogs?.map(({ title, created_at, user }, i: number) => (
-                <PinArticle
-                  key={i}
-                  className={`w-full inspiration__geometry--pattern`}
-                  title={title}
-                  createdAt={created_at}
-                  user={user}
-                />
-              ))}
+              devBlogs?.map(
+                ({ title, created_at, user, url, tag_list }, i: number) => (
+                  <PinArticle
+                    key={i}
+                    className={`w-full inspiration__geometry--pattern`}
+                    title={title}
+                    createdAt={created_at}
+                    user={user}
+                    url={url}
+                    tagList={tag_list}
+                  />
+                )
+              )}
           </div>
           <div className="w-full lg:w-1/3 px-3">
-            <div className="mb-4">
-              <h5 className="mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
-                Popular Topics
-              </h5>
-              {["SCSS", "React router dom", "CSS"]?.map((topic, i) => (
-                <RadioItem
-                  key={i}
-                  option={`${topic} ----- ( ${devBlogs.length} articles )`}
-                  name="article-topics"
-                  className="mb-2 text-xs sm:text-sm"
-                />
-              ))}
-            </div>
             <div className="w-full dark:bg-[#171717] p-4 mt-4 mb-4">
               <h5 className="mx-auto xs:w-fit sm:w-full mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
                 Subscribe
