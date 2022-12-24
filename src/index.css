@@ -9,7 +9,13 @@ body {
   color: #676767;
   background-color: #1e1e1e;
 }
-
+/* TABLES */
+table th .expanded,
+table td .expanded {
+  word-wrap: break-word;
+  max-width: 250px;
+  white-space: break-spaces;
+}
 * {
   outline: none;
 }
