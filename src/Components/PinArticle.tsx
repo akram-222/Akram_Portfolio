@@ -1,7 +1,7 @@
 const PinArticle = ({ className, title, createdAt, user }) => {
   return (
     <a
-      className={`${className} rounded-xl inspiration__geometry--pattern h-60 mb-4 md:mb-0 w-full relative inline-block`}
+      className={`${className} rounded-xl inspiration__geometry--pattern h-32 md:h-60 mb-4 md:mb-0 w-full relative inline-block`}
       href="#d"
     >
       <div
@@ -16,7 +16,7 @@ const PinArticle = ({ className, title, createdAt, user }) => {
           <img
             alt=""
             src={user.profile_image_90}
-            className="h-10 w-10 rounded-full mr-2 object-cover"
+            className="w-9 rounded-full mr-2 object-cover"
           />
           <div>
             <p className="font-semibold text-gray-200 text-sm">{user.name}</p>
