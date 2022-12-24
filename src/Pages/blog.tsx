@@ -26,27 +26,21 @@ const Blog = ({ onSidebarHide }) => {
         premium_star={"DEV.to articles"}
         className="mb-10 h-fit"
       />
-      <div className="max-w-screen-xl mx-auto">
+      <div className="w-full">
         <div className="block md:flex md:space-x-2 px-2 lg:p-0">
           {devBlogs &&
             devBlogs
-              ?.slice(0, 2)
-              .map(
-                (
-                  { title, cover_image, created_at, description, user },
-                  i: number
-                ) => (
-                  <PinArticle
-                    key={i}
-                    i={i}
-                    title={title}
-                    coverImage={cover_image}
-                    createdAt={created_at}
-                    description={description}
-                    user={user}
-                  />
-                )
-              )}
+              ?.slice(2, 5)
+              .map(({ title, cover_image, created_at, user }, i: number) => (
+                <PinArticle
+                  key={i}
+                  className={`md:w-${i+1}/3 xl:w-1/3 xs:[&:nth-child(1)]:hidden xl:[&:nth-child(1)]:block`}
+                  title={title}
+                  coverImage={cover_image}
+                  createdAt={created_at}
+                  user={user}
+                />
+              ))}
         </div>
         <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
           <div className="w-full lg:w-2/3">
