@@ -1,7 +1,7 @@
 const PinArticle = ({ className, title, createdAt, user }) => {
   return (
     <a
-      className={`${className} rounded-xl h-32 mb-4 md:mb-0 w-full relative inline-block`}
+      className={`${className} rounded-xl h-32 md:mb-0 w-full relative inline-block`}
       href="#d"
     >
       <div
@@ -16,11 +16,11 @@ const PinArticle = ({ className, title, createdAt, user }) => {
           <img
             alt=""
             src={user.profile_image_90}
-            className="w-9 rounded-full mr-2 object-cover"
+            className="w-7 h-7 sm:h-9 sm:w-9 rounded-full mr-2 object-cover"
           />
-          <div>
-            <p className="font-semibold text-gray-200 text-sm">{user.name}</p>
-            <p className="font-semibold text-gray-400 text-xs">
+          <div className="text-xs sm:text-sm">
+            <p className="font-semibold text-gray-200">{user.name}</p>
+            <p className="font-semibold text-gray-400">
               {" "}
               {new Date(createdAt).toLocaleDateString("en-US", {
                 day: "2-digit",
@@ -29,7 +29,7 @@ const PinArticle = ({ className, title, createdAt, user }) => {
               })}{" "}
             </p>
           </div>
-          <span className="self-center justify-self-center px-4 py-1 font-bold text-sm dark:bg-[#161b22] dark:text-white dark:border-[#353535] border rounded ml-auto">
+          <span className="text-xs sm:text-sm self-center justify-self-center px-4 py-1 font-bold dark:bg-[#161b22] dark:text-white dark:border-[#353535] border rounded ml-auto">
             Tech
           </span>
         </div>

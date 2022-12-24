@@ -24,7 +24,7 @@ const Blog = ({ onSidebarHide }) => {
                   key={i}
                   className={`md:w-${
                     i + 1
-                  }/3 pinArticleWall pinArticleWall-${i+1} lg:w-1/3 md:h-56 xs:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
+                  }/3 h-44 pinArticleWall pinArticleWall-${i+1} lg:w-1/3 md:h-56 md:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
                   title={title}
                   createdAt={created_at}
                   user={user}
@@ -55,6 +55,7 @@ const Blog = ({ onSidebarHide }) => {
                   key={i}
                   option={`${topic} ----- ( ${devBlogs.length} articles )`}
                   name="article-topics"
+                  className="mb-2 text-xs sm:text-sm"
                 />
               ))}
             </div>
@@ -62,11 +63,11 @@ const Blog = ({ onSidebarHide }) => {
               <h5 className="mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
                 Subscribe
               </h5>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-xs sm:text-sm">
                 Subscribe to our newsletter. We deliver the best health related
                 articles to your inbox
               </p>
-              <form className="w-full max-w-sm">
+              <form className="w-full max-w-sm text-xs sm:text-sm">
                 <div className="flex items-center border-b dark:border-[#353535] py-1">
                   <input
                     className="appearance-none bg-transparent border-none w-full dark:text-gray-100 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -75,13 +76,13 @@ const Blog = ({ onSidebarHide }) => {
                     aria-label="Full name"
                   />
                   <button
-                    className="flex-shrink-0 dark:bg-card border-gray-700 border-2 dark:hover:bg-gray-700 text-sm text-white py-1 px-2 rounded"
+                    className="flex-shrink-0 dark:bg-card border-gray-700 border sm:border-2 dark:hover:bg-gray-700 text-white py-1 px-1 sm:px-2 rounded"
                     type="button"
                   >
                     Sign Up
                   </button>
                   <button
-                    className="flex-shrink-0 border-transparent border-4 text-rose-400 hover:text-rose-700 text-sm py-1 px-2 rounded"
+                    className="flex-shrink-0 border-transparent border-4 text-rose-400 hover:text-rose-700 py-1 px-2 rounded"
                     type="button"
                   >
                     Cancel
