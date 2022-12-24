@@ -474,3 +474,22 @@ input[type="radio"]:checked + label {
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
   border: 1px solid #36393e;
 }
+
+.pinArticleWall{
+  background-size: cover;
+}
+
+.pinArticleWall-1{
+  background-position:bottom;
+  background-image: url('https://imelgrat.me/wp-content/uploads/2019/09/react-delay-link.jpg');
+}
+
+.pinArticleWall-2{
+  background-position:bottom;
+  background-image: url('https://thumbs.dreamstime.com/b/blog-text-sign-icon-logo-dark-background-white-132714819.jpg');
+}
+
+
+.pinArticleWall-3{
+  background-image: url('https://miro.medium.com/max/1200/0*bQEy2w73A78zM6cX');
+}

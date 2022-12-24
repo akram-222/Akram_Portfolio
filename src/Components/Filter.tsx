@@ -40,9 +40,9 @@ const Filter = () => {
           <span className="block mb-2 font-medium">Visibility:</span>
           <div className="visibility-list ml-4">
             <fieldset id="visibility-group">
-              <RadioItem option={"public"} name="visibility-group" />
-              <RadioItem option={"private"} name="visibility-group" />
-              <RadioItem option={"all"} name="visibility-group" />
+              <RadioItem className="" option={"public"} name="visibility-group" />
+              <RadioItem className="" option={"private"} name="visibility-group" />
+              <RadioItem className="" option={"all"} name="visibility-group" />
             </fieldset>
           </div>
         </div>
@@ -51,10 +51,10 @@ const Filter = () => {
           <span className="block mb-2 font-medium">Sorting by:</span>
           <div className="sorting-list ml-4">
             <fieldset id="sorting-group">
-              <RadioItem option={"creation date"} name="sorting-group" />
-              <RadioItem option={"last updated"} name="sorting-group" />
-              <RadioItem option={"first pushed"} name="sorting-group" />
-              <RadioItem option={"full name"} name="sorting-group" />
+              <RadioItem className="" option={"creation date"} name="sorting-group" />
+              <RadioItem className="" option={"last updated"} name="sorting-group" />
+              <RadioItem className="" option={"first pushed"} name="sorting-group" />
+              <RadioItem className="" option={"full name"} name="sorting-group" />
             </fieldset>
           </div>
         </div>
