@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaRegDotCircle } from "react-icons/fa";
+import { VscCircleFilled } from "react-icons/vsc";
 import PageTitle from "../Components/PageTitle";
 import { __getNotifications } from "../Utils/github/__getNotifications";
 
@@ -25,15 +26,15 @@ const Notifications = ({ onSidebarHide }) => {
       />
 
       <div className="overflow-x-auto relative w-full sm:rounded-lg">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-              <th scope="col" colSpan={7} className="p-4">
+        <table className="w-full text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-[#161b22] dark:text-gray-400">
+            <tr className="border-b dark:border-b-gray-800">
+              <th scope="col" colSpan={7} className="p-5">
                 <div className="flex items-center">
                   <input
                     id="checkbox-all-search"
                     type="checkbox"
-                    className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    className="w-5 h-5 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-900 dark:border-gray-600"
                   />
                   <label
                     htmlFor="checkbox-all-search"
@@ -51,6 +52,7 @@ const Notifications = ({ onSidebarHide }) => {
                 (
                   {
                     reason,
+                    unread,
                     repository: {
                       name,
                       id,
@@ -64,10 +66,11 @@ const Notifications = ({ onSidebarHide }) => {
                   return (
                     <tr
                       key={i}
-                      className="bg-white border-l-2 border-b dark:hover:border-l-[#1f6feb] dark:bg-gray-900 dark:border-gray-800 dark:hover:bg-[#1b2c43] dark:hover:bg-gray-600"
+                      className="bg-white border-l-2 dark:border-l-transparent border-b dark:hover:border-l-[#1f6feb] dark:bg-[#161b22] dark:border-gray-800 dark:hover:bg-[#1b2c43]"
                     >
-                      <td className="p-4 w-4">
-                        <div className="flex items-center">
+                      <td className="py-4 px-1 flex w-10">
+                        <div className="flex items-center gap-2">
+                          {unread ? <VscCircleFilled  className="-mr-2 dark:text-blue-500" size={25} /> : ""}
                           <input
                             id="checkbox-table-search-3"
                             type="checkbox"
@@ -79,11 +82,14 @@ const Notifications = ({ onSidebarHide }) => {
                           >
                             checkbox
                           </label>
+                          <FaRegDotCircle size={23} className=" dark:text-green-500"/>
                         </div>
                       </td>
-                      <td className="p-4 w-4">
-                        <div className="flex items-center justify-center "><FaRegDotCircle size={25} /></div>
-                      </td>
+                      {/* <td className="p-1 w-4">
+                        <div className="flex items-center justify-center ">
+                          <FaRegDotCircle size={23} />
+                        </div>
+                      </td> */}
                       <th
                         scope="row"
                         className="expanded py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
@@ -97,9 +103,8 @@ const Notifications = ({ onSidebarHide }) => {
                       <td className="py-4 px-6">+10</td>
                       <td className="py-4 px-6">{reason}</td>
                       <td className="py-4 px-6">
-                        {calcUpdatedNotificationDateInHours(updated_at)}
-                        {" "}
-                        hours ago
+                        {calcUpdatedNotificationDateInHours(updated_at)} hours
+                        ago
                       </td>
                     </tr>
                   );
