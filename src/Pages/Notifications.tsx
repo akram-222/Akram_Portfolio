@@ -7,6 +7,7 @@ import { __getNotifications } from "../Utils/github/__getNotifications";
 
 const Notifications = ({ onSidebarHide }) => {
   const [notificationsList, setNotificationsList] = useState([]);
+  const [isAllChecked, setIsAllChecked] = useState(false);
   useEffect(() => {
     __getNotifications().then((data) => {
       setNotificationsList(data);
@@ -36,6 +37,7 @@ const Notifications = ({ onSidebarHide }) => {
                     id="checkbox-all-search"
                     type="checkbox"
                     className="w-5 h-5 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-900 dark:border-gray-600"
+                    onChange={() => setIsAllChecked(!isAllChecked)}
                   />
                   <label
                     htmlFor="checkbox-all-search"
@@ -71,7 +73,9 @@ const Notifications = ({ onSidebarHide }) => {
                   return (
                     <tr
                       key={i}
-                      className="bg-white border-l-2 dark:border-l-transparent border-b dark:hover:border-l-[#1f6feb] dark:bg-[#161b22] dark:border-gray-800 dark:hover:bg-[#1b2c43]"
+                      className={`${
+                        unread ? "dark:bg-[#161b22]" : "dark:bg-gray-800"
+                      } bg-white border-l-2 dark:border-l-transparent border-b dark:hover:border-l-[#1f6feb] dark:border-gray-800 dark:hover:bg-[#1b2c43]`}
                     >
                       <td className="py-4 px-1 flex">
                         <div className="flex justify-evenly w-full items-center gap-2">
@@ -87,6 +91,7 @@ const Notifications = ({ onSidebarHide }) => {
                             id="checkbox-table-search-3"
                             type="checkbox"
                             className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            checked={isAllChecked ? true : false}
                           />
                           <label
                             htmlFor="checkbox-table-search-3"
