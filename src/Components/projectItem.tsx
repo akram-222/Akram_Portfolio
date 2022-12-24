@@ -13,7 +13,7 @@ const ProjectItem = ({
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
     <div
-      className={`h-[130.43px] border relative w-full xs:w-[49%] md:w-[32%] bg-white rounded shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
+      className={`randomGrayVariations-pattern h-[130.43px] border relative w-full xs:w-[49%] md:w-[32%] bg-white rounded shadow-md px-4 dark:bg-[#171717] dark:border-[#353535] py-3`}
     >
       <div className="">
         <div className="flex justify-between items-center">
@@ -22,7 +22,10 @@ const ProjectItem = ({
           </span>
 
           {/* {visibility} */}
-          <button className="cursor-help showHint" data-hint={visibility + ' repo'}>
+          <button
+            className="cursor-help showHint"
+            data-hint={visibility + " repo"}
+          >
             <Badge visibility={visibility} />
           </button>
         </div>
