@@ -36,7 +36,7 @@ const Blog = ({ onSidebarHide }) => {
                   key={i}
                   className={`md:w-${
                     i + 1
-                  }/3 xl:w-1/3 xs:[&:nth-child(1)]:hidden xl:[&:nth-child(1)]:block`}
+                  }/3 lg:w-1/3 xs:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
                   title={title}
                   createdAt={created_at}
                   user={user}
