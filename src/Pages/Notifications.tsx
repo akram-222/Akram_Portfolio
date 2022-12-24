@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaRegDotCircle } from "react-icons/fa";
 import { VscCircleFilled } from "react-icons/vsc";
 import PageTitle from "../Components/PageTitle";
+import Pagination from "../Components/Pagination";
 import { __getNotifications } from "../Utils/github/__getNotifications";
 
 const Notifications = ({ onSidebarHide }) => {
@@ -26,11 +27,11 @@ const Notifications = ({ onSidebarHide }) => {
       />
 
       <div className="overflow-x-auto relative w-full sm:rounded-lg">
-        <table className="w-full text-left text-gray-500 dark:text-gray-400">
+        <table className="mx-auto text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-[#161b22] dark:text-gray-400">
             <tr className="border-b dark:border-b-gray-800">
-              <th scope="col" colSpan={7} className="p-5">
-                <div className="flex items-center">
+              <th scope="col" className="py-5 w-[95px]">
+                <div className="flex justify-center items-center">
                   <input
                     id="checkbox-all-search"
                     type="checkbox"
@@ -40,10 +41,14 @@ const Notifications = ({ onSidebarHide }) => {
                     htmlFor="checkbox-all-search"
                     className="mx-2 text-sm font-bold dark:text-white"
                   >
-                    Select All
+                    All
                   </label>
                 </div>
               </th>
+              <th></th>
+              <th className="w-[15%] text-center"></th>
+              <th className="w-[15%] text-center"></th>
+              <th className="w-[15%] text-center"></th>
             </tr>
           </thead>
           <tbody>
@@ -68,9 +73,16 @@ const Notifications = ({ onSidebarHide }) => {
                       key={i}
                       className="bg-white border-l-2 dark:border-l-transparent border-b dark:hover:border-l-[#1f6feb] dark:bg-[#161b22] dark:border-gray-800 dark:hover:bg-[#1b2c43]"
                     >
-                      <td className="py-4 px-1 flex w-10">
-                        <div className="flex items-center gap-2">
-                          {unread ? <VscCircleFilled  className="-mr-2 dark:text-blue-500" size={25} /> : ""}
+                      <td className="py-4 px-1 flex">
+                        <div className="flex justify-evenly w-full items-center gap-2">
+                          {unread ? (
+                            <VscCircleFilled
+                              className="-mr-2 dark:text-blue-500"
+                              size={25}
+                            />
+                          ) : (
+                            ""
+                          )}
                           <input
                             id="checkbox-table-search-3"
                             type="checkbox"
@@ -82,7 +94,10 @@ const Notifications = ({ onSidebarHide }) => {
                           >
                             checkbox
                           </label>
-                          <FaRegDotCircle size={23} className=" dark:text-green-500"/>
+                          <FaRegDotCircle
+                            size={23}
+                            className=" dark:text-green-500"
+                          />
                         </div>
                       </td>
                       {/* <td className="p-1 w-4">
@@ -92,17 +107,17 @@ const Notifications = ({ onSidebarHide }) => {
                       </td> */}
                       <th
                         scope="row"
-                        className="expanded py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        className="expanded py-4  font-medium text-gray-900 whitespace-nowrap dark:text-white"
                       >
                         <div className="top_part whitespace-nowrap">
                           {login}/{name}
                           <span className="mx-2 dark:text-gray-400">#{id}</span>
                         </div>
-                        <div className="bottom_part">[{title}]</div>
+                        <div className="bottom_part">{title}</div>
                       </th>
-                      <td className="py-4 px-6">+10</td>
-                      <td className="py-4 px-6">{reason}</td>
-                      <td className="py-4 px-6">
+                      <td className="py-4 px-6 text-center">+10</td>
+                      <td className="py-4 px-6 text-center">{reason}</td>
+                      <td className="py-4 px-6 text-center">
                         {calcUpdatedNotificationDateInHours(updated_at)} hours
                         ago
                       </td>
@@ -111,9 +126,9 @@ const Notifications = ({ onSidebarHide }) => {
                 }
               )}
           </tbody>
-        </table>
-        <nav
-          className="flex justify-between items-center pt-4"
+          {/* <Pagination /> */}
+          {/* <nav
+          className="flex justify-end gap-4 items-center pt-4"
           aria-label="Table navigation"
         >
           <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -129,7 +144,7 @@ const Notifications = ({ onSidebarHide }) => {
           <ul className="inline-flex items-center -space-x-px">
             <li>
               <a
-                href="#"
+                href="#d"
                 className="block py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <span className="sr-only">Previous</span>
@@ -148,50 +163,10 @@ const Notifications = ({ onSidebarHide }) => {
                 </svg>
               </a>
             </li>
+
             <li>
               <a
-                href="#"
-                className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                1
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                2
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                aria-current="page"
-                className="z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-              >
-                3
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                ...
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                100
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
+                href="#d"
                 className="block py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <span className="sr-only">Next</span>
@@ -211,7 +186,8 @@ const Notifications = ({ onSidebarHide }) => {
               </a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
+        </table>
       </div>
     </>
   );
