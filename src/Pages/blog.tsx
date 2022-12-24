@@ -44,7 +44,6 @@ const Blog = ({ onSidebarHide }) => {
                 />
               ))}
           </div>
-
           <div className="w-full lg:w-1/3 px-3">
             <div className="mb-4">
               <h5 className="mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
