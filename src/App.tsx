@@ -66,6 +66,7 @@ const App = () => {
                 />
                 <Route path="/search" element={<Search />} />
                 <Route path="/settings" element={<Settings />} />
+
                 <Route
                   path="/blog"
                   element={
