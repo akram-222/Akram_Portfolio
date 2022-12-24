@@ -1,7 +1,6 @@
 import { useDevBlogs } from "../Contexts/DEVAPIContext";
 import PageTitle from "../Components/PageTitle";
 import PinArticle from "../Components/PinArticle";
-import RadioItem from "../Components/RadioItem";
 const Blog = ({ onSidebarHide }) => {
   const { devBlogs } = useDevBlogs();
   console.log(devBlogs);
@@ -10,7 +9,12 @@ const Blog = ({ onSidebarHide }) => {
       <PageTitle
         onSidebarHide={onSidebarHide}
         title={"Blog"}
-        subtitle={""}
+        subtitle={
+          <>
+            <span className="">Total Articles : </span>
+            <span className="text-blue-400 font-bold">{devBlogs.length}</span>
+          </>
+        }
         premium_star={"DEV.to articles"}
         className="mb-10 h-fit"
       />
@@ -57,14 +61,14 @@ const Blog = ({ onSidebarHide }) => {
               <h5 className="mx-auto xs:w-fit sm:w-full mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
                 Subscribe
               </h5>
-              <p className="mx-auto xs:w-fit sm:w-full text-gray-600 text-xs sm:text-sm">
+              <p className="mx-auto xs:w-fit sm:w-full text-gray-400 text-xs sm:text-sm">
                 Subscribe to our newsletter. We deliver the best health related
                 articles to your inbox
               </p>
               <form className="mt-3 text-xs sm:text-sm">
                 <div className="flex-wrap xs:justify-center sm:justify-start items-center flex">
                   <input
-                    className="mb-2 border-b dark:border-[#353535] appearance-none bg-transparent dark:text-gray-100 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    className="mb-2 border-b placeholder:italic placeholder:text-slate-500 dark:border-[#353535] appearance-none bg-transparent dark:text-gray-100 mr-3 py-1 px-2 leading-tight focus:outline-none"
                     type="text"
                     placeholder="ashrfakrm64@gmail.com"
                     aria-label="Full name"
