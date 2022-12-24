@@ -7,9 +7,8 @@ const PinArticle = ({ className, title, coverImage, createdAt, user }) => {
       href="#d"
     >
       <div
-        className="absolute left-0 bottom-0 w-full h-full z-10"
+        className="bg-gradient-to-l from-[#101010] absolute left-0 bottom-0 w-full h-full z-10"
         style={{
-          backgroundImage: "linear-gradient(180deg,transparent,rgba(0,0,0,.7))",
         }}
       ></div>
       {/* <img

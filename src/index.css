@@ -464,10 +464,13 @@ input[type="radio"]:checked + label {
 }
 
 /* Patterns */
-
+.gradient-1 {
+  background-image: "linear-gradient(180deg,transparent,rgba(0,0,0,.7))";
+}
 .inspiration__geometry--pattern {
-    background-color: #1b1c1e;
-    background-size: 30% 50%;
-    background-attachment: fixed;
-    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
-    border: 1px solid #36393e;}
+  background-color: #1b1c1e;
+  background-size: 30% 50%;
+  background-attachment: fixed;
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  border: 1px solid #36393e;
+}
