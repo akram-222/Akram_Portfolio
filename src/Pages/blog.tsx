@@ -47,7 +47,7 @@ const Blog = ({ onSidebarHide }) => {
 
           <div className="w-full lg:w-1/3 px-3">
             <div className="mb-4">
-              <h5 className="mb-4 font-bold relative text-lg text-blue-400 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-blue-400">
+              <h5 className="mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
                 Popular Topics
               </h5>
               {["SCSS", "React router dom", "CSS"]?.map((topic, i) => (
@@ -58,23 +58,37 @@ const Blog = ({ onSidebarHide }) => {
                 />
               ))}
             </div>
-            {/* <div className="p-1 mt-4 mb-4">
-            <h5 className="font-bold text-lg uppercase text-gray-700 mb-2">
-              {" "}
-              Subscribe{" "}
-            </h5>
-            <p className="text-gray-600">
-              Subscribe to our newsletter. We deliver the best health related
-              articles to your inbox
-            </p>
-            <input
-              placeholder="your email address"
-              className="text-gray-700 bg-gray-100 rounded-t hover:outline-none p-2 w-full mt-4 border"
-            />
-            <button className="px-4 py-2 bg-indigo-600 text-gray-200 rounded-b w-full capitalize tracking-wide">
-              Subscribe
-            </button>
-          </div> */}
+            <div className="p-1 mt-4 mb-4">
+              <h5 className="mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
+                Subscribe
+              </h5>
+              <p className="text-gray-600">
+                Subscribe to our newsletter. We deliver the best health related
+                articles to your inbox
+              </p>
+              <form className="w-full max-w-sm">
+                <div className="flex items-center border-b dark:border-[#353535] py-1">
+                  <input
+                    className="appearance-none bg-transparent border-none w-full dark:text-gray-100 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    type="text"
+                    placeholder="ashrfakrm64@gmail.com"
+                    aria-label="Full name"
+                  />
+                  <button
+                    className="flex-shrink-0 dark:bg-card border-gray-700 border-2 dark:hover:bg-gray-700 text-sm text-white py-1 px-2 rounded"
+                    type="button"
+                  >
+                    Sign Up
+                  </button>
+                  <button
+                    className="flex-shrink-0 border-transparent border-4 text-rose-400 hover:text-rose-700 text-sm py-1 px-2 rounded"
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
