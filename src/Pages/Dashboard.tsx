@@ -2,7 +2,6 @@ import AddComponent from "../Components/AddComponent";
 import { Link } from "react-router-dom";
 import { employeeData } from "../Components/employeeData";
 import Repos from "../Components/GitHubRepos";
-import Graph from "../Components/Graph";
 import NameCard from "../Components/NameCard";
 import PageTitle from "../Components/PageTitle";
 import Satisfication from "../Components/Satisfication";
