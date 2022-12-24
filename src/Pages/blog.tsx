@@ -24,7 +24,9 @@ const Blog = ({ onSidebarHide }) => {
                   key={i}
                   className={`md:w-${
                     i + 1
-                  }/3 h-44 pinArticleWall pinArticleWall-${i+1} lg:w-1/3 md:h-56 md:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
+                  }/3 h-44 pinArticleWall pinArticleWall-${
+                    i + 1
+                  } lg:w-1/3 md:h-56 md:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
                   title={title}
                   createdAt={created_at}
                   user={user}
@@ -58,34 +60,36 @@ const Blog = ({ onSidebarHide }) => {
                 />
               ))}
             </div>
-            <div className="p-1 mt-4 mb-4">
-              <h5 className="mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
+            <div className="w-full dark:bg-[#171717] p-4 mt-4 mb-4">
+              <h5 className="mx-auto xs:w-fit sm:w-full mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
                 Subscribe
               </h5>
-              <p className="text-gray-600 text-xs sm:text-sm">
+              <p className="mx-auto xs:w-fit sm:w-full text-gray-600 text-xs sm:text-sm">
                 Subscribe to our newsletter. We deliver the best health related
                 articles to your inbox
               </p>
-              <form className="w-full max-w-sm text-xs sm:text-sm">
-                <div className="flex items-center border-b dark:border-[#353535] py-1">
+              <form className="mt-3 text-xs sm:text-sm">
+                <div className="flex-wrap xs:justify-center sm:justify-start items-center flex">
                   <input
-                    className="appearance-none bg-transparent border-none w-full dark:text-gray-100 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    className="mb-2 border-b dark:border-[#353535] appearance-none bg-transparent dark:text-gray-100 mr-3 py-1 px-2 leading-tight focus:outline-none"
                     type="text"
                     placeholder="ashrfakrm64@gmail.com"
                     aria-label="Full name"
                   />
-                  <button
-                    className="flex-shrink-0 dark:bg-card border-gray-700 border sm:border-2 dark:hover:bg-gray-700 text-white py-1 px-1 sm:px-2 rounded"
-                    type="button"
-                  >
-                    Sign Up
-                  </button>
-                  <button
-                    className="flex-shrink-0 border-transparent border-4 text-rose-400 hover:text-rose-700 py-1 px-2 rounded"
-                    type="button"
-                  >
-                    Cancel
-                  </button>
+                  <div className="controls flex gap-1">
+                    <button
+                      className="flex-shrink-0 dark:bg-card border-gray-700 border sm:border-2 dark:hover:bg-gray-700 text-white py-1 px-1 sm:px-2 rounded"
+                      type="button"
+                    >
+                      Sign Up
+                    </button>
+                    <button
+                      className="flex-shrink-0 border-transparent border-4 text-rose-400 hover:text-rose-700 py-1 px-2 rounded"
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
