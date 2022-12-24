@@ -29,7 +29,7 @@ const PinArticle = ({ className, title, createdAt, user }) => {
               })}{" "}
             </p>
           </div>
-          <span className="self-center justify-self-center px-4 py-1 font-bold text-sm dark:bg-[#161b22] dark:hover:bg-gray-800 dark:hover:text-blue-400 dark:text-white dark:border-[#353535] border rounded ml-auto">
+          <span className="self-center justify-self-center px-4 py-1 font-bold text-sm dark:bg-[#161b22] dark:text-white dark:border-[#353535] border rounded ml-auto">
             Tech
           </span>
         </div>
