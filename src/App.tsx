@@ -10,7 +10,6 @@ import Search from "./Pages/Search";
 import Tooltip from "./Components/Tooltip";
 import Blog from "./Pages/blog";
 import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
-import Notifications from "./Pages/Notifications";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   useEffect(() => {
@@ -67,9 +66,7 @@ const App = () => {
                 />
                 <Route path="/search" element={<Search />} />
                 <Route path="/settings" element={<Settings />} />
-                <Route path="/notifications" element={<Notifications onSidebarHide={() => {
-                        onSetShowSidebar(true);
-                      }}/>} />
+
                 <Route
                   path="/blog"
                   element={
