@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
   const [accessTokenVal, setAccessTokenVal] = useState("");
   const [colorState, setColorState] = useState("");
-  const handleInputValue = (e)=>{
-    setAccessTokenVal(e.currentTarget.value);
+  const handleColorState=()=>{
     if (accessTokenVal === process.env.REACT_APP_GITHUB_ACCESS_TOKEN) {
     setColorState("green");
     }else{
       setColorState("red");
     }
+  }
+  
+// 🐛 Bug: accessTokenVal is async
+// Bug: doesn't update the colorState value immediately or sync with accessTokenVal
+// ✔ Solve: Use useEffect hock
+  
+  useEffect(()=>{
+     handleColorState()
+  },[accessTokenVal])
+  const handleInputValue = (e)=>{
+    handleColorState()
+    setAccessTokenVal(e.currentTarget.value);
   }
   const handleSigningInProcess = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -23,8 +34,8 @@ const Login = () => {
   };
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900 w-full">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <section className="bg-gray-50 dark:bg-gray-900 w-full absolute top-0 left-0 z-10 h-full flex">
+        <div className="w-full flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#d"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
@@ -54,7 +65,7 @@ const Login = () => {
                     name="password"
                     id="password"
                     value={accessTokenVal}
-                    onInput={(e) => handleInputValue(e)}
+                    onChange={(e) => handleInputValue(e)}
                     placeholder="gh**************************************"
                     className={`border border-gray-300 sm:text-sm text-${colorState}-400 rounded-lg focus:ring-${colorState}-600 focus:border-${colorState}-600 block w-full p-2.5 dark:bg-gray-700 dark:border-${colorState}-600 dark:placeholder-gray-400 dark:text-${colorState}-600 dark:focus:ring-${colorState}-500 dark:focus:border-${colorState}-500`}
                     required
