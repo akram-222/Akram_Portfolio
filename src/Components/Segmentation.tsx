@@ -28,15 +28,11 @@ function Segmentation() {
                     <div className="ml-2 w-12 card-stack-border" />
                     <div className="ml-2 h-8">
                         <div
-                            className="w-20 h-28 rounded-lg overflow-hidden"
+                            className="scale-up-center w-20 h-28 rounded-lg overflow-hidden"
                             style={{
                                 background: c3,
                             }}
                         >
-                            {/* {c1 === 'JavaScript' && (
-                                <img src="https://assets.codepen.io/3685267/res-react-dash-user-card.svg" alt="" />
-                            
-                            )} */}
                         </div>
                     </div>
                 </div>

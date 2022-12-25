@@ -10,6 +10,7 @@ import Search from "./Pages/Search";
 import Tooltip from "./Components/Tooltip";
 import Blog from "./Pages/blog";
 import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
+import Login from "./Pages/Login";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   useEffect(() => {
@@ -77,6 +78,7 @@ const App = () => {
                     />
                   }
                 />
+                <Route path="/signup" element={<Login />} />
                 <Route path="/*" element={<NotFoundRoute />} />
               </Routes>
             </div>
