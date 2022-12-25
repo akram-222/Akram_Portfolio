@@ -5,15 +5,15 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
   const location = useLocation();
   const currentRoute = location.pathname.slice(1, location.pathname.length);
   return (
-    
-    
-// 🐛 BUG: matching selected sidebarItem with the current route
+    // 🐛 BUG: matching selected sidebarItem with the current route
 
-// Bug: When changing route directly from the URL bar, there is no updating in the selected sidbarItem.
-// Solve: Use `useLocation` react hock to check if the current route matched with the selected sidebarItem or NOT.
+    // Bug: When changing route directly from the URL bar, there is no updating in the selected sidbarItem.
+    // Solve: Use `useLocation` react hock to check if the current route matched with the selected sidebarItem or NOT.
 
     <Link
-      to={title.toLowerCase() === 'dashboard' ? "./signup":title.toLowerCase()}
+      to={
+        title.toLowerCase() === "dashboard" ? "./signup" : title.toLowerCase()
+      }
       className={clsx(
         "w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer",
         title.toLowerCase() === currentRoute

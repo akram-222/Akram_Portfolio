@@ -1,34 +1,39 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-const Login = () => {
+const Login = ({ isLogging, setIsLogging }) => {
+  const accessTokenInputFeild = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
   const [accessTokenVal, setAccessTokenVal] = useState("");
   const [colorState, setColorState] = useState("");
-  const handleColorState=()=>{
+  
+  const handleColorState = () => {
     if (accessTokenVal === process.env.REACT_APP_GITHUB_ACCESS_TOKEN) {
-    setColorState("green");
-    }else{
+      setColorState("green");
+    } else {
       setColorState("red");
+    
     }
-  }
+  };
+
+  // 🐛 Bug: accessTokenVal is async
+  // Bug: doesn't update the colorState value immediately or sync with accessTokenVal
+  // ✔ Solve: Use useEffect hock
   
-// 🐛 Bug: accessTokenVal is async
-// Bug: doesn't update the colorState value immediately or sync with accessTokenVal
-// ✔ Solve: Use useEffect hock
-  
-  useEffect(()=>{
-     handleColorState()
-  },[accessTokenVal])
-  const handleInputValue = (e)=>{
-    handleColorState()
+  useEffect(() => {
+    handleColorState();
+    accessTokenInputFeild.current!.focus();
+  }, [accessTokenVal]);
+  const handleInputValue = (e) => {
+    handleColorState();
     setAccessTokenVal(e.currentTarget.value);
-  }
+  };
   const handleSigningInProcess = (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (accessTokenVal === process.env.REACT_APP_GITHUB_ACCESS_TOKEN) {
       navigate("/dashboard");
-      console.log('navigate')
+      setIsLogging(true);
     } else {
+        setIsLogging(false);
       console.log("disconnecting");
     }
   };
@@ -61,6 +66,7 @@ const Login = () => {
                     Access Token
                   </label>
                   <input
+                    ref={accessTokenInputFeild}
                     type="password"
                     name="password"
                     id="password"
