@@ -13,7 +13,7 @@ import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
 import Login from "./Pages/Login";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
-  const [isLogging, setIsLogging] = useState(false);
+  const [isLogging, setIsLogging] = useState(true);
   useEffect(() => {
     if (
       localStorage.getItem("color-theme") === "dark" ||
