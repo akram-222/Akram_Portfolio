@@ -13,6 +13,7 @@ import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
 import Login from "./Pages/Login";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
+  const [isLogging, setIsLogging] = useState(false);
   useEffect(() => {
     if (
       localStorage.getItem("color-theme") === "dark" ||
@@ -42,9 +43,9 @@ const App = () => {
             </div>
             <div className=" h-screen flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
               <Routes>
-                {["/", "/dashboard"].map((path, index) => (
+                {isLogging ? (
                   <Route
-                    path={path}
+                    path="/dashboard"
                     element={
                       <Dashboard
                         onSidebarHide={() => {
@@ -52,9 +53,8 @@ const App = () => {
                         }}
                       />
                     }
-                    key={index}
                   />
-                ))}
+                ) : null}
                 <Route
                   path="/projects"
                   element={
@@ -67,7 +67,6 @@ const App = () => {
                 />
                 <Route path="/search" element={<Search />} />
                 <Route path="/settings" element={<Settings />} />
-
                 <Route
                   path="/blog"
                   element={
@@ -78,7 +77,20 @@ const App = () => {
                     />
                   }
                 />
-                <Route path="/signup" element={<Login />} />
+                {["/dashboard", "/signup"].map((route, index) => {
+                  return (
+                    <Route
+                      key={index}
+                      path={route}
+                      element={
+                        <Login
+                          setIsLogging={setIsLogging}
+                          isLogging={isLogging}
+                        />
+                      }
+                    />
+                  );
+                })}
                 <Route path="/*" element={<NotFoundRoute />} />
               </Routes>
             </div>
