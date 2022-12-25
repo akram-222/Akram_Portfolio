@@ -116,7 +116,7 @@ const Dashboard = ({ onSidebarHide }) => {
             rise={rise}
             tasksCompleted={tasksCompleted}
             imgId={imgId}
-            className="scale-up-center w-full p-2 lg:w-1/3"
+            className="Low-full p-2 lg:w-1/3"
           />
         )
       )}
