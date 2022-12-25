@@ -1,6 +1,7 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const accessTokenInputFeild = useRef<HTMLInputElement|null>(null)
   const navigate = useNavigate();
   const [accessTokenVal, setAccessTokenVal] = useState("");
   const [colorState, setColorState] = useState("");
@@ -17,7 +18,8 @@ const Login = () => {
 // ✔ Solve: Use useEffect hock
   
   useEffect(()=>{
-     handleColorState()
+     handleColorState();
+     accessTokenInputFeild.current!.focus();
   },[accessTokenVal])
   const handleInputValue = (e)=>{
     handleColorState()
@@ -61,6 +63,7 @@ const Login = () => {
                     Access Token
                   </label>
                   <input
+                  ref={accessTokenInputFeild}
                     type="password"
                     name="password"
                     id="password"
