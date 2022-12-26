@@ -26,10 +26,10 @@ const NotFoundRoute = () => {
         <div className="grid grid-cols-3 gap-4 p-4 lg:grid-cols-4">
           {[...sidebarItems[0], ...sidebarItems[1]].map((item, i) => (
             // <MenuItem key={i.id} item={i} onClick={setSelected} />
-            <div className="p-4 rounded-lg cursor-pointer dark:border dark:border-blue-400">
-              <div className="flex justify-center items-center p-2 mx-auto mb-2 max-w-[48px] bg-gray-200 dark:bg-gray-500 rounded-full w-18 h-18">
+            <div className="p-4 rounded-lg cursor-pointer dark:border dark:bg-[#161b22] dark:border-gray-700">
+              <div className={`flex justify-center items-center p-2 mx-auto mb-2 max-w-[48px] dark:bg-${item.color}-900 rounded-full w-18 h-18`}>
                 <svg
-                  className="inline w-8 h-8 text-gray-500 dark:text-gray-400"
+                  className={`inline w-8 h-8 dark:text-${item.color}-400`}
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
