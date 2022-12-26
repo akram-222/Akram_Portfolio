@@ -51,10 +51,10 @@ const Projects = ({ onSidebarHide }) => {
                   viewBox="0 0 24 24"
                   className="w-4 ml-1.5 text-gray-400 dark:text-gray-600"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
@@ -65,10 +65,10 @@ const Projects = ({ onSidebarHide }) => {
                   viewBox="0 0 24 24"
                   className="w-4 ml-1.5 text-gray-400 dark:text-gray-600"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
@@ -105,8 +105,11 @@ const Projects = ({ onSidebarHide }) => {
               <thead>
                 <tr className="text-gray-400">
                   {["Name", "Type", "Description", "Visibility", "Date"].map(
-                    (item) => (
-                      <th className="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">
+                    (item, index) => (
+                      <th
+                        key={index}
+                        className="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800"
+                      >
                         {item}
                       </th>
                     )
@@ -114,11 +117,11 @@ const Projects = ({ onSidebarHide }) => {
                 </tr>
               </thead>
               <tbody className="text-gray-600 dark:text-gray-100">
-                 {/* <Skelton
+                {/* <Skelton
                     number={repoConfig.per_page}
                     className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717] dark:border-[#353535]`}
                   /> */}
-               {isLoad ? (
+                {isLoad ? (
                   <Skelton
                     number={repoConfig.per_page}
                     className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717] dark:border-[#353535]`}
@@ -133,7 +136,7 @@ const Projects = ({ onSidebarHide }) => {
                         <ProjectItem
                           name={name}
                           language={language}
-                          key={id}
+                          key={(id + i)}
                           fork={fork}
                           visibility={visibility}
                           i={i}
@@ -143,7 +146,7 @@ const Projects = ({ onSidebarHide }) => {
                       </>
                     )
                   )
-                )} 
+                )}
               </tbody>
             </table>
           </div>
