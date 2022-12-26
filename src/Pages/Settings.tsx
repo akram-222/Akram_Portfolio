@@ -1,12 +1,7 @@
 import EmojiComponent from "../Components/emojiComponent";
 import ThemeSwitcherBtn from "../Components/themeSwitcherBtn";
 const Settings = () => {
-  return (
-    <h2>
-      Setting Page
-      {/* <EmojiComponent /> */}
-    </h2>
-  );
+  return <h1>Settings</h1>;
 };
 
 export default Settings;
