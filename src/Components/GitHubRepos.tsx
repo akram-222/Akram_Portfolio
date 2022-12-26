@@ -70,7 +70,7 @@ export default function Repos() {
   return (
     <div className="flex p-4 flex-col h-full overflow-y-auto relative">
       {/* <ToastSuccess className={`${isRepoAdded ? "" : "hidden"}`} /> */}
-      <SuccessMessage className={`${isRepoAdded ? "" : "hidden"}`} />
+      <SuccessMessage isRepoAdded={isRepoAdded} setIsAdded={setIsAdded}/>
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
         <BsPlusCircle
