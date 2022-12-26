@@ -5,17 +5,18 @@ import ProjectItem from "../Components/projectItem";
 import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
-import { BsCalendar, BsCalendarDate } from "react-icons/bs";
 import { HiOutlineCalendar } from "react-icons/hi";
 
 const Projects = ({ onSidebarHide }) => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 7 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
+
   useEffect(() => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
       setLoad(false);
+      console.log(repos)
     });
   }, [repoConfig]);
 
@@ -128,12 +129,12 @@ const Projects = ({ onSidebarHide }) => {
                       <>
                         <ProjectItem
                           name={name}
+                          language={language}
                           key={id}
                           fork={fork}
                           visibility={visibility}
                           i={i}
                           createdAt={created_at}
-                          language={language}
                           repoConfig={repoConfig}
                         />
                       </>
