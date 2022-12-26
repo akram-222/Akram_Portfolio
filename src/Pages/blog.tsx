@@ -1,12 +1,13 @@
 import { useDevBlogs } from "../Contexts/DEVAPIContext";
 import PageTitle from "../Components/PageTitle";
 import PinArticle from "../Components/PinArticle";
+import HeroSection from "../Components/HeroSection";
 const Blog = ({ onSidebarHide }) => {
   const { devBlogs } = useDevBlogs();
   console.log(devBlogs);
   return (
     <>
-      <PageTitle
+      {/* <PageTitle
         onSidebarHide={onSidebarHide}
         title={"Blog"}
         subtitle={
@@ -17,8 +18,9 @@ const Blog = ({ onSidebarHide }) => {
         }
         premium_star={"DEV.to articles"}
         className="mb-10 h-fit"
-      />
+      /> */}
       <div className="w-full">
+        <HeroSection />
         <div className="block md:flex md:space-x-2 px-2 lg:p-0">
           {devBlogs &&
             devBlogs
@@ -39,7 +41,7 @@ const Blog = ({ onSidebarHide }) => {
                 />
               ))}
         </div>
-        <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
+        <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-5">
           <div className="w-full lg:w-2/3">
             {devBlogs &&
               devBlogs?.map(
