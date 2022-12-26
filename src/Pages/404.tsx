@@ -32,7 +32,7 @@ const NotFoundRoute = () => {
             <div
               key={i}
               onClick={() => navigate(`/${item.title.toLocaleLowerCase()}`)}
-              className="w-1/4 p-4 rounded-lg cursor-pointer dark:border dark:bg-gray-800 dark:border-gray-700"
+              className="dark:hover:bg-gray-700 w-1/4 p-4 rounded-lg cursor-pointer dark:border dark:bg-gray-800 dark:border-gray-700"
             >
               <div
                 className={`p-2 mx-auto mb-2 max-w-[48px] ${item.color} rounded-full w-18 h-18`}
