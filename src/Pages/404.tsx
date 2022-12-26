@@ -25,19 +25,15 @@ const NotFoundRoute = () => {
         </p>
         <div className="grid grid-cols-3 gap-4 p-4 lg:grid-cols-4">
           {[...sidebarItems[0], ...sidebarItems[1]].map((item, i) => (
-            // <MenuItem key={i.id} item={i} onClick={setSelected} />
-            <div className="p-4 rounded-lg cursor-pointer dark:border dark:bg-[#161b22] dark:border-gray-700">
-              <div className={`flex justify-center items-center p-2 mx-auto mb-2 max-w-[48px] dark:bg-${item.color}-900 rounded-full w-18 h-18`}>
-                <svg
-                  className={`inline w-8 h-8 dark:text-${item.color}-400`}
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                  <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-                </svg>
+            <div
+              key={i}
+              className="p-4 rounded-lg cursor-pointer dark:border dark:bg-[#161b22] dark:border-gray-700"
+            >
+              <div
+                className={`p-2 mx-auto mb-2 max-w-[48px] ${item.color1} rounded-full w-18 h-18`}
+              >
+                {item.icon}
+               
               </div>
               <div className="font-medium text-center text-gray-500 dark:text-gray-400">
                 {item.title}
