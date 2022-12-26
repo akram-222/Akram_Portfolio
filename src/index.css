@@ -17,11 +17,9 @@ table td.expanded {
   white-space: break-spaces;
 }
 
-
-
-
 * {
   outline: none;
+  user-select: none;
 }
 
 /* width */

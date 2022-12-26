@@ -6,7 +6,7 @@ import IconButton from "./IconButton";
 import Image from "./Image";
 import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
-
+import logo from "../assests/logo.png";
 function Sidebar({ onSidebarHide, showSidebar }) {
   const [selected, setSelected] = useState("0");
   const { dashOffset, indicatorWidth, precentage } = useSpring({
@@ -26,9 +26,9 @@ function Sidebar({ onSidebarHide, showSidebar }) {
     >
       <div className="flex-shrink-0 overflow-hidden p-2">
         <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 sidebar-separator-top">
-          <IconButton icon="res-react-dash-logo" className="w-10 h-10" />
-          <div className="block sm:hidden xl:block ml-2 font-bold text-xl dark:text-white">
-            React
+          <img src={logo} className="tilt-in-left-1 dark:bg-blue-600 rounded-full h-10 w-10" alt="logo" />
+          <div className="block sm:hidden ml-2 xl:block font-bold text-xl dark:text-white">
+            Portfolio
           </div>
           <div className="flex-grow sm:hidden xl:block" />
           <IconButton

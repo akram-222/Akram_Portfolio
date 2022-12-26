@@ -1,8 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { BsPlusCircle } from "react-icons/bs";
-import ToastDanger from "./toastDanger";
 import SuccessMessage from "./SuccessMessage";
-import { octokit } from "../Utils/github/OctokitConstructor";
 import { __createNewRepo } from "../Utils/github/__createNewRepo";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import RepoItem from "./repoItem";
@@ -72,8 +70,7 @@ export default function Repos() {
   return (
     <div className="flex p-4 flex-col h-full overflow-y-auto relative">
       {/* <ToastSuccess className={`${isRepoAdded ? "" : "hidden"}`} /> */}
-      <SuccessMessage className={`${isRepoAdded ? "" : "hidden"}`} />
-      <ToastDanger className={`${isRepoDeleted ? "" : "hidden"}`} />
+      <SuccessMessage isRepoAdded={isRepoAdded} setIsAdded={setIsAdded}/>
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
         <BsPlusCircle
