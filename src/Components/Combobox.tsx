@@ -24,14 +24,14 @@ const Combobox = ({ options }) => {
     <div className="">
       <div className="">
         <div className="relative">
-          <div className="dark:bg-gray-800 h-10 bg-white flex rounded items-center">
+          <div className="dark:bg-transparent dark:border dark:border-gray-800 h-9 bg-white flex rounded items-center">
             <input
               onInput={handleSearchValue}
               value={value}
               name="select"
               id="select"
-              placeholder="Choose Option"
-              className="dark:bg-gray-800 px-1.5 appearance-none outline-none text-gray-200 w-full"
+              placeholder="Filter by"
+              className="dark:bg-transparent px-1.5 appearance-none outline-none text-gray-200 w-full"
             />
             <button
               onClick={resetSearchValue}
