@@ -3,12 +3,20 @@ import { __getEmojiList } from "../Utils/github/__gitEmojiList";
 const EmojiComponent = ({
   isEmojiComponentHidden,
   setIsEmojiComponentHidden,
+  setRepos,
+  repos
 }) => {
   const [emojis, setEmojis] = useState({});
   const inputFeild = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     __getEmojiList().then((mojis) => setEmojis(mojis));
   }, []);
+  useEffect(()=>{},[repos])
+  const filterData = (inputValue)=>{
+    let filteredRes = repos&&repos?.filter(({name})=>name.includes(inputValue));
+    setRepos(filteredRes);
+    console.log(filteredRes)
+  }
   const showEmojiList = (event: React.SyntheticEvent) => {
     let divTextContent = event.currentTarget as HTMLInputElement;
     if (
@@ -18,6 +26,7 @@ const EmojiComponent = ({
       setIsEmojiComponentHidden(false);
     } else {
       setIsEmojiComponentHidden(true);
+      filterData(divTextContent.textContent!)
     }
   };
   const appendEmoji = (emojiValue: string) => {
@@ -35,6 +44,7 @@ const EmojiComponent = ({
     <>
       <div
         onInput={(e) => showEmojiList(e)}
+        
         contentEditable={true}
         className="cursor-text h-9 flex items-center block mr-4 px-2 py-1 overflow-hidden dark:text-white font-semibold w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="⭐️ Type : to add emojis"
