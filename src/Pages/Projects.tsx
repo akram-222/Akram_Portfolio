@@ -56,8 +56,7 @@ const Projects = ({ onSidebarHide }) => {
               <EmojiComponent
                 isEmojiComponentHidden={isEmojiComponentHidden}
                 setIsEmojiComponentHidden={setIsEmojiComponentHidden}
-                setRepos={setRepos}
-                repos={repos}
+               
               />
               <Combobox
                 options={[
