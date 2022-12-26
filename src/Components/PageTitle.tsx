@@ -1,6 +1,6 @@
 import Icon from "./Icon";
 import IconButton from "./IconButton";
-
+import BreadCrumb from "./BreadCrumb"
 const PageTitle = ({
   onSidebarHide,
   title,
@@ -9,7 +9,9 @@ const PageTitle = ({
   className,
 }) => {
   return (
-    <div className={`${className} flex w-full justify-between`}>
+    <>
+    <div className={`${className} flex flex-col w-full justify-between`}>
+    <BreadCrumb />
       <div className="">
         <div className="flex items-center">
           <div className="text-3xl font-bold text-white">{title}</div>
@@ -25,10 +27,6 @@ const PageTitle = ({
           <Icon path="res-react-dash-date-indicator" className="w-3 h-3" />
           <div className="ml-2">
             {subtitle}
-            {/* {moment().diff(
-                    moment([2020, 5, 26]).format("YYYY"),
-                    "years"
-                  ) + ` Years of Coding`} */}
           </div>
         </div>
       </div>
@@ -37,7 +35,9 @@ const PageTitle = ({
         className="block sm:hidden"
         onClick={onSidebarHide}
       />
+      
     </div>
+    </>
   );
 };
 export default PageTitle;
