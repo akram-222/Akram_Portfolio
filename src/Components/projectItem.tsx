@@ -1,11 +1,6 @@
-import {
-  AiOutlineBook,
-  AiOutlineInfoCircle,
-  AiOutlineRead,
-} from "react-icons/ai";
+import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
 import { BsDashCircle } from "react-icons/bs";
-import { FaBatteryEmpty, FaReadme } from "react-icons/fa";
 import { IoIosMore } from "react-icons/io";
 
 const ProjectItem = ({
