@@ -26,6 +26,10 @@ const Projects = ({ onSidebarHide }) => {
     });
   }, [repoConfig]);
 
+
+
+
+
   return (
     <div className=" flex-col items-start p-2 w-full h-full flex-wrap">
       <PageTitle
@@ -52,6 +56,7 @@ const Projects = ({ onSidebarHide }) => {
               <EmojiComponent
                 isEmojiComponentHidden={isEmojiComponentHidden}
                 setIsEmojiComponentHidden={setIsEmojiComponentHidden}
+               
               />
               <Combobox
                 options={[

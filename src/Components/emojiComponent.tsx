@@ -1,14 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import { __getEmojiList } from "../Utils/github/__gitEmojiList";
+
 const EmojiComponent = ({
   isEmojiComponentHidden,
   setIsEmojiComponentHidden,
 }) => {
   const [emojis, setEmojis] = useState({});
+
   const inputFeild = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     __getEmojiList().then((mojis) => setEmojis(mojis));
   }, []);
+
   const showEmojiList = (event: React.SyntheticEvent) => {
     let divTextContent = event.currentTarget as HTMLInputElement;
     if (
@@ -20,6 +23,7 @@ const EmojiComponent = ({
       setIsEmojiComponentHidden(true);
     }
   };
+
   const appendEmoji = (emojiValue: string) => {
     let img = document.createElement("img");
     img.className = "mx-1 w-5 h-5";
@@ -31,6 +35,7 @@ const EmojiComponent = ({
       divTextContent.childNodes[0].remove();
     }
   };
+
   return (
     <>
       <div
@@ -40,6 +45,7 @@ const EmojiComponent = ({
         placeholder="⭐️ Type : to add emojis"
         ref={inputFeild}
       ></div>
+
       <div
         className={`${
           isEmojiComponentHidden ? "hidden" : ""
