@@ -8,6 +8,7 @@ import Dashboard from "./Pages/Dashboard";
 import Settings from "./Pages/Settings";
 import Search from "./Pages/Search";
 import Tooltip from "./Components/Tooltip";
+import RepoDetails from "./Pages/RepoDetails";
 import Blog from "./Pages/blog";
 import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
 import Login from "./Pages/Login";
@@ -59,6 +60,16 @@ const App = () => {
                   path="/projects"
                   element={
                     <Projects
+                      onSidebarHide={() => {
+                        onSetShowSidebar(true);
+                      }}
+                    />
+                  }
+                />
+                <Route
+                  path="projects/:repoName"
+                  element={
+                    <RepoDetails
                       onSidebarHide={() => {
                         onSetShowSidebar(true);
                       }}

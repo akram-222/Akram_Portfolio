@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
 import { BsDashCircle } from "react-icons/bs";
@@ -15,7 +16,7 @@ const ProjectItem = ({
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
-    <tr className="hover:bg-[#050708]/20">
+   <tr className="hover:bg-[#050708]/20">
       <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
         <div className="flex items-center">
           <AiOutlineInfoCircle size={20} className="mr-4 text-yellow-500" />
@@ -73,7 +74,9 @@ const ProjectItem = ({
             </div>
           </div>
           <button className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-auto">
-            <IoIosMore />
+            <Link to={name.toLowerCase()}>
+              <IoIosMore />
+            </Link>
           </button>
         </div>
       </td>

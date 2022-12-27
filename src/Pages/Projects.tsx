@@ -22,13 +22,8 @@ const Projects = ({ onSidebarHide }) => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
       setLoad(false);
-      console.log(repos);
     });
   }, [repoConfig]);
-
-
-
-
 
   return (
     <div className=" flex-col items-start p-2 w-full h-full flex-wrap">
@@ -56,7 +51,6 @@ const Projects = ({ onSidebarHide }) => {
               <EmojiComponent
                 isEmojiComponentHidden={isEmojiComponentHidden}
                 setIsEmojiComponentHidden={setIsEmojiComponentHidden}
-               
               />
               <Combobox
                 options={[
