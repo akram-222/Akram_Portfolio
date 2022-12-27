@@ -7,7 +7,7 @@ const Blog = ({ onSidebarHide }) => {
   console.log(devBlogs);
   return (
     <>
-      {/* <PageTitle
+      <PageTitle
         onSidebarHide={onSidebarHide}
         title={"Blog"}
         subtitle={
@@ -17,8 +17,8 @@ const Blog = ({ onSidebarHide }) => {
           </>
         }
         premium_star={"DEV.to articles"}
-        className="mb-10 h-fit"
-      /> */}
+        className="dark:bg-card p-2 h-fit"
+      /> 
       <div className="w-full">
         <HeroSection />
         <div className="block md:flex md:space-x-2 px-2 lg:p-0">
