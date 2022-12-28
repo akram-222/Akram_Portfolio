@@ -1,20 +1,20 @@
 const Skills = () => {
   return (
     <div className="h-7 my-10 overflow-hidden w-full justify-center flex items-center">
-      <h1>
+      <b>
         System
-        <span style={{ color: "white" }}>
-          .<span style={{ color: "#e06c75" }}>out</span>.
+        <span className="text-white">
+          .<span className="dark:text-red-400">out</span>.
         </span>
-        <span style={{ color: "#61afef" }}>println</span>("
-      </h1>
-      <div className="string">
-        <h1 className="greeting en">Hello World!</h1>
-        <h1 className="greeting es">¡Hola Mundo!</h1>
-        <h1 className="greeting de">Hallo Welt!</h1>
-        <h1 className="greeting it">Ciao Mondo!</h1>
+        <span className="dark:text-blue-400">println</span>("
+      </b>
+      <div className="animate-move-vertical flex text-center flex-col">
+        <b className="greeting top-[8.6vmin] relative dark:text-blue-500">React</b>
+        <b className="greeting top-[8.6vmin] relative dark:text-blue-400">Typescript</b>
+        <b className="greeting top-[8.6vmin] relative dark:text-yellow-400">Javascript</b>
+        <b className="greeting top-[8.6vmin] relative dark:text-gray-400">Scss/Css</b>
       </div>
-      <h1 className="closure">");</h1>
+      <b className="closure">");</b>
     </div>
   );
 };
