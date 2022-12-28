@@ -12,8 +12,16 @@ module.exports = {
       screens: {
         xs: "450px",
       },
+      keyframes: {
+        move: {
+          "25%": { transform: "translatey(15%)", opacity: 1 },
+          "50%": { transform: "translatey(-10%)" },
+          "75%": { transform: "translatey(-35%)" },
+        },
+      },
       animation: {
         "ping-once": "ping .2s linear 1",
+        "move-vertical": "move 3s infiniteinfinite steps(3)",
       },
     },
     screens: {
