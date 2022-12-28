@@ -578,15 +578,15 @@ const Skills = () => {
           </div>
           <div className="flex w-full border-t dark:border-[#353535]">
             <div className="mt-3 mx-5 flex flex-row text-xs">
-              <div className="flex text-gray-700 font-normal rounded-md mb-2 mr-4 items-center">
+              <div className="flex dark:text-white font-bold  font-normal rounded-md mb-2 mr-4 items-center">
                 Comments:<div className="ml-1 text-gray-400 text-ms"> 30</div>
               </div>
-              <div className="flex text-gray-700 font-normal rounded-md mb-2 mr-4 items-center">
+              <div className="flex dark:text-white font-bold  font-normal rounded-md mb-2 mr-4 items-center">
                 Views: <div className="ml-1 text-gray-400 text-ms"> 60k</div>
               </div>
             </div>
             <div className="mt-3 mx-5 w-full flex justify-end text-xs">
-              <div className="flex text-gray-700  rounded-md mb-2 mr-4 items-center">
+              <div className="flex dark:text-white font-bold   rounded-md mb-2 mr-4 items-center">
                 Likes: <div className="ml-1 text-gray-400  text-ms"> 120k</div>
               </div>
             </div>
