@@ -1,9 +1,9 @@
 const Skills = () => {
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-12 mx-12 w-2xl container px-2 mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
         <aside className="">
-          <div className="bg-white shadow rounded-lg p-10">
+          <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
             <div className="flex flex-col gap-1 text-center items-center">
               <img
                 className="h-32 w-32 bg-white p-2 rounded-full shadow mb-4"
@@ -45,7 +45,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="bg-white shadow mt-6  rounded-lg p-6">
+          <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-6">
             <h3 className="text-gray-600 text-sm font-semibold mb-4">
               Following
             </h3>
@@ -137,7 +137,7 @@ const Skills = () => {
             </ul>
           </div>
 
-          <div className="flex bg-white shadow mt-6  rounded-lg p-2">
+          <div className="flex bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-2">
             <img
               src="https://images.unsplash.com/photo-1439130490301-25e322d88054?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1189&amp;q=80"
               alt="Just a flower"
@@ -186,7 +186,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="grid mt-5 grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
+          <div className="dark:bg-[#171717] dark:border dark:border-[#353535] grid mt-5 grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
             <div
               className="relative flex flex-col justify-between   bg-white shadow-md rounded-3xl  bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center rounded shadow-md h-64 my-2"
               style={{
@@ -347,11 +347,11 @@ const Skills = () => {
         </aside>
 
         <article className="">
-          <form className="bg-white shadow rounded-lg mb-6 p-4">
+          <form className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg mb-6 p-4">
             <textarea
               name="message"
               placeholder="Type something..."
-              className="w-full rounded-lg p-2 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"
+              className="w-full rounded-lg p-2 text-sm dark:bg-[#171717] dark:border-[#353535] dark:text-gray-400 bg-gray-100 border appearance-none rounded-tg placeholder-gray-400"
             ></textarea>
             <footer className="flex justify-between mt-2">
               <div className="flex gap-2">
@@ -431,7 +431,7 @@ const Skills = () => {
               </button>
             </footer>
           </form>
-          <div className="bg-white shadow rounded-lg mb-6">
+          <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg mb-6">
             <div className="flex flex-row px-2 py-3 mx-3">
               <div className="w-auto h-auto rounded-full">
                 <img
@@ -455,7 +455,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="border-b border-gray-100"></div>
+          <div className="border-b border-b-[#353535]"></div>
           <div className="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
             <div className="grid grid-cols-6 col-span-2   gap-2  ">
               <div className=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
@@ -597,7 +597,7 @@ const Skills = () => {
               src="https://picsum.photos/id/1027/200/200"
             />
             <div>
-              <div className="bg-gray-100 rounded-lg px-4 pt-2 pb-2.5">
+              <div className="dark:bg-[#171717] dark:text-gray-400 bg-gray-100 rounded-lg px-4 pt-2 pb-2.5">
                 <div className="font-semibold text-sm leading-relaxed">
                   Sara Lauren
                 </div>
@@ -643,8 +643,7 @@ const Skills = () => {
             </span>
             <input
               type="search"
-              className="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"
-              style={{ borderRadius: "25px" }}
+              className="dark:bg-[#171717] rounded-full w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"
               placeholder="Post a comment..."
               autoComplete={"false"}
             />
@@ -661,9 +660,7 @@ const Skills = () => {
               />
             </div>
             <div className="flex flex-col mb-2 ml-4 mt-1">
-              <div className="text-gray-600 text-sm font-semibold">
-                Sara Lauren
-              </div>
+              <div className=" text-sm font-semibold">Sara Lauren</div>
               <div className="flex w-full mt-1">
                 <div className="text-blue-700 font-base text-xs mr-1 cursor-pointer">
                   UX Design
