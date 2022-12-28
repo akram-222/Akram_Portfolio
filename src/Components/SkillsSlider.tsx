@@ -650,7 +650,7 @@ const Skills = () => {
           </div>
           {/* </div> */}
         </article>
-        <div className="bg-white shadow rounded-lg">
+        <div className="dark:bg-[#171717] dark:border dark:border-[#353535] bg-white shadow rounded-lg">
           <div className="flex flex-row px-2 py-3 mx-3">
             <div className="w-auto h-auto rounded-full border-2 border-green-500">
               <img
@@ -671,7 +671,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="border-b border-gray-100"></div>
+          <div className="border-b dark:border-[#353535]"></div>
           <div className="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
             <img
               className="rounded w-full"
@@ -686,7 +686,7 @@ const Skills = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500
           </div>
-          <div className="flex justify-start mb-4 border-t border-gray-100">
+          <div className="flex justify-start mb-4 border-t dark:border-[#353535]">
             <div className="flex w-full mt-1 pt-2 pl-5">
               <span className="bg-white transition ease-out duration-300 hover:text-red-500 border w-8 h-8 px-2 pt-2 text-center rounded-full text-gray-400 cursor-pointer mr-2">
                 <svg
@@ -759,7 +759,7 @@ const Skills = () => {
               </span>
             </div>
           </div>
-          <div className="flex w-full border-t border-gray-100">
+          <div className="flex w-full border-t dark:border-[#353535]">
             <div className="mt-3 mx-5 flex flex-row text-xs">
               <div className="flex text-gray-700 font-normal rounded-md mb-2 mr-4 items-center">
                 Comments:<div className="ml-1 text-gray-400 text-ms"> 30</div>
