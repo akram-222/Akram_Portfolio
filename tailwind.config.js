@@ -21,7 +21,7 @@ module.exports = {
       },
       animation: {
         "ping-once": "ping .2s linear 1",
-        "move-vertical": "move 4s infinite both",
+        "move-vertical": "move 3s infiniteinfinite steps(3)",
       },
     },
     screens: {
