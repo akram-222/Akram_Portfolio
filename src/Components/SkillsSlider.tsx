@@ -8,11 +8,11 @@ const Skills = () => {
         </span>
         <span className="dark:text-blue-400">println</span>("
       </b>
-      <div className="animate-move-vertical flex text-center flex-col">
-        <b className="greeting top-[8.6vmin] relative dark:text-blue-500">React</b>
-        <b className="greeting top-[8.6vmin] relative dark:text-blue-400">Typescript</b>
-        <b className="greeting top-[8.6vmin] relative dark:text-yellow-400">Javascript</b>
-        <b className="greeting top-[8.6vmin] relative dark:text-gray-400">Scss/Css</b>
+      <div className="animate-move-vertical translate-y-[41%] flex text-center flex-col">
+        <b className="greeting mb-2 dark:text-blue-500">React</b>
+        <b className="greeting mb-2 dark:text-blue-400">Typescript</b>
+        <b className="greeting mb-2 dark:text-yellow-400">Javascript</b>
+        <b className="greeting mb-2 dark:text-gray-400">Scss/Css</b>
       </div>
       <b className="closure">");</b>
     </div>

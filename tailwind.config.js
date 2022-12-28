@@ -14,14 +14,14 @@ module.exports = {
       },
       keyframes: {
         move: {
-          "25%": { transform: "translatey(-5.8vmin)", opacity: 1 },
-          "50%": { transform: "translatey(-11vmin)" },
-          "75%": { transform: "translatey(-16.5vmin)" },
+          "25%": { transform: "translatey(15%)", opacity: 1 },
+          "50%": { transform: "translatey(-10%)" },
+          "75%": { transform: "translatey(-35%)" },
         },
       },
       animation: {
         "ping-once": "ping .2s linear 1",
-        "move-vertical": "move 4s infinite",
+        "move-vertical": "move 4s infinite both",
       },
     },
     screens: {
