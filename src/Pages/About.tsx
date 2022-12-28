@@ -1,4 +1,4 @@
-const Skills = () => {
+const About = () => {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
@@ -10,7 +10,7 @@ const Skills = () => {
                 src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
                 alt=""
               />
-              <p className="font-semibold">John Doe</p>
+              <p className="font-semibold">Akram A. Abdelbasir</p>
               <div className="text-sm leading-normal text-gray-400 flex justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -815,4 +815,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default About;

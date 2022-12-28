@@ -12,7 +12,7 @@ import RepoDetails from "./Pages/RepoDetails";
 import Blog from "./Pages/blog";
 import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
 import Login from "./Pages/Login";
-import Skills from "./Components/SkillsSlider";
+import About from "./Pages/About";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   const [isLogging, setIsLogging] = useState(true);
@@ -78,7 +78,11 @@ const App = () => {
                   }
                 />
                 <Route path="/search" element={<Search />} />
-                <Route path="/skills" element={<Skills />} />
+                {['/','/about'].map((route,i)=>{
+                  
+               return <Route key={i} path={route} element={<About />} />
+                  
+                })}
                 <Route path="/settings" element={<Settings />} />
                 <Route
                   path="/blog"

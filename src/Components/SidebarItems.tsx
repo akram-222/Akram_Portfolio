@@ -34,7 +34,7 @@ const sidebarItems = [
   [
     {
       id: "3",
-      title: "Skills",
+      title: "About",
       notifications: false,
       icon: <BsStars size={30} className="dark:text-indigo-400" />,
       color: "dark:bg-indigo-900",
