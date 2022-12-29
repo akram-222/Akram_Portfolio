@@ -1,6 +1,6 @@
 const UserBioCard = ({ userInfo }) => {
   return (
-    <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
+    <>
       <div className="flex flex-col gap-1 text-center items-center">
         <img
           className="h-32 w-32 dark:border dark:border-[#353535] p-2 rounded-full shadow mb-4"
@@ -42,7 +42,7 @@ const UserBioCard = ({ userInfo }) => {
           <span className="text-gray-400">Folowing</span>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
