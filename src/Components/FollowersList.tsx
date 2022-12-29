@@ -19,7 +19,7 @@ const FollowersList = () => {
       ) : (
         <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-6">
           <h3 className="text-gray-600 text-sm font-semibold mb-4">
-            Following
+            {followersList?.length} Followers
           </h3>
           <ul className="flex items-center justify-center space-x-2">
             {/* <!-- Story #1 --> */}
