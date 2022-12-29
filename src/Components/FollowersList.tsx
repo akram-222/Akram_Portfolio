@@ -26,21 +26,22 @@ const FollowersList = () => {
           <ul className="flex items-center justify-center space-x-2">
             {/* <!-- Story #1 --> */}
             {followersList &&
-              followersList?.map((follower) => {
+              followersList?.map(({ html_url, avatar_url, login }) => {
                 return (
                   <li className="flex flex-col items-center space-y-2">
                     {/* <!-- Ring --> */}
-                    <a className="block bg-white p-1 rounded-full" href="#d">
+                    <a
+                      className="block bg-white p-1 rounded-full"
+                      href={html_url}
+                    >
                       <img
                         className="w-16 rounded-full"
-                        src={follower.avatar_url}
-                        alt={follower.login}
+                        src={avatar_url}
+                        alt={login}
                       />
                     </a>
                     {/* <!-- Username --> */}
-                    <span className="text-xs text-gray-500">
-                      {follower.login}
-                    </span>
+                    <span className="text-xs text-gray-500">{login}</span>
                   </li>
                 );
               })}
