@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import Spinner from "../Components/Spinner";
 import { __getUserInfo } from "../Utils/github/__getUserInfo";
 
 const About = () => {
-  const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState<any>({});
+  const [isLoad, setLoading] = useState(true);
   // useEffect(() => __getUserInfo(), []);
   __getUserInfo().then((data) => {
     setUserInfo(data);
@@ -14,11 +16,15 @@ const About = () => {
         <aside className="">
           <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
             <div className="flex flex-col gap-1 text-center items-center">
-              <img
-                className="h-32 w-32 dark:border dark:border-[#353535] p-2 rounded-full shadow mb-4"
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
-                alt=""
-              />
+              {isLoad ? (
+                <Spinner className={"w-7"} />
+              ) : (
+                <img
+                  className="h-32 w-32 dark:border dark:border-[#353535] p-2 rounded-full shadow mb-4"
+                  src={userInfo.avatar_url}
+                  alt=""
+                />
+              )}
               <p className="font-semibold">Akram A. Abdelbasir</p>
               <div className="text-sm leading-normal text-gray-400 flex justify-center">
                 <svg
