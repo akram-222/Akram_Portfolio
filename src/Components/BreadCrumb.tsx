@@ -16,8 +16,8 @@ const BreadCrumb = () => {
           onClick={() => navigate(+1)}
           className="cursor-pointer inline-flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         >
-          <BiChevronRight size={23} />
           <span className="first-letter:uppercase">next</span>
+          <BiChevronRight size={23} />
         </li>
       </ol>
     </nav>
