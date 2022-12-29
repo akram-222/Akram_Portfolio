@@ -6,15 +6,17 @@ import { __getRepo } from "../Utils/github/__searchForRepo";
 
 const RepoDetails = ({ onSidebarHide }) => {
   const params = useParams();
-  const [currentRepo, setCurrentRepo] = useState<any>([]);
+  const [currentRepo, setCurrentRepo] = useState<any>({});
   const [isLoad, setLoad] = useState(true);
 
   useEffect(() => {
-    __getRepo(params.repoName!).then((repo) => {
-      setCurrentRepo(repo);
-      setLoad(false);
-      console.log(currentRepo);
-    });
+    __getRepo(params.repoName!)
+      .then((repo) => {
+        setCurrentRepo(repo);
+        setLoad(false);
+        return currentRepo;
+      })
+      .then((data) => console.log(data));
   }, []);
 
   return (
@@ -31,12 +33,12 @@ const RepoDetails = ({ onSidebarHide }) => {
             title={currentRepo.name}
             subtitle={
               <>
-                <span className="text-green-500 mr-2">Follow :</span>
+                <span className="text-green-500 mr-2">id :</span>
                 <a
                   className="text-sm text-blue-400 hover:underline"
-                  href="https://www.github.com/ak-ram"
+                  href={currentRepo.clone_url}
                 >
-                  GitHub Profile
+                  #{currentRepo.id}
                 </a>
               </>
             }
