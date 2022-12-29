@@ -16,8 +16,9 @@ const About = () => {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
         <aside className="">
-          <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
-            {isLoad ? (
+          <div className="bg-white  flex-col justify-center dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
+            
+             {isLoad ? (
               <Spinner className={"w-7"} />
             ) : (
               <UserBioCard userInfo={userInfo} />
