@@ -1,4 +1,4 @@
-const Skills = () => {
+const About = () => {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
@@ -6,12 +6,12 @@ const Skills = () => {
           <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
             <div className="flex flex-col gap-1 text-center items-center">
               <img
-                className="h-32 w-32 bg-white p-2 rounded-full shadow mb-4"
+                className="h-32 w-32 dark:border dark:border-[#353535] p-2 rounded-full shadow mb-4"
                 src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
                 alt=""
               />
-              <p className="font-semibold">John Doe</p>
-              <div className="text-sm leading-normal text-gray-400 flex justify-center items-center">
+              <p className="font-semibold">Akram A. Abdelbasir</p>
+              <div className="text-sm leading-normal text-gray-400 flex justify-center">
                 <svg
                   viewBox="0 0 24 24"
                   className="mr-1"
@@ -31,15 +31,15 @@ const Skills = () => {
             </div>
             <div className="flex justify-center items-center gap-2 my-3">
               <div className="font-semibold text-center mx-4">
-                <p className="text-black">102</p>
+                <p className="dark:text-blue-400 font-bold">102</p>
                 <span className="text-gray-400">Posts</span>
               </div>
               <div className="font-semibold text-center mx-4">
-                <p className="text-black">102</p>
+                <p className="dark:text-blue-400 font-bold">102</p>
                 <span className="text-gray-400">Followers</span>
               </div>
               <div className="font-semibold text-center mx-4">
-                <p className="text-black">102</p>
+                <p className="dark:text-blue-400 font-bold">102</p>
                 <span className="text-gray-400">Folowing</span>
               </div>
             </div>
@@ -175,11 +175,11 @@ const Skills = () => {
                   </svg>
                   <p className="font-normal">4.5</p>
                 </div>
-                <div className="flex items-center font-medium text-gray-900 ">
+                <div className="flex items-center font-medium text-yellow-500 ">
                   $1800
-                  <span className="text-gray-400 text-sm font-normal">
+                  <span className=" ml-1 text-gray-400 text-sm font-normal">
                     {" "}
-                    /wk
+                    / wk
                   </span>
                 </div>
               </div>
@@ -458,40 +458,40 @@ const Skills = () => {
           <div className="border-b border-b-[#353535]"></div>
           <div className="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
             <div className="grid grid-cols-6 col-span-2   gap-2  ">
-              <div className=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
+              <div className=" overflow-hidden col-span-3 max-h-[14rem]">
                 <img
-                  className="h-full w-full object-cover "
+                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
                   src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=735&amp;q=80"
                   alt=""
                 />
               </div>
-              <div className=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
+              <div className=" overflow-hidden col-span-3 max-h-[14rem]">
                 <img
-                  className="h-full w-full object-cover  "
+                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover  "
                   src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1399&amp;q=80"
                   alt=""
                 />
               </div>
-              <div className=" overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
+              <div className=" overflow-hidden  col-span-2 max-h-[10rem]">
                 <img
-                  className="h-full w-full object-cover "
+                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
                   src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
                   alt=""
                 />
               </div>
-              <div className=" overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
+              <div className=" overflow-hidden  col-span-2 max-h-[10rem]">
                 <img
-                  className="h-full w-full object-cover "
+                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
                   src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
                   alt=""
                 />
               </div>
-              <div className="relative overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
+              <div className="relative overflow-hidden  col-span-2 max-h-[10rem]">
                 <div className="text-white text-xl absolute inset-0  bg-slate-900/80 flex justify-center items-center">
                   + 23
                 </div>
                 <img
-                  className="h-full w-full object-cover "
+                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
                   src="https://images.unsplash.com/photo-1560393464-5c69a73c5770?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=765&amp;q=80"
                   alt=""
                 />
@@ -578,15 +578,15 @@ const Skills = () => {
           </div>
           <div className="flex w-full border-t dark:border-[#353535]">
             <div className="mt-3 mx-5 flex flex-row text-xs">
-              <div className="flex text-gray-700 font-normal rounded-md mb-2 mr-4 items-center">
+              <div className="flex dark:text-white font-bold  font-normal rounded-md mb-2 mr-4 items-center">
                 Comments:<div className="ml-1 text-gray-400 text-ms"> 30</div>
               </div>
-              <div className="flex text-gray-700 font-normal rounded-md mb-2 mr-4 items-center">
+              <div className="flex dark:text-white font-bold  font-normal rounded-md mb-2 mr-4 items-center">
                 Views: <div className="ml-1 text-gray-400 text-ms"> 60k</div>
               </div>
             </div>
             <div className="mt-3 mx-5 w-full flex justify-end text-xs">
-              <div className="flex text-gray-700  rounded-md mb-2 mr-4 items-center">
+              <div className="flex dark:text-white font-bold   rounded-md mb-2 mr-4 items-center">
                 Likes: <div className="ml-1 text-gray-400  text-ms"> 120k</div>
               </div>
             </div>
@@ -815,4 +815,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default About;
