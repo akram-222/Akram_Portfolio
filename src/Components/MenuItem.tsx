@@ -20,10 +20,7 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
           ? "sidebar-item-selected"
           : "sidebar-item"
       )}
-      onClick={() => {
-        onClick(id);
-        console.log();
-      }}
+      onClick={() => onClick(id)}
     >
       <SidebarIcons id={id} />
       <span className="block sm:hidden xl:block ml-2">{title}</span>

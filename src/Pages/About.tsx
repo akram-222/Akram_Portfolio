@@ -1,50 +1,29 @@
+import { useEffect, useState } from "react";
+import Spinner from "../Components/Spinner";
+import UserBioCard from "../Components/userBioCard";
+import { __getUserInfo } from "../Utils/github/__getUserInfo";
+
 const About = () => {
+  const [userInfo, setUserInfo] = useState<any>({});
+  const [isLoad, setLoading] = useState(true);
+  // useEffect(() => __getUserInfo(), []);
+  __getUserInfo().then((data) => {
+    setUserInfo(data);
+    setLoading(false);
+    console.log(userInfo);
+  });
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
         <aside className="">
-          <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
-            <div className="flex flex-col gap-1 text-center items-center">
-              <img
-                className="h-32 w-32 dark:border dark:border-[#353535] p-2 rounded-full shadow mb-4"
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
-                alt=""
-              />
-              <p className="font-semibold">Akram A. Abdelbasir</p>
-              <div className="text-sm leading-normal text-gray-400 flex justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="mr-1"
-                  width="16"
-                  height="16"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                Los Angeles, California
-              </div>
-            </div>
-            <div className="flex justify-center items-center gap-2 my-3">
-              <div className="font-semibold text-center mx-4">
-                <p className="dark:text-blue-400 font-bold">102</p>
-                <span className="text-gray-400">Posts</span>
-              </div>
-              <div className="font-semibold text-center mx-4">
-                <p className="dark:text-blue-400 font-bold">102</p>
-                <span className="text-gray-400">Followers</span>
-              </div>
-              <div className="font-semibold text-center mx-4">
-                <p className="dark:text-blue-400 font-bold">102</p>
-                <span className="text-gray-400">Folowing</span>
-              </div>
-            </div>
+          <div className="bg-white  flex-col justify-center dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
+            
+             {isLoad ? (
+              <Spinner className={"w-7"} />
+            ) : (
+              <UserBioCard userInfo={userInfo} />
+            )}
           </div>
-
           <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-6">
             <h3 className="text-gray-600 text-sm font-semibold mb-4">
               Following
