@@ -8,6 +8,7 @@ const About = () => {
   // useEffect(() => __getUserInfo(), []);
   __getUserInfo().then((data) => {
     setUserInfo(data);
+    setLoading(false);
     console.log(userInfo);
   });
   return (
