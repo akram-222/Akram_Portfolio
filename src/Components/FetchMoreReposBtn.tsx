@@ -20,7 +20,7 @@ const FetchMoreReposBtn = ({
         Total Repos:
         <span className="ml-1 w-10 text-sm text-premium-yellow">
           {" "}
-          {isLoad ? <Spinner /> : repos?.length}
+          {isLoad ? <Spinner className={"w-5"} /> : repos?.length}
         </span>
       </button>
     </div>
