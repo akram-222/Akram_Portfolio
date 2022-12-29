@@ -26,7 +26,7 @@ const About = () => {
                   alt=""
                 />
               )}
-              <p className="font-semibold">Akram A. Abdelbasir</p>
+              <p className="font-semibold">{userInfo.name}</p>
               <div className="text-sm leading-normal text-gray-400 flex justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ const About = () => {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
-                Los Angeles, California
+                {userInfo.location}
               </div>
             </div>
             <div className="flex justify-center items-center gap-2 my-3">
@@ -51,11 +51,15 @@ const About = () => {
                 <span className="text-gray-400">Posts</span>
               </div>
               <div className="font-semibold text-center mx-4">
-                <p className="dark:text-blue-400 font-bold">102</p>
+                <p className="dark:text-blue-400 font-bold">
+                  {userInfo.followers}
+                </p>
                 <span className="text-gray-400">Followers</span>
               </div>
               <div className="font-semibold text-center mx-4">
-                <p className="dark:text-blue-400 font-bold">102</p>
+                <p className="dark:text-blue-400 font-bold">
+                  {userInfo.following}
+                </p>
                 <span className="text-gray-400">Folowing</span>
               </div>
             </div>
