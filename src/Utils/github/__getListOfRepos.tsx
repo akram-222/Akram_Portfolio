@@ -1,6 +1,7 @@
 import { octokit } from "./OctokitConstructor";
+import { RepoConfigInterface } from "./repos-types";
 
-export async function __getListOfRepos(repoConfig) {
+export async function __getListOfRepos(repoConfig: RepoConfigInterface) {
   return await octokit
     .request(
       `GET /user/repos?visibility=all&per_page=${
@@ -9,6 +10,4 @@ export async function __getListOfRepos(repoConfig) {
       {}
     )
     .then(({ data }) => data);
-
-  console.log("List Of Repos fetched");
 }
