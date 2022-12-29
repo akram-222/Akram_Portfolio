@@ -1,4 +1,13 @@
+import { useEffect, useState } from "react";
+import { __getUserInfo } from "../Utils/github/__getUserInfo";
+
 const About = () => {
+  const [userInfo, setUserInfo] = useState({});
+  // useEffect(() => __getUserInfo(), []);
+  __getUserInfo().then((data) => {
+    setUserInfo(data);
+    console.log(userInfo);
+  });
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
