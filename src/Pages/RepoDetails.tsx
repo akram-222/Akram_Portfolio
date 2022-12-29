@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageTitle from "../Components/PageTitle";
+import Spinner from "../Components/Spinner";
 import { __getRepo } from "../Utils/github/__searchForRepo";
 
 const RepoDetails = ({ onSidebarHide }) => {
@@ -19,7 +20,9 @@ const RepoDetails = ({ onSidebarHide }) => {
   return (
     <>
       {isLoad ? (
-        "Loading..."
+        <div className="flex w-full h-full items-center justify-center">
+          <Spinner className={"w-14"} />
+        </div>
       ) : (
         <div className="flex-col items-start p-2 w-full h-full flex-wrap">
           <PageTitle
