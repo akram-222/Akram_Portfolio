@@ -15,7 +15,7 @@
 // }
 const SkillsTimeLine = () => {
   return (
-    <div className="p-4 md:p-10 bg-white">
+    <div className="p-4 md:p-10 bg-white dark:bg-transparent">
       <div className="md:flex mt-20 text-center ml-10 mr-10 md:ml-36 md:mr-36">
         <div className="md:mr-20 md:w-1/3">
           <h1 className="font-bold italic mb-10">TECNOLOGIAS QUE MÁS USO</h1>
