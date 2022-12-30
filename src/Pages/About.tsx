@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import FollowersList from "../Components/FollowersList";
+import SkillsTimeLine from "../Components/SkillsTimeLine";
 import Spinner from "../Components/Spinner";
 import UserBioCard from "../Components/userBioCard";
 import { __getUserInfo } from "../Utils/github/__getUserInfo";
@@ -321,7 +322,7 @@ const About = () => {
               </button>
             </footer>
           </form>
-        
+
           <div className="border-b border-b-[#353535]"></div>
           <div className="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
             <div className="grid grid-cols-6 col-span-2   gap-2  ">
@@ -370,13 +371,11 @@ const About = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500
           </div>
-          
-         
-         
+
           {/* </div> */}
         </article>
-      
       </div>
+      <SkillsTimeLine />
     </>
   );
 };
