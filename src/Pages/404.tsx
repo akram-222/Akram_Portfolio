@@ -28,7 +28,7 @@ const NotFoundRoute = () => {
         </p>
 <div className="inline-flex justify-center items-center w-full">
     <hr className="flex-grow my-8 h-px bg-gray-200 border-0 dark:bg-gray-700" />
-    <span className="absolute  px-3 font-medium text-gray-900 bg-white -translate-x-1/2 dark:text-white dark:bg-[#171717]">OR</span>
+    <span className="absolute  px-3 font-medium text-gray-900 bg-white  dark:text-white dark:bg-[#171717]">OR</span>
 </div>
           <h2 className="text-center text-gray-500 font-semibold">Browse one of our Components</h2>
         <div className="flex flex-wrap gap-3 item-center justify-center mt-3">
