@@ -23,10 +23,7 @@ const Popover = ({ follower: { html_url, avatar_url, login, id, type } }) => {
         </div>
         <p className="flex items-start gap-1 text-base font-semibold leading-none text-gray-900 dark:text-white">
           {login.toUpperCase()}{" "}
-          <span className="text-xs hover:underline text-yellow-500">
-            {" "}
-            #{id}
-          </span>
+         
         </p>
         <p className="mb-3 text-sm font-normal">
           <a href={html_url} className="hover:underline">
@@ -39,7 +36,10 @@ const Popover = ({ follower: { html_url, avatar_url, login, id, type } }) => {
             href={html_url}
             className="text-blue-600 dark:text-blue-500 hover:underline"
           >
-            flowbite.com
+             <span className="text-xs hover:underline text-yellow-500">
+            {" "}
+            #{id}
+          </span>
           </a>
           .
         </p>
