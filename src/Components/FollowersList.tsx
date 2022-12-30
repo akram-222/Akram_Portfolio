@@ -18,30 +18,24 @@ const FollowersList = () => {
       {isLoad ? (
         <Spinner className="w-7" />
       ) : (
-        <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-6">
-          <ul className="flex items-center justify-center space-x-2">
+        <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg px-6 py-4">
+          <b className="block border-b dark:border-[#353535]">
+            {followersList?.length} Followers
+          </b>
+          <ul className="flex items-center mt-3">
             {followersList &&
               followersList?.map((follower, i: number) => {
                 return (
                   <li
                     key={follower.id + i}
-                    className="group relative flex flex-col items-center space-y-2"
+                    className="hover:shadow-lg hover:mr-6 hover:transition-all ease-in-out delay-150 group border-4 border-transparent rounded-full transition-all relative flex flex-col -mr-10 items-center"
                   >
-                    {/* <!-- Ring --> */}
-                    <a
-                      className="block bg-white p-1 rounded-full"
-                      href={follower.html_url}
-                    >
-                      <img
-                        className="w-16 rounded-full"
-                        src={follower.avatar_url}
-                        alt={follower.login}
-                      />
-                    </a>
-                    {/* <!-- Username --> */}
-                    <span className="text-xs text-gray-500">
-                      {follower.login}
-                    </span>
+                    <img
+                      className="w-16 rounded-full"
+                      src={follower.avatar_url}
+                      alt={follower.login}
+                    />
+
                     <Popover follower={follower} />
                   </li>
                 );
