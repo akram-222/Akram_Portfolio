@@ -96,7 +96,6 @@ const Projects = ({ onSidebarHide }) => {
                     "Name",
                     "Language",
                     "Description",
-                    "Visibility",
                     "Date",
                   ].map((item, index) => (
                     <th

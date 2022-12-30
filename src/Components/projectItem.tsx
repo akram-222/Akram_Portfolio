@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
-import { BsDashCircle } from "react-icons/bs";
+import { BsDashCircle,BsEyeSlash,BsEye } from "react-icons/bs";
 import { IoIosMore, IoLogoGameControllerA } from "react-icons/io";
 
 const ProjectItem = ({
@@ -54,9 +54,10 @@ const ProjectItem = ({
       <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 md:table-cell hidden">
         Subscription renewal
       </td>
-      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500">
-        {visibility}
-      </td>
+      {/* <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500">
+          
+  {visibility === "public" ? <BsEye className="text-green-600" size={20} />:<BsEyeSlash className="text-red-600" size={20}/>}
+      </td> */}
       <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
         <div className="flex items-center">
           <div className="sm:flex hidden flex-col">
