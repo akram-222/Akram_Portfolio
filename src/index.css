@@ -151,3 +151,19 @@ input[type="radio"]:checked + label {
   background-color: #161616;
   background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");
 }
+
+/* ///////////////////// */
+.seccion {
+  text-transform: uppercase;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  top: 60%;
+}
