@@ -26,7 +26,7 @@ const FollowersList = () => {
                 return (
                   <li
                     key={follower.id + i}
-                    className="dark:hover:border-blue-600 hover:shadow-lg hover:mr-6 hover:w-22 hover:transition-all ease-in-out delay-150 group border-4 border-transparent rounded-full transition-all relative flex flex-col -mr-10 items-center"
+                    className="hover:shadow-lg hover:mr-6 hover:transition-all ease-in-out delay-150 group border-4 border-transparent rounded-full transition-all relative flex flex-col -mr-10 items-center"
                   >
                     <a
                       className="block rounded-full"
