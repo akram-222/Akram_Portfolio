@@ -5,6 +5,7 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      visibility: ["group-hover"],
       colors: {
         card: "#171717",
         white: "#ffffff",
