@@ -70,7 +70,7 @@ export const softwareSkillsList: {
 }[] = [
   { skillIcon: <SiPostman size={18} color="#f76935" />, skillName: "Postman" },
   { skillIcon: <SiGit size={18} color="#e94e31" />, skillName: "Git" },
-  { skillIcon: <SiGithub size={18} color="#161414" />, skillName: "Github" },
+  { skillIcon: <SiGithub size={18} color="#ccc" />, skillName: "Github" },
 ];
 
 export const skillsTabContent = {
