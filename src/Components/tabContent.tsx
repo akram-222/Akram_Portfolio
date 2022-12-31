@@ -3,8 +3,8 @@ import { TbApps } from "react-icons/tb";
 const TabContent = () => {
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-max w-full table-auto">
-        <tfoot>
+      <table className="table-scroll min-w-max w-full table-auto">
+        <thead>
           <tr className="text-blue-400 flex justify-between w-full text-sm leading-normal">
             <th className="pt-3 pb-2 px-6 text-left flex gap-2">
               <BsStars size={17} /> Skill
@@ -16,7 +16,7 @@ const TabContent = () => {
               <TbApps size={17} /> Projects
             </th>
           </tr>
-        </tfoot>
+        </thead>
         <tbody className="text-gray-600 text-sm font-light">
           <tr className="border-b flex justify-between w-full border-gray-800/40">
             <td className="py-3 px-6 text-left whitespace-nowrap">
