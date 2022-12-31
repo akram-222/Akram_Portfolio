@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import FollowersList from "../Components/FollowersList";
-import SkillsTimeLine from "../Components/SkillsTimeLine";
+import Skills from "../Components/Skills";
 import Spinner from "../Components/Spinner";
 import UserBioCard from "../Components/userBioCard";
 import { __getUserInfo } from "../Utils/github/__getUserInfo";
@@ -81,7 +81,7 @@ const About = () => {
         </aside>
 
         <article className="">
-         <SkillsTimeLine />
+         <Skills />
 
           <div className="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
             <div className="grid grid-cols-6 col-span-2   gap-2  ">
