@@ -4,8 +4,8 @@ const EducationTimeLine = () => {
   return (
     <>
       <ol className="relative border-l border-gray-200 dark:border-gray-700">
-        {educationData?.map(({ university, department, gpa, note }) => (
-          <li className="mb-10 ml-6">
+        {educationData?.map(({ university, department, gpa, note }, index) => (
+          <li key={index} className="mb-10 ml-6">
             <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
               <FaGraduationCap />
             </span>
@@ -32,9 +32,9 @@ const EducationTimeLine = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>{" "}
               Certificate
