@@ -28,8 +28,8 @@ const About = () => {
               <UserBioCard userInfo={userInfo} />
             )}
           </div>
-          <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-lg mb-1 text-gray-100">
-            <span className="text-gray-400/30">#4</span> Skills List
+         <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
+            <span className="text-gray-400/30">#2</span> Followers
           </h3>
           <FollowersList />
 
@@ -87,8 +87,8 @@ const About = () => {
           <Skills />
 
           <div className="text-gray-400 mb-7 mt-6 ">
-            <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-lg mb-3 text-gray-100">
-              <span className="text-gray-400/30">#4</span> Skills List
+            <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
+              <span className="text-gray-400/30">#1</span> Personal Card
             </h3>
             <div className="grid grid-cols-6 col-span-2 gap-2">
               <div className=" overflow-hidden col-span-3 max-h-[14rem]">

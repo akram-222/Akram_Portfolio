@@ -15,16 +15,14 @@ const FollowersList = () => {
   }, []);
   return (
     <>
-    
       {isLoad ? (
         <Spinner className="w-7" />
       ) : (
-        <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow  rounded-lg px-6 py-4">
-          
-          <b className="block border-b dark:border-[#353535]">
+        <div className="bg-white dark:bg-[#171717] border-gray-600/30 border shadow  rounded-b-lg px-6 py-4">
+          {/* <b className="block border-b dark:border-[#353535]">
             {followersList?.length} Followers
-          </b>
-          <ul className="flex items-center mt-3">
+          </b> */}
+          <ul className="flex items-center">
             {followersList &&
               followersList?.map((follower, i: number) => {
                 return (
