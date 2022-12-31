@@ -95,8 +95,6 @@ const About = () => {
               <EducationTimeLine />
             </div>
           </div>
-
-          {/* </div> */}
         </article>
       </div>
     </>
