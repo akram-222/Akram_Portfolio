@@ -44,45 +44,6 @@ const FollowersList = () => {
         </div>
       )}
     </>
-    // <>
-    //   {isLoad ? (
-    //     <Spinner classNameName="w-7" />
-    //   ) : (
-    //     <div classNameName="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-6">
-    //       <h3 classNameName="text-gray-600 text-sm font-semibold mb-4">
-    //         {followersList?.length} Followers
-    //       </h3>
-    //       <ul classNameName="flex items-center justify-center space-x-2">
-    //         {/* <!-- Story #1 --> */}
-    //         {followersList &&
-    //           followersList?.map(
-    //             ({ html_url, avatar_url, login, id }, i: number) => {
-    //               return (
-    //                 <li
-    //                   key={id + i}
-    //                   classNameName="flex flex-col items-center space-y-2"
-    //                 >
-    //                   {/* <!-- Ring --> */}
-    //                   <a
-    //                     classNameName="block bg-white p-1 rounded-full"
-    //                     href={html_url}
-    //                   >
-    //                     <img
-    //                       classNameName="w-16 rounded-full"
-    //                       src={avatar_url}
-    //                       alt={login}
-    //                     />
-    //                   </a>
-    //                   {/* <!-- Username --> */}
-    //                   <span classNameName="text-xs text-gray-500">{login}</span>
-    //                 </li>
-    //               );
-    //             }
-    //           )}
-    //       </ul>
-    //     </div>
-    //   )}
-    // </>
   );
 };
 
