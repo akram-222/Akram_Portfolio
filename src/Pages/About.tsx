@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import EducationTimeLine from "../Components/EducationTimeLine";
 import FollowersList from "../Components/FollowersList";
 import Skills from "../Components/Skills";
 import Spinner from "../Components/Spinner";
@@ -18,14 +19,19 @@ const About = () => {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
         <aside className="">
-          <div className="bg-white  flex-col justify-center dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
+          <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
+            <span className="text-gray-400/30">#1</span> Personal Card
+          </h3>
+          <div className="bg-white mb-4 flex-col justify-center dark:bg-[#171717] dark:border-gray-600/30 border shadow rounded-b-lg p-10">
             {isLoad ? (
               <Spinner className={"w-7"} />
             ) : (
               <UserBioCard userInfo={userInfo} />
             )}
           </div>
-
+          <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
+            <span className="text-gray-400/30">#2</span> Followers
+          </h3>
           <FollowersList />
 
           <div className="flex bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-2">
@@ -76,57 +82,19 @@ const About = () => {
               </div>
             </div>
           </div>
-
-      
         </aside>
 
         <article className="">
-         <Skills />
+          <Skills />
 
-          <div className="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
-            <div className="grid grid-cols-6 col-span-2   gap-2  ">
-              <div className=" overflow-hidden col-span-3 max-h-[14rem]">
-                <img
-                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
-                  src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=735&amp;q=80"
-                  alt=""
-                />
-              </div>
-              <div className=" overflow-hidden col-span-3 max-h-[14rem]">
-                <img
-                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover  "
-                  src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1399&amp;q=80"
-                  alt=""
-                />
-              </div>
-              <div className=" overflow-hidden  col-span-2 max-h-[10rem]">
-                <img
-                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
-                  src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
-                  alt=""
-                />
-              </div>
-              <div className=" overflow-hidden  col-span-2 max-h-[10rem]">
-                <img
-                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
-                  src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
-                  alt=""
-                />
-              </div>
-              <div className="relative overflow-hidden  col-span-2 max-h-[10rem]">
-                <div className="text-white text-xl absolute inset-0  bg-slate-900/80 flex justify-center items-center">
-                  + 23
-                </div>
-                <img
-                  className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
-                  src="https://images.unsplash.com/photo-1560393464-5c69a73c5770?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=765&amp;q=80"
-                  alt=""
-                />
-              </div>
+          <div className="text-gray-400 mb-7 mt-6 ">
+            <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
+              <span className="text-gray-400/30">#5</span> Education
+            </h3>
+            <div className="px-6 py-4">
+              <EducationTimeLine />
             </div>
           </div>
-       
-          {/* </div> */}
         </article>
       </div>
     </>
