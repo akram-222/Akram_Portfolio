@@ -10,6 +10,7 @@ import {
   SiPostman,
   SiReact,
   SiReactrouter,
+  SiRedux,
   SiSass,
   SiTailwindcss,
   SiTypescript,
@@ -26,29 +27,50 @@ export const frontendSkillsList: {
   skillIcon: React.ReactNode;
   skillName: string;
 }[] = [
-  { skillIcon: <SiReact />, skillName: "React" },
-  { skillIcon: <SiTypescript />, skillName: "Typescript" },
-  { skillIcon: <SiJavascript />, skillName: "Javascript" },
-  { skillIcon: <SiReactrouter />, skillName: "React-Router" },
-  { skillIcon: <SiSass />, skillName: "Sass" },
-  { skillIcon: <SiCss3 />, skillName: "Css3" },
-  { skillIcon: <SiTailwindcss />, skillName: "Tailwind" },
-  { skillIcon: <SiBootstrap />, skillName: "Bootstrap" },
-  { skillIcon: <SiHtml5 />, skillName: "HTML5" },
+  { skillIcon: <SiReact size={18} color="#61DBFB" />, skillName: "React" },
+  { skillIcon: <SiRedux size={18} color="#764abc" />, skillName: "Redux" },
+  {
+    skillIcon: <SiReactrouter size={18} color="#fff" />,
+    skillName: "React-Router",
+  },
+  {
+    skillIcon: <SiTypescript size={18} color="#007acc" />,
+    skillName: "Typescript",
+  },
+  {
+    skillIcon: <SiJavascript size={18} color="#F0DB4F" />,
+    skillName: "Javascript",
+  },
+  { skillIcon: <SiSass size={18} color="#CD6799" />, skillName: "Sass" },
+  { skillIcon: <SiCss3 size={18} color="#4285F4" />, skillName: "Css3" },
+  {
+    skillIcon: <SiTailwindcss size={18} color="#15b8c5" />,
+    skillName: "Tailwind",
+  },
+  {
+    skillIcon: <SiBootstrap size={18} color="#6d11ee" />,
+    skillName: "Bootstrap",
+  },
+  { skillIcon: <SiHtml5 size={18} color="#dd4b25" />, skillName: "HTML5" },
 ];
 
 export const backendSkillsList: {
   skillIcon: React.ReactNode;
   skillName: string;
-}[] = [{ skillIcon: <SiFirebase />, skillName: "Firebase" }];
+}[] = [
+  {
+    skillIcon: <SiFirebase size={18} color="#f7c428" />,
+    skillName: "Firebase",
+  },
+];
 
 export const softwareSkillsList: {
   skillIcon: React.ReactNode;
   skillName: string;
 }[] = [
-  { skillIcon: <SiPostman />, skillName: "Postman" },
-  { skillIcon: <SiGit />, skillName: "Git" },
-  { skillIcon: <SiGithub />, skillName: "Github" },
+  { skillIcon: <SiPostman size={18} color="#f76935" />, skillName: "Postman" },
+  { skillIcon: <SiGit size={18} color="#e94e31" />, skillName: "Git" },
+  { skillIcon: <SiGithub size={18} color="#ccc" />, skillName: "Github" },
 ];
 
 export const skillsTabContent = {
