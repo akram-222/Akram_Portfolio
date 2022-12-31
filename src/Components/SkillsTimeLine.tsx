@@ -13,17 +13,13 @@ const SkillsTimeLine = () => {
         <ul className="flex justify-between flex-wrap text-sm font-medium text-center dark:border-b dark:border-[#353535]">
           {tabs?.map(({ tabName, tabIcon }, index) => (
             <li
-              className={`tabMember ${!index ? "active" : ""}`}
+              className={`tabMember inline-flex cursor-pointer dark:hover:text-white gap-2 p-4 ${
+                !index ? "active" : ""
+              }`}
               onClick={(e) => switcher(e, "active", ".tabMember")}
             >
-              <a
-                href="#d"
-                className=" inline-flex gap-2 p-4 rounded-t-lg group"
-                aria-current="page"
-              >
-                {tabIcon}
-                {tabName}
-              </a>
+              {tabIcon}
+              {tabName}
             </li>
           ))}
         </ul>
