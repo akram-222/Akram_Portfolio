@@ -10,7 +10,7 @@ const Skills = () => {
         <ul className="flex justify-between flex-wrap text-sm font-medium text-center dark:border-b dark:border-[#353535]">
           {skillsTab?.map(({ tabName, tabIcon }, index) => (
             <li
-              className={`tabMember inline-flex cursor-pointer dark:hover:text-white gap-2 p-4 ${
+              className={`w-1/3 justify-center tabMember inline-flex cursor-pointer dark:hover:text-white gap-2 p-4 ${
                 !index ? "active" : ""
               }`}
               onClick={(e) => {
