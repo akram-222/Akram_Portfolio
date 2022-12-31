@@ -76,15 +76,16 @@ const About = () => {
               </div>
             </div>
           </div>
-
-      
         </aside>
 
         <article className="">
-         <Skills />
+          <Skills />
 
-          <div className="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
-            <div className="grid grid-cols-6 col-span-2   gap-2  ">
+          <div className="text-gray-400 mb-7 mt-6 ">
+            <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-lg mb-2 text-gray-100">
+              <span className="text-gray-400/30">#2</span> Skills List
+            </h3>
+            <div className="grid grid-cols-6 col-span-2 gap-2">
               <div className=" overflow-hidden col-span-3 max-h-[14rem]">
                 <img
                   className="dark:brightness-50 dark:hover:brightness-100 transition cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer cursor-pointer h-full w-full object-cover "
@@ -125,7 +126,7 @@ const About = () => {
               </div>
             </div>
           </div>
-       
+
           {/* </div> */}
         </article>
       </div>

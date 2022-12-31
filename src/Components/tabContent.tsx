@@ -18,8 +18,11 @@ const TabContent = ({ list }) => {
           </tr>
         </thead>
         <tbody className="text-gray-600 text-sm font-light">
-          {list?.map(({ skillIcon, skillName }) => (
-            <tr className="border-b flex justify-between w-full border-gray-800/40">
+          {list?.map(({ skillIcon, skillName }, index: number) => (
+            <tr
+              key={index}
+              className="border-b flex justify-between w-full border-gray-800/40"
+            >
               <td className="py-3 px-6 text-left whitespace-nowrap w-1/3">
                 <div className="flex items-center">
                   <div className="mr-2">{skillIcon}</div>
