@@ -18,14 +18,19 @@ const About = () => {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
         <aside className="">
-          <div className="bg-white  flex-col justify-center dark:bg-[#171717] dark:border dark:border-[#353535] shadow rounded-lg p-10">
+          <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
+            <span className="text-gray-400/30">#1</span> Personal Card
+          </h3>
+          <div className="bg-white mb-4 flex-col justify-center dark:bg-[#171717] dark:border-gray-600/30 border shadow rounded-b-lg p-10">
             {isLoad ? (
               <Spinner className={"w-7"} />
             ) : (
               <UserBioCard userInfo={userInfo} />
             )}
           </div>
-
+          <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-lg mb-1 text-gray-100">
+            <span className="text-gray-400/30">#4</span> Skills List
+          </h3>
           <FollowersList />
 
           <div className="flex bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-2">
@@ -82,8 +87,8 @@ const About = () => {
           <Skills />
 
           <div className="text-gray-400 mb-7 mt-6 ">
-            <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-lg mb-2 text-gray-100">
-              <span className="text-gray-400/30">#2</span> Skills List
+            <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-lg mb-3 text-gray-100">
+              <span className="text-gray-400/30">#4</span> Skills List
             </h3>
             <div className="grid grid-cols-6 col-span-2 gap-2">
               <div className=" overflow-hidden col-span-3 max-h-[14rem]">

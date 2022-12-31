@@ -15,10 +15,12 @@ const FollowersList = () => {
   }, []);
   return (
     <>
+    
       {isLoad ? (
         <Spinner className="w-7" />
       ) : (
-        <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg px-6 py-4">
+        <div className="bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow  rounded-lg px-6 py-4">
+          
           <b className="block border-b dark:border-[#353535]">
             {followersList?.length} Followers
           </b>
