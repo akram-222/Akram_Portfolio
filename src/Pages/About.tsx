@@ -24,7 +24,7 @@ const About = () => {
           </h3>
           <div className="bg-white mb-4 flex-col justify-center dark:bg-[#171717] dark:border-gray-600/30 border shadow rounded-b-lg p-10">
             {isLoad ? (
-              <Spinner className={"w-7"} />
+              <Spinner className={"w-7 m-auto"} />
             ) : (
               <UserBioCard userInfo={userInfo} />
             )}
@@ -32,8 +32,10 @@ const About = () => {
           <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
             <span className="text-gray-400/30">#2</span> Followers
           </h3>
-          <FollowersList />
+                  <div className="bg-white dark:bg-[#171717] border-gray-600/30 border shadow rounded-b-lg px-6 py-4">
 
+          <FollowersList />
+</div>
           <div className="flex bg-white dark:bg-[#171717] dark:border dark:border-[#353535] shadow mt-6  rounded-lg p-2">
             <img
               src="https://images.unsplash.com/photo-1439130490301-25e322d88054?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1189&amp;q=80"

@@ -73,10 +73,14 @@ export default function Repos() {
       <SuccessMessage isRepoAdded={isRepoAdded} setIsAdded={setIsAdded}/>
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
-        <BsPlusCircle
+        <button 
+        onClick={() => setIsHidden(!isHidden)}
+        >
+          <BsPlusCircle
           className="w-5 h-5 cursor-pointer	"
-          onClick={() => setIsHidden(!isHidden)}
+          
         />
+          </button>
         <AddQuickRepo isHidden={isHidden} inputOfRepoName={inputOfRepoName}>
           <button
             onClick={() => createRepo()}
