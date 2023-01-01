@@ -3,7 +3,7 @@ const UserBioCard = ({ userInfo }) => {
     <>
       <div className="flex flex-col gap-1 text-center items-center">
         <img
-          className="h-32 w-32 dark:border dark:border-[#353535] rounded-full shadow mb-4"
+          className="h-32 w-32 mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow mb-4"
           src={userInfo.avatar_url}
           alt=""
         />
