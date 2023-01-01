@@ -2,7 +2,7 @@ const Popover = ({ follower: { html_url, avatar_url, login, id, type } }) => {
   return (
           
     <div
-      className={`left-[115%] -bottom-[70%] z-50 opacity-0 invisible group-hover:visible group-hover:opacity-100 absolute inline-block w-64 text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm  dark:text-gray-400 dark:bg-[#171717] dark:border-dashed dark:border-gray-500  after:content-[''] after:border-b after:border-l after:z-10 dark:after:border-gray-400 dark:after:bg-[#171717] after:absolute after:left-0 after:top-1/2 after:translate-y-1/2 after:-translate-x-1/2 after:rotate-45 after:left-2/4 after:bottom-0 after:h-4 after:w-4 after:bg-red-600`}
+      className={`left-[115%] -bottom-[70%] z-50 opacity-0 invisible group-hover:visible group-hover:opacity-100 absolute inline-block w-64 text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm  dark:text-gray-400 dark:bg-[#171717] dark:border-dashed dark:border-gray-500  after:content-[''] after:border-b after:border-l after:z-10 dark:after:border-gray-400 dark:after:bg-[#171717] after:absolute after:left-0 after:top-1/2 after:translate-y-1/2 after:-translate-x-1/2 after:rotate-45 after:bottom-0 after:h-4 after:w-4 after:bg-red-600`}
     >
       <div className="p-3">
         <div className="flex items-center justify-between mb-2">
