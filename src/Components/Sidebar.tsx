@@ -1,7 +1,7 @@
-import clsx from "clsx";
 import { useState } from "react";
 import { config, useSpring, animated } from "react-spring";
-import Icon from "./Icon";
+import {BsBrightnessHigh} from "react-icons/bs";
+import {MdUnfoldMore} from "react-icons/md";
 import IconButton from "./IconButton";
 import Image from "./Image";
 import MenuItem from "./MenuItem";
@@ -19,10 +19,10 @@ function Sidebar({ onSidebarHide, showSidebar }) {
 
   return (
     <div
-      className={clsx(
-        "fixed inset-y-0 left-0 bg-white dark:bg-card w-full sm:w-20 xl:w-60 sm:flex flex-col z-10",
-        showSidebar ? "flex" : "hidden"
-      )}
+      className={`
+        fixed inset-y-0 left-0 bg-white dark:bg-card w-full sm:w-20 xl:w-60 sm:flex flex-col z-10
+        ${showSidebar ? "flex" : "hidden"}
+      `}
     >
       <div className="flex-shrink-0 overflow-hidden p-2">
         <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 sidebar-separator-top">
@@ -41,16 +41,13 @@ function Sidebar({ onSidebarHide, showSidebar }) {
       <div className="flex-grow overflow-x-hidden overflow-y-auto flex flex-col">
         <div className="w-full p-3 h-24 sm:h-20 xl:h-24 hidden sm:block flex-shrink-0">
           <div className="bg-sidebar-card-top shadow-xl dark:shadow-sm rounded-xl w-full h-full flex items-center justify-start sm:justify-center xl:justify-start px-3 sm:px-0 xl:px-3">
-            <Icon path="res-react-dash-sidebar-card" className="w-9 h-9 " />
+            <BsBrightnessHigh size={30} className="dark:text-gray-500"/>
             <div className="block sm:hidden xl:block ml-3">
               <div className="text-sm font-bold text-white">Sales House</div>
               <div className="text-sm">General Item</div>
             </div>
             <div className="block sm:hidden xl:block flex-grow" />
-            <Icon
-              path="res-react-dash-sidebar-card-select"
-              className="block sm:hidden xl:block w-5 h-5"
-            />
+            <MdUnfoldMore size={22}/>
           </div>
         </div>
         {sidebarItems[0].map((i) => (
@@ -142,10 +139,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
             Akram Ashraf
           </div>
           <div className="flex-grow block sm:hidden xl:block" />
-          <Icon
-            path="res-react-dash-options"
-            className="block sm:hidden xl:block w-3 h-3"
-          />
+          <MdUnfoldMore />
         </div>
       </div>
     </div>

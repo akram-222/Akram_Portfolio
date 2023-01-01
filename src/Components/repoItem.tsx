@@ -1,8 +1,7 @@
 import { AiOutlineDelete } from "react-icons/ai";
 import { BsLink45Deg } from "react-icons/bs";
 import ConfirmDeletionMsg from "./ConfirmDeletionMsg"
-import Icon from "./Icon";
-
+import {VscIssues,VscIssueDraft} from "react-icons/vsc"
 const RepoItem = ({
   children,
   index,
@@ -47,16 +46,7 @@ const RepoItem = ({
           <BsLink45Deg />
         </a>
       </div>
-      <Icon
-        path={
-          has_issues
-            ? "res-react-dash-country-up"
-            : "res-react-dash-country-down"
-        }
-        className="w-4 h-4 mx-1"
-      />
-
-      {/* //////////////// */}
+{has_issues ? <VscIssues size={18} className="dark:text-green-500 mx-1"/>:<VscIssueDraft size={18} className="dark:text-red-500 mx-1"/>}
 
       <button
         data-popover-target="popover-hover"

@@ -1,6 +1,5 @@
 import { useSpring, animated, config } from "react-spring";
-import Icon from "./Icon";
-
+import {MdUnfoldMore} from "react-icons/md"
 function Satisfication() {
     const map = (value, sMin, sMax, dMin, dMax) => {
         return dMin + ((value - sMin) / (sMax - sMin)) * (dMax - dMin);
@@ -17,7 +16,7 @@ function Satisfication() {
         <div className="p-4 h-full">
             <div className="flex justify-between items-center">
                 <div className="text-white font-bold">Satisfication</div>
-                <Icon path="res-react-dash-options" className="w-2 h-2" />
+            <MdUnfoldMore />
             </div>
             <div className="mt-3">From all projects</div>
             <div className="flex justify-center">
