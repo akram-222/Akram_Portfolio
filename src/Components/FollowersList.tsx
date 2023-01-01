@@ -15,13 +15,9 @@ const FollowersList = () => {
   }, []);
   return (
     <>
-      {isLoad ? (
-        <Spinner className="w-7" />
+     {isLoad ? (
+        <Spinner className="w-7 m-auto" />
       ) : (
-        <div className="bg-white dark:bg-[#171717] border-gray-600/30 border shadow  rounded-b-lg px-6 py-4">
-          {/* <b className="block border-b dark:border-[#353535]">
-            {followersList?.length} Followers
-          </b> */}
           <ul className="flex items-center">
             {followersList &&
               followersList?.map((follower, i: number) => {
@@ -35,13 +31,11 @@ const FollowersList = () => {
                       src={follower.avatar_url}
                       alt={follower.login}
                     />
-
                     <Popover follower={follower} />
                   </li>
                 );
               })}
           </ul>
-        </div>
       )}
     </>
   );

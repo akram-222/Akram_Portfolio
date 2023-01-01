@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import SidebarIcons from "./SidebarIcons";
 import { Link, useLocation } from "react-router-dom";
 function MenuItem({ item: { id, title, notifications }, onClick }) {
@@ -14,12 +13,9 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
       to={
         title.toLowerCase() === "dashboard" ? "./signup" : title.toLowerCase()
       }
-      className={clsx(
-        "w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer",
-        title.toLowerCase() === currentRoute
-          ? "sidebar-item-selected"
-          : "sidebar-item"
-      )}
+      className={`${title.toLowerCase() === currentRoute
+      ? "sidebar-item-selected"
+      : "sidebar-item"} w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer`}
       onClick={() => onClick(id)}
     >
       <SidebarIcons id={id} />

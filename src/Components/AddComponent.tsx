@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import {BsPlus} from "react-icons/bs";
 import { __getNotifications } from "../Utils/github/__getNotifications";
-import Icon from "./Icon";
 import NameCard from "./NameCard";
 export default function AddComponent() {
   const [notifications, setNotifications] = useState([]);
@@ -49,7 +49,7 @@ export default function AddComponent() {
             color: "white",
           }}
         >
-          <Icon path="res-react-dash-add-component" className="w-5 h-5" />
+          <BsPlus size={25}/>
           <div
             className="ml-2"
             onClick={() => {

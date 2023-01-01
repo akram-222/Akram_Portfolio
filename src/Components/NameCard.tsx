@@ -1,6 +1,6 @@
-import clsx from "clsx";
 import { useSpring, animated } from "react-spring";
-import Icon from "./Icon";
+import {BsCheckCircle} from "react-icons/bs"
+import {HiOutlineTrendingDown,HiOutlineTrendingUp} from "react-icons/hi"
 import Image from "./Image";
 
 function NameCard({
@@ -26,9 +26,9 @@ function NameCard({
           <div className="flex items-center">
             <Image path={`mock_faces_${imgId}`} className="w-10 h-10" />
             <div className="ml-2">
-              <div className="flex items-center">
+              <div className="flex">
                 <div className="mr-2 font-bold text-white">{name}</div>
-                <Icon path="res-react-dash-tick" />
+                <BsCheckCircle size={18} className="dark:text-green-400"/>
               </div>
               <div className="text-sm ">{position}</div>
             </div>
@@ -62,16 +62,10 @@ function NameCard({
           </svg>
         </div>
         <div className="flex flex-col items-center">
-          <Icon
-            path={rise ? "res-react-dash-bull" : "res-react-dash-bear"}
-            className="w-8 h-8"
-          />
+        
+          {rise ? <HiOutlineTrendingUp className="text-green-500" size={30} /> :<HiOutlineTrendingDown className="text-red-500" size={30}/>}
           <animated.div
-            className={clsx(
-              rise ? "text-green-500" : "text-red-500",
-              "font-bold",
-              "text-lg"
-            )}
+            className={`${rise?"text-green-500":"text-red-500"} text-lg font-bold`}
           >
             {transactions.to((i) => `$${i.toFixed(2)}`)}
           </animated.div>

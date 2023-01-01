@@ -1,4 +1,5 @@
-import Icon from "./Icon";
+import {MdUnfoldMore } from "react-icons/md";
+import {BsArrowRightShort} from "react-icons/bs"
 import { segmentationData } from "./SegmentationData";
 
 function Segmentation() {
@@ -6,8 +7,9 @@ function Segmentation() {
         <div className="p-4 h-full">
             <div className="flex justify-between items-center">
                 <div className="text-white font-bold">Segmentation</div>
+            <MdUnfoldMore />
 
-                <Icon path="res-react-dash-options" className="w-2 h-2" />
+                {/* <Icon path="res-react-dash-options" className="w-2 h-2" /> */}
             </div>
             <div className="mt-3">Used Languages :</div>
             {segmentationData.map(({ c1, c2, c3, color }) => (
@@ -40,7 +42,7 @@ function Segmentation() {
 
             <div className="flex mt-3 px-3 items-center justify-between bg-details rounded-xl w-36 h-12">
                 <div className="">Details</div>
-                <Icon path="res-react-dash-chevron-right" className="w-4 h-4" />
+                <BsArrowRightShort size={20}/>
             </div>
         </div>
     );
