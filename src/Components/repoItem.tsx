@@ -1,5 +1,6 @@
 import { AiOutlineDelete } from "react-icons/ai";
 import { BsLink45Deg } from "react-icons/bs";
+import ConfirmDeletionMsg from "./ConfirmDeletionMsg"
 import Icon from "./Icon";
 
 const RepoItem = ({
@@ -61,32 +62,20 @@ const RepoItem = ({
         data-popover-target="popover-hover"
         data-popover-trigger="hover"
         type="button"
-        onClick={(e) =>
-          e?.currentTarget?.nextElementSibling?.classList.toggle("invisible")
+        onFocus={(e) =>
+          e?.currentTarget?.children[1]?.classList.remove("invisible")
+        }
+        onBlur={(e) =>
+          e?.currentTarget?.children[1]?.classList.add("invisible")
         }
         className="dark:text-red-500 px-1 text-center"
       >
         <AiOutlineDelete />
-      </button>
-      <div
-        data-popover
-        id="popover-hover"
-        role="tooltip"
-        className={`${
-          isRepoDeleted ? "invisible opacity-0" : ""
-        } invisible absolute z-10 inline-block w-64 text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800`}
-      >
-        <div className="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
-          <h3 className="font-semibold dark:text-red-500 dark:text-white">
-            Confirm Deletion
-          </h3>
-        </div>
-        <div className="px-3 py-2 flex flex-col">
-          <p>This Repo will permenantly delete</p>
+        <ConfirmDeletionMsg isRepoDeleted={isRepoDeleted} >
           {children}
-        </div>
-        <div data-popper-arrow></div>
-      </div>
+        </ConfirmDeletionMsg>
+      </button>
+      
       {/* ///////////////////////// */}
     </div>
   );
