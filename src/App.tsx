@@ -43,7 +43,7 @@ const App = () => {
             <div className="w-full h-screen hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
               .
             </div>
-            <div className=" h-screen flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
+            <div className="relative h-screen flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
               <Routes>
                 {isLogging ? (
                   <Route
@@ -78,10 +78,8 @@ const App = () => {
                   }
                 />
                 <Route path="/search" element={<Search />} />
-                {['/','/about'].map((route,i)=>{
-                  
-               return <Route key={i} path={route} element={<About />} />
-                  
+                {["/", "/about"].map((route, i) => {
+                  return <Route key={i} path={route} element={<About />} />;
                 })}
                 <Route path="/settings" element={<Settings />} />
                 <Route
