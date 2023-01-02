@@ -1,12 +1,20 @@
 import Steps from "./Steps";
-import {BsArrowRightShort} from "react-icons/bs";
+import { useState } from "react";
+import { BsArrowRightShort } from "react-icons/bs";
 const AddNewEvent = () => {
+  const [isCurrentStep, setCurrentStep] = useState<number | "Done">(1);
+  const numberOfSteps: number = 3;
+  const handleCurrentStep = () => {
+    if (+isCurrentStep < numberOfSteps) setCurrentStep(+isCurrentStep + 1);
+    if (+isCurrentStep === numberOfSteps) setCurrentStep("Done");
+    if (isCurrentStep === "Done") return;
+  };
   return (
     <div className="absolute z-20 flex items-center justify-center absolute top-0 w-full h-full dark:bg-[#171717]">
       <form className="flex flex-col border w-1/2 p-4  dark:border-gray-600/30 rounded-lg">
-     <Steps />
+        <Steps numberOfSteps={numberOfSteps} isCurrentStep={isCurrentStep} />
         <div className="flex border-t dark:border-gray-600/30 flex-col items-start mb-6">
-          <div className="w-full mt-3">
+          <div className="w-full mt-8">
             <label
               htmlFor="first_name"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -21,13 +29,19 @@ const AddNewEvent = () => {
               required
             />
           </div>
-          
         </div>
         <button
-          type="submit"
+          type="button"
+          onClick={() => handleCurrentStep()}
           className="ml-auto inline-flex items-center gap-2 text-blue-400 text-sm sm:w-auto px-3 py-1.5 text-center border dark:border-gray-600/30"
         >
-          Next <BsArrowRightShort size={20} />
+          {isCurrentStep !== "Done" ? (
+            <>
+              Next <BsArrowRightShort size={20} />
+            </>
+          ) : (
+            "Finish"
+          )}
         </button>
       </form>
     </div>
