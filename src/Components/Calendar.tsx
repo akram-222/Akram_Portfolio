@@ -118,7 +118,7 @@ const Calendar = () => {
                           ? "dark:hover:bg-[#050708]/10 cursor-pointer dark:hover:text-gray-100 "
                           : ""
                       } 
-                     border dark:border-gray-700/10 p-1 w-[14.28%] h-40`}
+                     border border-dashed dark:border-gray-600/10 p-1 w-[14.28%] h-40`}
                     >
                       {typeof day === "number" ? day : null}
                     </div>
