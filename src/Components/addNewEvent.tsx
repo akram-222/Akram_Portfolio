@@ -1,7 +1,8 @@
+import Steps from "./Steps";
 const AddNewEvent = () => {
   return (
     <div className="absolute z-20 flex items-center justify-center absolute top-0 w-full h-full dark:bg-[#171717]">
-     <Steps>
+     <Steps />
       <form className="border w-[25vw] dark:border-gray-600/30 px-20 py-10 rounded-lg">
         {/* <div className="grid gap-6 mb-6 md:grid-cols-2"> */}
 
