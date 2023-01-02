@@ -1,7 +1,16 @@
 const Steps = ({ numberOfSteps, isCurrentStep }) => {
   return (
     <div className={`space-y-2 mb-3 dark:text-gray-100`}>
-      <h3 className="text-xs font-semibold">Step 3: Fill in order details</h3>
+      <h3 className="text-xs font-semibold">
+        {isCurrentStep === "Done" ? (
+          <span>
+            <b className="text-green-400">Congrates 🎉: </b> Your event is about
+            to be added, thank you.
+          </span>
+        ) : (
+          <>Step {isCurrentStep}: Fill in order details</>
+        )}
+      </h3>
       <div className="flex max-w-xs space-x-1">
         {new Array(numberOfSteps).fill("").map((step: string, i: number) => (
           <span

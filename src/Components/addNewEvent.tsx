@@ -2,7 +2,7 @@ import Steps from "./Steps";
 import { useState } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 const AddNewEvent = () => {
-  const [isCurrentStep, setCurrentStep] = useState<number | "Done">(0);
+  const [isCurrentStep, setCurrentStep] = useState<number | "Done">(1);
   const numberOfSteps: number = 3;
   const handleCurrentStep = () => {
     if (+isCurrentStep < numberOfSteps) setCurrentStep(+isCurrentStep + 1);
@@ -40,7 +40,7 @@ const AddNewEvent = () => {
               Next <BsArrowRightShort size={20} />
             </>
           ) : (
-            "done"
+            "Finish"
           )}
         </button>
       </form>
