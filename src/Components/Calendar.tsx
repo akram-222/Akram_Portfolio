@@ -90,7 +90,7 @@ const Calendar = () => {
                   return (
                     <div
                       key={`${day}__${i}`}
-                      className="w-[14vw] h-8 items-center dark:text-gray-100 justify-center"
+                      className="w-[14.28vw] h-8 items-center dark:text-gray-100 justify-center"
                     >
                       {day}
                     </div>
