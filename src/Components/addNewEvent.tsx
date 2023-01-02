@@ -6,7 +6,7 @@ const AddNewEvent = () => {
       <form className="flex flex-col border w-1/2 p-4  dark:border-gray-600/30 rounded-lg">
      <Steps />
         <div className="flex border-t dark:border-gray-600/30 flex-col items-start mb-6">
-          <div className="w-full mt-3">
+          <div className="w-full mt-8">
             <label
               htmlFor="first_name"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
