@@ -1,15 +1,13 @@
 import { useState } from "react";
-import TaskStateCard from "./taskStateCard";
+import EventStateComponent from "./EventStateComponent";
 
 const CalendarEvents = () => {
-  interface taskType {
+  interface eventType {
     title: string;
     isDone: boolean;
     time: string;
   }
-  const [tasks, setTasks] = useState<taskType[]>([
-    { title: "", isDone: false, time: "" },
-  ]);
+  const [events, setEvents] = useState<eventType[]>([]);
   return (
     <div className="hidden xl:block w-full max-w-sm py-6 px-3 border-b dark:border-gray-700/30">
       <h5 className="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
@@ -20,7 +18,11 @@ const CalendarEvents = () => {
         the details and manage application events
       </p>
       <ul className="my-4 space-y-3">
-        {tasks ? <TaskStateCard tasks={tasks} /> : "There is no tasks"}
+        {events?.length ? (
+          <EventStateComponent events={events} />
+        ) : (
+          "There is no events"
+        )}
       </ul>
       <button className="py-1 px-2 text-white dark:bg-[#1f6feb] dark:hover:bg-blue-700 rounded text-sm">
         New Event
