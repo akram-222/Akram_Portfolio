@@ -2,7 +2,7 @@ import Steps from "./Steps";
 import { useState } from "react";
 import { BsArrowRightShort, BsCheckCircle } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
-const AddNewEvent = ({ className, setHidden }) => {
+const AddNewEvent = ({ setHidden }) => {
   const [isCurrentStep, setCurrentStep] = useState<number | "Done">(1);
   const numberOfSteps: number = 3;
   const handleCurrentStep = () => {
@@ -38,7 +38,7 @@ const AddNewEvent = ({ className, setHidden }) => {
 
   return (
     <div
-      className={`${className} flex-col absolute z-20 flex items-center justify-center absolute top-0 w-full h-full dark:bg-[#171717]`}
+      className={`flex-col absolute z-20 flex items-center justify-center absolute top-0 w-full h-full dark:bg-[#171717]`}
     >
       <form className="flex flex-col border w-1/2 p-4  dark:border-gray-600/30 rounded-lg">
         <div className="mb-3 flex items-center justify-between">

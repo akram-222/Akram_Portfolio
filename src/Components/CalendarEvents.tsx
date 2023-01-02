@@ -32,7 +32,8 @@ const CalendarEvents = () => {
       >
         New Event
       </button>
-      <AddNewEvent setHidden={setHidden} className={isHidden ? "hidden" : ""} />
+      {/* <AddNewEvent setHidden={setHidden} /> */}
+      {!isHidden ? <AddNewEvent setHidden={setHidden} /> : ""}
     </div>
   );
 };
