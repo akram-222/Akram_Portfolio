@@ -8,7 +8,7 @@ const CalendarEvents = () => {
     isDone: boolean;
     time: string;
   }
-  const [events, setEvents] = useState<eventType[]>([]);
+  const [events] = useState<eventType[]>([]);
   const [isHidden, setHidden] = useState<boolean>(true);
   return (
     <div className="hidden xl:block w-full max-w-sm py-6 px-3 border-b dark:border-gray-700/30">
