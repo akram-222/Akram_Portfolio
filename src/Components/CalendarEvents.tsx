@@ -9,6 +9,7 @@ const CalendarEvents = () => {
     time: string;
   }
   const [events, setEvents] = useState<eventType[]>([]);
+  const [isHidden, setHidden] = useState<boolean>(true);
   return (
     <div className="hidden xl:block w-full max-w-sm py-6 px-3 border-b dark:border-gray-700/30">
       <h5 className="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
@@ -25,10 +26,13 @@ const CalendarEvents = () => {
           "There is no events"
         )}
       </ul>
-      <button className="py-1 px-2 text-white dark:bg-[#1f6feb] dark:hover:bg-blue-700 rounded text-sm">
+      <button
+        onClick={() => setHidden(false)}
+        className="py-1 px-2 text-white dark:bg-[#1f6feb] dark:hover:bg-blue-700 rounded text-sm"
+      >
         New Event
       </button>
-      <AddNewEvent />
+      <AddNewEvent setHidden={setHidden} className={isHidden ? "hidden" : ""} />
     </div>
   );
 };

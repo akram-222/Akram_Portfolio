@@ -1,6 +1,6 @@
 const Steps = ({ numberOfSteps, isCurrentStep }) => {
   return (
-    <div className={`space-y-2 mb-3 dark:text-gray-100`}>
+    <div className={`space-y-2 dark:text-gray-100`}>
       <h3 className="text-xs font-semibold">
         {isCurrentStep === "Done" ? (
           <span>
