@@ -1,13 +1,12 @@
 import Steps from "./Steps";
+import {BsArrowRightShort} from "react-icons/bs";
 const AddNewEvent = () => {
   return (
     <div className="absolute z-20 flex items-center justify-center absolute top-0 w-full h-full dark:bg-[#171717]">
+      <form className="border w-1/2 p-4  dark:border-gray-600/30 rounded-lg">
      <Steps />
-      <form className="border w-[25vw] dark:border-gray-600/30 px-20 py-10 rounded-lg">
-        {/* <div className="grid gap-6 mb-6 md:grid-cols-2"> */}
-
-        <div className="flex flex-col items-start mb-6">
-          <div className="w-full">
+        <div className="flex border-t dark:border-gray-600/30 flex-col items-start mb-6">
+          <div className="w-full mt-3">
             <label
               htmlFor="first_name"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -50,7 +49,7 @@ const AddNewEvent = () => {
           type="submit"
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Submit
+          Next <BsArrowRightShort />
         </button>
       </form>
     </div>
