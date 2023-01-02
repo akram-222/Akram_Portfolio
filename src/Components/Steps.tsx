@@ -18,9 +18,9 @@ const Steps = ({ numberOfSteps, isCurrentStep }) => {
               +isCurrentStep === i + 1
                 ? "dark:bg-gray-100"
                 : isCurrentStep > i
-                ? "dark:bg-violet-400"
+                ? "dark:bg-green-400"
                 : isCurrentStep === "Done"
-                ? "dark:bg-violet-400"
+                ? "dark:bg-green-400"
                 : "dark:bg-gray-600"
             }`}
           ></span>
