@@ -4,12 +4,12 @@ import EmojiComponent from "../Components/emojiComponent";
 import ThemeSwitcherBtn from "../Components/themeSwitcherBtn";
 const Settings = () => {
   return (
-    <>
-    <aside>
-      <CalendarEvents />
+    <div className="flex">
+      <aside>
+        <CalendarEvents />
       </aside>
       <Calendar />
-    </>
+    </div>
   );
 };
 
