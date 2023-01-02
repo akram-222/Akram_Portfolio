@@ -70,7 +70,7 @@ const AddNewEvent = ({ setHidden }) => {
               Next <BsArrowRightShort size={20} />
             </>
           ) : (
-            "Finish"
+            <span onClick={() => setHidden(true)}>Finished</span>
           )}
         </button>
       </form>
