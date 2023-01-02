@@ -115,7 +115,7 @@ const Calendar = () => {
                       }}
                       className={`${
                         day.toString().length
-                          ? "dark:hover:bg-[#050708]/40 cursor-pointer dark:hover:text-blue-400 "
+                          ? "dark:hover:bg-[#050708]/10 cursor-pointer dark:hover:text-gray-100 "
                           : ""
                       } 
                      border dark:border-gray-700/10 p-1 w-[14.28%] h-40`}
