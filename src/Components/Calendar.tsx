@@ -90,15 +90,15 @@ const Calendar = () => {
                   return (
                     <div
                       key={`${day}__${i}`}
-                      className="w-[14.28vw] h-8 items-center dark:text-gray-100 justify-center"
+                      className="w-[14.28%] font-semibold h-8 text-center dark:text-gray-100 justify-center"
                     >
                       {day}
                     </div>
                   );
                 })}
               </div>
-              <div className="flex">
-                {monthDays.map((day, i) => {
+              <div className="flex flex-wrap">
+                {["","","",...monthDays].map((day, i) => {
                   return (
                     <div
                       key={`${day}__${i}`}
@@ -115,10 +115,10 @@ const Calendar = () => {
                       }}
                       className={`${
                         day.toString().length
-                          ? "dark:hover:bg-[#050708]/40 cursor-pointer dark:hover:text-blue-400"
+                          ? "dark:hover:bg-[#050708]/40 cursor-pointer dark:hover:text-blue-400 "
                           : ""
                       } 
-                     rounded w-8 h-8 flex items-center justify-center`}
+                     border dark:border-gray-700/10 p-1 w-[14.28%] h-40`}
                     >
                       {typeof day === "number" ? day : null}
                     </div>
