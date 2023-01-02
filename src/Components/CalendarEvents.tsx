@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AddNewEvent from "./addNewEvent";
 import EventStateComponent from "./EventStateComponent";
 
 const CalendarEvents = () => {
@@ -27,6 +28,7 @@ const CalendarEvents = () => {
       <button className="py-1 px-2 text-white dark:bg-[#1f6feb] dark:hover:bg-blue-700 rounded text-sm">
         New Event
       </button>
+      <AddNewEvent />
     </div>
   );
 };
