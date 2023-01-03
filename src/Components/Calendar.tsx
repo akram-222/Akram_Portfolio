@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import { IoIosClose } from "react-icons/io";
-const Calendar = () => {
+const Calendar = ({ daysClassName }) => {
   const [isDateUpdate, setDateUpdate] = useState(false);
   const [sinceValue, setSinceValue] = useState(true);
   const [day, setDay] = useState(new Date().getDate());
@@ -98,27 +98,27 @@ const Calendar = () => {
                 })}
               </div>
               <div className="flex flex-wrap">
-                {["","","",...monthDays].map((day, i) => {
+                {["", "", "", ...monthDays].map((day, i) => {
                   return (
                     <div
                       key={`${day}__${i}`}
                       onClick={() => setDay(+day)}
-                      onMouseDown={(e) => {
-                        setDateUpdate(true);
-                        e.currentTarget.classList.add("animate-ping-once");
-                      }}
-                      onMouseUp={(e) => {
-                        setTimeout(() => {
-                          setDateUpdate(false);
-                        }, 300);
-                        e.currentTarget.classList.remove("animate-ping-once");
-                      }}
+                      // onMouseDown={(e) => {
+                      //   setDateUpdate(true);
+                      //   e.currentTarget.classList.add("animate-ping-once");
+                      // }}
+                      // onMouseUp={(e) => {
+                      //   setTimeout(() => {
+                      //     setDateUpdate(false);
+                      //   }, 300);
+                      //   e.currentTarget.classList.remove("animate-ping-once");
+                      // }}
                       className={`${
                         day.toString().length
                           ? "dark:hover:bg-[#050708]/10 cursor-pointer dark:hover:text-gray-100 "
                           : ""
                       } 
-                     border border-dashed dark:border-gray-600/10 p-1 w-[14.28%] h-40`}
+                    ${daysClassName} w-[14.28%] border border-dashed dark:border-gray-600/10 p-1`}
                     >
                       {typeof day === "number" ? day : null}
                     </div>
@@ -134,24 +134,16 @@ const Calendar = () => {
                   {timeTick}
                 </span>
                 <span className="focus:outline-none text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 mt-2">
-                  This Setting will Fetch:
+                  Event will be in :
                 </span>
-                <p className="text-sm leading-4 leading-none text-gray-600 dark:text-gray-300">
-                  All Repos which created{" "}
-                  <span
-                    onClick={() => setSinceValue(!sinceValue)}
-                    className="tracking-[.1em] cursor-pointer text-rose-400 text-base underline underline-offset-1 ml-1"
-                  >
-                    {sinceValue ? "after" : "before"}
-                  </span>
-                  <span
-                    className={`${
-                      isDateUpdate === true ? "animate-ping-once" : ""
-                    } dark:bg-[#171717] dark:text-blue-400 ml-2`}
-                  >
-                    {handleUpdatedDate("numeric", "long", "2-digit")}
-                  </span>
-                </p>
+
+                <span
+                  className={`${
+                    isDateUpdate === true ? "animate-ping-once" : ""
+                  } dark:bg-[#171717] dark:text-blue-400 ml-2`}
+                >
+                  {handleUpdatedDate("numeric", "long", "2-digit")}
+                </span>
               </div>
             </div>
           </div>

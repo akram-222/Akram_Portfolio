@@ -2,6 +2,8 @@ import Steps from "./Steps";
 import { useState } from "react";
 import { BsArrowRightShort, BsCheckCircle } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
+import Calendar from "./Calendar";
+import Combobox from "./Combobox";
 const AddNewEvent = ({ setHidden }) => {
   const [isCurrentStep, setCurrentStep] = useState<number | "Done">(1);
   const numberOfSteps: number = 3;
@@ -27,8 +29,18 @@ const AddNewEvent = ({ setHidden }) => {
       />
     </div>
   );
-  let StepTwoContent = "Step 2";
-  let StepThreeContent = "Step 3";
+  let StepTwoContent = (
+    <>
+      <span className="mt-3">Choose event day</span>
+      <Calendar daysClassName={"text-center"} />
+    </>
+  );
+  let StepThreeContent = (
+    <>
+      <span className="mt-3 mb-2">Priority Level:</span>
+      <Combobox options={["Do first", "Schedule", "Delegate"]} />
+    </>
+  );
   const stepsContent = [
     { id: null, content: null },
     { id: 1, content: StepOneContent },

@@ -8,7 +8,7 @@ const Settings = () => {
       <aside>
         <CalendarEvents />
       </aside>
-      <Calendar />
+      <Calendar daysClassName={"h-40"} />
     </div>
   );
 };
