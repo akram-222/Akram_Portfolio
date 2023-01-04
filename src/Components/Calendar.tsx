@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import { IoIosClose } from "react-icons/io";
-const Calendar = ({ daysClassName, newEvent, setNewEvent }) => {
+interface calendarTypes {
+  daysClassName: string;
+  newEvent?: {};
+  setNewEvent?: any;
+}
+const Calendar = ({ daysClassName, newEvent, setNewEvent }: calendarTypes) => {
   const [isDateUpdate, setDateUpdate] = useState(false);
   const [sinceValue, setSinceValue] = useState(true);
   const [day, setDay] = useState(new Date().getDate());
@@ -59,6 +64,7 @@ const Calendar = ({ daysClassName, newEvent, setNewEvent }) => {
               </span>
               <div className="flex items-center">
                 <button
+                  type="button"
                   onClick={() => {
                     setMonth(month - 1);
                     setDay(1);
@@ -69,6 +75,7 @@ const Calendar = ({ daysClassName, newEvent, setNewEvent }) => {
                   <BiChevronLeft size={25} />
                 </button>
                 <button
+                  type="button"
                   aria-label="calendar forward"
                   className="dark:hover:bg-gray-700 focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100"
                   onClick={() => {
@@ -104,10 +111,16 @@ const Calendar = ({ daysClassName, newEvent, setNewEvent }) => {
                       key={`${day}__${i}`}
                       onClick={() => {
                         setDay(+day);
-                        setNewEvent({
-                          ...newEvent,
-                          date: handleUpdatedDate("numeric", "long", "2-digit"),
-                        });
+                        if (setNewEvent) {
+                          setNewEvent({
+                            ...newEvent,
+                            date: handleUpdatedDate(
+                              "numeric",
+                              "long",
+                              "2-digit"
+                            ),
+                          });
+                        }
                       }}
                       // onMouseDown={(e) => {
                       //   setDateUpdate(true);

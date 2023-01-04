@@ -13,7 +13,7 @@ const CalendarEvents = ({ eventsList, setEventsList }) => {
         Events that application book will appear here, click on an event to see
         the details and manage application events
       </p>
-      <ul className="my-4 space-y-3">
+      <ul className="my-4 space-y-1">
         {eventsList?.length ? (
           <EventStateComponent
             eventsList={eventsList}

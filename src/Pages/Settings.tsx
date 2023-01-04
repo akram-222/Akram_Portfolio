@@ -11,13 +11,12 @@ const Settings = () => {
     time: string;
   }
   const [eventsList, setEventsList] = useState<eventType[]>([]);
-  console.log(eventsList);
   return (
     <div className="flex">
       <aside>
         <CalendarEvents setEventsList={setEventsList} eventsList={eventsList} />
       </aside>
-      {/* <Calendar daysClassName={"h-40"} /> */}
+      <Calendar daysClassName={"h-40"} />
     </div>
   );
 };
