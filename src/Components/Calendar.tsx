@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import { IoIosClose } from "react-icons/io";
-const Calendar = ({ daysClassName }) => {
+const Calendar = ({ daysClassName, newEvent, setNewEvent }) => {
   const [isDateUpdate, setDateUpdate] = useState(false);
   const [sinceValue, setSinceValue] = useState(true);
   const [day, setDay] = useState(new Date().getDate());
@@ -102,7 +102,13 @@ const Calendar = ({ daysClassName }) => {
                   return (
                     <div
                       key={`${day}__${i}`}
-                      onClick={() => setDay(+day)}
+                      onClick={() => {
+                        setDay(+day);
+                        setNewEvent({
+                          ...newEvent,
+                          date: handleUpdatedDate("numeric", "long", "2-digit"),
+                        });
+                      }}
                       // onMouseDown={(e) => {
                       //   setDateUpdate(true);
                       //   e.currentTarget.classList.add("animate-ping-once");

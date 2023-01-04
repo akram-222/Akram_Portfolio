@@ -4,9 +4,22 @@ import { BsArrowRightShort, BsCheckCircle } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
 import Calendar from "./Calendar";
 import Combobox from "./Combobox";
-const AddNewEvent = ({ setHidden }) => {
+const AddNewEvent = ({ setHidden, eventsList, setEventsList }) => {
   const [isCurrentStep, setCurrentStep] = useState<number | "Done">(1);
+  const [newEvent, setNewEvent] = useState({
+    title: "",
+    date: "",
+    priority: "",
+  });
   const numberOfSteps: number = 3;
+  const handleEventTitle = (e: React.SyntheticEvent) => {
+    let input = e.currentTarget as HTMLInputElement;
+    setNewEvent({
+      ...newEvent,
+      title: input!.value,
+    });
+    console.log(newEvent);
+  };
   const handleCurrentStep = () => {
     if (+isCurrentStep < numberOfSteps) setCurrentStep(+isCurrentStep + 1);
     if (+isCurrentStep === numberOfSteps) setCurrentStep("Done");
@@ -23,6 +36,7 @@ const AddNewEvent = ({ setHidden }) => {
       <input
         type="text"
         id="first_name"
+        onInput={(e) => handleEventTitle(e)}
         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5 dark:bg-transparent dark:border-gray-600/30 dark:placeholder-gray-400 dark:text-white"
         placeholder="Type your event here..."
         required
@@ -32,13 +46,21 @@ const AddNewEvent = ({ setHidden }) => {
   let StepTwoContent = (
     <>
       <span className="mt-3">Choose event day</span>
-      <Calendar daysClassName={"text-center"} />
+      <Calendar
+        daysClassName={"text-center"}
+        newEvent={newEvent}
+        setNewEvent={setNewEvent}
+      />
     </>
   );
   let StepThreeContent = (
     <>
       <span className="mt-3 mb-2">Priority Level:</span>
-      <Combobox options={["Do first", "Schedule", "Delegate"]} />
+      <Combobox
+        newEvent={newEvent}
+        setNewEvent={setNewEvent}
+        options={["Do first", "Schedule", "Delegate"]}
+      />
     </>
   );
   const stepsContent = [
@@ -82,7 +104,14 @@ const AddNewEvent = ({ setHidden }) => {
               Next <BsArrowRightShort size={20} />
             </>
           ) : (
-            <span onClick={() => setHidden(true)}>Finished</span>
+            <span
+              onClick={() => {
+                setHidden(true);
+                setEventsList([...eventsList, newEvent]);
+              }}
+            >
+              Finished
+            </span>
           )}
         </button>
       </form>
