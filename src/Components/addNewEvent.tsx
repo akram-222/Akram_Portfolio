@@ -74,9 +74,6 @@ const AddNewEvent = ({ setHidden, eventsList, setEventsList }) => {
     <div
       className={`flex-col absolute z-20 flex items-center justify-center absolute top-0 w-full h-full dark:bg-[#171717]`}
     >
-      {newEvent?.title}
-      {newEvent?.date}
-      {newEvent?.priority}
       <form className="flex flex-col border w-1/2 p-4  dark:border-gray-600/30 rounded-lg">
         <div className="mb-3 flex items-center justify-between">
           <Steps numberOfSteps={numberOfSteps} isCurrentStep={isCurrentStep} />
@@ -107,7 +104,14 @@ const AddNewEvent = ({ setHidden, eventsList, setEventsList }) => {
               Next <BsArrowRightShort size={20} />
             </>
           ) : (
-            <span onClick={() => setHidden(true)}>Finished</span>
+            <span
+              onClick={() => {
+                setHidden(true);
+                setEventsList([...eventsList, newEvent]);
+              }}
+            >
+              Finished
+            </span>
           )}
         </button>
       </form>

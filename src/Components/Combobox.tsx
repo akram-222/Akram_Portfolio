@@ -1,12 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { IoIosClose, IoIosArrowDown } from "react-icons/io";
-// interface comboboxType {
-//   options: string[];
-//   newEvent?: {};
-//   setNewEvent?: Dispatch<
-//     SetStateAction<{ title: string; date: string; priority: string }>
-//   >;
-// }
+
 const Combobox = ({ options, newEvent, setNewEvent }) => {
   const [isCollapsed, setCollapsing] = useState(true);
   const [filteredRes, setFilteredRes] = useState(options);

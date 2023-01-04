@@ -11,7 +11,7 @@ const Settings = () => {
     time: string;
   }
   const [eventsList, setEventsList] = useState<eventType[]>([]);
-
+  console.log(eventsList);
   return (
     <div className="flex">
       <aside>
