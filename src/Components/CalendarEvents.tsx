@@ -2,13 +2,7 @@ import { useState } from "react";
 import AddNewEvent from "./addNewEvent";
 import EventStateComponent from "./EventStateComponent";
 
-const CalendarEvents = () => {
-  interface eventType {
-    title: string;
-    isDone: boolean;
-    time: string;
-  }
-  const [events] = useState<eventType[]>([]);
+const CalendarEvents = ({ eventsList, setEventsList }) => {
   const [isHidden, setHidden] = useState<boolean>(true);
   return (
     <div className="hidden xl:block w-full max-w-sm py-6 px-3 border-b dark:border-gray-700/30">
@@ -20,8 +14,11 @@ const CalendarEvents = () => {
         the details and manage application events
       </p>
       <ul className="my-4 space-y-3">
-        {events?.length ? (
-          <EventStateComponent events={events} />
+        {eventsList?.length ? (
+          <EventStateComponent
+            eventsList={eventsList}
+            setEventsList={setEventsList}
+          />
         ) : (
           "There is no events"
         )}
@@ -33,7 +30,15 @@ const CalendarEvents = () => {
         New Event
       </button>
       {/* <AddNewEvent setHidden={setHidden} /> */}
-      {!isHidden ? <AddNewEvent setHidden={setHidden} /> : ""}
+      {!isHidden ? (
+        <AddNewEvent
+          eventsList={eventsList}
+          setEventsList={setEventsList}
+          setHidden={setHidden}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

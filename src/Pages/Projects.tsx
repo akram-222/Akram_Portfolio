@@ -52,7 +52,7 @@ const Projects = ({ onSidebarHide }) => {
                 isEmojiComponentHidden={isEmojiComponentHidden}
                 setIsEmojiComponentHidden={setIsEmojiComponentHidden}
               />
-              <Combobox
+              {/* <Combobox
                 options={[
                   "Name",
                   "Language",
@@ -60,7 +60,7 @@ const Projects = ({ onSidebarHide }) => {
                   "Visibility",
                   "Date",
                 ]}
-              />
+              /> */}
               <div className="ml-auto text-gray-500 text-xs sm:inline-flex hidden items-center">
                 <span className="mr-3">Page {repoConfig.page} of 4</span>
                 <button
@@ -92,19 +92,16 @@ const Projects = ({ onSidebarHide }) => {
             <table className="w-full text-left">
               <thead>
                 <tr className="text-gray-400">
-                  {[
-                    "Name",
-                    "Language",
-                    "Description",
-                    "Date",
-                  ].map((item, index) => (
-                    <th
-                      key={index}
-                      className="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800"
-                    >
-                      {item}
-                    </th>
-                  ))}
+                  {["Name", "Language", "Description", "Date"].map(
+                    (item, index) => (
+                      <th
+                        key={index}
+                        className="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800"
+                      >
+                        {item}
+                      </th>
+                    )
+                  )}
                 </tr>
               </thead>
               <tbody className="text-gray-600 dark:text-gray-100">

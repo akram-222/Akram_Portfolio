@@ -14,6 +14,7 @@ const Steps = ({ numberOfSteps, isCurrentStep }) => {
       <div className="flex max-w-xs space-x-1">
         {new Array(numberOfSteps).fill("").map((step: string, i: number) => (
           <span
+            key={i}
             className={`w-8 h-1 ${
               +isCurrentStep === i + 1
                 ? "dark:bg-gray-100"

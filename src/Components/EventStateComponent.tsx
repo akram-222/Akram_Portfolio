@@ -1,9 +1,9 @@
 import { IoIosCheckmark, IoIosClose } from "react-icons/io";
 
-const EventStateComponent = ({ events }) => {
+const EventStateComponent = ({ eventsList, setEventsList }) => {
   return (
     <>
-      {events.map(({ title, isDone, time }, i: number) => (
+      {eventsList.map(({ title, isDone, time }, i: number) => (
         <li
           key={i}
           className="flex items-center p-1.5 dark:bg-[#171717] text-xs font-bold text-gray-900 bg-gray-50 group dark:text-white"
