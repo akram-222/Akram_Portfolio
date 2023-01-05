@@ -72,7 +72,7 @@ const AddNewEvent = ({ setHidden, eventsList, setEventsList }) => {
 
   return (
     <div
-      className={`flex-col absolute z-20 flex items-center justify-center absolute top-0 w-full h-full dark:bg-[#171717]`}
+      className={`flex-col h-full absolute z-20 flex items-center justify-center absolute top-0 w-full dark:bg-[#171717]`}
     >
       <form className="flex flex-col border w-1/2 p-4  dark:border-gray-600/30 rounded-lg">
         <div className="mb-3 flex items-center justify-between">
