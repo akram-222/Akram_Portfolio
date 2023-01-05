@@ -53,8 +53,8 @@ const Calendar = ({ daysClassName, newEvent, setNewEvent }: calendarTypes) => {
   return (
     <>
       <div className={`w-full`}>
-        <div className="w-full">
-          <div className="p-5 dark:bg-[#171717] bg-white rounded-t">
+        <div className="flex flex-col h-full w-full">
+          <div className="bg-white dark:bg-[#171717] flex flex-col flex-grow p-5 rounded-t">
             <div className="dark:bg-gray-700/20 p-2 rounded flex items-center justify-between">
               <span
                 tabIndex={0}
@@ -91,7 +91,7 @@ const Calendar = ({ daysClassName, newEvent, setNewEvent }: calendarTypes) => {
               Bug: Upscaling elements of days on clicking, which lead to expanding the parent and appear it's scroll bar for milliseconds as a flasing.
               Solve: Add overflow-hidden class in line 106 instead of overflow-x-auto
              */}
-            <div className="pt-6">
+            <div className="flex flex-col flex-grow pt-6">
               <div className="flex flex-nowrap">
                 {weekdays.map((day, i) => {
                   return (
@@ -104,7 +104,7 @@ const Calendar = ({ daysClassName, newEvent, setNewEvent }: calendarTypes) => {
                   );
                 })}
               </div>
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap  flex-grow ">
                 {["", "", "", ...monthDays].map((day, i) => {
                   return (
                     <div
