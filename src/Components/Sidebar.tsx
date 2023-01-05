@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { config, useSpring, animated } from "react-spring";
-import {BsBrightnessHigh} from "react-icons/bs";
-import {MdUnfoldMore} from "react-icons/md";
+import { BsBrightnessHigh } from "react-icons/bs";
+import { MdUnfoldMore } from "react-icons/md";
 import IconButton from "./IconButton";
 import Image from "./Image";
 import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
 import logo from "../assests/logo.png";
+import ThemeSwitcherBtn from "./themeSwitcherBtn";
 function Sidebar({ onSidebarHide, showSidebar }) {
   const [selected, setSelected] = useState("0");
   const { dashOffset, indicatorWidth, precentage } = useSpring({
@@ -26,7 +27,11 @@ function Sidebar({ onSidebarHide, showSidebar }) {
     >
       <div className="flex-shrink-0 overflow-hidden p-2">
         <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 sidebar-separator-top">
-          <img src={logo} className="tilt-in-left-1 dark:bg-blue-600 rounded-full h-10 w-10" alt="logo" />
+          <img
+            src={logo}
+            className="bg-[#050708] tilt-in-left-1 dark:bg-blue-600 rounded-full h-10 w-10"
+            alt="logo"
+          />
           <div className="block sm:hidden ml-2 xl:block font-bold text-xl dark:text-white">
             Portfolio
           </div>
@@ -40,14 +45,9 @@ function Sidebar({ onSidebarHide, showSidebar }) {
       </div>
       <div className="flex-grow overflow-x-hidden overflow-y-auto flex flex-col">
         <div className="w-full p-3 h-24 sm:h-20 xl:h-24 hidden sm:block flex-shrink-0">
-          <div className="bg-sidebar-card-top shadow-xl dark:shadow-sm rounded-xl w-full h-full flex items-center justify-start sm:justify-center xl:justify-start px-3 sm:px-0 xl:px-3">
-            <BsBrightnessHigh size={30} className="dark:text-gray-500"/>
-            <div className="block sm:hidden xl:block ml-3">
-              <div className="text-sm font-bold text-white">Sales House</div>
-              <div className="text-sm">General Item</div>
-            </div>
+          <div className="bg-sidebar-card-top shadow-xl dark:shadow-sm rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
+            <ThemeSwitcherBtn />
             <div className="block sm:hidden xl:block flex-grow" />
-            <MdUnfoldMore size={22}/>
           </div>
         </div>
         {sidebarItems[0].map((i) => (
@@ -129,17 +129,6 @@ function Sidebar({ onSidebarHide, showSidebar }) {
               </svg>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="flex-shrink-0 overflow-hidden p-2">
-        <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 sidebar-separator-bottom">
-          <Image path="mock_faces_8" className="w-10 h-10" />
-          <div className="block sm:hidden xl:block ml-2 font-bold ">
-            Akram Ashraf
-          </div>
-          <div className="flex-grow block sm:hidden xl:block" />
-          <MdUnfoldMore />
         </div>
       </div>
     </div>
