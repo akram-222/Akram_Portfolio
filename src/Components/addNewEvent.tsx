@@ -26,7 +26,7 @@ const AddNewEvent = ({ setHidden, eventsList, setEventsList }) => {
     if (isCurrentStep === "Done") return;
   };
   let StepOneContent = (
-    <div className="w-full mt-8">
+    <div className="w-full mt-2 md:mt-5">
       <label
         htmlFor="first_name"
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -74,7 +74,7 @@ const AddNewEvent = ({ setHidden, eventsList, setEventsList }) => {
     <div
       className={`flex-col h-full absolute z-20 flex items-center justify-center absolute top-0 w-full dark:bg-[#171717]`}
     >
-      <form className="flex flex-col border w-1/2 p-4  dark:border-gray-600/30 rounded-lg">
+      <form className="flex flex-col border min-w-[80%] md:min-w-[60%] p-4  dark:border-gray-600/30 rounded-lg">
         <div className="mb-3 flex items-center justify-between">
           <Steps numberOfSteps={numberOfSteps} isCurrentStep={isCurrentStep} />
           <button

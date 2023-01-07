@@ -10,7 +10,7 @@ const Status = () => {
   const [eventsList, setEventsList] = useState<eventType[]>([]);
   return (
     <div className="flex w-full h-full relative">
-      <aside className="border-r border-gray-700/30">
+      <aside className="">
         <CalendarEvents setEventsList={setEventsList} eventsList={eventsList} />
       </aside>
       {/* <Calendar daysClassName={""} /> */}
