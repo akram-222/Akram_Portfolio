@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { BsKey } from "react-icons/bs";
+import { BsArrowLeft, BsArrowRight, BsKey } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import logo from "../assests/logo.png";
 const Login = ({ isLogging, setIsLogging }) => {
@@ -58,9 +58,34 @@ const Login = ({ isLogging, setIsLogging }) => {
                 <div className="relative">
                   <label
                     htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="flex items-center justify-between mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Access Token
+                    <div className="flex items-center text-xs">
+                      <span
+                        className={`${
+                          colorState === "green"
+                            ? "text-gray-700"
+                            : "text-red-400"
+                        }`}
+                      >
+                        Disconnected
+                      </span>
+                      {colorState === "green" ? (
+                        <BsArrowRight className="mx-2" />
+                      ) : (
+                        <BsArrowLeft className="mx-2" />
+                      )}
+                      <span
+                        className={`${
+                          colorState === "green"
+                            ? "text-green-400"
+                            : "text-gray-700"
+                        }`}
+                      >
+                        Connected
+                      </span>
+                    </div>
                   </label>
                   <input
                     ref={accessTokenInputFeild}
