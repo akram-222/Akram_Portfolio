@@ -7,7 +7,7 @@ const Skills = () => {
   return (
     <div className="">
       <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
-        <span className="text-gray-400/30">#4</span> Skills List
+        <span className="text-gray-400/30">#3</span> Skills List
       </h3>
       <div className="bg-white dark:bg-[#171717]">
         <ul className="flex justify-between flex-wrap text-sm font-medium text-center dark:border-b dark:border-[#353535]">
