@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { config, useSpring, animated } from "react-spring";
-import { BsBrightnessHigh } from "react-icons/bs";
-import { MdUnfoldMore } from "react-icons/md";
 import IconButton from "./IconButton";
-import Image from "./Image";
 import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
 import logo from "../assests/logo.png";
@@ -45,7 +42,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
       </div>
       <div className="flex-grow overflow-x-hidden overflow-y-auto flex flex-col">
         <div className="w-full p-3 h-24 sm:h-20 xl:h-24 hidden sm:block flex-shrink-0">
-          <div className="bg-sidebar-card-top shadow-xl dark:shadow-sm rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
+          <div className="bg-sidebar-card-top shadow-xl dark:shadow-sm rounded-full xl:rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
             <ThemeSwitcherBtn />
             <div className="block sm:hidden xl:block flex-grow" />
           </div>

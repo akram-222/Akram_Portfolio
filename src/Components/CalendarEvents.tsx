@@ -5,7 +5,7 @@ import EventStateComponent from "./EventStateComponent";
 const CalendarEvents = ({ eventsList, setEventsList }) => {
   const [isHidden, setHidden] = useState<boolean>(true);
   return (
-    <div className="hidden lg:block w-full max-w-sm py-6 px-3 border-b dark:border-gray-700/30">
+    <div className="lg:block w-full max-w-sm py-6 px-3">
       <h5 className="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
         Welcome
       </h5>

@@ -33,7 +33,7 @@ const ThemeSwitcherBtn = () => {
     <button
       onClick={() => changeMode()}
       type="button"
-      className={`flex items-center w-full h-full text-gray-500 dark:text-gray-400 rounded-lg text-sm p-2.5`}
+      className={`flex items-center h-full text-gray-500 dark:text-gray-400 text-sm p-2.5`}
     >
       {!isDark ? <BsSun size={30} /> : <BsMoon size={30} />}
       <div className="block sm:hidden xl:block ml-3">

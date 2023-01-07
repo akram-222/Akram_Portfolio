@@ -27,7 +27,7 @@ const Dashboard = ({ onSidebarHide }) => {
 
         <Link
           to={"/search"}
-          className="animate-flicker w-full sm:w-fit md:w-fit whitespace-nowrap mt-4 sm:mt-0 relative inline-flex justify-center items-center px-4 py-2.5 text-base font-medium text-gray-500 bg-gray-50  hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+          className="w-full sm:w-fit md:w-fit whitespace-nowrap mt-4 sm:mt-0 relative inline-flex justify-center items-center px-4 py-2.5 text-base font-medium text-gray-500 bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-card dark:hover:bg-[#050708]/40 dark:hover:text-blue-400"
         >
           <svg
             aria-hidden="true"
