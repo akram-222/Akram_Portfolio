@@ -15,7 +15,7 @@ import Login from "./Pages/Login";
 import About from "./Pages/About";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
-  const [isLogging, setIsLogging] = useState(true);
+  const [isLogging, setIsLogging] = useState(false);
   useEffect(() => {
     if (
       localStorage.getItem("color-theme") === "dark" ||
