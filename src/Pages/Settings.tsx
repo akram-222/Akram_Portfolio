@@ -1,9 +1,6 @@
 import { useState } from "react";
-import { useScroll } from "react-spring";
 import Calendar from "../Components/Calendar";
 import CalendarEvents from "../Components/CalendarEvents";
-import EmojiComponent from "../Components/emojiComponent";
-import ThemeSwitcherBtn from "../Components/themeSwitcherBtn";
 const Settings = () => {
   interface eventType {
     title: string;
@@ -12,11 +9,11 @@ const Settings = () => {
   }
   const [eventsList, setEventsList] = useState<eventType[]>([]);
   return (
-    <div className="flex  h-full relative">
-      <aside>
+    <div className="flex w-full h-full relative">
+      <aside className="border-r border-gray-700/30">
         <CalendarEvents setEventsList={setEventsList} eventsList={eventsList} />
       </aside>
-      <Calendar daysClassName={""} />
+      {/* <Calendar daysClassName={""} /> */}
     </div>
   );
 };
