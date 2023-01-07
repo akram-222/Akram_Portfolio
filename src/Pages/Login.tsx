@@ -6,13 +6,16 @@ const Login = ({ isLogging, setIsLogging }) => {
   const accessTokenInputFeild = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
   const [accessTokenVal, setAccessTokenVal] = useState("");
+  const [isIdentical, setIdenticality] = useState<boolean>(false);
   const [colorState, setColorState] = useState("");
 
   const handleColorState = () => {
     if (accessTokenVal === process.env.REACT_APP_GITHUB_ACCESS_TOKEN) {
       setColorState("green");
+      setIdenticality(true);
     } else {
       setColorState("red");
+      setIdenticality(false);
     }
   };
 
@@ -103,13 +106,22 @@ const Login = ({ isLogging, setIsLogging }) => {
                     className="dark:text-gray-500 absolute top-1/2 left-2"
                   />
                 </div>
-                <button
-                  type="button"
-                  className={` text-white dark:bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
-                  onClick={(e) => handleSigningInProcess(e)}
-                >
-                  Sign in
-                </button>
+                {isIdentical ? (
+                  <button
+                    type="button"
+                    className={`dark:border dark:border-green-400 dark:text-green-400 dark:bg-[#171717] text-sm rounded-lg px-4 py-2 text-center`}
+                    onClick={(e) => handleSigningInProcess(e)}
+                  >
+                    Sign in
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className={`dark:border dark:border-red-400 dark:text-red-400 disabled:opacity-75 cursor-not-allowed dark:bg-[#171717] text-sm rounded-lg px-4 py-2 text-center`}
+                  >
+                    Sign in
+                  </button>
+                )}
               </form>
             </div>
           </div>
