@@ -21,7 +21,7 @@ const Login = ({ isLogging, setIsLogging }) => {
   // ✔ Solve: Use useEffect hock
 
   useEffect(() => {
-    // handleColorState();
+    handleColorState();
     accessTokenInputFeild.current!.focus();
   }, [accessTokenVal]);
   const handleInputValue = (e) => {
@@ -70,7 +70,7 @@ const Login = ({ isLogging, setIsLogging }) => {
                     value={accessTokenVal}
                     onChange={(e) => handleInputValue(e)}
                     placeholder="gh**************************************"
-                    className={`pl-10 border-b text-xs text-${colorState}-400 focus:ring-${colorState}-600 focus:border-b-${colorState}-600 block w-full p-2.5 dark:bg-transparent dark:border-b-${colorState}-600 dark:placeholder-gray-400 dark:text-${colorState}-600 dark:focus:ring-${colorState}-500 dark:focus:border-b-${colorState}-500`}
+                    className={`pl-10 text-xs text-${colorState}-400 block w-full p-2.5 dark:bg-[#171717] dark:placeholder-gray-400 dark:text-${colorState}-600`}
                     required
                   />
                   <BsKey
@@ -79,7 +79,7 @@ const Login = ({ isLogging, setIsLogging }) => {
                   />
                 </div>
                 <button
-                  type="submit"
+                  type="button"
                   className={` text-white dark:bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
                   onClick={(e) => handleSigningInProcess(e)}
                 >
