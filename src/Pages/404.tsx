@@ -6,7 +6,7 @@ const NotFoundRoute = () => {
     <div className="h-screen w-screen">
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full bg-white dark:bg-card p-10">
-        <div className="text-5xl mb-7 text-center dark:text-blue-600 font-dark font-bold">
+        <div className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold">
           404
         </div>
         <p className="text-2xl text-center md:text-3xl font-light leading-normal">
@@ -40,14 +40,16 @@ const NotFoundRoute = () => {
             <div
               key={i}
               onClick={() => navigate(`/${item.title.toLocaleLowerCase()}`)}
-              className="dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer dark:border dark:bg-gray-700/20 dark:border-gray-700/50"
+              className="dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50"
             >
               <div
-                className={`p-2 mx-auto mb-2 max-w-[48px] ${item.color} rounded-full w-18 h-18`}
+                className={`p-2 mx-auto mb-2 max-w-[48px] ${item.bgColor} rounded-full w-18 h-18`}
               >
                 {item.icon}
               </div>
-              <div className="hidden xs:block font-medium text-center text-gray-500 dark:text-gray-400">
+              <div
+                className={`hidden xs:block font-extrabold text-center text-gray-500 ${item.textColor}`}
+              >
                 {item.title}
               </div>
             </div>
