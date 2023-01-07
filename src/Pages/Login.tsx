@@ -103,7 +103,7 @@ const Login = ({ isLogging, setIsLogging }) => {
                   />
                   <BsKey
                     size={25}
-                    className="dark:text-gray-500 absolute top-1/2 left-2"
+                    className={`dark:text-${colorState}-500 absolute top-1/2 left-2`}
                   />
                 </div>
                 {isIdentical ? (
