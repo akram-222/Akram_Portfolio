@@ -5,7 +5,7 @@ import Sidebar from "./Components/Sidebar";
 import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
 import Dashboard from "./Pages/Dashboard";
-import Settings from "./Pages/Settings";
+import Status from "./Pages/Status";
 import Search from "./Pages/Search";
 import Tooltip from "./Components/Tooltip";
 import RepoDetails from "./Pages/RepoDetails";
@@ -81,7 +81,7 @@ const App = () => {
                 {["/", "/about"].map((route, i) => {
                   return <Route key={i} path={route} element={<About />} />;
                 })}
-                <Route path="/settings" element={<Settings />} />
+                <Route path="/status" element={<Status />} />
                 <Route
                   path="/blog"
                   element={

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Calendar from "../Components/Calendar";
 import CalendarEvents from "../Components/CalendarEvents";
-const Settings = () => {
+const Status = () => {
   interface eventType {
     title: string;
     isDone: boolean;
@@ -18,4 +18,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default Status;
