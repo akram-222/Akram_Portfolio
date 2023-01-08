@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { BsArrowLeft, BsArrowRight, BsKey } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import logo from "../assests/logo.png";
-const Login = ({ isLogging, setIsLogging }) => {
+import PageTitle from "../Components/PageTitle";
+const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
   const accessTokenInputFeild = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
   const [accessTokenVal, setAccessTokenVal] = useState("");
@@ -43,6 +44,18 @@ const Login = ({ isLogging, setIsLogging }) => {
   };
   return (
     <>
+      <PageTitle
+        className={""}
+        onSidebarHide={onSidebarHide}
+        title="Login Page"
+        subtitle={
+          <>
+            <span className="text-green-500 mr-2">Status :</span>
+            <span className="text-gray-500">Performs military service</span>
+          </>
+        }
+        premium_star="Front-end"
+      />
       <section className="bg-gray-50 dark:bg-transparent w-full absolute top-0 left-0 z-10 h-full flex">
         <div className="w-full flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const BreadCrumb = () => {
   const navigate = useNavigate();
   return (
-    <nav className="flex mb-5" aria-label="Breadcrumb">
+    <nav className="flex mb-5 hidden sm:block" aria-label="Breadcrumb">
       <ol className="inline-flex justify-between w-full items-center space-x-1 md:space-x-3">
         <li
           onClick={() => navigate(-1)}

@@ -18,21 +18,21 @@ const Blog = ({ onSidebarHide }) => {
         }
         premium_star={"DEV.to articles"}
         className="dark:bg-card p-2 h-fit"
-      /> 
+      />
       <div className="w-full">
         <HeroSection />
-        <div className="block md:flex md:space-x-2 px-2 lg:p-0">
+        <div className="flex overflow-auto space-x-2 px-2 lg:p-0">
           {devBlogs &&
             devBlogs
               ?.slice(2, 5)
               .map(({ title, created_at, user, url, tag_list }, i: number) => (
                 <PinArticle
                   key={i}
-                  className={`md:w-${
+                  className={`w-full xs:w-[250px] md:w-${
                     i + 1
-                  }/3 h-44 pinArticleWall pinArticleWall-${
+                  }/3 h-36 pinArticleWall pinArticleWall-${
                     i + 1
-                  } tilt-in-right-1 lg:w-1/3 md:h-56 md:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
+                  } shrink-0 sm:shrink-1 tilt-in-right-1 lg:w-1/3 md:h-56`}
                   title={title}
                   createdAt={created_at}
                   user={user}

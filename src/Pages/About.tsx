@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import EducationTimeLine from "../Components/EducationTimeLine";
 import FollowersList from "../Components/FollowersList";
+import PageTitle from "../Components/PageTitle";
 import Skills from "../Components/Skills";
 import Spinner from "../Components/Spinner";
 import UserBioCard from "../Components/userBioCard";
 import { __getUserInfo } from "../Utils/github/__getUserInfo";
 
-const About = () => {
+const About = ({ onSidebarHide }) => {
   const [userInfo, setUserInfo] = useState<any>({});
   const [isLoad, setLoading] = useState(true);
   useEffect(() => {
@@ -17,6 +18,18 @@ const About = () => {
   }, []);
   return (
     <>
+      <PageTitle
+        className={""}
+        onSidebarHide={onSidebarHide}
+        title="Dashboard"
+        subtitle={
+          <>
+            <span className="text-green-500 mr-2">Status :</span>
+            <span className="text-gray-500">Performs military service</span>
+          </>
+        }
+        premium_star="Front-end"
+      />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
         <aside className="">
           <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
