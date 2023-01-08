@@ -21,7 +21,7 @@ const Blog = ({ onSidebarHide }) => {
       /> 
       <div className="w-full">
         <HeroSection />
-        <div className="block md:flex md:space-x-2 px-2 lg:p-0">
+        <div className="block flex  overflow-auto space-x-2 px-2 lg:p-0">
           {devBlogs &&
             devBlogs
               ?.slice(2, 5)
@@ -32,7 +32,7 @@ const Blog = ({ onSidebarHide }) => {
                     i + 1
                   }/3 h-44 pinArticleWall pinArticleWall-${
                     i + 1
-                  } tilt-in-right-1 lg:w-1/3 md:h-56 md:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
+                  } shrink-0 tilt-in-right-1 lg:w-1/3 md:h-56 md:[&:nth-child(1)]:hidden lg:[&:nth-child(1)]:block`}
                   title={title}
                   createdAt={created_at}
                   user={user}
