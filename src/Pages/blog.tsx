@@ -28,11 +28,9 @@ const Blog = ({ onSidebarHide }) => {
               .map(({ title, created_at, user, url, tag_list }, i: number) => (
                 <PinArticle
                   key={i}
-                  className={`w-full xs:w-[250px] md:w-${
+                  className={`w-full xs:w-[250px] md:w-[32%] h-40 xl:h-48 pinArticleWall pinArticleWall-${
                     i + 1
-                  }/3 h-36 pinArticleWall pinArticleWall-${
-                    i + 1
-                  } shrink-0 sm:shrink-1 tilt-in-right-1 lg:w-1/3 md:h-56`}
+                  } shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
                   title={title}
                   createdAt={created_at}
                   user={user}
