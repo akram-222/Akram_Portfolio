@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Calendar from "../Components/Calendar";
 import CalendarEvents from "../Components/CalendarEvents";
-const Status = () => {
+const Status = ({ onSidebarHide }) => {
   interface eventType {
     title: string;
     isDone: boolean;

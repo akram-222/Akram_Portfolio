@@ -77,11 +77,29 @@ const App = () => {
                     />
                   }
                 />
-                <Route path="/search" element={<Search />} />
+                <Route
+                  path="/search"
+                  element={
+                    <Search
+                      onSidebarHide={() => {
+                        onSetShowSidebar(true);
+                      }}
+                    />
+                  }
+                />
                 {["/", "/about"].map((route, i) => {
                   return <Route key={i} path={route} element={<About />} />;
                 })}
-                <Route path="/status" element={<Status />} />
+                <Route
+                  path="/status"
+                  element={
+                    <Status
+                      onSidebarHide={() => {
+                        onSetShowSidebar(true);
+                      }}
+                    />
+                  }
+                />
                 <Route
                   path="/blog"
                   element={
@@ -101,6 +119,9 @@ const App = () => {
                         <Login
                           setIsLogging={setIsLogging}
                           isLogging={isLogging}
+                          onSidebarHide={() => {
+                            onSetShowSidebar(true);
+                          }}
                         />
                       }
                     />

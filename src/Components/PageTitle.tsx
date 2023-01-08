@@ -33,7 +33,7 @@ const PageTitle = ({
       </div>
       <IconButton
         icon="res-react-dash-sidebar-open"
-        className="block sm:hidden"
+        className="block"
         onClick={onSidebarHide}
       />
       
