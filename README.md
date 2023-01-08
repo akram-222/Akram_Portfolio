@@ -2,33 +2,30 @@
 
 ### This repo is divided into 6 pages:
 
+> Some of these pages were restricted and required an auth access token to be opened (for example, the Dashboard), while others were not.
+
+
  ```mermaid
- 
  flowchart LR
-    Dashboard-->Projects
-    Projects-->Blog
-    Blog-->About
-    About-->Status
-    Status--> Settings
+    1-Dashboard-->2-Projects
+    2-Projects-->3-Blog
+    3-Blog-->4-About
+    4-About-->5-Status
+    5-Status-->6-Settings
     click A "https://www.github.com" _blank
     click B "https://www.github.com" "Open this in a new tab" _blank
     click C href "https://www.github.com" _blank
     click D href "https://www.github.com" "Open this in a new tab" _blank
-
- 
  ```
 
-1- Dashboard [private page]
 
-2- Projects
+---
 
-3- Blog
 
-4- About
 
-5- Status
 
-6- Settings [under construction]
+
+
 
  ```mermaid
  requirementDiagram
