@@ -14,6 +14,7 @@ const EducationTimeLine = () => {
               note,
               isLatest,
               hasCertificate,
+              certificateUrl,
             },
             index
           ) => (
@@ -38,7 +39,7 @@ const EducationTimeLine = () => {
               </p>
               {hasCertificate ? (
                 <a
-                  href="#d"
+                  href={certificateUrl}
                   className="inline-flex  py-2 px-3 text-sm font-semibold text-gray-900 bg-white rounded-lg border dark:bg-[#171717] dark:border-gray-600/30 hover:bg-gray-100 hover:text-blue-700  dark:text-gray-400  dark:hover:text-white dark:hover:bg-gray-700"
                 >
                   <BsDownload className="mr-2" />
