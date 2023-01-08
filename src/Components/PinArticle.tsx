@@ -1,7 +1,7 @@
 const PinArticle = ({ className, title, createdAt, user, url, tagList }) => {
   return (
     <a
-      className={`${className} rounded-xl h-28 md:mb-0 w-full relative inline-block`}
+      className={`${className} rounded-xl h-[100px]	 md:mb-0 w-full relative inline-block`}
       href={url}
     >
       <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10"></div>
