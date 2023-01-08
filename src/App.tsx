@@ -88,7 +88,19 @@ const App = () => {
                   }
                 />
                 {["/", "/about"].map((route, i) => {
-                  return <Route key={i} path={route} element={<About />} />;
+                  return (
+                    <Route
+                      key={i}
+                      path={route}
+                      element={
+                        <About
+                          onSidebarHide={() => {
+                            onSetShowSidebar(true);
+                          }}
+                        />
+                      }
+                    />
+                  );
                 })}
                 <Route
                   path="/status"
