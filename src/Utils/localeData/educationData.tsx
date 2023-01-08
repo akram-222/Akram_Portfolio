@@ -9,6 +9,7 @@ export const educationData: {
   note: string;
   isLatest: boolean;
   hasCertificate: boolean;
+  certificateUrl: string;
 }[] = [
   {
     university: "Udacity",
@@ -18,6 +19,7 @@ export const educationData: {
     note: `To gain more coding experience, I completed Udacity's Front-End Web Development Nanodegree program`,
     isLatest: true,
     hasCertificate: true,
+    certificateUrl: "https://graduation.udacity.com/confirm/SXRDUUDY",
   },
   {
     university: "Beni-Suef University",
@@ -27,5 +29,6 @@ export const educationData: {
     note: `Relevant Coursework: Computer Fundamentals, Web Development, Typography, Web Design,Color Theory, Database Management Systems.`,
     isLatest: false,
     hasCertificate: true,
+    certificateUrl: "",
   },
 ];
