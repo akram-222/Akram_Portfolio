@@ -56,7 +56,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
         }
         premium_star="Front-end"
       />
-      <section className="bg-gray-50 dark:bg-transparent w-full absolute top-0 left-0 z-10 h-full flex">
+      <section className="bg-gray-50 dark:bg-transparent w-full absolute top-0 left-0 h-full flex">
         <div className="w-full flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#d"
