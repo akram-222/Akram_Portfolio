@@ -37,7 +37,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
           <button
             onClick={onSidebarHide}
             type="button"
-            className={`block sm:hidden self-end`}
+            className={`sm:hidden self-end self-end mr-2 mt-2`}
           >
             <BsMenuApp size={20} />
           </button>
