@@ -69,7 +69,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
       <section className="bg-gray-50 dark:bg-transparent w-full absolute top-0 left-0 h-full flex">
         <div className="w-full flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="flex-col mb-2 items-center justify-center">
-            <img className="w-10 h-10 m-auto" src={logo} alt="logo" />
+            <img className="w-12 h-12 m-auto" src={logo} alt="logo" />
             Private Page
           </div>
           <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 max-w-sm md:max-w-xl xl:p-0">
