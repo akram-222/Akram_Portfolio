@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Alert from "./Alert";
 const ThemeSwitcherBtn = () => {
   const [isDark, setMode] = useState(true);
+  const [isHidden, setIsHidden] = useState(true);
   const changeMode = () => {
     if (
       localStorage.getItem("color-theme") === "dark" ||
@@ -18,6 +19,7 @@ const ThemeSwitcherBtn = () => {
 
       setMode(true);
     }
+    setIsHidden(!isHidden);
   };
   useEffect(() => {
     if (
@@ -55,6 +57,8 @@ const ThemeSwitcherBtn = () => {
       </div>
       {isDark ? (
         <Alert
+          isHidden={isHidden}
+          setIsHidden={setIsHidden}
           msg="Light mode is still being developed."
           detailedMsg="We advised utilising dark mode at this time since light mode is currently under development and might cause eye sickness."
         />
