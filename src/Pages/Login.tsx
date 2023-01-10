@@ -59,17 +59,14 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
       />
       <section className="bg-gray-50 dark:bg-transparent w-full absolute top-0 left-0 h-full flex">
         <div className="w-full flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <a
-            href="#d"
-            className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-          >
-            <img className="w-8 h-8 mr-2" src={logo} alt="logo" />
-            Portfolio
-          </a>
-          <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-md xl:p-0">
+          <div className="flex-col mb-2 items-center justify-center">
+            <img className="w-10 h-10 m-auto" src={logo} alt="logo" />
+            Private Page
+          </div>
+          <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-xl xl:p-0">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Sign in to your account
+                Write Your Access Token
               </h1>
               <form className="space-y-4 md:space-y-6" action="#">
                 <div className="relative">
