@@ -52,9 +52,9 @@
 .sidebar-item {
   border-right: 2px solid transparent;
 }
-.sidebar-item:hover {
-  color: #a1a0a0;
-}
+/* .sidebar-item:hover { */
+  /* color: #a1a0a0; */
+/* } */ 
 
 .text-ellipsis {
   text-overflow: ellipsis;

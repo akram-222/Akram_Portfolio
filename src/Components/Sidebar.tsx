@@ -18,7 +18,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
   return (
     <div
       className={`
-        fixed inset-y-0 left-0 bg-gray-200 border-r border-gray-300 dark:bg-card w-full sm:w-20 xl:w-60 sm:flex flex-col z-10
+        fixed inset-y-0 left-0 bg-gray-200 border-r border-gray-300 dark:border-transparent dark:bg-card w-full sm:w-20 xl:w-60 sm:flex flex-col z-10
         ${showSidebar ? "flex" : "hidden"}
       `}
     >
