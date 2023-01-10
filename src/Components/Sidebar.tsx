@@ -33,11 +33,19 @@ function Sidebar({ onSidebarHide, showSidebar }) {
             Akram Ashraf A.
           </div>
           <div className="flex-grow sm:hidden xl:block" />
-          <IconButton
+          {/* <IconButton
             icon="res-react-dash-sidebar-close"
             className="block sm:hidden"
+            onClick={}
+          /> */}
+
+          <button
             onClick={onSidebarHide}
-          />
+            type="button"
+            className={`block sm:hidden`}
+          >
+            <BsXCircle size={20} />
+          </button>
         </div>
       </div>
       <div className="flex-grow overflow-x-hidden overflow-y-auto flex flex-col">
