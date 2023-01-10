@@ -18,15 +18,15 @@ function Sidebar({ onSidebarHide, showSidebar }) {
   return (
     <div
       className={`
-        fixed inset-y-0 left-0 bg-white dark:bg-card w-full sm:w-20 xl:w-60 sm:flex flex-col z-10
+        fixed inset-y-0 left-0 bg-gray-200 border-r border-gray-300 dark:border-transparent dark:bg-card w-full sm:w-20 xl:w-60 sm:flex flex-col z-10
         ${showSidebar ? "flex" : "hidden"}
       `}
     >
       <div className="flex-shrink-0 overflow-hidden p-2">
-        <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 sidebar-separator-top">
+        <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 border-b border-gray-400/50">
           <img
             src={logo}
-            className="bg-[#050708] tilt-in-left-1 dark:bg-blue-600 rounded-full h-10 w-10"
+            className="bg-blue-600 tilt-in-left-1 dark:bg-blue-600 rounded-full h-10 w-10"
             alt="logo"
           />
           <div className="block sm:hidden ml-2 xl:block font-bold text-xl dark:text-white">
@@ -42,7 +42,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
       </div>
       <div className="flex-grow overflow-x-hidden overflow-y-auto flex flex-col">
         <div className="w-full p-3 h-24 sm:h-20 xl:h-24 hidden sm:block flex-shrink-0">
-          <div className="bg-sidebar-card-top shadow-xl dark:shadow-sm rounded-full xl:rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
+          <div className="bg-blue-600  dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
             <ThemeSwitcherBtn />
             <div className="block sm:hidden xl:block flex-grow" />
           </div>

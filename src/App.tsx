@@ -30,7 +30,7 @@ const App = () => {
   // }, []);
   return (
     <DevBlogsContextProvider>
-      <div className="flex">
+      <div className="flex bg-white dark:bg-gray-900/10">
         <Tooltip />
         <BrowserRouter>
           <Sidebar
