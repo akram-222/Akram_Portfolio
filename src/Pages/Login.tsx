@@ -1,5 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { BsArrowLeft, BsArrowRight, BsKey } from "react-icons/bs";
+import {
+  BsArrowLeft,
+  BsArrowRight,
+  BsCheck,
+  BsCheckCircle,
+  BsDoorClosed,
+  BsFillXCircleFill,
+  BsKey,
+  BsXCircle,
+} from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import logo from "../assests/logo.png";
 import PageTitle from "../Components/PageTitle";
@@ -83,8 +92,10 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                             : "text-red-400"
                         }`}
                       >
-                        Disconnected
+                        <span className=" hidden xs:block"> Disconnected</span>
+                        <BsXCircle className="xs:hidden" size={15} />
                       </span>
+
                       {colorState === "green" ? (
                         <BsArrowRight className="mx-2" />
                       ) : (
@@ -97,7 +108,8 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                             : "text-gray-700"
                         }`}
                       >
-                        Connected
+                        <span className=" hidden xs:block">Connected</span>
+                        <BsCheckCircle className="xs:hidden" size={15} />
                       </span>
                     </div>
                   </label>
@@ -128,7 +140,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                 ) : (
                   <button
                     type="button"
-                    className={`dark:border dark:border-red-400 dark:text-red-400 disabled:opacity-75 cursor-not-allowed dark:bg-[#171717] text-sm rounded-lg px-4 py-2 text-center`}
+                    className={`dark:border dark:border-red-400 dark:text-red-400 disabled:opacity-75 cursor-not-allowed dark:bg-[#171717] text-xs xs:text-sm xs:rounded-lg px-2 py-1 xs:px-4 xs:py-2 text-center`}
                   >
                     Sign in
                   </button>
