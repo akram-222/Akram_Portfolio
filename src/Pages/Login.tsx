@@ -72,7 +72,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
             <img className="w-10 h-10 m-auto" src={logo} alt="logo" />
             Private Page
           </div>
-          <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-xl xl:p-0">
+          <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 max-w-sm md:max-w-xl xl:p-0">
             <div className="p-6 pb-3 space-y-4 md:space-y-6 sm:p-8">
               <h3 className="font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Write Your Access Token
