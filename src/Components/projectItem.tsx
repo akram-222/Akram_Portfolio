@@ -25,7 +25,7 @@ const ProjectItem = ({
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
     <tr className="group hover:bg-[#050708]/20">
-      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+      <td className="sm:p-3 py-2 px-1 border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:group-hover:border-l-blue-400 dark:border-gray-600/20">
         <div className="flex  items-center">
           {indexingSys}. {name}
           <em className="ml-2 text-yellow-600 hidden lg:inline opacity-0 group-hover:opacity-100">
@@ -33,7 +33,7 @@ const ProjectItem = ({
           </em>
         </div>
       </td>
-      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
         <div className="flex">
           {fork ? (
             <>
@@ -63,7 +63,7 @@ const ProjectItem = ({
         </div>
       </td>
 
-      <td className=" sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+      <td className=" sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
         <span className="text-xs text-gray-600 mr-1">{forksCount}</span>
         <BiGitRepoForked
           size={18}
@@ -91,7 +91,7 @@ const ProjectItem = ({
           />
         )}
       </td>
-      <td className="flex sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+      <td className="flex sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
         <div className="flex items-center">
           <div className="sm:flex hidden flex-col">
             {new Date(createdAt).toLocaleDateString("en-US", {
