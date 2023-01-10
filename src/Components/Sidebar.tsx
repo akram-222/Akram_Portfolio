@@ -5,7 +5,7 @@ import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
 import logo from "../assests/logo.png";
 import ThemeSwitcherBtn from "./themeSwitcherBtn";
-import { BsMenuApp, BsXCircle } from "react-icons/bs";
+import { BsXCircle } from "react-icons/bs";
 function Sidebar({ onSidebarHide, showSidebar }) {
   const [selected, setSelected] = useState("0");
   const { dashOffset, indicatorWidth, precentage } = useSpring({

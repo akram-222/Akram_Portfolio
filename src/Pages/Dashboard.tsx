@@ -12,23 +12,23 @@ const Dashboard = ({ onSidebarHide }) => {
   return (
     <>
       {/* <div className="w-full sm:flex p-2 items-end"> */}
-        <PageTitle
-          className={""}
-          onSidebarHide={onSidebarHide}
-          title="Dashboard"
-          subtitle={
-            <>
-              <span className="text-green-500 mr-2">Status :</span>
-              <span className="text-gray-500">Performs military service</span>
-            </>
-          }
-          is_premium={true}
-          premium_star="Front-end"
-        />
-
+      <PageTitle
+        className={""}
+        onSidebarHide={onSidebarHide}
+        title="Dashboard"
+        subtitle={
+          <>
+            <span className="text-green-500 mr-2">Status :</span>
+            <span className="text-gray-500">Performs military service</span>
+          </>
+        }
+        is_premium={true}
+        premium_star="Front-end"
+      />
+      <div className="flex w-full justify-end">
         <Link
           to={"/search"}
-          className="w-full sm:w-fit md:w-fit whitespace-nowrap mt-4 sm:mt-0 relative inline-flex justify-center items-center px-4 py-2.5 text-base font-medium text-gray-500 bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-card dark:hover:bg-[#050708]/40 dark:hover:text-blue-400"
+          className="whitespace-nowrap mt-4 sm:mt-0 relative inline-flex justify-center items-center px-4 py-2.5 text-base font-medium text-gray-500 bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-card dark:hover:bg-[#050708]/40 dark:hover:text-blue-400"
         >
           <svg
             aria-hidden="true"
@@ -88,8 +88,8 @@ const Dashboard = ({ onSidebarHide }) => {
             ></path>
           </svg>
         </Link>
-
-        {/* <div className="w-full sm:w-56 mt-4 sm:mt-0 relative">
+      </div>
+      {/* <div className="w-full sm:w-56 mt-4 sm:mt-0 relative">
           <Icon
             path="res-react-dash-search"
             className="w-5 h-5 search-icon left-3 absolute"
