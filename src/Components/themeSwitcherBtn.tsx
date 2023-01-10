@@ -49,7 +49,7 @@ const ThemeSwitcherBtn = () => {
             <div className="text-sm font-bold text-white">
               Convert mode to :
             </div>
-            <div className="text-sm  text-left text-gray-400">
+            <div className="text-sm text-left text-gray-400">
               {localStorage.getItem("color-theme")} mode
             </div>
           </div>
