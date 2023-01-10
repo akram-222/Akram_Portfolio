@@ -60,7 +60,7 @@ const ThemeSwitcherBtn = () => {
         isHidden={isHidden}
         setIsHidden={setIsHidden}
         msg="Light mode is still being developed."
-        detailedMsg="We advised utilising dark mode at this time since light mode is currently under development and might cause eye sickness."
+        detailedMsg="We advised utilising dark mode at this time since light mode is currently under development and might hurt your eyes."
       />
     </>
   );
