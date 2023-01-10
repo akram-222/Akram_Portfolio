@@ -30,19 +30,16 @@ const Alert = ({
       <div className="flex">
         <button
           type="button"
-          className="group text-white border border-gray-700 hover:text-green-400 rounded-lg text-sm px-3 py-1.5 mr-2 text-center inline-flex items-center"
+          className="group text-white border border-gray-700 hover:border-green-400 hover:text-green-400 rounded text-sm px-3 py-1.5 mr-2 text-center inline-flex items-center"
           onClick={() => changeMode()}
         >
-          <BsCircleFill
-            className="mr-1 group-hover:text-green-400 "
-            size={10}
-          />
+          <BsCircleFill className="mr-1 group-hover:text-green-400" size={10} />
           Dark mode
         </button>
 
         <button
           type="button"
-          className="border font-medium rounded-lg text-xs px-3 py-1.5 text-center hover:bg-red-400 border-red-400 text-red-400 hover:text-white"
+          className="border font-medium rounded text-xs px-3 py-1.5 text-center hover:bg-red-400 border-red-400 text-red-400 hover:text-white"
           onClick={() => setIsHidden(true)}
         >
           Keep going to light mode
