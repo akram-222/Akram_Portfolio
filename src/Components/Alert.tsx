@@ -1,4 +1,5 @@
 import { BsFillInfoCircleFill, BsMoon } from "react-icons/bs";
+import { MdRecommend } from "react-icons/md";
 type alert = {
   msg: string;
   detailedMsg: string;
@@ -23,8 +24,8 @@ const Alert = ({ msg, detailedMsg, isHidden, setIsHidden }: alert) => {
           type="button"
           className="bg-green-600/80 text-white rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center"
         >
+          <MdRecommend className="mr-1" size={22} />
           Dark mode
-          <BsMoon className="ml-1" size={15} />
         </button>
         <button
           type="button"
