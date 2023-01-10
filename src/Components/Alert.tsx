@@ -1,12 +1,13 @@
-import { BsFillInfoCircleFill, BsMoon } from "react-icons/bs";
+import { BsFillInfoCircleFill } from "react-icons/bs";
 import { MdRecommend } from "react-icons/md";
 type alert = {
   msg: string;
   detailedMsg: string;
   isHidden: boolean;
   setIsHidden: (arg: boolean) => void;
+  setMode: (arg: boolean) => void;
 };
-const Alert = ({ msg, detailedMsg, isHidden, setIsHidden }: alert) => {
+const Alert = ({ msg, detailedMsg, isHidden, setIsHidden, setMode }: alert) => {
   return (
     <div
       className={`${
@@ -18,11 +19,12 @@ const Alert = ({ msg, detailedMsg, isHidden, setIsHidden }: alert) => {
         <span className="sr-only">Info</span>
         <h3 className="text-lg font-medium">{msg}</h3>
       </div>
-      <div className="mt-2 mb-4 text-sm">{detailedMsg}</div>
+      <div className="mt-2 mb-4 text-sm text-gray-300">{detailedMsg}</div>
       <div className="flex">
         <button
           type="button"
           className="bg-green-600/80 text-white rounded-lg text-sm px-3 py-1.5 mr-2 text-center inline-flex items-center"
+          onClick={() => setMode(true)}
         >
           <MdRecommend className="mr-1 " size={20} />
           Dark mode

@@ -56,6 +56,7 @@ const ThemeSwitcherBtn = () => {
         </button>
       </div>{" "}
       <Alert
+        setMode={setMode}
         isHidden={isHidden}
         setIsHidden={setIsHidden}
         msg="Light mode is still being developed."
