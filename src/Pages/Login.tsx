@@ -65,9 +65,9 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
           </div>
           <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-xl xl:p-0">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              <h3 className="font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Write Your Access Token
-              </h1>
+              </h3>
               <form className="space-y-4 md:space-y-6" action="#">
                 <div className="relative">
                   <label
