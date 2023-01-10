@@ -34,7 +34,7 @@ const Alert = ({
           onClick={() => changeMode()}
         >
           <BsCircleFill className="mr-1 group-hover:text-green-400" size={8} />
-          Dark mode
+          Recommended dark mode
         </button>
 
         <button
