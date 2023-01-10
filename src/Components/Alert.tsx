@@ -5,9 +5,15 @@ type alert = {
   detailedMsg: string;
   isHidden: boolean;
   setIsHidden: (arg: boolean) => void;
-  setMode: (arg: boolean) => void;
+  changeMode: () => void;
 };
-const Alert = ({ msg, detailedMsg, isHidden, setIsHidden, setMode }: alert) => {
+const Alert = ({
+  msg,
+  detailedMsg,
+  isHidden,
+  setIsHidden,
+  changeMode,
+}: alert) => {
   return (
     <div
       className={`${
@@ -24,7 +30,7 @@ const Alert = ({ msg, detailedMsg, isHidden, setIsHidden, setMode }: alert) => {
         <button
           type="button"
           className="bg-green-600/80 text-white rounded-lg text-sm px-3 py-1.5 mr-2 text-center inline-flex items-center"
-          onClick={() => setMode(true)}
+          onClick={() => changeMode()}
         >
           <MdRecommend className="mr-1 " size={20} />
           Dark mode
