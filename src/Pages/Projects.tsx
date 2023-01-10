@@ -27,7 +27,7 @@ const Projects = ({ onSidebarHide }) => {
   }, [repoConfig]);
 
   return (
-    <div className=" flex-col items-start p-2 w-full h-full flex-wrap">
+    <div className=" flex-col items-start w-full h-full flex-wrap">
       <PageTitle
         className={"mb-10 h-fit"}
         onSidebarHide={onSidebarHide}
@@ -91,8 +91,8 @@ const Projects = ({ onSidebarHide }) => {
                 </button>
               </div>
             </div>
-            <table className="w-full text-left">
-              <thead>
+            <table className="w-full text-left text-xs md:text-sm ">
+              {/* <thead>
                 <tr className="text-gray-400">
                   {["Name", "Language", "Details", "Date"].map(
                     (item, index) => (
@@ -105,7 +105,7 @@ const Projects = ({ onSidebarHide }) => {
                     )
                   )}
                 </tr>
-              </thead>
+              </thead> */}
               <tbody className="text-gray-600 dark:text-gray-100">
                 {/* <Skelton
                     number={repoConfig.per_page}

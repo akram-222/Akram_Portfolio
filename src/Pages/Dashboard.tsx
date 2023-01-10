@@ -11,7 +11,7 @@ import Chart from "../Components/Chart";
 const Dashboard = ({ onSidebarHide }) => {
   return (
     <>
-      <div className="w-full sm:flex p-2 items-end">
+      {/* <div className="w-full sm:flex p-2 items-end"> */}
         <PageTitle
           className={""}
           onSidebarHide={onSidebarHide}
@@ -104,7 +104,7 @@ const Dashboard = ({ onSidebarHide }) => {
             />
           </form>
         </div> */}
-      </div>
+      {/* </div> */}
       {employeeData.map(
         ({ id, name, position, transactions, rise, tasksCompleted, imgId }) => (
           <NameCard
