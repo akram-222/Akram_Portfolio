@@ -29,7 +29,7 @@ const Alert = ({ msg, detailedMsg, isHidden, setIsHidden }: alert) => {
         </button>
         <button
           type="button"
-          className="text-red-800 bg-transparent border border-red-800 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-400 dark:border-red-400 dark:text-red-400 dark:hover:text-white dark:focus:ring-red-800"
+          className="border font-medium rounded-lg text-xs px-3 py-1.5 text-center hover:bg-red-400 border-red-400 text-red-400 hover:text-white"
           onClick={() => setIsHidden(true)}
         >
           Keep going to light mode
