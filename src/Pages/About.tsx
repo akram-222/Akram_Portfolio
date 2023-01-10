@@ -32,17 +32,18 @@ const About = ({ onSidebarHide }) => {
       />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-5 w-2xl container px-2 mx-auto">
         <aside className="">
-          <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
-            <span className="text-gray-400/30">#1</span> Personal Card
+          <h3 className="bg-blue-500 text-white border-gray-600/30 border font-bold dark:bg-card p-2 rounded-t-lg mb-1 dark:text-gray-100">
+            <span className="text-gray-300/50 dark:text-gray-400/30">#1</span>{" "}
+            Personal Card
           </h3>
-          <div className="bg-white mb-4 flex-col justify-center dark:bg-[#171717] dark:border-gray-600/30 border shadow rounded-b-lg p-10">
+          <div className="bg-blue-200 mb-4 flex-col justify-center dark:bg-[#171717] dark:border-gray-600/30 border shadow rounded-b-lg p-10">
             {isLoad ? (
               <Spinner className={"w-7 m-auto"} />
             ) : (
               <UserBioCard userInfo={userInfo} />
             )}
           </div>
-          <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
+          <h3 className="border-gray-600/30 border font-bold bg-indigo-200 text-black dark:bg-card p-2 rounded-t-lg mb-1 dark:text-gray-100">
             <span className="text-gray-400/30">#2</span> Followers
           </h3>
           <div className="bg-white dark:bg-[#171717] border-gray-600/30 border shadow rounded-b-lg px-6 py-4">
@@ -102,7 +103,7 @@ const About = ({ onSidebarHide }) => {
           <Skills />
 
           <div className="text-gray-400 mb-7 mt-6 ">
-            <h3 className="border-gray-600/30 border font-bold bg-card p-2 rounded-t-lg mb-1 text-gray-100">
+            <h3 className="border-gray-600/30 border font-bold bg-indigo-200 text-black dark:bg-card p-2 rounded-t-lg mb-1 dark:text-gray-100">
               <span className="text-gray-400/30">#4</span> Education
             </h3>
             <div className="px-6 py-4">

@@ -30,7 +30,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
             alt="logo"
           />
           <div className="block sm:hidden ml-2 xl:block font-bold text-xl dark:text-white">
-            Portfolio
+            Akram Ashraf A.
           </div>
           <div className="flex-grow sm:hidden xl:block" />
           <IconButton
@@ -42,11 +42,9 @@ function Sidebar({ onSidebarHide, showSidebar }) {
       </div>
       <div className="flex-grow overflow-x-hidden overflow-y-auto flex flex-col">
         <div className="w-full p-3 h-24 sm:h-20 xl:h-24 hidden sm:block flex-shrink-0">
-          <div className="bg-blue-600  dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
-            <ThemeSwitcherBtn />
-            <div className="block sm:hidden xl:block flex-grow" />
-          </div>
+          <ThemeSwitcherBtn />
         </div>
+
         {sidebarItems[0].map((i) => (
           <MenuItem key={i.id} item={i} onClick={setSelected} />
         ))}
