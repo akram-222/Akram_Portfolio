@@ -15,6 +15,7 @@ const ProjectItem = ({
   language,
   fork,
   visibility,
+  id,
   hasIssues,
   forksCount,
   i,
@@ -23,10 +24,13 @@ const ProjectItem = ({
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
-    <tr className="hover:bg-[#050708]/20">
+    <tr className="group hover:bg-[#050708]/20">
       <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
-        <div className="flex items-center">
-          {indexingSys}. {name.replace("-", " ")}
+        <div className="flex  items-center">
+          {indexingSys}. {name}
+          <span className="ml-2 text-yellow-600 hidden lg:inline opacity-0 group-hover:opacity-100">
+            #{id}
+          </span>
         </div>
       </td>
       <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
@@ -74,9 +78,9 @@ const ProjectItem = ({
           />
         )} */}
         {hasIssues ? (
-          <VscIssues size={18} className="inline dark:text-green-500 mx-1" />
+          <VscIssues data-hint="has open issues" size={18} className="showHint inline dark:text-green-500 mx-1" />
         ) : (
-          <VscIssueDraft size={18} className="inline dark:text-red-500 mx-1" />
+          <VscIssueDraft data-hint="has no issues" size={18} className="showHint inline dark:text-red-500 mx-1" />
         )}
       </td>
       <td className="flex sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
