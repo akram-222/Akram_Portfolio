@@ -1,5 +1,6 @@
 import { BsMoon, BsSun } from "react-icons/bs";
 import { useState, useEffect } from "react";
+import Alert from "./Alert";
 const ThemeSwitcherBtn = () => {
   const [isDark, setMode] = useState(true);
   const changeMode = () => {
@@ -30,19 +31,30 @@ const ThemeSwitcherBtn = () => {
     }
   }, []);
   return (
-    <button
-      onClick={() => changeMode()}
-      type="button"
-      className={`flex items-center h-full dark:text-gray-400 text-sm p-2.5`}
-    >
-      {!isDark ? <BsSun size={30} className="text-white"/> : <BsMoon size={30} className="text-white"/>}
-      <div className="block sm:hidden xl:block ml-3">
-        <div className="text-sm font-bold text-white">Convert mode to :</div>
-        <div className="text-sm  text-left text-gray-400">
-          {localStorage.getItem("color-theme")} mode
-        </div>
+    <>
+      <div className="bg-blue-600  dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
+        <button
+          onClick={() => changeMode()}
+          type="button"
+          className={`flex items-center h-full dark:text-gray-400 text-sm p-2.5`}
+        >
+          {!isDark ? (
+            <BsSun size={30} className="text-white" />
+          ) : (
+            <BsMoon size={30} className="text-white" />
+          )}
+          <div className="block sm:hidden xl:block ml-3">
+            <div className="text-sm font-bold text-white">
+              Convert mode to :
+            </div>
+            <div className="text-sm  text-left text-gray-400">
+              {localStorage.getItem("color-theme")} mode
+            </div>
+          </div>
+        </button>
       </div>
-    </button>
+      {isDark ? <Alert msg="Light mode is still being developed." /> : ""}
+    </>
   );
 };
 
