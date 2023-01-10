@@ -1,5 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { BsArrowLeft, BsArrowRight, BsKey } from "react-icons/bs";
+import {
+  BsArrowLeft,
+  BsArrowRight,
+  BsCheck,
+  BsCheckCircle,
+  BsDoorClosed,
+  BsFillXCircleFill,
+  BsKey,
+  BsXCircle,
+} from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import logo from "../assests/logo.png";
 import PageTitle from "../Components/PageTitle";
@@ -59,23 +68,20 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
       />
       <section className="bg-gray-50 dark:bg-transparent w-full absolute top-0 left-0 h-full flex">
         <div className="w-full flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <a
-            href="#d"
-            className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-          >
-            <img className="w-8 h-8 mr-2" src={logo} alt="logo" />
-            Portfolio
-          </a>
-          <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-md xl:p-0">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Sign in to your account
-              </h1>
+          <div className="flex-col mb-2 items-center justify-center">
+            <img className="w-10 h-10 m-auto" src={logo} alt="logo" />
+            Private Page
+          </div>
+          <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-xl xl:p-0">
+            <div className="p-6 pb-3 space-y-4 md:space-y-6 sm:p-8">
+              <h3 className="font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                Write Your Access Token
+              </h3>
               <form className="space-y-4 md:space-y-6" action="#">
                 <div className="relative">
                   <label
                     htmlFor="password"
-                    className="flex items-center justify-between mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="flex items-center justify-between mb-2 text-xs xs:text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Access Token
                     <div className="flex items-center text-xs">
@@ -86,8 +92,10 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                             : "text-red-400"
                         }`}
                       >
-                        Disconnected
+                        <span className=" hidden xs:block"> Disconnected</span>
+                        <BsXCircle className="xs:hidden" size={15} />
                       </span>
+
                       {colorState === "green" ? (
                         <BsArrowRight className="mx-2" />
                       ) : (
@@ -100,7 +108,8 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                             : "text-gray-700"
                         }`}
                       >
-                        Connected
+                        <span className=" hidden xs:block">Connected</span>
+                        <BsCheckCircle className="xs:hidden" size={15} />
                       </span>
                     </div>
                   </label>
@@ -112,12 +121,12 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                     value={accessTokenVal}
                     onChange={(e) => handleInputValue(e)}
                     placeholder="gh**************************************"
-                    className={`pl-10 text-xs text-${colorState}-400 block w-full p-2.5 dark:bg-[#171717] dark:placeholder-gray-400 dark:text-${colorState}-600`}
+                    className={`text-xs text-${colorState}-400 block w-full py-1.5 pl-10 pr-2 xs:py-2.5 dark:bg-[#171717] dark:placeholder-gray-400 dark:text-${colorState}-600`}
                     required
                   />
                   <BsKey
-                    size={25}
-                    className={`dark:text-${colorState}-500 absolute top-1/2 left-2`}
+                    size={20}
+                    className={`dark:text-${colorState}-500 mt-1 absolute top-1/2 left-2`}
                   />
                 </div>
                 {isIdentical ? (
@@ -131,7 +140,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                 ) : (
                   <button
                     type="button"
-                    className={`dark:border dark:border-red-400 dark:text-red-400 disabled:opacity-75 cursor-not-allowed dark:bg-[#171717] text-sm rounded-lg px-4 py-2 text-center`}
+                    className={`dark:border dark:border-red-400 dark:text-red-400 disabled:opacity-75 cursor-not-allowed dark:bg-[#171717] rounded text-xs xs:text-sm xs:rounded-lg px-2 py-1 xs:px-4 xs:py-2 text-center`}
                   >
                     Sign in
                   </button>
