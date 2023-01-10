@@ -22,6 +22,7 @@ const Projects = ({ onSidebarHide }) => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
       setLoad(false);
+      console.log(fetchedRepos);
     });
   }, [repoConfig]);
 
@@ -42,6 +43,7 @@ const Projects = ({ onSidebarHide }) => {
             </a>
           </>
         }
+        is_premium={true}
         premium_star="GitHub Repos"
       />
       <div className="flex w-full flex-col lg:flex-row">
@@ -92,7 +94,7 @@ const Projects = ({ onSidebarHide }) => {
             <table className="w-full text-left">
               <thead>
                 <tr className="text-gray-400">
-                  {["Name", "Language", "Description", "Date"].map(
+                  {["Name", "Language", "Details", "Date"].map(
                     (item, index) => (
                       <th
                         key={index}
@@ -117,7 +119,16 @@ const Projects = ({ onSidebarHide }) => {
                 ) : (
                   repos?.map(
                     (
-                      { name, id, created_at, language, fork, visibility },
+                      {
+                        name,
+                        id,
+                        created_at,
+                        language,
+                        fork,
+                        visibility,
+                        has_issues,
+                        forks_count,
+                      },
                       i
                     ) => (
                       <>
@@ -127,6 +138,8 @@ const Projects = ({ onSidebarHide }) => {
                           key={id + i}
                           fork={fork}
                           visibility={visibility}
+                          hasIssues={has_issues}
+                          forksCount={forks_count}
                           i={i}
                           createdAt={created_at}
                           repoConfig={repoConfig}

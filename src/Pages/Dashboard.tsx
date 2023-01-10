@@ -22,6 +22,7 @@ const Dashboard = ({ onSidebarHide }) => {
               <span className="text-gray-500">Performs military service</span>
             </>
           }
+          is_premium={true}
           premium_star="Front-end"
         />
 

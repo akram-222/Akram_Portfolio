@@ -42,6 +42,7 @@ const RepoDetails = ({ onSidebarHide }) => {
                 </a>
               </>
             }
+            is_premium={true}
             premium_star="GitHub Repos"
           />
         </div>
