@@ -132,7 +132,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                 {isIdentical ? (
                   <button
                     type="button"
-                    className={`dark:border dark:border-green-400 dark:text-green-400 dark:bg-[#171717] text-sm rounded-lg px-4 py-2 text-center`}
+                    className={`dark:border dark:border-green-400 dark:text-green-400 dark:bg-[#171717] rounded text-xs xs:text-sm xs:rounded-lg px-2 py-1 xs:px-4 xs:py-2 text-center`}
                     onClick={(e) => handleSigningInProcess(e)}
                   >
                     Sign in
