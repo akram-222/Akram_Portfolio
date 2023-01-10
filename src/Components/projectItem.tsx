@@ -35,7 +35,7 @@ const ProjectItem = ({
           {fork ? (
             <>
               <BiGitRepoForked size={20} className="dark:text-green-500 mr-2" />
-              Fork
+              <span className="hidden sm:block">Frok</span>
             </>
           ) : language ? (
             <>
@@ -44,17 +44,17 @@ const ProjectItem = ({
                 src={`https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/${language?.toLowerCase()}/${language?.toLowerCase()}.png`}
                 alt={language}
               />
-              {language}
+              <span className="hidden sm:block">{language}</span>
             </>
           ) : name.toLowerCase() === "Ak-ram".toLocaleLowerCase() ? (
             <>
               <AiOutlineBook size={22} className="dark:text-blue-500 mr-2" />
-              README File
+              <span className="hidden sm:block">README File</span>
             </>
           ) : (
             <>
               <BsDashCircle size={20} className="dark:text-red-500 mr-2" />
-              Empty Repo
+              <span className="hidden sm:block"> Empty Repo</span>
             </>
           )}
         </div>
