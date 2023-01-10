@@ -81,7 +81,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                 <div className="relative">
                   <label
                     htmlFor="password"
-                    className="flex items-center justify-between mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="flex items-center justify-between mb-2 text-xs xs:text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Access Token
                     <div className="flex items-center text-xs">
@@ -140,7 +140,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                 ) : (
                   <button
                     type="button"
-                    className={`dark:border dark:border-red-400 dark:text-red-400 disabled:opacity-75 cursor-not-allowed dark:bg-[#171717] text-xs xs:text-sm xs:rounded-lg px-2 py-1 xs:px-4 xs:py-2 text-center`}
+                    className={`dark:border dark:border-red-400 dark:text-red-400 disabled:opacity-75 cursor-not-allowed dark:bg-[#171717] rounded text-xs xs:text-sm xs:rounded-lg px-2 py-1 xs:px-4 xs:py-2 text-center`}
                   >
                     Sign in
                   </button>
