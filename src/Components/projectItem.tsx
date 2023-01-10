@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
-import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
+import {
+  AiOutlineBook,
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+  AiOutlineInfoCircle,
+} from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
-import { BsDashCircle,BsEyeSlash,BsEye } from "react-icons/bs";
+import { BsDashCircle, BsEyeSlash, BsEye } from "react-icons/bs";
 import { IoIosMore, IoLogoGameControllerA } from "react-icons/io";
+import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 
 const ProjectItem = ({
   name,
@@ -10,6 +16,8 @@ const ProjectItem = ({
   language,
   fork,
   visibility,
+  hasIssues,
+  forksCount,
   i,
   repoConfig,
 }) => {
@@ -51,14 +59,28 @@ const ProjectItem = ({
           )}
         </div>
       </td>
-      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 md:table-cell hidden">
-        Subscription renewal
+
+      <td className=" sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+        <span className="text-xs text-gray-600">{forksCount}</span>
+        <BiGitRepoForked
+          size={20}
+          className="inline dark:text-green-500 mr-1"
+        />
+        {/* {visibility === "public" ? (
+          <AiOutlineEye size={23} className="inline dark:text-green-500 mx-1" />
+        ) : (
+          <AiOutlineEyeInvisible
+            size={23}
+            className="inline dark:text-red-500 mx-1"
+          />
+        )} */}
+        {hasIssues ? (
+          <VscIssues size={23} className="inline dark:text-green-500 mx-1" />
+        ) : (
+          <VscIssueDraft size={23} className="inline dark:text-red-500 mx-1" />
+        )}
       </td>
-      {/* <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500">
-          
-  {visibility === "public" ? <BsEye className="text-green-600" size={20} />:<BsEyeSlash className="text-red-600" size={20}/>}
-      </td> */}
-      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+      <td className="flex sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
         <div className="flex items-center">
           <div className="sm:flex hidden flex-col">
             {new Date(createdAt).toLocaleDateString("en-US", {
@@ -73,12 +95,12 @@ const ProjectItem = ({
               })}
             </div>
           </div>
-          <button className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-auto">
-            <Link to={name.toLowerCase()}>
-              <AiOutlineInfoCircle size={20} className="mr-4 text-yellow-500" />
-            </Link>
-          </button>
         </div>
+        <button className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-auto">
+          <Link to={name.toLowerCase()}>
+            <AiOutlineInfoCircle size={20} className="mr-4 text-yellow-500" />
+          </Link>
+        </button>
       </td>
     </tr>
   );
