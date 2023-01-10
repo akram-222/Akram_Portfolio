@@ -100,7 +100,12 @@ const ProjectItem = ({
               })}
             </div>
           </div>
-          <BsCalendarDate className="sm:hidden" size={18} />
+          {/* <BsCalendarDate size={18} /> */}
+          <span className="sm:hidden p-1 rounded border-gray-600/40">
+            {new Date(createdAt).toLocaleDateString("en-US", {
+              day: "2-digit",
+            })}
+          </span>
         </div>
         <button className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-2 xs:ml-auto">
           <Link to={name.toLowerCase()}>
