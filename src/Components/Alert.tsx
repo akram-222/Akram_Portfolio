@@ -22,15 +22,15 @@ const Alert = ({ msg, detailedMsg, isHidden, setIsHidden }: alert) => {
       <div className="flex">
         <button
           type="button"
-          className="bg-green-600/80 text-white rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center"
+          className="bg-green-600/80 text-white rounded-lg text-sm px-3 py-1.5 mr-2 text-center inline-flex items-center"
         >
-          <MdRecommend className="mr-1" size={22} />
+          <MdRecommend className="mr-1 " size={20} />
           Dark mode
         </button>
         <button
           type="button"
           className="text-red-800 bg-transparent border border-red-800 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-400 dark:border-red-400 dark:text-red-400 dark:hover:text-white dark:focus:ring-red-800"
-          onClick={() => setIsHidden(false)}
+          onClick={() => setIsHidden(true)}
         >
           Keep going to light mode
         </button>

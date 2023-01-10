@@ -13,13 +13,13 @@ const ThemeSwitcherBtn = () => {
       localStorage.setItem("color-theme", "light");
       document.documentElement.classList.add("dark");
       setMode(false);
+      setIsHidden(true);
     } else {
       localStorage.setItem("color-theme", "dark");
       document.documentElement.classList.remove("dark");
-
       setMode(true);
+      setIsHidden(false);
     }
-    setIsHidden(!isHidden);
   };
   useEffect(() => {
     if (
@@ -54,17 +54,13 @@ const ThemeSwitcherBtn = () => {
             </div>
           </div>
         </button>
-      </div>
-      {isDark ? (
-        <Alert
-          isHidden={isHidden}
-          setIsHidden={setIsHidden}
-          msg="Light mode is still being developed."
-          detailedMsg="We advised utilising dark mode at this time since light mode is currently under development and might cause eye sickness."
-        />
-      ) : (
-        ""
-      )}
+      </div>{" "}
+      <Alert
+        isHidden={isHidden}
+        setIsHidden={setIsHidden}
+        msg="Light mode is still being developed."
+        detailedMsg="We advised utilising dark mode at this time since light mode is currently under development and might cause eye sickness."
+      />
     </>
   );
 };
