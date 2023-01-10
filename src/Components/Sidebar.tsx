@@ -5,7 +5,7 @@ import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
 import logo from "../assests/logo.png";
 import ThemeSwitcherBtn from "./themeSwitcherBtn";
-import { BsMenuApp } from "react-icons/bs";
+import { BsMenuApp, BsXCircle } from "react-icons/bs";
 function Sidebar({ onSidebarHide, showSidebar }) {
   const [selected, setSelected] = useState("0");
   const { dashOffset, indicatorWidth, precentage } = useSpring({
@@ -34,12 +34,8 @@ function Sidebar({ onSidebarHide, showSidebar }) {
             Akram Ashraf A.
           </div>
           <div className="flex-grow sm:hidden xl:block" />
-          <button
-            onClick={onSidebarHide}
-            type="button"
-            className={`sm:hidden self-end self-end mr-2 mt-2`}
-          >
-            <BsMenuApp size={20} />
+          <button onClick={onSidebarHide} type="button" className={`sm:hidden`}>
+            <BsXCircle size={20} />
           </button>
         </div>
       </div>
