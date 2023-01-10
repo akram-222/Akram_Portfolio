@@ -1,6 +1,9 @@
 import { BsFillInfoCircleFill } from "react-icons/bs";
-
-const Alert = ({ msg, detailedMsg }) => {
+type alert = {
+  msg: string;
+  detailedMsg: string;
+};
+const Alert = ({ msg, detailedMsg }: alert) => {
   return (
     <div className="fixed top-2 max-w-[400px] -translate-x-1/2 left-1/2 p-4 mb-4 text-red-900 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-900">
       <div className="flex items-center">
