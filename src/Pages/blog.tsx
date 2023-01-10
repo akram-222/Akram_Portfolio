@@ -16,6 +16,7 @@ const Blog = ({ onSidebarHide }) => {
             <span className="text-blue-400 font-bold">{devBlogs.length}</span>
           </>
         }
+        is_premium={true}
         premium_star={"DEV.to articles"}
         className="dark:bg-card p-2 h-fit"
       />

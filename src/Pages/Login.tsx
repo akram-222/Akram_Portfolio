@@ -54,6 +54,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
             <span className="text-gray-500">Performs military service</span>
           </>
         }
+        is_premium={false}
         premium_star="Front-end"
       />
       <section className="bg-gray-50 dark:bg-transparent w-full absolute top-0 left-0 h-full flex">

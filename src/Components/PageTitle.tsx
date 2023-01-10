@@ -8,6 +8,7 @@ const PageTitle = ({
   subtitle,
   premium_star,
   className,
+  is_premium,
 }) => {
   return (
     <>
@@ -25,9 +26,13 @@ const PageTitle = ({
             <div className="flex items-center p-2 bg-card ml-2 rounded-xl">
               {/* <Icon path="res-react-dash-premium-star" /> */}
               <BsFillStarFill size={16} className="mb-1 dark:text-yellow-500" />
-              <div className="ml-2 font-bold text-premium-yellow">
-                {premium_star}
-              </div>
+              {is_premium ? (
+                <div className="ml-2 font-bold text-premium-yellow">
+                  {premium_star}
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
           <div className="flex items-center">
