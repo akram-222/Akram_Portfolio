@@ -1,5 +1,6 @@
-import { BsFillInfoCircleFill } from "react-icons/bs";
+import { BsCircleFill, BsFillInfoCircleFill } from "react-icons/bs";
 import { MdRecommend } from "react-icons/md";
+import { VscCircleOutline } from "react-icons/vsc";
 type alert = {
   msg: string;
   detailedMsg: string;
@@ -29,12 +30,16 @@ const Alert = ({
       <div className="flex">
         <button
           type="button"
-          className="bg-green-600/80 text-white rounded-lg text-sm px-3 py-1.5 mr-2 text-center inline-flex items-center"
+          className="group text-white border border-gray-700 hover:text-green-400 rounded-lg text-sm px-3 py-1.5 mr-2 text-center inline-flex items-center"
           onClick={() => changeMode()}
         >
-          <MdRecommend className="mr-1 " size={20} />
+          <BsCircleFill
+            className="mr-1 group-hover:text-green-400 "
+            size={10}
+          />
           Dark mode
         </button>
+
         <button
           type="button"
           className="border font-medium rounded-lg text-xs px-3 py-1.5 text-center hover:bg-red-400 border-red-400 text-red-400 hover:text-white"
