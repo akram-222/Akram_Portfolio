@@ -1,6 +1,4 @@
 import { BsCircleFill, BsFillInfoCircleFill } from "react-icons/bs";
-import { MdRecommend } from "react-icons/md";
-import { VscCircleOutline } from "react-icons/vsc";
 type alert = {
   msg: string;
   detailedMsg: string;
