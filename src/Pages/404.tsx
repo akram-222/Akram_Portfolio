@@ -5,7 +5,7 @@ const NotFoundRoute = () => {
   return (
     <div className="h-screen w-screen">
       {/* <!-- drawer component --> */}
-      <div className="flex justify-center flex-col min-h-full w-full bg-white dark:bg-card p-10">
+      <div className="flex justify-center flex-col min-h-full w-full  p-10">
         <div className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold">
           404
         </div>
