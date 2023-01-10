@@ -121,11 +121,11 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                     value={accessTokenVal}
                     onChange={(e) => handleInputValue(e)}
                     placeholder="gh**************************************"
-                    className={`pl-10 text-xs text-${colorState}-400 block w-full p-2.5 dark:bg-[#171717] dark:placeholder-gray-400 dark:text-${colorState}-600`}
+                    className={`text-xs text-${colorState}-400 block w-full p-1.5 pl-10 xs:p-2.5 dark:bg-[#171717] dark:placeholder-gray-400 dark:text-${colorState}-600`}
                     required
                   />
                   <BsKey
-                    size={25}
+                    size={22}
                     className={`dark:text-${colorState}-500 absolute top-1/2 left-2`}
                   />
                 </div>
