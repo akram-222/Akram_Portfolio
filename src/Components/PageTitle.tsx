@@ -12,7 +12,7 @@ const PageTitle = ({
 }) => {
   return (
     <>
-      <div className={`${className} p-3 flex flex-col w-full justify-between`}>
+      <div className={`${className} py-3 px-2 flex flex-col w-full justify-between`}>
         <button
           onClick={onSidebarHide}
           type="button"
