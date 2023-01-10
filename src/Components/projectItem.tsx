@@ -6,13 +6,7 @@ import {
   AiOutlineInfoCircle,
 } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
-import {
-  BsDashCircle,
-  BsEyeSlash,
-  BsEye,
-  BsCalendarDate,
-} from "react-icons/bs";
-import { IoIosMore, IoLogoGameControllerA } from "react-icons/io";
+import { BsDashCircle } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 
 const ProjectItem = ({
@@ -66,7 +60,7 @@ const ProjectItem = ({
       </td>
 
       <td className=" sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
-        <span className="text-xs text-gray-600">{forksCount}</span>
+        <span className="text-xs text-gray-600 mr-1">{forksCount}</span>
         <BiGitRepoForked
           size={18}
           className="inline dark:text-green-500 mr-1"
