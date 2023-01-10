@@ -91,8 +91,8 @@ const Projects = ({ onSidebarHide }) => {
                 </button>
               </div>
             </div>
-            <table className="w-full text-left">
-              <thead>
+            <table className="w-full text-left text-xs md:text-sm ">
+              {/* <thead>
                 <tr className="text-gray-400">
                   {["Name", "Language", "Details", "Date"].map(
                     (item, index) => (
@@ -105,7 +105,7 @@ const Projects = ({ onSidebarHide }) => {
                     )
                   )}
                 </tr>
-              </thead>
+              </thead> */}
               <tbody className="text-gray-600 dark:text-gray-100">
                 {/* <Skelton
                     number={repoConfig.per_page}
