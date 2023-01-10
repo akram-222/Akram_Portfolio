@@ -53,7 +53,16 @@ const ThemeSwitcherBtn = () => {
           </div>
         </button>
       </div>
-      {isDark ? <Alert msg="Light mode is still being developed." /> : ""}
+      {isDark ? (
+        <Alert
+          msg="Light mode is still being developed."
+          detailedMsg={
+            "We advised utilising dark mode at this time since light mode is currently under development and might cause eye sickness."
+          }
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 };
