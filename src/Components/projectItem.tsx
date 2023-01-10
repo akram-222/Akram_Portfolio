@@ -95,7 +95,7 @@ const ProjectItem = ({
             </div>
           </div>
           {/* <BsCalendarDate size={18} /> */}
-          <span className="sm:hidden p-1 rounded border-gray-600/40">
+          <span className="sm:hidden p-1 border bg-card rounded border-gray-600/30">
             {new Date(createdAt).toLocaleDateString("en-US", {
               day: "2-digit",
             })}
