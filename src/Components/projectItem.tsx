@@ -104,7 +104,7 @@ const ProjectItem = ({
         </div>
         <button className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-2 xs:ml-auto">
           <Link to={name.toLowerCase()}>
-            <AiOutlineInfoCircle size={18} className="mr-4 text-yellow-500" />
+            <AiOutlineInfoCircle size={18} className="text-yellow-500" />
           </Link>
         </button>
       </td>
