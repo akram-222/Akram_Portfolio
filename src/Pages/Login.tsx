@@ -73,7 +73,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
             Private Page
           </div>
           <div className="shadow-xl dark:bg-transparent dark:border-gray-600/30 w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-xl xl:p-0">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <div className="p-6 pb-3 space-y-4 md:space-y-6 sm:p-8">
               <h3 className="font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Write Your Access Token
               </h3>
@@ -121,12 +121,12 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                     value={accessTokenVal}
                     onChange={(e) => handleInputValue(e)}
                     placeholder="gh**************************************"
-                    className={`text-xs text-${colorState}-400 block w-full p-1.5 pl-10 xs:p-2.5 dark:bg-[#171717] dark:placeholder-gray-400 dark:text-${colorState}-600`}
+                    className={`text-xs text-${colorState}-400 block w-full py-1.5 pl-10 pr-2 xs:py-2.5 dark:bg-[#171717] dark:placeholder-gray-400 dark:text-${colorState}-600`}
                     required
                   />
                   <BsKey
-                    size={22}
-                    className={`dark:text-${colorState}-500 absolute top-1/2 left-2`}
+                    size={20}
+                    className={`dark:text-${colorState}-500 mt-1 absolute top-1/2 left-2`}
                   />
                 </div>
                 {isIdentical ? (
