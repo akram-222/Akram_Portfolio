@@ -33,12 +33,12 @@ const ThemeSwitcherBtn = () => {
     <button
       onClick={() => changeMode()}
       type="button"
-      className={`flex items-center h-full text-gray-500 dark:text-gray-400 text-sm p-2.5`}
+      className={`flex items-center h-full dark:text-gray-400 text-sm p-2.5`}
     >
-      {!isDark ? <BsSun size={30} /> : <BsMoon size={30} />}
+      {!isDark ? <BsSun size={30} className="text-white"/> : <BsMoon size={30} className="text-white"/>}
       <div className="block sm:hidden xl:block ml-3">
         <div className="text-sm font-bold text-white">Convert mode to :</div>
-        <div className="text-sm  text-left">
+        <div className="text-sm  text-left text-gray-400">
           {localStorage.getItem("color-theme")} mode
         </div>
       </div>
