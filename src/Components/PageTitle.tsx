@@ -1,7 +1,7 @@
-import IconButton from "./IconButton";
 import BreadCrumb from "./BreadCrumb";
-import { BsFillStarFill, BsMenuApp, BsXCircle } from "react-icons/bs";
+import { BsFillStarFill } from "react-icons/bs";
 import { AiOutlineDoubleRight } from "react-icons/ai";
+import { CgMenuLeft } from "react-icons/cg";
 const PageTitle = ({
   onSidebarHide,
   title,
@@ -18,7 +18,7 @@ const PageTitle = ({
           type="button"
           className={`block sm:hidden self-end mr-2 mt-2`}
         >
-          <BsMenuApp size={20} />
+          <CgMenuLeft size={20} />
         </button>
 
         <BreadCrumb />
