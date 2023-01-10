@@ -18,7 +18,7 @@ const Alert = ({
     <div
       className={`${
         isHidden ? "hidden" : ""
-      } fixed top-2 max-w-[400px] -translate-x-1/2 left-1/2 p-4 mb-4 text-red-900 border border-red-300 rounded-lg bg-gray-800 text-red-400 dark:border-red-900`}
+      } fixed top-2 max-w-[400px] -translate-x-1/2 left-1/2 p-4 mb-4 text-red-900 rounded-lg bg-gray-800 text-red-400`}
     >
       <div className="flex items-center">
         <BsFillInfoCircleFill className="mr-2" size={20} />
