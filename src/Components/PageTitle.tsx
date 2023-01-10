@@ -1,6 +1,6 @@
 import IconButton from "./IconButton";
 import BreadCrumb from "./BreadCrumb";
-import { BsFillStarFill } from "react-icons/bs";
+import { BsFillStarFill, BsMenuApp, BsXCircle } from "react-icons/bs";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 const PageTitle = ({
   onSidebarHide,
@@ -13,11 +13,13 @@ const PageTitle = ({
   return (
     <>
       <div className={`${className} flex flex-col w-full justify-between`}>
-        <IconButton
-          icon="res-react-dash-sidebar-open"
-          className="block sm:hidden"
+        <button
           onClick={onSidebarHide}
-        />
+          type="button"
+          className={`block sm:hidden self-end mr-2 mt-2`}
+        >
+          <BsMenuApp size={20} />
+        </button>
 
         <BreadCrumb />
         <div className="">
