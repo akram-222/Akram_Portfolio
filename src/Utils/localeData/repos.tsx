@@ -22,4 +22,4 @@ export const reactRepos = [
   "flexbox-playground",
 ];
 
-export const extensions = ["scss-helpers"];
+export const extensions: string[] = ["scss-helpers"];

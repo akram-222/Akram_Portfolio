@@ -1,5 +1,6 @@
 import FollowersList from "../Components/FollowersList";
 import ProfileSubSection from "../Components/profileSubSection";
+import ProfileSubSection2 from "../Components/profileSubSection2";
 import {
   extensions,
   htmlRepos,
@@ -74,40 +75,13 @@ const Profile = () => {
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>
-        
-{/*         
+        <ProfileSubSection2
+          h3Content="1. VS Code Snippets Repos"
+          list={extensions}
+        />
+        <ProfileSubSection2 h3Content="2. ReactJS Repos" list={reactRepos} />
         <blockquote>
-          <h3 className="ml-4 mt-5 mb-2">1. VS Code Snippets Repos</h3>
-        </blockquote>
-        <div className="ml-8">
-          {extensions?.map((item) => (
-            <a href={`https://github.com/Ak-ram/${item}`}>
-              <img
-                width={278}
-                src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${item}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true`}
-                alt="github-social-media-repo"
-              />
-            </a>
-          ))}
-        </div> */}
-
-        <blockquote>
-          <h3 className="ml-4 mt-5 mb-2">2. ReactJS Repos</h3>
-        </blockquote>
-        <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
-          {reactRepos?.map((item) => (
-            <a href={`https://github.com/Ak-ram/${item}`}>
-              <img
-                width={278}
-                src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${item}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true`}
-                alt="github-social-media-repo"
-              />
-            </a>
-          ))}
-        </div>
-
-        <blockquote>
-          <h3 className="ml-4 mt-5 mb-2">3. HTML, CSS, &amp; JS Repos</h3>
+          <h3 className="ml-4 mt-5 mb-2"></h3>
         </blockquote>
         <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
           {Object.keys(htmlRepos)?.map((item) => (
