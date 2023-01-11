@@ -45,7 +45,7 @@ const Profile = () => {
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           🧡 Follow me
         </h2>
-        <p className="text-center flex items-center justify-center">
+        <div className="text-center flex items-center justify-center">
           <a
             href="https://www.linkedin.com/in/ak-ram"
             title="Akram A. Abdelbasir linkedin profile"
@@ -65,15 +65,15 @@ const Profile = () => {
               src="https://user-images.githubusercontent.com/69124951/189626469-5ff7080a-1429-4d8d-a218-8a3617b6ab18.png"
             />
           </a>
-        </p>
+        </div>
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>
 
         <blockquote>
-          <h3 id="1-vs-code-snippets-repos">1. VS Code Snippets Repos</h3>
+          <h3 className="ml-4 mt-5 mb-2">1. VS Code Snippets Repos</h3>
         </blockquote>
-        <p className="left">
+        <div className="ml-8">
           <a href="https://github.com/Ak-ram/scss-helpers">
             <img
               width={278}
@@ -81,14 +81,12 @@ const Profile = () => {
               alt="github-scss-helpers-repo"
             />
           </a>
-        </p>
-        <p>
-          <br />
-        </p>
+        </div>
+
         <blockquote>
-          <h3 id="2-reactjs-repos">2. ReactJS Repos</h3>
+          <h3 className="ml-4 mt-5 mb-2">2. ReactJS Repos</h3>
         </blockquote>
-        <p className="flex flex-wrap items-center justify-start gap-3">
+        <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
           <a href="https://github.com/Ak-ram/dropit">
             <img
               width={278}
@@ -124,14 +122,12 @@ const Profile = () => {
               alt="github-flexbox-playground-repo"
             />
           </a>
-        </p>
-        <p>
-          <br />
-        </p>
+        </div>
+
         <blockquote>
-          <h3 id="3-html-css-js-repos">3. HTML, CSS, &amp; JS Repos</h3>
+          <h3 className="ml-4 mt-5 mb-2">3. HTML, CSS, &amp; JS Repos</h3>
         </blockquote>
-        <p className="flex flex-wrap items-center justify-start gap-3">
+        <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
           <a href="https://github.com/Ak-ram/Portfolio">
             <img
               width={278}
@@ -174,12 +170,12 @@ const Profile = () => {
               alt="github-Ctyptex-repo"
             />
           </a>
-        </p>
+        </div>
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📕 Top projects I've contributed to
         </h2>
         {/* Small repo cards https://github.com/DenverCoder1/github-readme-stats (fork of anuraghazra/github-readme-stats) */}
-        <p className="flex flex-wrap items-center justify-start gap-3">
+        <div className="ml-5 flex flex-wrap items-center justify-start gap-3">
           <a
             href="https://github.com/opensourcedesign
 /opensourcedesign.github.io"
@@ -274,7 +270,7 @@ const Profile = () => {
               />
             </a>
           </div>
-        </p>
+        </div>
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           🛠️ My favorite tools
         </h2>
@@ -340,7 +336,7 @@ const Profile = () => {
             #2
           </em>
         </h3>
-        <div className="flex gap-2 flex-wrap">
+        <div className="ml-5 flex gap-2 flex-wrap">
           <a href="#">
             <img
               alt="React"
@@ -379,7 +375,7 @@ const Profile = () => {
             #3
           </em>
         </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="ml-5 flex flex-wrap gap-2">
           <a href="#">
             <img
               alt="Microsoft_Access"
@@ -418,7 +414,7 @@ const Profile = () => {
             #4
           </em>
         </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="ml-5 flex flex-wrap gap-2">
           <a href="#">
             <img
               alt="Postman"
