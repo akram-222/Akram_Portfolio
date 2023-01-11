@@ -62,12 +62,12 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="#d" className="hover:underline">
                     Status
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#d" className="hover:underline">
                     Settings
                   </a>
                 </li>
@@ -86,7 +86,7 @@ const Footer = () => {
           </span>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
             <a
-              href="#"
+              href="#d"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -103,7 +103,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="#"
+              href="#d"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -120,7 +120,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="#"
+              href="#d"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -133,7 +133,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="#"
+              href="#d"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -150,7 +150,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="#"
+              href="#d"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
