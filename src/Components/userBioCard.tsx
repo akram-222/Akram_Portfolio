@@ -1,7 +1,7 @@
 const UserBioCard = ({ userInfo }) => {
   return (
     <>
-      <div className="flex w-full flex-wrap dark:bg-card p-10 rounded-lg">
+      <div className="flex w-full flex-wrap dark:bg-card p-8 rounded-lg">
         <h1 className="flex w-full mb-5 gap-2 justify-start items-center text-3xl text-white font-bold">
           Welcome to Akram's profile!
           <img
@@ -10,30 +10,26 @@ const UserBioCard = ({ userInfo }) => {
             alt="wavy hand"
           />
         </h1>
-       
 
         <div className="inline-flex justify-between">
           {/*Previous font: Silkscreen*/}
-          <div>
-             <img
-          className="m-auto h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow"
-          src={userInfo.avatar_url}
-          alt=""
-        />
+          <div className="w-[30%]">
+            <img
+              className="m-auto h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow"
+              src={userInfo.avatar_url}
+              alt=""
+            />
             {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
-            <p className="text-center">
-              <img
-                className="m-auto"
-                src="https://readme-typing-svg.herokuapp.com?font=Fira+code&size=22&duration=2000&pause=1000&color=DDE43F&background=2A2E3424&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;Blogger+%26+Content+Writer;Always+learning+new+things"
-                alt="auto-typing"
-              />
-            </p>
-            {/* Social icons section */}
+            <img
+              className="m-auto mt-2"
+              src="https://readme-typing-svg.herokuapp.com?font=Fira+code&size=22&duration=2000&pause=1000&color=DDE43F&background=2A2E3424&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;Blogger+%26+Content+Writer;Always+learning+new+things"
+              alt="auto-typing"
+            />
 
-           
+            {/* Social icons section */}
           </div>
-          <div className="w-[45%]">
-             <div className="flex flex-wrap gap-2">
+          <div className="w-[50%]">
+            <div className="flex flex-wrap gap-2">
               <h2 className="text-xl w-full border-b border-gray-600/30">
                 Statistics
               </h2>
@@ -57,63 +53,66 @@ const UserBioCard = ({ userInfo }) => {
               </div>
             </div>
             {/* LinkedIn */}
-            <h2 className="text-xl border-b my-4 border-gray-600/30">
-              Contact with me
-            </h2>
-            <div className="socials text-center flex items-center flex-wrap self-start gap-2">
-              <a href="https://www.linkedin.com/in/ak-ram/">
-                <img
-                  className=""
-                  alt="Linkedin"
-                  title="Linkedin"
-                  src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white"
-                />
-              </a>
-              {/* Leetcode */}
-              <a href="https://www.leetcode.com/Ak-ram">
-                <img
-                  className=""
-                  alt="Leetcode"
-                  title="Blog"
-                  src="https://img.shields.io/badge/-LeetCode-FFA116?logo=LeetCode&logoColor=black"
-                />
-              </a>
-              {/* Medium */}
-              <a href="https://dev.to/akram_ak">
-                <img
-                  className=""
-                  alt="Dev.to"
-                  title="Blog"
-                  src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
-                />
-              </a>
-              {/* Stackoverflow */}
-              <a href="https://stackoverflow.com/users/14151211/akram-ashraf">
-                <img
-                  className=""
-                  alt="Stackover flow"
-                  title="Stackover flow"
-                  src="https://aleen42.github.io/badges/src/stackoverflow.svg"
-                />
-              </a>
-              {/* Gmail */}
-              <a href="mailto:ashrfakrm64@gmail.com">
-                <img
-                  className=""
-                  alt="Gmail"
-                  title="Mail me"
-                  src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
-                />
-              </a>
-              {/* Whats' app */}
-              {/*   <a href='https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale'> */}
-              <a href="https://wa.me/00201158541832?text=Hi Akram 👋, I'm Interest to work with you">
-                <img
-                  alt="Whats' app"
-                  title="Msg me"
-                  src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
-                />
-              </a>
+
+            <div>
+              <h2 className="text-xl border-b my-4 border-gray-600/30">
+                Contact with me
+              </h2>
+              <div className="socials text-center flex items-center flex-wrap self-start gap-2">
+                <a href="https://www.linkedin.com/in/ak-ram/">
+                  <img
+                    className=""
+                    alt="Linkedin"
+                    title="Linkedin"
+                    src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white"
+                  />
+                </a>
+                {/* Leetcode */}
+                <a href="https://www.leetcode.com/Ak-ram">
+                  <img
+                    className=""
+                    alt="Leetcode"
+                    title="Blog"
+                    src="https://img.shields.io/badge/-LeetCode-FFA116?logo=LeetCode&logoColor=black"
+                  />
+                </a>
+                {/* Medium */}
+                <a href="https://dev.to/akram_ak">
+                  <img
+                    className=""
+                    alt="Dev.to"
+                    title="Blog"
+                    src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
+                  />
+                </a>
+                {/* Stackoverflow */}
+                <a href="https://stackoverflow.com/users/14151211/akram-ashraf">
+                  <img
+                    className=""
+                    alt="Stackover flow"
+                    title="Stackover flow"
+                    src="https://aleen42.github.io/badges/src/stackoverflow.svg"
+                  />
+                </a>
+                {/* Gmail */}
+                <a href="mailto:ashrfakrm64@gmail.com">
+                  <img
+                    className=""
+                    alt="Gmail"
+                    title="Mail me"
+                    src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
+                  />
+                </a>
+                {/* Whats' app */}
+                {/*   <a href='https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale'> */}
+                <a href="https://wa.me/00201158541832?text=Hi Akram 👋, I'm Interest to work with you">
+                  <img
+                    alt="Whats' app"
+                    title="Msg me"
+                    src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -4,13 +4,13 @@ const Profile = () => {
   return (
     <>
       <div className="w-full">
-        <h2 id="-recent-github-activity" className="text-2xl text-white">
+        <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           ⚡ Recent GitHub Activity
         </h2>
         {/*START_SECTION:activity*/}
-        <ol>
+        <ol className="ml-4">
           <li>
-            1. 🎉 Contribute in{" "}
+           1. 🎉 Contribute in{" "}
             <a href="https://github.com/Ak-ram/Frontend-Interview-Questions">
               Frontend-Interview-Questions
             </a>{" "}
@@ -21,7 +21,7 @@ const Profile = () => {
           </li>
           <li>
             <p>
-              2. ⌛ Build my Portfolio with{" "}
+             2. ⌛ Build my Portfolio with{" "}
               <a href="https://github.com/Ak-ram/Akram_Portfolio">
                 React/Typescript
               </a>
@@ -29,7 +29,7 @@ const Profile = () => {
             {/*END_SECTION:activity*/}
           </li>
         </ol>
-        <h2 className="text-2xl text-white mt-5" id="-follow-me">
+        <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           ❤ Follow me
         </h2>
         <p className="text-center flex items-center justify-center">
