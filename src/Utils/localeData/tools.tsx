@@ -34,3 +34,10 @@ export const programmingAndMarkupLanguages = [
   "Bash-121011.svg?logo=gnu-bash&logoColor=white",
   "Markdown-000000.svg?logo=markdown&logoColor=white",
 ];
+
+export const tools = {
+  "👨‍💻 Programming and markup languages": programmingAndMarkupLanguages,
+  "🧰 Frameworks and libraries": frameworksAndLibraries,
+  "🗄️ Databases and cloud hosting": databasesAndCloudHoisting,
+  "💻 Software and tools": softwaresAndTools,
+};

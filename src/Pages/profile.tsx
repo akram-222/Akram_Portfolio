@@ -5,6 +5,7 @@ import {
   frameworksAndLibraries,
   programmingAndMarkupLanguages,
   softwaresAndTools,
+  tools,
 } from "../Utils/localeData/tools";
 const Profile = () => {
   return (
@@ -279,22 +280,9 @@ const Profile = () => {
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           🛠️ My favorite tools
         </h2>
-        <ProfileSubSection
-          h3Content={"👨‍💻 Programming and markup languages"}
-          list={programmingAndMarkupLanguages}
-        />
-        <ProfileSubSection
-          h3Content={"🧰 Frameworks and libraries"}
-          list={frameworksAndLibraries}
-        />
-        <ProfileSubSection
-          h3Content={"🗄️ Databases and cloud hosting"}
-          list={databasesAndCloudHoisting}
-        />
-        <ProfileSubSection
-          h3Content={"💻 Software and tools"}
-          list={softwaresAndTools}
-        />
+        {Object.keys(tools)?.map((key) => (
+          <ProfileSubSection h3Content={key} list={tools[key]} />
+        ))}
       </div>
     </>
   );
