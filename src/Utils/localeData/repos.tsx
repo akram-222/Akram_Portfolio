@@ -7,6 +7,7 @@ export const htmlRepos = [
   "Ctyptex",
 ];
 export const topContributedRepos = {
+  "Ak-ram/Frontend-Interview-Questions": "Ak-ram&repo=Frontend-Interview-Questions",
   "opensourcedesign/opensourcedesign.github.io":
     "opensourcedesign&repo=opensourcedesign.github.io",
   "firstcontributions/first-contributions":
@@ -14,6 +15,7 @@ export const topContributedRepos = {
 };
 
 export const reactRepos = [
+  "Akram_Portfolio",
   "dropit",
   "Moviideck",
   "quran-player",
