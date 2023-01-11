@@ -16,7 +16,7 @@ const UserBioCard = ({ userInfo }) => {
           alt=""
         />
 
-        <div className="flex-grow inline-flex flex-1 items-center">
+        <div className="flex-grow gap-6 inline-flex flex-1 items-center">
           {/*Previous font: Silkscreen*/}
           <div>
             {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
@@ -50,7 +50,7 @@ const UserBioCard = ({ userInfo }) => {
               </div>
             </div>
           </div>
-          <div className="text-center flex items-center justify-center gap-2">
+          <div className="text-center flex items-center flex-wrap self-start gap-2">
             {/* LinkedIn */}
             <a href="https://www.linkedin.com/in/ak-ram/">
               <img
