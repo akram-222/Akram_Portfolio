@@ -3,7 +3,7 @@ const UserBioCard = ({ userInfo }) => {
     <>
       <div className="flex w-full flex-wrap dark:bg-card p-10 rounded-lg">
           
-          <h1 className="flex w-full gap-2 justify-start items-center text-3xl text-white font-bold">
+          <h1 className="flex w-full mb-5 gap-2 justify-start items-center text-3xl text-white font-bold">
             Welcome to Akram's profile!
             <img
               src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
