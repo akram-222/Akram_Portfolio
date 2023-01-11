@@ -1,4 +1,5 @@
 import FollowersList from "../Components/FollowersList";
+import { frameworksAndLibraries } from "../Utils/localeData/frameworksAndLibraries";
 const Profile = () => {
   return (
     <>
@@ -335,36 +336,9 @@ const Profile = () => {
           </em>
         </h3>
         <div className="ml-5 flex gap-2 flex-wrap ml-8">
-          <a href="#">
-            <img
-              alt="React"
-              src="https://img.shields.io/badge/React-20232a.svg?logo=react&logoColor=%2361DAFB"
-            />
-          </a>
-          <a href="#">
-            <img
-              alt="Bootstrap"
-              src="https://img.shields.io/badge/Bootstrap-7952B3.svg?logo=bootstrap&logoColor=white"
-            />
-          </a>
-          <a href="#">
-            <img
-              alt="Tailwind"
-              src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white"
-            />
-          </a>
-          <a href="#">
-            <img
-              alt="Jest"
-              src="https://img.shields.io/badge/Jest-C21325.svg?logo=jest&logoColor=white"
-            />
-          </a>
-          <a href="#">
-            <img
-              alt="Material Design"
-              src="https://img.shields.io/badge/Material%20Design-0081CB.svg?logo=material-design&logoColor=white"
-            />
-          </a>
+          {frameworksAndLibraries?.map((item) => (
+            <img alt="Material Design" src={item} />
+          ))}
         </div>
 
         <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
