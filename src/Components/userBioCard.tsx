@@ -16,7 +16,7 @@ const UserBioCard = ({ userInfo }) => {
           alt=""
         />
 
-        <div className="flex-grow gap-6 inline-flex flex-1 items-center">
+        <div className="flex-grow gap-6 inline-flex flex-1 ">
           {/*Previous font: Silkscreen*/}
           <div>
             {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
@@ -52,7 +52,9 @@ const UserBioCard = ({ userInfo }) => {
           </div>
           <div className="">
             {/* LinkedIn */}
-            <h2>Contact with me </h2>
+            <h2 className="text-xl border-b mb-5 border-gray-600/30">
+              Contact with me
+            </h2>
             <div className="socials text-center flex items-center flex-wrap self-start gap-2">
               <a href="https://www.linkedin.com/in/ak-ram/">
                 <img
