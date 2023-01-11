@@ -29,7 +29,13 @@ const UserBioCard = ({ userInfo }) => {
             </p>
             {/* Social icons section */}
 
-            <div className="flex justify-center items-center gap-2 my-3">
+           
+          </div>
+          <div className="">
+             <div className="flex flex-wrap gap-2">
+              <h2 className="text-xl w-full border-b border-gray-600/30">
+                Statistics
+              </h2>
               <div className="font-semibold text-center mx-4">
                 <p className="dark:text-blue-400 font-bold">
                   {userInfo.public_repos}
@@ -49,10 +55,8 @@ const UserBioCard = ({ userInfo }) => {
                 <span className="text-gray-400">Folowing</span>
               </div>
             </div>
-          </div>
-          <div className="">
             {/* LinkedIn */}
-            <h2 className="text-xl border-b mb-5 border-gray-600/30">
+            <h2 className="text-xl border-b my-4 border-gray-600/30">
               Contact with me
             </h2>
             <div className="socials text-center flex items-center flex-wrap self-start gap-2">
