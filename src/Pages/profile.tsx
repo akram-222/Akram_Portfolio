@@ -1,79 +1,9 @@
+import UserBioCard from "../Components/userBioCard";
+
 const Profile = () => {
   return (
     <>
       <div className="w-full">
-        <h1 className="flex gap-2 justify-center items-center text-3xl text-white font-bold">
-          Welcome to Akram's profile!
-          <img
-            src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
-            width={28}
-            alt="wavy hand"
-          />
-        </h1>
-        {/*Previous font: Silkscreen*/}
-        {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
-        <p className="text-center">
-          <img
-            className="m-auto"
-            src="https://readme-typing-svg.herokuapp.com?font=Fira+code&size=22&duration=2000&pause=1000&color=DDE43F&background=2A2E3424&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;Blogger+%26+Content+Writer;Always+learning+new+things"
-            alt="auto-typing"
-          />
-        </p>
-        {/* Social icons section */}
-        <p className="text-center flex items-center justify-center gap-2">
-          {/* LinkedIn */}
-          <a href="https://www.linkedin.com/in/ak-ram/">
-            <img
-              alt="Linkedin"
-              title="Linkedin"
-              src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white"
-            />
-          </a>
-          {/* Leetcode */}
-          <a href="https://www.leetcode.com/Ak-ram">
-            <img
-              alt="Leetcode"
-              title="Blog"
-              src="https://img.shields.io/badge/-LeetCode-FFA116?logo=LeetCode&logoColor=black"
-            />
-          </a>
-          {/* Medium */}
-          <a href="https://dev.to/akram_ak">
-            <img
-              alt="Dev.to"
-              title="Blog"
-              src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
-            />
-          </a>
-          {/* Stackoverflow */}
-          <a href="https://stackoverflow.com/users/14151211/akram-ashraf">
-            <img
-              alt="Stackover flow"
-              title="Stackover flow"
-              src="https://aleen42.github.io/badges/src/stackoverflow.svg"
-            />
-          </a>
-          {/* Gmail */}
-          <a href="mailto:ashrfakrm64@gmail.com">
-            <img
-              alt="Gmail"
-              title="Mail me"
-              src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
-            />
-          </a>
-          {/* Whats' app */}
-          {/*   <a href='https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale'> */}
-          <a href="https://wa.me/00201158541832?text=Hi Akram 👋, I'm Interest to work with you">
-            <img
-              alt="Whats' app"
-              title="Msg me"
-              src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
-            />
-          </a>
-        </p>
-        <p>
-          <br />
-        </p>
         <h2 id="-recent-github-activity" className="text-2xl text-white">
           ⚡ Recent GitHub Activity
         </h2>
@@ -165,7 +95,7 @@ const Profile = () => {
         <blockquote>
           <h3 id="2-reactjs-repos">2. ReactJS Repos</h3>
         </blockquote>
-        <p className="left">
+        <p className="flex flex-wrap items-center justify-start gap-3">
           <a href="https://github.com/Ak-ram/dropit">
             <img
               width={278}
@@ -208,7 +138,7 @@ const Profile = () => {
         <blockquote>
           <h3 id="3-html-css-js-repos">3. HTML, CSS, &amp; JS Repos</h3>
         </blockquote>
-        <p className="left">
+        <p className="flex flex-wrap items-center justify-start gap-3">
           <a href="https://github.com/Ak-ram/Portfolio">
             <img
               width={278}
@@ -252,11 +182,14 @@ const Profile = () => {
             />
           </a>
         </p>
-        <h2 id="-top-projects-i-ve-contributed-to">
+        <h2
+          className="text-2xl text-white mt-5"
+          id="-top-projects-i-ve-contributed-to"
+        >
           📕 Top projects I've contributed to
         </h2>
         {/* Small repo cards https://github.com/DenverCoder1/github-readme-stats (fork of anuraghazra/github-readme-stats) */}
-        <p className="text-left">
+        <p className="flex flex-wrap items-center justify-start gap-3">
           <a
             href="https://github.com/opensourcedesign
 /opensourcedesign.github.io"
@@ -274,79 +207,83 @@ const Profile = () => {
               alt="shields"
             />
           </a>
-          ## 🚀 Some of my Pens
+          <h2 className="text-2xl text-white mt-5 w-full">
+            🚀 Some of my Pens
+          </h2>
           {/* CSS Shadow Animation */}
-          <a
-            href="https://codepen.io/Akr-am/pen/JjvedzJ"
-            title="CSS Shadow Animation"
-          >
-            <img
-              src="https://user-images.githubusercontent.com/69124951/197283827-24c8ffa8-c3ca-4bf6-ad7e-14449fac5cf7.gif"
-              width={278}
-              height="180px"
-              alt="css shadow animation"
-            />
-          </a>
-          {/* JS Arrow Animation */}
-          <a
-            href="https://codepen.io/Akr-am/pen/gOXKemZ"
-            title="JS Arrow Animation"
-          >
-            <img
-              src="https://user-images.githubusercontent.com/69124951/197331108-aff1dcef-1b6a-4c1a-96b7-ea95b00ec482.gif"
-              width={278}
-              height="180px"
-              alt="JS Arrow Animation"
-            />
-          </a>
-          {/* Space CSS Animation*/}
-          <a
-            href="https://codepen.io/Akr-am/full/jOVvJGV"
-            title="Space CSS Animation"
-          >
-            <img
-              src="https://user-images.githubusercontent.com/69124951/197331573-90233082-d163-4d5c-bdeb-981ed62acf72.gif"
-              width={278}
-              height="180px"
-              alt="Space CSS Animation"
-            />
-          </a>
-          {/* Holy Grail Flexbox Layout */}
-          <a
-            href="https://codepen.io/Akr-am/pen/ZEBYWyX"
-            title="Holy Grail Flexbox Layout"
-          >
-            <img
-              src="https://user-images.githubusercontent.com/69124951/197389695-6c30e4a0-e19a-44e1-b2b6-89f0116455c6.gif"
-              width={278}
-              height="180px"
-              alt="Space CSS Animation"
-            />
-          </a>
-          {/* CSS Clock Animation*/}
-          <a
-            href="https://codepen.io/Akr-am/pen/abBMwBb"
-            title="CSS Clock Animation"
-          >
-            <img
-              src="https://user-images.githubusercontent.com/69124951/197332571-059ad37c-d4a5-4c5f-a214-c6da19f1f8f2.gif"
-              width="405px"
-              height="180px"
-              alt="CSS Clock Animation"
-            />
-          </a>
-          {/* JS Tooltip Effect*/}
-          <a
-            href="https://codepen.io/Akr-am/full/QWKyQZx"
-            title="JS Tooltip Effect"
-          >
-            <img
-              src="https://user-images.githubusercontent.com/69124951/197332978-1246b10e-0f0f-4dc4-9c3a-e9f3837efac0.gif"
-              width="150px"
-              height="180px"
-              alt="CSS Clock Animation"
-            />
-          </a>
+          <div className="flex gap-2 items-center justify-center flex-wrap">
+            <a
+              href="https://codepen.io/Akr-am/pen/JjvedzJ"
+              title="CSS Shadow Animation"
+            >
+              <img
+                src="https://user-images.githubusercontent.com/69124951/197283827-24c8ffa8-c3ca-4bf6-ad7e-14449fac5cf7.gif"
+                width={278}
+                height="180px"
+                alt="css shadow animation"
+              />
+            </a>
+            {/* JS Arrow Animation */}
+            <a
+              href="https://codepen.io/Akr-am/pen/gOXKemZ"
+              title="JS Arrow Animation"
+            >
+              <img
+                src="https://user-images.githubusercontent.com/69124951/197331108-aff1dcef-1b6a-4c1a-96b7-ea95b00ec482.gif"
+                width={278}
+                height="180px"
+                alt="JS Arrow Animation"
+              />
+            </a>
+            {/* Space CSS Animation*/}
+            <a
+              href="https://codepen.io/Akr-am/full/jOVvJGV"
+              title="Space CSS Animation"
+            >
+              <img
+                src="https://user-images.githubusercontent.com/69124951/197331573-90233082-d163-4d5c-bdeb-981ed62acf72.gif"
+                width={278}
+                height="180px"
+                alt="Space CSS Animation"
+              />
+            </a>
+            {/* Holy Grail Flexbox Layout */}
+            <a
+              href="https://codepen.io/Akr-am/pen/ZEBYWyX"
+              title="Holy Grail Flexbox Layout"
+            >
+              <img
+                src="https://user-images.githubusercontent.com/69124951/197389695-6c30e4a0-e19a-44e1-b2b6-89f0116455c6.gif"
+                width={278}
+                height="180px"
+                alt="Space CSS Animation"
+              />
+            </a>
+            {/* CSS Clock Animation*/}
+            <a
+              href="https://codepen.io/Akr-am/pen/abBMwBb"
+              title="CSS Clock Animation"
+            >
+              <img
+                src="https://user-images.githubusercontent.com/69124951/197332571-059ad37c-d4a5-4c5f-a214-c6da19f1f8f2.gif"
+                width="405px"
+                height="180px"
+                alt="CSS Clock Animation"
+              />
+            </a>
+            {/* JS Tooltip Effect*/}
+            <a
+              href="https://codepen.io/Akr-am/full/QWKyQZx"
+              title="JS Tooltip Effect"
+            >
+              <img
+                src="https://user-images.githubusercontent.com/69124951/197332978-1246b10e-0f0f-4dc4-9c3a-e9f3837efac0.gif"
+                width="150px"
+                height="180px"
+                alt="CSS Clock Animation"
+              />
+            </a>
+          </div>
           ## 🔥 Streak stats
           {/* GitHub Readme Streak Stats - https://github.com/DenverCoder1/github-readme-streak-stats */}
         </p>

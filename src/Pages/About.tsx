@@ -19,6 +19,19 @@ const About = ({ onSidebarHide }) => {
   }, []);
   return (
     <>
+      <PageTitle
+        className={""}
+        onSidebarHide={onSidebarHide}
+        title="About"
+        subtitle={
+          <>
+            <span className="text-green-500">Personal Info</span>
+          </>
+        }
+        is_premium={false}
+        premium_star="Personal Info"
+      />
+      <UserBioCard userInfo={userInfo} />
       <Profile />
     </>
     // <>
