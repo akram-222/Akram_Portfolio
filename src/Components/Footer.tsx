@@ -6,9 +6,9 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="https://flowbite.com" className="flex items-center">
-              <img src={logo} className="mr-3 h-8" alt="FlowBite Logo" />
+              <img src={logo} className="-mr-1 h-8" alt="FlowBite Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Akram A. Abdelbasir
+                kram A. Abdelbasir
               </span>
             </a>
           </div>
