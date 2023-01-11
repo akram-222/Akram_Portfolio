@@ -1,5 +1,8 @@
 import FollowersList from "../Components/FollowersList";
-import { frameworksAndLibraries } from "../Utils/localeData/frameworksAndLibraries";
+import {
+  databasesAndCloudHoisting,
+  frameworksAndLibraries,
+} from "../Utils/localeData/frameworksAndLibraries";
 const Profile = () => {
   return (
     <>
@@ -337,7 +340,7 @@ const Profile = () => {
         </h3>
         <div className="ml-5 flex gap-2 flex-wrap ml-8">
           {frameworksAndLibraries?.map((item) => (
-            <img alt="Material Design" src={item} />
+            <img alt="frameworks and libraries" src={item} />
           ))}
         </div>
 
@@ -348,36 +351,9 @@ const Profile = () => {
           </em>
         </h3>
         <div className="ml-5 flex flex-wrap gap-2">
-          <a href="#">
-            <img
-              alt="Microsoft_Access"
-              src="https://img.shields.io/badge/Microsoft_Access-A4373A?logo=microsoft-access&logoColor=white"
-            />
-          </a>
-          <a href="#">
-            <img
-              alt="GitHub Pages"
-              src="https://img.shields.io/badge/GitHub%20Pages-327FC7.svg?logo=github&logoColor=white"
-            />
-          </a>
-          <a href="#">
-            <img
-              alt="Notion"
-              src="https://img.shields.io/badge/Notion-010101.svg?logo=notion&logoColor=white"
-            />
-          </a>
-          <a href="#">
-            <img
-              alt="Firebase"
-              src="https://img.shields.io/badge/Firbase-010101.svg?logo=firebase&logoColor=yellow"
-            />
-          </a>
-          <a href="#">
-            <img
-              alt="netlify"
-              src="https://img.shields.io/badge/Netlify-010101.svg?logo=netlify&logoColor=blue"
-            />
-          </a>
+          {databasesAndCloudHoisting?.map((item) => (
+            <img alt="frameworks and libraries" src={item} />
+          ))}
         </div>
 
         <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
