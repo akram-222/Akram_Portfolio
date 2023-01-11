@@ -15,6 +15,7 @@ const ProjectItem = ({
   language,
   fork,
   visibility,
+  id,
   hasIssues,
   forksCount,
   i,
@@ -23,13 +24,16 @@ const ProjectItem = ({
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
-    <tr className="hover:bg-[#050708]/20">
-      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
-        <div className="flex items-center">
-          {indexingSys}. {name.replace("-", " ")}
+    <tr className="group hover:bg-[#050708]/20">
+      <td className="sm:p-3 py-2 px-1 border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:group-hover:border-l-blue-400 dark:border-gray-600/20">
+        <div className="flex  items-center">
+          {indexingSys}. {name}
+          <em className="ml-2 text-yellow-600 hidden lg:inline opacity-0 group-hover:opacity-100">
+            #{id}
+          </em>
         </div>
       </td>
-      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
         <div className="flex">
           {fork ? (
             <>
@@ -59,7 +63,7 @@ const ProjectItem = ({
         </div>
       </td>
 
-      <td className=" sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+      <td className=" sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
         <span className="text-xs text-gray-600 mr-1">{forksCount}</span>
         <BiGitRepoForked
           size={18}
@@ -74,12 +78,20 @@ const ProjectItem = ({
           />
         )} */}
         {hasIssues ? (
-          <VscIssues size={18} className="inline dark:text-green-500 mx-1" />
+          <VscIssues
+            data-hint="has open issues"
+            size={18}
+            className="showHint inline dark:text-green-500 mx-1"
+          />
         ) : (
-          <VscIssueDraft size={18} className="inline dark:text-red-500 mx-1" />
+          <VscIssueDraft
+            data-hint="has no issues"
+            size={18}
+            className="showHint inline dark:text-red-500 mx-1"
+          />
         )}
       </td>
-      <td className="flex sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+      <td className="flex sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
         <div className="flex items-center">
           <div className="sm:flex hidden flex-col">
             {new Date(createdAt).toLocaleDateString("en-US", {
@@ -95,7 +107,7 @@ const ProjectItem = ({
             </div>
           </div>
           {/* <BsCalendarDate size={18} /> */}
-          <span className="sm:hidden p-1 rounded border-gray-600/40">
+          <span className="sm:hidden p-1 border bg-card rounded border-gray-600/30">
             {new Date(createdAt).toLocaleDateString("en-US", {
               day: "2-digit",
             })}

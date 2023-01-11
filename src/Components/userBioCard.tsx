@@ -1,45 +1,120 @@
 const UserBioCard = ({ userInfo }) => {
   return (
     <>
-      <div className="flex flex-col gap-1 text-center items-center">
+      <div className="flex w-full flex-wrap dark:bg-card p-10 rounded-lg">
+        <h1 className="flex w-full mb-5 gap-2 justify-start items-center text-3xl text-white font-bold">
+          Welcome to Akram's profile!
+          <img
+            src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
+            width={28}
+            alt="wavy hand"
+          />
+        </h1>
         <img
-          className="h-32 w-32 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow mb-4"
+          className="h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow"
           src={userInfo.avatar_url}
           alt=""
         />
-        <p className="font-semibold">{userInfo.name}</p>
-        <div className="text-sm leading-normal text-gray-400 flex justify-center">
-          <svg
-            viewBox="0 0 24 24"
-            className="mr-1"
-            width="16"
-            height="16"
-            stroke="currentColor"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          {userInfo.location}
-        </div>
-      </div>
-      <div className="flex justify-center items-center gap-2 my-3">
-        <div className="font-semibold text-center mx-4">
-          <p className="dark:text-blue-400 font-bold">
-            {userInfo.public_repos}
-          </p>
-          <span className="text-gray-400">Repos</span>
-        </div>
-        <div className="font-semibold text-center mx-4">
-          <p className="dark:text-blue-400 font-bold">{userInfo.followers}</p>
-          <span className="text-gray-400">Followers</span>
-        </div>
-        <div className="font-semibold text-center mx-4">
-          <p className="dark:text-blue-400 font-bold">{userInfo.following}</p>
-          <span className="text-gray-400">Folowing</span>
+
+        <div className="flex-grow gap-6 inline-flex flex-1 ">
+          {/*Previous font: Silkscreen*/}
+          <div>
+            {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
+            <p className="text-center">
+              <img
+                className="m-auto"
+                src="https://readme-typing-svg.herokuapp.com?font=Fira+code&size=22&duration=2000&pause=1000&color=DDE43F&background=2A2E3424&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;Blogger+%26+Content+Writer;Always+learning+new+things"
+                alt="auto-typing"
+              />
+            </p>
+            {/* Social icons section */}
+
+           
+          </div>
+          <div className="">
+             <div className="flex flex-wrap gap-2">
+              <h2 className="text-xl w-full border-b border-gray-600/30">
+                Statistics
+              </h2>
+              <div className="font-semibold text-center mx-4">
+                <p className="dark:text-blue-400 font-bold">
+                  {userInfo.public_repos}
+                </p>
+                <span className="text-gray-400">Repos</span>
+              </div>
+              <div className="font-semibold text-center mx-4">
+                <p className="dark:text-blue-400 font-bold">
+                  {userInfo.followers}
+                </p>
+                <span className="text-gray-400">Followers</span>
+              </div>
+              <div className="font-semibold text-center mx-4">
+                <p className="dark:text-blue-400 font-bold">
+                  {userInfo.following}
+                </p>
+                <span className="text-gray-400">Folowing</span>
+              </div>
+            </div>
+            {/* LinkedIn */}
+            <h2 className="text-xl border-b my-4 border-gray-600/30">
+              Contact with me
+            </h2>
+            <div className="socials text-center flex items-center flex-wrap self-start gap-2">
+              <a href="https://www.linkedin.com/in/ak-ram/">
+                <img
+                  className=""
+                  alt="Linkedin"
+                  title="Linkedin"
+                  src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white"
+                />
+              </a>
+              {/* Leetcode */}
+              <a href="https://www.leetcode.com/Ak-ram">
+                <img
+                  className=""
+                  alt="Leetcode"
+                  title="Blog"
+                  src="https://img.shields.io/badge/-LeetCode-FFA116?logo=LeetCode&logoColor=black"
+                />
+              </a>
+              {/* Medium */}
+              <a href="https://dev.to/akram_ak">
+                <img
+                  className=""
+                  alt="Dev.to"
+                  title="Blog"
+                  src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
+                />
+              </a>
+              {/* Stackoverflow */}
+              <a href="https://stackoverflow.com/users/14151211/akram-ashraf">
+                <img
+                  className=""
+                  alt="Stackover flow"
+                  title="Stackover flow"
+                  src="https://aleen42.github.io/badges/src/stackoverflow.svg"
+                />
+              </a>
+              {/* Gmail */}
+              <a href="mailto:ashrfakrm64@gmail.com">
+                <img
+                  className=""
+                  alt="Gmail"
+                  title="Mail me"
+                  src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
+                />
+              </a>
+              {/* Whats' app */}
+              {/*   <a href='https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale'> */}
+              <a href="https://wa.me/00201158541832?text=Hi Akram 👋, I'm Interest to work with you">
+                <img
+                  alt="Whats' app"
+                  title="Msg me"
+                  src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>

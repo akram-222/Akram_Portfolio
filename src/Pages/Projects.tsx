@@ -134,6 +134,7 @@ const Projects = ({ onSidebarHide }) => {
                       <>
                         <ProjectItem
                           name={name}
+                          id={id}
                           language={language}
                           key={id + i}
                           fork={fork}
