@@ -1,5 +1,11 @@
 import FollowersList from "../Components/FollowersList";
 import ProfileSubSection from "../Components/profileSubSection";
+import {
+  extensions,
+  htmlRepos,
+  reactRepos,
+  topContributedRepos,
+} from "../Utils/localeData/repos";
 import { tools } from "../Utils/localeData/tools";
 const Profile = () => {
   return (
@@ -68,106 +74,51 @@ const Profile = () => {
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>
+        
+{/*         
         <blockquote>
           <h3 className="ml-4 mt-5 mb-2">1. VS Code Snippets Repos</h3>
         </blockquote>
         <div className="ml-8">
-          <a href="https://github.com/Ak-ram/scss-helpers">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=scss-helpers&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-scss-helpers-repo"
-            />
-          </a>
-        </div>
+          {extensions?.map((item) => (
+            <a href={`https://github.com/Ak-ram/${item}`}>
+              <img
+                width={278}
+                src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${item}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true`}
+                alt="github-social-media-repo"
+              />
+            </a>
+          ))}
+        </div> */}
 
         <blockquote>
           <h3 className="ml-4 mt-5 mb-2">2. ReactJS Repos</h3>
         </blockquote>
         <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
-          <a href="https://github.com/Ak-ram/dropit">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=dropit&theme=react&bg_color=171717&title_color=F85D7F&hide_border=false&border_color=F85D7F&icon_color=F8D866&show_icons=true"
-              alt="github-dropit-webapp"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/Moviideck">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Moviideck&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-Moviideck-repo"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/quran-player">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=quran-player&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-quran-player-repo"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/todoist">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=todoist&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-todoist-repo"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/flexbox-playground">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=flexbox-playground&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-flexbox-playground-repo"
-            />
-          </a>
+          {reactRepos?.map((item) => (
+            <a href={`https://github.com/Ak-ram/${item}`}>
+              <img
+                width={278}
+                src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${item}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true`}
+                alt="github-social-media-repo"
+              />
+            </a>
+          ))}
         </div>
 
         <blockquote>
           <h3 className="ml-4 mt-5 mb-2">3. HTML, CSS, &amp; JS Repos</h3>
         </blockquote>
         <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
-          <a href="https://github.com/Ak-ram/Portfolio">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Portfolio&theme=react&bg_color=171717&title_color=F85D7F&hide_border=false&border_color=F85D7F&icon_color=F8D866&show_icons=true"
-              alt="github-Portfolio-repo"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/social-media">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=social-media&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-social-media-repo"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/zoom-image-when-hovering">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=zoom-image-when-hovering&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-zoom-image-when-hovering-repo"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/Arrow-Propagation">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Arrow-Propagation&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-Arrow-Propagation-repo"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/bookbia">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=bookbia&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-bookbia-repo"
-            />
-          </a>
-          <a href="https://github.com/Ak-ram/Ctyptex">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Ctyptex&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-Ctyptex-repo"
-            />
-          </a>
+          {Object.keys(htmlRepos)?.map((item) => (
+            <a href={`https://github.com/Ak-ram/${item}`}>
+              <img
+                width={278}
+                src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${htmlRepos[item]}`}
+                alt="github-social-media-repo"
+              />
+            </a>
+          ))}
         </div>
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📕 Top projects I've contributed to
@@ -175,23 +126,15 @@ const Profile = () => {
         {/* Small repo cards https://github.com/DenverCoder1/github-readme-stats (fork of anuraghazra/github-readme-stats) */}
         <div className="">
           <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
-            <a
-              href="https://github.com/opensourcedesign
-/opensourcedesign.github.io"
-            >
-              <img
-                width={278}
-                src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=opensourcedesign&repo=opensourcedesign.github.io&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-                alt="github-readme-stats"
-              />
-            </a>
-            <a href="https://github.com/firstcontributions/first-contributions">
-              <img
-                width={278}
-                src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=firstcontributions&repo=first-contributions&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-                alt="shields"
-              />
-            </a>
+            {Object.keys(topContributedRepos)?.map((item) => (
+              <a href={`https://github.com/${item}`}>
+                <img
+                  width={278}
+                  src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${topContributedRepos[item]}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true`}
+                  alt="github-social-media-repo"
+                />
+              </a>
+            ))}
           </div>
           <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
             🚀 Some of my Pens
