@@ -3,7 +3,7 @@ import sidebarItems from "../Components/SidebarItems";
 const NotFoundRoute = () => {
   const navigate = useNavigate();
   return (
-    <div className="h-screen">
+    <div className="h-screen w-full">
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full  p-10">
         <div className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold">
