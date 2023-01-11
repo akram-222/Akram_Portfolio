@@ -44,7 +44,7 @@ const App = () => {
             <div className="w-full hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
               .
             </div>
-            <div className="relative flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
+            <div className="relative flex-grow flex flex-wrap content-start p-2">
               <Routes>
                 {isLogging ? (
                   <Route
