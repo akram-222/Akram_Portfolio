@@ -249,7 +249,7 @@ const Profile = () => {
             <a
               href="https://codepen.io/Akr-am/pen/abBMwBb"
               title="CSS Clock Animation"
-              className="w-[46%] h-48"
+              className="w-[49.5%] h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197332571-059ad37c-d4a5-4c5f-a214-c6da19f1f8f2.gif"
