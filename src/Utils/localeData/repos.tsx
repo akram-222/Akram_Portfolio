@@ -1,12 +1,11 @@
-export const htmlRepos = {
-  Portfolio: "Portfolio&theme=react",
-  "social-media": "social-media&theme=react",
-
-  "zoom-image-when-hovering": "zoom-image-when-hovering&theme=react",
-  "Arrow-Propagation": "Arrow-Propagation&theme=react",
-  bookbia: "bookbia&theme=react",
-  Ctyptex: "Ctyptex&theme=react",
-};
+export const htmlRepos = [
+  "Portfolio",
+  "social-media",
+  "zoom-image-when-hovering",
+  "Arrow-Propagation",
+  "bookbia",
+  "Ctyptex",
+];
 export const topContributedRepos = {
   "opensourcedesign/opensourcedesign.github.io":
     "opensourcedesign&repo=opensourcedesign.github.io",
@@ -23,3 +22,9 @@ export const reactRepos = [
 ];
 
 export const extensions: string[] = ["scss-helpers"];
+
+export const allRepos = {
+  "1. VS Code Snippets Repos": extensions,
+  "2. ReactJS Repos": reactRepos,
+  "3. HTML, CSS & JS": htmlRepos,
+};

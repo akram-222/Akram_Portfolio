@@ -1,12 +1,7 @@
 import FollowersList from "../Components/FollowersList";
 import ProfileSubSection from "../Components/profileSubSection";
 import ProfileSubSection2 from "../Components/profileSubSection2";
-import {
-  extensions,
-  htmlRepos,
-  reactRepos,
-  topContributedRepos,
-} from "../Utils/localeData/repos";
+import { allRepos, topContributedRepos } from "../Utils/localeData/repos";
 import { tools } from "../Utils/localeData/tools";
 const Profile = () => {
   return (
@@ -75,25 +70,10 @@ const Profile = () => {
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>
-        <ProfileSubSection2
-          h3Content="1. VS Code Snippets Repos"
-          list={extensions}
-        />
-        <ProfileSubSection2 h3Content="2. ReactJS Repos" list={reactRepos} />
-        <blockquote>
-          <h3 className="ml-4 mt-5 mb-2"></h3>
-        </blockquote>
-        <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
-          {Object.keys(htmlRepos)?.map((item) => (
-            <a href={`https://github.com/Ak-ram/${item}`}>
-              <img
-                width={278}
-                src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${htmlRepos[item]}`}
-                alt="github-social-media-repo"
-              />
-            </a>
-          ))}
-        </div>
+        {Object.keys(allRepos)?.map((item) => (
+          <ProfileSubSection2 h3Content={item} list={allRepos[item]} />
+        ))}
+
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📕 Top projects I've contributed to
         </h2>
