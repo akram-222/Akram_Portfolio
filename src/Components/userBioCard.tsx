@@ -11,7 +11,7 @@ const UserBioCard = ({ userInfo }) => {
           />
         </h1>
         <img
-          className="h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow mb-4"
+          className="h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow"
           src={userInfo.avatar_url}
           alt=""
         />
@@ -54,6 +54,7 @@ const UserBioCard = ({ userInfo }) => {
             {/* LinkedIn */}
             <a href="https://www.linkedin.com/in/ak-ram/">
               <img
+                className=""
                 alt="Linkedin"
                 title="Linkedin"
                 src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white"
@@ -62,6 +63,7 @@ const UserBioCard = ({ userInfo }) => {
             {/* Leetcode */}
             <a href="https://www.leetcode.com/Ak-ram">
               <img
+                className=""
                 alt="Leetcode"
                 title="Blog"
                 src="https://img.shields.io/badge/-LeetCode-FFA116?logo=LeetCode&logoColor=black"
@@ -70,6 +72,7 @@ const UserBioCard = ({ userInfo }) => {
             {/* Medium */}
             <a href="https://dev.to/akram_ak">
               <img
+                className=""
                 alt="Dev.to"
                 title="Blog"
                 src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
@@ -78,6 +81,7 @@ const UserBioCard = ({ userInfo }) => {
             {/* Stackoverflow */}
             <a href="https://stackoverflow.com/users/14151211/akram-ashraf">
               <img
+                className=""
                 alt="Stackover flow"
                 title="Stackover flow"
                 src="https://aleen42.github.io/badges/src/stackoverflow.svg"
@@ -86,6 +90,7 @@ const UserBioCard = ({ userInfo }) => {
             {/* Gmail */}
             <a href="mailto:ashrfakrm64@gmail.com">
               <img
+                className=""
                 alt="Gmail"
                 title="Mail me"
                 src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
