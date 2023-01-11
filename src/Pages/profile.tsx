@@ -8,21 +8,31 @@ const Profile = () => {
           ⚡ Recent GitHub Activity
         </h2>
         {/*START_SECTION:activity*/}
-        <ol className="ml-4">
+        <ol className="ml-4 text-gray-400">
           <li>
-           1. 🎉 Contribute in{" "}
-            <a href="https://github.com/Ak-ram/Frontend-Interview-Questions">
+            1. 🎉 Contribute in
+            <a
+              className="text-blue-400 hover:underline"
+              href="https://github.com/Ak-ram/Frontend-Interview-Questions"
+            >
+              {" "}
               Frontend-Interview-Questions
             </a>{" "}
             from here{" "}
-            <a href="https://github.com/Ak-ram/Frontend-Interview-Questions/issues/3">
+            <a
+              className="text-blue-400 hover:underline"
+              href="https://github.com/Ak-ram/Frontend-Interview-Questions/issues/3"
+            >
               #3
             </a>
           </li>
           <li>
             <p>
-             2. ⌛ Build my Portfolio with{" "}
-              <a href="https://github.com/Ak-ram/Akram_Portfolio">
+              2. ⌛ Build my Portfolio with{" "}
+              <a
+                className="text-blue-400 hover:underline"
+                href="https://github.com/Ak-ram/Akram_Portfolio"
+              >
                 React/Typescript
               </a>
             </p>
