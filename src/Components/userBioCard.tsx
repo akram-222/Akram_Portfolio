@@ -12,7 +12,7 @@ const UserBioCard = ({ userInfo }) => {
         </h1>
        
 
-        <div className="flex-grow gap-6 inline-flex flex-1 ">
+        <div className="inline-flex justify-between">
           {/*Previous font: Silkscreen*/}
           <div>
              <img
@@ -32,7 +32,7 @@ const UserBioCard = ({ userInfo }) => {
 
            
           </div>
-          <div className="">
+          <div className="w-[45%]">
              <div className="flex flex-wrap gap-2">
               <h2 className="text-xl w-full border-b border-gray-600/30">
                 Statistics
