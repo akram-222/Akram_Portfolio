@@ -274,10 +274,13 @@ const Profile = () => {
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           🛠️ My favorite tools
         </h2>
-        <h3 className="my-4 text-lg text-white">
-          👨‍💻 Programming and markup languages
+        <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
+          👨‍💻 Programming and markup languages{" "}
+          <em className="opacity-0 group-hover:opacity-100 text-yellow-500">
+            #1
+          </em>
         </h3>
-        <p>
+        <div className="flex gap-2 flex-wrap">
           <a href="#">
             <img
               alt="CSS"
@@ -326,8 +329,10 @@ const Profile = () => {
               src="https://img.shields.io/badge/Markdown-000000.svg?logo=markdown&logoColor=white"
             />
           </a>
-        </p>
-        <h3 className="my-4 text-lg text-white">🧰 Frameworks and libraries</h3>
+        </div>
+        <h3 className="my-4 text-lg text-white">
+          #2 🧰 Frameworks and libraries
+        </h3>
         <p>
           <a href="#">
             <img
@@ -393,7 +398,7 @@ const Profile = () => {
             />
           </a>
         </p>
-        <h3 className="my-4 text-lg text-white">💻 Software and tools</h3>
+        <h3 className="my-4 text-lg text-white">#3 💻 Software and tools</h3>
         <p>
           <a href="#">
             <img
