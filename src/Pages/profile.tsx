@@ -13,12 +13,14 @@ const Profile = () => {
         {/*Previous font: Silkscreen*/}
         {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
         <p className="text-center">
-          <a href="https://github.com/DenverCoder1/readme-typing-svg">
-            <img src="https://readme-typing-svg.herokuapp.com?font=Fira+code&size=22&duration=2000&pause=1000&color=DDE43F&background=2A2E3424&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;Blogger+%26+Content+Writer;Always+learning+new+things" />
-          </a>
+          <img
+            className="m-auto"
+            src="https://readme-typing-svg.herokuapp.com?font=Fira+code&size=22&duration=2000&pause=1000&color=DDE43F&background=2A2E3424&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;Blogger+%26+Content+Writer;Always+learning+new+things"
+            alt="auto-typing"
+          />
         </p>
         {/* Social icons section */}
-        <p className="text-center">
+        <p className="text-center flex items-center justify-center gap-2">
           {/* LinkedIn */}
           <a href="https://www.linkedin.com/in/ak-ram/">
             <img
@@ -72,11 +74,13 @@ const Profile = () => {
         <p>
           <br />
         </p>
-        <h2 id="-recent-github-activity">⚡ Recent GitHub Activity</h2>
+        <h2 id="-recent-github-activity" className="text-2xl text-white">
+          ⚡ Recent GitHub Activity
+        </h2>
         {/*START_SECTION:activity*/}
         <ol>
           <li>
-            🎉 Contribute in{" "}
+            1. 🎉 Contribute in{" "}
             <a href="https://github.com/Ak-ram/Frontend-Interview-Questions">
               Frontend-Interview-Questions
             </a>{" "}
@@ -87,7 +91,7 @@ const Profile = () => {
           </li>
           <li>
             <p>
-              ⌛ Build my Portfolio with{" "}
+              2. ⌛ Build my Portfolio with{" "}
               <a href="https://github.com/Ak-ram/Akram_Portfolio">
                 React/Typescript
               </a>
@@ -95,8 +99,10 @@ const Profile = () => {
             {/*END_SECTION:activity*/}
           </li>
         </ol>
-        <h2 id="-follow-me">❤ Follow me</h2>
-        <p className="text-center">
+        <h2 className="text-2xl text-white mt-5" id="-follow-me">
+          ❤ Follow me
+        </h2>
+        <p className="text-center flex items-center justify-center">
           <a
             href="https://www.linkedin.com/in/ak-ram"
             title="Akram A. Abdelbasir linkedin profile"
@@ -117,7 +123,10 @@ const Profile = () => {
             />
           </a>
         </p>
-        <h2 id="-my-top-open-source-projects">
+        <h2
+          className="text-2xl text-white mt-5"
+          id="-my-top-open-source-projects"
+        >
           📘 My top open source projects
         </h2>
         {/* Repo info cards - https://github.com/anuraghazra/github-readme-stats */}
@@ -129,7 +138,9 @@ const Profile = () => {
             languages I used to develop them.
           </p>
           <img
+            className="m-auto"
             width={600}
+            alt="how to browse my repos"
             src="https://user-images.githubusercontent.com/69124951/191378302-f78fe10e-39c7-414a-abee-5bc84dd2d6e9.gif"
           />
         </div>
