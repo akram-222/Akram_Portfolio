@@ -1,16 +1,9 @@
 const UserBioCard = ({ userInfo }) => {
   return (
     <>
-      <div className="flex w-full dark:bg-card p-10 rounded-lg">
-        <div className="flex flex-col gap-1 text-center items-center">
-          <img
-            className="h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow mb-4"
-            src={userInfo.avatar_url}
-            alt=""
-          />
-        </div>
-        <div>
-          <h1 className="flex gap-2 justify-center items-center text-3xl text-white font-bold">
+      <div className="flex w-full flex-wrap dark:bg-card p-10 rounded-lg">
+          
+          <h1 className="flex w-full gap-2 justify-start items-center text-3xl text-white font-bold">
             Welcome to Akram's profile!
             <img
               src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
@@ -18,6 +11,13 @@ const UserBioCard = ({ userInfo }) => {
               alt="wavy hand"
             />
           </h1>
+          <img
+            className="h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow mb-4"
+            src={userInfo.avatar_url}
+            alt=""
+          />
+        
+        <div>
           {/*Previous font: Silkscreen*/}
           {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
           <p className="text-center">
