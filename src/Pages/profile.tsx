@@ -9,7 +9,6 @@ const Profile = () => {
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           ⚡ Recent GitHub Activity
         </h2>
-        {/*START_SECTION:activity*/}
         <ol className="ml-4 text-gray-400">
           <li>
             1. 🎉 Contribute in{" "}
@@ -172,24 +171,26 @@ const Profile = () => {
           📕 Top projects I've contributed to
         </h2>
         {/* Small repo cards https://github.com/DenverCoder1/github-readme-stats (fork of anuraghazra/github-readme-stats) */}
-        <div className="ml-5 flex flex-wrap items-center justify-start gap-3">
-          <a
-            href="https://github.com/opensourcedesign
+        <div className="">
+          <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
+            <a
+              href="https://github.com/opensourcedesign
 /opensourcedesign.github.io"
-          >
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=opensourcedesign&repo=opensourcedesign.github.io&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="github-readme-stats"
-            />
-          </a>
-          <a href="https://github.com/firstcontributions/first-contributions">
-            <img
-              width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=firstcontributions&repo=first-contributions&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
-              alt="shields"
-            />
-          </a>
+            >
+              <img
+                width={278}
+                src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=opensourcedesign&repo=opensourcedesign.github.io&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
+                alt="github-readme-stats"
+              />
+            </a>
+            <a href="https://github.com/firstcontributions/first-contributions">
+              <img
+                width={278}
+                src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=firstcontributions&repo=first-contributions&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true"
+                alt="shields"
+              />
+            </a>
+          </div>
           <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
             🚀 Some of my Pens
           </h2>
@@ -277,7 +278,7 @@ const Profile = () => {
             #1
           </em>
         </h3>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2 flex-wrap ml-8">
           <a href="#">
             <img
               alt="CSS"
@@ -333,7 +334,7 @@ const Profile = () => {
             #2
           </em>
         </h3>
-        <div className="ml-5 flex gap-2 flex-wrap">
+        <div className="ml-5 flex gap-2 flex-wrap ml-8">
           <a href="#">
             <img
               alt="React"
