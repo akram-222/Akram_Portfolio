@@ -330,10 +330,13 @@ const Profile = () => {
             />
           </a>
         </div>
-        <h3 className="my-4 text-lg text-white">
-          #2 🧰 Frameworks and libraries
+        <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
+          🧰 Frameworks and libraries
+          <em className="opacity-0 group-hover:opacity-100 text-yellow-500">
+            #2
+          </em>
         </h3>
-        <p>
+        <div className="flex gap-2 flex-wrap">
           <a href="#">
             <img
               alt="React"
@@ -364,9 +367,15 @@ const Profile = () => {
               src="https://img.shields.io/badge/Material%20Design-0081CB.svg?logo=material-design&logoColor=white"
             />
           </a>
-          ### 🗄️ Databases and cloud hosting
-        </p>
-        <p>
+        </div>
+
+        <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
+          🗄️ Databases and cloud hosting
+          <em className="opacity-0 group-hover:opacity-100 text-yellow-500">
+            #3
+          </em>
+        </h3>
+        <div className="flex flex-wrap gap-2">
           <a href="#">
             <img
               alt="Microsoft_Access"
@@ -397,9 +406,15 @@ const Profile = () => {
               src="https://img.shields.io/badge/Netlify-010101.svg?logo=netlify&logoColor=blue"
             />
           </a>
-        </p>
-        <h3 className="my-4 text-lg text-white">#3 💻 Software and tools</h3>
-        <p>
+        </div>
+
+        <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
+          💻 Software and tools
+          <em className="opacity-0 group-hover:opacity-100 text-yellow-500">
+            #4
+          </em>
+        </h3>
+        <div className="flex flex-wrap gap-2">
           <a href="#">
             <img
               alt="Postman"
@@ -454,7 +469,7 @@ const Profile = () => {
               src="https://img.shields.io/badge/WebStorm-000000?logo=WebStorm&logoColor=white"
             />
           </a>
-        </p>
+        </div>
       </div>
     </>
   );
