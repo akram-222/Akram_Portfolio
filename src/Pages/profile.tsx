@@ -10,12 +10,11 @@ const Profile = () => {
         {/*START_SECTION:activity*/}
         <ol className="ml-4 text-gray-400">
           <li>
-            1. 🎉 Contribute in
+            1. 🎉 Contribute in{" "}
             <a
               className="text-blue-400 hover:underline"
               href="https://github.com/Ak-ram/Frontend-Interview-Questions"
             >
-              {" "}
               Frontend-Interview-Questions
             </a>{" "}
             from here{" "}
@@ -40,7 +39,7 @@ const Profile = () => {
           </li>
         </ol>
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
-          ❤ Follow me
+          🧡 Follow me
         </h2>
         <p className="text-center flex items-center justify-center">
           <a
@@ -63,30 +62,10 @@ const Profile = () => {
             />
           </a>
         </p>
-        <h2
-          className="text-2xl text-white mt-5"
-          id="-my-top-open-source-projects"
-        >
+        <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>
-        {/* Repo info cards - https://github.com/anuraghazra/github-readme-stats */}
-        {/* Small repo cards (fork) - https://github.com/DenverCoder1/github-readme-stats */}
-        <div className="text-center">
-          <h3>Browse my Repos easly</h3>
-          <p>
-            As my repos grow, I organise them into categories based on the
-            languages I used to develop them.
-          </p>
-          <img
-            className="m-auto"
-            width={600}
-            alt="how to browse my repos"
-            src="https://user-images.githubusercontent.com/69124951/191378302-f78fe10e-39c7-414a-abee-5bc84dd2d6e9.gif"
-          />
-        </div>
-        <p>
-          <br />
-        </p>
+
         <blockquote>
           <h3 id="1-vs-code-snippets-repos">1. VS Code Snippets Repos</h3>
         </blockquote>
@@ -192,10 +171,7 @@ const Profile = () => {
             />
           </a>
         </p>
-        <h2
-          className="text-2xl text-white mt-5"
-          id="-top-projects-i-ve-contributed-to"
-        >
+        <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📕 Top projects I've contributed to
         </h2>
         {/* Small repo cards https://github.com/DenverCoder1/github-readme-stats (fork of anuraghazra/github-readme-stats) */}
@@ -217,7 +193,7 @@ const Profile = () => {
               alt="shields"
             />
           </a>
-          <h2 className="text-2xl text-white mt-5 w-full">
+          <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
             🚀 Some of my Pens
           </h2>
           {/* CSS Shadow Animation */}
@@ -294,21 +270,11 @@ const Profile = () => {
               />
             </a>
           </div>
-          ## 🔥 Streak stats
-          {/* GitHub Readme Streak Stats - https://github.com/DenverCoder1/github-readme-streak-stats */}
         </p>
-        <p className="text-center">
-          <a href="https://github.com/Ak-ram">
-            <img
-              title="🔥 Get streak stats for your profile at git.io/streak-stats"
-              alt="Akram's streak"
-              src="https://streak-stats.demolab.com/?user=Ak-ram&theme=monokai-metallian&hide_border=true"
-            />
-          </a>
-        </p>
-        {/* Some badges are from https://github.com/Ileriayo/markdown-badges */}
-        <h2 id="-my-favorite-tools">🛠️ My favorite tools</h2>
-        <h3 id="-programming-and-markup-languages">
+        <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
+          🛠️ My favorite tools
+        </h2>
+        <h3 className="my-4 text-lg text-white">
           👨‍💻 Programming and markup languages
         </h3>
         <p>
@@ -361,7 +327,7 @@ const Profile = () => {
             />
           </a>
         </p>
-        <h3 id="-frameworks-and-libraries">🧰 Frameworks and libraries</h3>
+        <h3 className="my-4 text-lg text-white">🧰 Frameworks and libraries</h3>
         <p>
           <a href="#">
             <img
@@ -427,7 +393,7 @@ const Profile = () => {
             />
           </a>
         </p>
-        <h3 id="-software-and-tools">💻 Software and tools</h3>
+        <h3 className="my-4 text-lg text-white">💻 Software and tools</h3>
         <p>
           <a href="#">
             <img
@@ -484,28 +450,6 @@ const Profile = () => {
             />
           </a>
         </p>
-        <h2 id="-github-stats">📊 Github stats</h2>
-        {/* https://github.com/anuraghazra/github-readme-stats */}
-        <details>
-          <summary>💻 GitHub Profile Stats</summary>
-          <br />
-          <a href="https://github.com/Ak-ram">
-            <img
-              alt="Akram's Github Stats"
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/?username=Ak-ram&show_icons=true&include_all_commits=true&count_private=true&theme=react&hide_border=true&bg_color=1F222E&title_color=F85D7F&icon_color=F8D866"
-              height="192px"
-            />
-          </a>
-          {/*   <a href="https://github.com/Ak-ram"><img alt="Akram's Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ak-ram&langs_count=8&layout=compact&theme=react&hide_border=true&bg_color=1F222E&title_color=F85D7F&icon_color=F8D866&hide=Jupyter%20Notebook" height="192px"/></a> */}
-          <br />
-          <b>Note:</b> Top languages is only a metric of the languages my public
-          code consists of and doesn't reflect experience or skill level.
-        </details>
-        {/* https://github.com/jamesgeorge007/github-activity-readme */}
-        {/* https://github.com/ashutosh00710/github-readme-activity-graph */}
-        {/* MY-GRAPH IS BROKEN FOR THAT TIME, SO I COMMENTED IT */}
-        {/* <a href="https://github.com/Ak-ram"><img alt="Akram's Activity Graph" src="https://activity-graph.herokuapp.com/graph/?username=Ak-ram&bg_color=1F222E&color=F8D866&line=F85D7F&point=FFFFFF&hide_border=true" /></a>
-         */}
       </div>
     </>
   );
