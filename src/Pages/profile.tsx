@@ -1,6 +1,4 @@
 import FollowersList from "../Components/FollowersList";
-import UserBioCard from "../Components/userBioCard";
-
 const Profile = () => {
   return (
     <>
@@ -69,7 +67,6 @@ const Profile = () => {
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>
-
         <blockquote>
           <h3 className="ml-4 mt-5 mb-2">1. VS Code Snippets Repos</h3>
         </blockquote>
