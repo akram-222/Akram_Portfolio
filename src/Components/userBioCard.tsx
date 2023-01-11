@@ -10,15 +10,16 @@ const UserBioCard = ({ userInfo }) => {
             alt="wavy hand"
           />
         </h1>
-        <img
-          className="h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow"
-          src={userInfo.avatar_url}
-          alt=""
-        />
+       
 
         <div className="flex-grow gap-6 inline-flex flex-1 ">
           {/*Previous font: Silkscreen*/}
           <div>
+             <img
+          className="m-auto h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow"
+          src={userInfo.avatar_url}
+          alt=""
+        />
             {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
             <p className="text-center">
               <img
