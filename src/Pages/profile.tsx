@@ -74,7 +74,7 @@ const Profile = () => {
           <a href="https://github.com/Ak-ram/scss-helpers">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=scss-helpers&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=scss-helpers&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-scss-helpers-repo"
             />
           </a>
@@ -87,35 +87,35 @@ const Profile = () => {
           <a href="https://github.com/Ak-ram/dropit">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=dropit&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=false&border_color=F85D7F&icon_color=F8D866&show_icons=true"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=dropit&theme=react&bg_color=171717&title_color=F85D7F&hide_border=false&border_color=F85D7F&icon_color=F8D866&show_icons=true"
               alt="github-dropit-webapp"
             />
           </a>
           <a href="https://github.com/Ak-ram/Moviideck">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Moviideck&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Moviideck&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-Moviideck-repo"
             />
           </a>
           <a href="https://github.com/Ak-ram/quran-player">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=quran-player&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=quran-player&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-quran-player-repo"
             />
           </a>
           <a href="https://github.com/Ak-ram/todoist">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=todoist&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=todoist&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-todoist-repo"
             />
           </a>
           <a href="https://github.com/Ak-ram/flexbox-playground">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=flexbox-playground&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=flexbox-playground&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-flexbox-playground-repo"
             />
           </a>
@@ -128,42 +128,42 @@ const Profile = () => {
           <a href="https://github.com/Ak-ram/Portfolio">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Portfolio&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=false&border_color=F85D7F&icon_color=F8D866&show_icons=true"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Portfolio&theme=react&bg_color=171717&title_color=F85D7F&hide_border=false&border_color=F85D7F&icon_color=F8D866&show_icons=true"
               alt="github-Portfolio-repo"
             />
           </a>
           <a href="https://github.com/Ak-ram/social-media">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=social-media&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=social-media&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-social-media-repo"
             />
           </a>
           <a href="https://github.com/Ak-ram/zoom-image-when-hovering">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=zoom-image-when-hovering&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=zoom-image-when-hovering&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-zoom-image-when-hovering-repo"
             />
           </a>
           <a href="https://github.com/Ak-ram/Arrow-Propagation">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Arrow-Propagation&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Arrow-Propagation&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-Arrow-Propagation-repo"
             />
           </a>
           <a href="https://github.com/Ak-ram/bookbia">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=bookbia&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=bookbia&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-bookbia-repo"
             />
           </a>
           <a href="https://github.com/Ak-ram/Ctyptex">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Ctyptex&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=Ctyptex&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-Ctyptex-repo"
             />
           </a>
@@ -179,14 +179,14 @@ const Profile = () => {
           >
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=opensourcedesign&repo=opensourcedesign.github.io&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=opensourcedesign&repo=opensourcedesign.github.io&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="github-readme-stats"
             />
           </a>
           <a href="https://github.com/firstcontributions/first-contributions">
             <img
               width={278}
-              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=firstcontributions&repo=first-contributions&theme=react&bg_color=1F222E&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
+              src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=firstcontributions&repo=first-contributions&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=false"
               alt="shields"
             />
           </a>
