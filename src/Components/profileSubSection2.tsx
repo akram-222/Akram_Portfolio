@@ -15,7 +15,7 @@ const ProfileSubSection2 = ({ h3Content, list }: reposList) => {
               width={278}
               src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${item}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=${
                 i === 0 ? false : true
-              }&icon_color=F8D866&show_icons=true`}
+              }&border_color=F85D7F&icon_color=F8D866&show_icons=true`}
               alt="github-social-media-repo"
             />
           </a>
