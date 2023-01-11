@@ -16,7 +16,7 @@ const UserBioCard = ({ userInfo }) => {
           alt=""
         />
 
-        <div className="flex-grow">
+        <div className="flex-grow inline-flex flex-1 items-center">
           {/*Previous font: Silkscreen*/}
           <div>
             {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
@@ -50,61 +50,56 @@ const UserBioCard = ({ userInfo }) => {
               </div>
             </div>
           </div>
-          <div>
-            <p className="text-center flex items-center justify-center gap-2">
-              {/* LinkedIn */}
-              <a href="https://www.linkedin.com/in/ak-ram/">
-                <img
-                  alt="Linkedin"
-                  title="Linkedin"
-                  src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white"
-                />
-              </a>
-              {/* Leetcode */}
-              <a href="https://www.leetcode.com/Ak-ram">
-                <img
-                  alt="Leetcode"
-                  title="Blog"
-                  src="https://img.shields.io/badge/-LeetCode-FFA116?logo=LeetCode&logoColor=black"
-                />
-              </a>
-              {/* Medium */}
-              <a href="https://dev.to/akram_ak">
-                <img
-                  alt="Dev.to"
-                  title="Blog"
-                  src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
-                />
-              </a>
-              {/* Stackoverflow */}
-              <a href="https://stackoverflow.com/users/14151211/akram-ashraf">
-                <img
-                  alt="Stackover flow"
-                  title="Stackover flow"
-                  src="https://aleen42.github.io/badges/src/stackoverflow.svg"
-                />
-              </a>
-              {/* Gmail */}
-              <a href="mailto:ashrfakrm64@gmail.com">
-                <img
-                  alt="Gmail"
-                  title="Mail me"
-                  src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
-                />
-              </a>
-              {/* Whats' app */}
-              {/*   <a href='https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale'> */}
-              <a href="https://wa.me/00201158541832?text=Hi Akram 👋, I'm Interest to work with you">
-                <img
-                  alt="Whats' app"
-                  title="Msg me"
-                  src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
-                />
-              </a>
-            </p>
-            <p>
-              <br />
-            </p>
+          <div className="text-center flex items-center justify-center gap-2">
+            {/* LinkedIn */}
+            <a href="https://www.linkedin.com/in/ak-ram/">
+              <img
+                alt="Linkedin"
+                title="Linkedin"
+                src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white"
+              />
+            </a>
+            {/* Leetcode */}
+            <a href="https://www.leetcode.com/Ak-ram">
+              <img
+                alt="Leetcode"
+                title="Blog"
+                src="https://img.shields.io/badge/-LeetCode-FFA116?logo=LeetCode&logoColor=black"
+              />
+            </a>
+            {/* Medium */}
+            <a href="https://dev.to/akram_ak">
+              <img
+                alt="Dev.to"
+                title="Blog"
+                src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
+              />
+            </a>
+            {/* Stackoverflow */}
+            <a href="https://stackoverflow.com/users/14151211/akram-ashraf">
+              <img
+                alt="Stackover flow"
+                title="Stackover flow"
+                src="https://aleen42.github.io/badges/src/stackoverflow.svg"
+              />
+            </a>
+            {/* Gmail */}
+            <a href="mailto:ashrfakrm64@gmail.com">
+              <img
+                alt="Gmail"
+                title="Mail me"
+                src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
+              />
+            </a>
+            {/* Whats' app */}
+            {/*   <a href='https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale'> */}
+            <a href="https://wa.me/00201158541832?text=Hi Akram 👋, I'm Interest to work with you">
+              <img
+                alt="Whats' app"
+                title="Msg me"
+                src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
+              />
+            </a>
           </div>
         </div>
       </div>
