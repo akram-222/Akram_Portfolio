@@ -13,6 +13,7 @@ import Blog from "./Pages/blog";
 import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
 import Login from "./Pages/Login";
 import About from "./Pages/About";
+import Footer from "./Components/Footer";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   const [isLogging, setIsLogging] = useState(false);
@@ -40,10 +41,10 @@ const App = () => {
             showSidebar={showSidebar}
           />
           <div className="flex w-full">
-            <div className="w-full h-screen hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
+            <div className="w-full hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
               .
             </div>
-            <div className="relative h-screen flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
+            <div className="relative flex-grow overflow-x-hidden overflow-auto flex flex-wrap content-start p-2">
               <Routes>
                 {isLogging ? (
                   <Route
@@ -141,6 +142,7 @@ const App = () => {
                 })}
                 <Route path="/*" element={<NotFoundRoute />} />
               </Routes>
+              <Footer />
             </div>
           </div>
         </BrowserRouter>
