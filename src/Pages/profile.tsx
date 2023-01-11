@@ -249,7 +249,7 @@ const Profile = () => {
             <a
               href="https://codepen.io/Akr-am/pen/abBMwBb"
               title="CSS Clock Animation"
-              className="w-[49.5%] h-48"
+              className="min-w-[32%] h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197332571-059ad37c-d4a5-4c5f-a214-c6da19f1f8f2.gif"
@@ -261,7 +261,7 @@ const Profile = () => {
             <a
               href="https://codepen.io/Akr-am/full/QWKyQZx"
               title="JS Tooltip Effect"
-              className="h-48"
+              className=" h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197332978-1246b10e-0f0f-4dc4-9c3a-e9f3837efac0.gif"
