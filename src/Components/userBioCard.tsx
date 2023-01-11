@@ -1,7 +1,7 @@
 const UserBioCard = ({ userInfo }) => {
   return (
     <>
-      <div className="flex w-full">
+      <div className="flex w-full dark:bg-card p-10 rounded-lg">
         <div className="flex flex-col gap-1 text-center items-center">
           <img
             className="h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow mb-4"
