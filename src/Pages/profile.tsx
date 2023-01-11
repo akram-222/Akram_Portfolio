@@ -3,7 +3,7 @@ import UserBioCard from "../Components/userBioCard";
 const Profile = () => {
   return (
     <>
-      <div className="w-full">
+      <div className="w-full mb-4">
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           ⚡ Recent GitHub Activity
         </h2>
@@ -197,76 +197,76 @@ const Profile = () => {
             🚀 Some of my Pens
           </h2>
           {/* CSS Shadow Animation */}
-          <div className="flex gap-2 items-center justify-center flex-wrap">
+          <div className="flex px-8 gap-2 items-center justify-center flex-wrap">
             <a
               href="https://codepen.io/Akr-am/pen/JjvedzJ"
               title="CSS Shadow Animation"
+              className="w-[32%] h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197283827-24c8ffa8-c3ca-4bf6-ad7e-14449fac5cf7.gif"
-                width={278}
-                height="180px"
                 alt="css shadow animation"
+                className="w-full h-full"
               />
             </a>
             {/* JS Arrow Animation */}
             <a
               href="https://codepen.io/Akr-am/pen/gOXKemZ"
               title="JS Arrow Animation"
+              className="w-[32%] h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197331108-aff1dcef-1b6a-4c1a-96b7-ea95b00ec482.gif"
-                width={278}
-                height="180px"
                 alt="JS Arrow Animation"
+                className="w-full h-full"
               />
             </a>
             {/* Space CSS Animation*/}
             <a
               href="https://codepen.io/Akr-am/full/jOVvJGV"
               title="Space CSS Animation"
+              className="w-[32%] h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197331573-90233082-d163-4d5c-bdeb-981ed62acf72.gif"
-                width={278}
-                height="180px"
                 alt="Space CSS Animation"
+                className="w-full h-full"
               />
             </a>
             {/* Holy Grail Flexbox Layout */}
             <a
               href="https://codepen.io/Akr-am/pen/ZEBYWyX"
               title="Holy Grail Flexbox Layout"
+              className="w-[32%] h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197389695-6c30e4a0-e19a-44e1-b2b6-89f0116455c6.gif"
-                width={278}
-                height="180px"
                 alt="Space CSS Animation"
+                className="w-full h-full"
               />
             </a>
             {/* CSS Clock Animation*/}
             <a
               href="https://codepen.io/Akr-am/pen/abBMwBb"
               title="CSS Clock Animation"
+              className="w-[46%] h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197332571-059ad37c-d4a5-4c5f-a214-c6da19f1f8f2.gif"
-                width="405px"
-                height="180px"
                 alt="CSS Clock Animation"
+                className="w-full h-full"
               />
             </a>
             {/* JS Tooltip Effect*/}
             <a
               href="https://codepen.io/Akr-am/full/QWKyQZx"
               title="JS Tooltip Effect"
+              className="h-48"
             >
               <img
                 src="https://user-images.githubusercontent.com/69124951/197332978-1246b10e-0f0f-4dc4-9c3a-e9f3837efac0.gif"
-                width="150px"
-                height="180px"
                 alt="CSS Clock Animation"
+                className="w-full h-full"
               />
             </a>
           </div>
