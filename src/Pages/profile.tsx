@@ -1,12 +1,6 @@
 import FollowersList from "../Components/FollowersList";
 import ProfileSubSection from "../Components/profileSubSection";
-import {
-  databasesAndCloudHoisting,
-  frameworksAndLibraries,
-  programmingAndMarkupLanguages,
-  softwaresAndTools,
-  tools,
-} from "../Utils/localeData/tools";
+import { tools } from "../Utils/localeData/tools";
 const Profile = () => {
   return (
     <>
