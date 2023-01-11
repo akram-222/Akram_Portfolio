@@ -1,17 +1,14 @@
+import logo from "../assests/logo.png";
 const Footer = () => {
   return (
-    <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800">
+    <footer className="w-full p-4 bg-white sm:p-6 dark:bg-card">
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="https://flowbite.com" className="flex items-center">
-              <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="mr-3 h-8"
-                alt="FlowBite Logo"
-              />
+              <img src={logo} className="mr-3 h-8" alt="FlowBite Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Flowbite
+                Akram A. Abdelbasir
               </span>
             </a>
           </div>
@@ -23,7 +20,7 @@ const Footer = () => {
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
                   <a href="https://flowbite.com" className="hover:underline">
-                    Flowbite
+                    Dashboard
                   </a>
                 </li>
                 <li>
@@ -31,7 +28,7 @@ const Footer = () => {
                     href="https://tailwindcss.com/"
                     className="hover:underline"
                   >
-                    Tailwind CSS
+                    Projects
                   </a>
                 </li>
               </ul>
@@ -46,7 +43,7 @@ const Footer = () => {
                     href="https://github.com/themesberg/flowbite"
                     className="hover:underline "
                   >
-                    Github
+                    Blog
                   </a>
                 </li>
                 <li>
@@ -54,7 +51,7 @@ const Footer = () => {
                     href="https://discord.gg/4eeurUVvTy"
                     className="hover:underline"
                   >
-                    Discord
+                    About
                   </a>
                 </li>
               </ul>
@@ -66,12 +63,12 @@ const Footer = () => {
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
-                    Privacy Policy
+                    Status
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:underline">
-                    Terms &amp; Conditions
+                    Settings
                   </a>
                 </li>
               </ul>
