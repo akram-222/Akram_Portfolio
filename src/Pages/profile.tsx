@@ -1,4 +1,5 @@
 import FollowersList from "../Components/FollowersList";
+import ProfileSubSection from "../Components/profileSubSection";
 import {
   databasesAndCloudHoisting,
   frameworksAndLibraries,
@@ -278,52 +279,22 @@ const Profile = () => {
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           🛠️ My favorite tools
         </h2>
-        <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
-          👨‍💻 Programming and markup languages{" "}
-          <em className="opacity-0 group-hover:opacity-100 text-yellow-500">
-            #1
-          </em>
-        </h3>
-        <div className="flex gap-2 flex-wrap ml-8">
-          {programmingAndMarkupLanguages?.map((item) => (
-            <img alt="frameworks and libraries" src={item} />
-          ))}
-        </div>
-        <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
-          🧰 Frameworks and libraries
-          <em className="opacity-0 group-hover:opacity-100 text-yellow-500">
-            #2
-          </em>
-        </h3>
-        <div className="ml-5 flex gap-2 flex-wrap ml-8">
-          {frameworksAndLibraries?.map((item) => (
-            <img alt="frameworks and libraries" src={item} />
-          ))}
-        </div>
-
-        <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
-          🗄️ Databases and cloud hosting
-          <em className="opacity-0 group-hover:opacity-100 text-yellow-500">
-            #3
-          </em>
-        </h3>
-        <div className="ml-5 flex flex-wrap gap-2">
-          {databasesAndCloudHoisting?.map((item) => (
-            <img alt="frameworks and libraries" src={item} />
-          ))}
-        </div>
-
-        <h3 className="group my-4 text-lg text-white border-b inline-block border-gray-600/30">
-          💻 Software and tools
-          <em className="opacity-0 group-hover:opacity-100 text-yellow-500">
-            #4
-          </em>
-        </h3>
-        <div className="ml-5 flex flex-wrap gap-2">
-          {softwaresAndTools?.map((item) => (
-            <img alt="frameworks and libraries" src={item} />
-          ))}
-        </div>
+        <ProfileSubSection
+          h3Content={"👨‍💻 Programming and markup languages"}
+          list={programmingAndMarkupLanguages}
+        />
+        <ProfileSubSection
+          h3Content={"🧰 Frameworks and libraries"}
+          list={frameworksAndLibraries}
+        />
+        <ProfileSubSection
+          h3Content={"🗄️ Databases and cloud hosting"}
+          list={databasesAndCloudHoisting}
+        />
+        <ProfileSubSection
+          h3Content={"💻 Software and tools"}
+          list={softwaresAndTools}
+        />
       </div>
     </>
   );
