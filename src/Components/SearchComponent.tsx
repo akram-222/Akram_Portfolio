@@ -34,7 +34,7 @@ const SearchComponent = ({ list }) => {
   return (
     <div className="relative">
       <input
-        // onBlur={() => setIsHidden(true)}
+        onBlur={() => setTimeout(() => setIsHidden(true), 100)}
         type={"search"}
         onChange={(e) => filtering(e)}
         className="cursor-text h-9 flex items-center block px-2 py-1 overflow-hidden dark:text-white font-semibold w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -54,7 +54,7 @@ const SearchComponent = ({ list }) => {
           filteredList?.map((item, i: number) => (
             <li
               key={i}
-              className="group p-2 flex items-center gap-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20"
+              className="group slide-bottom p-2 flex items-center gap-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20"
               onClick={() => {
                 setSearchVal(item.name);
                 setIsHidden(true);
