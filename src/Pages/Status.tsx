@@ -24,13 +24,14 @@ const Status = ({ onSidebarHide }) => {
         is_premium={true}
         premium_star="Front-end"
       />
-      <div className="flex w-full relative">
+      <div className="flex w-full h-full relative">
         <aside className="">
           <CalendarEvents
             setEventsList={setEventsList}
             eventsList={eventsList}
           />
         </aside>
+        <div>Tasks will go here</div>
         {/* <Calendar daysClassName={""} /> */}
       </div>
     </>

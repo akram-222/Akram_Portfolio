@@ -54,7 +54,7 @@ const SearchComponent = ({ list }) => {
           filteredList?.map((item, i: number) => (
             <li
               key={i}
-              className="group p-2 flex items-center gap-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20"
+              className="group slide-bottom p-2 flex items-center gap-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20"
               onClick={() => {
                 setSearchVal(item.name);
                 setIsHidden(true);
