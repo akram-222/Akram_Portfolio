@@ -33,12 +33,13 @@ const SearchComponent = ({ list }) => {
 
   return (
     <div className="relative">
+      Quick Navigation :
       <input
         // onBlur={() => setIsHidden(true)}
         type={"search"}
         onChange={(e) => filtering(e)}
-        className="cursor-text h-9 flex items-center block px-2 py-1 overflow-hidden dark:text-white font-semibold w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        placeholder="Search..."
+        className="ml-3 mt-1 cursor-text h-9 flex items-center block px-2 py-1 overflow-hidden dark:text-white font-semibold w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="Project name..."
         ref={inputFeild}
         value={searchVal}
       />
