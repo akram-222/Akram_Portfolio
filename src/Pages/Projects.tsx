@@ -5,15 +5,10 @@ import ProjectItem from "../Components/projectItem";
 import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
-import { HiOutlineCalendar } from "react-icons/hi";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Combobox from "../Components/Combobox";
-import EmojiComponent from "../Components/emojiComponent";
+import SearchComponent from "../Components/emojiComponent";
 
 const Projects = ({ onSidebarHide }) => {
-  const [isHidden, setIsHidden] = useState(true);
-  const [isEmojiComponentHidden, setIsEmojiComponentHidden] = useState(true);
-
   const [repoConfig, setRepoConfig] = useState({ per_page: 12, page: 1 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
@@ -50,10 +45,7 @@ const Projects = ({ onSidebarHide }) => {
         <div className="projects-list w-full flex flex-wrap gap-2">
           <div className="w-full">
             <div className="flex relative items-center mb-7">
-              <EmojiComponent
-                isEmojiComponentHidden={isEmojiComponentHidden}
-                setIsEmojiComponentHidden={setIsEmojiComponentHidden}
-              />
+              <SearchComponent list={repos} />
               {/* <Combobox
                 options={[
                   "Name",
