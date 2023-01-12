@@ -18,7 +18,7 @@ const About = ({ onSidebarHide }) => {
     });
   }, []);
   return (
-    <>
+    <div className="p-2">
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}
@@ -33,7 +33,7 @@ const About = ({ onSidebarHide }) => {
       />
       <UserBioCard userInfo={userInfo} />
       <Profile />
-    </>
+    </div>
     // <>
     //   <PageTitle
     //     className={""}

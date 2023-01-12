@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Sidebar from "./Components/Sidebar";
 import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
@@ -44,7 +44,7 @@ const App = () => {
             <div className="w-full hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
               .
             </div>
-            <div className="relative flex-grow flex flex-wrap content-start p-2">
+            <div className="relative flex-grow flex flex-wrap content-start">
               <Routes>
                 {isLogging ? (
                   <Route

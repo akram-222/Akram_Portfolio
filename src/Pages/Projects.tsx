@@ -22,7 +22,7 @@ const Projects = ({ onSidebarHide }) => {
   }, [repoConfig]);
 
   return (
-    <div className=" flex-col items-start w-full flex-wrap">
+    <div className="p-2 flex-col items-start w-full flex-wrap">
       <PageTitle
         className={"mb-10 h-fit"}
         onSidebarHide={onSidebarHide}

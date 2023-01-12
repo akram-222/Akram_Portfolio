@@ -10,7 +10,7 @@ const Status = ({ onSidebarHide }) => {
   }
   const [eventsList, setEventsList] = useState<eventType[]>([]);
   return (
-    <>
+    <div className="p-2">
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}
@@ -34,7 +34,7 @@ const Status = ({ onSidebarHide }) => {
         <div>Tasks will go here</div>
         {/* <Calendar daysClassName={""} /> */}
       </div>
-    </>
+    </div>
   );
 };
 
