@@ -126,7 +126,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
                   />
                   <BsKey
                     size={20}
-                    className={`dark:text-${colorState}-500 mt-1  top-1/2 left-2`}
+                    className={`dark:text-${colorState}-500 mt-1 absolute top-1/2 left-2`}
                   />
                 </div>
                 {isIdentical ? (
