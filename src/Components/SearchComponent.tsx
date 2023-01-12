@@ -9,6 +9,7 @@ import {
 const SearchComponent = ({ list }) => {
   const [filteredList, setFilteredList] = useState(list);
   const [isHidden, setIsHidden] = useState<boolean>(true);
+  const [isIdentical, setIsIdentical] = useState<boolean>(false);
   const inputFeild = useRef<HTMLInputElement | null>(null);
 
   const filtering = (event: React.SyntheticEvent) => {
@@ -16,7 +17,12 @@ const SearchComponent = ({ list }) => {
     let input = (event.currentTarget as HTMLInputElement)!.value.toLowerCase();
     let res = list.filter((item) => {
       let itemName = item.name.toLowerCase();
-      if (itemName === input) console.log("ddd");
+      if (itemName === input) {
+        setIsIdentical(true);
+      } else {
+        setIsIdentical(false);
+      }
+
       return itemName.includes(input);
     });
 
@@ -49,7 +55,11 @@ const SearchComponent = ({ list }) => {
                 size={8}
               />{" "}
               {item.name}
-              <span className="flex gap-1  text-green-400 inline-block ml-auto border-b border-b-gray-600/30 text-xs">
+              <span
+                className={`${
+                  isIdentical ? "" : "hidden"
+                } flex gap-1 text-green-400 inline-block ml-auto border-b border-b-gray-600/30 text-xs`}
+              >
                 <BsCheckCircleFill size={13} /> Identical
               </span>
             </li>
