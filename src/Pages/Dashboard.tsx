@@ -11,7 +11,6 @@ import Chart from "../Components/Chart";
 const Dashboard = ({ onSidebarHide }) => {
   return (
     <>
-      {/* <div className="w-full sm:flex p-2 items-end"> */}
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}
