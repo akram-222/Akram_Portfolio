@@ -19,13 +19,15 @@ const SearchComponent = ({ list }) => {
       <input
         type={"search"}
         onInput={(e) => filtering(e)}
-        className="cursor-text h-9 flex items-center block mr-4 px-2 py-1 overflow-hidden dark:text-white font-semibold w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        className="cursor-text h-9 flex items-center block px-2 py-1 overflow-hidden dark:text-white font-semibold w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="Search..."
         ref={inputFeild}
       />
-      <ul className="absolute">
+      <ul className="absolute mt-2 bg-white w-full rounded">
         {filteredList?.map((item) => (
-          <li>{item.name}</li>
+          <li className="p-2 cursor-pointer text-sm hover:bg-gray-700/20">
+            {item.name}
+          </li>
         ))}
       </ul>
     </div>
