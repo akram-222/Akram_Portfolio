@@ -30,18 +30,24 @@ const SearchComponent = ({ list }) => {
           isHidden ? "hidden" : ""
         } absolute z-20 mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
       >
-        <span className="text-xs text-red-400 block px-3 pt-3 pb-2 border-b border-b-gray-600/30">
+        <span className="text-xs text-yellow-400 block px-3 pt-3 pb-2 border-b border-b-gray-600/30">
           Results: {filteredList.length}
         </span>
-        {filteredList?.map((item) => (
-          <li className="group p-2 flex items-center gap-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20">
-            <BsCircleFill
-              className="text-gray-700 group-hover:text-green-400"
-              size={8}
-            />{" "}
-            {item.name}
-          </li>
-        ))}
+        {filteredList.length ? (
+          filteredList?.map((item) => (
+            <li className="group p-2 flex items-center gap-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20">
+              <BsCircleFill
+                className="text-gray-700 group-hover:text-green-400"
+                size={8}
+              />{" "}
+              {item.name}
+            </li>
+          ))
+        ) : (
+          <span className="p-1.5 block text-xs text-red-400 text-center">
+            No items, try with another name
+          </span>
+        )}
       </ul>
     </div>
   );
