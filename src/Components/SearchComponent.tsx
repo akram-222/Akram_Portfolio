@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { BsCircleFill } from "react-icons/bs";
 
 const SearchComponent = ({ list }) => {
   const [filteredList, setFilteredList] = useState(list);
@@ -27,13 +28,17 @@ const SearchComponent = ({ list }) => {
       <ul
         className={` ${
           isHidden ? "hidden" : ""
-        } absolute mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
+        } absolute z-20 mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
       >
         <span className="text-xs text-red-400 block px-3 pt-3 pb-2 border-b border-b-gray-600/30">
           Results: {filteredList.length}
         </span>
         {filteredList?.map((item) => (
-          <li className="p-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20">
+          <li className="group p-2 flex items-center gap-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20">
+            <BsCircleFill
+              className="text-gray-700 group-hover:text-green-400"
+              size={8}
+            />{" "}
             {item.name}
           </li>
         ))}
