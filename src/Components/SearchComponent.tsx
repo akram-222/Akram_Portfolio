@@ -1,10 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import {
-  BsCheck,
-  BsCheckCircle,
-  BsCheckCircleFill,
-  BsCircleFill,
-} from "react-icons/bs";
+import { useRef, useState } from "react";
+import { BsCheckCircleFill, BsCircleFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const SearchComponent = ({ list }) => {
   const [filteredList, setFilteredList] = useState(list);
@@ -12,7 +8,7 @@ const SearchComponent = ({ list }) => {
   const [searchVal, setSearchVal] = useState<string>("");
   const [isIdentical, setIsIdentical] = useState<boolean>(false);
   const inputFeild = useRef<HTMLInputElement | null>(null);
-
+  const navigate = useNavigate();
   const checkIdenticality = (input) => {
     filteredList.map((item) => {
       let itemName = item.name.toLowerCase();
@@ -49,7 +45,7 @@ const SearchComponent = ({ list }) => {
       <ul
         className={` ${
           isHidden ? "hidden" : ""
-        } absolute z-20 mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
+        } border border-gray-400/50 absolute z-20 mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
       >
         <span className="text-xs text-yellow-400 block px-3 pt-3 pb-2 border-b border-b-gray-600/30">
           Suggestions: {filteredList.length}
@@ -62,6 +58,7 @@ const SearchComponent = ({ list }) => {
               onClick={() => {
                 setSearchVal(item.name);
                 setIsHidden(true);
+                navigate(`./${item.name.toLowerCase()}`);
               }}
             >
               <BsCircleFill
