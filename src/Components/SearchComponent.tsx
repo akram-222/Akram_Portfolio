@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { BsCircleFill } from "react-icons/bs";
+import {
+  BsCheck,
+  BsCheckCircle,
+  BsCheckCircleFill,
+  BsCircleFill,
+} from "react-icons/bs";
 
 const SearchComponent = ({ list }) => {
   const [filteredList, setFilteredList] = useState(list);
@@ -10,8 +15,11 @@ const SearchComponent = ({ list }) => {
     setIsHidden(false);
     let input = (event.currentTarget as HTMLInputElement)!.value.toLowerCase();
     let res = list.filter((item) => {
-      return item.name.toLowerCase().includes(input);
+      let itemName = item.name.toLowerCase();
+      if (itemName === input) console.log("ddd");
+      return itemName.includes(input);
     });
+
     setFilteredList(res);
   };
 
@@ -41,6 +49,9 @@ const SearchComponent = ({ list }) => {
                 size={8}
               />{" "}
               {item.name}
+              <span className="flex gap-1  text-green-400 inline-block ml-auto border-b border-b-gray-600/30 text-xs">
+                <BsCheckCircleFill size={13} /> Identical
+              </span>
             </li>
           ))
         ) : (
