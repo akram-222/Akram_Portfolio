@@ -32,7 +32,7 @@ const Goals = () => {
             className="mt-1 placeholder:text-gray-500 placeholder:text-sm  dark:bg-gray-700/20 h-8 rounded px-2"
             id="goalInput"
             type="text"
-            placeholder="Type Your goal here"
+            placeholder="3 or more chars"
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
           />
