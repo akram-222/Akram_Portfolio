@@ -6,7 +6,7 @@ import { __getRepo } from "../Utils/github/__searchForRepo";
 import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
 import { __downloadRepo } from "../Utils/github/__downloadRepo";
 import { octokit } from "../Utils/github/OctokitConstructor";
-import { BsDownload } from "react-icons/bs";
+import { BsDownload, BsFileZip } from "react-icons/bs";
 
 const RepoDetails = ({ onSidebarHide }) => {
   const params = useParams();
@@ -23,10 +23,7 @@ const RepoDetails = ({ onSidebarHide }) => {
       })
       .then((data) => console.log(data));
     __getReadMeFile(params.repoName!)
-      .then(({ content, size, name }) => {
-        // console.log(name);
-        return content;
-      })
+      .then(({ content, size, name }) => content)
       .then(async (content) => {
         let { data } = await octokit.request("POST /markdown", {
           text: atob(content),
@@ -61,17 +58,18 @@ const RepoDetails = ({ onSidebarHide }) => {
             is_premium={true}
             premium_star="GitHub Repos"
           />
-          {/* <div
+          <div
             dangerouslySetInnerHTML={{
               __html: readmeFile,
             }}
-          ></div> */}
+          ></div>{" "}
+          *
           <a
             href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
             rel="noreferrer"
           >
             Download ZIP
-            <BsDownload size={100} />
+            <BsFileZip size={100} />
           </a>
         </div>
       )}
