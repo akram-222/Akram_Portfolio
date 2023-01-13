@@ -79,11 +79,11 @@ const RepoDetails = ({ onSidebarHide }) => {
               {readmeFile?.size} kb
             </span>
           </div>
-          {/* <div
+          <div
             dangerouslySetInnerHTML={{
               __html: readmeFileContent,
             }}
-          ></div>{" "} */}
+          ></div>
         </div>
       )}
     </>
