@@ -7,6 +7,7 @@ import PageTitle from "../Components/PageTitle";
 import Satisfication from "../Components/Satisfication";
 import Segmentation from "../Components/Segmentation";
 import Chart from "../Components/Chart";
+import Goals from "../Components/Goals";
 
 const Dashboard = ({ onSidebarHide }) => {
   return (
@@ -123,7 +124,8 @@ const Dashboard = ({ onSidebarHide }) => {
       <div className="w-full p-2 lg:w-2/3">
         <div className="flex rounded-lg bg-card sm:h-80 h-60">
           {/* <Graph /> */}
-          <Chart />
+          {/* <Chart /> */}
+          <Goals />
         </div>
       </div>
       <div className="w-full p-2 lg:w-1/3">
