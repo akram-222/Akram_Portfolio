@@ -4,14 +4,18 @@ import PageTitle from "../Components/PageTitle";
 import Spinner from "../Components/Spinner";
 import { __getRepo } from "../Utils/github/__searchForRepo";
 import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
-import { __downloadRepo } from "../Utils/github/__downloadRepo";
 import { octokit } from "../Utils/github/OctokitConstructor";
-import { BsDownload, BsFileZip } from "react-icons/bs";
+import { BsFileZip } from "react-icons/bs";
 
 const RepoDetails = ({ onSidebarHide }) => {
+  type readmeFileType = { content: string; size: number };
   const params = useParams();
   const [currentRepo, setCurrentRepo] = useState<any>({});
-  const [readmeFile, setReadmeFile] = useState<string>("");
+  const [readmeFile, setReadmeFile] = useState<readmeFileType>({
+    content: "",
+    size: 0,
+  });
+  const [readmeFileContent, setReadmeFileContent] = useState<string>("");
   const [isLoad, setLoad] = useState(true);
 
   useEffect(() => {
@@ -23,12 +27,15 @@ const RepoDetails = ({ onSidebarHide }) => {
       })
       .then((data) => console.log(data));
     __getReadMeFile(params.repoName!)
-      .then(({ content, size, name }) => content)
+      .then((res) => {
+        setReadmeFile(res);
+        return res.content;
+      })
       .then(async (content) => {
         let { data } = await octokit.request("POST /markdown", {
-          text: atob(content),
+          text: atob(content), // deconding
         });
-        setReadmeFile(data);
+        setReadmeFileContent(data);
       });
   }, []);
 
@@ -60,7 +67,7 @@ const RepoDetails = ({ onSidebarHide }) => {
           />
           <div
             dangerouslySetInnerHTML={{
-              __html: readmeFile,
+              __html: readmeFileContent,
             }}
           ></div>{" "}
           *
@@ -68,7 +75,7 @@ const RepoDetails = ({ onSidebarHide }) => {
             href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
             rel="noreferrer"
           >
-            Download ZIP
+            Download ZIP {readmeFile?.size}
             <BsFileZip size={100} />
           </a>
         </div>
