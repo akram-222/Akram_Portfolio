@@ -51,11 +51,11 @@ const Goals = () => {
       </div>
       <div className="text-white mx-4 text-xl">
         Goals List
-        <ul>
+        <ol>
           {goalsList?.map((goal, i) => (
             <li key={i}>{goal}</li>
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );
