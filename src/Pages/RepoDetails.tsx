@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+//@ts-ignore
+import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import PageTitle from "../Components/PageTitle";
 import Spinner from "../Components/Spinner";
 import { __getRepo } from "../Utils/github/__searchForRepo";
 import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
+
 import { octokit } from "../Utils/github/OctokitConstructor";
 import { BsFileZip } from "react-icons/bs";
 
@@ -38,7 +41,18 @@ const RepoDetails = ({ onSidebarHide }) => {
         setReadmeFileContent(data);
       });
   }, []);
-
+  const onClick = useCallback(() => {
+    confetti({
+      particleCount: 100,
+      startVelocity: 30,
+      spread: 360,
+      angle: 40,
+      origin: {
+        x: 0.5,
+        y: 0,
+      },
+    });
+  }, []);
   return (
     <>
       {isLoad ? (
@@ -46,7 +60,7 @@ const RepoDetails = ({ onSidebarHide }) => {
           <Spinner className={"w-14"} />
         </div>
       ) : (
-        <div className="flex-col items-start p-2 w-full h-full flex-wrap">
+        <div className="flex-col flex items-start p-2 w-full h-full flex-wrap">
           <PageTitle
             className={"mb-10 h-fit"}
             onSidebarHide={onSidebarHide}
@@ -65,25 +79,29 @@ const RepoDetails = ({ onSidebarHide }) => {
             is_premium={true}
             premium_star="GitHub Repos"
           />
-          <div className="group inline-block">
-            <button className="flex gap-1 items-center bg-[#050708] p-2 rounded-lg text-sm font-bold ">
-              <BsFileZip size={18} />
-              <a
-                href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
-                rel="noreferrer"
-              >
-                Download ZIP
-              </a>
-            </button>
+          {/* <div className="group flex items-center justify-center w-full flex-grow"> */}
+          <button
+            onClick={onClick}
+            className="group flex gap-1 items-center bg-[#050708] p-2 rounded-lg text-sm font-bold "
+          >
+            <BsFileZip size={20} />
+            <a
+            // href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
+            >
+              Download ZIP
+            </a>
             <span className="text-xs text-red-400 opacity-0 group-hover:opacity-100">
               {readmeFile?.size} kb
             </span>
-          </div>
-          <div
+          </button>
+          {/* </div> */}
+
+          {/* <div
+          className="readme"
             dangerouslySetInnerHTML={{
               __html: readmeFileContent,
             }}
-          ></div>
+          ></div> */}
         </div>
       )}
     </>
