@@ -36,7 +36,7 @@ const Goals = () => {
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
           />
-          {newGoal.length && goalsList.indexOf(newGoal) === -1 ? (
+          {newGoal.length >= 3 && goalsList.indexOf(newGoal) === -1 ? (
             <button
               type="button"
               onClick={onClick}
@@ -51,7 +51,7 @@ const Goals = () => {
       </div>
       <div className="text-white mx-4 text-xl">
         Goals List
-        <ol className="list-decimal	">
+        <ol className="list-decimal	list-inside text-base mt-2">
           {goalsList?.map((goal, i) => (
             <li key={i}>{goal}</li>
           ))}
