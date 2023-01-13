@@ -19,9 +19,9 @@ const ValidatorBtn = ({ newGoal, goalsList, setGoalsList }) => {
   return (
     <>
       {newGoal.length < 3 ? (
-        <span className="text-red-400">3 or more chars are required</span>
+        <span className="text-red-400 mt-2">3 or more chars are required</span>
       ) : goalsList.indexOf(newGoal) !== -1 ? (
-        <span className="text-red-400">Duplicated goal</span>
+        <span className="text-red-400 mt-2">Duplicated goal</span>
       ) : (
         <button
           type="button"
