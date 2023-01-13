@@ -4,6 +4,7 @@ import PageTitle from "../Components/PageTitle";
 import Spinner from "../Components/Spinner";
 import { __getRepo } from "../Utils/github/__searchForRepo";
 import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
+import { octokit } from "../Utils/github/OctokitConstructor";
 
 const RepoDetails = ({ onSidebarHide }) => {
   const params = useParams();
@@ -19,10 +20,17 @@ const RepoDetails = ({ onSidebarHide }) => {
         return currentRepo;
       })
       .then((data) => console.log(data));
-    __getReadMeFile(params.repoName!).then(({ content, size, name }) => {
-      console.log(name);
-      setReadmeFile(content);
-    });
+    __getReadMeFile(params.repoName!)
+      .then(({ content, size, name }) => {
+        // console.log(name);
+        return content;
+      })
+      .then(async (content) => {
+        let { data } = await octokit.request("POST /markdown", {
+          text: atob(content),
+        });
+        setReadmeFile(data);
+      });
   }, []);
 
   return (
@@ -53,9 +61,9 @@ const RepoDetails = ({ onSidebarHide }) => {
           />
           <div
             dangerouslySetInnerHTML={{
-              __html: `${atob(readmeFile)}`,
+              __html: readmeFile,
             }}
-          />
+          ></div>
         </div>
       )}
     </>
