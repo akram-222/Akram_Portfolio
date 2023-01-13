@@ -121,14 +121,14 @@ const Projects = ({ onSidebarHide }) => {
                         has_issues,
                         forks_count,
                       },
-                      i
+                      i: number
                     ) => (
                       <>
                         <ProjectItem
+                          key={i}
                           name={name}
                           id={id}
                           language={language}
-                          key={id + i}
                           fork={fork}
                           visibility={visibility}
                           hasIssues={has_issues}
