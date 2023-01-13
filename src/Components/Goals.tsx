@@ -23,7 +23,7 @@ const Goals = () => {
     setNewGoal(inputGoalVal);
   };
   return (
-    <div className="flex p-2">
+    <div className="flex p-2 text-sm">
       <div className="border-r border-gray-600/30 px-2">
         <h2 className="text-white text-2xl font-bold my-2">2023 Goals</h2>
         <form className="flex flex-col items-start">
@@ -36,7 +36,7 @@ const Goals = () => {
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
           />
-          {newGoal.length ? (
+          {newGoal.length && goalsList.indexOf(newGoal) === -1 ? (
             <button
               type="button"
               onClick={onClick}
@@ -51,7 +51,7 @@ const Goals = () => {
       </div>
       <div className="text-white mx-4 text-xl">
         Goals List
-        <ol>
+        <ol className="list-decimal	">
           {goalsList?.map((goal, i) => (
             <li key={i}>{goal}</li>
           ))}
