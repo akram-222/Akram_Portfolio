@@ -24,7 +24,7 @@ const ValidatorBtn = ({ newGoal, goalsList, setGoalsList }) => {
         <span className="text-red-400 mt-2">Duplicated goal</span>
       ) : /^[A-Za-z]+$/.test(newGoal) === false ? (
         <span className="text-red-400 mt-2">
-          "{newGoal.substr(newGoal.length - 1, newGoal.length - 2)}" input not
+          "{newGoal.substr(newGoal.length - 1, newGoal.length - 2)}" input, not
           allowed
         </span>
       ) : (
