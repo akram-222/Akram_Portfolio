@@ -65,19 +65,25 @@ const RepoDetails = ({ onSidebarHide }) => {
             is_premium={true}
             premium_star="GitHub Repos"
           />
+          <div className="group inline-block">
+            <span className="text-xs opacity-0 group-hover:opacity-100">
+              {readmeFile?.size} kb
+            </span>
+            <button className="flex bg-[#050708] p-2 rounded-lg text-sm font-bold ">
+              <a
+                href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
+                rel="noreferrer"
+              >
+                Download ZIP
+              </a>
+              <BsFileZip size={20} />
+            </button>
+          </div>
           <div
             dangerouslySetInnerHTML={{
               __html: readmeFileContent,
             }}
           ></div>{" "}
-          *
-          <a
-            href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
-            rel="noreferrer"
-          >
-            Download ZIP {readmeFile?.size}
-            <BsFileZip size={100} />
-          </a>
         </div>
       )}
     </>
