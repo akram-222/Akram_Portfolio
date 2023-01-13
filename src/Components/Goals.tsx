@@ -1,23 +1,8 @@
-//@ts-ignore
-import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
-import { useCallback, useState } from "react";
+import ValidatorBtn from "./ValidatorBtn";
+import { useState } from "react";
 const Goals = () => {
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
-  const onClick = useCallback(() => {
-    confetti({
-      particleCount: 100,
-      startVelocity: 30,
-      spread: 360,
-      angle: 40,
-      origin: {
-        x: 0.5,
-        y: 0,
-      },
-    });
-    let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
-    setGoalsList([...uniqueGoals]);
-  }, [newGoal]);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
@@ -36,17 +21,11 @@ const Goals = () => {
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
           />
-          {newGoal.length >= 3 && goalsList.indexOf(newGoal) === -1 ? (
-            <button
-              type="button"
-              onClick={onClick}
-              className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
-            >
-              Add
-            </button>
-          ) : (
-            ""
-          )}
+          <ValidatorBtn
+            newGoal={newGoal}
+            goalsList={goalsList}
+            setGoalsList={setGoalsList}
+          />
         </form>
       </div>
       <div className="text-white mx-4 text-xl">
