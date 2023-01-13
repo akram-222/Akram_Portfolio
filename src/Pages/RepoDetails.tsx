@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 import PageTitle from "../Components/PageTitle";
 import Spinner from "../Components/Spinner";
 import { __getRepo } from "../Utils/github/__searchForRepo";
+import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
 
 const RepoDetails = ({ onSidebarHide }) => {
   const params = useParams();
   const [currentRepo, setCurrentRepo] = useState<any>({});
+  const [readmeFile, setReadmeFile] = useState<string>("");
   const [isLoad, setLoad] = useState(true);
 
   useEffect(() => {
@@ -17,6 +19,10 @@ const RepoDetails = ({ onSidebarHide }) => {
         return currentRepo;
       })
       .then((data) => console.log(data));
+    __getReadMeFile(params.repoName!).then(({ content, size, name }) => {
+      console.log(name);
+      setReadmeFile(content);
+    });
   }, []);
 
   return (
@@ -44,6 +50,11 @@ const RepoDetails = ({ onSidebarHide }) => {
             }
             is_premium={true}
             premium_star="GitHub Repos"
+          />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `${atob(readmeFile)}`,
+            }}
           />
         </div>
       )}

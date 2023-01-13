@@ -1,10 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  AiOutlineBook,
-  AiOutlineEye,
-  AiOutlineEyeInvisible,
-  AiOutlineInfoCircle,
-} from "react-icons/ai";
+import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
 import { BsDashCircle } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
