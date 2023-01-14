@@ -79,12 +79,13 @@ const Goals = () => {
         return [...goalsList];
       });
       setUpdatedProcessStatus(true);
-
       setTimeout(() => {
         setUpdatedGoalModelOpened(false);
         setUpdatedProcessStatus(false);
         setUpdatedGoalInputValue("");
       }, 1000);
+    } else {
+      UpdatedGoalInputRef.current!.value = "Enter valid input";
     }
   };
   return (
