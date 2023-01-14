@@ -71,8 +71,8 @@ const Goals = () => {
   const handleGoalEdition = () => {
     let updatedGoalValue = UpdatedGoalInputRef.current!.value;
     if (
-      updatedGoalValue.length < 3 ||
-      /^[A-Za-z]+$/.test(updatedGoalValue) === false
+      updatedGoalValue.length >= 3 &&
+      /^[A-Za-z]+$/.test(updatedGoalValue) === true
     ) {
       setGoalsList(() => {
         goalsList[0] = updatedGoalValue;
