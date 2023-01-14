@@ -4,11 +4,23 @@ import ValidatorBtn from "./ValidatorBtn";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
-import { BsCardChecklist, BsCheck } from "react-icons/bs";
+import {
+  BsCardChecklist,
+  BsCheck,
+  BsCheckCircleFill,
+  BsXCircle,
+} from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { BiUndo } from "react-icons/bi";
 const Goals = () => {
+  const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
+    useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
+  const [isUpdatedProcessDoneSuccessfully, setUpdatedProcessStatus] =
+    useState<boolean>(false);
+  const [updatedGoalInputValue, setUpdatedGoalInputValue] = useState("");
+  const UpdatedGoalInputRef = useRef<HTMLInputElement | null>(null);
+
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
   const [goalsCompletedList, setGoalsCompletedList] = useState<string[]>([]);
@@ -19,11 +31,11 @@ const Goals = () => {
   useEffect(() => {
     goalInputRef.current!.value = "";
   }, [goalsList]);
-  const deleteGoal = (goal) => {
+  const deleteGoal = (goal: string) => {
     let newlist = goalsList.filter((item) => item !== goal);
     setGoalsList(newlist);
   };
-  const completedGoal = (goal: string, goalLIItem, i: number) => {
+  const completedGoal = (goal: string) => {
     setGoalsList([...goalsList.filter((a) => a !== goal)]);
     setGoalsCompletedList([...goalsCompletedList, goal]);
   };
@@ -34,8 +46,7 @@ const Goals = () => {
     [goalsList]
   );
   const handleGoalCompletion = useCallback(
-    (e: React.SyntheticEvent, goal: string, i: number) => {
-      let goalLIItem = (e.currentTarget as HTMLOListElement)!;
+    (goal: string) => {
       confetti({
         particleCount: 100,
         startVelocity: 30,
@@ -46,19 +57,84 @@ const Goals = () => {
           y: 0,
         },
       });
-      completedGoal(goal, goalLIItem, i);
+      completedGoal(goal);
     },
     [goalsList]
   );
-  const handleGoalUndo = (goal) => {
+  const handleGoalUndo = (goal: string) => {
     let newlist = goalsCompletedList.filter((item) => item !== goal);
     // setGoalsList(newlist);
     setGoalsCompletedList(newlist);
     setGoalsList([...goalsList, goal]);
   };
+  const handleGoalEdition = () => {
+    let updatedGoalValue = UpdatedGoalInputRef.current!.value;
+    if (
+      updatedGoalValue.length >= 3 &&
+      /^[A-Za-z\s]+$/.test(updatedGoalValue) === true
+    ) {
+      setGoalsList(() => {
+        goalsList[0] = updatedGoalValue;
+        return [...goalsList];
+      });
+      setUpdatedProcessStatus(true);
+      setTimeout(() => {
+        setUpdatedGoalModelOpened(false);
+        setUpdatedProcessStatus(false);
+        setUpdatedGoalInputValue("");
+      }, 1000);
+    } else {
+      UpdatedGoalInputRef.current!.value = "Enter valid input";
+    }
+  };
   return (
-    <div className="flex p-2 text-sm w-full">
-      <div className="flex flex-col border-r border-gray-600/30 px-2 overflow-auto ">
+    <div className="flex p-2 text-sm w-full ">
+      <div
+        className={`flex flex-col relative border-r border-gray-600/30 px-2 overflow-auto `}
+      >
+        <div
+          className={`${
+            isUpdatedGoalModelOpened ? "" : "-translate-x-full"
+          } transition flex flex-col gap-3 w-full p-3 absolute z-10 bg-details shadow-lg border border-gray-600/30 rounded h-full top-0 left-0`}
+        >
+          {isUpdatedProcessDoneSuccessfully ? (
+            <div className="h-full flex flex-col gap-2 items-center justify-center text-center text-green-400 ">
+              <BsCheckCircleFill className="animate-scaleUpCenter" size={30} />
+              Goal has been updated Successfully
+            </div>
+          ) : (
+            <>
+              <header className="text-right">
+                <button onClick={() => setUpdatedGoalModelOpened(false)}>
+                  <BsXCircle className="text-red-400" size={20} />
+                </button>
+              </header>
+              <div>
+                <label htmlFor="updatedGoalInput" className="text-white">
+                  {" "}
+                  Edit your goal:
+                </label>
+                <input
+                  id="updatedGoalInput"
+                  ref={UpdatedGoalInputRef}
+                  value={updatedGoalInputValue}
+                  onInput={(e) =>
+                    setUpdatedGoalInputValue(e.currentTarget!.value)
+                  }
+                  type="text"
+                  placeholder="Updated value"
+                  className="mt-1 border border-gray-600/30 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-2 w-11/12"
+                />
+                <button
+                  onClick={() => handleGoalEdition()}
+                  className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
+                >
+                  Update
+                </button>
+              </div>
+            </>
+          )}
+        </div>
         <h2 className="text-white text-2xl font-bold my-2 text-center">
           2023 Goals
         </h2>
@@ -88,7 +164,7 @@ const Goals = () => {
                 {goalsCompletedList?.map((goal, i) => (
                   <li
                     key={i}
-                    className="line-through flex border border-gray-600/30 mb-2 justify-between p-1 rounded-lg w-full"
+                    className="slide-bottom line-through flex border border-gray-600/30 mb-2 justify-between p-1 rounded-lg w-full"
                   >
                     <span className={``}>
                       {i + 1}- {goal}
@@ -123,7 +199,7 @@ const Goals = () => {
               {goalsList?.map((goal, i) => (
                 <li
                   key={i}
-                  className="group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
+                  className="slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
                 >
                   <span className={`text-gray-400 group-hover:text-white`}>
                     {i + 1}- {goal}
@@ -131,21 +207,22 @@ const Goals = () => {
                   <div className="actions flex gap-2 items-center">
                     <button
                       type="button"
-                      className="text-gray-700 hover:text-white"
+                      onClick={() => setUpdatedGoalModelOpened(true)}
+                      className="text-gray-700/50 hover:text-white"
                     >
                       <AiOutlineEdit size={20} />
                     </button>
                     <button
                       type="button"
-                      onClick={(e) => handleGoalCompletion(e, goal, i)}
-                      className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
+                      onClick={(e) => handleGoalCompletion(goal)}
+                      className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
                     >
                       <BsCheck size={20} />
                     </button>
                     {/* )} */}
                     <button
                       onClick={() => handleGoalDeletion(goal)}
-                      className="text-gray-700 hover:text-red-400"
+                      className="text-gray-700/50 hover:text-red-400"
                       type="button"
                     >
                       <FiTrash2 size={20} />
