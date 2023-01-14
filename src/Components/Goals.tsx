@@ -5,6 +5,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
 import { BsCheck } from "react-icons/bs";
+import { FiTrash2 } from "react-icons/fi";
 import goalImg from "../assests/goalImg.webp";
 const Goals = () => {
   const goalInputRef = useRef<HTMLInputElement | null>(null);
@@ -18,8 +19,17 @@ const Goals = () => {
   useEffect(() => {
     goalInputRef.current!.value = "";
   }, [goalsList]);
-
+  const deleteGoal = (goal) => {
+    let newlist = goalsList.filter((item) => item !== goal);
+    setGoalsList(newlist);
+  };
   const handleGoalDeletion = useCallback(
+    (goal: string) => {
+      if (goalsList.indexOf(goal) > -1) deleteGoal(goal);
+    },
+    [goalsList]
+  );
+  const handleGoalCompletion = useCallback(
     (goal: string) => {
       confetti({
         particleCount: 100,
@@ -31,10 +41,6 @@ const Goals = () => {
           y: 0,
         },
       });
-      if (goalsList.indexOf(goal) > -1) {
-        let newlist = goalsList.filter((item) => item !== goal);
-        setGoalsList(newlist);
-      }
     },
     [goalsList]
   );
@@ -82,12 +88,17 @@ const Goals = () => {
                     </button>
                     <button
                       type="button"
+                      onClick={() => handleGoalCompletion(goal)}
                       className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
                     >
-                      <BsCheck
-                        onClick={() => handleGoalDeletion(goal)}
-                        size={20}
-                      />
+                      <BsCheck size={20} />
+                    </button>
+                    <button
+                      onClick={() => handleGoalDeletion(goal)}
+                      className="text-gray-700 hover:text-red-400"
+                      type="button"
+                    >
+                      <FiTrash2 size={20} />
                     </button>
                   </div>
                 </li>
