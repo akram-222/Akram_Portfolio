@@ -7,10 +7,12 @@ import { GiStairsGoal } from "react-icons/gi";
 import { BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import goalImg from "../assests/goalImg.webp";
+import { BiUndo } from "react-icons/bi";
 const Goals = () => {
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
+  const [isCompletedGoal, setIsCompletedGoal] = useState<boolean>(false);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
@@ -23,12 +25,15 @@ const Goals = () => {
     let newlist = goalsList.filter((item) => item !== goal);
     setGoalsList(newlist);
   };
-  const completedGoal = (goal: string, goalLIItem) => {
+  const completedGoal = (goal: string, goalLIItem, i: number) => {
     setGoalsList([
       ...goalsList.filter((a) => a !== goal),
-      goal.concat(`( Completed Goal 🎉 )`),
+      goal.concat(` ( Completed 🎉 )`),
     ]);
+
+    setIsCompletedGoal(true);
     // goalLIItem.closest("li").classList.add("line-through");
+    // console.log(i === goalsList.indexOf(goal));
   };
   const handleGoalDeletion = useCallback(
     (goal: string) => {
@@ -37,7 +42,7 @@ const Goals = () => {
     [goalsList]
   );
   const handleGoalCompletion = useCallback(
-    (e: React.SyntheticEvent, goal: string) => {
+    (e: React.SyntheticEvent, goal: string, i: number) => {
       let goalLIItem = (e.currentTarget as HTMLOListElement)!;
       confetti({
         particleCount: 100,
@@ -49,7 +54,7 @@ const Goals = () => {
           y: 0,
         },
       });
-      completedGoal(goal, goalLIItem);
+      completedGoal(goal, goalLIItem, i);
     },
     [goalsList]
   );
@@ -95,13 +100,23 @@ const Goals = () => {
                     >
                       <AiOutlineEdit size={20} />
                     </button>
+                    {/* {i === goalsList.length - 1 ? (
+                      <button
+                        type="button"
+                        // onClick={(e) => handleGoalCompletion(e, goal)}
+                        className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
+                      >
+                        <BiUndo size={20} />
+                      </button>
+                    ) : ( */}
                     <button
                       type="button"
-                      onClick={(e) => handleGoalCompletion(e, goal)}
+                      onClick={(e) => handleGoalCompletion(e, goal, i)}
                       className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
                     >
                       <BsCheck size={20} />
                     </button>
+                    {/* )} */}
                     <button
                       onClick={() => handleGoalDeletion(goal)}
                       className="text-gray-700 hover:text-red-400"
