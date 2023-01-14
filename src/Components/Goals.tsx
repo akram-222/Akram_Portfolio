@@ -4,7 +4,12 @@ import ValidatorBtn from "./ValidatorBtn";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
-import { BsCardChecklist, BsCheck, BsXCircle } from "react-icons/bs";
+import {
+  BsCardChecklist,
+  BsCheck,
+  BsCheckCircleFill,
+  BsXCircle,
+} from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { BiUndo } from "react-icons/bi";
 const Goals = () => {
@@ -85,7 +90,10 @@ const Goals = () => {
           } transition flex flex-col gap-3 w-full p-3 absolute bg-details shadow-lg border border-gray-600/30 rounded h-full top-0 left-0`}
         >
           {isUpdatedProcessDoneSuccessfully ? (
-            <div>Updated Process Done Successfully</div>
+            <div className="h-full flex flex-col gap-2 items-center justify-center text-center text-green-400 ">
+              <BsCheckCircleFill className="animate-scaleUpCenter" size={30} />
+              Goal has been updated Successfully
+            </div>
           ) : (
             <>
               <header className="text-right">
