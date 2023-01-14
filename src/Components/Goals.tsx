@@ -78,6 +78,7 @@ const Goals = () => {
     setTimeout(() => {
       setUpdatedGoalModelOpened(false);
       setUpdatedProcessStatus(false);
+      setUpdatedGoalInputValue("");
     }, 2000);
   };
   return (
@@ -111,6 +112,7 @@ const Goals = () => {
                     setUpdatedGoalInputValue(e.currentTarget!.value)
                   }
                   type="text"
+                  placeholder="updated value"
                   className="mt-1 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-3 w-11/12"
                 />
                 <button
