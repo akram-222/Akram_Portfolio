@@ -41,6 +41,7 @@ const Goals = () => {
           y: 0,
         },
       });
+      
     },
     [goalsList]
   );
