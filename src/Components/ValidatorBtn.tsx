@@ -4,10 +4,12 @@ const ValidatorBtn = ({
   goalsList,
   setGoalsList,
   goalsCompletedList,
+  setNewGoal,
 }) => {
   const onClick = useCallback(() => {
     let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
     setGoalsList([...uniqueGoals]);
+    setNewGoal("");
   }, [newGoal]);
   return (
     <>
