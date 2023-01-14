@@ -11,6 +11,8 @@ const Goals = () => {
   const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
     useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
+  const UpdatedGoalInputRef = useRef<HTMLInputElement | null>(null);
+
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
   const [goalsCompletedList, setGoalsCompletedList] = useState<string[]>([]);
@@ -60,10 +62,12 @@ const Goals = () => {
   };
   const handleGoalEdition = (goal, i: number) => {
     setUpdatedGoalModelOpened(true);
+    let updatedValue = UpdatedGoalInputRef.current!.value;
     setGoalsList(() => {
-      goalsList[i] = "new value";
+      goalsList[i] = updatedValue;
       return [...goalsList];
     });
+    console.log(updatedValue);
   };
   return (
     <div className="flex p-2 text-sm w-full ">
@@ -73,7 +77,7 @@ const Goals = () => {
         <div
           className={`${
             isUpdatedGoalModelOpened ? "" : "-translate-x-full"
-          } transition flex flex-col gap-3 w-full p-3 absolute dark:bg-details shadow-lg border border-gray-600/30 rounded h-full top-0 left-0`}
+          } transition flex flex-col gap-3 w-full p-3 absolute bg-details shadow-lg border border-gray-600/30 rounded h-full top-0 left-0`}
         >
           <header className="text-right">
             <button onClick={() => setUpdatedGoalModelOpened(false)}>
@@ -83,6 +87,7 @@ const Goals = () => {
           <div>
             Edit your goal:
             <input
+              ref={UpdatedGoalInputRef}
               type="text"
               className="mt-1 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-3 w-11/12"
             />
