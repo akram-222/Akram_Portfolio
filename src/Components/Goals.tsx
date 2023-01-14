@@ -69,7 +69,7 @@ const Goals = () => {
     let updatedGoalValue = UpdatedGoalInputRef.current!.value;
     if (
       updatedGoalValue.length >= 3 &&
-      /^[A-Za-z\s]+$/.test(updatedGoalValue) === true
+      /^[a-zA-z]-\w+( \w+)*$/.test(updatedGoalValue) === true
     ) {
       setGoalsList(() => {
         goalsList[0] = updatedGoalValue;
