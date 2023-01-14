@@ -11,6 +11,8 @@ const Goals = () => {
   const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
     useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
+  const [isUpdatedProcessDoneSuccessfully, setUpdatedProcessStatus] =
+    useState<boolean>(false);
   const [updatedGoalInputValue, setUpdatedGoalInputValue] = useState("");
   const UpdatedGoalInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -69,7 +71,7 @@ const Goals = () => {
     });
     setTimeout(() => {
       setUpdatedGoalModelOpened(false);
-    }, 100);
+    }, 2000);
   };
   return (
     <div className="flex p-2 text-sm w-full ">
@@ -81,27 +83,35 @@ const Goals = () => {
             isUpdatedGoalModelOpened ? "" : "-translate-x-full"
           } transition flex flex-col gap-3 w-full p-3 absolute bg-details shadow-lg border border-gray-600/30 rounded h-full top-0 left-0`}
         >
-          <header className="text-right">
-            <button onClick={() => setUpdatedGoalModelOpened(false)}>
-              <BsXCircle className="text-red-400" size={20} />
-            </button>
-          </header>
-          <div>
-            Edit your goal:
-            <input
-              ref={UpdatedGoalInputRef}
-              value={updatedGoalInputValue}
-              onInput={(e) => setUpdatedGoalInputValue(e.currentTarget!.value)}
-              type="text"
-              className="mt-1 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-3 w-11/12"
-            />
-            <button
-              onClick={() => handleGoalEdition()}
-              className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
-            >
-              Update
-            </button>
-          </div>
+          {isUpdatedProcessDoneSuccessfully ? (
+            "Updated Process Done Successfully"
+          ) : (
+            <>
+              <header className="text-right">
+                <button onClick={() => setUpdatedGoalModelOpened(false)}>
+                  <BsXCircle className="text-red-400" size={20} />
+                </button>
+              </header>
+              <div>
+                Edit your goal:
+                <input
+                  ref={UpdatedGoalInputRef}
+                  value={updatedGoalInputValue}
+                  onInput={(e) =>
+                    setUpdatedGoalInputValue(e.currentTarget!.value)
+                  }
+                  type="text"
+                  className="mt-1 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-3 w-11/12"
+                />
+                <button
+                  onClick={() => handleGoalEdition()}
+                  className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
+                >
+                  Update
+                </button>
+              </div>
+            </>
+          )}
         </div>
         <h2 className="text-white text-2xl font-bold my-2 text-center">
           2023 Goals
