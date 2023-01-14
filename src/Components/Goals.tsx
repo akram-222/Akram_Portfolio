@@ -11,6 +11,7 @@ const Goals = () => {
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
+  const [isCompletedGoal, setIsCompletedGoal] = useState<boolean>(false);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
@@ -22,6 +23,10 @@ const Goals = () => {
   const deleteGoal = (goal) => {
     let newlist = goalsList.filter((item) => item !== goal);
     setGoalsList(newlist);
+  };
+  const completedGoal = (goal) => {
+    setIsCompletedGoal(true);
+    setGoalsList([...goalsList.filter((a) => a !== goal), goal]);
   };
   const handleGoalDeletion = useCallback(
     (goal: string) => {
@@ -41,7 +46,7 @@ const Goals = () => {
           y: 0,
         },
       });
-      
+      completedGoal();
     },
     [goalsList]
   );
@@ -77,7 +82,11 @@ const Goals = () => {
                   key={i}
                   className="group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
                 >
-                  <span className="text-gray-400 group-hover:text-white">
+                  <span
+                    className={`${
+                      isCompletedGoal ? "line-through" : ""
+                    } text-gray-400 group-hover:text-white`}
+                  >
                     {i + 1}- {goal}
                   </span>
                   <div className="actions flex gap-2 items-center">
