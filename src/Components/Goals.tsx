@@ -11,6 +11,7 @@ const Goals = () => {
   const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
     useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
+  const [updatedGoalInputValue, setUpdatedGoalInputValue] = useState("");
   const UpdatedGoalInputRef = useRef<HTMLInputElement | null>(null);
 
   const [newGoal, setNewGoal] = useState<string>("");
@@ -60,14 +61,14 @@ const Goals = () => {
     setGoalsCompletedList(newlist);
     setGoalsList([...goalsList, goal]);
   };
-  const handleGoalEdition = (goal, i: number) => {
+  const handleGoalEdition = () => {
     setUpdatedGoalModelOpened(true);
-    let updatedValue = UpdatedGoalInputRef.current!.value;
-    setGoalsList(() => {
-      goalsList[i] = updatedValue;
-      return [...goalsList];
-    });
-    console.log(updatedValue);
+    // let updatedValue = UpdatedGoalInputRef.current!.value;
+    // setGoalsList(() => {
+    //   goalsList[i] = updatedValue;
+    //   return [...goalsList];
+    // });
+    console.log(UpdatedGoalInputRef.current!.value);
   };
   return (
     <div className="flex p-2 text-sm w-full ">
@@ -88,10 +89,15 @@ const Goals = () => {
             Edit your goal:
             <input
               ref={UpdatedGoalInputRef}
+              value={updatedGoalInputValue}
+              onInput={(e) => setUpdatedGoalInputValue(e.currentTarget!.value)}
               type="text"
               className="mt-1 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-3 w-11/12"
             />
-            <button className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded">
+            <button
+              onClick={() => handleGoalEdition()}
+              className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
+            >
               Update
             </button>
           </div>
@@ -168,7 +174,7 @@ const Goals = () => {
                   <div className="actions flex gap-2 items-center">
                     <button
                       type="button"
-                      onClick={() => handleGoalEdition(goal, i)}
+                      onClick={() => setUpdatedGoalModelOpened(true)}
                       className="text-gray-700 hover:text-white"
                     >
                       <AiOutlineEdit size={20} />
