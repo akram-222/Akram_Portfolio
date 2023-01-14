@@ -104,16 +104,20 @@ const Goals = () => {
                 </button>
               </header>
               <div>
-                Edit your goal:
+                <label htmlFor="updatedGoalInput" className="text-white">
+                  {" "}
+                  Edit your goal:
+                </label>
                 <input
+                  id="updatedGoalInput"
                   ref={UpdatedGoalInputRef}
                   value={updatedGoalInputValue}
                   onInput={(e) =>
                     setUpdatedGoalInputValue(e.currentTarget!.value)
                   }
                   type="text"
-                  placeholder="updated value"
-                  className="mt-1 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-3 w-11/12"
+                  placeholder="Updated value"
+                  className="mt-1 border border-gray-600/30 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-2 w-11/12"
                 />
                 <button
                   onClick={() => handleGoalEdition()}
