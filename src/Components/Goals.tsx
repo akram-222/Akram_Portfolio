@@ -80,9 +80,9 @@ const Goals = () => {
                 {goalsCompletedList?.map((goal, i) => (
                   <li
                     key={i}
-                    className="line-through group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-1 rounded-lg w-full"
+                    className="line-through flex border border-gray-600/30 mb-2 justify-between p-1 rounded-lg w-full"
                   >
-                    <span className={`text-gray-400 group-hover:text-white`}>
+                    <span className={``}>
                       {i + 1}- {goal}
                     </span>
                     <div className="actions flex gap-2 items-center">
@@ -92,13 +92,6 @@ const Goals = () => {
                         className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
                       >
                         <BiUndo size={20} />
-                      </button>
-                      <button
-                        onClick={() => handleGoalDeletion(goal)}
-                        className="text-gray-700 hover:text-red-400"
-                        type="button"
-                      >
-                        <FiTrash2 size={20} />
                       </button>
                     </div>
                   </li>
@@ -134,15 +127,6 @@ const Goals = () => {
                     >
                       <AiOutlineEdit size={20} />
                     </button>
-                    {/* {i === goalsList.length - 1 ? (
-                      <button
-                        type="button"
-                        // onClick={(e) => handleGoalCompletion(e, goal)}
-                        className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
-                      >
-                        <BiUndo size={20} />
-                      </button>
-                    ) : ( */}
                     <button
                       type="button"
                       onClick={(e) => handleGoalCompletion(e, goal, i)}
