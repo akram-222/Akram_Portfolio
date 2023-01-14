@@ -79,7 +79,7 @@ const Goals = () => {
       setUpdatedGoalModelOpened(false);
       setUpdatedProcessStatus(false);
       setUpdatedGoalInputValue("");
-    }, 2000);
+    }, 1000);
   };
   return (
     <div className="flex p-2 text-sm w-full ">
