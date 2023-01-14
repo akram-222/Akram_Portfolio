@@ -59,8 +59,10 @@ const Goals = () => {
   const handleGoalEdition = (goal, i) => {
     // goalsList[goalsList.indexOf(goal)] = "akram";
     // console.log([...goalsList.filter((a) => a !== goal)]);
-    goalsList[i] = "new value";
-    setGoalsList(goalsList);
+    setGoalsList(() => {
+      goalsList[i] = "new value";
+      return [...goalsList];
+    });
   };
   return (
     <div className="flex p-2 text-sm w-full">
