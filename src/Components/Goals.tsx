@@ -58,9 +58,9 @@ const Goals = () => {
           />
         </form>
       </div>
-      <div className="text-white mx-4 text-xl flex-grow">
+      <div className="overflow-auto px-3 text-white text-xl flex-grow">
         Goals List
-        <ol className="list-decimal	list-inside text-base mt-2">
+        <ol className="list-decimal	list-inside text-base mt-3">
           {goalsList?.map((goal, i) => (
             <li
               key={i}
