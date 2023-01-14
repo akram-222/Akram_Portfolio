@@ -31,11 +31,11 @@ const Goals = () => {
   useEffect(() => {
     goalInputRef.current!.value = "";
   }, [goalsList]);
-  const deleteGoal = (goal) => {
+  const deleteGoal = (goal: string) => {
     let newlist = goalsList.filter((item) => item !== goal);
     setGoalsList(newlist);
   };
-  const completedGoal = (goal: string, goalLIItem, i: number) => {
+  const completedGoal = (goal: string) => {
     setGoalsList([...goalsList.filter((a) => a !== goal)]);
     setGoalsCompletedList([...goalsCompletedList, goal]);
   };
@@ -46,8 +46,7 @@ const Goals = () => {
     [goalsList]
   );
   const handleGoalCompletion = useCallback(
-    (e: React.SyntheticEvent, goal: string, i: number) => {
-      let goalLIItem = (e.currentTarget as HTMLOListElement)!;
+    (goal: string) => {
       confetti({
         particleCount: 100,
         startVelocity: 30,
@@ -58,11 +57,11 @@ const Goals = () => {
           y: 0,
         },
       });
-      completedGoal(goal, goalLIItem, i);
+      completedGoal(goal);
     },
     [goalsList]
   );
-  const handleGoalUndo = (goal) => {
+  const handleGoalUndo = (goal: string) => {
     let newlist = goalsCompletedList.filter((item) => item !== goal);
     // setGoalsList(newlist);
     setGoalsCompletedList(newlist);
@@ -215,7 +214,7 @@ const Goals = () => {
                     </button>
                     <button
                       type="button"
-                      onClick={(e) => handleGoalCompletion(e, goal, i)}
+                      onClick={(e) => handleGoalCompletion(goal)}
                       className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
                     >
                       <BsCheck size={20} />
