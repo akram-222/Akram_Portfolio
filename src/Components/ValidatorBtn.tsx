@@ -1,5 +1,10 @@
 import { useCallback } from "react";
-const ValidatorBtn = ({ newGoal, goalsList, setGoalsList }) => {
+const ValidatorBtn = ({
+  newGoal,
+  goalsList,
+  setGoalsList,
+  goalsCompletedList,
+}) => {
   const onClick = useCallback(() => {
     let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
     setGoalsList([...uniqueGoals]);
@@ -8,7 +13,8 @@ const ValidatorBtn = ({ newGoal, goalsList, setGoalsList }) => {
     <>
       {newGoal.length < 3 ? (
         <span className="text-red-400 mt-2">Enter at least 3 characters</span>
-      ) : goalsList.indexOf(newGoal) !== -1 ? (
+      ) : goalsList.indexOf(newGoal) !== -1 ||
+        goalsCompletedList.indexOf(newGoal) !== -1 ? (
         <span className="text-red-400 mt-2">Duplicated goal</span>
       ) : /^[A-Za-z]+$/.test(newGoal) === false ? (
         <span className="text-red-400 mt-2">
