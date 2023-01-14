@@ -75,9 +75,9 @@ const Goals = () => {
       return [...goalsList];
     });
     setUpdatedProcessStatus(true);
-    // setTimeout(() => {
-    //   setUpdatedGoalModelOpened(false);
-    // }, 2000);
+    setTimeout(() => {
+      setUpdatedGoalModelOpened(false);
+    }, 2000);
   };
   return (
     <div className="flex p-2 text-sm w-full ">
@@ -151,7 +151,7 @@ const Goals = () => {
                 {goalsCompletedList?.map((goal, i) => (
                   <li
                     key={i}
-                    className="line-through flex border border-gray-600/30 mb-2 justify-between p-1 rounded-lg w-full"
+                    className="slide-bottom line-through flex border border-gray-600/30 mb-2 justify-between p-1 rounded-lg w-full"
                   >
                     <span className={``}>
                       {i + 1}- {goal}
@@ -186,7 +186,7 @@ const Goals = () => {
               {goalsList?.map((goal, i) => (
                 <li
                   key={i}
-                  className="group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
+                  className="slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
                 >
                   <span className={`text-gray-400 group-hover:text-white`}>
                     {i + 1}- {goal}
