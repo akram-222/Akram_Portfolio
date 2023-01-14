@@ -15,6 +15,7 @@ import { BiUndo } from "react-icons/bi";
 const Goals = () => {
   const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
     useState<boolean>(false);
+
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [isUpdatedProcessDoneSuccessfully, setUpdatedProcessStatus] =
     useState<boolean>(false);
@@ -149,12 +150,14 @@ const Goals = () => {
             value={newGoal}
             ref={goalInputRef}
           />
-          <ValidatorBtn
-            newGoal={newGoal}
-            goalsList={goalsList}
-            setGoalsList={setGoalsList}
-            goalsCompletedList={goalsCompletedList}
-          />
+          <div>
+            <ValidatorBtn
+              newGoal={newGoal}
+              goalsList={goalsList}
+              setGoalsList={setGoalsList}
+              goalsCompletedList={goalsCompletedList}
+            />
+          </div>
         </form>
         <div className="border-t flex flex-col flex-grow border-t-gray-600/30 mt-2 ">
           {goalsCompletedList.length ? (
