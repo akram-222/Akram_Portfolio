@@ -11,7 +11,6 @@ const Goals = () => {
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
-  const [isCompletedGoal, setIsCompletedGoal] = useState<boolean>(false);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
@@ -24,9 +23,10 @@ const Goals = () => {
     let newlist = goalsList.filter((item) => item !== goal);
     setGoalsList(newlist);
   };
-  const completedGoal = (goal) => {
-    setIsCompletedGoal(true);
+  const completedGoal = (goal: string, goalLIItem) => {
+    // setIsCompletedGoal(true);
     setGoalsList([...goalsList.filter((a) => a !== goal), goal]);
+    goalLIItem.closest("li").classList.add("line-through");
   };
   const handleGoalDeletion = useCallback(
     (goal: string) => {
@@ -35,7 +35,8 @@ const Goals = () => {
     [goalsList]
   );
   const handleGoalCompletion = useCallback(
-    (goal: string) => {
+    (e: React.SyntheticEvent, goal: string) => {
+      let goalLIItem = (e.currentTarget as HTMLOListElement)!;
       confetti({
         particleCount: 100,
         startVelocity: 30,
@@ -46,7 +47,7 @@ const Goals = () => {
           y: 0,
         },
       });
-      completedGoal();
+      completedGoal(goal, goalLIItem);
     },
     [goalsList]
   );
@@ -82,11 +83,7 @@ const Goals = () => {
                   key={i}
                   className="group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
                 >
-                  <span
-                    className={`${
-                      isCompletedGoal ? "line-through" : ""
-                    } text-gray-400 group-hover:text-white`}
-                  >
+                  <span className={`text-gray-400 group-hover:text-white`}>
                     {i + 1}- {goal}
                   </span>
                   <div className="actions flex gap-2 items-center">
@@ -98,7 +95,7 @@ const Goals = () => {
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleGoalCompletion(goal)}
+                      onClick={(e) => handleGoalCompletion(e, goal)}
                       className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
                     >
                       <BsCheck size={20} />
