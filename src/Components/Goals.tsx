@@ -50,6 +50,12 @@ const Goals = () => {
     },
     [goalsList]
   );
+  const handleGoalUndo = (goal) => {
+    let newlist = goalsCompletedList.filter((item) => item !== goal);
+    // setGoalsList(newlist);
+    setGoalsCompletedList(newlist);
+    setGoalsList([...goalsList, goal]);
+  };
   return (
     <div className="flex p-2 text-sm w-full">
       <div className="flex flex-col border-r border-gray-600/30 px-2 overflow-auto ">
@@ -90,7 +96,7 @@ const Goals = () => {
                     <div className="actions flex gap-2 items-center">
                       <button
                         type="button"
-                        // onClick={(e) => handleGoalCompletion(e, goal)}
+                        onClick={() => handleGoalUndo(goal)}
                         className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
                       >
                         <BiUndo size={20} />
