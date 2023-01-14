@@ -24,9 +24,8 @@ const Goals = () => {
     setGoalsList(newlist);
   };
   const completedGoal = (goal: string, goalLIItem) => {
-    // setIsCompletedGoal(true);
-    setGoalsList([...goalsList.filter((a) => a !== goal), goal]);
-    goalLIItem.closest("li").classList.add("line-through");
+    setGoalsList([...goalsList.filter((a) => a !== goal), goal.concat("🎉")]);
+    // goalLIItem.closest("li").classList.add("line-through");
   };
   const handleGoalDeletion = useCallback(
     (goal: string) => {
