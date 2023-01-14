@@ -1,13 +1,19 @@
 import ValidatorBtn from "./ValidatorBtn";
-import { useState } from "react";
-import { AiFillDelete } from "react-icons/ai";
+import { useState, useRef, useEffect } from "react";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 const Goals = () => {
+  const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
   };
+
+  useEffect(() => {
+    goalInputRef.current!.value = "";
+  }, [goalsList]);
+
   return (
     <div className="flex p-2 text-sm w-full">
       <div className="border-r border-gray-600/30 px-2">
@@ -21,6 +27,7 @@ const Goals = () => {
             placeholder="3 or more"
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
+            ref={goalInputRef}
           />
           <ValidatorBtn
             newGoal={newGoal}
@@ -38,11 +45,22 @@ const Goals = () => {
               className="group flex justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
             >
               <span className="text-gray-400 group-hover:text-white">
-                {goal}
+                {i + 1}- {goal}
               </span>
-              <button type="button">
-                <AiFillDelete className="group-hover:text-red-400" size={20} />
-              </button>
+              <div className="actions flex gap-2 items-center">
+                <button type="button">
+                  <AiOutlineEdit
+                    className="group-hover:text-blue-400"
+                    size={20}
+                  />
+                </button>
+                <button type="button">
+                  <AiOutlineDelete
+                    className="group-hover:text-red-400"
+                    size={20}
+                  />
+                </button>
+              </div>
             </li>
           ))}
         </ol>
