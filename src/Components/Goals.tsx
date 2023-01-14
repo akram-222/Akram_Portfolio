@@ -3,6 +3,7 @@ import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import ValidatorBtn from "./ValidatorBtn";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { BsCheck } from "react-icons/bs";
 const Goals = () => {
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
@@ -63,24 +64,23 @@ const Goals = () => {
           {goalsList?.map((goal, i) => (
             <li
               key={i}
-              className="group flex justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
+              className="group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
             >
               <span className="text-gray-400 group-hover:text-white">
                 {i + 1}- {goal}
               </span>
               <div className="actions flex gap-2 items-center">
-                <button type="button">
-                  <AiOutlineEdit
-                    className="group-hover:text-blue-400"
-                    size={20}
-                  />
+                <button
+                  type="button"
+                  className="text-gray-700 hover:text-white"
+                >
+                  <AiOutlineEdit size={20} />
                 </button>
-                <button type="button">
-                  <AiOutlineDelete
-                    onClick={() => handleGoalDeletion(goal)}
-                    className="group-hover:text-red-400"
-                    size={20}
-                  />
+                <button
+                  type="button"
+                  className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
+                >
+                  <BsCheck onClick={() => handleGoalDeletion(goal)} size={20} />
                 </button>
               </div>
             </li>
