@@ -16,7 +16,7 @@ const Goals = () => {
     goalInputRef.current!.value = "";
   }, [goalsList]);
 
-  const onClick = useCallback(() => {
+  const handleGoalDeletion = useCallback(() => {
     confetti({
       particleCount: 100,
       startVelocity: 30,
@@ -27,8 +27,8 @@ const Goals = () => {
         y: 0,
       },
     });
-    let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
-    setGoalsList([...uniqueGoals]);
+    // let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
+    // setGoalsList([...uniqueGoals]);
   }, [newGoal]);
   return (
     <div className="flex p-2 text-sm w-full">
@@ -72,7 +72,7 @@ const Goals = () => {
                 </button>
                 <button type="button">
                   <AiOutlineDelete
-                    onClick={onClick}
+                    onClick={handleGoalDeletion}
                     className="group-hover:text-red-400"
                     size={20}
                   />
