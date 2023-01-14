@@ -69,6 +69,7 @@ const Goals = () => {
       goalsList[0] = updatedGoalValue;
       return [...goalsList];
     });
+    setUpdatedProcessStatus(true);
     setTimeout(() => {
       setUpdatedGoalModelOpened(false);
     }, 2000);
