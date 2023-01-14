@@ -70,9 +70,9 @@ const Goals = () => {
       return [...goalsList];
     });
     setUpdatedProcessStatus(true);
-    setTimeout(() => {
-      setUpdatedGoalModelOpened(false);
-    }, 2000);
+    // setTimeout(() => {
+    //   setUpdatedGoalModelOpened(false);
+    // }, 2000);
   };
   return (
     <div className="flex p-2 text-sm w-full ">
@@ -85,7 +85,7 @@ const Goals = () => {
           } transition flex flex-col gap-3 w-full p-3 absolute bg-details shadow-lg border border-gray-600/30 rounded h-full top-0 left-0`}
         >
           {isUpdatedProcessDoneSuccessfully ? (
-            "Updated Process Done Successfully"
+            <div>Updated Process Done Successfully</div>
           ) : (
             <>
               <header className="text-right">
