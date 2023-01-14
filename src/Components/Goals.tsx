@@ -1,5 +1,7 @@
+//@ts-ignore
+import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import ValidatorBtn from "./ValidatorBtn";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 const Goals = () => {
   const goalInputRef = useRef<HTMLInputElement | null>(null);
@@ -14,6 +16,20 @@ const Goals = () => {
     goalInputRef.current!.value = "";
   }, [goalsList]);
 
+  const onClick = useCallback(() => {
+    confetti({
+      particleCount: 100,
+      startVelocity: 30,
+      spread: 360,
+      angle: 40,
+      origin: {
+        x: 0.5,
+        y: 0,
+      },
+    });
+    let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
+    setGoalsList([...uniqueGoals]);
+  }, [newGoal]);
   return (
     <div className="flex p-2 text-sm w-full">
       <div className="border-r border-gray-600/30 px-2">
@@ -56,6 +72,7 @@ const Goals = () => {
                 </button>
                 <button type="button">
                   <AiOutlineDelete
+                    onClick={onClick}
                     className="group-hover:text-red-400"
                     size={20}
                   />

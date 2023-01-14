@@ -3,16 +3,16 @@ import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import { useCallback, useState } from "react";
 const ValidatorBtn = ({ newGoal, goalsList, setGoalsList }) => {
   const onClick = useCallback(() => {
-    confetti({
-      particleCount: 100,
-      startVelocity: 30,
-      spread: 360,
-      angle: 40,
-      origin: {
-        x: 0.5,
-        y: 0,
-      },
-    });
+    // // confetti({
+    // //   particleCount: 100,
+    // //   startVelocity: 30,
+    // //   spread: 360,
+    // //   angle: 40,
+    // //   origin: {
+    // //     x: 0.5,
+    // //     y: 0,
+    // //   },
+    // // });
     let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
     setGoalsList([...uniqueGoals]);
   }, [newGoal]);
