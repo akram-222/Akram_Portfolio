@@ -71,13 +71,23 @@ const Goals = () => {
         <div
           className={`${
             isUpdatedGoalModelOpened ? "" : "-translate-x-full"
-          } transition w-full absolute h-full bg-details top-0 left-0`}
+          } transition flex flex-col gap-3 w-full p-3 absolute dark:bg-[#161b22] border border-blue-400 rounded h-full top-0 left-0`}
         >
-          <button onClick={() => setUpdatedGoalModelOpened(false)}>
-            <BsXCircle size={20} />
-          </button>
-          Updated
-          <input type="text" />
+          <header className="text-right">
+            <button onClick={() => setUpdatedGoalModelOpened(false)}>
+              <BsXCircle className="text-red-400" size={20} />
+            </button>
+          </header>
+          <div>
+            Edit your goal:
+            <input
+              type="text"
+              className="mt-1 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-3 w-11/12"
+            />
+            <button className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded">
+              Update
+            </button>
+          </div>
         </div>
         <h2 className="text-white text-2xl font-bold my-2 text-center">
           2023 Goals
