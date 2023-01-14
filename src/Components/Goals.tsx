@@ -16,7 +16,6 @@ import { BiUndo } from "react-icons/bi";
 const Goals = () => {
   const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
     useState<boolean>(false);
-
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [isUpdatedProcessDoneSuccessfully, setUpdatedProcessStatus] =
     useState<boolean>(false);
@@ -93,7 +92,6 @@ const Goals = () => {
       } else if (goalsList[i - 1] !== undefined) {
         [goalsList[i], goalsList[i - 1]] = [goalsList[i - 1], goalsList[i]];
       }
-
       setGoalsList((goalsList) => {
         return [...goalsList];
       });
@@ -243,7 +241,9 @@ const Goals = () => {
                       <FiTrash2 size={20} />
                     </button>
                     <button
-                      className="text-gray-700/50 hover:text-white"
+                      className={`${
+                        goalsList.length > 1 ? "" : "hidden"
+                      } animate-scaleUpCenter text-gray-700/50 hover:text-white`}
                       onClick={() => handleGoalsSwapping(i)}
                     >
                       <HiOutlineSwitchVertical size={18} />
