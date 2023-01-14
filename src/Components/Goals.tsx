@@ -16,20 +16,25 @@ const Goals = () => {
     goalInputRef.current!.value = "";
   }, [goalsList]);
 
-  const handleGoalDeletion = useCallback(() => {
-    confetti({
-      particleCount: 100,
-      startVelocity: 30,
-      spread: 360,
-      angle: 40,
-      origin: {
-        x: 0.5,
-        y: 0,
-      },
-    });
-    // let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
-    // setGoalsList([...uniqueGoals]);
-  }, [newGoal]);
+  const handleGoalDeletion = useCallback(
+    (goal: string) => {
+      confetti({
+        particleCount: 100,
+        startVelocity: 30,
+        spread: 360,
+        angle: 40,
+        origin: {
+          x: 0.5,
+          y: 0,
+        },
+      });
+      if (goalsList.indexOf(goal) > -1) {
+        let newlist = goalsList.filter((item) => item !== goal);
+        setGoalsList(newlist);
+      }
+    },
+    [goalsList]
+  );
   return (
     <div className="flex p-2 text-sm w-full">
       <div className="border-r border-gray-600/30 px-2">
@@ -72,7 +77,7 @@ const Goals = () => {
                 </button>
                 <button type="button">
                   <AiOutlineDelete
-                    onClick={handleGoalDeletion}
+                    onClick={() => handleGoalDeletion(goal)}
                     className="group-hover:text-red-400"
                     size={20}
                   />
