@@ -61,7 +61,7 @@ const Goals = () => {
   );
   return (
     <div className="flex p-2 text-sm w-full">
-      <div className="flex flex-col border-r border-gray-600/30 px-2">
+      <div className="flex flex-col border-r border-gray-600/30 px-2 overflow-auto ">
         <h2 className="text-white text-2xl font-bold my-2">2023 Goals</h2>
         <form className="flex flex-col items-start">
           <label htmlFor="goalInput">Add new goal :</label>
@@ -84,7 +84,7 @@ const Goals = () => {
           {goalsCompletedList.length ? (
             <>
               <span className="mt-2 text-center">Completed Goals List</span>
-              <ol className="overflow-auto list-decimal	list-inside text-sm mt-3">
+              <ol className="list-decimal	list-inside text-sm mt-3">
                 {goalsCompletedList?.map((goal, i) => (
                   <li
                     key={i}
