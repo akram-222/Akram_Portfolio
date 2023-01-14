@@ -67,11 +67,13 @@ const Goals = () => {
   };
   return (
     <div className="flex p-2 text-sm w-full ">
-      <div className="flex flex-col relative border-r border-gray-600/30 px-2 overflow-auto ">
+      <div
+        className={`flex flex-col relative border-r border-gray-600/30 px-2 overflow-auto `}
+      >
         <div
           className={`${
             isUpdatedGoalModelOpened ? "" : "-translate-x-full"
-          } transition flex flex-col gap-3 w-full p-3 absolute dark:bg-[#161b22] border border-blue-400 rounded h-full top-0 left-0`}
+          } transition flex flex-col gap-3 w-full p-3 absolute dark:bg-gray-700/20 border border-gray-600/30 rounded h-full top-0 left-0`}
         >
           <header className="text-right">
             <button onClick={() => setUpdatedGoalModelOpened(false)}>
