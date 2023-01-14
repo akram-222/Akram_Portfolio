@@ -4,7 +4,7 @@ import ValidatorBtn from "./ValidatorBtn";
 import { useState, useRef, useCallback } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
-import { IoSwapVerticalSharp } from "react-icons/io5";
+import { MdSwapCalls } from "react-icons/md";
 import {
   BsCardChecklist,
   BsCheck,
@@ -246,7 +246,7 @@ const Goals = () => {
                       className="text-gray-700/50 hover:text-white"
                       onClick={() => handleGoalsSwapping(i)}
                     >
-                      <IoSwapVerticalSharp size={18} />
+                      <MdSwapCalls size={18} />
                     </button>
                   </div>
                 </li>
