@@ -17,7 +17,6 @@ const Goals = () => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
   };
-
   useEffect(() => {
     goalInputRef.current!.value = "";
   }, [goalsList]);
@@ -28,7 +27,7 @@ const Goals = () => {
   const completedGoal = (goal: string, goalLIItem, i: number) => {
     setGoalsList([
       ...goalsList.filter((a) => a !== goal),
-      goal.concat(` ( Completed 🎉 )`),
+      goal.concat(`<span className='text-green-400'>Completed 🎉 </span>`),
     ]);
 
     setIsCompletedGoal(true);
