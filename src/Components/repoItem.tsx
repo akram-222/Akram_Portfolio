@@ -1,7 +1,7 @@
 import { AiOutlineDelete } from "react-icons/ai";
 import { BsLink45Deg } from "react-icons/bs";
-import ConfirmDeletionMsg from "./ConfirmDeletionMsg"
-import {VscIssues,VscIssueDraft} from "react-icons/vsc"
+import ConfirmDeletionMsg from "./ConfirmDeletionMsg";
+import { VscIssues, VscIssueDraft } from "react-icons/vsc";
 const RepoItem = ({
   children,
   index,
@@ -46,7 +46,11 @@ const RepoItem = ({
           <BsLink45Deg />
         </a>
       </div>
-{has_issues ? <VscIssues size={18} className="dark:text-green-500 mx-1"/>:<VscIssueDraft size={18} className="dark:text-red-500 mx-1"/>}
+      {has_issues ? (
+        <VscIssues size={18} className="dark:text-green-500 mx-1" />
+      ) : (
+        <VscIssueDraft size={18} className="dark:text-red-500 mx-1" />
+      )}
 
       <button
         data-popover-target="popover-hover"
@@ -55,17 +59,20 @@ const RepoItem = ({
         onFocus={(e) =>
           e?.currentTarget?.children[1]?.classList.remove("invisible")
         }
-        onBlur={(e) =>
-          e?.currentTarget?.children[1]?.classList.add("invisible")
+        onBlur={() =>
+          setTimeout(
+            (e) => e?.currentTarget?.children[1]?.classList.add("invisible"),
+            1000
+          )
         }
         className="dark:text-red-500 px-1 text-center"
       >
         <AiOutlineDelete />
-        <ConfirmDeletionMsg isRepoDeleted={isRepoDeleted} >
+        <ConfirmDeletionMsg isRepoDeleted={isRepoDeleted}>
           {children}
         </ConfirmDeletionMsg>
       </button>
-      
+
       {/* ///////////////////////// */}
     </div>
   );
