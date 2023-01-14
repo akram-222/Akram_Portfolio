@@ -53,7 +53,9 @@ const Goals = () => {
   return (
     <div className="flex p-2 text-sm w-full">
       <div className="flex flex-col border-r border-gray-600/30 px-2 overflow-auto ">
-        <h2 className="text-white text-2xl font-bold my-2">2023 Goals</h2>
+        <h2 className="text-white text-2xl font-bold my-2 text-center">
+          2023 Goals
+        </h2>
         <form className="flex flex-col items-start">
           <label htmlFor="goalInput">Add new goal :</label>
           <input
