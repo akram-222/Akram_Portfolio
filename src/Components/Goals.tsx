@@ -62,7 +62,7 @@ const Goals = () => {
             className="mt-1 placeholder:text-gray-500 placeholder:text-sm  dark:bg-gray-700/20 h-8 rounded px-2"
             id="goalInput"
             type="text"
-            placeholder="Type more than 2 chars"
+            placeholder="Goal..."
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
             ref={goalInputRef}
