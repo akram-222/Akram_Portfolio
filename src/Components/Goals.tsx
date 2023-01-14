@@ -1,14 +1,21 @@
 import ValidatorBtn from "./ValidatorBtn";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 const Goals = () => {
+  const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
   };
+
+  useEffect(() => {
+    goalInputRef.current!.value = "";
+  }, [goalsList]);
+
   return (
-    <div className="flex p-2 text-sm">
+    <div className="flex p-2 text-sm w-full">
       <div className="border-r border-gray-600/30 px-2">
         <h2 className="text-white text-2xl font-bold my-2">2023 Goals</h2>
         <form className="flex flex-col items-start">
@@ -20,6 +27,7 @@ const Goals = () => {
             placeholder="3 or more"
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
+            ref={goalInputRef}
           />
           <ValidatorBtn
             newGoal={newGoal}
@@ -28,11 +36,32 @@ const Goals = () => {
           />
         </form>
       </div>
-      <div className="text-white mx-4 text-xl">
+      <div className="text-white mx-4 text-xl flex-grow">
         Goals List
         <ol className="list-decimal	list-inside text-base mt-2">
           {goalsList?.map((goal, i) => (
-            <li key={i}>{goal}</li>
+            <li
+              key={i}
+              className="group flex justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
+            >
+              <span className="text-gray-400 group-hover:text-white">
+                {i + 1}- {goal}
+              </span>
+              <div className="actions flex gap-2 items-center">
+                <button type="button">
+                  <AiOutlineEdit
+                    className="group-hover:text-blue-400"
+                    size={20}
+                  />
+                </button>
+                <button type="button">
+                  <AiOutlineDelete
+                    className="group-hover:text-red-400"
+                    size={20}
+                  />
+                </button>
+              </div>
+            </li>
           ))}
         </ol>
       </div>
