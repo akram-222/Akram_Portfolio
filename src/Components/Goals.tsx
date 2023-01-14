@@ -29,9 +29,6 @@ const Goals = () => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
   };
-  useEffect(() => {
-    goalInputRef.current!.value = "";
-  }, [goalsList]);
   const deleteGoal = (goal: string) => {
     let newlist = goalsList.filter((item) => item !== goal);
     setGoalsList(newlist);
@@ -156,6 +153,7 @@ const Goals = () => {
               goalsList={goalsList}
               setGoalsList={setGoalsList}
               goalsCompletedList={goalsCompletedList}
+              setNewGoal={setNewGoal}
             />
           </div>
         </form>
