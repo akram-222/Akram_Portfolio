@@ -209,21 +209,21 @@ const Goals = () => {
                     <button
                       type="button"
                       onClick={() => setUpdatedGoalModelOpened(true)}
-                      className="text-gray-700 hover:text-white"
+                      className="text-gray-700/50 hover:text-white"
                     >
                       <AiOutlineEdit size={20} />
                     </button>
                     <button
                       type="button"
                       onClick={(e) => handleGoalCompletion(e, goal, i)}
-                      className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
+                      className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
                     >
                       <BsCheck size={20} />
                     </button>
                     {/* )} */}
                     <button
                       onClick={() => handleGoalDeletion(goal)}
-                      className="text-gray-700 hover:text-red-400"
+                      className="text-gray-700/50 hover:text-red-400"
                       type="button"
                     >
                       <FiTrash2 size={20} />
