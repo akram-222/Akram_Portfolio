@@ -56,6 +56,12 @@ const Goals = () => {
     setGoalsCompletedList(newlist);
     setGoalsList([...goalsList, goal]);
   };
+  const handleGoalEdition = (goal, i) => {
+    // goalsList[goalsList.indexOf(goal)] = "akram";
+    // console.log([...goalsList.filter((a) => a !== goal)]);
+    goalsList[i] = "new value";
+    setGoalsList(goalsList);
+  };
   return (
     <div className="flex p-2 text-sm w-full">
       <div className="flex flex-col border-r border-gray-600/30 px-2 overflow-auto ">
@@ -131,6 +137,7 @@ const Goals = () => {
                   <div className="actions flex gap-2 items-center">
                     <button
                       type="button"
+                      onClick={() => handleGoalEdition(goal, i)}
                       className="text-gray-700 hover:text-white"
                     >
                       <AiOutlineEdit size={20} />
