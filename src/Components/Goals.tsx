@@ -66,19 +66,19 @@ const Goals = () => {
     });
   };
   return (
-    <div className="flex p-2 text-sm w-full relative">
-      <div
-        className={`${
-          isUpdatedGoalModelOpened ? "" : "-translate-x-full"
-        } transition absolute h-full bg-details top-0 left-0`}
-      >
-        <button onClick={() => setUpdatedGoalModelOpened(false)}>
-          <BsXCircle size={20} />
-        </button>
-        Updated
-        <input type="text" />
-      </div>
-      <div className="flex flex-col border-r border-gray-600/30 px-2 overflow-auto ">
+    <div className="flex p-2 text-sm w-full ">
+      <div className="flex flex-col relative border-r border-gray-600/30 px-2 overflow-auto ">
+        <div
+          className={`${
+            isUpdatedGoalModelOpened ? "" : "-translate-x-full"
+          } transition w-full absolute h-full bg-details top-0 left-0`}
+        >
+          <button onClick={() => setUpdatedGoalModelOpened(false)}>
+            <BsXCircle size={20} />
+          </button>
+          Updated
+          <input type="text" />
+        </div>
         <h2 className="text-white text-2xl font-bold my-2 text-center">
           2023 Goals
         </h2>
