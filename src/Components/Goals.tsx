@@ -1,9 +1,10 @@
 //@ts-ignore
 import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import ValidatorBtn from "./ValidatorBtn";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
+import { HiOutlineSwitchVertical } from "react-icons/hi";
 import {
   BsCardChecklist,
   BsCheck,
@@ -15,7 +16,6 @@ import { BiUndo } from "react-icons/bi";
 const Goals = () => {
   const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
     useState<boolean>(false);
-
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [isUpdatedProcessDoneSuccessfully, setUpdatedProcessStatus] =
     useState<boolean>(false);
@@ -83,6 +83,18 @@ const Goals = () => {
       }, 1000);
     } else {
       UpdatedGoalInputRef.current!.value = "Enter valid input";
+    }
+  };
+  const handleGoalsSwapping = (i: number) => {
+    if (goalsList.length > 1) {
+      if (goalsList[i + 1] !== undefined) {
+        [goalsList[i], goalsList[i + 1]] = [goalsList[i + 1], goalsList[i]];
+      } else if (goalsList[i - 1] !== undefined) {
+        [goalsList[i], goalsList[i - 1]] = [goalsList[i - 1], goalsList[i]];
+      }
+      setGoalsList((goalsList) => {
+        return [...goalsList];
+      });
     }
   };
   return (
@@ -184,7 +196,7 @@ const Goals = () => {
               </ol>
             </>
           ) : (
-            <div className="text-gray-400/50 gap-3 flex flex-col flex-grow justify-center items-center">
+            <div className="text-gray-400/50 animate-scaleUpCenter gap-3 flex flex-col flex-grow justify-center items-center">
               {/* <img src={goalImg} /> */}
               <BsCardChecklist size={40} />
               Completed Goals goes here
@@ -228,13 +240,21 @@ const Goals = () => {
                     >
                       <FiTrash2 size={20} />
                     </button>
+                    <button
+                      className={`${
+                        goalsList.length > 1 ? "" : "hidden"
+                      } animate-scaleUpCenter text-gray-700/50 hover:text-white`}
+                      onClick={() => handleGoalsSwapping(i)}
+                    >
+                      <HiOutlineSwitchVertical size={18} />
+                    </button>
                   </div>
                 </li>
               ))}
             </ol>
           </>
         ) : (
-          <div className="text-gray-400/50 flex flex-col gap-3 flex-grow items-center justify-center">
+          <div className="text-gray-400/50 flex animate-scaleUpCenter flex-col gap-3 flex-grow items-center justify-center">
             {/* <img src={goalImg} /> */}
             <GiStairsGoal size={100} />
             No more Goals
