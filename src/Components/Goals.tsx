@@ -3,8 +3,9 @@ import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import ValidatorBtn from "./ValidatorBtn";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { GiStairsGoal } from "react-icons/gi";
 import { BsCheck } from "react-icons/bs";
-import goalImg from "../assests/goal.jpg";
+import goalImg from "../assests/goalImg.webp";
 const Goals = () => {
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
@@ -59,41 +60,45 @@ const Goals = () => {
           />
         </form>
       </div>
-      <div className="overflow-auto px-3 text-white text-xl flex-grow">
-        Goals List
+      <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
         {goalsList.length ? (
-          <ol className="list-decimal	list-inside text-base mt-3">
-            {goalsList?.map((goal, i) => (
-              <li
-                key={i}
-                className="group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
-              >
-                <span className="text-gray-400 group-hover:text-white">
-                  {i + 1}- {goal}
-                </span>
-                <div className="actions flex gap-2 items-center">
-                  <button
-                    type="button"
-                    className="text-gray-700 hover:text-white"
-                  >
-                    <AiOutlineEdit size={20} />
-                  </button>
-                  <button
-                    type="button"
-                    className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
-                  >
-                    <BsCheck
-                      onClick={() => handleGoalDeletion(goal)}
-                      size={20}
-                    />
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <>
+            Goals List
+            <ol className="list-decimal	list-inside text-base mt-3">
+              {goalsList?.map((goal, i) => (
+                <li
+                  key={i}
+                  className="group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
+                >
+                  <span className="text-gray-400 group-hover:text-white">
+                    {i + 1}- {goal}
+                  </span>
+                  <div className="actions flex gap-2 items-center">
+                    <button
+                      type="button"
+                      className="text-gray-700 hover:text-white"
+                    >
+                      <AiOutlineEdit size={20} />
+                    </button>
+                    <button
+                      type="button"
+                      className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
+                    >
+                      <BsCheck
+                        onClick={() => handleGoalDeletion(goal)}
+                        size={20}
+                      />
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </>
         ) : (
-          <div>
-            <img src={goalImg} />
+          <div className="text-gray-400/50 flex flex-col gap-3 flex-grow items-center justify-center">
+            {/* <img src={goalImg} /> */}
+            <GiStairsGoal size={100} />
+            No more Goals
           </div>
         )}
       </div>
