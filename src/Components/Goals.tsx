@@ -13,8 +13,10 @@ import {
 import { FiTrash2 } from "react-icons/fi";
 import { BiUndo } from "react-icons/bi";
 const Goals = () => {
+  const [isTyping, setIsTyping] = useState<boolean>(false);
   const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
     useState<boolean>(false);
+
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [isUpdatedProcessDoneSuccessfully, setUpdatedProcessStatus] =
     useState<boolean>(false);
@@ -148,13 +150,17 @@ const Goals = () => {
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
             ref={goalInputRef}
+            onFocus={() => setIsTyping(true)}
+            onBlur={() => setIsTyping(false)}
           />
-          <ValidatorBtn
-            newGoal={newGoal}
-            goalsList={goalsList}
-            setGoalsList={setGoalsList}
-            goalsCompletedList={goalsCompletedList}
-          />
+          <div className={`${isTyping}?"":"hidden"`}>
+            <ValidatorBtn
+              newGoal={newGoal}
+              goalsList={goalsList}
+              setGoalsList={setGoalsList}
+              goalsCompletedList={goalsCompletedList}
+            />
+          </div>
         </form>
         <div className="border-t flex flex-col flex-grow border-t-gray-600/30 mt-2 ">
           {goalsCompletedList.length ? (
