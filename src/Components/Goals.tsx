@@ -62,12 +62,14 @@ const Goals = () => {
     setGoalsList([...goalsList, goal]);
   };
   const handleGoalEdition = () => {
-    setUpdatedGoalModelOpened(true);
     let updatedGoalValue = UpdatedGoalInputRef.current!.value;
     setGoalsList(() => {
       goalsList[0] = updatedGoalValue;
       return [...goalsList];
     });
+    setTimeout(() => {
+      setUpdatedGoalModelOpened(false);
+    }, 100);
   };
   return (
     <div className="flex p-2 text-sm w-full ">
