@@ -83,7 +83,7 @@ const Goals = () => {
         <div className="border-t flex flex-col flex-grow border-t-gray-600/30 mt-2 ">
           {goalsCompletedList.length ? (
             <>
-              Completed Goals List
+              <span className="mt-2 text-center">Completed Goals List</span>
               <ol className="overflow-auto list-decimal	list-inside text-sm mt-3">
                 {goalsCompletedList?.map((goal, i) => (
                   <li
