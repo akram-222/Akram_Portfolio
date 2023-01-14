@@ -3,6 +3,7 @@ import { BsPlusCircle } from "react-icons/bs";
 import SuccessMessage from "./SuccessMessage";
 import { __createNewRepo } from "../Utils/github/__createNewRepo";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
+import { __deleteRepo } from "../Utils/github/__deleteRepo";
 import RepoItem from "./repoItem";
 import FetchMoreReposBtn from "./FetchMoreReposBtn";
 import AddQuickRepo from "./addQuickRepo";
@@ -38,7 +39,8 @@ export default function Repos() {
   async function deleteRepo(event: React.MouseEvent<HTMLElement>) {
     // To Make sure that event target is button https://stackoverflow.com/questions/49631688/property-dataset-does-not-exist-on-type-eventtarget
     if (!(event.target instanceof HTMLButtonElement)) return;
-    // __deleteRepo(event.target.dataset.reponame!);
+    __deleteRepo(event.target.dataset.reponame!);
+    console.log("deleted");
   }
 
   let UIReposList = repos?.map(
@@ -54,6 +56,7 @@ export default function Repos() {
         createdAt={created_at}
       >
         <button
+          // href="return false"
           className={`mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded text-sm px-2 py-1 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800`}
           data-reponame={name}
           onClick={(event) => {
@@ -70,17 +73,12 @@ export default function Repos() {
   return (
     <div className="flex p-4 flex-col h-full overflow-y-auto relative">
       {/* <ToastSuccess className={`${isRepoAdded ? "" : "hidden"}`} /> */}
-      <SuccessMessage isRepoAdded={isRepoAdded} setIsAdded={setIsAdded}/>
+      <SuccessMessage isRepoAdded={isRepoAdded} setIsAdded={setIsAdded} />
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
-        <button 
-        onClick={() => setIsHidden(!isHidden)}
-        >
-          <BsPlusCircle
-          className="w-5 h-5 cursor-pointer	"
-          
-        />
-          </button>
+        <button onClick={() => setIsHidden(!isHidden)}>
+          <BsPlusCircle className="w-5 h-5 cursor-pointer	" />
+        </button>
         <AddQuickRepo isHidden={isHidden} inputOfRepoName={inputOfRepoName}>
           <button
             onClick={() => createRepo()}
