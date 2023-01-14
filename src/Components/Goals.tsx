@@ -4,10 +4,12 @@ import ValidatorBtn from "./ValidatorBtn";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
-import { BsCardChecklist, BsCheck } from "react-icons/bs";
+import { BsCardChecklist, BsCheck, BsXCircle } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { BiUndo } from "react-icons/bi";
 const Goals = () => {
+  const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
+    useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
   const [goalsList, setGoalsList] = useState<string[]>([]);
@@ -56,16 +58,26 @@ const Goals = () => {
     setGoalsCompletedList(newlist);
     setGoalsList([...goalsList, goal]);
   };
-  const handleGoalEdition = (goal, i) => {
-    // goalsList[goalsList.indexOf(goal)] = "akram";
-    // console.log([...goalsList.filter((a) => a !== goal)]);
+  const handleGoalEdition = (goal, i: number) => {
+    setUpdatedGoalModelOpened(true);
     setGoalsList(() => {
       goalsList[i] = "new value";
       return [...goalsList];
     });
   };
   return (
-    <div className="flex p-2 text-sm w-full">
+    <div className="flex p-2 text-sm w-full relative">
+      <div
+        className={`${
+          isUpdatedGoalModelOpened ? "" : "-translate-x-full"
+        } transition absolute h-full bg-details top-0 left-0`}
+      >
+        <button onClick={() => setUpdatedGoalModelOpened(false)}>
+          <BsXCircle size={20} />
+        </button>
+        Updated
+        <input type="text" />
+      </div>
       <div className="flex flex-col border-r border-gray-600/30 px-2 overflow-auto ">
         <h2 className="text-white text-2xl font-bold my-2 text-center">
           2023 Goals
