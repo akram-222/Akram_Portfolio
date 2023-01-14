@@ -70,16 +70,22 @@ const Goals = () => {
   };
   const handleGoalEdition = () => {
     let updatedGoalValue = UpdatedGoalInputRef.current!.value;
-    setGoalsList(() => {
-      goalsList[0] = updatedGoalValue;
-      return [...goalsList];
-    });
-    setUpdatedProcessStatus(true);
-    setTimeout(() => {
-      setUpdatedGoalModelOpened(false);
-      setUpdatedProcessStatus(false);
-      setUpdatedGoalInputValue("");
-    }, 1000);
+    if (
+      updatedGoalValue.length < 3 ||
+      /^[A-Za-z]+$/.test(updatedGoalValue) === false
+    ) {
+      setGoalsList(() => {
+        goalsList[0] = updatedGoalValue;
+        return [...goalsList];
+      });
+      setUpdatedProcessStatus(true);
+
+      setTimeout(() => {
+        setUpdatedGoalModelOpened(false);
+        setUpdatedProcessStatus(false);
+        setUpdatedGoalInputValue("");
+      }, 1000);
+    }
   };
   return (
     <div className="flex p-2 text-sm w-full ">
