@@ -4,7 +4,6 @@ import ValidatorBtn from "./ValidatorBtn";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
-import { GrInProgress } from "react-icons/gr";
 import { BsCardChecklist, BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { BiUndo } from "react-icons/bi";
@@ -118,7 +117,7 @@ const Goals = () => {
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
         {goalsList.length ? (
           <>
-            In Progress Goals <GrInProgress size={30} />
+            In Progress Goals ⌛
             <ol className="list-decimal	list-inside text-base mt-3">
               {goalsList?.map((goal, i) => (
                 <li
