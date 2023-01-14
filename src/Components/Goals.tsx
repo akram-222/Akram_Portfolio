@@ -13,7 +13,6 @@ import {
 import { FiTrash2 } from "react-icons/fi";
 import { BiUndo } from "react-icons/bi";
 const Goals = () => {
-  const [isTyping, setIsTyping] = useState<boolean>(false);
   const [isUpdatedGoalModelOpened, setUpdatedGoalModelOpened] =
     useState<boolean>(false);
 
@@ -150,10 +149,8 @@ const Goals = () => {
             onChange={(e) => handleAddingNewGoal(e)}
             value={newGoal}
             ref={goalInputRef}
-            onFocus={() => setIsTyping(true)}
-            onBlur={() => setIsTyping(false)}
           />
-          <div className={`${isTyping}?"":"hidden"`}>
+          <div>
             <ValidatorBtn
               newGoal={newGoal}
               goalsList={goalsList}
