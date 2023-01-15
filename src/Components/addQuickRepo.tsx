@@ -5,9 +5,9 @@ const AddQuickRepo = ({ children, isHidden, inputOfRepoName }) => {
     <div
       className={`${
         isHidden ? "hidden" : ""
-      } z-10 p-3 add-new-repo absolute flex backdrop-blur-sm bg-gray-700/40 top-0 w-full left-0 items-center justify-center h-screen rounded-lg`}
+      } z-10 p-3 add-new-repo absolute flex backdrop-blur-sm bg-card shadow-md top-0 w-full left-0 items-center justify-center h-screen rounded-lg`}
     >
-      <form className="w-1/2 h-48 bg-card border border-gray-600/20 rounded p-10">
+      <form className="w-1/2 h-48  border border-gray-600/20 rounded p-10">
         <label
           htmlFor="website-admin"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
