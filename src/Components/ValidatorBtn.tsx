@@ -23,11 +23,16 @@ const ValidatorBtn = ({
       ) : /^[a-zA-z]\w+( \w+)*$/.test(newGoal) === false ? (
         <span className="text-red-400 mt-2">not allowed input</span>
       ) : isEdit ? (
-        <button onClick={() => handleSubmitChange()}>Update</button>
+        <button
+          type="button"
+          onClick={() => handleSubmitChange()}
+          className="text-sm px-3 py-1 mt-2 bg-teal-700 text-white rounded"
+        >
+          Update
+        </button>
       ) : (
         <button
           type="button"
-          // onClick={onClick}
           onClick={writeGoalToDatabase}
           className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
         >
