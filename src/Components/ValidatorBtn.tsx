@@ -28,7 +28,7 @@ const ValidatorBtn = ({
         <button
           type="button"
           onClick={() => handleSubmitChange()}
-          className="text-sm px-3 py-1 mt-2 bg-teal-700 text-white rounded"
+          className="text-sm px-3 py-1 bg-teal-700 text-white rounded"
         >
           Update
         </button>
@@ -36,7 +36,7 @@ const ValidatorBtn = ({
         <button
           type="button"
           onClick={writeGoalToDatabase}
-          className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
+          className="text-sm px-3 py-1 bg-blue-600 text-white rounded"
         >
           Add
         </button>

@@ -16,16 +16,22 @@ const GoalSnakeItem = ({
   return (
     <li
       key={i}
-      className={`slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full`}
+      className={`${
+        goalObj.isCompleted ? "text-xs p-1" : "p-2"
+      } slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20  rounded-lg w-full`}
     >
       <span
         className={`${
           goalObj.isCompleted ? "line-through" : ""
-        } flex-grow text-gray-400 group-hover:text-white`}
+        } flex-grow flex items-center text-gray-400 group-hover:text-white`}
       >
         {i + 1}- {goalObj.goal}
       </span>
-      <span className="text-xs mx-2 flex items-center opacity-0 group-hover:opacity-100 text-gray-400/50">
+      <span
+        className={`${
+          goalObj.isCompleted ? "hidden" : "opacity-0 group-hover:opacity-100"
+        } text-xs mx-2 flex items-center text-gray-400/50`}
+      >
         {new Date(goalObj.created_at).toLocaleString()}
       </span>
       <div className="actions flex gap-2 items-center">

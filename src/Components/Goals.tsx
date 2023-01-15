@@ -10,7 +10,7 @@ import { uid } from "uid";
 import { set, ref, onValue, remove, update } from "firebase/database";
 import { BsCardChecklist, BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
-import { BiUndo } from "react-icons/bi";
+import { BiListCheck, BiUndo } from "react-icons/bi";
 import GoalSnakeItem from "./goalSnakeItem";
 const Goals = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
@@ -100,7 +100,7 @@ const Goals = () => {
         <form className="flex flex-col items-start">
           <label htmlFor="goalInput">Add new goal :</label>
           <input
-            className="mt-1 placeholder:text-gray-500 placeholder:text-sm  dark:bg-gray-700/20 h-8 rounded px-2"
+            className="mt-1 mb-2 placeholder:text-gray-500 placeholder:text-sm  dark:bg-gray-700/20 h-8 rounded px-2"
             id="goalInput"
             type="text"
             placeholder="Goal..."
@@ -121,20 +121,27 @@ const Goals = () => {
             />
           </div>
         </form>
-        <div className="border-t flex flex-col flex-grow border-t-gray-600/30 mt-2 ">
-          <div className="text-gray-400/50 animate-scaleUpCenter gap-3 flex flex-col flex-grow justify-center items-center">
-            <ol className="list-decimal	list-inside text-base mt-3">
-              {completedGoals.length
-                ? completedGoals.map((goalObj, i) =>
+        <div className="border-t mt-3 pt-2 flex flex-col flex-grow border-t-gray-600/30 mt-2 ">
+          <div className="text-gray-400/50 animate-scaleUpCenter">
+            {completedGoals.length ? (
+              <>
+                Completed Goals
+                <ol className="list-decimal	list-inside text-base mt-3">
+                  {completedGoals.map((goalObj, i) =>
                     goalSnakeItemVar(i, goalObj)
-                  )
-                : "completed goals goes here"}
-            </ol>
+                  )}
+                </ol>
+              </>
+            ) : (
+              <div className="text-gray-400/50 flex animate-scaleUpCenter flex-col gap-3 flex-grow items-center justify-center">
+                <BiListCheck size={40} />
+                Completed goals goes here
+              </div>
+            )}
           </div>
         </div>
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
-        {/*  */}
         {inProgressGoals.length ? (
           <>
             In Progress Goals ⌛
