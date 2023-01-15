@@ -103,6 +103,7 @@ const Goals = () => {
 
   useEffect(() => {
     onValue(ref(db), (snapshot) => {
+      setGoalsList([]);
       const data = snapshot.val();
       if (data !== null) {
         Object.values(data).map((goal) => {
