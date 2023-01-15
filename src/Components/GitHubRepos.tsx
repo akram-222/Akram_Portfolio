@@ -83,7 +83,7 @@ export default function Repos() {
           <button
             onClick={() => createRepo()}
             type="button"
-            className="text-white mt-3 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded px-3 py-1.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
+            className="text-white mt-3 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded px-3 pt-1.5 pb-1 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
           >
             New
           </button>
