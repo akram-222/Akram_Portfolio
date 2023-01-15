@@ -22,7 +22,7 @@ const AddQuickRepo = ({ children, isHidden, inputOfRepoName }) => {
           <input
             type="text"
             id="createNewRepoInput"
-            className="outline-none block w-full p-2 pl-8 text-sm text-gray-900 border border-gray-300 rounded dark:bg-details dark:border-gray-600/30 focus:ring-green-500 focus:border-green-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+            className="outline-none block w-full p-2 pl-8 text-sm text-gray-900 border border-gray-300 rounded bg-details dark:border-gray-600/30 focus:ring-green-500 focus:border-green-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
             placeholder="new-repo"
             ref={inputOfRepoName}
             required
