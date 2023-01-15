@@ -134,17 +134,17 @@ const Goals = () => {
         </div>
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
-        <ol className="list-decimal	list-inside text-base mt-3">
-          {/* In Progress Goals ⌛ */}
-          {inProgressGoals.length ? (
-            inProgressGoals.map((goalObj, i) => goalSnakeItemVar(i, goalObj))
-          ) : (
-            <div className="text-gray-400/50 flex animate-scaleUpCenter flex-col gap-3 flex-grow items-center justify-center">
-              <GiStairsGoal size={100} />
-              No more Goals
-            </div>
-          )}
-        </ol>
+        {/* In Progress Goals ⌛ */}
+        {inProgressGoals.length ? (
+          <ol className="list-decimal	list-inside text-base mt-3">
+            {inProgressGoals.map((goalObj, i) => goalSnakeItemVar(i, goalObj))}
+          </ol>
+        ) : (
+          <div className="text-gray-400/50 flex animate-scaleUpCenter flex-col gap-3 flex-grow items-center justify-center">
+            <GiStairsGoal size={100} />
+            No more Goals
+          </div>
+        )}
       </div>
     </div>
   );
