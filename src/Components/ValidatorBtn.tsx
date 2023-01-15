@@ -14,6 +14,7 @@ const ValidatorBtn = ({
       goal: newGoal,
       uuid,
       isCompleted: false,
+      created_at: new Date().toISOString(),
     });
     setNewGoal("");
   };

@@ -127,6 +127,9 @@ const Goals = () => {
                   <span className={`text-gray-400 group-hover:text-white`}>
                     {i + 1}- {goalObj.goal}
                   </span>
+                  <span className="text-xs flex items-center opacity-0 group-hover:opacity-100 text-gray-400/50">
+                    {new Date(goalObj.created_at).toLocaleString()}
+                  </span>
                   <div className="actions flex gap-2 items-center">
                     {!goalObj.isCompleted ? (
                       <>
