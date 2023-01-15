@@ -10,6 +10,7 @@ import { uid } from "uid";
 import { set, ref, onValue, remove, update } from "firebase/database";
 import { BsCardChecklist, BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
+import { BiUndo } from "react-icons/bi";
 const Goals = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
@@ -54,11 +55,22 @@ const Goals = () => {
       ...goalObj,
       isCompleted: true,
     });
+
     confetti({
+      particleCount: 150,
+      startVelocity: 30,
+      spread: 360,
+      angle: 40,
       origin: {
-        x: 0.67,
-        // since they fall down, start a bit higher than random
+        x: 0.5,
+        y: 0,
       },
+    });
+  };
+  const handleUndoGoalCompletion = (goalObj) => {
+    update(ref(db, `/${goalObj.uuid}`), {
+      ...goalObj,
+      isCompleted: false,
     });
   };
   return (
@@ -108,27 +120,42 @@ const Goals = () => {
               {goalsList?.map((goalObj, i) => (
                 <li
                   key={i}
-                  className="slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
+                  className={`${
+                    goalObj.isCompleted ? "line-through" : ""
+                  } slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full`}
                 >
                   <span className={`text-gray-400 group-hover:text-white`}>
                     {i + 1}- {goalObj.goal}
                   </span>
                   <div className="actions flex gap-2 items-center">
-                    <button
-                      type="button"
-                      onClick={() => handleGoalEdition(goalObj)}
-                      className="text-gray-700/50 hover:text-white"
-                    >
-                      <AiOutlineEdit size={20} />
-                    </button>
+                    {!goalObj.isCompleted ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => handleGoalEdition(goalObj)}
+                          className="text-gray-700/50 hover:text-white"
+                        >
+                          <AiOutlineEdit size={20} />
+                        </button>
 
-                    <button
-                      type="button"
-                      onClick={() => handleGoalCompletion(goalObj)}
-                      className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
-                    >
-                      <BsCheck size={20} />
-                    </button>
+                        <button
+                          type="button"
+                          onClick={() => handleGoalCompletion(goalObj)}
+                          className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
+                        >
+                          <BsCheck size={20} />
+                        </button>
+                      </>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => handleUndoGoalCompletion(goalObj)}
+                        className="text-gray-700/50 hover:text-white"
+                      >
+                        <BiUndo size={20} />
+                      </button>
+                    )}
+
                     <button
                       onClick={() => handleGoalDeletion(goalObj)}
                       className="text-gray-700/50 hover:text-red-400"
