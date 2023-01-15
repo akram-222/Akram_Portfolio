@@ -2,6 +2,7 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { BiExpand, BiUndo } from "react-icons/bi";
 import { BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
+import { TbMaximize, TbMinimize } from "react-icons/tb";
 
 const GoalSnakeItem = ({
   i,
@@ -27,6 +28,8 @@ const GoalSnakeItem = ({
         goalObj.isCompleted
           ? "text-xs p-1"
           : "text-sm hover:bg-[#050708]/20 p-2"
+      } ${
+        goalObj.isExpanded ? "expanded-goal" : ""
       } slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <span
@@ -85,12 +88,14 @@ const GoalSnakeItem = ({
         <button
           //   onClick={() => handleGoalDeletion(goalObj)}
           onClick={() => handleGoalExpandation(goalObj)}
-          className={`${
-            goalObj.isExpanded ? "expanded-goal" : ""
-          } text-gray-700/50 hover:text-orange-400`}
+          className={`text-gray-700/50 hover:text-orange-400`}
           type="button"
         >
-          <BiExpand size={18} />
+          {goalObj.isExpanded ? (
+            <TbMaximize size={18} />
+          ) : (
+            <TbMinimize size={18} />
+          )}
         </button>
       </div>
     </li>
