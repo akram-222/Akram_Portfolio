@@ -34,7 +34,7 @@ const GoalSnakeItem = ({
             : "group-hover:text-white"
         } flex-grow flex items-center text-gray-400 `}
       >
-        {i + 1}- {goalObj.goal}
+        {i + 1}- {goalObj.content}
       </span>
       <span
         className={`${

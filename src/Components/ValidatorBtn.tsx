@@ -11,7 +11,7 @@ const ValidatorBtn = ({
   const writeGoalToDatabase = () => {
     const uuid = uid();
     set(reference(db, `/${uuid}`), {
-      goal: newGoal,
+      content: newGoal,
       uuid,
       isCompleted: false,
       created_at: new Date().toISOString(),

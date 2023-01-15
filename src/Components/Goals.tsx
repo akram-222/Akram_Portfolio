@@ -36,7 +36,7 @@ const Goals = () => {
   const handleGoalEdition = (goalObj) => {
     setIsEdit(true);
     setTempUUID(goalObj.uuid);
-    setNewGoal(goalObj.goal);
+    setNewGoal(goalObj.content);
   };
   const handleSubmitChange = () => {
     update(ref(db, `/${tempUUID}`), {
