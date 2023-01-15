@@ -11,11 +11,11 @@ import {app} from '../base.js'
 const Dashboard = ({ onSidebarHide }) => {
 
 const onChange=(e:React.SyntheticEvent)=>{
-let file = (e.currentTarget as HTMLInputElement)!.files[0];
+let file = (<HTMLInputElement>e.target).files[0];
 const storageRef = app.storage().ref();
 const fileRef = storageRef.child(file.name);
 fileRef.put(file).then(()=> console.log('file Uploaded'));
-}
+};
   return (
     <>
       <PageTitle
