@@ -13,6 +13,7 @@ const ValidatorBtn = ({
     set(reference(db, `/${uuid}`), {
       goal: newGoal,
       uuid,
+      isCompleted: false,
     });
     setNewGoal("");
   };

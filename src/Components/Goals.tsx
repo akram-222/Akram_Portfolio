@@ -48,6 +48,12 @@ const Goals = () => {
     setNewGoal("");
     setIsEdit(false);
   };
+  const handleGoalCompletion = (goalObj) => {
+    update(ref(db, `/${goalObj.uuid}`), {
+      ...goalObj,
+      isCompleted: true,
+    });
+  };
   return (
     <div className="flex p-2 text-sm w-full ">
       <div
@@ -111,6 +117,7 @@ const Goals = () => {
 
                     <button
                       type="button"
+                      onClick={() => handleGoalCompletion(goalObj)}
                       className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
                     >
                       <BsCheck size={20} />
