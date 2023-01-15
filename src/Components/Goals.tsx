@@ -40,7 +40,7 @@ const Goals = () => {
   };
   const handleSubmitChange = () => {
     update(ref(db, `/${tempUUID}`), {
-      goal: newGoal,
+      content: newGoal,
       uuid: tempUUID,
     });
 
