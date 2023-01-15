@@ -1,18 +1,25 @@
+import { BsXCircle } from "react-icons/bs";
 import { VscRepoForked } from "react-icons/vsc";
 
-const AddQuickRepo = ({ children, isHidden, inputOfRepoName }) => {
+const AddQuickRepo = ({ children, isHidden, setIsHidden, inputOfRepoName }) => {
   return (
     <div
       className={`${
         isHidden ? "hidden" : ""
-      } z-10 p-3 add-new-repo absolute flex backdrop-blur-sm bg-card shadow-md top-0 w-full left-0 items-center justify-center h-screen rounded-lg`}
+      } z-10  w-full add-new-repo fixed flex flex-col backdrop-blur-sm bg-card shadow-md top-0 w-full left-0 items-center justify-center  h-screen overflow-hidden rounded-lg`}
     >
-      <form className="w-1/2 h-48  border border-gray-600/20 rounded p-10">
+      <form className="w-[80%] md:w-[50%] border flex flex-col border-gray-600/20 rounded p-8">
+        <button
+          onClick={() => setIsHidden(true)}
+          className="-mt-2 mb-4 self-end text-red-400 "
+        >
+          <BsXCircle size={25} />
+        </button>
         <label
           htmlFor="website-admin"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         >
-          Repo name:
+          Create New Repo :
         </label>
 
         <div className="relative">
