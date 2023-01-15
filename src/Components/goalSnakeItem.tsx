@@ -23,7 +23,9 @@ const GoalSnakeItem = ({
     <li
       key={i}
       className={`${
-        goalObj.isCompleted ? " text-xs p-1" : " hover:bg-[#050708]/20 p-2"
+        goalObj.isCompleted
+          ? "text-xs p-1"
+          : "text-sm hover:bg-[#050708]/20 p-2"
       } slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <span
@@ -32,7 +34,7 @@ const GoalSnakeItem = ({
           goalObj.isCompleted
             ? "line-through showHint cursor-help"
             : "group-hover:text-white"
-        } flex-grow flex items-center text-gray-400 `}
+        } flex-grow  text-gray-400 w-[190px] whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         {i + 1}- {goalObj.content}
       </span>
