@@ -100,7 +100,7 @@ const Goals = () => {
   return (
     <div className="flex p-2 text-sm w-full ">
       <div
-        className={`flex flex-col relative border-r border-gray-600/30 px-2 overflow-auto `}
+        className={`flex flex-col relative border-r border-gray-600/20 px-2 overflow-auto `}
       >
         <div
           className={`${
@@ -146,7 +146,7 @@ const Goals = () => {
           )}
         </div>
         <h2 className="text-white text-2xl font-bold my-2 text-center">
-          2023 Goals
+          {new Date().getFullYear()} Goals
         </h2>
         <form className="flex flex-col items-start">
           <label htmlFor="goalInput">Add new goal :</label>

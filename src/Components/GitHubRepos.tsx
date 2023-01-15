@@ -71,19 +71,23 @@ export default function Repos() {
   );
 
   return (
-    <div className="flex p-4 flex-col h-full overflow-y-auto relative">
+    <div className="flex p-4 flex-col h-full overflow-y-auto">
       {/* <ToastSuccess className={`${isRepoAdded ? "" : "hidden"}`} /> */}
       <SuccessMessage isRepoAdded={isRepoAdded} setIsAdded={setIsAdded} />
       <div className="flex justify-between items-center">
         <div className="text-white font-bold">GitHub Repos</div>
-        <button onClick={() => setIsHidden(!isHidden)}>
+        <button onClick={() => setIsHidden(false)}>
           <BsPlusCircle className="w-5 h-5 cursor-pointer	" />
         </button>
-        <AddQuickRepo isHidden={isHidden} inputOfRepoName={inputOfRepoName}>
+        <AddQuickRepo
+          isHidden={isHidden}
+          setIsHidden={setIsHidden}
+          inputOfRepoName={inputOfRepoName}
+        >
           <button
             onClick={() => createRepo()}
             type="button"
-            className="text-white absolute right-2.5 bottom-1 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-1 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
+            className="w-fit text-white mt-3 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded px-3 pt-1.5 pb-1 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
           >
             New
           </button>

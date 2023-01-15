@@ -6,7 +6,6 @@ import NameCard from "../Components/NameCard";
 import PageTitle from "../Components/PageTitle";
 import Satisfication from "../Components/Satisfication";
 import Segmentation from "../Components/Segmentation";
-import Chart from "../Components/Chart";
 import Goals from "../Components/Goals";
 
 const Dashboard = ({ onSidebarHide }) => {
