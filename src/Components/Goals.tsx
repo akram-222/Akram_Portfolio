@@ -2,14 +2,12 @@
 import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import ValidatorBtn from "./ValidatorBtn";
 import { useState, useEffect, useRef } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
-import { HiOutlineSwitchVertical } from "react-icons/hi";
 import { db } from "../firebase";
 import { uid } from "uid";
 import { set, ref, onValue, remove, update } from "firebase/database";
-import { BsCardChecklist, BsCheck } from "react-icons/bs";
-import { FiTrash2 } from "react-icons/fi";
+import { BiListCheck } from "react-icons/bi";
+import GoalSnakeItem from "./goalSnakeItem";
 const Goals = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
@@ -38,16 +36,54 @@ const Goals = () => {
   const handleGoalEdition = (goalObj) => {
     setIsEdit(true);
     setTempUUID(goalObj.uuid);
-    setNewGoal(goalObj.goal);
+    setNewGoal(goalObj.content);
   };
   const handleSubmitChange = () => {
     update(ref(db, `/${tempUUID}`), {
-      goal: newGoal,
+      content: newGoal,
       uuid: tempUUID,
     });
+
     setNewGoal("");
     setIsEdit(false);
   };
+  const handleGoalCompletion = (goalObj) => {
+    update(ref(db, `/${goalObj.uuid}`), {
+      ...goalObj,
+      isCompleted: true,
+      completed_at: new Date().toISOString(),
+    });
+
+    confetti({
+      particleCount: 150,
+      startVelocity: 30,
+      spread: 360,
+      angle: 40,
+      origin: {
+        x: 0.5,
+        y: 0,
+      },
+    });
+  };
+  const handleUndoGoalCompletion = (goalObj) => {
+    update(ref(db, `/${goalObj.uuid}`), {
+      ...goalObj,
+      isCompleted: false,
+    });
+  };
+  let completedGoals = goalsList?.filter((goal) => goal.isCompleted);
+  let inProgressGoals = goalsList?.filter((goal) => !goal.isCompleted);
+  const goalSnakeItemVar = (i: number, goalObj) => (
+    <GoalSnakeItem
+      i={i}
+      goalObj={goalObj}
+      handleGoalCompletion={handleGoalCompletion}
+      handleGoalDeletion={handleGoalDeletion}
+      handleGoalEdition={handleGoalEdition}
+      handleUndoGoalCompletion={handleUndoGoalCompletion}
+    />
+  );
+
   return (
     <div className="flex p-2 text-sm w-full ">
       <div
@@ -59,7 +95,7 @@ const Goals = () => {
         <form className="flex flex-col items-start">
           <label htmlFor="goalInput">Add new goal :</label>
           <input
-            className="mt-1 placeholder:text-gray-500 placeholder:text-sm  dark:bg-gray-700/20 h-8 rounded px-2"
+            className="mt-1 mb-2 placeholder:text-gray-500 placeholder:text-sm  dark:bg-gray-700/20 h-8 rounded px-2"
             id="goalInput"
             type="text"
             placeholder="Goal..."
@@ -80,58 +116,34 @@ const Goals = () => {
             />
           </div>
         </form>
-        <div className="border-t flex flex-col flex-grow border-t-gray-600/30 mt-2 ">
-          <div className="text-gray-400/50 animate-scaleUpCenter gap-3 flex flex-col flex-grow justify-center items-center">
-            <BsCardChecklist size={40} />
-            Completed Goals goes here
+        <div className="border-t mt-3 pt-2 flex flex-col flex-grow border-t-gray-600/30 mt-2 ">
+          <div className="text-gray-400/50 animate-scaleUpCenter">
+            {completedGoals.length ? (
+              <>
+                Completed Goals
+                <ol className="list-decimal	list-inside text-base mt-3">
+                  {completedGoals.map((goalObj, i) =>
+                    goalSnakeItemVar(i, goalObj)
+                  )}
+                </ol>
+              </>
+            ) : (
+              <div className="text-gray-400/50 flex animate-scaleUpCenter flex-col gap-3 flex-grow items-center justify-center">
+                <BiListCheck size={40} />
+                Completed goals goes here
+              </div>
+            )}
           </div>
         </div>
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
-        {goalsList.length ? (
+        {inProgressGoals.length ? (
           <>
             In Progress Goals ⌛
             <ol className="list-decimal	list-inside text-base mt-3">
-              {goalsList?.map((goalObj, i) => (
-                <li
-                  key={i}
-                  className="slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
-                >
-                  <span className={`text-gray-400 group-hover:text-white`}>
-                    {i + 1}- {goalObj.goal}
-                  </span>
-                  <div className="actions flex gap-2 items-center">
-                    <button
-                      type="button"
-                      onClick={() => handleGoalEdition(goalObj)}
-                      className="text-gray-700/50 hover:text-white"
-                    >
-                      <AiOutlineEdit size={20} />
-                    </button>
-
-                    <button
-                      type="button"
-                      className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
-                    >
-                      <BsCheck size={20} />
-                    </button>
-                    <button
-                      onClick={() => handleGoalDeletion(goalObj)}
-                      className="text-gray-700/50 hover:text-red-400"
-                      type="button"
-                    >
-                      <FiTrash2 size={20} />
-                    </button>
-                    <button
-                      className={`${
-                        goalsList.length > 1 ? "" : "hidden"
-                      } animate-scaleUpCenter text-gray-700/50 hover:text-white`}
-                    >
-                      <HiOutlineSwitchVertical size={18} />
-                    </button>
-                  </div>
-                </li>
-              ))}
+              {inProgressGoals.map((goalObj, i) =>
+                goalSnakeItemVar(i, goalObj)
+              )}
             </ol>
           </>
         ) : (
