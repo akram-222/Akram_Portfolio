@@ -7,15 +7,15 @@ import PageTitle from "../Components/PageTitle";
 import Satisfication from "../Components/Satisfication";
 import Segmentation from "../Components/Segmentation";
 import Goals from "../Components/Goals";
-import {app} from '../base.js'
-const Dashboard = ({ onSidebarHide }) => {
+import { app } from "../firebase";
 
-const onChange=(e:React.SyntheticEvent)=>{
-let file = (e.currentTarget as HTMLInputElement)!.files[0];
-const storageRef = app.storage().ref();
-const fileRef = storageRef.child(file.name);
-fileRef.put(file).then(()=> console.log('file Uploaded'));
-}
+const Dashboard = ({ onSidebarHide }) => {
+  // const onChange = (e: React.SyntheticEvent) => {
+  //   let file = (e.target as HTMLInputElement)!.files![0];
+  //   const storageRef = app.storage().ref();
+  //   const fileRef = storageRef.child(file.name);
+  //   fileRef.put(file).then(() => console.log("file Uploaded"));
+  // };
   return (
     <>
       <PageTitle
@@ -131,7 +131,7 @@ fileRef.put(file).then(()=> console.log('file Uploaded'));
         <div className="flex rounded-lg bg-card sm:h-80 h-60">
           {/* <Graph /> */}
           {/* <Chart /> */}
-<input type='file' onChange={(e)=>onChange(e)} />
+          {/* <input type="file" onChange={(e) => onChange(e)} /> */}
           <Goals />
         </div>
       </div>
