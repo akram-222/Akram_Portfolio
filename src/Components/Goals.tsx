@@ -2,15 +2,11 @@
 import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import ValidatorBtn from "./ValidatorBtn";
 import { useState, useEffect, useRef } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
-import { HiOutlineSwitchVertical } from "react-icons/hi";
 import { db } from "../firebase";
 import { uid } from "uid";
 import { set, ref, onValue, remove, update } from "firebase/database";
-import { BsCardChecklist, BsCheck } from "react-icons/bs";
-import { FiTrash2 } from "react-icons/fi";
-import { BiListCheck, BiUndo } from "react-icons/bi";
+import { BiListCheck } from "react-icons/bi";
 import GoalSnakeItem from "./goalSnakeItem";
 const Goals = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
@@ -77,7 +73,7 @@ const Goals = () => {
   };
   let completedGoals = goalsList?.filter((goal) => goal.isCompleted);
   let inProgressGoals = goalsList?.filter((goal) => !goal.isCompleted);
-  const goalSnakeItemVar = (i, goalObj) => (
+  const goalSnakeItemVar = (i: number, goalObj) => (
     <GoalSnakeItem
       i={i}
       goalObj={goalObj}
