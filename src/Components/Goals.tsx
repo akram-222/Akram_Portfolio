@@ -234,7 +234,7 @@ const Goals = () => {
                   className="slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
                 >
                   <span className={`text-gray-400 group-hover:text-white`}>
-                    {i + 1}- {goal}
+                    {i + 1}- {goal.goal}
                   </span>
                   <div className="actions flex gap-2 items-center">
                     <button
