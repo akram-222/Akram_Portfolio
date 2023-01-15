@@ -5,8 +5,9 @@ window.addEventListener("mouseover", () => {
     ele[i].onmousemove = (e) => {
       hint.classList.remove("hidden");
       hint.style.left = `${e.pageX - 50}px`;
+      console.log(e);
       hint.style.top = `${
-        e.clientY - hint.getBoundingClientRect().height - 10
+        e.pageY - hint.getBoundingClientRect().height - 10
       }px`;
       let target = e.currentTarget as HTMLElement;
       hint.innerHTML = target!.getAttribute("data-hint")!;
@@ -19,7 +20,7 @@ window.addEventListener("mouseover", () => {
 
 const Tooltip = () => {
   return (
-    <div className="hint before:content-[' '] before:bottom-[-4px] before:w-[10px] before:h-[10px] before:absolute dark:before:bg-gray-600 transition-all hidden dark:bg-gray-600 rounded cursor-help text-sm px-3 py-1 w-fit absolute text-white z-[9999]"></div>
+    <div className="hint before:content-[' '] before:bottom-[-4px] before:w-[10px] before:h-[10px] before:absolute dark:before:bg-gray-100 transition-all hidden dark:bg-gray-100 text-black rounded cursor-help text-sm px-3 py-1 w-fit absolute text-white z-[9999]"></div>
   );
 };
 

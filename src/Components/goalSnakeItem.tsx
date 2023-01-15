@@ -12,8 +12,12 @@ const GoalSnakeItem = ({
   handleUndoGoalCompletion,
 }) => {
   const timeTooltip = `<div className=''>
-      <p>Creation time :${new Date(goalObj.created_at).toLocaleString()}</p>
-      <p>Completed time :${new Date(goalObj.completed_at).toLocaleString()}</p>
+      <p><b>Creation time</b> :${new Date(
+        goalObj.created_at
+      ).toLocaleString()}</p>
+      <p><b>Completed time</b> :${new Date(
+        goalObj.completed_at
+      ).toLocaleString()}</p>
       </div>`;
   return (
     <li
@@ -26,7 +30,7 @@ const GoalSnakeItem = ({
         data-hint={timeTooltip}
         className={`${
           goalObj.isCompleted ? "line-through" : "group-hover:text-white"
-        } showHint flex-grow flex items-center text-gray-400 `}
+        } showHint cursor-help flex-grow flex items-center text-gray-400 `}
       >
         {i + 1}- {goalObj.goal}
       </span>
