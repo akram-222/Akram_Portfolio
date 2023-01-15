@@ -127,7 +127,7 @@ const Goals = () => {
             {completedGoals.length ? (
               <>
                 Completed Goals
-                <ol className="flex-grow list-decimal	list-inside text-base mt-3">
+                <ol className="flex flex-col flex-grow list-decimal	list-inside text-base mt-3">
                   {completedGoals.map((goalObj, i) =>
                     goalSnakeItemVar(i, goalObj)
                   )}
@@ -146,7 +146,7 @@ const Goals = () => {
         {inProgressGoals.length ? (
           <>
             In Progress Goals ⌛
-            <ol className="flex-grow list-decimal	list-inside text-base mt-3">
+            <ol className="flex flex-col flex-grow list-decimal	list-inside text-base mt-3">
               {inProgressGoals.map((goalObj, i) =>
                 goalSnakeItemVar(i, goalObj)
               )}
