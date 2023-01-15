@@ -45,6 +45,7 @@ const Goals = () => {
       goal: newGoal,
       uuid: tempUUID,
     });
+
     setNewGoal("");
     setIsEdit(false);
   };
@@ -52,6 +53,12 @@ const Goals = () => {
     update(ref(db, `/${goalObj.uuid}`), {
       ...goalObj,
       isCompleted: true,
+    });
+    confetti({
+      origin: {
+        x: 0.67,
+        // since they fall down, start a bit higher than random
+      },
     });
   };
   return (
