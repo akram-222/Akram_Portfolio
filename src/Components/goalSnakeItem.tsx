@@ -13,22 +13,20 @@ const GoalSnakeItem = ({
 }) => {
   const timeTooltip = `<div className=''>
       <p>Creation time :${new Date(goalObj.created_at).toLocaleString()}</p>
-      <p>Completed time :${new Date(goalObj.created_at).toLocaleString()}</p>
+      <p>Completed time :${new Date(goalObj.completed_at).toLocaleString()}</p>
       </div>`;
   return (
     <li
       key={i}
-      data-hint={timeTooltip}
       className={`${
-        goalObj.isCompleted
-          ? "showHint text-xs p-1"
-          : " hover:bg-[#050708]/20 p-2"
+        goalObj.isCompleted ? " text-xs p-1" : " hover:bg-[#050708]/20 p-2"
       } slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <span
+        data-hint={timeTooltip}
         className={`${
           goalObj.isCompleted ? "line-through" : "group-hover:text-white"
-        } flex-grow flex items-center text-gray-400 `}
+        } showHint flex-grow flex items-center text-gray-400 `}
       >
         {i + 1}- {goalObj.goal}
       </span>
