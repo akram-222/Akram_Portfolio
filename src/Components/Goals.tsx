@@ -107,7 +107,7 @@ const Goals = () => {
       const data = snapshot.val();
       if (data !== null) {
         Object.values(data).map((goal) => {
-          setGoalsList((oldGoals) => [...oldGoals, goal]);
+          return setGoalsList((oldGoals) => [...oldGoals, goal]);
         });
       }
     });
