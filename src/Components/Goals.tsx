@@ -55,6 +55,7 @@ const Goals = () => {
     update(ref(db, `/${goalObj.uuid}`), {
       ...goalObj,
       isCompleted: true,
+      completed_at: new Date().toISOString(),
     });
 
     confetti({
@@ -72,7 +73,6 @@ const Goals = () => {
     update(ref(db, `/${goalObj.uuid}`), {
       ...goalObj,
       isCompleted: false,
-      completed_at: new Date().toISOString(),
     });
   };
   let completedGoals = goalsList?.filter((goal) => goal.isCompleted);
