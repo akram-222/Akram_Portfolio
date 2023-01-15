@@ -1,14 +1,12 @@
-import { useCallback } from "react";
 const ValidatorBtn = ({
   newGoal,
-  goalsList,
-  setGoalsList,
-  goalsCompletedList,
   setNewGoal,
   uid,
   set,
   reference,
   db,
+  isEdit,
+  handleSubmitChange,
 }) => {
   const writeGoalToDatabase = () => {
     const uuid = uid();
@@ -18,20 +16,14 @@ const ValidatorBtn = ({
     });
     setNewGoal("");
   };
-  const onClick = useCallback(() => {
-    let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
-    setGoalsList([...uniqueGoals]);
-    setNewGoal("");
-  }, [newGoal]);
   return (
     <>
       {newGoal.length < 3 ? (
         <span className="text-red-400 mt-2">Enter at least 3 characters</span>
-      ) : goalsList.indexOf(newGoal) !== -1 ||
-        goalsCompletedList.indexOf(newGoal) !== -1 ? (
-        <span className="text-red-400 mt-2">Duplicated goal</span>
       ) : /^[a-zA-z]\w+( \w+)*$/.test(newGoal) === false ? (
         <span className="text-red-400 mt-2">not allowed input</span>
+      ) : isEdit ? (
+        <button onClick={() => handleSubmitChange()}>Update</button>
       ) : (
         <button
           type="button"
