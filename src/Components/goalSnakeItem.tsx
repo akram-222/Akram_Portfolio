@@ -1,5 +1,5 @@
 import { AiOutlineEdit } from "react-icons/ai";
-import { BiUndo } from "react-icons/bi";
+import { BiExpand, BiUndo } from "react-icons/bi";
 import { BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 
@@ -10,6 +10,7 @@ const GoalSnakeItem = ({
   handleGoalDeletion,
   handleGoalEdition,
   handleUndoGoalCompletion,
+  handleGoalExpandation,
 }) => {
   const timeTooltip = `<div className=''>
       <p><b>Creation time</b> :${new Date(
@@ -79,6 +80,17 @@ const GoalSnakeItem = ({
           type="button"
         >
           <FiTrash2 size={18} />
+        </button>
+
+        <button
+          //   onClick={() => handleGoalDeletion(goalObj)}
+          onClick={() => handleGoalExpandation(goalObj)}
+          className={`${
+            goalObj.isExpanded ? "expanded-goal" : ""
+          } text-gray-700/50 hover:text-orange-400`}
+          type="button"
+        >
+          <BiExpand size={18} />
         </button>
       </div>
     </li>

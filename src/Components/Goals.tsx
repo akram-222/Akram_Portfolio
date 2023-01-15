@@ -43,9 +43,14 @@ const Goals = () => {
       content: newGoal,
       uuid: tempUUID,
     });
-
     setNewGoal("");
     setIsEdit(false);
+  };
+  const handleGoalExpandation = (goalObj) => {
+    update(ref(db, `/${goalObj.uuid}`), {
+      ...goalObj,
+      isExpanded: !goalObj.isExpanded,
+    });
   };
   const handleGoalCompletion = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
@@ -77,6 +82,7 @@ const Goals = () => {
     <GoalSnakeItem
       i={i}
       goalObj={goalObj}
+      handleGoalExpandation={handleGoalExpandation}
       handleGoalCompletion={handleGoalCompletion}
       handleGoalDeletion={handleGoalDeletion}
       handleGoalEdition={handleGoalEdition}
@@ -121,7 +127,7 @@ const Goals = () => {
             {completedGoals.length ? (
               <>
                 Completed Goals
-                <ol className="list-decimal	list-inside text-base mt-3">
+                <ol className="flex-grow list-decimal	list-inside text-base mt-3">
                   {completedGoals.map((goalObj, i) =>
                     goalSnakeItemVar(i, goalObj)
                   )}
@@ -140,7 +146,7 @@ const Goals = () => {
         {inProgressGoals.length ? (
           <>
             In Progress Goals ⌛
-            <ol className="list-decimal	list-inside text-base mt-3">
+            <ol className="flex-grow list-decimal	list-inside text-base mt-3">
               {inProgressGoals.map((goalObj, i) =>
                 goalSnakeItemVar(i, goalObj)
               )}
