@@ -7,7 +7,7 @@ import { GiStairsGoal } from "react-icons/gi";
 import { HiOutlineSwitchVertical } from "react-icons/hi";
 import { db } from "../firebase";
 import { uid } from "uid";
-import { set, ref, onValue } from "firebase/database";
+import { set, ref, onValue, remove } from "firebase/database";
 import {
   BsCardChecklist,
   BsCheck,
@@ -112,7 +112,9 @@ const Goals = () => {
       }
     });
   }, []);
-
+  const handleGoalDeletion = (goalObj) => {
+    remove(ref(db, `/${goalObj.uuid}`));
+  };
   return (
     <div className="flex p-2 text-sm w-full ">
       <div
@@ -229,13 +231,13 @@ const Goals = () => {
           <>
             In Progress Goals ⌛
             <ol className="list-decimal	list-inside text-base mt-3">
-              {goalsList?.map((goal, i) => (
+              {goalsList?.map((goalObj, i) => (
                 <li
                   key={i}
                   className="slide-bottom group flex border border-gray-600/30 mb-2 justify-between hover:bg-[#050708]/20 p-2 rounded-lg w-full"
                 >
                   <span className={`text-gray-400 group-hover:text-white`}>
-                    {i + 1}- {goal.goal}
+                    {i + 1}- {goalObj.goal}
                   </span>
                   <div className="actions flex gap-2 items-center">
                     <button
@@ -254,7 +256,7 @@ const Goals = () => {
                     </button>
                     {/* )} */}
                     <button
-                      // onClick={() => handleGoalDeletion(goal)}
+                      onClick={() => handleGoalDeletion(goalObj)}
                       className="text-gray-700/50 hover:text-red-400"
                       type="button"
                     >
