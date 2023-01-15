@@ -9,14 +9,6 @@ import Segmentation from "../Components/Segmentation";
 import Goals from "../Components/Goals";
 import { app } from "../firebase";
 
-<<<<<<< HEAD
-const onChange=(e:React.SyntheticEvent)=>{
-let file = (<HTMLInputElement>e.target).files[0];
-const storageRef = app.storage().ref();
-const fileRef = storageRef.child(file.name);
-fileRef.put(file).then(()=> console.log('file Uploaded'));
-};
-=======
 const Dashboard = ({ onSidebarHide }) => {
   // const onChange = (e: React.SyntheticEvent) => {
   //   let file = (e.target as HTMLInputElement)!.files![0];
@@ -24,7 +16,6 @@ const Dashboard = ({ onSidebarHide }) => {
   //   const fileRef = storageRef.child(file.name);
   //   fileRef.put(file).then(() => console.log("file Uploaded"));
   // };
->>>>>>> 10ae80b639b6ee05d8436e60bcfa6b4d936b392c
   return (
     <>
       <PageTitle
