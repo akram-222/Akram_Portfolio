@@ -80,11 +80,9 @@ const Goals = () => {
     <GoalSnakeItem
       i={i}
       goalObj={goalObj}
-      handleAddingNewGoal={handleAddingNewGoal}
       handleGoalCompletion={handleGoalCompletion}
       handleGoalDeletion={handleGoalDeletion}
       handleGoalEdition={handleGoalEdition}
-      handleSubmitChange={handleSubmitChange}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />
   );

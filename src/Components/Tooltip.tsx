@@ -9,7 +9,7 @@ window.addEventListener("mouseover", () => {
         e.clientY - hint.getBoundingClientRect().height - 10
       }px`;
       let target = e.currentTarget as HTMLElement;
-      hint.textContent = target!.getAttribute("data-hint");
+      hint.innerHTML = target!.getAttribute("data-hint")!;
     };
     ele[i].onmouseleave = () => {
       hint.classList.add("hidden");
