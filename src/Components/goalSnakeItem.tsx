@@ -30,7 +30,7 @@ const GoalSnakeItem = ({
           : "text-sm hover:bg-[#050708]/20 p-2"
       } ${
         goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""
-      } slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+      } transition duration-1 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <span
         data-hint={timeTooltip}
