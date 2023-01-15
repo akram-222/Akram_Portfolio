@@ -27,8 +27,8 @@ const AddQuickRepo = ({ children, isHidden, inputOfRepoName }) => {
             ref={inputOfRepoName}
             required
           />
-          {children}
         </div>
+          {children}
       </form>
     </div>
   );
