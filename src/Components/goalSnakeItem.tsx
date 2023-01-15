@@ -32,9 +32,9 @@ const GoalSnakeItem = ({
         data-hint={timeTooltip}
         className={`${
           goalObj.isCompleted
-            ? "line-through showHint cursor-help"
-            : "group-hover:text-white"
-        } flex-grow  text-gray-400 w-[190px] whitespace-nowrap overflow-hidden text-ellipsis`}
+            ? "line-through showHint cursor-help w-[100px]"
+            : "group-hover:text-white w-[190px]"
+        } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         {i + 1}- {goalObj.content}
       </span>
