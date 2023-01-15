@@ -8,7 +8,7 @@ const AddQuickRepo = ({ children, isHidden, setIsHidden, inputOfRepoName }) => {
         isHidden ? "hidden" : ""
       } z-10  w-full add-new-repo fixed flex flex-col backdrop-blur-sm bg-card shadow-md top-0 w-full left-0 items-center justify-center  h-screen overflow-hidden rounded-lg`}
     >
-      <form className="w-[80%] md:w-[50%] border flex flex-col border-gray-600/20 rounded p-8">
+      <form className="w-[80%] tilt-in-right-1 md:w-[50%] border flex flex-col border-gray-600/20 rounded p-8">
         <button
           onClick={() => setIsHidden(true)}
           className="-mt-2 mb-4 self-end text-red-400 "
