@@ -1,29 +1,26 @@
 import { useCallback } from "react";
-import { app } from "../base";
-
 const ValidatorBtn = ({
   newGoal,
   goalsList,
   setGoalsList,
   goalsCompletedList,
   setNewGoal,
+  uid,
+  set,
+  reference,
+  db,
 }) => {
+  const writeGoalToDatabase = () => {
+    const uuid = uid();
+    set(reference(db, `/${uuid}`), {
+      goal: newGoal,
+      uuid,
+    });
+    setNewGoal("");
+  };
   const onClick = useCallback(() => {
     let uniqueGoals = new Set([...goalsList, newGoal.trim()]);
     setGoalsList([...uniqueGoals]);
-    ///////////////////
-    // const storageRef = app.storage().ref();
-    // let strData = JSON.stringify(goalsList);
-    // const fileRef = storageRef.child(strData);
-    // fileRef.put(strData).then(() => console.log("file Uploaded"));
-
-    const storageRef = app.storage().ref();
-    const fileRef = storageRef.child("[1,2,3]");
-
-    // Write the array
-    // storageRef.child(fileRef);
-
-    ///////////
     setNewGoal("");
   }, [newGoal]);
   return (
@@ -38,7 +35,8 @@ const ValidatorBtn = ({
       ) : (
         <button
           type="button"
-          onClick={onClick}
+          // onClick={onClick}
+          onClick={writeGoalToDatabase}
           className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
         >
           Add

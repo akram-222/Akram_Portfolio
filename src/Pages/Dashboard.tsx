@@ -7,7 +7,7 @@ import PageTitle from "../Components/PageTitle";
 import Satisfication from "../Components/Satisfication";
 import Segmentation from "../Components/Segmentation";
 import Goals from "../Components/Goals";
-import { app } from "../base.js";
+import { app } from "../firebase";
 
 const Dashboard = ({ onSidebarHide }) => {
   // const onChange = (e: React.SyntheticEvent) => {

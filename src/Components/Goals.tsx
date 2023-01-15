@@ -1,10 +1,13 @@
 //@ts-ignore
 import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import ValidatorBtn from "./ValidatorBtn";
-import { useState, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { GiStairsGoal } from "react-icons/gi";
 import { HiOutlineSwitchVertical } from "react-icons/hi";
+import { db } from "../firebase";
+import { uid } from "uid";
+import { set, ref, onValue } from "firebase/database";
 import {
   BsCardChecklist,
   BsCheck,
@@ -23,80 +26,92 @@ const Goals = () => {
   const UpdatedGoalInputRef = useRef<HTMLInputElement | null>(null);
 
   const [newGoal, setNewGoal] = useState<string>("");
-  const [goalsList, setGoalsList] = useState<string[]>([]);
+  const [goalsList, setGoalsList] = useState<any[]>([]);
   const [goalsCompletedList, setGoalsCompletedList] = useState<string[]>([]);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
   };
-  const deleteGoal = (goal: string) => {
-    let newlist = goalsList.filter((item) => item !== goal);
-    setGoalsList(newlist);
-  };
-  const completedGoal = (goal: string) => {
-    setGoalsList([...goalsList.filter((a) => a !== goal)]);
-    setGoalsCompletedList([...goalsCompletedList, goal]);
-  };
-  const handleGoalDeletion = useCallback(
-    (goal: string) => {
-      if (goalsList.indexOf(goal) > -1) deleteGoal(goal);
-    },
-    [goalsList]
-  );
-  const handleGoalCompletion = useCallback(
-    (goal: string) => {
-      confetti({
-        particleCount: 100,
-        startVelocity: 30,
-        spread: 360,
-        angle: 40,
-        origin: {
-          x: 0.5,
-          y: 0,
-        },
-      });
-      completedGoal(goal);
-    },
-    [goalsList]
-  );
-  const handleGoalUndo = (goal: string) => {
-    let newlist = goalsCompletedList.filter((item) => item !== goal);
-    // setGoalsList(newlist);
-    setGoalsCompletedList(newlist);
-    setGoalsList([...goalsList, goal]);
-  };
-  const handleGoalEdition = () => {
-    let updatedGoalValue = UpdatedGoalInputRef.current!.value;
-    if (
-      updatedGoalValue.length >= 3 &&
-      /^[a-zA-z]\w+( \w+)*$/.test(updatedGoalValue) === true
-    ) {
-      setGoalsList(() => {
-        goalsList[0] = updatedGoalValue;
-        return [...goalsList];
-      });
-      setUpdatedProcessStatus(true);
-      setTimeout(() => {
-        setUpdatedGoalModelOpened(false);
-        setUpdatedProcessStatus(false);
-        setUpdatedGoalInputValue("");
-      }, 1000);
-    } else {
-      UpdatedGoalInputRef.current!.value = "Enter valid input";
-    }
-  };
-  const handleGoalsSwapping = (i: number) => {
-    if (goalsList.length > 1) {
-      if (goalsList[i + 1] !== undefined) {
-        [goalsList[i], goalsList[i + 1]] = [goalsList[i + 1], goalsList[i]];
-      } else if (goalsList[i - 1] !== undefined) {
-        [goalsList[i], goalsList[i - 1]] = [goalsList[i - 1], goalsList[i]];
+  // const deleteGoal = (goal: string) => {
+  //   let newlist = goalsList.filter((item) => item !== goal);
+  //   setGoalsList(newlist);
+  // };
+  // const completedGoal = (goal: string) => {
+  //   setGoalsList([...goalsList.filter((a) => a !== goal)]);
+  //   setGoalsCompletedList([...goalsCompletedList, goal]);
+  // };
+  // const handleGoalDeletion = useCallback(
+  //   (goal: string) => {
+  //     if (goalsList.indexOf(goal) > -1) deleteGoal(goal);
+  //   },
+  //   [goalsList]
+  // );
+  // const handleGoalCompletion = useCallback(
+  //   (goal: string) => {
+  //     confetti({
+  //       particleCount: 100,
+  //       startVelocity: 30,
+  //       spread: 360,
+  //       angle: 40,
+  //       origin: {
+  //         x: 0.5,
+  //         y: 0,
+  //       },
+  //     });
+  //     completedGoal(goal);
+  //   },
+  //   [goalsList]
+  // );
+  // const handleGoalUndo = (goal: string) => {
+  //   let newlist = goalsCompletedList.filter((item) => item !== goal);
+  //   // setGoalsList(newlist);
+  //   setGoalsCompletedList(newlist);
+  //   setGoalsList([...goalsList, goal]);
+  // };
+  // const handleGoalEdition = () => {
+  //   let updatedGoalValue = UpdatedGoalInputRef.current!.value;
+  //   if (
+  //     updatedGoalValue.length >= 3 &&
+  //     /^[a-zA-z]\w+( \w+)*$/.test(updatedGoalValue) === true
+  //   ) {
+  //     setGoalsList(() => {
+  //       goalsList[0] = updatedGoalValue;
+  //       return [...goalsList];
+  //     });
+  //     setUpdatedProcessStatus(true);
+  //     setTimeout(() => {
+  //       setUpdatedGoalModelOpened(false);
+  //       setUpdatedProcessStatus(false);
+  //       setUpdatedGoalInputValue("");
+  //     }, 1000);
+  //   } else {
+  //     UpdatedGoalInputRef.current!.value = "Enter valid input";
+  //   }
+  // };
+  // const handleGoalsSwapping = (i: number) => {
+  //   if (goalsList.length > 1) {
+  //     if (goalsList[i + 1] !== undefined) {
+  //       [goalsList[i], goalsList[i + 1]] = [goalsList[i + 1], goalsList[i]];
+  //     } else if (goalsList[i - 1] !== undefined) {
+  //       [goalsList[i], goalsList[i - 1]] = [goalsList[i - 1], goalsList[i]];
+  //     }
+  //     setGoalsList((goalsList) => {
+  //       return [...goalsList];
+  //     });
+  //   }
+  // };
+
+  useEffect(() => {
+    onValue(ref(db), (snapshot) => {
+      const data = snapshot.val();
+      if (data !== null) {
+        Object.values(data).map((goal) => {
+          setGoalsList((oldGoals) => [...oldGoals, goal]);
+        });
       }
-      setGoalsList((goalsList) => {
-        return [...goalsList];
-      });
-    }
-  };
+    });
+  }, []);
+
   return (
     <div className="flex p-2 text-sm w-full ">
       <div
@@ -136,7 +151,7 @@ const Goals = () => {
                   className="mt-1 border border-gray-600/30 placeholder:text-gray-500 placeholder:text-sm dark:bg-gray-700/20 rounded py-1 px-2 w-11/12"
                 />
                 <button
-                  onClick={() => handleGoalEdition()}
+                  // onClick={() => handleGoalEdition()}
                   className="text-sm px-3 py-1 mt-2 bg-blue-600 text-white rounded"
                 >
                   Update
@@ -161,6 +176,10 @@ const Goals = () => {
           />
           <div>
             <ValidatorBtn
+              db={db}
+              set={set}
+              reference={ref}
+              uid={uid}
               newGoal={newGoal}
               goalsList={goalsList}
               setGoalsList={setGoalsList}
@@ -185,7 +204,7 @@ const Goals = () => {
                     <div className="actions flex gap-2 items-center">
                       <button
                         type="button"
-                        onClick={() => handleGoalUndo(goal)}
+                        // onClick={() => handleGoalUndo(goal)}
                         className="hover:bg-blue-600 text-gray-700 hover:text-white border border-gray-600/30 rounded"
                       >
                         <BiUndo size={20} />
@@ -227,14 +246,14 @@ const Goals = () => {
                     </button>
                     <button
                       type="button"
-                      onClick={(e) => handleGoalCompletion(goal)}
+                      // onClick={(e) => handleGoalCompletion(goal)}
                       className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
                     >
                       <BsCheck size={20} />
                     </button>
                     {/* )} */}
                     <button
-                      onClick={() => handleGoalDeletion(goal)}
+                      // onClick={() => handleGoalDeletion(goal)}
                       className="text-gray-700/50 hover:text-red-400"
                       type="button"
                     >
@@ -244,7 +263,7 @@ const Goals = () => {
                       className={`${
                         goalsList.length > 1 ? "" : "hidden"
                       } animate-scaleUpCenter text-gray-700/50 hover:text-white`}
-                      onClick={() => handleGoalsSwapping(i)}
+                      // onClick={() => handleGoalsSwapping(i)}
                     >
                       <HiOutlineSwitchVertical size={18} />
                     </button>
