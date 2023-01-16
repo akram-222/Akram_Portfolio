@@ -20,7 +20,6 @@ const AddGoals = ({
   handleGoalDeletion,
   handleGoalEdition,
 }) => {
-  const [tempCheck, setTempCheck] = useState(false);
   const goalSnakeItemVar = (i: number, goalObj) => (
     <GoalSnakeItem
       i={i}
@@ -46,14 +45,11 @@ const AddGoals = ({
           type="text"
           placeholder="Goal..."
           onChange={(e) => handleAddingNewGoal(e)}
-          onFocus={() => setTempCheck(true)}
-          onBlur={() => setTempCheck(false)}
           value={newGoal}
           ref={goalInputRef}
         />
         <div>
           <ValidatorBtn
-            tempCheck={tempCheck}
             db={db}
             set={set}
             reference={ref}
