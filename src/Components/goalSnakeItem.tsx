@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BiExpand, BiUndo } from "react-icons/bi";
-import { BsCheck } from "react-icons/bs";
+import { BsCardImage, BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
+import { ref, update } from "firebase/database";
+import { db, app } from "../firebase";
 
+import { useRef } from "react";
 const GoalSnakeItem = ({
   i,
   goalObj,
@@ -13,6 +17,8 @@ const GoalSnakeItem = ({
   handleUndoGoalCompletion,
   handleGoalExpandation,
 }) => {
+  const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const timeTooltip = `<div className=''>
       <p><b>Creation time</b> :${new Date(
         goalObj.created_at
@@ -21,6 +27,29 @@ const GoalSnakeItem = ({
         goalObj.completed_at
       ).toLocaleString()}</p>
       </div>`;
+
+  const handleUploadGoalImage = (e: React.SyntheticEvent, goalObj) => {
+    let file = (e.target as HTMLInputElement)!.files![0];
+    const storageRef = app.storage().ref(file.name);
+    storageRef.put(file).on(
+      "state_changed",
+      (snap) => {
+        let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+        setUploadProgress(percentage);
+      },
+      (err) => console.log(err),
+      async () => {
+        const url = await storageRef.getDownloadURL();
+        await update(ref(db, `/${goalObj.uuid}`), {
+          ...goalObj,
+          goalImgUrl: url,
+        });
+        setUploadProgress(0);
+        uploadGoalImageInputRef.current!.value = "";
+      }
+    );
+  };
+
   return (
     <li
       key={i}
@@ -38,13 +67,43 @@ const GoalSnakeItem = ({
           goalObj.isCompleted
             ? "line-through showHint cursor-help w-[100px]"
             : "group-hover:text-white w-[160px]"
+        } ${
+          goalObj.isExpanded
+            ? "flex justify-between flex-grow bg-details rounded !w-full p-2"
+            : ""
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         {i + 1}- {goalObj.content}
+        {goalObj.imgUrl ? (
+          <img
+            className="bg-card self-center h-28 w-28 rounded-lg"
+            src="https://hunyadi.info.hu/levente/images/stories/boxplus/image3.jpg"
+            alt="goal_memory"
+          />
+        ) : (
+          <div
+            // onClick={(e) => handleUploadGoalImage(e, goalObj)}
+            className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-28 w-28 rounded-lg"
+          >
+            <BsCardImage size={30} />
+            Upload Image
+            <input
+              ref={uploadGoalImageInputRef}
+              onChange={(e) => handleUploadGoalImage(e, goalObj)}
+              type="file"
+              // className="hidden"
+              id="file"
+              name="file"
+            />
+            <progress value={uploadProgress} max="100"></progress>
+          </div>
+        )}
       </span>
       <span
         className={`${
           goalObj.isCompleted ? "hidden" : "opacity-0 group-hover:opacity-100"
+        } ${
+          goalObj.isExpanded ? "my-2" : ""
         } text-xs mx-2 flex items-center text-gray-400/50`}
       >
         {new Date(goalObj.created_at).toLocaleString()}

@@ -52,6 +52,10 @@ const Goals = () => {
       isExpanded: !goalObj.isExpanded,
     });
   };
+  
+
+  
+  
   const handleGoalCompletion = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
       ...goalObj,

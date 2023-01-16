@@ -1,3 +1,6 @@
 {
+  "terminal.integrated.env.windows": {
+    "node_options": "--max_old_space_size=1024"
+  },
   "githubPullRequests.ignoredPullRequestBranches": ["master"]
 }
