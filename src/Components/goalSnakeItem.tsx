@@ -53,9 +53,11 @@ const GoalSnakeItem = ({
           />
         ) : (
           <div className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-28 w-28 rounded-lg">
-            <input type={"file"} />
             <BsCardImage size={30} />
-            Upload Image
+            <input
+              type={"file"}
+              className="text-[0px] file:text-sm file:bg-transparent"
+            />
           </div>
         )}
       </span>
