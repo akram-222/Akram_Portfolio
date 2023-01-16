@@ -25,6 +25,7 @@ const GoalSnakeItem = ({
 }) => {
   const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [summaryVal, setSummaryVal] = useState("Add Summary");
   const [isOpen, setOpen] = useState(false);
   const timeTooltip = `<div className=''>
       <p><b>Creation time</b> :${new Date(
@@ -55,7 +56,13 @@ const GoalSnakeItem = ({
       }
     );
   };
-
+  const handleGoalSummaryEdition = (goalObj) => {
+    update(ref(db, `/${goalObj.uuid}`), {
+      ...goalObj,
+      summary: summaryVal,
+    });
+    setOpen(false);
+  };
   return (
     <li
       key={i}
@@ -105,14 +112,22 @@ const GoalSnakeItem = ({
                 } relative gap-2 flex flex-col flex-grow`}
               >
                 <div className="flex gap-2 justify-end items-center">
-                  <button className="hover:text-green-500 text-green-400">
-                    <BsCheckCircle size={20} />
-                  </button>
-                  <button className="hover:text-red-500 text-red-400">
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="hover:text-red-500 text-red-400"
+                  >
                     <BsXCircle size={20} />
+                  </button>
+                  <button
+                    onClick={() => handleGoalSummaryEdition(goalObj)}
+                    className="hover:text-green-500 text-green-400"
+                  >
+                    <BsCheckCircle size={20} />
                   </button>
                 </div>
                 <textarea
+                  value={summaryVal}
+                  onChange={(e) => setSummaryVal(e.target!.value)}
                   placeholder="content"
                   className={`p-2 text-white resize-none h-full w-full bg-card rounded`}
                 ></textarea>
