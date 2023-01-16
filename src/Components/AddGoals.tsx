@@ -5,6 +5,7 @@ import { db } from "../firebase";
 import { set, ref } from "firebase/database";
 import { BiListCheck } from "react-icons/bi";
 import GoalSnakeItem from "./goalSnakeItem";
+import { useState } from "react";
 const AddGoals = ({
   newGoal,
   goalInputRef,
@@ -19,6 +20,7 @@ const AddGoals = ({
   handleGoalDeletion,
   handleGoalEdition,
 }) => {
+  const [tempCheck, setTempCheck] = useState(false);
   const goalSnakeItemVar = (i: number, goalObj) => (
     <GoalSnakeItem
       i={i}
@@ -44,11 +46,14 @@ const AddGoals = ({
           type="text"
           placeholder="Goal..."
           onChange={(e) => handleAddingNewGoal(e)}
+          onFocus={() => setTempCheck(true)}
+          onBlur={() => setTempCheck(false)}
           value={newGoal}
           ref={goalInputRef}
         />
         <div>
           <ValidatorBtn
+            tempCheck={tempCheck}
             db={db}
             set={set}
             reference={ref}
