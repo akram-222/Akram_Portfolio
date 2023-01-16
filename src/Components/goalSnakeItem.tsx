@@ -60,7 +60,7 @@ const GoalSnakeItem = ({
         goalObj.isExpanded ? "h-full p-2.5 flex-col" : "h-10"
       } transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
-      <span
+      <div
         data-hint={timeTooltip}
         className={`${
           goalObj.isCompleted
@@ -68,49 +68,54 @@ const GoalSnakeItem = ({
             : "group-hover:text-white w-[160px]"
         } ${
           goalObj.isExpanded
-            ? "flex justify-between flex-grow bg-details rounded !w-full p-2"
+            ? "flex flex-col justify-between flex-grow bg-details rounded !w-full p-2"
             : ""
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
-        {i + 1}- {goalObj.content}
-        {goalObj.goalImgUrl ? (
-          <img
-            className="bg-card self-center h-28 w-28 rounded-lg"
-            src={goalObj.goalImgUrl}
-            alt="goal_memory"
-          />
-        ) : (
-          <div
-            // onClick={(e) => handleUploadGoalImage(e, goalObj)}
-            className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-28 w-28 rounded-lg"
-          >
-            <BsCardImage size={30} />
-            <input
-              ref={uploadGoalImageInputRef}
-              onChange={(e) => handleUploadGoalImage(e, goalObj)}
-              type="file"
-              className="text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
-              id="file"
-              name="file"
+        <h3>
+          {i + 1}- {goalObj.content}
+        </h3>
+        <div className="goal_content flex-grow p-3 flex gap-3">
+          <div className="flex-grow bg-card rounded">content</div>
+          {goalObj.goalImgUrl ? (
+            <img
+              className="bg-card self-center h-28 w-28 rounded-lg"
+              src={goalObj.goalImgUrl}
+              alt="goal_memory"
             />
-            {/* Progress */}
-            <div className={`${uploadProgress > 0 ? "" : "hidden"}`}>
-              <span className="text-xs text-white">
-                {Math.round(uploadProgress)}%
-              </span>
-              <div
-                className={`w-20 h-1 w-full bg-gray-200 rounded-full dark:bg-gray-700`}
-              >
+          ) : (
+            <div
+              // onClick={(e) => handleUploadGoalImage(e, goalObj)}
+              className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-full w-28 rounded-lg"
+            >
+              <BsCardImage size={30} />
+              <input
+                ref={uploadGoalImageInputRef}
+                onChange={(e) => handleUploadGoalImage(e, goalObj)}
+                type="file"
+                className="text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
+                id="file"
+                name="file"
+              />
+              {/* Progress */}
+              <div className={`${uploadProgress > 0 ? "" : "hidden"}`}>
+                <span className="text-xs text-white">
+                  {Math.round(uploadProgress)}%
+                </span>
                 <div
-                  className="h-full w-20 bg-red-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
-                  style={{ width: `${uploadProgress}%` }}
-                ></div>
+                  className={`w-20 h-1 w-full bg-gray-200 rounded-full dark:bg-gray-700`}
+                >
+                  <div
+                    className="h-full w-20 bg-red-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
+                    style={{ width: `${uploadProgress}%` }}
+                  ></div>
+                </div>
               </div>
+              {/* Progress */}
             </div>
-            {/* Progress */}
-          </div>
-        )}
-      </span>
+          )}
+        </div>
+      </div>
       <span
         className={`${
           goalObj.isCompleted ? "hidden" : "opacity-0 group-hover:opacity-100"
