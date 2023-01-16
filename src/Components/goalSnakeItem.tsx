@@ -106,7 +106,7 @@ const GoalSnakeItem = ({
                 onClick={() => handleGoalSummaryDeletion(goalObj)}
                 className="absolute right-2 hover:text-rose-400 text-gray-400"
               >
-                <CgTrash size={16} />
+                <CgTrash size={18} />
               </button>
             </div>
           ) : (
