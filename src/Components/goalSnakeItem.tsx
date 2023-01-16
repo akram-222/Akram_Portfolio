@@ -15,7 +15,6 @@ import { ref, remove, update } from "firebase/database";
 import { db, app } from "../firebase";
 
 import { useRef } from "react";
-import { handleGoalCompletion } from "./goals/operations/goalCompletion";
 const GoalSnakeItem = ({
   i,
   goalObj,
@@ -251,7 +250,7 @@ const GoalSnakeItem = ({
           <>
             <button
               type="button"
-              onClick={() => handleGoalCompletion(goalObj)}
+              onClick={() => handleGoalCompletion}
               className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
             >
               <BsCheck size={18} />
