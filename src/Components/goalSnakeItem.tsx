@@ -244,9 +244,9 @@ const GoalSnakeItem = ({
               type="button"
             >
               {goalObj.isExpanded ? (
-                <TbMaximize size={18} />
-              ) : (
                 <TbMinimize size={18} />
+              ) : (
+                <TbMaximize size={18} />
               )}
             </button>
           </>
