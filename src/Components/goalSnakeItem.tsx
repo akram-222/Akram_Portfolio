@@ -32,14 +32,7 @@ const GoalSnakeItem = ({
     const fileRef = storageRef.child(file.name);
     fileRef.put(file).then(() => console.log("file Uploaded"));
 
-    // let fileInput = uploadGoalImageInputRef.current!;
-    // fileInput.click();
-    // console.log(fileInput.files![0]);
-    // let file = fileInput.files![0];
-    // const storageRef = app.storage().ref();
-    // const fileRef = storageRef.child(file.name);
-    //   fileRef.put(file).then(() => console.log("file Uploaded"));
-    // console.log(file);
+    console.log(file);
     // update(ref(db, `/${goalObj.uuid}`), {
     //   ...goalObj,
     //   goalImgUrl: !goalObj.isExpanded,
