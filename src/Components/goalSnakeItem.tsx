@@ -82,8 +82,10 @@ const GoalSnakeItem = ({
       } ${
         goalObj.isExpanded && !goalObj.isCompleted
           ? "h-full p-2.5 flex-col"
-          : "h-10"
-      } transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+          : ""
+      } 
+      
+      transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <div
         data-hint={timeTooltip}
@@ -113,7 +115,7 @@ const GoalSnakeItem = ({
         </h3>
         <div
           className={`${
-            goalObj.isCompleted ? "hidden" : ""
+            goalObj.isCompleted || !goalObj.isExpanded ? "hidden" : ""
           } goal_content flex-grow py-3 h-28 flex gap-2`}
         >
           {goalObj.summary && goalObj.isExpanded && !goalObj.isCompleted ? (
