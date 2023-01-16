@@ -39,10 +39,17 @@ const GoalSnakeItem = ({
             ? "line-through showHint cursor-help w-[100px]"
             : "group-hover:text-white w-[160px]"
         } ${
-          goalObj.isExpanded ? "flex-grow bg-[#050708] !w-full" : ""
+          goalObj.isExpanded
+            ? "flex justify-between flex-grow bg-details rounded !w-full p-2"
+            : ""
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         {i + 1}- {goalObj.content}
+        <img
+          className="self-center h-28 w-28 rounded-lg"
+          src="https://hunyadi.info.hu/levente/images/stories/boxplus/image3.jpg"
+          alt="goal_memory"
+        />
       </span>
       <span
         className={`${
