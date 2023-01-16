@@ -4,7 +4,6 @@ import { BiUndo } from "react-icons/bi";
 import {
   BsCardImage,
   BsCheck,
-  BsTrash,
   BsTextareaT,
   BsCheckCircle,
   BsXCircle,
@@ -20,10 +19,8 @@ const GoalSnakeItem = ({
   i,
   goalObj,
   handleGoalCompletion,
-  // handleGoalDeletion,
   handleGoalEdition,
   handleUndoGoalCompletion,
-  handleGoalExpandation,
 }) => {
   const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -244,7 +241,12 @@ const GoalSnakeItem = ({
               <BsCheck size={18} />
             </button>
             <button
-              onClick={() => handleGoalExpandation(goalObj)}
+              onClick={() =>
+                update(ref(db, `/${goalObj.uuid}`), {
+                  ...goalObj,
+                  isExpanded: !goalObj.isExpanded,
+                })
+              }
               className={`text-gray-700/50 hover:text-orange-400`}
               type="button"
             >

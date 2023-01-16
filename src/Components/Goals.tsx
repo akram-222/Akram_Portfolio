@@ -3,7 +3,7 @@ import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import { useState, useEffect, useRef } from "react";
 import { GiStairsGoal } from "react-icons/gi";
 import { db } from "../firebase";
-import { ref, onValue, remove, update } from "firebase/database";
+import { ref, onValue, update } from "firebase/database";
 import GoalSnakeItem from "./goalSnakeItem";
 import AddGoals from "./AddGoals";
 const Goals = () => {
@@ -27,8 +27,6 @@ const Goals = () => {
       }
     });
   }, []);
-  // const handleGoalDeletion = (goalObj) => {
-  // };
   const handleGoalEdition = (goalObj) => {
     setIsEdit(true);
     setTempUUID(goalObj.uuid);
@@ -42,12 +40,12 @@ const Goals = () => {
     setNewGoal("");
     setIsEdit(false);
   };
-  const handleGoalExpandation = (goalObj) => {
-    update(ref(db, `/${goalObj.uuid}`), {
-      ...goalObj,
-      isExpanded: !goalObj.isExpanded,
-    });
-  };
+  // const handleGoalExpandation = (goalObj) => {
+  //   update(ref(db, `/${goalObj.uuid}`), {
+  //     ...goalObj,
+  //     isExpanded: !goalObj.isExpanded,
+  //   });
+  // };
 
   const handleGoalCompletion = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
@@ -80,7 +78,7 @@ const Goals = () => {
       i={i}
       key={i}
       goalObj={goalObj}
-      handleGoalExpandation={handleGoalExpandation}
+      // handleGoalExpandation={handleGoalExpandation}
       handleGoalCompletion={handleGoalCompletion}
       // handleGoalDeletion={handleGoalDeletion}
       handleGoalEdition={handleGoalEdition}
@@ -101,10 +99,8 @@ const Goals = () => {
           isEdit={isEdit}
           completedGoals={completedGoals}
           handleSubmitChange={handleSubmitChange}
-          handleGoalExpandation={handleGoalExpandation}
           handleGoalCompletion={handleGoalCompletion}
           handleUndoGoalCompletion={handleUndoGoalCompletion}
-          // handleGoalDeletion={handleGoalDeletion}
           handleGoalEdition={handleGoalEdition}
         />
       </div>
