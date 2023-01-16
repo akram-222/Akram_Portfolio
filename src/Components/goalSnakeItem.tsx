@@ -95,8 +95,15 @@ const GoalSnakeItem = ({
             : ""
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
-        <h3>
+        <h3 className="flex gap-2">
           {i + 1}- {goalObj.content}
+          <button
+            type="button"
+            onClick={() => handleGoalEdition(goalObj)}
+            className="text-gray-700/50 hover:text-white"
+          >
+            <AiOutlineEdit size={20} />
+          </button>
         </h3>
         <div className="goal_content flex-grow py-3 h-28 flex gap-2">
           {goalObj.summary ? (
@@ -196,7 +203,7 @@ const GoalSnakeItem = ({
         className={`${
           goalObj.isCompleted ? "hidden" : "opacity-0 group-hover:opacity-100"
         } ${
-          goalObj.isExpanded ? "my-2" : ""
+          goalObj.isExpanded ? "my-2 opacity-100" : ""
         } text-xs mx-2 flex items-center text-gray-400/50`}
       >
         {new Date(goalObj.created_at).toLocaleString()}
@@ -212,14 +219,6 @@ const GoalSnakeItem = ({
           </button>
         ) : (
           <>
-            <button
-              type="button"
-              onClick={() => handleGoalEdition(goalObj)}
-              className="text-gray-700/50 hover:text-white"
-            >
-              <AiOutlineEdit size={20} />
-            </button>
-
             <button
               type="button"
               onClick={() => handleGoalCompletion(goalObj)}
