@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
-import { BiExpand, BiUndo } from "react-icons/bi";
-import { BsCardImage, BsCheck } from "react-icons/bs";
+import { BiUndo } from "react-icons/bi";
+import { BsCardImage, BsCheck, BsTextareaT } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
 import { ref, update } from "firebase/database";
@@ -76,7 +76,17 @@ const GoalSnakeItem = ({
           {i + 1}- {goalObj.content}
         </h3>
         <div className="goal_content flex-grow p-3 h-28 flex gap-3">
-          <div className="flex-grow bg-card rounded ">content</div>
+          {goalObj.extraContent ? (
+            <textarea
+              placeholder="content"
+              className="p-2 text-white resize-none flex-grow bg-card rounded "
+            ></textarea>
+          ) : (
+            <div className="flex-grow bg-card rounded ">
+              <BsTextareaT size={30} />
+              no content provided
+            </div>
+          )}
           {goalObj.goalImgUrl ? (
             <img
               className="bg-card self-center h-full w-28 rounded-lg"
