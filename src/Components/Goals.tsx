@@ -1,5 +1,3 @@
-//@ts-ignore
-import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import { useState, useEffect, useRef } from "react";
 import { GiStairsGoal } from "react-icons/gi";
 import { db } from "../firebase";
