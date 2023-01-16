@@ -93,18 +93,19 @@ const GoalSnakeItem = ({
               id="file"
               name="file"
             />
-            {/*  */}
             {/* Progress */}
-            <div
-              className={`${
-                uploadProgress > 0 ? "" : "hidden"
-              } w-20 h-2 w-full bg-gray-200 rounded-full dark:bg-gray-700`}
-            >
+            <div className={`${uploadProgress > 0 ? "" : "hidden"}`}>
+              <span className="text-xs text-white">{uploadProgress}%</span>
               <div
-                className="h-full w-20 bg-blue-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
-                style={{ width: `${uploadProgress}%` }}
-              ></div>
+                className={`w-20 h-2 w-full bg-gray-200 rounded-full dark:bg-gray-700`}
+              >
+                <div
+                  className="h-full w-20 bg-red-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
+                  style={{ width: `${uploadProgress}%` }}
+                ></div>
+              </div>
             </div>
+            {/* Progress */}
           </div>
         )}
       </span>
