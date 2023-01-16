@@ -30,10 +30,8 @@ const GoalSnakeItem = ({
 
   const handleUploadGoalImage = (e: React.SyntheticEvent, goalObj) => {
     let file = (e.target as HTMLInputElement)!.files![0];
-    const storageRef = app.storage().ref();
-    const fileRef = storageRef.child(file.name);
-    // fileRef.put(file).then(() => console.log("file Uploaded"));
-    fileRef.put(file).on(
+    const storageRef = app.storage().ref(file.name);
+    storageRef.put(file).on(
       "state_changed",
       (snap) => {
         let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
@@ -42,35 +40,15 @@ const GoalSnakeItem = ({
       (err) => console.log(err),
       async () => {
         const url = await storageRef.getDownloadURL();
-        update(ref(db, `/${goalObj.uuid}`), {
+        await update(ref(db, `/${goalObj.uuid}`), {
           ...goalObj,
-          goalImgUrl: "url",
+          goalImgUrl: url,
         });
         setUploadProgress(0);
         uploadGoalImageInputRef.current!.value = "";
-        console.log(url);
       }
     );
-    // (() => console.log("file Uploaded"));
-
-    console.log(file);
-    // update(ref(db, `/${goalObj.uuid}`), {
-    //   ...goalObj,
-    //   goalImgUrl: !goalObj.isExpanded,
-    // });
   };
-
-  // const handleUploadGoalImage = (goalObj) => {
-  //   (async () => {
-  //     uploadGoalImageInputRef.current!.click();
-  //   })().then(() => {
-  //     update(ref(db, `/${tempUUID}`), {
-  //     content: newGoal,
-  //     uuid: tempUUID,
-  //   });
-  //     console.log("doneeee");
-  //   });
-  // };
 
   return (
     <li
