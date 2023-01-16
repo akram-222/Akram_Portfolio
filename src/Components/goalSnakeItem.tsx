@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BiExpand, BiUndo } from "react-icons/bi";
 import { BsCardImage, BsCheck } from "react-icons/bs";
@@ -32,10 +33,16 @@ const GoalSnakeItem = ({
     const storageRef = app.storage().ref();
     const fileRef = storageRef.child(file.name);
     // fileRef.put(file).then(() => console.log("file Uploaded"));
-    fileRef.put(file).on("state_changed", (snap) => {
-      let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-      setUploadProgress(percentage);
-    });
+    fileRef.put(file).on(
+      "state_changed",
+      (snap) => {
+        let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+        setUploadProgress(percentage);
+      },
+      (err) => console.log(err), async ()=>{
+        
+      }
+    );
     // (() => console.log("file Uploaded"));
 
     console.log(file);
@@ -102,6 +109,7 @@ const GoalSnakeItem = ({
               id="file"
               name="file"
             />
+            <progress value={uploadProgress} max="100"></progress>
           </div>
         )}
       </span>
