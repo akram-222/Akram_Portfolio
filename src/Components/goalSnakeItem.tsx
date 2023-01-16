@@ -17,6 +17,7 @@ const GoalSnakeItem = ({
   handleGoalExpandation,
 }) => {
   const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const timeTooltip = `<div className=''>
       <p><b>Creation time</b> :${new Date(
         goalObj.created_at
@@ -30,7 +31,12 @@ const GoalSnakeItem = ({
     let file = (e.target as HTMLInputElement)!.files![0];
     const storageRef = app.storage().ref();
     const fileRef = storageRef.child(file.name);
-    fileRef.put(file).then(() => console.log("file Uploaded"));
+    // fileRef.put(file).then(() => console.log("file Uploaded"));
+    fileRef.put(file).on("state_changed", (snap) => {
+      let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+      setUploadProgress(percentage);
+    });
+    // (() => console.log("file Uploaded"));
 
     console.log(file);
     // update(ref(db, `/${goalObj.uuid}`), {
