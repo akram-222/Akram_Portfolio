@@ -40,31 +40,7 @@ const Goals = () => {
     setNewGoal("");
     setIsEdit(false);
   };
-  // const handleGoalExpandation = (goalObj) => {
-  //   update(ref(db, `/${goalObj.uuid}`), {
-  //     ...goalObj,
-  //     isExpanded: !goalObj.isExpanded,
-  //   });
-  // };
 
-  const handleGoalCompletion = (goalObj) => {
-    update(ref(db, `/${goalObj.uuid}`), {
-      ...goalObj,
-      isCompleted: true,
-      completed_at: new Date().toISOString(),
-    });
-
-    confetti({
-      particleCount: 150,
-      startVelocity: 30,
-      spread: 360,
-      angle: 40,
-      origin: {
-        x: 0.5,
-        y: 0,
-      },
-    });
-  };
   const handleUndoGoalCompletion = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
       ...goalObj,
@@ -78,9 +54,7 @@ const Goals = () => {
       i={i}
       key={i}
       goalObj={goalObj}
-      // handleGoalExpandation={handleGoalExpandation}
-      handleGoalCompletion={handleGoalCompletion}
-      // handleGoalDeletion={handleGoalDeletion}
+      // handleGoalCompletion={handleGoalCompletion}
       handleGoalEdition={handleGoalEdition}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />
@@ -99,7 +73,6 @@ const Goals = () => {
           isEdit={isEdit}
           completedGoals={completedGoals}
           handleSubmitChange={handleSubmitChange}
-          handleGoalCompletion={handleGoalCompletion}
           handleUndoGoalCompletion={handleUndoGoalCompletion}
           handleGoalEdition={handleGoalEdition}
         />

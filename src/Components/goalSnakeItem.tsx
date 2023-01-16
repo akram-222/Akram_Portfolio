@@ -18,7 +18,7 @@ import { useRef } from "react";
 const GoalSnakeItem = ({
   i,
   goalObj,
-  handleGoalCompletion,
+  // handleGoalCompletion,
   handleGoalEdition,
   handleUndoGoalCompletion,
 }) => {
@@ -235,7 +235,7 @@ const GoalSnakeItem = ({
           <>
             <button
               type="button"
-              onClick={() => handleGoalCompletion(goalObj)}
+              onClick={() => handleGoalCompletion}
               className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
             >
               <BsCheck size={18} />
@@ -259,7 +259,6 @@ const GoalSnakeItem = ({
           </>
         )}
         <button
-          // onClick={() => handleGoalDeletion(goalObj)}
           onClick={() => remove(ref(db, `/${goalObj.uuid}`))}
           className="text-gray-700/50 hover:text-red-400"
           type="button"

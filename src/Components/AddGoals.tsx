@@ -14,8 +14,6 @@ const AddGoals = ({
   isEdit,
   completedGoals,
   handleSubmitChange,
-  // handleGoalExpandation,
-  handleGoalCompletion,
   handleUndoGoalCompletion,
   handleGoalEdition,
 }) => {
@@ -24,8 +22,6 @@ const AddGoals = ({
       i={i}
       key={i}
       goalObj={goalObj}
-      // handleGoalExpandation={handleGoalExpandation}
-      handleGoalCompletion={handleGoalCompletion}
       handleGoalEdition={handleGoalEdition}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />
