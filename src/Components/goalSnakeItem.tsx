@@ -82,10 +82,10 @@ const GoalSnakeItem = ({
               className="p-2 text-white resize-none flex-grow bg-card rounded "
             ></textarea>
           ) : (
-            <div className="flex-grow bg-card rounded ">
+            <button className="flex-grow bg-card rounded flex flex-col items-center justify-center gap-2">
               <BsTextareaT size={30} />
-              no content provided
-            </div>
+              No Summary, Click to add
+            </button>
           )}
           {goalObj.goalImgUrl ? (
             <img
