@@ -39,8 +39,14 @@ const GoalSnakeItem = ({
         let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
         setUploadProgress(percentage);
       },
-      (err) => console.log(err), async ()=>{
-        
+      (err) => console.log(err),
+      async () => {
+        const url = await storageRef.getDownloadURL();
+        await update(ref(db, `/${goalObj.uuid}`), {
+          ...goalObj,
+          goalImgUrl: url,
+        });
+        console.log(url);
       }
     );
     // (() => console.log("file Uploaded"));
