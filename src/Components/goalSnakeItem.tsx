@@ -38,6 +38,8 @@ const GoalSnakeItem = ({
           goalObj.isCompleted
             ? "line-through showHint cursor-help w-[100px]"
             : "group-hover:text-white w-[160px]"
+        } ${
+          goalObj.isExpanded ? "flex-grow bg-[#050708] !w-full" : ""
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         {i + 1}- {goalObj.content}
@@ -45,6 +47,8 @@ const GoalSnakeItem = ({
       <span
         className={`${
           goalObj.isCompleted ? "hidden" : "opacity-0 group-hover:opacity-100"
+        } ${
+          goalObj.isExpanded ? "my-2" : ""
         } text-xs mx-2 flex items-center text-gray-400/50`}
       >
         {new Date(goalObj.created_at).toLocaleString()}
