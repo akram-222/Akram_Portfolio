@@ -100,7 +100,7 @@ const GoalSnakeItem = ({
         </h3>
         <div className="goal_content flex-grow py-3 h-28 flex gap-2">
           {goalObj.summary ? (
-            <div className="flex-grow bg-card rounded p-2 relative">
+            <div className="w-1/3 overflow-auto flex-grow bg-card rounded p-2 relative">
               {goalObj.summary}
               <button
                 onClick={() => handleGoalSummaryDeletion(goalObj)}
