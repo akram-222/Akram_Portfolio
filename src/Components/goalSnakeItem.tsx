@@ -100,8 +100,8 @@ const GoalSnakeItem = ({
         </h3>
         <div className="goal_content flex-grow py-3 h-28 flex gap-2">
           {goalObj.summary ? (
-            <div className="w-1/3 overflow-auto flex-grow bg-card rounded p-2 relative">
-              {goalObj.summary}
+            <div className="w-1/3 break-all	whitespace-pre flex flex-grow bg-card rounded p-2 relative">
+              <div style={{ inlineSize: "230px" }}>{goalObj.summary}</div>
               <button
                 onClick={() => handleGoalSummaryDeletion(goalObj)}
                 className="absolute right-2 hover:text-rose-400 text-gray-400"
