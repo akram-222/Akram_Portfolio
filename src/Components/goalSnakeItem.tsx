@@ -95,9 +95,11 @@ const GoalSnakeItem = ({
             />
             {/* Progress */}
             <div className={`${uploadProgress > 0 ? "" : "hidden"}`}>
-              <span className="text-xs text-white">{uploadProgress}%</span>
+              <span className="text-xs text-white">
+                {Math.round(uploadProgress)}%
+              </span>
               <div
-                className={`w-20 h-2 w-full bg-gray-200 rounded-full dark:bg-gray-700`}
+                className={`w-20 h-1 w-full bg-gray-200 rounded-full dark:bg-gray-700`}
               >
                 <div
                   className="h-full w-20 bg-red-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
