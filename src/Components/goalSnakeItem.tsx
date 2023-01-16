@@ -15,6 +15,7 @@ import { ref, remove, update } from "firebase/database";
 import { db, app } from "../firebase";
 
 import { useRef } from "react";
+import { handleGoalCompletion } from "./goals/operations/goalCompletion";
 const GoalSnakeItem = ({
   i,
   goalObj,
