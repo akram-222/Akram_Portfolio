@@ -5,10 +5,15 @@ import { ref, onValue, update } from "firebase/database";
 import GoalSnakeItem from "./goalSnakeItem";
 import AddGoals from "./AddGoals";
 const Goals = () => {
-  // const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [isEdit, setIsEdit] = useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
+  const [newGoal, setNewGoal] = useState<string>("");
+  const [tempUUID, setTempUUID] = useState<string>("");
   const [goalsList, setGoalsList] = useState<any[]>([]);
-  
+  const handleAddingNewGoal = (e: React.SyntheticEvent) => {
+    let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
+    setNewGoal(inputGoalVal);
+  };
   useEffect(() => {
     onValue(ref(db), (snapshot) => {
       setGoalsList([]);
@@ -20,19 +25,19 @@ const Goals = () => {
       }
     });
   }, []);
-  // const handleGoalEdition = (goalObj) => {
-  //   // setIsEdit(true);
-  //   setTempUUID(goalObj.uuid);
-  //   setNewGoal(goalObj.content);
-  // };
-  // const handleSubmitChange = () => {
-  //   update(ref(db, `/${tempUUID}`), {
-  //     content: newGoal,
-  //     uuid: tempUUID,
-  //   });
-  //   setNewGoal("");
-  //   // setIsEdit(false);
-  // };
+  const handleGoalEdition = (goalObj) => {
+    setIsEdit(true);
+    setTempUUID(goalObj.uuid);
+    setNewGoal(goalObj.content);
+  };
+  const handleSubmitChange = () => {
+    update(ref(db, `/${tempUUID}`), {
+      content: newGoal,
+      uuid: tempUUID,
+    });
+    setNewGoal("");
+    setIsEdit(false);
+  };
 
   const handleUndoGoalCompletion = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
@@ -47,7 +52,8 @@ const Goals = () => {
       i={i}
       key={i}
       goalObj={goalObj}
-      // handleGoalEdition={handleGoalEdition}
+      // handleGoalCompletion={handleGoalCompletion}
+      handleGoalEdition={handleGoalEdition}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />
   );
@@ -58,15 +64,15 @@ const Goals = () => {
         className={`flex flex-col relative border-r border-gray-600/20 px-2 overflow-auto `}
       >
         <AddGoals
-          // newGoal={newGoal}
+          newGoal={newGoal}
           goalInputRef={goalInputRef}
-          // handleAddingNewGoal={handleAddingNewGoal}
-          // setNewGoal={setNewGoal}
-          // isEdit={isEdit}
+          handleAddingNewGoal={handleAddingNewGoal}
+          setNewGoal={setNewGoal}
+          isEdit={isEdit}
           completedGoals={completedGoals}
-          // handleSubmitChange={handleSubmitChange}
+          handleSubmitChange={handleSubmitChange}
           handleUndoGoalCompletion={handleUndoGoalCompletion}
-          // handleGoalEdition={handleGoalEdition}
+          handleGoalEdition={handleGoalEdition}
         />
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">

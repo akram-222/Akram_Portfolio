@@ -7,23 +7,22 @@ import { BiListCheck } from "react-icons/bi";
 import GoalSnakeItem from "./goalSnakeItem";
 import { useState } from "react";
 const AddGoals = ({
-  // newGoal,
+  newGoal,
   goalInputRef,
-  // handleAddingNewGoal,
-  // setNewGoal,
-  // isEdit,
-
+  handleAddingNewGoal,
+  setNewGoal,
+  isEdit,
   completedGoals,
-  // handleSubmitChange,
+  handleSubmitChange,
   handleUndoGoalCompletion,
-  // handleGoalEdition,
+  handleGoalEdition,
 }) => {
   const goalSnakeItemVar = (i: number, goalObj) => (
     <GoalSnakeItem
       i={i}
       key={i}
       goalObj={goalObj}
-      // handleGoalEdition={handleGoalEdition}
+      handleGoalEdition={handleGoalEdition}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />
   );
@@ -51,8 +50,8 @@ const AddGoals = ({
             uid={uid}
             newGoal={newGoal}
             setNewGoal={setNewGoal}
-            // isEdit={isEdit}
-            // handleSubmitChange={handleSubmitChange}
+            isEdit={isEdit}
+            handleSubmitChange={handleSubmitChange}
           />
         </div>
       </form>

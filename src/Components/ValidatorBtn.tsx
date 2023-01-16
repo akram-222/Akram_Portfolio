@@ -1,5 +1,3 @@
-import { ref, update } from "firebase/database";
-
 const ValidatorBtn = ({
   newGoal,
   setNewGoal,
@@ -8,8 +6,7 @@ const ValidatorBtn = ({
   reference,
   db,
   isEdit,
-  tempUUID,
-  // handleSubmitChange,
+  handleSubmitChange,
 }) => {
   const writeGoalToDatabase = () => {
     const uuid = uid();
@@ -31,14 +28,7 @@ const ValidatorBtn = ({
     updateBtn: (
       <button
         type="button"
-        onClick={() => {
-          update(ref(db, `/${tempUUID}`), {
-            content: newGoal,
-            uuid: tempUUID,
-          });
-          setNewGoal("");
-          // setIsEdit(false);
-        }}
+        onClick={() => handleSubmitChange()}
         className="text-sm px-3 py-1 bg-teal-700 text-white rounded"
       >
         Update
