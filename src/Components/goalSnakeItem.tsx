@@ -85,16 +85,28 @@ const GoalSnakeItem = ({
             className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-28 w-28 rounded-lg"
           >
             <BsCardImage size={30} />
-            Upload Image
             <input
               ref={uploadGoalImageInputRef}
               onChange={(e) => handleUploadGoalImage(e, goalObj)}
               type="file"
-              // className="hidden"
+              className="text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
               id="file"
               name="file"
             />
-            <progress value={uploadProgress} max="100"></progress>
+            {/*  */}
+            {/* Progress */}
+            <div className="h-2 w-full bg-gray-200 rounded-full dark:bg-gray-700">
+              <div
+                className="h-full w-20 bg-blue-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
+                style={{ width: "45%" }}
+              ></div>
+            </div>
+            {/* <progress
+              className="progress"
+              // value={uploadProgress}
+              value={30}
+              max="100"
+            ></progress> */}
           </div>
         )}
       </span>

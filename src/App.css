@@ -81,3 +81,7 @@
 .hint::before {
   transform: rotate3d(1, 1, 1, 45deg);
 }
+progress,
+progress[value]::-webkit-progress-value {
+  border-radius: 20px;
+}
