@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BiUndo } from "react-icons/bi";
-import { BsCardImage, BsCheck, BsTextareaT } from "react-icons/bs";
+import {
+  BsCardImage,
+  BsCheck,
+  BsTextareaT,
+  BsCheckCircle,
+  BsXCircle,
+} from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
 import { ref, update } from "firebase/database";
@@ -19,6 +25,7 @@ const GoalSnakeItem = ({
 }) => {
   const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [isOpen, setOpen] = useState(false);
   const timeTooltip = `<div className=''>
       <p><b>Creation time</b> :${new Date(
         goalObj.created_at
@@ -75,17 +82,42 @@ const GoalSnakeItem = ({
         <h3>
           {i + 1}- {goalObj.content}
         </h3>
-        <div className="goal_content flex-grow p-3 h-28 flex gap-3">
-          {goalObj.extraContent ? (
-            <textarea
-              placeholder="content"
-              className="p-2 text-white resize-none flex-grow bg-card rounded "
-            ></textarea>
-          ) : (
-            <button className="flex-grow bg-card rounded flex flex-col items-center justify-center gap-2">
+        <div className="goal_content flex-grow py-3 h-28 flex gap-2">
+          {goalObj.summary ? (
+            <div className="flex-grow bg-card rounded flex flex-col items-center justify-center gap-2">
               <BsTextareaT size={30} />
-              No Summary, Click to add
-            </button>
+              Summary
+            </div>
+          ) : (
+            <>
+              <button
+                onClick={() => setOpen(true)}
+                className={`${
+                  !isOpen ? "" : "hidden"
+                } flex-grow bg-card rounded flex flex-col items-center justify-center gap-2`}
+              >
+                <BsTextareaT size={30} />
+                No Summary, Click to add
+              </button>
+              <div
+                className={`${
+                  isOpen ? "" : "hidden"
+                } relative gap-2 flex flex-col flex-grow`}
+              >
+                <div className="flex gap-2 justify-end items-center">
+                  <button className="hover:text-green-500 text-green-400">
+                    <BsCheckCircle size={20} />
+                  </button>
+                  <button className="hover:text-red-500 text-red-400">
+                    <BsXCircle size={20} />
+                  </button>
+                </div>
+                <textarea
+                  placeholder="content"
+                  className={`p-2 text-white resize-none h-full w-full bg-card rounded`}
+                ></textarea>
+              </div>
+            </>
           )}
           {goalObj.goalImgUrl ? (
             <img
