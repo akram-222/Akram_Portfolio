@@ -42,10 +42,12 @@ const GoalSnakeItem = ({
       (err) => console.log(err),
       async () => {
         const url = await storageRef.getDownloadURL();
-        await update(ref(db, `/${goalObj.uuid}`), {
+        update(ref(db, `/${goalObj.uuid}`), {
           ...goalObj,
-          goalImgUrl: url,
+          goalImgUrl: "url",
         });
+        setUploadProgress(0);
+        uploadGoalImageInputRef.current!.value = "";
         console.log(url);
       }
     );
