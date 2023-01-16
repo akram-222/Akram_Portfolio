@@ -45,7 +45,6 @@ const GoalSnakeItem = ({
           goalImgUrl: url,
         });
         setUploadProgress(0);
-        uploadGoalImageInputRef.current!.value = "";
       }
     );
   };
@@ -74,10 +73,10 @@ const GoalSnakeItem = ({
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         {i + 1}- {goalObj.content}
-        {goalObj.imgUrl ? (
+        {goalObj.goalImgUrl ? (
           <img
             className="bg-card self-center h-28 w-28 rounded-lg"
-            src="https://hunyadi.info.hu/levente/images/stories/boxplus/image3.jpg"
+            src={goalObj.goalImgUrl}
             alt="goal_memory"
           />
         ) : (
