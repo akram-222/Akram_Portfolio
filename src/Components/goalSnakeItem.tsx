@@ -236,7 +236,7 @@ const GoalSnakeItem = ({
           <>
             <button
               type="button"
-              onClick={() => handleGoalCompletion}
+              onClick={() => handleGoalCompletion(goalObj)}
               className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
             >
               <BsCheck size={18} />
