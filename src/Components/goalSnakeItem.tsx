@@ -80,7 +80,9 @@ const GoalSnakeItem = ({
           ? "text-xs p-1"
           : "text-sm hover:bg-[#050708]/20 p-2"
       } ${
-        goalObj.isExpanded ? "h-full p-2.5 flex-col" : "h-10"
+        goalObj.isExpanded && !goalObj.isCompleted
+          ? "h-full p-2.5 flex-col"
+          : "h-10"
       } transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <div
@@ -91,8 +93,10 @@ const GoalSnakeItem = ({
             : "group-hover:text-white w-[160px]"
         } ${
           goalObj.isExpanded
-            ? "flex flex-col justify-between flex-grow bg-details rounded !w-full p-2"
+            ? "flex flex-col justify-between flex-grow  rounded !w-full p-2"
             : ""
+        }  ${
+          !goalObj.isCompleted && goalObj.isExpanded ? "bg-details" : ""
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         <h3 className="flex gap-2">
@@ -100,13 +104,19 @@ const GoalSnakeItem = ({
           <button
             type="button"
             onClick={() => handleGoalEdition(goalObj)}
-            className="text-gray-700/50 hover:text-white"
+            className={`${
+              !goalObj.isCompleted ? "" : "hidden"
+            } text-gray-700/50 hover:text-white`}
           >
             <AiOutlineEdit size={20} />
           </button>
         </h3>
-        <div className="goal_content flex-grow py-3 h-28 flex gap-2">
-          {goalObj.summary ? (
+        <div
+          className={`${
+            goalObj.isCompleted ? "hidden" : ""
+          } goal_content flex-grow py-3 h-28 flex gap-2`}
+        >
+          {goalObj.summary && goalObj.isExpanded && !goalObj.isCompleted ? (
             <div className="w-1/3 flex flex-grow bg-card rounded p-2 relative">
               <div
                 className="break-all whitespace-pre-line"
@@ -127,7 +137,7 @@ const GoalSnakeItem = ({
                 onClick={() => setOpen(true)}
                 className={`${
                   !isOpen ? "" : "hidden"
-                } flex-grow bg-card rounded flex flex-col items-center justify-center gap-2`}
+                } flex-grow bg-card hover:bg-[#050708]/80 rounded flex flex-col items-center justify-center gap-2`}
               >
                 <BsTextareaT size={30} />
                 No Summary, Click to add
