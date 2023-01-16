@@ -181,19 +181,24 @@ const GoalSnakeItem = ({
           ) : (
             <div
               // onClick={(e) => handleUploadGoalImage(e, goalObj)}
-              className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-full w-28 rounded-lg"
+              className="items-center relative hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-full w-28 rounded-lg"
             >
-              <BsCardImage size={30} />
+              <BsCardImage className="absolute" size={30} />
               <input
                 ref={uploadGoalImageInputRef}
                 onChange={(e) => handleUploadGoalImage(e, goalObj)}
                 type="file"
-                className="text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
+                className="h-full cursor-pointer z-10 w-full text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
                 id="file"
                 name="file"
+                disabled={uploadProgress > 0 ? true : false}
               />
               {/* Progress */}
-              <div className={`${uploadProgress > 0 ? "" : "hidden"}`}>
+              <div
+                className={`${
+                  uploadProgress > 0 ? "" : "hidden"
+                } absolute bottom-5`}
+              >
                 <span className="text-xs text-white">
                   {Math.round(uploadProgress)}%
                 </span>
