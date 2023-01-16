@@ -5,7 +5,6 @@ window.addEventListener("mouseover", () => {
     ele[i].onmousemove = (e) => {
       hint.classList.remove("hidden");
       hint.style.left = `${e.pageX - 50}px`;
-      console.log(e);
       hint.style.top = `${
         e.pageY - hint.getBoundingClientRect().height - 10
       }px`;

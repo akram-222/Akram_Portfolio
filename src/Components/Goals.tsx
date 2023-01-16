@@ -52,10 +52,7 @@ const Goals = () => {
       isExpanded: !goalObj.isExpanded,
     });
   };
-  
 
-  
-  
   const handleGoalCompletion = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
       ...goalObj,
@@ -85,6 +82,7 @@ const Goals = () => {
   const goalSnakeItemVar = (i: number, goalObj) => (
     <GoalSnakeItem
       i={i}
+      key={i}
       goalObj={goalObj}
       handleGoalExpandation={handleGoalExpandation}
       handleGoalCompletion={handleGoalCompletion}
