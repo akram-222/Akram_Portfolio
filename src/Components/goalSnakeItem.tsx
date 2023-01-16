@@ -107,7 +107,7 @@ const GoalSnakeItem = ({
             type="button"
             onClick={() => handleGoalEdition(goalObj)}
             className={`${
-              !goalObj.isCompleted ? "" : "hidden"
+              goalObj.isCompleted || !goalObj.isExpanded ? "hidden" : ""
             } text-gray-700/50 hover:text-white`}
           >
             <AiOutlineEdit size={20} />
