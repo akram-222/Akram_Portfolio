@@ -17,7 +17,7 @@ const AddGoals = ({
   handleGoalExpandation,
   handleGoalCompletion,
   handleUndoGoalCompletion,
-  handleGoalDeletion,
+  // handleGoalDeletion,
   handleGoalEdition,
 }) => {
   const goalSnakeItemVar = (i: number, goalObj) => (
@@ -27,7 +27,7 @@ const AddGoals = ({
       goalObj={goalObj}
       handleGoalExpandation={handleGoalExpandation}
       handleGoalCompletion={handleGoalCompletion}
-      handleGoalDeletion={handleGoalDeletion}
+      // handleGoalDeletion={handleGoalDeletion}
       handleGoalEdition={handleGoalEdition}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />

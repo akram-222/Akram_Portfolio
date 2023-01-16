@@ -12,7 +12,7 @@ import {
 import { CgTrash } from "react-icons/cg";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
-import { ref, update } from "firebase/database";
+import { ref, remove, update } from "firebase/database";
 import { db, app } from "../firebase";
 
 import { useRef } from "react";
@@ -20,7 +20,7 @@ const GoalSnakeItem = ({
   i,
   goalObj,
   handleGoalCompletion,
-  handleGoalDeletion,
+  // handleGoalDeletion,
   handleGoalEdition,
   handleUndoGoalCompletion,
   handleGoalExpandation,
@@ -257,7 +257,8 @@ const GoalSnakeItem = ({
           </>
         )}
         <button
-          onClick={() => handleGoalDeletion(goalObj)}
+          // onClick={() => handleGoalDeletion(goalObj)}
+          onClick={() => remove(ref(db, `/${goalObj.uuid}`))}
           className="text-gray-700/50 hover:text-red-400"
           type="button"
         >

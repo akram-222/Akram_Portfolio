@@ -27,9 +27,8 @@ const Goals = () => {
       }
     });
   }, []);
-  const handleGoalDeletion = (goalObj) => {
-    remove(ref(db, `/${goalObj.uuid}`));
-  };
+  // const handleGoalDeletion = (goalObj) => {
+  // };
   const handleGoalEdition = (goalObj) => {
     setIsEdit(true);
     setTempUUID(goalObj.uuid);
@@ -83,7 +82,7 @@ const Goals = () => {
       goalObj={goalObj}
       handleGoalExpandation={handleGoalExpandation}
       handleGoalCompletion={handleGoalCompletion}
-      handleGoalDeletion={handleGoalDeletion}
+      // handleGoalDeletion={handleGoalDeletion}
       handleGoalEdition={handleGoalEdition}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />
@@ -105,7 +104,7 @@ const Goals = () => {
           handleGoalExpandation={handleGoalExpandation}
           handleGoalCompletion={handleGoalCompletion}
           handleUndoGoalCompletion={handleUndoGoalCompletion}
-          handleGoalDeletion={handleGoalDeletion}
+          // handleGoalDeletion={handleGoalDeletion}
           handleGoalEdition={handleGoalEdition}
         />
       </div>
