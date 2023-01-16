@@ -1,3 +1,5 @@
+import { ref, update } from "firebase/database";
+
 const ValidatorBtn = ({
   newGoal,
   setNewGoal,
@@ -6,7 +8,8 @@ const ValidatorBtn = ({
   reference,
   db,
   isEdit,
-  handleSubmitChange,
+  tempUUID,
+  // handleSubmitChange,
 }) => {
   const writeGoalToDatabase = () => {
     const uuid = uid();
@@ -19,29 +22,48 @@ const ValidatorBtn = ({
     });
     setNewGoal("");
   };
+  const { testInput, lengthLimit, notallowed, updateBtn, addBtn } = {
+    testInput: /^[a-zA-z]\w+( \w+)*$/.test(newGoal),
+    lengthLimit: (
+      <span className="text-red-400 mt-2">Enter at least 3 characters</span>
+    ),
+    notallowed: <span className="text-red-400 mt-2">not allowed input</span>,
+    updateBtn: (
+      <button
+        type="button"
+        onClick={() => {
+          update(ref(db, `/${tempUUID}`), {
+            content: newGoal,
+            uuid: tempUUID,
+          });
+          setNewGoal("");
+          // setIsEdit(false);
+        }}
+        className="text-sm px-3 py-1 bg-teal-700 text-white rounded"
+      >
+        Update
+      </button>
+    ),
+    addBtn: (
+      <button
+        type="button"
+        onClick={writeGoalToDatabase}
+        className="text-sm px-3 py-1 bg-blue-600 text-white rounded"
+      >
+        Add
+      </button>
+    ),
+  };
+
   return (
     <>
-      {newGoal.length < 3 ? (
-        <span className="text-red-400 mt-2">Enter at least 3 characters</span>
-      ) : /^[a-zA-z]\w+( \w+)*$/.test(newGoal) === false ? (
-        <span className="text-red-400 mt-2">not allowed input</span>
-      ) : isEdit ? (
-        <button
-          type="button"
-          onClick={() => handleSubmitChange()}
-          className="text-sm px-3 py-1 bg-teal-700 text-white rounded"
-        >
-          Update
-        </button>
-      ) : (
-        <button
-          type="button"
-          onClick={writeGoalToDatabase}
-          className="text-sm px-3 py-1 bg-blue-600 text-white rounded"
-        >
-          Add
-        </button>
-      )}
+      {newGoal.length < 3
+        ? lengthLimit
+        : testInput === false
+        ? notallowed
+        : isEdit
+        ? updateBtn
+        : addBtn}
     </>
   );
 };

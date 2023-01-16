@@ -4,7 +4,6 @@ import { BiUndo } from "react-icons/bi";
 import {
   BsCardImage,
   BsCheck,
-  BsTrash,
   BsTextareaT,
   BsCheckCircle,
   BsXCircle,
@@ -12,19 +11,24 @@ import {
 import { CgTrash } from "react-icons/cg";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
-import { ref, update } from "firebase/database";
+import { ref, remove, update } from "firebase/database";
 import { db, app } from "../firebase";
 
 import { useRef } from "react";
+import { handleGoalCompletion } from "./goals/operations/goalCompletion";
 const GoalSnakeItem = ({
   i,
   goalObj,
-  handleGoalCompletion,
-  handleGoalDeletion,
-  handleGoalEdition,
+  // handleGoalEdition,
+  // setIsEdit,
+  // setNewGoal,
+  // setTempUUID,
   handleUndoGoalCompletion,
-  handleGoalExpandation,
 }) => {
+  const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [newGoal, setNewGoal] = useState<string>("");
+  const [tempUUID, setTempUUID] = useState<string>("");
+
   const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [summaryVal, setSummaryVal] = useState("Add Summary");
@@ -72,6 +76,11 @@ const GoalSnakeItem = ({
     });
     setOpen(false);
   };
+
+  const handleAddingNewGoal = (e: React.SyntheticEvent) => {
+    let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
+    setNewGoal(inputGoalVal);
+  };
   return (
     <li
       key={i}
@@ -105,7 +114,11 @@ const GoalSnakeItem = ({
           {i + 1}- {goalObj.content}
           <button
             type="button"
-            onClick={() => handleGoalEdition(goalObj)}
+            onClick={() => (goalObj) => {
+              setIsEdit(true);
+              setTempUUID(goalObj.uuid);
+              setNewGoal(goalObj.content);
+            }}
             className={`${
               goalObj.isCompleted || !goalObj.isExpanded ? "hidden" : ""
             } text-gray-700/50 hover:text-white`}
@@ -181,19 +194,24 @@ const GoalSnakeItem = ({
           ) : (
             <div
               // onClick={(e) => handleUploadGoalImage(e, goalObj)}
-              className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-full w-28 rounded-lg"
+              className="items-center relative hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-full w-28 rounded-lg"
             >
-              <BsCardImage size={30} />
+              <BsCardImage className="absolute" size={30} />
               <input
                 ref={uploadGoalImageInputRef}
                 onChange={(e) => handleUploadGoalImage(e, goalObj)}
                 type="file"
-                className="text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
+                className="h-full cursor-pointer z-10 w-full text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
                 id="file"
                 name="file"
+                disabled={uploadProgress > 0 ? true : false}
               />
               {/* Progress */}
-              <div className={`${uploadProgress > 0 ? "" : "hidden"}`}>
+              <div
+                className={`${
+                  uploadProgress > 0 ? "" : "hidden"
+                } absolute bottom-5`}
+              >
                 <span className="text-xs text-white">
                   {Math.round(uploadProgress)}%
                 </span>
@@ -239,20 +257,25 @@ const GoalSnakeItem = ({
               <BsCheck size={18} />
             </button>
             <button
-              onClick={() => handleGoalExpandation(goalObj)}
+              onClick={() =>
+                update(ref(db, `/${goalObj.uuid}`), {
+                  ...goalObj,
+                  isExpanded: !goalObj.isExpanded,
+                })
+              }
               className={`text-gray-700/50 hover:text-orange-400`}
               type="button"
             >
               {goalObj.isExpanded ? (
-                <TbMaximize size={18} />
-              ) : (
                 <TbMinimize size={18} />
+              ) : (
+                <TbMaximize size={18} />
               )}
             </button>
           </>
         )}
         <button
-          onClick={() => handleGoalDeletion(goalObj)}
+          onClick={() => remove(ref(db, `/${goalObj.uuid}`))}
           className="text-gray-700/50 hover:text-red-400"
           type="button"
         >
