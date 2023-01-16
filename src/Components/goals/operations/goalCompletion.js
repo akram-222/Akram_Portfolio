@@ -1,8 +1,4 @@
-//@ts-ignore
-import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
-import { ref, update } from "firebase/database";
-import { db } from "../../../firebase";
-export const handleGoalCompletion = (goalObj) => {
+export const handleGoalCompletion = () => {
   update(ref(db, `/${goalObj.uuid}`), {
     ...goalObj,
     isCompleted: true,
