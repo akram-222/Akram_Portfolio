@@ -3,7 +3,10 @@ import { BiExpand, BiUndo } from "react-icons/bi";
 import { BsCardImage, BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
+import { ref, update } from "firebase/database";
+import { db, app } from "../firebase";
 
+import { useRef } from "react";
 const GoalSnakeItem = ({
   i,
   goalObj,
@@ -13,6 +16,7 @@ const GoalSnakeItem = ({
   handleUndoGoalCompletion,
   handleGoalExpandation,
 }) => {
+  const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
   const timeTooltip = `<div className=''>
       <p><b>Creation time</b> :${new Date(
         goalObj.created_at
@@ -21,6 +25,39 @@ const GoalSnakeItem = ({
         goalObj.completed_at
       ).toLocaleString()}</p>
       </div>`;
+
+  const handleUploadGoalImage = (e: React.SyntheticEvent, goalObj) => {
+    let file = (e.target as HTMLInputElement)!.files![0];
+    const storageRef = app.storage().ref();
+    const fileRef = storageRef.child(file.name);
+    fileRef.put(file).then(() => console.log("file Uploaded"));
+
+    // let fileInput = uploadGoalImageInputRef.current!;
+    // fileInput.click();
+    // console.log(fileInput.files![0]);
+    // let file = fileInput.files![0];
+    // const storageRef = app.storage().ref();
+    // const fileRef = storageRef.child(file.name);
+    //   fileRef.put(file).then(() => console.log("file Uploaded"));
+    // console.log(file);
+    // update(ref(db, `/${goalObj.uuid}`), {
+    //   ...goalObj,
+    //   goalImgUrl: !goalObj.isExpanded,
+    // });
+  };
+
+  // const handleUploadGoalImage = (goalObj) => {
+  //   (async () => {
+  //     uploadGoalImageInputRef.current!.click();
+  //   })().then(() => {
+  //     update(ref(db, `/${tempUUID}`), {
+  //     content: newGoal,
+  //     uuid: tempUUID,
+  //   });
+  //     console.log("doneeee");
+  //   });
+  // };
+
   return (
     <li
       key={i}
@@ -52,11 +89,19 @@ const GoalSnakeItem = ({
             alt="goal_memory"
           />
         ) : (
-          <div className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-28 w-28 rounded-lg">
+          <div
+            // onClick={(e) => handleUploadGoalImage(e, goalObj)}
+            className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-28 w-28 rounded-lg"
+          >
             <BsCardImage size={30} />
+            Upload Image
             <input
-              type={"file"}
-              className="text-[0px] file:text-sm file:bg-transparent"
+              ref={uploadGoalImageInputRef}
+              onChange={(e) => handleUploadGoalImage(e, goalObj)}
+              type="file"
+              // className="hidden"
+              id="file"
+              name="file"
             />
           </div>
         )}
