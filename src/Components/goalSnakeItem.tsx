@@ -9,6 +9,7 @@ import {
   BsCheckCircle,
   BsXCircle,
 } from "react-icons/bs";
+import { CgTrash } from "react-icons/cg";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
 import { ref, update } from "firebase/database";
@@ -103,9 +104,9 @@ const GoalSnakeItem = ({
               {goalObj.summary}
               <button
                 onClick={() => handleGoalSummaryDeletion(goalObj)}
-                className="absolute right-2 hover:text-red-500 text-red-400"
+                className="absolute right-2 hover:text-rose-400 text-gray-400"
               >
-                <BsTrash size={20} />
+                <CgTrash size={16} />
               </button>
             </div>
           ) : (
