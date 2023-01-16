@@ -111,7 +111,7 @@ const GoalSnakeItem = ({
                 onClick={() => handleGoalSummaryDeletion(goalObj)}
                 className="p-0.5 bg-red-600/20 rounded absolute right-2 text-rose-400"
               >
-                <CgTrash size={18} />
+                <CgTrash size={17} />
               </button>
             </div>
           ) : (
