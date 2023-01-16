@@ -19,10 +19,16 @@ import { handleGoalCompletion } from "./goals/operations/goalCompletion";
 const GoalSnakeItem = ({
   i,
   goalObj,
-  // handleGoalCompletion,
-  handleGoalEdition,
+  // handleGoalEdition,
+  // setIsEdit,
+  // setNewGoal,
+  // setTempUUID,
   handleUndoGoalCompletion,
 }) => {
+  const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [newGoal, setNewGoal] = useState<string>("");
+  const [tempUUID, setTempUUID] = useState<string>("");
+
   const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [summaryVal, setSummaryVal] = useState("Add Summary");
@@ -70,6 +76,11 @@ const GoalSnakeItem = ({
     });
     setOpen(false);
   };
+
+  const handleAddingNewGoal = (e: React.SyntheticEvent) => {
+    let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
+    setNewGoal(inputGoalVal);
+  };
   return (
     <li
       key={i}
@@ -103,7 +114,11 @@ const GoalSnakeItem = ({
           {i + 1}- {goalObj.content}
           <button
             type="button"
-            onClick={() => handleGoalEdition(goalObj)}
+            onClick={() => (goalObj) => {
+              setIsEdit(true);
+              setTempUUID(goalObj.uuid);
+              setNewGoal(goalObj.content);
+            }}
             className={`${
               goalObj.isCompleted || !goalObj.isExpanded ? "hidden" : ""
             } text-gray-700/50 hover:text-white`}
