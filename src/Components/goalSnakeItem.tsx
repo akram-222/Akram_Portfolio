@@ -75,11 +75,11 @@ const GoalSnakeItem = ({
         <h3>
           {i + 1}- {goalObj.content}
         </h3>
-        <div className="goal_content flex-grow p-3 flex gap-3">
-          <div className="flex-grow bg-card rounded">content</div>
+        <div className="goal_content flex-grow p-3 h-28 flex gap-3">
+          <div className="flex-grow bg-card rounded ">content</div>
           {goalObj.goalImgUrl ? (
             <img
-              className="bg-card self-center h-28 w-28 rounded-lg"
+              className="bg-card self-center h-full w-28 rounded-lg"
               src={goalObj.goalImgUrl}
               alt="goal_memory"
             />
