@@ -1,6 +1,6 @@
 import { AiOutlineEdit } from "react-icons/ai";
 import { BiExpand, BiUndo } from "react-icons/bi";
-import { BsCheck } from "react-icons/bs";
+import { BsCardImage, BsCheck } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
 
@@ -45,11 +45,19 @@ const GoalSnakeItem = ({
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         {i + 1}- {goalObj.content}
-        <img
-          className="self-center h-28 w-28 rounded-lg"
-          src="https://hunyadi.info.hu/levente/images/stories/boxplus/image3.jpg"
-          alt="goal_memory"
-        />
+        {goalObj.imgUrl ? (
+          <img
+            className="bg-card self-center h-28 w-28 rounded-lg"
+            src="https://hunyadi.info.hu/levente/images/stories/boxplus/image3.jpg"
+            alt="goal_memory"
+          />
+        ) : (
+          <div className="items-center hover:bg-[#050708]/80 flex-col gap-2 justify-center flex bg-card self-center h-28 w-28 rounded-lg">
+            <input type={"file"} />
+            <BsCardImage size={30} />
+            Upload Image
+          </div>
+        )}
       </span>
       <span
         className={`${
