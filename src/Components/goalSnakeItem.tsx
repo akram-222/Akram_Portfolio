@@ -4,6 +4,7 @@ import { BiUndo } from "react-icons/bi";
 import {
   BsCardImage,
   BsCheck,
+  BsTrash,
   BsTextareaT,
   BsCheckCircle,
   BsXCircle,
@@ -56,10 +57,17 @@ const GoalSnakeItem = ({
       }
     );
   };
-  const handleGoalSummaryEdition = (goalObj) => {
+  const handleAddingGoalSummary = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
       ...goalObj,
       summary: summaryVal,
+    });
+    setOpen(false);
+  };
+  const handleGoalSummaryDeletion = (goalObj) => {
+    update(ref(db, `/${goalObj.uuid}`), {
+      ...goalObj,
+      summary: null,
     });
     setOpen(false);
   };
@@ -91,9 +99,14 @@ const GoalSnakeItem = ({
         </h3>
         <div className="goal_content flex-grow py-3 h-28 flex gap-2">
           {goalObj.summary ? (
-            <div className="flex-grow bg-card rounded flex flex-col items-center justify-center gap-2">
-              <BsTextareaT size={30} />
-              Summary
+            <div className="flex-grow bg-card rounded p-2 relative">
+              {goalObj.summary}
+              <button
+                onClick={() => handleGoalSummaryDeletion(goalObj)}
+                className="absolute right-2 hover:text-red-500 text-red-400"
+              >
+                <BsTrash size={20} />
+              </button>
             </div>
           ) : (
             <>
@@ -119,7 +132,7 @@ const GoalSnakeItem = ({
                     <BsXCircle size={20} />
                   </button>
                   <button
-                    onClick={() => handleGoalSummaryEdition(goalObj)}
+                    onClick={() => handleAddingGoalSummary(goalObj)}
                     className="hover:text-green-500 text-green-400"
                   >
                     <BsCheckCircle size={20} />
