@@ -13,9 +13,9 @@ import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
 import { ref, remove, update } from "firebase/database";
 import { db, app } from "../firebase";
-
 import { useRef } from "react";
 import { handleGoalCompletion } from "./goals/operations/goalCompletion";
+import { deleteFileFromFirebaseStorage } from "../firebase/storage/deleteFile";
 const GoalSnakeItem = ({
   i,
   goalObj,
@@ -69,6 +69,10 @@ const GoalSnakeItem = ({
       summary: null,
     });
     setOpen(false);
+  };
+  const handleRemovingGoal = (goalObj) => {
+    remove(ref(db, `/${goalObj.uuid}`));
+    deleteFileFromFirebaseStorage(goalObj);
   };
   return (
     <li
@@ -189,6 +193,7 @@ const GoalSnakeItem = ({
                 className="h-full cursor-pointer z-10 w-full text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
                 id="file"
                 name="file"
+                accept="image/*"
                 disabled={uploadProgress > 0 ? true : false}
               />
               {/* Progress */}
@@ -260,7 +265,7 @@ const GoalSnakeItem = ({
           </>
         )}
         <button
-          onClick={() => remove(ref(db, `/${goalObj.uuid}`))}
+          onClick={() => handleRemovingGoal(goalObj)}
           className="text-gray-700/50 hover:text-red-400"
           type="button"
         >

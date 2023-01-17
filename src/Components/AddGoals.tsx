@@ -1,7 +1,6 @@
 import ValidatorBtn from "./ValidatorBtn";
 import { uid } from "uid";
 import { db } from "../firebase";
-
 import { set, ref } from "firebase/database";
 import { BiListCheck } from "react-icons/bi";
 import GoalSnakeItem from "./goalSnakeItem";
