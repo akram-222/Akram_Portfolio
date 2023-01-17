@@ -16,6 +16,7 @@ import { db, app } from "../firebase";
 import { useRef } from "react";
 import { handleGoalCompletion } from "./goals/operations/goalCompletion";
 import { deleteFileFromFirebaseStorage } from "../firebase/storage/deleteFile";
+import { uploadFileToFirebaseStorage } from "../firebase/storage/uploadFile";
 const GoalSnakeItem = ({
   i,
   goalObj,
@@ -38,23 +39,24 @@ const GoalSnakeItem = ({
 
   const handleUploadGoalImage = (e: React.SyntheticEvent, goalObj) => {
     let file = (e.target as HTMLInputElement)!.files![0];
-    const storageRef = app.storage().ref(file.name);
-    storageRef.put(file).on(
-      "state_changed",
-      (snap) => {
-        let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-        setUploadProgress(percentage);
-      },
-      (err) => console.log(err),
-      async () => {
-        const url = await storageRef.getDownloadURL();
-        await update(ref(db, `/${goalObj.uuid}`), {
-          ...goalObj,
-          goalImgUrl: url,
-        });
-        setUploadProgress(0);
-      }
-    );
+    uploadFileToFirebaseStorage(file, goalObj, setUploadProgress);
+    // const storageRef = app.storage().ref(file.name);
+    // storageRef.put(file).on(
+    //   "state_changed",
+    //   (snap) => {
+    //     let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+    //     setUploadProgress(percentage);
+    //   },
+    //   (err) => console.log(err),
+    //   async () => {
+    //     const url = await storageRef.getDownloadURL();
+    //     await update(ref(db, `/${goalObj.uuid}`), {
+    //       ...goalObj,
+    //       goalImgUrl: url,
+    //     });
+    //     setUploadProgress(0);
+    //   }
+    // );
   };
   const handleAddingGoalSummary = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
