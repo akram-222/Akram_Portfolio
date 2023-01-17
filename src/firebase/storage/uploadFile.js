@@ -1,5 +1,5 @@
 import { update } from "firebase/database";
-import { ref } from "firebase/database";
+import { ref as dbRef } from "firebase/database";
 import { app, db } from "../../firebase";
 
 export const uploadFileToFirebaseStorage = (
@@ -17,7 +17,7 @@ export const uploadFileToFirebaseStorage = (
     (err) => console.log(err),
     async () => {
       const url = await storageRef.getDownloadURL();
-      await update(ref(db, `/${goalObj.uuid}`), {
+      await update(dbRef(db, `/${goalObj.uuid}`), {
         ...goalObj,
         goalImgUrl: url,
       });
