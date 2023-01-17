@@ -61,17 +61,13 @@ const GoalSnakeItem = ({
   return (
     <li
       key={i}
-      className={`${
-        goalObj.isCompleted
-          ? "text-xs p-1"
-          : "text-sm hover:bg-[#050708]/20 p-2"
-      } ${
+      className={`${goalObj.isCompleted ? "" : ""} ${
         goalObj.isExpanded && !goalObj.isCompleted
           ? "h-full p-2.5 flex-col"
           : ""
       } 
       
-      transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <div
         data-hint={timeTooltip}

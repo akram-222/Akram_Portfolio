@@ -47,8 +47,6 @@ const Goals = () => {
       isCompleted: false,
     });
   };
-  let completedGoals = goalsList?.filter((goal) => goal.isCompleted);
-  let inProgressGoals = goalsList?.filter((goal) => !goal.isCompleted);
   const goalSnakeItemVar = (i: number, goalObj) => (
     <GoalSnakeItem
       i={i}
@@ -84,9 +82,9 @@ const Goals = () => {
           <span>{!currentGoals ? "Completed" : "In Progress"} List</span>
           <button type="button" onClick={() => setCurrentGoals(+!currentGoals)}>
             {currentGoals ? (
-              <BsClockHistory className="text-yellow-500" size={20} />
-            ) : (
               <BsCardList className="text-green-500" size={20} />
+            ) : (
+              <BsClockHistory className="text-yellow-500" size={20} />
             )}
           </button>
         </div>
