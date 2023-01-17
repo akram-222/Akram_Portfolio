@@ -186,13 +186,6 @@ const GoalSnakeItem = ({
         {new Date(goalObj.created_at).toLocaleString()}
       </span>
       <div className="actions flex gap-2 items-center">
-        <button
-          type="button"
-          onClick={() => handleUndoGoalCompletion(goalObj)}
-          className="text-gray-700/50 hover:text-white"
-        >
-          <BiUndo size={20} />
-        </button>
         {!goalObj.isCompleted ? (
           <button
             type="button"
@@ -201,7 +194,15 @@ const GoalSnakeItem = ({
           >
             <BsCheck size={18} />
           </button>
-        ) : null}
+        ) : (
+          <button
+            type="button"
+            onClick={() => handleUndoGoalCompletion(goalObj)}
+            className="text-gray-700/50 hover:text-white"
+          >
+            <BiUndo size={20} />
+          </button>
+        )}
         <button
           onClick={() =>
             update(ref(db, `/${goalObj.uuid}`), {

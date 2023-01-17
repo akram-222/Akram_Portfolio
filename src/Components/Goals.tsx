@@ -11,7 +11,7 @@ const Goals = () => {
   const [newGoal, setNewGoal] = useState<string>("");
   const [tempUUID, setTempUUID] = useState<string>("");
   const [goalsList, setGoalsList] = useState<any[]>([]);
-  const [currentGoals, setCurrentGoals] = useState(0);
+  const [currentGoals, setCurrentGoals] = useState(1);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
@@ -64,8 +64,13 @@ const Goals = () => {
 
   return (
     <div className="flex p-2 text-sm w-full ">
+      {/* {currentGoals ? ( */}
       <div
-        className={`flex flex-col relative border-r border-gray-600/20 px-2 overflow-auto `}
+        className={`${
+          currentGoals
+            ? "w-[30%] px-2 opacity-100"
+            : "transition-all w-0 p-0 opacity-0"
+        } transition-all flex flex-col relative border-r border-gray-600/20 overflow-hidden `}
       >
         <AddGoals
           newGoal={newGoal}
@@ -76,6 +81,7 @@ const Goals = () => {
           handleSubmitChange={handleSubmitChange}
         />
       </div>
+      {/* // ) : null} */}
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
         <div className="flex justify-between items-center">
           <span>{!currentGoals ? "Completed" : "In Progress"} List</span>
