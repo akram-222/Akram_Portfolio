@@ -11,7 +11,7 @@ const Goals = () => {
   const [newGoal, setNewGoal] = useState<string>("");
   const [tempUUID, setTempUUID] = useState<string>("");
   const [goalsList, setGoalsList] = useState<any[]>([]);
-  const [currentGoals, setCurrentGoals] = useState(0);
+  const [currentGoals, setCurrentGoals] = useState(1);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
