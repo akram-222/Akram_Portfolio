@@ -81,7 +81,7 @@ const Goals = () => {
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
         <div className="flex justify-between items-center">
-          <span>{currentGoals ? "Completed" : "In Progress"} List</span>
+          <span>{!currentGoals ? "Completed" : "In Progress"} List</span>
           <button type="button" onClick={() => setCurrentGoals(+!currentGoals)}>
             {currentGoals ? (
               <BsClockHistory className="text-yellow-500" size={20} />
