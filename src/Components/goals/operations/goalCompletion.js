@@ -10,7 +10,7 @@ export const handleGoalCompletion = (goalObj) => {
   });
   confetti({
     particleCount: 150,
-    startVelocity: 130,
+    startVelocity: 30,
     spread: 360,
     angle: 40,
     origin: {
