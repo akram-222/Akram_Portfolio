@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import { ref, onValue, update } from "firebase/database";
 import GoalSnakeItem from "./goalSnakeItem";
 import AddGoals from "./AddGoals";
+import { BsCardList, BsClockHistory } from "react-icons/bs";
 const Goals = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
@@ -79,10 +80,20 @@ const Goals = () => {
         />
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
-        Goals List
-        <button type="button" onClick={() => setCurrentGoals(+!currentGoals)}>
-          {currentGoals ? "completed" : "inprogress"}
-        </button>
+        <div className="flex justify-between items-center">
+          <span>Goals List</span>
+          <button type="button" onClick={() => setCurrentGoals(+!currentGoals)}>
+            {currentGoals ? (
+              <div className="text-xs flex gap-2">
+                <BsCardList className="text-green-500" size={20} />
+              </div>
+            ) : (
+              <div className="text-xs flex gap-2">
+                <BsClockHistory className="text-yellow-500" size={20} />
+              </div>
+            )}
+          </button>
+        </div>
         {goals[currentGoals].length ? (
           <>
             <ol className="flex flex-col flex-grow list-decimal	list-inside text-base mt-3">
