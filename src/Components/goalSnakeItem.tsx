@@ -17,6 +17,7 @@ import { useRef } from "react";
 import { handleGoalCompletion } from "./goals/operations/goalCompletion";
 import { deleteFileFromFirebaseStorage } from "../firebase/storage/deleteFile";
 import { uploadFileToFirebaseStorage } from "../firebase/storage/uploadFile";
+import Progressbar from "./Progressbar";
 const GoalSnakeItem = ({
   i,
   goalObj,
@@ -172,25 +173,7 @@ const GoalSnakeItem = ({
                 accept="image/*"
                 disabled={uploadProgress > 0 ? true : false}
               />
-              {/* Progress */}
-              <div
-                className={`${
-                  uploadProgress > 0 ? "" : "hidden"
-                } absolute bottom-5`}
-              >
-                <span className="text-xs text-white">
-                  {Math.round(uploadProgress)}%
-                </span>
-                <div
-                  className={`w-20 h-1 w-full bg-gray-200 rounded-full dark:bg-gray-700`}
-                >
-                  <div
-                    className="h-full w-20 bg-red-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
-                    style={{ width: `${uploadProgress}%` }}
-                  ></div>
-                </div>
-              </div>
-              {/* Progress */}
+              <Progressbar value={uploadProgress} />
             </div>
           )}
         </div>
@@ -210,7 +193,6 @@ const GoalSnakeItem = ({
         >
           <BiUndo size={20} />
         </button>
-        {/* ) : ( */}
         {!goalObj.isCompleted ? (
           <button
             type="button"
