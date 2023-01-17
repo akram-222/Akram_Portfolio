@@ -67,8 +67,8 @@ const Goals = () => {
       {/* {currentGoals ? ( */}
       <div
         className={`${
-          currentGoals ? "" : "w-0 p-0"
-        } flex flex-col relative border-r border-gray-600/20 px-2 overflow-auto `}
+          currentGoals ? "w-1/3  px-2" : "transition-all w-0 p-0"
+        } transition-all flex flex-col relative border-r border-gray-600/20 overflow-auto `}
       >
         <AddGoals
           newGoal={newGoal}
