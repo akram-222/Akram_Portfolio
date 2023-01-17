@@ -6,7 +6,7 @@ import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import SearchComponent from "../Components/SearchComponent";
+import SearchComponent from "../Components/search comp/SearchComponent";
 
 const Projects = ({ onSidebarHide }) => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 12, page: 1 });

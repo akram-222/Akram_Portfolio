@@ -28,7 +28,7 @@ const Dashboard = ({ onSidebarHide }) => {
         <SearchBtn />
       </div>
       {/* </div> */}
-      {/* {employeeData.map(
+      {employeeData.map(
         ({ id, name, position, transactions, rise, tasksCompleted, imgId }) => (
           <NameCard
             key={id}
@@ -42,7 +42,7 @@ const Dashboard = ({ onSidebarHide }) => {
             className="Low-full p-2 w-full lg:w-1/3"
           />
         )
-      )} */}
+      )}
 
       <div className="w-full p-2 lg:w-2/3">
         <div className="flex rounded-lg bg-card sm:h-80 h-60">
