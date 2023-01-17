@@ -68,7 +68,7 @@ const Goals = () => {
       <div
         className={`${
           currentGoals
-            ? "w-1/3 px-2 opacity-100"
+            ? "w-[30%] px-2 opacity-100"
             : "transition-all w-0 p-0 opacity-0"
         } transition-all flex flex-col relative border-r border-gray-600/20 overflow-hidden `}
       >
