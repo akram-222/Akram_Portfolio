@@ -75,15 +75,14 @@ const Goals = () => {
           handleAddingNewGoal={handleAddingNewGoal}
           setNewGoal={setNewGoal}
           isEdit={isEdit}
-          completedGoals={completedGoals}
           handleSubmitChange={handleSubmitChange}
-          handleUndoGoalCompletion={handleUndoGoalCompletion}
-          handleGoalEdition={handleGoalEdition}
         />
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
-        In Progress Goals ⌛{" "}
-        <button onClick={() => setCurrentGoals(+!currentGoals)}>Switch</button>
+        Goals List
+        <button type="button" onClick={() => setCurrentGoals(+!currentGoals)}>
+          {currentGoals ? "completed" : "inprogress"}
+        </button>
         {goals[currentGoals].length ? (
           <>
             <ol className="flex flex-col flex-grow list-decimal	list-inside text-base mt-3">
