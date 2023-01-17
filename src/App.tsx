@@ -40,11 +40,11 @@ const App = () => {
             }}
             showSidebar={showSidebar}
           />
-          <div className="flex w-full">
+          <div className="flex w-full h-screen">
             <div className="w-full hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
               .
             </div>
-            <div className="relative flex-grow flex flex-wrap content-start">
+            <div className="relative flex-grow flex flex-wrap">
               <Routes>
                 {isLogging ? (
                   <Route
