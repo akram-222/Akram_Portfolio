@@ -61,11 +61,7 @@ const GoalSnakeItem = ({
   return (
     <li
       key={i}
-      className={`${goalObj.isCompleted ? "" : ""} ${
-        goalObj.isExpanded && !goalObj.isCompleted
-          ? "h-full p-2.5 flex-col"
-          : ""
-      } 
+      className={` ${goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""} 
       
      text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
@@ -73,14 +69,14 @@ const GoalSnakeItem = ({
         data-hint={timeTooltip}
         className={`${
           goalObj.isCompleted
-            ? "line-through  cursor-help w-[100px]"
+            ? "line-through  w-[100px]"
             : "group-hover:text-white w-[160px]"
         } ${
           goalObj.isExpanded
             ? "flex flex-col justify-between flex-grow  rounded !w-full p-2"
             : ""
         }  ${
-          !goalObj.isCompleted && goalObj.isExpanded ? "bg-details" : ""
+          goalObj.isExpanded ? "bg-details" : ""
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         <h3 className="flex gap-2">
@@ -97,7 +93,7 @@ const GoalSnakeItem = ({
         </h3>
         <div
           className={`${
-            goalObj.isCompleted || !goalObj.isExpanded ? "hidden" : ""
+            !goalObj.isExpanded ? "hidden" : ""
           } goal_content flex-grow py-3 h-28 flex gap-2`}
         >
           {goalObj.summary && goalObj.isExpanded && !goalObj.isCompleted ? (
@@ -201,10 +197,8 @@ const GoalSnakeItem = ({
       </div>
       <span
         className={`${
-          goalObj.isCompleted ? "hidden" : "opacity-0 group-hover:opacity-100"
-        } ${
           goalObj.isExpanded ? "my-2 opacity-100" : ""
-        } text-xs mx-2 flex items-center text-gray-400/50`}
+        } opacity-0 group-hover:opacity-100 text-xs mx-2 flex items-center text-gray-400/50`}
       >
         {new Date(goalObj.created_at).toLocaleString()}
       </span>
@@ -217,7 +211,7 @@ const GoalSnakeItem = ({
           <BiUndo size={20} />
         </button>
         {/* ) : ( */}
-        {goalObj.isCompleted ? (
+        {!goalObj.isCompleted ? (
           <button
             type="button"
             onClick={() => handleGoalCompletion(goalObj)}
