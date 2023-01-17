@@ -73,7 +73,7 @@ const GoalSnakeItem = ({
         data-hint={timeTooltip}
         className={`${
           goalObj.isCompleted
-            ? "line-through showHint cursor-help w-[100px]"
+            ? "line-through  cursor-help w-[100px]"
             : "group-hover:text-white w-[160px]"
         } ${
           goalObj.isExpanded
@@ -209,41 +209,41 @@ const GoalSnakeItem = ({
         {new Date(goalObj.created_at).toLocaleString()}
       </span>
       <div className="actions flex gap-2 items-center">
+        <button
+          type="button"
+          onClick={() => handleUndoGoalCompletion(goalObj)}
+          className="text-gray-700/50 hover:text-white"
+        >
+          <BiUndo size={20} />
+        </button>
+        {/* ) : ( */}
         {goalObj.isCompleted ? (
           <button
             type="button"
-            onClick={() => handleUndoGoalCompletion(goalObj)}
-            className="text-gray-700/50 hover:text-white"
+            onClick={() => handleGoalCompletion(goalObj)}
+            className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
           >
-            <BiUndo size={20} />
+            <BsCheck size={18} />
           </button>
-        ) : (
-          <>
-            <button
-              type="button"
-              onClick={() => handleGoalCompletion(goalObj)}
-              className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
-            >
-              <BsCheck size={18} />
-            </button>
-            <button
-              onClick={() =>
-                update(ref(db, `/${goalObj.uuid}`), {
-                  ...goalObj,
-                  isExpanded: !goalObj.isExpanded,
-                })
-              }
-              className={`text-gray-700/50 hover:text-orange-400`}
-              type="button"
-            >
-              {goalObj.isExpanded ? (
-                <TbMinimize size={18} />
-              ) : (
-                <TbMaximize size={18} />
-              )}
-            </button>
-          </>
-        )}
+        ) : null}
+        <button
+          onClick={() =>
+            update(ref(db, `/${goalObj.uuid}`), {
+              ...goalObj,
+              isExpanded: !goalObj.isExpanded,
+            })
+          }
+          className={`text-gray-700/50 hover:text-orange-400`}
+          type="button"
+        >
+          {goalObj.isExpanded ? (
+            <TbMinimize size={18} />
+          ) : (
+            <TbMaximize size={18} />
+          )}
+        </button>
+        {/* </> */}
+        {/* )} */}
         <button
           onClick={() => handleRemovingGoal(goalObj)}
           className="text-gray-700/50 hover:text-red-400"

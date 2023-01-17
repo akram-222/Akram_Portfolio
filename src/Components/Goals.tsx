@@ -52,7 +52,6 @@ const Goals = () => {
       i={i}
       key={i}
       goalObj={goalObj}
-      // handleGoalCompletion={handleGoalCompletion}
       handleGoalEdition={handleGoalEdition}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />
