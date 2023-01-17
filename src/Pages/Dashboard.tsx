@@ -1,5 +1,4 @@
 import AddComponent from "../Components/AddComponent";
-import { Link } from "react-router-dom";
 import { employeeData } from "../Components/employeeData";
 import Repos from "../Components/GitHubRepos";
 import NameCard from "../Components/NameCard";
