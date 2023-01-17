@@ -64,8 +64,11 @@ const Goals = () => {
 
   return (
     <div className="flex p-2 text-sm w-full ">
+      {/* {currentGoals ? ( */}
       <div
-        className={`flex flex-col relative border-r border-gray-600/20 px-2 overflow-auto `}
+        className={`${
+          currentGoals ? "" : "w-0 p-0"
+        } flex flex-col relative border-r border-gray-600/20 px-2 overflow-auto `}
       >
         <AddGoals
           newGoal={newGoal}
@@ -76,6 +79,7 @@ const Goals = () => {
           handleSubmitChange={handleSubmitChange}
         />
       </div>
+      {/* // ) : null} */}
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
         <div className="flex justify-between items-center">
           <span>{!currentGoals ? "Completed" : "In Progress"} List</span>
