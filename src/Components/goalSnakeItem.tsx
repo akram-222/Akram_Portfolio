@@ -17,6 +17,7 @@ import { useRef } from "react";
 import { handleGoalCompletion } from "./goals/operations/goalCompletion";
 import { deleteFileFromFirebaseStorage } from "../firebase/storage/deleteFile";
 import { uploadFileToFirebaseStorage } from "../firebase/storage/uploadFile";
+import Progressbar from "./Progressbar";
 const GoalSnakeItem = ({
   i,
   goalObj,
@@ -61,30 +62,22 @@ const GoalSnakeItem = ({
   return (
     <li
       key={i}
-      className={`${
-        goalObj.isCompleted
-          ? "text-xs p-1"
-          : "text-sm hover:bg-[#050708]/20 p-2"
-      } ${
-        goalObj.isExpanded && !goalObj.isCompleted
-          ? "h-full p-2.5 flex-col"
-          : ""
-      } 
+      className={` ${goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""} 
       
-      transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <div
         data-hint={timeTooltip}
         className={`${
           goalObj.isCompleted
-            ? "line-through showHint cursor-help w-[100px]"
+            ? "line-through  w-[100px]"
             : "group-hover:text-white w-[160px]"
         } ${
           goalObj.isExpanded
             ? "flex flex-col justify-between flex-grow  rounded !w-full p-2"
             : ""
         }  ${
-          !goalObj.isCompleted && goalObj.isExpanded ? "bg-details" : ""
+          goalObj.isExpanded ? "bg-details" : ""
         } text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis`}
       >
         <h3 className="flex gap-2">
@@ -101,7 +94,7 @@ const GoalSnakeItem = ({
         </h3>
         <div
           className={`${
-            goalObj.isCompleted || !goalObj.isExpanded ? "hidden" : ""
+            !goalObj.isExpanded ? "hidden" : ""
           } goal_content flex-grow py-3 h-28 flex gap-2`}
         >
           {goalObj.summary && goalObj.isExpanded && !goalObj.isCompleted ? (
@@ -180,74 +173,53 @@ const GoalSnakeItem = ({
                 accept="image/*"
                 disabled={uploadProgress > 0 ? true : false}
               />
-              {/* Progress */}
-              <div
-                className={`${
-                  uploadProgress > 0 ? "" : "hidden"
-                } absolute bottom-5`}
-              >
-                <span className="text-xs text-white">
-                  {Math.round(uploadProgress)}%
-                </span>
-                <div
-                  className={`w-20 h-1 w-full bg-gray-200 rounded-full dark:bg-gray-700`}
-                >
-                  <div
-                    className="h-full w-20 bg-red-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
-                    style={{ width: `${uploadProgress}%` }}
-                  ></div>
-                </div>
-              </div>
-              {/* Progress */}
+              <Progressbar value={uploadProgress} />
             </div>
           )}
         </div>
       </div>
       <span
         className={`${
-          goalObj.isCompleted ? "hidden" : "opacity-0 group-hover:opacity-100"
-        } ${
           goalObj.isExpanded ? "my-2 opacity-100" : ""
-        } text-xs mx-2 flex items-center text-gray-400/50`}
+        } opacity-0 group-hover:opacity-100 text-xs mx-2 flex items-center text-gray-400/50`}
       >
         {new Date(goalObj.created_at).toLocaleString()}
       </span>
       <div className="actions flex gap-2 items-center">
-        {goalObj.isCompleted ? (
+        <button
+          type="button"
+          onClick={() => handleUndoGoalCompletion(goalObj)}
+          className="text-gray-700/50 hover:text-white"
+        >
+          <BiUndo size={20} />
+        </button>
+        {!goalObj.isCompleted ? (
           <button
             type="button"
-            onClick={() => handleUndoGoalCompletion(goalObj)}
-            className="text-gray-700/50 hover:text-white"
+            onClick={() => handleGoalCompletion(goalObj)}
+            className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
           >
-            <BiUndo size={20} />
+            <BsCheck size={18} />
           </button>
-        ) : (
-          <>
-            <button
-              type="button"
-              onClick={() => handleGoalCompletion(goalObj)}
-              className="hover:bg-blue-600 text-gray-700/50 hover:text-white border border-gray-600/30 rounded"
-            >
-              <BsCheck size={18} />
-            </button>
-            <button
-              onClick={() =>
-                update(ref(db, `/${goalObj.uuid}`), {
-                  ...goalObj,
-                  isExpanded: !goalObj.isExpanded,
-                })
-              }
-              className={`text-gray-700/50 hover:text-orange-400`}
-              type="button"
-            >
-              {goalObj.isExpanded ? (
-                <TbMinimize size={18} />
-              ) : (
-                <TbMaximize size={18} />
-              )}
-            </button>
-          </>
-        )}
+        ) : null}
+        <button
+          onClick={() =>
+            update(ref(db, `/${goalObj.uuid}`), {
+              ...goalObj,
+              isExpanded: !goalObj.isExpanded,
+            })
+          }
+          className={`text-gray-700/50 hover:text-orange-400`}
+          type="button"
+        >
+          {goalObj.isExpanded ? (
+            <TbMinimize size={18} />
+          ) : (
+            <TbMaximize size={18} />
+          )}
+        </button>
+        {/* </> */}
+        {/* )} */}
         <button
           onClick={() => handleRemovingGoal(goalObj)}
           className="text-gray-700/50 hover:text-red-400"

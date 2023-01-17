@@ -4,12 +4,14 @@ import { db } from "../firebase";
 import { ref, onValue, update } from "firebase/database";
 import GoalSnakeItem from "./goalSnakeItem";
 import AddGoals from "./AddGoals";
+import { BsCardList, BsClockHistory } from "react-icons/bs";
 const Goals = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
   const [tempUUID, setTempUUID] = useState<string>("");
   const [goalsList, setGoalsList] = useState<any[]>([]);
+  const [currentGoals, setCurrentGoals] = useState(0);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
@@ -45,18 +47,20 @@ const Goals = () => {
       isCompleted: false,
     });
   };
-  let completedGoals = goalsList?.filter((goal) => goal.isCompleted);
-  let inProgressGoals = goalsList?.filter((goal) => !goal.isCompleted);
   const goalSnakeItemVar = (i: number, goalObj) => (
     <GoalSnakeItem
       i={i}
       key={i}
       goalObj={goalObj}
-      // handleGoalCompletion={handleGoalCompletion}
       handleGoalEdition={handleGoalEdition}
       handleUndoGoalCompletion={handleUndoGoalCompletion}
     />
   );
+
+  const goals = {
+    0: goalsList?.filter((goal) => goal.isCompleted),
+    1: goalsList?.filter((goal) => !goal.isCompleted),
+  };
 
   return (
     <div className="flex p-2 text-sm w-full ">
@@ -69,18 +73,24 @@ const Goals = () => {
           handleAddingNewGoal={handleAddingNewGoal}
           setNewGoal={setNewGoal}
           isEdit={isEdit}
-          completedGoals={completedGoals}
           handleSubmitChange={handleSubmitChange}
-          handleUndoGoalCompletion={handleUndoGoalCompletion}
-          handleGoalEdition={handleGoalEdition}
         />
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
-        {inProgressGoals.length ? (
+        <div className="flex justify-between items-center">
+          <span>{!currentGoals ? "Completed" : "In Progress"} List</span>
+          <button type="button" onClick={() => setCurrentGoals(+!currentGoals)}>
+            {currentGoals ? (
+              <BsCardList className="text-green-500" size={20} />
+            ) : (
+              <BsClockHistory className="text-yellow-500" size={20} />
+            )}
+          </button>
+        </div>
+        {goals[currentGoals].length ? (
           <>
-            In Progress Goals ⌛
             <ol className="flex flex-col flex-grow list-decimal	list-inside text-base mt-3">
-              {inProgressGoals.map((goalObj, i) =>
+              {goals[currentGoals].map((goalObj, i) =>
                 goalSnakeItemVar(i, goalObj)
               )}
             </ol>
