@@ -12,14 +12,14 @@ import { CgTrash } from "react-icons/cg";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
 import { ref, remove, update } from "firebase/database";
-import { db, app } from "../firebase";
-
+import { db } from "../firebase";
 import { useRef } from "react";
 import { handleGoalCompletion } from "./goals/operations/goalCompletion";
+import { deleteFileFromFirebaseStorage } from "../firebase/storage/deleteFile";
+import { uploadFileToFirebaseStorage } from "../firebase/storage/uploadFile";
 const GoalSnakeItem = ({
   i,
   goalObj,
-  // handleGoalCompletion,
   handleGoalEdition,
   handleUndoGoalCompletion,
 }) => {
@@ -38,23 +38,7 @@ const GoalSnakeItem = ({
 
   const handleUploadGoalImage = (e: React.SyntheticEvent, goalObj) => {
     let file = (e.target as HTMLInputElement)!.files![0];
-    const storageRef = app.storage().ref(file.name);
-    storageRef.put(file).on(
-      "state_changed",
-      (snap) => {
-        let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-        setUploadProgress(percentage);
-      },
-      (err) => console.log(err),
-      async () => {
-        const url = await storageRef.getDownloadURL();
-        await update(ref(db, `/${goalObj.uuid}`), {
-          ...goalObj,
-          goalImgUrl: url,
-        });
-        setUploadProgress(0);
-      }
-    );
+    uploadFileToFirebaseStorage(file, goalObj, setUploadProgress);
   };
   const handleAddingGoalSummary = (goalObj) => {
     update(ref(db, `/${goalObj.uuid}`), {
@@ -69,6 +53,10 @@ const GoalSnakeItem = ({
       summary: null,
     });
     setOpen(false);
+  };
+  const handleRemovingGoal = (goalObj) => {
+    remove(ref(db, `/${goalObj.uuid}`));
+    deleteFileFromFirebaseStorage(goalObj);
   };
   return (
     <li
@@ -189,6 +177,7 @@ const GoalSnakeItem = ({
                 className="h-full cursor-pointer z-10 w-full text-[0px] file:text-blue-400 file:font-bold file:text-xs file:border-0 file:bg-transparent"
                 id="file"
                 name="file"
+                accept="image/*"
                 disabled={uploadProgress > 0 ? true : false}
               />
               {/* Progress */}
@@ -260,7 +249,7 @@ const GoalSnakeItem = ({
           </>
         )}
         <button
-          onClick={() => remove(ref(db, `/${goalObj.uuid}`))}
+          onClick={() => handleRemovingGoal(goalObj)}
           className="text-gray-700/50 hover:text-red-400"
           type="button"
         >
