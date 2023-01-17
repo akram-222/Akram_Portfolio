@@ -10,6 +10,7 @@ const Goals = () => {
   const [newGoal, setNewGoal] = useState<string>("");
   const [tempUUID, setTempUUID] = useState<string>("");
   const [goalsList, setGoalsList] = useState<any[]>([]);
+  const [currentGoals, setCurrentGoals] = useState(0);
   const handleAddingNewGoal = (e: React.SyntheticEvent) => {
     let inputGoalVal = (e.currentTarget as HTMLInputElement)!.value;
     setNewGoal(inputGoalVal);
@@ -58,6 +59,11 @@ const Goals = () => {
     />
   );
 
+  const goals = {
+    0: goalsList?.filter((goal) => goal.isCompleted),
+    1: goalsList?.filter((goal) => !goal.isCompleted),
+  };
+
   return (
     <div className="flex p-2 text-sm w-full ">
       <div
@@ -76,11 +82,12 @@ const Goals = () => {
         />
       </div>
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
-        {inProgressGoals.length ? (
+        In Progress Goals ⌛{" "}
+        <button onClick={() => setCurrentGoals(+!currentGoals)}>Switch</button>
+        {goals[currentGoals].length ? (
           <>
-            In Progress Goals ⌛
             <ol className="flex flex-col flex-grow list-decimal	list-inside text-base mt-3">
-              {inProgressGoals.map((goalObj, i) =>
+              {goals[currentGoals].map((goalObj, i) =>
                 goalSnakeItemVar(i, goalObj)
               )}
             </ol>
