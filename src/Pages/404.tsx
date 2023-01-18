@@ -41,12 +41,17 @@ const NotFoundRoute = () => {
             <div
               key={i}
               onClick={() => navigate(`/${item.title.toLocaleLowerCase()}`)}
-              className={`relative dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50`}
+              className={`overflow-hidden relative dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50`}
             >
               {i === 4 ? (
-                <div className="absolute flex gap-2 items-center">
-                  <span>Under Construction</span>
-                  <IoBuildOutline size={25} />
+                <div
+                  style={{
+                    transform: "rotate(45deg) translate(10px, -55px)",
+                  }}
+                  className="w-full absolute h-12 bg-card top-0 right-0 text-xs text-yellow-500"
+                >
+                  <span className="bottom-1 right-5 absolute">Building</span>
+                  {/* <IoBuildOutline size={20} /> */}
                 </div>
               ) : (
                 ""
