@@ -95,7 +95,7 @@ const Goals = () => {
         </div>
         {goals[currentGoals].length ? (
           <>
-            <ol className="flex flex-col flex-grow list-decimal	list-inside text-base mt-3">
+            <ol className="flex flex-col overflow-hidden flex-grow list-decimal	list-inside text-base mt-3">
               {goals[currentGoals].map((goalObj, i) =>
                 goalSnakeItemVar(i, goalObj)
               )}

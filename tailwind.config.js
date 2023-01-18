@@ -18,9 +18,25 @@ module.exports = {
           "0%": { transform: "translatey(55px)", opacity: 1 },
           "100%": { transform: "translatey(-108px)", opacity: 0 },
         },
-        fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+        "fade-in-top": {
+          "0%": {
+            transform: "translateY(-50px)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
+        "fade-out-bottom": {
+          "0%": {
+            transform: "translateY(0px)",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "translateY(50px)",
+            opacity: 0,
+          },
         },
         flicker: {
           "0%": {
@@ -155,7 +171,8 @@ module.exports = {
         flicker: "flicker 2s linear both",
         scaleUpCenter:
           "scaleUpCenter 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both",
-        fadeIn: "fadeIn .4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+        "fade-in-top": "fade-in-top .5s ease-in-out 0s 1 normal none",
+        "fade-out-bottom": "fade-out-bottom 1s ease 0s 1 normal none",
         rubberband: "rubberband 800ms alternate ease-out",
       },
     },

@@ -65,7 +65,7 @@ const GoalSnakeItem = ({
       key={i}
       className={` ${goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""} 
       
-     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 rubberband group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 animate-fade-in-top group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <div
         data-hint={timeTooltip}
