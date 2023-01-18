@@ -132,7 +132,7 @@ module.exports = {
         flicker: "flicker 2s linear both",
         scaleUpCenter:
           "scaleUpCenter 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both",
-        fadeIn: "fadeIn .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+        fadeIn: "fadeIn .4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
       },
     },
     screens: {
