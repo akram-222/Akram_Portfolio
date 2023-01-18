@@ -1,17 +1,19 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
-import { getDatabase } from "firebase/database";
+import "firebase/compat/database";
+// import { getDatabase } from "firebase/database";
 // import { initializeApp } from "firebase/app";
 const firebaseConfig = {
-  apiKey: "AIzaSyCM8Nevx29oGcSfFZwUftIcmKDylRCzcB0",
-  authDomain: "akram-portfolio-b66de.firebaseapp.com",
-  projectId: "akram-portfolio-b66de",
-  storageBucket: "akram-portfolio-b66de.appspot.com",
-  messagingSenderId: "366480932294",
-  appId: "1:366480932294:web:520fd11a1109a8b0ab06c7",
-  measurementId: "G-3S8VYM0VJH",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
 export const app = firebase.initializeApp(firebaseConfig);
-export const db = getDatabase(app);
+// export const db = firebase.getDatabase(app);
+export const db = firebase.database();
