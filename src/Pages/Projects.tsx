@@ -24,7 +24,7 @@ const Projects = ({ onSidebarHide }) => {
       // style={{
       //   ...springs,
       // }}
-      className="animate-fadeIn p-2 flex-col items-start w-full flex-wrap"
+      className="animate-scale-in-hor-left p-2 flex-col items-start w-full flex-wrap"
     >
       <PageTitle
         className={"mb-10 h-fit"}

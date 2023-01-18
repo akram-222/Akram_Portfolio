@@ -176,6 +176,18 @@ module.exports = {
             opacity: 1,
           },
         },
+        "scale-in-hor-left": {
+          "0%": {
+            transform: "scaleX(0)",
+            "transform-origin": "0 0",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "scaleX(1)",
+            "transform-origin": "0 0",
+            opacity: 1,
+          },
+        },
       },
       animation: {
         "ping-once": "ping .2s linear 1",
@@ -186,7 +198,8 @@ module.exports = {
         "fade-in-top": "fade-in-top .5s ease-in-out 0s 1 normal none",
         "fade-out-bottom": "fade-out-bottom .5s ease-in-out 0s 1 normal none",
         rubberband: "rubberband 800ms alternate ease-out",
-        "scale-out-hor-left": "1s ease 0s 1 normal none",
+        "scale-out-hor-left": "scale-out-hor-left 1s ease 0s 1 normal none",
+        "scale-in-hor-left": "scale-in-hor-left .4s linear 0s 1 normal none",
       },
     },
     screens: {
