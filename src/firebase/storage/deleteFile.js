@@ -7,9 +7,8 @@ export const deleteFileFromFirebaseStorage = (goalObj) => {
   deleteObject(goalImgRef)
     .then(() => {
       console.log("file deleted successfully");
-      // File deleted successfully
     })
     .catch((error) => {
-      // Uh-oh, an error occurred!
+      console.log("file deleted successfully");
     });
 };
