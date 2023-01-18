@@ -196,6 +196,17 @@ module.exports = {
             opacity: 1,
           },
         },
+        "pulse-zoomout": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
       },
       animation: {
         "ping-once": "ping .2s linear 1",
@@ -209,6 +220,7 @@ module.exports = {
         rubberband: "rubberband 800ms alternate ease-out",
         "scale-out-hor-left": "scale-out-hor-left 1s linear 0s 1 normal none",
         "scale-in-hor-left": "scale-in-hor-left .4s linear 0s 1 normal none",
+        "pulse-zoomout": "pulse-zoomout 0.8s linear 0s infinite reverse both ",
       },
     },
     screens: {

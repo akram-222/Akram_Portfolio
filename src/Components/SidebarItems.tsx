@@ -61,7 +61,7 @@ const sidebarItems = [
       icon: (
         <BsTagsFill size={30} className="text-blue-400 dark:text-blue-400" />
       ),
-      bgColor: "bg-blue-900 dark:bg-blue-900",
+      bgColor: "animate-pulse-zoomout bg-blue-900 dark:bg-blue-900",
       textColor: "text-blue-900 dark:text-blue-900",
     },
     {

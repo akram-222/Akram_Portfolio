@@ -13,7 +13,10 @@ const RepoItem = ({
   createdAt,
 }) => {
   return (
-    <div className="flex items-center mt-3 relative show-repo-size" key={index}>
+    <div
+      className="animate-fade-in-top flex items-center mt-3 relative show-repo-size"
+      key={index}
+    >
       <div className="">{index + 1}</div>
 
       {/* <Image path={`res-react-dash-flag-${index+1}`} className="ml-2 w-6 h-6" /> */}

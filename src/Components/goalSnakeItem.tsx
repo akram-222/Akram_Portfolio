@@ -62,7 +62,7 @@ const GoalSnakeItem = ({
     setTimeout(() => {
       remove(ref(db, `/${goalObj.uuid}`));
       deleteFileFromFirebaseStorage(goalObj);
-    }, 500);
+    }, 300);
   };
   return (
     <li
