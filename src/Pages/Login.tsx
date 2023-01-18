@@ -52,7 +52,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
     }
   };
   return (
-    <>
+    <div className="animate-fadeIn w-full">
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}
@@ -150,7 +150,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 export default Login;

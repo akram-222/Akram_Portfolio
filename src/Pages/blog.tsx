@@ -6,7 +6,7 @@ const Blog = ({ onSidebarHide }) => {
   const { devBlogs } = useDevBlogs();
   console.log(devBlogs);
   return (
-    <div className="p-2">
+    <div className="animate-fadeIn p-2">
       <PageTitle
         onSidebarHide={onSidebarHide}
         title={"Blog"}

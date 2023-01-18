@@ -19,12 +19,8 @@ module.exports = {
           "100%": { transform: "translatey(-108px)", opacity: 0 },
         },
         fadeIn: {
-          "0%": {
-            opacity: "0",
-          },
-          "100%": {
-            opacity: "1",
-          },
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
         flicker: {
           "0%": {
@@ -136,7 +132,7 @@ module.exports = {
         flicker: "flicker 2s linear both",
         scaleUpCenter:
           "scaleUpCenter 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both",
-        fadeIn: "fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+        fadeIn: "fadeIn .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
       },
     },
     screens: {

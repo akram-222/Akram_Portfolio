@@ -18,7 +18,7 @@ const About = ({ onSidebarHide }) => {
     });
   }, []);
   return (
-    <div className="p-2">
+    <div className="animate-fadeIn p-2">
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}
