@@ -125,6 +125,29 @@ module.exports = {
             transform: "scale(1)",
           },
         },
+        rubberband: {
+          "0%": {
+            transform: "scaleX(1)",
+          },
+          "40%": {
+            transform: "scaleX(1.12) scaleY(0.75)",
+          },
+          "55%": {
+            transform: "scaleX(0.85) scaleY(1)",
+          },
+          "65%": {
+            transform: "scaleX(1.09) scaleY(0.85)",
+          },
+          "75%": {
+            transform: "scaleX(0.9)  scaleY(1)",
+          },
+          "90%": {
+            transform: "scaleX(1.05) scaleY(0.95)",
+          },
+          "100%": {
+            transform: "scaleX(1) scaleY(1)",
+          },
+        },
       },
       animation: {
         "ping-once": "ping .2s linear 1",
@@ -133,6 +156,7 @@ module.exports = {
         scaleUpCenter:
           "scaleUpCenter 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both",
         fadeIn: "fadeIn .4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+        rubberband: "rubberband 800ms alternate ease-out",
       },
     },
     screens: {

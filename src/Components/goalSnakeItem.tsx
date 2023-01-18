@@ -12,6 +12,7 @@ import { CgTrash } from "react-icons/cg";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
 import { ref, remove, update } from "firebase/database";
+
 import { db } from "../firebase";
 import { useRef } from "react";
 import { handleGoalCompletion } from "./goals/operations/goalCompletion";
@@ -64,7 +65,7 @@ const GoalSnakeItem = ({
       key={i}
       className={` ${goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""} 
       
-     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 rubberband group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <div
         data-hint={timeTooltip}
