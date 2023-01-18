@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import PageTitle from "../Components/PageTitle";
-// import Filter from "../Components/Filter";
 import ProjectItem from "../Components/projectItem";
 import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
@@ -12,7 +11,6 @@ const Projects = ({ onSidebarHide }) => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 12, page: 1 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
-
   useEffect(() => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
@@ -22,7 +20,12 @@ const Projects = ({ onSidebarHide }) => {
   }, [repoConfig]);
 
   return (
-    <div className="p-2 flex-col items-start w-full flex-wrap">
+    <div
+      // style={{
+      //   ...springs,
+      // }}
+      className="animate-fadeIn p-2 flex-col items-start w-full flex-wrap"
+    >
       <PageTitle
         className={"mb-10 h-fit"}
         onSidebarHide={onSidebarHide}
