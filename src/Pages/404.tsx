@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import sidebarItems from "../Components/SidebarItems";
+import { IoBuildOutline } from "react-icons/io5";
 const NotFoundRoute = () => {
   const navigate = useNavigate();
   return (
@@ -39,7 +40,7 @@ const NotFoundRoute = () => {
           {[...sidebarItems[0], ...sidebarItems[1]].map((item, i) => (
             <div
               key={i}
-              data-hint="under construction"
+              data-hint={`Under Construction`}
               onClick={() => navigate(`/${item.title.toLocaleLowerCase()}`)}
               className={`${
                 i === 4 ? "showHint" : ""
