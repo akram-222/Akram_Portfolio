@@ -52,7 +52,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
     }
   };
   return (
-    <div className="animate-scale-in-hor-left w-full">
+    <div className="animate-fade-in w-full">
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}

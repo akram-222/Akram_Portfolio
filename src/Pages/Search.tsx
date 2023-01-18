@@ -9,7 +9,7 @@ function Search({ onSidebarHide }) {
     setSearchOptionHidden(!isSearchOptionHidden);
   return (
     <>
-      <div className="h-full w-full animate-scale-in-hor-left">
+      <div className="h-full w-full animate-fade-in">
         <div className="h-full w-full mx-auto py-7 overflow-hidden">
           <div className="flex justify-between items-center px-3 pb-5 border-b dark:border-[#353535]">
             <div className="flex w-[90%] items-center gap-2">

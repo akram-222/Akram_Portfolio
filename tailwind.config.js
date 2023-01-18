@@ -18,6 +18,14 @@ module.exports = {
           "0%": { transform: "translatey(55px)", opacity: 1 },
           "100%": { transform: "translatey(-108px)", opacity: 0 },
         },
+        "fade-in": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
         "fade-in-top": {
           "0%": {
             transform: "translateY(-50px)",
@@ -195,6 +203,7 @@ module.exports = {
         flicker: "flicker 2s linear both",
         scaleUpCenter:
           "scaleUpCenter 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both",
+        "fade-in": "fade-in .5s linear 0s 1 normal none",
         "fade-in-top": "fade-in-top .5s ease-in-out 0s 1 normal none",
         "fade-out-bottom": "fade-out-bottom .5s ease-in-out 0s 1 normal none",
         rubberband: "rubberband 800ms alternate ease-out",
