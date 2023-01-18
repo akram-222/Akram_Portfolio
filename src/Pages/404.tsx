@@ -50,7 +50,7 @@ const NotFoundRoute = () => {
                   }}
                   className="w-full absolute h-12 bg-card top-0 right-0 text-xs text-yellow-500"
                 >
-                  <span className="bottom-1 right-5 absolute">Building</span>
+                  <span className="bottom-1 right-7 absolute">Building</span>
                   {/* <IoBuildOutline size={20} /> */}
                 </div>
               ) : (
