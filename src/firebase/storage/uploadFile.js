@@ -1,13 +1,13 @@
 import { update } from "firebase/database";
 import { ref as dbRef } from "firebase/database";
-import { db, storage } from "../../firebase";
+import { app, db } from "../../firebase";
 
 export const uploadFileToFirebaseStorage = (
   file,
   goalObj,
   setUploadProgress
 ) => {
-  const storageRef = storage.ref(file.name);
+  const storageRef = app.storage().ref(file.name);
   storageRef.put(file).on(
     "state_changed",
     (snap) => {
