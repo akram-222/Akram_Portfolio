@@ -39,11 +39,13 @@ const NotFoundRoute = () => {
           {[...sidebarItems[0], ...sidebarItems[1]].map((item, i) => (
             <div
               key={i}
+              data-hint="under construction"
               onClick={() => navigate(`/${item.title.toLocaleLowerCase()}`)}
-              className="dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50"
+              className={`${
+                i === 4 ? "showHint" : ""
+              } dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50`}
             >
               <div
-                data-hint="under construction"
                 className={`p-2 mx-auto mb-2 max-w-[48px] ${item.bgColor} rounded-full w-18 h-18`}
               >
                 {item.icon}
