@@ -164,6 +164,18 @@ module.exports = {
             transform: "scaleX(1) scaleY(1)",
           },
         },
+        "scale-out-hor-left": {
+          "0%": {
+            transform: "scaleX(1)",
+            "transform-origin": "0 0",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "scaleX(0)",
+            "transform-origin": "0 0",
+            opacity: 1,
+          },
+        },
       },
       animation: {
         "ping-once": "ping .2s linear 1",
@@ -172,8 +184,9 @@ module.exports = {
         scaleUpCenter:
           "scaleUpCenter 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both",
         "fade-in-top": "fade-in-top .5s ease-in-out 0s 1 normal none",
-        "fade-out-bottom": "fade-out-bottom 1s ease 0s 1 normal none",
+        "fade-out-bottom": "fade-out-bottom .5s ease-in-out 0s 1 normal none",
         rubberband: "rubberband 800ms alternate ease-out",
+        "scale-out-hor-left": "1s ease 0s 1 normal none",
       },
     },
     screens: {

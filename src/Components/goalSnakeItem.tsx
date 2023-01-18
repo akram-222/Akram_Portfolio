@@ -29,6 +29,7 @@ const GoalSnakeItem = ({
   const [uploadProgress, setUploadProgress] = useState(0);
   const [summaryVal, setSummaryVal] = useState("Add Summary");
   const [isOpen, setOpen] = useState(false);
+  const [aboutToRemove, setAboutToRemove] = useState(false);
   const timeTooltip = `<div className=''>
       <p><b>Creation time</b> :${new Date(
         goalObj.created_at
@@ -57,15 +58,18 @@ const GoalSnakeItem = ({
     setOpen(false);
   };
   const handleRemovingGoal = (goalObj) => {
-    remove(ref(db, `/${goalObj.uuid}`));
-    deleteFileFromFirebaseStorage(goalObj);
+    setAboutToRemove(true);
+    setTimeout(() => {
+      remove(ref(db, `/${goalObj.uuid}`));
+      deleteFileFromFirebaseStorage(goalObj);
+    }, 500);
   };
   return (
     <li
       key={i}
       className={` ${goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""} 
-      
-     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 animate-fade-in-top group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+      ${aboutToRemove ? " animate-fade-out-bottom" : "animate-fade-in-top"}
+     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
     >
       <div
         data-hint={timeTooltip}
