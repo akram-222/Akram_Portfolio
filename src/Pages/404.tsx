@@ -1,9 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import sidebarItems from "../Components/SidebarItems";
+import { IoBuildOutline } from "react-icons/io5";
 const NotFoundRoute = () => {
   const navigate = useNavigate();
   return (
-    <div className="animate-fadeIn h-screen w-full">
+    <div className="animate-fade-in h-screen w-full">
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full  p-10">
         <div className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold">
@@ -40,8 +41,21 @@ const NotFoundRoute = () => {
             <div
               key={i}
               onClick={() => navigate(`/${item.title.toLocaleLowerCase()}`)}
-              className="dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50"
+              className={`overflow-hidden relative dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50`}
             >
+              {i === 4 ? (
+                <div
+                  style={{
+                    transform: "rotate(45deg) translate(10px, -55px)",
+                  }}
+                  className="w-full absolute h-12 bg-card top-0 right-0 text-xs text-yellow-500"
+                >
+                  <span className="bottom-1 right-7 absolute">Building</span>
+                  {/* <IoBuildOutline size={20} /> */}
+                </div>
+              ) : (
+                ""
+              )}
               <div
                 className={`p-2 mx-auto mb-2 max-w-[48px] ${item.bgColor} rounded-full w-18 h-18`}
               >
