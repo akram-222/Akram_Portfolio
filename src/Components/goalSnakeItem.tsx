@@ -70,7 +70,7 @@ const GoalSnakeItem = ({
   return (
     <li
       key={i}
-      className={` ${goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""} 
+      className={` ${goalObj.isExpanded ? "p-2.5 flex-col" : ""} 
       ${aboutToRemove ? " animate-fade-out-bottom" : "animate-fade-in-top"}
      text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
       draggable
