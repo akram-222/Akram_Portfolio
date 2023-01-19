@@ -5,8 +5,11 @@ import { ref, onValue, update } from "firebase/database";
 import GoalSnakeItem from "./goalSnakeItem";
 import AddGoals from "./AddGoals";
 import { BsCardList, BsClockHistory } from "react-icons/bs";
+import { GrContract, GrExpand } from "react-icons/gr";
+import { CgArrowsShrinkH, CgArrowsMergeAltH } from "react-icons/cg";
 const Goals = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const goalInputRef = useRef<HTMLInputElement | null>(null);
   const [newGoal, setNewGoal] = useState<string>("");
   const [tempUUID, setTempUUID] = useState<string>("");
@@ -67,7 +70,7 @@ const Goals = () => {
       {/* {currentGoals ? ( */}
       <div
         className={`${
-          currentGoals
+          isOpen && currentGoals
             ? "w-[30%] px-2 opacity-100"
             : "transition-all w-0 p-0 opacity-0"
         } transition-all flex flex-col relative border-r border-gray-600/20 overflow-hidden `}
@@ -84,6 +87,18 @@ const Goals = () => {
       {/* // ) : null} */}
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
         <div className="flex justify-between items-center">
+          <span
+            className={`${
+              !currentGoals ? "hidden" : ""
+            } text-gray-300 cursor-pointer`}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <CgArrowsMergeAltH size={22} />
+            ) : (
+              <CgArrowsShrinkH size={22} />
+            )}
+          </span>
           <span>{!currentGoals ? "Completed" : "In Progress"} List</span>
           <button type="button" onClick={() => setCurrentGoals(+!currentGoals)}>
             {currentGoals ? (

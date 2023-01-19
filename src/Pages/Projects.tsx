@@ -41,8 +41,8 @@ const Projects = ({ onSidebarHide }) => {
             </a>
           </>
         }
-        is_premium={true}
-        premium_star="GitHub Repos"
+        is_premium={false}
+        premium_star=""
       />
       <div className="flex w-full flex-col lg:flex-row">
         <div className="projects-list w-full flex flex-wrap gap-2">

@@ -12,15 +12,9 @@ const PageTitle = ({
 }) => {
   return (
     <>
-      <div className={`${className} py-3 px-2 flex flex-col w-full justify-between`}>
-        <button
-          onClick={onSidebarHide}
-          type="button"
-          className={`block sm:hidden self-end mr-2 mt-2`}
-        >
-          <CgMenuLeft size={20} />
-        </button>
-
+      <div
+        className={`${className} py-3 px-2 flex flex-col w-full justify-between`}
+      >
         <BreadCrumb />
         <div className="">
           <div className="flex items-center">
@@ -39,6 +33,13 @@ const PageTitle = ({
             ) : (
               ""
             )}
+            <button
+              onClick={onSidebarHide}
+              type="button"
+              className={`ml-auto block sm:hidden`}
+            >
+              <CgMenuLeft size={20} />
+            </button>
           </div>
           <div className="flex items-center">
             <AiOutlineDoubleRight size={16} />
