@@ -43,19 +43,19 @@ const RepoDetails = ({ onSidebarHide }) => {
   }, []);
   const onClick = useCallback(() => {
     setRunning(true);
+    confetti({
+      particleCount: 100,
+      startVelocity: 30,
+      spread: 360,
+      angle: 40,
+      origin: {
+        x: 0.5,
+        y: 0,
+      },
+    });
     setTimeout(() => {
       setRunning(false);
-      confetti({
-        particleCount: 100,
-        startVelocity: 30,
-        spread: 360,
-        angle: 40,
-        origin: {
-          x: 0.5,
-          y: 0,
-        },
-      });
-    }, 1500);
+    }, 1000);
   }, []);
   return (
     <>
