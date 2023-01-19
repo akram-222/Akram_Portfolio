@@ -23,7 +23,7 @@ function Satisfication() {
             <MdUnfoldMore />
           </span>
         </div>
-        <div className={`${isVisible ? "" : "hidden"} `}>
+        <div className={`${isVisible ? "" : "hidden"}`}>
           <div className="mt-3">From all projects</div>
           <div className="flex justify-center">
             <svg

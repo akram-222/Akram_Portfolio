@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { BsPlus } from "react-icons/bs";
+import { MdUnfoldMore } from "react-icons/md";
+
 import { __getNotifications } from "../Utils/github/__getNotifications";
 export default function AddComponent() {
+  const [isVisible, setIsVisible] = useState(true);
+
   const [notifications, setNotifications] = useState([]);
   const getNotifications = async () => {
     __getNotifications().then((data) => {
@@ -10,11 +14,21 @@ export default function AddComponent() {
   };
 
   return (
-    <div className="rounded-lg bg-card overflow-auto h-80">
+    <div
+      className={`${isVisible ? "h-80" : ""} rounded-lg bg-card overflow-auto`}
+    >
       <div>
-        <div className="w-full h-20 add-component-head" />
+        <div className="w-full p-4 add-component-head">
+          <div className="flex justify-between items-center">
+            <div className="text-white font-bold">New</div>
+            <span onClick={() => setIsVisible(!isVisible)}>
+              <MdUnfoldMore />
+            </span>
+          </div>
+        </div>
+
         <div
-          className="flex flex-col items-center"
+          className={`${isVisible ? "" : "hidden"} flex flex-col items-center`}
           style={{
             transform: "translate(0, -40px)",
           }}
