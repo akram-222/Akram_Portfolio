@@ -70,7 +70,7 @@ const Goals = () => {
       {/* {currentGoals ? ( */}
       <div
         className={`${
-          isOpen
+          isOpen && currentGoals
             ? "w-[30%] px-2 opacity-100"
             : "transition-all w-0 p-0 opacity-0"
         } transition-all flex flex-col relative border-r border-gray-600/20 overflow-hidden `}
@@ -88,7 +88,9 @@ const Goals = () => {
       <div className="flex flex-col overflow-auto px-3 text-white text-xl flex-grow">
         <div className="flex justify-between items-center">
           <span
-            className="text-gray-300 cursor-pointer"
+            className={`${
+              !currentGoals ? "hidden" : ""
+            } text-gray-300 cursor-pointer`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
