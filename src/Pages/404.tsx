@@ -4,7 +4,7 @@ import { IoBuildOutline } from "react-icons/io5";
 const NotFoundRoute = () => {
   const navigate = useNavigate();
   return (
-    <div className="animate-fade-in h-screen w-full">
+    <div className="animate-fade-in w-full">
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full  p-10">
         <div className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold">

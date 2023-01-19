@@ -36,7 +36,7 @@ const PageTitle = ({
             <button
               onClick={onSidebarHide}
               type="button"
-              className={`ml-auto block sm:hidden self-end mr-2 mt-2`}
+              className={`ml-auto block sm:hidden`}
             >
               <CgMenuLeft size={20} />
             </button>
