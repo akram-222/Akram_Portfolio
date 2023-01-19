@@ -44,13 +44,8 @@ const NotFoundRoute = () => {
               className={`overflow-hidden relative dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50`}
             >
               {i === 4 ? (
-                <div
-                  style={{
-                    transform: "rotate(45deg) translate(10px, -55px)",
-                  }}
-                  className="w-full absolute h-12 bg-card top-0 right-0 text-xs text-yellow-500"
-                >
-                  <span className="bottom-1 right-7 absolute">Building</span>
+                <div className="bottom-1 right-1 absolute text-xs text-yellow-500">
+                  <span className="">Building...</span>
                   {/* <IoBuildOutline size={20} /> */}
                 </div>
               ) : (
