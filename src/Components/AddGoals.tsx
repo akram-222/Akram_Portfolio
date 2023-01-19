@@ -11,7 +11,7 @@ const AddGoals = ({
   handleSubmitChange,
 }) => {
   return (
-    <>
+    <div>
       <h2 className="text-white text-2xl font-bold my-2 text-center">
         {new Date().getFullYear()} Goals
       </h2>
@@ -39,7 +39,7 @@ const AddGoals = ({
           />
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
