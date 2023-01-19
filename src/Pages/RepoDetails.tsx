@@ -19,6 +19,7 @@ const RepoDetails = ({ onSidebarHide }) => {
   });
   const [readmeFileContent, setReadmeFileContent] = useState<string>("");
   const [isLoad, setLoad] = useState(true);
+  const [isRun, setRunning] = useState(false);
   const downloadBtnRef = useRef<HTMLAnchorElement | null>(null);
   useEffect(() => {
     __getRepo(params.repoName!)
@@ -41,18 +42,20 @@ const RepoDetails = ({ onSidebarHide }) => {
       });
   }, []);
   const onClick = useCallback(() => {
-    // setTimeout(() => {
-    confetti({
-      particleCount: 100,
-      startVelocity: 30,
-      spread: 360,
-      angle: 40,
-      origin: {
-        x: 0.5,
-        y: 0,
-      },
-    });
-    // }, 1500);
+    setRunning(true);
+    setTimeout(() => {
+      setRunning(false);
+      confetti({
+        particleCount: 100,
+        startVelocity: 30,
+        spread: 360,
+        angle: 40,
+        origin: {
+          x: 0.5,
+          y: 0,
+        },
+      });
+    }, 1500);
   }, []);
   return (
     <>
@@ -87,9 +90,12 @@ const RepoDetails = ({ onSidebarHide }) => {
           >
             <a
               ref={downloadBtnRef}
-              className={`transition-all group-hover:animate-pulse`}
+              className={`${
+                isRun ? "translate-y-4" : "-translate-y-4"
+              } flex flex-col gap-3 transition-all group-hover:animate-pulse`}
               // href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
             >
+              <BsCheck size={20} />
               <BsDownload size={20} />
             </a>
             {/* <span className="text-xs text-red-400 opacity-0 group-hover:opacity-100">
