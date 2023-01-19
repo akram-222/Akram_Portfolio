@@ -26,6 +26,7 @@ const GoalSnakeItem = ({
   handleUndoGoalCompletion,
 }) => {
   const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
+  const goalSnakeItemRef = useRef<HTMLLIElement | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [summaryVal, setSummaryVal] = useState("Add Summary");
   const [isOpen, setOpen] = useState(false);
@@ -64,12 +65,20 @@ const GoalSnakeItem = ({
       deleteFileFromFirebaseStorage(goalObj);
     }, 300);
   };
+  const dragStart = (e: React.SyntheticEvent, position) => {
+    dragItem.current = position;
+    console.log(e.target.innerHTML);
+  };
+
   return (
     <li
       key={i}
+      ref={goalSnakeItemRef}
+      onDragStart={(e) => dragStart(e, i)}
       className={` ${goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""} 
       ${aboutToRemove ? " animate-fade-out-bottom" : "animate-fade-in-top"}
      text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+      draggable
     >
       <div
         data-hint={timeTooltip}
