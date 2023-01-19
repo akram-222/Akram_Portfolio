@@ -9,7 +9,10 @@ function Segmentation() {
       <div className="p-4 h-full">
         <div className="flex justify-between items-center">
           <div className="text-white font-bold">Segmentation</div>
-          <span onClick={() => setIsVisible(!isVisible)}>
+          <span
+            className="cursor-pointer"
+            onClick={() => setIsVisible(!isVisible)}
+          >
             <MdUnfoldMore />
           </span>
           {/* <Icon path="res-react-dash-options" className="w-2 h-2" /> */}

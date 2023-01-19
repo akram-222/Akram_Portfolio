@@ -21,7 +21,10 @@ export default function AddComponent() {
         <div className="w-full p-4 add-component-head">
           <div className="flex justify-between items-center">
             <div className="text-white font-bold">New</div>
-            <span onClick={() => setIsVisible(!isVisible)}>
+            <span
+              className="cursor-pointer"
+              onClick={() => setIsVisible(!isVisible)}
+            >
               <MdUnfoldMore />
             </span>
           </div>

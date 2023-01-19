@@ -19,7 +19,10 @@ function Satisfication() {
       <div className={`p-4 h-full`}>
         <div className="flex justify-between items-center">
           <div className="text-white font-bold">Satisfication</div>
-          <span onClick={() => setIsVisible(!isVisible)}>
+          <span
+            className="cursor-pointer"
+            onClick={() => setIsVisible(!isVisible)}
+          >
             <MdUnfoldMore />
           </span>
         </div>
