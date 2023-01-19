@@ -18,7 +18,7 @@ export default function AddComponent() {
       className={`${isVisible ? "h-80" : ""} rounded-lg bg-card overflow-auto`}
     >
       <div>
-        <div className="w-full p-4  add-component-head">
+        <div className="w-full p-4 add-component-head">
           <div className="flex justify-between items-center">
             <div className="text-white font-bold">New</div>
             <span onClick={() => setIsVisible(!isVisible)}>
@@ -29,9 +29,6 @@ export default function AddComponent() {
 
         <div
           className={`${isVisible ? "" : "hidden"} flex flex-col items-center`}
-          style={{
-            transform: "translate(0, -40px)",
-          }}
         >
           <div
             className=""
@@ -40,6 +37,7 @@ export default function AddComponent() {
               width: "80px",
               height: "80px",
               borderRadius: "999px",
+              transform: "translate(0, -40px)",
             }}
           >
             <img
