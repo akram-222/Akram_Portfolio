@@ -6,9 +6,8 @@ import PageTitle from "../Components/PageTitle";
 import Spinner from "../Components/Spinner";
 import { __getRepo } from "../Utils/github/__searchForRepo";
 import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
-
 import { octokit } from "../Utils/github/OctokitConstructor";
-import { BsFileZip } from "react-icons/bs";
+import { BsDownload } from "react-icons/bs";
 
 const RepoDetails = ({ onSidebarHide }) => {
   type readmeFileType = { content: string; size: number };
@@ -84,7 +83,7 @@ const RepoDetails = ({ onSidebarHide }) => {
             onClick={onClick}
             className="group flex gap-1 items-center bg-[#050708] p-2 rounded-lg text-sm font-bold "
           >
-            <BsFileZip size={20} />
+            <BsDownload size={20} />
             <a
             // href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
             >
