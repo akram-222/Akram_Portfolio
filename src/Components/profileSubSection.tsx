@@ -8,8 +8,9 @@ const ProfileSubSection = ({ h3Content, list }) => {
         </em>
       </h3>
       <div className="ml-5 flex gap-2 flex-wrap ml-8">
-        {list?.map((item) => (
+        {list?.map((item, i) => (
           <img
+            key={i}
             alt="frameworks and libraries"
             src={`https://img.shields.io/badge/${item}`}
           />
