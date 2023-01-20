@@ -2,10 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import {
   BsArrowLeft,
   BsArrowRight,
-  BsCheck,
   BsCheckCircle,
-  BsDoorClosed,
-  BsFillXCircleFill,
   BsKey,
   BsXCircle,
 } from "react-icons/bs";
