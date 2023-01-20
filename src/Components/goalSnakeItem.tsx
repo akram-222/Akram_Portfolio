@@ -26,8 +26,6 @@ const GoalSnakeItem = ({
   handleUndoGoalCompletion,
 }) => {
   const uploadGoalImageInputRef = useRef<HTMLInputElement | null>(null);
-  const dragItem = useRef<HTMLLIElement | null>(null);
-  const dragOverItem = useRef<HTMLLIElement | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [summaryVal, setSummaryVal] = useState("Add Summary");
   const [isOpen, setOpen] = useState(false);
@@ -189,8 +187,8 @@ const GoalSnakeItem = ({
       </div>
       <span
         className={`${
-          goalObj.isExpanded ? "my-2 opacity-100" : ""
-        } opacity-0 group-hover:opacity-100 text-xs mx-2 flex items-center text-gray-400/50`}
+          goalObj.isExpanded ? "my-2" : "hidden"
+        }  text-xs mx-2 flex items-center text-gray-400/50`}
       >
         {new Date(goalObj.created_at).toLocaleString()}
       </span>
