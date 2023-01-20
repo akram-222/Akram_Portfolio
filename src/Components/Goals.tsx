@@ -5,7 +5,6 @@ import { ref, onValue, update } from "firebase/database";
 import GoalSnakeItem from "./goalSnakeItem";
 import AddGoals from "./AddGoals";
 import { BsCardList, BsClockHistory } from "react-icons/bs";
-import { GrContract, GrExpand } from "react-icons/gr";
 import { CgArrowsShrinkH, CgArrowsMergeAltH } from "react-icons/cg";
 const Goals = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
@@ -93,7 +92,7 @@ const Goals = () => {
             } text-gray-300 cursor-pointer`}
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? (
+            {!isOpen ? (
               <CgArrowsMergeAltH size={22} />
             ) : (
               <CgArrowsShrinkH size={22} />
