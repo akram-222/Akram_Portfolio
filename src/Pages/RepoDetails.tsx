@@ -86,8 +86,9 @@ const RepoDetails = ({ onSidebarHide }) => {
           {/* <div className="group flex items-center justify-center w-full flex-grow"> */}
           <button
             onClick={onClick}
-            className="transition-all h-8 group overflow-hidden flex gap-1 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
+            className="m-auto transition-all h-9 group overflow-hidden flex gap-2 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
           >
+            <span className="mt-1">Download</span>
             <a
               ref={downloadBtnRef}
               className={`${
