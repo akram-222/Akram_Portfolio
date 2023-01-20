@@ -1,5 +1,6 @@
-#### Under Contractor ⌛
-# Akram Portfolio
+#### Until I complete my military duty, work on this website has been put on hold. ⌛
+
+# Akram Portfolio 
 
 ### This repo is divided into 6 pages:
 
