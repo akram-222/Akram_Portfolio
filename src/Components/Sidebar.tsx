@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { config, useSpring, animated } from "react-spring";
-import IconButton from "./IconButton";
 import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
 import logo from "../assests/logo.png";

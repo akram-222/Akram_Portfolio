@@ -2,7 +2,13 @@ import { BiChevronRight } from "react-icons/bi";
 const HeroSection = () => {
   return (
     <>
-      <section className="bg-white dark:bg-[#171717] mb-5">
+      <section className="relative bg-white dark:bg-[#171717] mb-5">
+        <div
+          className="w-full h-full shadow-[inset_0px_0px_9rem_0rem_#161616]	 absolute grayscale opacity-20"
+          style={{
+            backgroundImage: `url("https://www.transparenttextures.com/patterns/food.png")`,
+          }}
+        ></div>
         <div className=" pb-1 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-8">
           <h1 className="mb-4 pt-3 text-3xl dark:text-white font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl">
             We invest in the{" "}
