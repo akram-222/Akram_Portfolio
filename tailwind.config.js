@@ -18,9 +18,33 @@ module.exports = {
           "0%": { transform: "translatey(55px)", opacity: 1 },
           "100%": { transform: "translatey(-108px)", opacity: 0 },
         },
-        fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+        "fade-in": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+        "fade-in-top": {
+          "0%": {
+            transform: "translateY(-50px)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
+        "fade-out-bottom": {
+          "0%": {
+            transform: "translateY(0px)",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "translateY(50px)",
+            opacity: 0,
+          },
         },
         flicker: {
           "0%": {
@@ -125,6 +149,64 @@ module.exports = {
             transform: "scale(1)",
           },
         },
+        rubberband: {
+          "0%": {
+            transform: "scaleX(1)",
+          },
+          "40%": {
+            transform: "scaleX(1.12) scaleY(0.75)",
+          },
+          "55%": {
+            transform: "scaleX(0.85) scaleY(1)",
+          },
+          "65%": {
+            transform: "scaleX(1.09) scaleY(0.85)",
+          },
+          "75%": {
+            transform: "scaleX(0.9)  scaleY(1)",
+          },
+          "90%": {
+            transform: "scaleX(1.05) scaleY(0.95)",
+          },
+          "100%": {
+            transform: "scaleX(1) scaleY(1)",
+          },
+        },
+        "scale-out-hor-left": {
+          "0%": {
+            transform: "scaleX(1)",
+            "transform-origin": "0 0",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "scaleX(0)",
+            "transform-origin": "0 0",
+            opacity: 1,
+          },
+        },
+        "scale-in-hor-left": {
+          "0%": {
+            transform: "scaleX(0)",
+            "transform-origin": "0 0",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "scaleX(1)",
+            "transform-origin": "0 0",
+            opacity: 1,
+          },
+        },
+        "pulse-zoomout": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
       },
       animation: {
         "ping-once": "ping .2s linear 1",
@@ -132,7 +214,13 @@ module.exports = {
         flicker: "flicker 2s linear both",
         scaleUpCenter:
           "scaleUpCenter 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both",
-        fadeIn: "fadeIn .4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+        "fade-in": "fade-in .4s linear 0s 1 normal none",
+        "fade-in-top": "fade-in-top .3s linear 0s 1 normal none",
+        "fade-out-bottom": "fade-out-bottom .3s linear 0s 1 normal none",
+        rubberband: "rubberband 800ms alternate ease-out",
+        "scale-out-hor-left": "scale-out-hor-left 1s linear 0s 1 normal none",
+        "scale-in-hor-left": "scale-in-hor-left .4s linear 0s 1 normal none",
+        "pulse-zoomout": "pulse-zoomout 0.8s linear 0s infinite reverse both ",
       },
     },
     screens: {

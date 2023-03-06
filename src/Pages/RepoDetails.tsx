@@ -1,15 +1,14 @@
 //@ts-ignore
 import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useParams } from "react-router-dom";
 import PageTitle from "../Components/PageTitle";
 import Spinner from "../Components/Spinner";
 import { __getRepo } from "../Utils/github/__searchForRepo";
 import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
-
 import { octokit } from "../Utils/github/OctokitConstructor";
-import { BsFileZip } from "react-icons/bs";
-
+import { BsDownload, BsCheck } from "react-icons/bs";
+import { BiLoader } from "react-icons/bi";
 const RepoDetails = ({ onSidebarHide }) => {
   type readmeFileType = { content: string; size: number };
   const params = useParams();
@@ -20,7 +19,8 @@ const RepoDetails = ({ onSidebarHide }) => {
   });
   const [readmeFileContent, setReadmeFileContent] = useState<string>("");
   const [isLoad, setLoad] = useState(true);
-
+  const [isRun, setRunning] = useState(false);
+  const downloadBtnRef = useRef<HTMLAnchorElement | null>(null);
   useEffect(() => {
     __getRepo(params.repoName!)
       .then((repo) => {
@@ -42,6 +42,7 @@ const RepoDetails = ({ onSidebarHide }) => {
       });
   }, []);
   const onClick = useCallback(() => {
+    setRunning(true);
     confetti({
       particleCount: 100,
       startVelocity: 30,
@@ -52,6 +53,9 @@ const RepoDetails = ({ onSidebarHide }) => {
         y: 0,
       },
     });
+    setTimeout(() => {
+      setRunning(false);
+    }, 1000);
   }, []);
   return (
     <>
@@ -82,17 +86,22 @@ const RepoDetails = ({ onSidebarHide }) => {
           {/* <div className="group flex items-center justify-center w-full flex-grow"> */}
           <button
             onClick={onClick}
-            className="group flex gap-1 items-center bg-[#050708] p-2 rounded-lg text-sm font-bold "
+            className="m-auto transition-all h-9 group overflow-hidden flex gap-2 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
           >
-            <BsFileZip size={20} />
+            <span className="mt-1">Download</span>
             <a
-            // href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
+              ref={downloadBtnRef}
+              className={`${
+                isRun ? "translate-y-4" : "-translate-y-4"
+              } flex flex-col gap-3 transition-all group-hover:animate-pulse`}
+              // href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
             >
-              Download ZIP
+              <BsCheck size={20} />
+              <BsDownload size={20} />
             </a>
-            <span className="text-xs text-red-400 opacity-0 group-hover:opacity-100">
+            {/* <span className="text-xs text-red-400 opacity-0 group-hover:opacity-100">
               {readmeFile?.size} kb
-            </span>
+            </span> */}
           </button>
           {/* </div> */}
 

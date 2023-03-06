@@ -2,10 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import {
   BsArrowLeft,
   BsArrowRight,
-  BsCheck,
   BsCheckCircle,
-  BsDoorClosed,
-  BsFillXCircleFill,
   BsKey,
   BsXCircle,
 } from "react-icons/bs";
@@ -52,7 +49,7 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
     }
   };
   return (
-    <div className="animate-fadeIn w-full">
+    <div className="animate-fade-in w-full">
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}

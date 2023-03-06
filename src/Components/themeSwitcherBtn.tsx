@@ -41,9 +41,9 @@ const ThemeSwitcherBtn = () => {
           className={`flex items-center justify-center xl:justify-start w-full h-full dark:text-gray-400 text-sm p-2.5`}
         >
           {!isDark ? (
-            <BsSun size={30} className="text-white" />
+            <BsSun size={30} className="animate-fade-in-top text-white" />
           ) : (
-            <BsMoon size={30} className="text-white" />
+            <BsMoon size={30} className="animate-fade-in-top text-white" />
           )}
           <div className="block sm:hidden xl:block ml-3">
             <div className="text-sm font-bold text-white">

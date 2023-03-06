@@ -10,7 +10,7 @@ const Status = ({ onSidebarHide }) => {
   }
   const [eventsList, setEventsList] = useState<eventType[]>([]);
   return (
-    <div className="p-2 animate-fadeIn">
+    <div className="p-2 animate-fade-in">
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}

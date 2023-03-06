@@ -12,6 +12,7 @@ import { CgTrash } from "react-icons/cg";
 import { FiTrash2 } from "react-icons/fi";
 import { TbMaximize, TbMinimize } from "react-icons/tb";
 import { ref, remove, update } from "firebase/database";
+
 import { db } from "../firebase";
 import { useRef } from "react";
 import { handleGoalCompletion } from "./goals/operations/goalCompletion";
@@ -28,6 +29,7 @@ const GoalSnakeItem = ({
   const [uploadProgress, setUploadProgress] = useState(0);
   const [summaryVal, setSummaryVal] = useState("Add Summary");
   const [isOpen, setOpen] = useState(false);
+  const [aboutToRemove, setAboutToRemove] = useState(false);
   const timeTooltip = `<div className=''>
       <p><b>Creation time</b> :${new Date(
         goalObj.created_at
@@ -56,15 +58,20 @@ const GoalSnakeItem = ({
     setOpen(false);
   };
   const handleRemovingGoal = (goalObj) => {
-    remove(ref(db, `/${goalObj.uuid}`));
-    deleteFileFromFirebaseStorage(goalObj);
+    setAboutToRemove(true);
+    setTimeout(() => {
+      remove(ref(db, `/${goalObj.uuid}`));
+      deleteFileFromFirebaseStorage(goalObj);
+    }, 300);
   };
+
   return (
     <li
       key={i}
-      className={` ${goalObj.isExpanded ? "h-full p-2.5 flex-col" : ""} 
-      
-     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 slide-bottom group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+      className={` ${goalObj.isExpanded ? "p-2.5 flex-col" : ""} 
+      ${aboutToRemove ? " animate-fade-out-bottom" : "animate-fade-in-top"}
+     text-sm hover:bg-[#050708]/20 p-2 transition-all duration-600 group flex border border-gray-600/30 mb-2 justify-between  rounded-lg w-full`}
+      draggable
     >
       <div
         data-hint={timeTooltip}
@@ -180,8 +187,8 @@ const GoalSnakeItem = ({
       </div>
       <span
         className={`${
-          goalObj.isExpanded ? "my-2 opacity-100" : ""
-        } opacity-0 group-hover:opacity-100 text-xs mx-2 flex items-center text-gray-400/50`}
+          goalObj.isExpanded ? "my-2" : "hidden"
+        }  text-xs mx-2 flex items-center text-gray-400/50`}
       >
         {new Date(goalObj.created_at).toLocaleString()}
       </span>

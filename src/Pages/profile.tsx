@@ -171,8 +171,8 @@ const Profile = () => {
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           🛠️ My favorite tools
         </h2>
-        {Object.keys(tools)?.map((key) => (
-          <ProfileSubSection h3Content={key} list={tools[key]} />
+        {Object.keys(tools)?.map((key, i) => (
+          <ProfileSubSection key={i} h3Content={key} list={tools[key]} />
         ))}
       </div>
     </>

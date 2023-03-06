@@ -56,19 +56,14 @@ const Dashboard = ({ onSidebarHide }) => {
       </div>
 
       <div className="w-full p-2 lg:w-1/3">
-        <div className="rounded-lg bg-card h-80">
-          <Segmentation />
-        </div>
+        <Segmentation />
       </div>
       <div className="w-full p-2 lg:w-1/3">
-        <div className="rounded-lg bg-card h-80">
-          <Satisfication />
-        </div>
+        <Satisfication />
       </div>
       <div className="w-full p-2 lg:w-1/3">
-        <div className="rounded-lg bg-card overflow-auto h-80">
           <AddComponent />
-        </div>
+        
       </div>
     </>
   );

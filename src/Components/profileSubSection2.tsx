@@ -10,7 +10,7 @@ const ProfileSubSection2 = ({ h3Content, list }: reposList) => {
       </blockquote>
       <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
         {list?.map((item, i) => (
-          <a href={`https://github.com/Ak-ram/${item}`}>
+          <a key={i} href={`https://github.com/Ak-ram/${item}`}>
             <img
               width={278}
               src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${item}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=${
