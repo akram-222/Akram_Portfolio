@@ -5,7 +5,7 @@ import NameCard from "../Components/NameCard";
 import PageTitle from "../Components/PageTitle";
 import Satisfication from "../Components/Satisfication";
 import Segmentation from "../Components/Segmentation";
-import Goals from "../Components/Goals";
+// import Goals from "../Components/Goals";
 import SearchBtn from "../Components/search comp/searchBtn";
 
 const Dashboard = ({ onSidebarHide }) => {
@@ -46,7 +46,7 @@ const Dashboard = ({ onSidebarHide }) => {
 
       <div className="w-full p-2 lg:w-2/3">
         <div className="flex rounded-lg bg-card sm:h-80 h-60">
-          <Goals />
+          {/* <Goals /> */}
         </div>
       </div>
       <div className="w-full p-2 lg:w-1/3">
