@@ -11,6 +11,7 @@ const Pagination = ({
   return (
     <div className={`${className} flex w-full my-5 mr-8 space-x-2 justify-end text-xs`}>
       <button
+      disabled={repoConfig.page === 1?true:false}
         onClick={() => {
           setLoad(true);
           setRepoConfig({
@@ -18,7 +19,7 @@ const Pagination = ({
             page: repoConfig.page === 1 ? 1 : repoConfig.page - 1,
           });
         }}
-        className="inline-flex items-center h-6 w-6 xs:h-8 xs:w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none"
+        className={`${repoConfig.page === 1?'opacity-10':""} inline-flex items-center h-6 w-6 xs:h-8 xs:w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none`}
       >
         <FaChevronLeft size={12} />
       </button>
@@ -40,6 +41,7 @@ const Pagination = ({
         );
       })}
       <button
+       disabled={repoConfig.page === 4?true:false}
         onClick={() => {
           setLoad(true);
           setRepoConfig({
@@ -47,7 +49,7 @@ const Pagination = ({
             page: repoConfig.page === 4 ? 4 : repoConfig.page + 1,
           });
         }}
-        className="inline-flex items-center h-6 w-6 xs:h-8 xs:w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none"
+        className={`${repoConfig.page === 1?'opacity-10':""} inline-flex items-center h-6 w-6 xs:h-8 xs:w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none`
       >
         <FaChevronRight size={12} />
       </button>
