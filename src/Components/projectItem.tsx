@@ -24,7 +24,7 @@ const ProjectItem = ({
       <Link to={name.toLowerCase()} className="flex items-center justify-between">
         <div className="flex  items-center">
           {indexingSys}. {name}
-          <em className="ml-2 text-gray-500/30 hidden lg:inline opacity-0 group-hover:opacity-100">
+          <em className="ml-2 text-gray-400/30 hidden lg:inline opacity-0 group-hover:opacity-100">
             #{id}
           </em>
         </div>
