@@ -46,9 +46,9 @@ const SearchComponent = ({ list }) => {
       <ul
         className={` ${
           isHidden ? "" : ""
-        }  border-gray-400/50 h-48 overflow-auto z-20 mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
+        }  border-gray-400/50 h-56 overflow-auto z-20 mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
       >
-        <span className="text-xs text-yellow-400 block px-3 pt-3 pb-2 border-b border-b-gray-600/30">
+        <span className="text-xs text-yellow-400 block pt-3 pb-2 border-b border-b-gray-600/30">
           Suggestions: {filteredList.length}
         </span>
         {filteredList.length ? (
