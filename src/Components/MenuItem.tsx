@@ -1,5 +1,6 @@
 import SidebarIcons from "./SidebarIcons";
 import { Link, useLocation } from "react-router-dom";
+import cmdGif from "../assests/cmd.gif"
 function MenuItem({ item: { id, title, notifications }, onClick }) {
   const location = useLocation();
   const currentRoute = location.pathname.slice(1, location.pathname.length);
@@ -17,7 +18,7 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
         title.toLowerCase() === currentRoute
           ? "sidebar-item-selected"
           : "sidebar-item"
-      } text-gray-800 group dark:text-gray-500/80 hover:text-gray-600 dark:hover:text-blue-400 w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer`}
+      } text-gray-800 group flex-wrap dark:text-gray-500/80 hover:text-gray-600 dark:hover:text-blue-400 w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer`}
       onClick={() => onClick(id)}
     >
       <SidebarIcons id={id} />
@@ -28,8 +29,9 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
           <div className="text-white text-sm">{notifications}</div>
         </div>
       )}
-      {(id==='6')? (<div className='absolute group-hover:block hidden transition-all group-hover:translate-x-56 top-1/2 '>
-        <img className="rounded-lg" src="https://www.gnutoolbox.com/wp-content/uploads/2018/07/terminalizer.gif" width='100%'/>
+      {/* {(id==='6')? (<div className='mt-5 group-hover:opacity-100 opacity-0 transition-all'> */}
+      {(id==='6')? (<div className='border mt-5 overflow-hidden group-hover:opacity-100 opacity-0 transition-all'>
+        <img className="transition-all shadow-xl hover:transform hover:scale-[4] hover:rotate-[-10deg] border-gray-600" src={cmdGif} width='200px'/>
       </div>)
       
       :null}
