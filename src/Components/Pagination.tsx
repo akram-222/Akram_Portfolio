@@ -49,7 +49,7 @@ const Pagination = ({
             page: repoConfig.page === 4 ? 4 : repoConfig.page + 1,
           });
         }}
-        className={`${repoConfig.page === 1?'opacity-10':""} inline-flex items-center h-6 w-6 xs:h-8 xs:w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none`
+        className={`${repoConfig.page === 4?'opacity-10':""} inline-flex items-center h-6 w-6 xs:h-8 xs:w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none`}
       >
         <FaChevronRight size={12} />
       </button>
