@@ -158,7 +158,7 @@ const App = () => {
                   );
                 })}
                 <Route path="/*" element={<NotFoundRoute />} />
-                <Route path="/terminal mode" element={<div id="app" style={themeVars.app}>
+                <Route path="/terminal mode" element={<div id="app" className="flex items-center justify-center w-full" style={themeVars.app}>
 		<Terminal theme={themeVars} setTheme={setTheme}/>
 	</div>} />
               </Routes>

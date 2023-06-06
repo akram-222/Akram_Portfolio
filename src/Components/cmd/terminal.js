@@ -18,7 +18,7 @@ const Terminal = ({ theme, setTheme }) => {
       id="terminal"
       style={
         maximized
-          ? { height: "100vh", width: "100vw", maxWidth: "100vw" }
+          ? { height: "100%", width: "100%", maxWidth: "100%" }
           : theme.terminal
       }
     >
