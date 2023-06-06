@@ -17,7 +17,7 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
         title.toLowerCase() === currentRoute
           ? "sidebar-item-selected"
           : "sidebar-item"
-      } text-gray-800 dark:text-gray-500/80 hover:text-gray-600 dark:hover:text-blue-400 w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer`}
+      } text-gray-800 group dark:text-gray-500/80 hover:text-gray-600 dark:hover:text-blue-400 w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer`}
       onClick={() => onClick(id)}
     >
       <SidebarIcons id={id} />
@@ -28,8 +28,8 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
           <div className="text-white text-sm">{notifications}</div>
         </div>
       )}
-      {(id==='6')? (<div>
-        <img src="https://www.gnutoolbox.com/wp-content/uploads/2018/07/terminalizer.gif" width='300px'/>
+      {(id==='6')? (<div className='absolute group-hover:block hidden transition-all group-hover:translate-x-56 top-1/2 '>
+        <img className="rounded-lg" src="https://www.gnutoolbox.com/wp-content/uploads/2018/07/terminalizer.gif" width='100%'/>
       </div>)
       
       :null}
