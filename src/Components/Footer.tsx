@@ -1,7 +1,7 @@
 import logo from "../assests/logo.png";
 const Footer = () => {
   return (
-    <footer className="w-full p-4 bg-white sm:p-6 dark:bg-card">
+    <footer className="bg-1 w-full p-4 bg-white sm:p-6 dark:bg-card">
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">

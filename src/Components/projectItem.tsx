@@ -108,7 +108,12 @@ const ProjectItem = ({
             })}
           </span>
         </div>
-        <button className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-2 xs:ml-auto">
+        <button style={{
+          width: '100%',
+display: 'flex',
+justifyContent: 'right',
+paddingRight: '2rem'
+        }} className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-2 xs:ml-auto">
           <Link to={name.toLowerCase()}>
             <AiOutlineInfoCircle size={18} className="text-yellow-500" />
           </Link>

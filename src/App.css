@@ -77,3 +77,11 @@
 .hint::before {
   transform: rotate3d(1, 1, 1, 45deg);
 }
+
+.bg-1 {
+  /* background-image: url("https://wallpapers.com/images/hd/pink-powder-explosion-iphone-dark-n4676qfcf97c39tj.jpg"); */
+  background: radial-gradient(circle at 94.1% 98.8%, rgb(32, 32, 32) 0%, rgb(0, 0, 0) 99.4%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
