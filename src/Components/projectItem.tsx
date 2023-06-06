@@ -19,16 +19,18 @@ const ProjectItem = ({
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
-    <tr className="group hover:bg-[#050708]/20">
-      <td className="sm:p-3 py-2 px-1 border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:group-hover:border-l-blue-400 dark:border-gray-600/20">
+    <tr className="group hover:bg-[#050708]/20 border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:group-hover:border-l-blue-400 dark:border-gray-600/20">
+      <td className="sm:p-3 py-2 px-1 ">
+      <Link to={name.toLowerCase()} className="flex items-center justify-between">
         <div className="flex  items-center">
           {indexingSys}. {name}
-          <em className="ml-2 text-yellow-600 hidden lg:inline opacity-0 group-hover:opacity-100">
+          <em className="ml-2 text-gray-500/30 hidden lg:inline opacity-0 group-hover:opacity-100">
             #{id}
           </em>
         </div>
+        </Link>
       </td>
-      <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
+      <td className="sm:p-3 py-2 px-1 ">
         <div className="flex">
           {fork ? (
             <>
@@ -58,7 +60,7 @@ const ProjectItem = ({
         </div>
       </td>
 
-      <td className=" sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
+      <td className=" sm:p-3 py-2 px-1">
         <span className="text-xs text-gray-600 mr-1">{forksCount}</span>
         <BiGitRepoForked
           size={18}
@@ -86,7 +88,7 @@ const ProjectItem = ({
           />
         )}
       </td>
-      <td className="flex sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-600/20">
+      <td className="flex sm:p-3 py-2 px-1">
         <div className="flex items-center">
           <div className="sm:flex hidden flex-col">
             {new Date(createdAt).toLocaleDateString("en-US", {
@@ -108,17 +110,13 @@ const ProjectItem = ({
             })}
           </span>
         </div>
-        <button style={{
-          width: '100%',
-display: 'flex',
-justifyContent: 'right',
-paddingRight: '2rem'
-        }} className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-2 xs:ml-auto">
+        {/* <button  className="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-2 xs:ml-auto">
           <Link to={name.toLowerCase()}>
             <AiOutlineInfoCircle size={18} className="text-yellow-500" />
           </Link>
-        </button>
+        </button> */}
       </td>
+      {/* </Link> */}
     </tr>
   );
 };
