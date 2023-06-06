@@ -9,7 +9,8 @@ const NotFoundRoute = () => {
 useEffect(() => {
     if(timeLeft===0){
        console.log("TIME LEFT IS 0");
-       setTimeLeft(0)
+       setTimeLeft(0);
+       navigate('/dashboard')
     }
     // exit early when we reach 0
     if (!timeLeft) return;
@@ -27,8 +28,8 @@ useEffect(() => {
 
   return (
     <div className="animate-fade-in w-full">
-      <div className="w-10 h-10 bg-white absolute left-5 top-5 bg-gray-800 flex items-center justify-center text-white font-bold rounded-full">
-        <span>{timeLeft}</span>
+      <div className="w-10 transition-all h-10 animate-pulse-zoomout rounded-full bg-white absolute left-5 top-5 bg-gray-800 flex items-center justify-center ">
+        <span className="text-white font-bold">{timeLeft}</span>
         </div>
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full  p-10">
