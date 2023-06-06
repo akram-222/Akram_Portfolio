@@ -4,24 +4,31 @@ import sidebarItems from "../Components/SidebarItems";
 import { IoBuildOutline } from "react-icons/io5";
 const NotFoundRoute = () => {
   const navigate = useNavigate();
-  const [countdowm,setCounter] = useState(5);
-  useEffect(()=>{
-     setInterval(()=>{
-      setCounter(countdowm-1)
-    },1000)
-  },[countdowm])
-  useEffect(()=>{
-   
-    setTimeout(()=>{
-      navigate("/dashboard");
-      console.log('dd')
-    },5000)
-    
-  },[])
+  const [timeLeft, setTimeLeft] = useState(5);
+
+useEffect(() => {
+    if(timeLeft===0){
+       console.log("TIME LEFT IS 0");
+       setTimeLeft(0)
+    }
+    // exit early when we reach 0
+    if (!timeLeft) return;
+
+    // save intervalId to clear the interval when the
+    // component re-renders
+    const intervalId = setInterval(() => {
+      setTimeLeft(timeLeft - 1);
+    }, 1000);
+    // clear interval on re-render to avoid memory leaks
+    return () => clearInterval(intervalId);
+    // add timeLeft as a dependency to re-rerun the effect
+    // when we update it
+  }, [timeLeft]);
+
   return (
     <div className="animate-fade-in w-full">
-      <div>
-        You will be directed to main page in <span>{countdowm}</span> seconds
+      <div className="w-10 h-10 bg-white absolute left-5 top-5 bg-gray-800 flex items-center justify-center text-white font-bold rounded-full">
+        <span>{timeLeft}</span>
         </div>
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full  p-10">
