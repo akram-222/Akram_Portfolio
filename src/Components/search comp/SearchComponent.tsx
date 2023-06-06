@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { BsCheckCircleFill, BsCircleFill } from "react-icons/bs";
+import { BsCheck, BsCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 const SearchComponent = ({ list }) => {
@@ -69,9 +69,9 @@ const SearchComponent = ({ list }) => {
               {item.name}
               {isIdentical ? (
                 <span
-                  className={`flex gap-1 text-green-400 inline-block ml-auto border-b border-b-gray-600/30 text-xs`}
+                  className={`flex gap-1 text-green-400 inline-block ml-auto text-xs`}
                 >
-                  <BsCheckCircleFill size={13} /> Identical
+                  <BsCheck size={20} />
                 </span>
               ) : (
                 ""
