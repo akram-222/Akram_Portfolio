@@ -90,10 +90,26 @@ const Projects = ({ onSidebarHide }) => {
             </div>
             <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20 flex items-center justify-between">Project Name <BsFilterRight size='18' /></th>
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">Language <BsFilterRight size='16' /></th>
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">Info <BsFilterRight size='16' /></th>
-                        <th className="p-3 px-4 border-b  text-white bg-card border-b-gray-600/60">Date <BsFilterRight size='16' /></th>
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
+                          <div className="flex justify-between items-center">
+                          <span>Project Name</span> <BsFilterRight size='16' />
+                          </div>
+                          </th>
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
+                          <div className="flex justify-between items-center">
+                          <span>Language</span> <BsFilterRight size='16' />
+                          </div>
+                          </th>
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
+                          <div className="flex justify-between items-center">
+                          <span>Info</span> <BsFilterRight size='16' />
+                          </div>
+                          </th>
+                        <th className="p-3 px-4 border-b  text-white bg-card border-b-gray-600/60">
+                          <div className="flex justify-between items-center">
+                          <span>Date</span> <BsFilterRight size='16' />
+                          </div>
+                          </th>
                </thead>
                <FilterProjects />
               {/* <thead>
