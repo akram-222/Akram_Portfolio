@@ -64,6 +64,7 @@ const Projects = ({ onSidebarHide }) => {
               <div className="ml-auto text-gray-500 text-xs sm:inline-flex hidden items-center">
                 <span className="mr-3">Page {repoConfig.page} of 4</span>
                 <button
+                disabled={repoConfig.page === 1?true:false}
                   onClick={() => {
                     setLoad(true);
                     setRepoConfig({
@@ -71,11 +72,12 @@ const Projects = ({ onSidebarHide }) => {
                       page: repoConfig.page === 1 ? 1 : repoConfig.page - 1,
                     });
                   }}
-                  className="inline-flex mr-2 items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0"
+                  className={`${repoConfig.page === 1?"opacity-10":""} inline-flex mr-2 items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0`}
                 >
                   <FaChevronLeft />
                 </button>
                 <button
+                disabled={repoConfig.page === 4?true:false}
                   onClick={() => {
                     setLoad(true);
                     setRepoConfig({
@@ -83,7 +85,7 @@ const Projects = ({ onSidebarHide }) => {
                       page: repoConfig.page === 4 ? 4 : repoConfig.page + 1,
                     });
                   }}
-                  className="inline-flex items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0"
+                  className={`${repoConfig.page === 4?"opacity-10":""} inline-flex items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0`}
                 >
                   <FaChevronRight />
                 </button>
