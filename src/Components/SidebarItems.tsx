@@ -81,7 +81,7 @@ const sidebarItems = [
     {
       id: "6",
       title: "Terminal Mode",
-      notifications: true,
+      notifications: 'new',
       icon: (
         <BsTerminal
           size={30}

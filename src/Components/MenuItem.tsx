@@ -24,7 +24,7 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
       <span className="block sm:hidden xl:block ml-2">{title}</span>
       <div className="block sm:hidden xl:block flex-grow" />
       {notifications && (
-        <div className="flex sm:hidden xl:flex dark:bg-pink-600  w-5 h-5 flex items-center justify-center rounded-full mr-2">
+        <div className="flex sm:hidden xl:flex dark:bg-gray-600 font-bold px-1 flex items-center justify-center rounded-full mr-2">
           <div className="text-white text-sm">{notifications}</div>
         </div>
       )}
