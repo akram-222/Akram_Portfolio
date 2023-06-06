@@ -19,18 +19,18 @@ const ProjectItem = ({
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
-    <tr className="group hover:bg-[#050708]/20 border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:group-hover:border-l-blue-400 dark:border-gray-600/20">
-      <td className="sm:p-3 py-2 px-1 ">
-      <Link to={name.toLowerCase()} className="flex items-center justify-between">
+    <tr className="text-gray-400 group hover:bg-card border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20">
+      <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
+        <Link to={name.toLowerCase()} className="flex items-center justify-between">
         <div className="flex  items-center">
           {indexingSys}. {name}
-          <em className="ml-2 text-gray-400/30 hidden lg:inline opacity-0 group-hover:opacity-100">
+          <em className="ml-2 text-gray-400/30 hidden lg:inline opacity-0 group-hover:opacity-100 text-xs">
             #{id}
           </em>
         </div>
         </Link>
       </td>
-      <td className="sm:p-3 py-2 px-1 ">
+      <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex">
           {fork ? (
             <>
@@ -60,7 +60,7 @@ const ProjectItem = ({
         </div>
       </td>
 
-      <td className=" sm:p-3 py-2 px-1">
+      <td className=" sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <span className="text-xs text-gray-600 mr-1">{forksCount}</span>
         <BiGitRepoForked
           size={18}

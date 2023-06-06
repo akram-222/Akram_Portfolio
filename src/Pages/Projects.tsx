@@ -87,6 +87,14 @@ const Projects = ({ onSidebarHide }) => {
               </div>
             </div>
             <table className="w-full text-left text-xs md:text-sm ">
+              <thead className="mb-2">
+                     
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-600/60 border-r-gray-600/20">Project Name</th>
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-600/60 border-r-gray-600/20">Language</th>
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-600/60 border-r-gray-600/20">Info</th>
+                        <th className="p-3 px-4 border-b  text-white bg-card border-b-gray-600/60">Date</th>
+                    
+                      </thead>
               {/* <thead>
                 <tr className="text-gray-400">
                   {["Name", "Language", "Details", "Date"].map(
