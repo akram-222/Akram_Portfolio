@@ -7,7 +7,7 @@ import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import {BsFilterRight} from "react-icons/bs"
-import SearchComponent from "../Components/search comp/SearchComponent";
+// import SearchComponent from "../Components/search comp/SearchComponent";
 
 const Projects = ({ onSidebarHide }) => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 12, page: 1 });
@@ -51,7 +51,7 @@ const Projects = ({ onSidebarHide }) => {
         <div className="projects-list w-full flex flex-wrap gap-2">
           <div className="w-full">
             <div className="flex relative items-center mb-7">
-              <SearchComponent list={repos} />
+              {/* <SearchComponent list={repos} /> */}
               {/* <Combobox
                 options={[
                   "Name",
@@ -116,7 +116,7 @@ const Projects = ({ onSidebarHide }) => {
                           </div>
                           </th>
                </thead>
-               {(isVisible ? <FilterProjects />:null)}
+               {(isVisible ? <FilterProjects repos={repos}/>:null)}
               {/* <thead>
                 <tr className="text-gray-400">
                   {["Name", "Language", "Details", "Date"].map(

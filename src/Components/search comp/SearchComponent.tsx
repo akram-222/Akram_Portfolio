@@ -33,20 +33,20 @@ const SearchComponent = ({ list }) => {
 
   return (
     <div className="relative">
-      Quick Navigation :
+      Porject name:
       <input
         onBlur={() => setTimeout(() => setIsHidden(true), 200)}
         type={"search"}
         onChange={(e) => filtering(e)}
-        className="ml-3 mt-1 cursor-text h-9 flex items-center block px-2 py-1 overflow-hidden dark:text-white font-semibold w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        placeholder="Project name..."
+        className="mt-1 cursor-text flex items-center block px-2 py-1 overflow-hidden dark:text-white text-sm w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500/30"
+        placeholder="Search..."
         ref={inputFeild}
         value={searchVal}
       />
       <ul
         className={` ${
-          isHidden ? "hidden" : ""
-        } border border-gray-400/50 absolute z-20 mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
+          isHidden ? "" : ""
+        }  border-gray-400/50 h-48 overflow-auto z-20 mt-2 bg-white dark:bg-card dark:text-gray-300 w-full rounded`}
       >
         <span className="text-xs text-yellow-400 block px-3 pt-3 pb-2 border-b border-b-gray-600/30">
           Suggestions: {filteredList.length}
@@ -55,7 +55,7 @@ const SearchComponent = ({ list }) => {
           filteredList?.map((item, i: number) => (
             <li
               key={i}
-              className="group slide-bottom p-2 flex items-center gap-2 hover:text-green-400 cursor-pointer text-sm hover:bg-gray-700/20"
+              className="group slide-bottom p-2 flex items-center gap-2 cursor-pointer text-sm hover:bg-gray-700/20"
               onClick={() => {
                 setSearchVal(item.name);
                 setIsHidden(true);

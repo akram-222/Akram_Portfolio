@@ -1,13 +1,8 @@
-const FilterProjects = ()=>{
+import SearchComponent from "../Components/search comp/SearchComponent";
+const FilterProjects = ({repos})=>{
     return (<>
-    <div>
-        <input type="text" />
-        <ul>
-            <li>Movvideck</li>
-            <li>Todolist</li>
-            <li>Ak-ram</li>
-            <li>Bookobia</li>
-        </ul>
+    <div className="z-10 animate-fade-in-top transition-all absolute bg-card p-5 rounded">
+        <SearchComponent list={repos} />
     </div>
     </>)
 }
