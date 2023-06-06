@@ -28,7 +28,12 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
           <div className="text-white text-sm">{notifications}</div>
         </div>
       )}
-    </Link>
+      {(id==='6')? (<div>
+        <img src="https://www.gnutoolbox.com/wp-content/uploads/2018/07/terminalizer.gif" width='300px'/>
+      </div>)
+      
+      :null}
+      </Link>
   );
 }
 
