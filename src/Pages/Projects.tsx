@@ -6,7 +6,7 @@ import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import {BsFilterRight} from "react-icons/bs"
+import {BsChevronDown} from "react-icons/bs"
 // import SearchComponent from "../Components/search comp/SearchComponent";
 
 const Projects = ({ onSidebarHide }) => {
@@ -94,7 +94,7 @@ const Projects = ({ onSidebarHide }) => {
                         <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
                           <div className="flex justify-between items-center">
                           <span>Project Name</span> 
-                          <BsFilterRight size='16' onClick={()=>setVisibility(!isVisible)}/>
+                          <BsChevronDown size='16' onClick={()=>setVisibility(!isVisible)}/>
                           </div>
                           </th>
                         <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
@@ -138,8 +138,8 @@ const Projects = ({ onSidebarHide }) => {
                   /> */}
                 {isLoad ? (
                   <Skelton
-                    number={repoConfig.per_page}
-                    className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717] dark:border-[#353535]`}
+                    number={repoConfig.per_page - 1}
+                    className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717]/30 dark:border-[#353535]`}
                   />
                 ) : (
                   repos?.map(

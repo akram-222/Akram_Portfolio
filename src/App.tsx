@@ -44,7 +44,7 @@ const App = () => {
             <div className="w-full hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
               .
             </div>
-            <div className="bg-1 relative flex-grow flex flex-wrap">
+            <div className="bg-1 p-2 relative flex-grow flex flex-wrap">
               <Routes>
                 {isLogging ? (
                   <Route
