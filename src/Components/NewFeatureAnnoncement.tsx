@@ -1,11 +1,12 @@
+import cmdGif from "../assests/cmd.gif"
 const NewFeatureAnnoncement = ()=>{
     return(
         <>
-<div className="fixed flex flex-col justify-center h-screen">
+<div className="fixed flex flex-col justify-center left-[12vw] xl:left-[20vw] sm:group-hover:opacity-100 opacity-0 ">
 	<div
-		className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-xl mx-auto border border-white bg-white">
-		<div className="w-full md:w-1/3 bg-white grid place-items-center">
-			<img src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="tailwind logo" className="rounded-xl" />
+		className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded shadow-lg p-3 max-w-xs md:max-w-xl mx-auto border border-white bg-white">
+		<div className="overflow-hidden w-full md:w-1/3 bg-white grid place-items-center">
+			<img src={cmdGif} alt="tailwind logo" className="transition-all rounded shadow-xl transform scale-[3] border-gray-600" />
     </div>
 			<div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
 				<div className="flex justify-between item-center">
@@ -34,10 +35,7 @@ const NewFeatureAnnoncement = ()=>{
 				</div>
 				<h3 className="font-black text-gray-800 md:text-3xl text-xl">Portfolio in CMD</h3>
 				<p className="md:text-lg text-gray-500 text-base">Easly browse my Portfolio with bunch of cmd commands</p>
-				<p className="text-xl font-black text-gray-800">
-					$110
-					<span className="font-normal text-gray-600 text-base">/night</span>
-				</p>
+				
 			</div>
 		</div>
 	</div></>
