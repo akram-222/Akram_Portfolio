@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import PageTitle from "../Components/PageTitle";
 import ProjectItem from "../Components/projectItem";
+import FilterProjects from "../Components/FilterProjects";
 import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {BsFilterRight} from "react-icons/bs"
 import SearchComponent from "../Components/search comp/SearchComponent";
 
 const Projects = ({ onSidebarHide }) => {
@@ -88,13 +90,12 @@ const Projects = ({ onSidebarHide }) => {
             </div>
             <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
-                     
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-600/60 border-r-gray-600/20">Project Name</th>
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-600/60 border-r-gray-600/20">Language</th>
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-600/60 border-r-gray-600/20">Info</th>
-                        <th className="p-3 px-4 border-b  text-white bg-card border-b-gray-600/60">Date</th>
-                    
-                      </thead>
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20 flex items-center justify-between">Project Name <BsFilterRight size='18' /></th>
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">Language <BsFilterRight size='16' /></th>
+                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">Info <BsFilterRight size='16' /></th>
+                        <th className="p-3 px-4 border-b  text-white bg-card border-b-gray-600/60">Date <BsFilterRight size='16' /></th>
+               </thead>
+               <FilterProjects />
               {/* <thead>
                 <tr className="text-gray-400">
                   {["Name", "Language", "Details", "Date"].map(

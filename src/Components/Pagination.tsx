@@ -9,7 +9,7 @@ const Pagination = ({
   repos,
 }) => {
   return (
-    <div className={`${className} flex w-full my-5 space-x-2 justify-end text-xs`}>
+    <div className={`${className} flex w-full my-5 mr-8 space-x-2 justify-end text-xs`}>
       <button
         onClick={() => {
           setLoad(true);
