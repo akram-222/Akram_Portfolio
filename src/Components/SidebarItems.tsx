@@ -4,6 +4,7 @@ import {
   BsStars,
   BsTagsFill,
   BsVectorPen,
+  BsTerminal
 } from "react-icons/bs";
 import { FaFeatherAlt } from "react-icons/fa";
 
@@ -70,6 +71,19 @@ const sidebarItems = [
       notifications: false,
       icon: (
         <BsFillGearFill
+          size={30}
+          className="text-purple-400 dark:text-purple-400"
+        />
+      ),
+      bgColor: "bg-purple-900 dark:bg-purple-900",
+      textColor: "text-purple-900 dark:text-purple-900",
+    },
+    {
+      id: "6",
+      title: "Terminal Mode",
+      notifications: true,
+      icon: (
+        <BsTerminal
           size={30}
           className="text-purple-400 dark:text-purple-400"
         />

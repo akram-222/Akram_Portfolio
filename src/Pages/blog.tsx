@@ -18,7 +18,7 @@ const Blog = ({ onSidebarHide }) => {
         }
         is_premium={true}
         premium_star={"DEV.to articles"}
-        className="dark:bg-card h-fit"
+        className=" h-fit"
       />
       <div className="w-full">
         <HeroSection />

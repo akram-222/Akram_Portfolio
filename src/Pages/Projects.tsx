@@ -6,7 +6,7 @@ import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import {BsChevronDown} from "react-icons/bs"
+import {BsFilterRight} from "react-icons/bs"
 // import SearchComponent from "../Components/search comp/SearchComponent";
 
 const Projects = ({ onSidebarHide }) => {
@@ -93,10 +93,11 @@ const Projects = ({ onSidebarHide }) => {
             </div>
             <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
+                      <tr>
+                          <th className="cursor-pointer p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
                           <div className="flex justify-between items-center">
                           <span>Project Name</span> 
-                          <BsChevronDown size='16' onClick={()=>setVisibility(!isVisible)}/>
+                          <BsFilterRight size='16' onClick={()=>setVisibility(!isVisible)}/>
                           </div>
                           </th>
                         <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
@@ -117,7 +118,7 @@ const Projects = ({ onSidebarHide }) => {
                           {/* <BsFilterRight size='16' /> */}
                           </div>
                           </th>
-               </thead>
+              </tr> </thead>
                {(isVisible ? <FilterProjects repos={repos}/>:null)}
               {/* <thead>
                 <tr className="text-gray-400">
