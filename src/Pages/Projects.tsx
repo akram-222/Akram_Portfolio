@@ -13,6 +13,7 @@ const Projects = ({ onSidebarHide }) => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 12, page: 1 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
+  const [isVisible,setVisibility] = useState(false)
   useEffect(() => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
@@ -92,26 +93,30 @@ const Projects = ({ onSidebarHide }) => {
               <thead className="mb-2">
                         <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
                           <div className="flex justify-between items-center">
-                          <span>Project Name</span> <BsFilterRight size='16' />
+                          <span>Project Name</span> 
+                          <BsFilterRight size='16' onClick={()=>setVisibility(!isVisible)}/>
                           </div>
                           </th>
                         <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
                           <div className="flex justify-between items-center">
-                          <span>Language</span> <BsFilterRight size='16' />
+                          <span>Language</span> 
+                          {/* <BsFilterRight size='16' /> */}
                           </div>
                           </th>
                         <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
                           <div className="flex justify-between items-center">
-                          <span>Info</span> <BsFilterRight size='16' />
+                          <span>Info</span> 
+                          {/* <BsFilterRight size='16' /> */}
                           </div>
                           </th>
                         <th className="p-3 px-4 border-b  text-white bg-card border-b-gray-600/60">
                           <div className="flex justify-between items-center">
-                          <span>Date</span> <BsFilterRight size='16' />
+                          <span>Date</span> 
+                          {/* <BsFilterRight size='16' /> */}
                           </div>
                           </th>
                </thead>
-               <FilterProjects />
+               {(isVisible ? <FilterProjects />:null)}
               {/* <thead>
                 <tr className="text-gray-400">
                   {["Name", "Language", "Details", "Date"].map(
