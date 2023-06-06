@@ -1,10 +1,28 @@
-import { Link, useNavigate } from "react-router-dom";
+import {useEffect,useState} from 'react';
+import { Link, useNavigate,redirect } from "react-router-dom";
 import sidebarItems from "../Components/SidebarItems";
 import { IoBuildOutline } from "react-icons/io5";
 const NotFoundRoute = () => {
   const navigate = useNavigate();
+  const [countdowm,setCounter] = useState(5);
+  useEffect(()=>{
+     setInterval(()=>{
+      setCounter(countdowm-1)
+    },1000)
+  },[countdowm])
+  useEffect(()=>{
+   
+    setTimeout(()=>{
+      navigate("/dashboard");
+      console.log('dd')
+    },5000)
+    
+  },[])
   return (
     <div className="animate-fade-in w-full">
+      <div>
+        You will be directed to main page in <span>{countdowm}</span> seconds
+        </div>
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full  p-10">
         <div className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold">
