@@ -1,4 +1,5 @@
 import React from 'react';
+import * as math from 'mathjs'
 import {Text,MultiText,UserText} from "./text"
 class Field extends React.Component {
   constructor(props) {
