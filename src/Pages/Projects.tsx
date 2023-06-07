@@ -25,11 +25,18 @@ const Projects = ({ onSidebarHide }) => {
 
   return (
     <div
-      className="bg-1 animate-fade-in p-2 flex-col items-start w-full flex-wrap"
+      className="animate-fade-in p-2 flex-col items-start w-full flex-wrap"
       
     >
-       <iframe src={currentHomePage} title="W3Schools Free Online Web Tutorials"></iframe> 
-       
+       {/* <iframe style={{
+
+zIndex: '-1',
+opacity: '0.3',
+mixBlendMode: 'overlay'
+       }} src={currentHomePage} 
+       className="absolute h-full w-full"
+       title="W3Schools Free Online Web Tutorials"></iframe> 
+        */}
       <PageTitle
         className={"mb-10 h-fit"}
         onSidebarHide={onSidebarHide}

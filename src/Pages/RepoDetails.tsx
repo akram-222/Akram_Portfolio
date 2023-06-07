@@ -7,7 +7,7 @@ import Spinner from "../Components/Spinner";
 import { __getRepo } from "../Utils/github/__searchForRepo";
 import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
 import { octokit } from "../Utils/github/OctokitConstructor";
-import { BsDownload, BsCheck } from "react-icons/bs";
+import { BsDownload, BsCheck,BsEye } from "react-icons/bs";
 import { BiLoader } from "react-icons/bi";
 const RepoDetails = ({ onSidebarHide }) => {
   type readmeFileType = { content: string; size: number };
@@ -57,6 +57,7 @@ const RepoDetails = ({ onSidebarHide }) => {
       setRunning(false);
     }, 1000);
   }, []);
+
   return (
     <>
       {isLoad ? (
@@ -84,7 +85,11 @@ const RepoDetails = ({ onSidebarHide }) => {
             premium_star="GitHub Repos"
           />
           {/* <div className="group flex items-center justify-center w-full flex-grow"> */}
-          <button
+        
+        
+        
+        <div className='flex items-center justify-center gap-2'>
+            <button
             onClick={onClick}
             className="m-auto transition-all h-9 group overflow-hidden flex gap-2 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
           >
@@ -94,7 +99,6 @@ const RepoDetails = ({ onSidebarHide }) => {
               className={`${
                 isRun ? "translate-y-4" : "-translate-y-4"
               } flex flex-col gap-3 transition-all group-hover:animate-pulse`}
-              // href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
             >
               <BsCheck size={20} />
               <BsDownload size={20} />
@@ -104,7 +108,21 @@ const RepoDetails = ({ onSidebarHide }) => {
             </span> */}
           </button>
           {/* </div> */}
-
+<button
+            onClick={()=>window.open(currentRepo.homepage, '_blank', 'width=500,height=300,toolbar=no')}
+            className="m-auto transition-all h-9 group overflow-hidden flex gap-2 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
+          >
+            <span className="mt-1">Preview</span>
+            <a
+              className={`transition-all`}
+            >
+              <BsEye size={20} />
+            </a>
+            
+          </button>
+        </div>
+        
+          
           {/* <div
           className="readme"
             dangerouslySetInnerHTML={{
