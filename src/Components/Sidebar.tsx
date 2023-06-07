@@ -2,7 +2,7 @@ import { useState } from "react";
 import { config, useSpring, animated } from "react-spring";
 import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
-import logo from "../assests/logo.png";
+import logo from "../assests/incodelogo.png";
 import ThemeSwitcherBtn from "./themeSwitcherBtn";
 import { BsXCircle } from "react-icons/bs";
 function Sidebar({ onSidebarHide, showSidebar }) {
@@ -26,12 +26,12 @@ function Sidebar({ onSidebarHide, showSidebar }) {
         <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 border-b border-gray-400/50">
           <img
             src={logo}
-            className="bg-blue-600 tilt-in-left-1 dark:bg-blue-600 rounded-full h-10 w-10"
+            className="border border-gray-600/20 rounded"
             alt="logo"
           />
-          <div className="block sm:hidden ml-2 xl:block font-bold text-xl dark:text-white">
+          {/* <div className="block sm:hidden ml-2 xl:block font-bold text-xl dark:text-white">
             Akram Ashraf A.
-          </div>
+          </div> */}
           <div className="flex-grow sm:hidden xl:block" />
           <button onClick={onSidebarHide} type="button" className={`sm:hidden`}>
             <BsXCircle size={20} />

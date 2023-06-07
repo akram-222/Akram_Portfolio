@@ -1,16 +1,22 @@
-import {useEffect,useState} from 'react';
-import { Link, useNavigate,redirect } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, redirect } from "react-router-dom";
 import sidebarItems from "../Components/SidebarItems";
 import { IoBuildOutline } from "react-icons/io5";
 const NotFoundRoute = () => {
   const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(5);
 
-useEffect(() => {
-    if(timeLeft===0){
-       console.log("TIME LEFT IS 0");
-       setTimeLeft(0);
-       navigate('/dashboard')
+  const handleClick = () => {
+    navigate(
+      "https://codesandbox.io/p/github/Ak-ram/Akram_Portfolio/master?file=/src/Pages/404.tsx:42,31&workspaceId=5db083f1-dc8b-45bf-b1bf-960b916c2bee"
+    );
+  };
+
+  useEffect(() => {
+    if (timeLeft === 0) {
+      console.log("TIME LEFT IS 0");
+      setTimeLeft(0);
+      navigate("/dashboard");
     }
     // exit early when we reach 0
     if (!timeLeft) return;
@@ -30,10 +36,13 @@ useEffect(() => {
     <div className="animate-fade-in w-full">
       <div className="w-10 transition-all h-10 animate-pulse-zoomout rounded-full bg-white absolute left-5 top-5 bg-gray-800 flex items-center justify-center ">
         <span className="text-white font-bold">{timeLeft}</span>
-        </div>
+      </div>
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full  p-10">
-        <div className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold">
+        <div
+          onClick={handleClick}
+          className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold"
+        >
           404
         </div>
         <p className="text-2xl text-center md:text-3xl font-light leading-normal">
