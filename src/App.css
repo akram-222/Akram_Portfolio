@@ -80,107 +80,112 @@
 
 .bg-1 {
   /* background-image: url("https://wallpapers.com/images/hd/pink-powder-explosion-iphone-dark-n4676qfcf97c39tj.jpg"); */
-  background: radial-gradient(circle at 94.1% 98.8%, rgb(32, 32, 32) 0%, rgb(0, 0, 0) 99.4%);
+  background: radial-gradient(
+    circle at 94.1% 98.8%,
+    rgb(32, 32, 32) 0%,
+    rgb(0, 0, 0) 99.4%
+  );
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-
 #terminal {
-	width: 90vw;
-	max-width: 900px;
-	height: 550px;
-	transition: .2s;
+  width: 90vw;
+  max-width: 900px;
+  height: 550px;
+  transition: 0.2s;
 }
 #window {
-	height: 40px;
-	display: flex;
-	align-items: center;
-	padding: 0 15px;
-	cursor: default;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: default;
 }
 .btn {
-	margin-right: 10px;
-	border: none;
-	height: 13px;
-	width: 13px;
-	border-radius: 50%;
-	box-shadow: 0 2px 2px #33333375;
+  margin-right: 10px;
+  border: none;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px #33333375;
 }
 .red {
-	background-color: #FF4136;
+  background-color: #ff4136;
 }
 .error {
-	color: #FF4136;
+  color: #ff4136;
 }
 .yellow {
-	background-color: #FFDC00;
+  background-color: #ffdc00;
 }
 .info {
-	color: #FFDC00;
+  color: #ffdc00;
 }
 .green {
-	background-color: #2ECC40;
+  background-color: #2ecc40;
 }
 #title,
 #field {
-	font-size: .85rem;
+  font-size: 0.85rem;
 }
 #title {
-	margin-left: auto;
+  margin-left: auto;
 }
 #field {
-	height: calc(100% - 40px);
-	padding: 5px;
-	overflow: auto;
-/* 	I'd like to get white-space: break-spaces to work
+  height: calc(100% - 40px);
+  padding: 5px;
+  overflow: auto;
+  /* 	I'd like to get white-space: break-spaces to work
 		but it won't for some reason. In the meantime,
 		overflow-wrap: break-word will have to do. */
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 #field::-webkit-scrollbar {
-	width: 10px;
+  width: 10px;
 }
 #field.dark::-webkit-scrollbar-thumb {
-	background-color: #333444;
+  background-color: #333444;
 }
 #field.light::-webkit-scrollbar-thumb {
-	background-color: #ACA9BB;
+  background-color: #aca9bb;
 }
-#field>div {
-	min-height: 20px;
-	width: 100%;
-	cursor: default;
+#field > div {
+  min-height: 20px;
+  width: 100%;
+  cursor: default;
 }
 #input-container {
-	display: flex;
+  display: flex;
 }
 #query,
 #cursor {
-	display: inline-block;
+  display: inline-block;
 }
 #query {
-	margin-right: 10px;
-	white-space: pre-line;
+  margin-right: 10px;
+  white-space: pre-line;
 }
 #cursor {
-	position: relative;
-	bottom: -2px;
-	left: 2px;
-	width: .5rem;
-	height: 3px;
+  position: relative;
+  bottom: -2px;
+  left: 2px;
+  width: 0.5rem;
+  height: 3px;
 }
 @keyframes blink-dark {
-  0%, 100% {
-    background-color: #F4F4F4;
+  0%,
+  100% {
+    background-color: #f4f4f4;
   }
   50% {
     background-color: transparent;
   }
 }
 @keyframes blink-light {
-  0%, 100% {
+  0%,
+  100% {
     background-color: #474554;
   }
   50% {
@@ -188,15 +193,15 @@
   }
 }
 @media only screen and (max-width: 600px), (max-height: 600px) {
-	#terminal {
-		height: 100vh;
-		width: 100vw;
-		min-width: 100vw;
-	}
-	#field {
-		height: 100%;
-	}
-	#window {
-		display: none;
-	}
+  #terminal {
+    height: 100vh;
+    width: 100vw;
+    min-width: 100vw;
+  }
+  #field {
+    height: 100%;
+  }
+  #window {
+    display: none;
+  }
 }

@@ -9,6 +9,7 @@ import Status from "./Pages/Status";
 import Search from "./Pages/Search";
 import Tooltip from "./Components/Tooltip";
 import RepoDetails from "./Pages/RepoDetails";
+import SplashScreen from "./Components/splashScreen";
 import Blog from "./Pages/blog";
 import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
 import Login from "./Pages/Login";
@@ -60,6 +61,7 @@ const App = () => {
     <DevBlogsContextProvider>
       <div className="flex bg-white dark:bg-gray-900/10">
         <Tooltip />
+        <SplashScreen />
         <BrowserRouter>
           <Sidebar
             onSidebarHide={() => {
