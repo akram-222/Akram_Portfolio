@@ -1,5 +1,7 @@
+import {useState,useEffect} from "react"
 import logo from "../assests/a.gif";
 const SplashScreen = () => {
+  
   return (
     <>
       <div
