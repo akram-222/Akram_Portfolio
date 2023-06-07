@@ -26,7 +26,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
         <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 border-b border-gray-400/50">
           <img
             src={logo}
-            className="border border-gray-600/20 rounded mix-blend-lighten"
+            className="border border-gray-600/20 w-[40px]"
             alt="logo"
           />
           <div className="hidden ml-2 xl:block font-bold text-xl dark:text-white">
