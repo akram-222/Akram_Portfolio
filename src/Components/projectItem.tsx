@@ -24,7 +24,7 @@ const ProjectItem = ({
     <tr 
    
     onMouseEnter={()=> {
-      setCurrentBgImg(`https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/${language?.toLowerCase()}/${language?.toLowerCase()}.png`)
+      setCurrentBgImg(`${homepage}`)
 console.log(homepage)   }}
      
     className="text-gray-400 group hover:bg-card border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20">

@@ -29,14 +29,16 @@ const Projects = ({ onSidebarHide }) => {
       //   ...springs,
       // }}
       className="bg-1 animate-fade-in p-2 flex-col items-start w-full flex-wrap"
-      style={{
-        backgroundImage: `url(${currentBgImg})`,
-        backgroundSize: "5%",
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: 'fixed'
-      }}
+      // style={{
+      //   // backgroundImage: `url(${currentBgImg})`,
+      //   backgroundSize: "5%",
+      //   backgroundPosition: "center center",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundAttachment: 'fixed'
+      // }}
     >
+       <iframe src={`${homepage}`} title="W3Schools Free Online Web Tutorials"></iframe> 
+       
       <PageTitle
         className={"mb-10 h-fit"}
         onSidebarHide={onSidebarHide}
