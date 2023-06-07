@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Sidebar from "./Components/Sidebar";
 import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
@@ -48,7 +48,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsTimeOut(true);
-    }, 3000);
+    }, 5000);
   }, []);
   // useEffect(() => {
   //   if (
