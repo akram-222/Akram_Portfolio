@@ -19,6 +19,7 @@ import Terminal from "./Components/cmd/terminal";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   const [isLogging, setIsLogging] = useState(false);
+  const [isTimeout, setIsTimeOut] = useState(false);
   const [theme, setTheme] = useState("dark");
   const themeVars =
     theme === "dark"
@@ -44,7 +45,11 @@ const App = () => {
           },
           cursor: { animation: "1.02s blink-light step-end infinite" },
         };
-
+  useEffect(() => {
+    setTimeout(() => {
+      setIsTimeOut(true);
+    }, 3000);
+  }, []);
   // useEffect(() => {
   //   if (
   //     localStorage.getItem("color-theme") === "dark" ||
@@ -61,7 +66,8 @@ const App = () => {
     <DevBlogsContextProvider>
       <div className="flex bg-white dark:bg-gray-900/10">
         <Tooltip />
-        <SplashScreen />
+        {isTimeout ? null : <SplashScreen />}
+        {/* <SplashScreen /> */}
         <BrowserRouter>
           <Sidebar
             onSidebarHide={() => {
