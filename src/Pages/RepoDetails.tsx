@@ -43,7 +43,9 @@ const RepoDetails = ({ onSidebarHide }) => {
   }, []);
   const onClick = useCallback(() => {
     setRunning(true);
-    confetti({
+    
+    setTimeout(()=>{
+      confetti({
       particleCount: 100,
       startVelocity: 30,
       spread: 360,
@@ -53,6 +55,9 @@ const RepoDetails = ({ onSidebarHide }) => {
         y: 0,
       },
     });
+    },2000)
+    
+    
     setTimeout(() => {
       setRunning(false);
     }, 1000);
@@ -94,12 +99,13 @@ const RepoDetails = ({ onSidebarHide }) => {
             className="m-auto transition-all h-9 group overflow-hidden flex gap-2 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
           >
             <span className="mt-1">Download</span>
-            <a
+           <a
               ref={downloadBtnRef}
               className={`${
                 isRun ? "translate-y-4" : "-translate-y-4"
               } flex flex-col gap-3 transition-all group-hover:animate-pulse`}
-            >
+              href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
+>
               <BsCheck size={20} />
               <BsDownload size={20} />
             </a>
@@ -123,7 +129,7 @@ const RepoDetails = ({ onSidebarHide }) => {
         </div>
         
           
-          {/* <div
+          {/* {/* {/* {/* <div
           className="readme"
             dangerouslySetInnerHTML={{
               __html: readmeFileContent,
