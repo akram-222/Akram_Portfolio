@@ -14,25 +14,35 @@ import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
 import Login from "./Pages/Login";
 import About from "./Pages/About";
 import Footer from "./Components/Footer";
-import Terminal from "./Components/cmd/terminal"
+import Terminal from "./Components/cmd/terminal";
 const App = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
   const [isLogging, setIsLogging] = useState(false);
-  const [ theme, setTheme ] = useState('dark')
-	const themeVars = theme === 'dark' ? {
-		app: {backgroundColor: '#333444'},
-		terminal: {boxShadow: '0 2px 5px #111'},
-		window: {backgroundColor: '#222345', color: '#F4F4F4'},
-		field: {backgroundColor: '#222333', color: '#F4F4F4', fontWeight: 'normal'},
-		cursor: {animation : '1.02s blink-dark step-end infinite'}
-	} : {
-		app: {backgroundColor: '#ACA9BB'},
-		terminal: {boxShadow: '0 2px 5px #33333375'},
-		window: {backgroundColor: '#5F5C6D', color: '#E3E3E3'},
-		field: {backgroundColor: '#E3E3E3', color: '#474554', fontWeight: 'bold'},
-		cursor: {animation : '1.02s blink-light step-end infinite'}
-	}
-	
+  const [theme, setTheme] = useState("dark");
+  const themeVars =
+    theme === "dark"
+      ? {
+          app: { backgroundColor: "#333444" },
+          terminal: { boxShadow: "0 2px 5px #111" },
+          window: { backgroundColor: "#222345", color: "#F4F4F4" },
+          field: {
+            backgroundColor: "#222333",
+            color: "#F4F4F4",
+            fontWeight: "normal",
+          },
+          cursor: { animation: "1.02s blink-dark step-end infinite" },
+        }
+      : {
+          app: { backgroundColor: "#ACA9BB" },
+          terminal: { boxShadow: "0 2px 5px #33333375" },
+          window: { backgroundColor: "#5F5C6D", color: "#E3E3E3" },
+          field: {
+            backgroundColor: "#E3E3E3",
+            color: "#474554",
+            fontWeight: "bold",
+          },
+          cursor: { animation: "1.02s blink-light step-end infinite" },
+        };
 
   // useEffect(() => {
   //   if (
@@ -61,7 +71,7 @@ const App = () => {
             <div className="w-full hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
               .
             </div>
-            <div className=" p-2 relative flex-grow flex flex-wrap">
+            <div className="bg-1 p-2 relative flex-grow flex flex-wrap">
               <Routes>
                 {isLogging ? (
                   <Route
@@ -158,9 +168,18 @@ const App = () => {
                   );
                 })}
                 <Route path="/*" element={<NotFoundRoute />} />
-                <Route path="/terminal mode" element={<div id="app" className="flex items-center justify-center w-full" style={themeVars.app}>
-		<Terminal theme={themeVars} setTheme={setTheme}/>
-	</div>} />
+                <Route
+                  path="/terminal mode"
+                  element={
+                    <div
+                      id="app"
+                      className="flex items-center justify-center w-full"
+                      style={themeVars.app}
+                    >
+                      <Terminal theme={themeVars} setTheme={setTheme} />
+                    </div>
+                  }
+                />
               </Routes>
               {/* <Footer /> */}
             </div>
