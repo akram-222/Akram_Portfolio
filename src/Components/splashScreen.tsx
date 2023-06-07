@@ -61,3 +61,5 @@ export default SplashScreen;
 // In this example, a random query string is generated using Math.random() and added to the image URL using the v parameter. This ensures that the image is always loaded from the server and not from the browser cache.
 
 // Note that adding a query string to the image URL can also improve performance, as it allows the browser to cache multiple versions of the same resource with different query strings. This means that if the same resource is used across multiple pages or components, it can be cached and reused, reducing the number of requests to the server.
+
+// https://poe.com/s/aS7ihD8i0fZGiE0nlGK1
