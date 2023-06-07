@@ -3,7 +3,6 @@ import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
 import { BsDashCircle } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
-
 const ProjectItem = ({
   name,
   createdAt,
@@ -15,11 +14,20 @@ const ProjectItem = ({
   forksCount,
   i,
   repoConfig,
+  currentBgImg,
+  setCurrentBgImg,
+  homepage
 }) => {
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
-    <tr className="text-gray-400 group hover:bg-card border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20">
+    <tr 
+   
+    onMouseEnter={()=> {
+      setCurrentBgImg(`https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/${language?.toLowerCase()}/${language?.toLowerCase()}.png`)
+console.log(homepage)   }}
+     
+    className="text-gray-400 group hover:bg-card border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20">
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <Link to={name.toLowerCase()} className="flex items-center justify-between">
         <div className="flex  items-center">

@@ -13,7 +13,8 @@ const Projects = ({ onSidebarHide }) => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 12, page: 1 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
-  const [isVisible,setVisibility] = useState(false)
+  const [isVisible,setVisibility] = useState(false);
+  const [currentBgImg,setCurrentBgImg] = useState('')
   useEffect(() => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
@@ -28,6 +29,13 @@ const Projects = ({ onSidebarHide }) => {
       //   ...springs,
       // }}
       className="bg-1 animate-fade-in p-2 flex-col items-start w-full flex-wrap"
+      style={{
+        backgroundImage: `url(${currentBgImg})`,
+        backgroundSize: "5%",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: 'fixed'
+      }}
     >
       <PageTitle
         className={"mb-10 h-fit"}
@@ -156,6 +164,7 @@ const Projects = ({ onSidebarHide }) => {
                         visibility,
                         has_issues,
                         forks_count,
+                        homepage
                       },
                       i: number
                     ) => (
@@ -172,6 +181,9 @@ const Projects = ({ onSidebarHide }) => {
                           i={i}
                           createdAt={created_at}
                           repoConfig={repoConfig}
+                          currentBgImg={currentBgImg}
+                          setCurrentBgImg={setCurrentBgImg}
+                          homepage={homepage}
                         />
                       </>
                     )
