@@ -14,8 +14,8 @@ const ProjectItem = ({
   forksCount,
   i,
   repoConfig,
-  currentBgImg,
-  setCurrentBgImg,
+  currentHomePage,
+  setCurrentHomePage,
   homepage
 }) => {
   const indexingSys =
@@ -23,9 +23,7 @@ const ProjectItem = ({
   return (
     <tr 
    
-    onMouseEnter={()=> {
-      setCurrentBgImg(`${homepage}`)
-console.log(homepage)   }}
+    onMouseEnter={()=> setCurrentHomePage(homepage)}
      
     className="text-gray-400 group hover:bg-card border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20">
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
