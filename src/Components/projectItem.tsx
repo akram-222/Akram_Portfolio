@@ -17,7 +17,7 @@ const ProjectItem = ({
   currentHomePage,
   setCurrentHomePage,
   homepage,
-  git_url,
+  html_url,
 }) => {
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
@@ -48,7 +48,8 @@ const ProjectItem = ({
             {indexingSys}. {name}
           </Link>
           <a
-            href={git_url}
+            href={html_url}
+            target={"blank"}
             className="ml-2 italic text-blue-400/30 hover:text-blue-400 hidden lg:inline opacity-0 group-hover:opacity-100 text-xs"
           >
             #{id}
