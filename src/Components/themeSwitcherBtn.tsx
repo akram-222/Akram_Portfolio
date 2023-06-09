@@ -28,8 +28,10 @@ const ThemeSwitcherBtn = () => {
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       setMode(true);
+      changeMode();
     } else {
       setMode(false);
+      changeMode();
     }
   }, []);
   return (
@@ -50,7 +52,7 @@ const ThemeSwitcherBtn = () => {
               Convert mode to :
             </div>
             <div className="text-sm text-left text-gray-400">
-              {localStorage.getItem("color-theme")} mode
+              {localStorage.getItem("color-theme") || "light"} mode
             </div>
           </div>
         </button>
