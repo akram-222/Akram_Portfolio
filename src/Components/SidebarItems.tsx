@@ -80,7 +80,7 @@ const sidebarItems = [
     },
     {
       id: "6",
-      title: "Terminal Mode",
+      title: "Terminal",
       notifications: 'new',
       icon: (
         <BsTerminal

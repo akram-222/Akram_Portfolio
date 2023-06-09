@@ -177,7 +177,7 @@ const App = () => {
                 })}
                 <Route path="/*" element={<NotFoundRoute />} />
                 <Route
-                  path="/terminal mode"
+                  path="/terminal"
                   element={
                     <div
                       id="app"
