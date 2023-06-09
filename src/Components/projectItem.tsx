@@ -38,7 +38,7 @@ const ProjectItem = ({
           />
           <BsPlusCircle
             size={18}
-            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline opacity-0 group-hover:opacity-100 hover:text-white"
+            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 hover:text-white"
           />
           <Link
             to={name.toLowerCase()}
