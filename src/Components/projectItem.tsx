@@ -54,7 +54,7 @@ const ProjectItem = ({
             )}
           </span>
           <BiPlusCircle
-            size={22}
+            size={20}
             className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
           />
           <Link
