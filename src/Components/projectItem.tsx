@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineBook } from "react-icons/ai";
 import { BiGitRepoForked, BiSquareRounded } from "react-icons/bi";
-import { BsDashCircle, BsPlusCircle } from "react-icons/bs";
-import { BiCheckSquare } from "react-icons/bi";
+import { BsDashCircle, BsPlusCircle,BsSquare,BsSquareFill } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 const ProjectItem = ({
   name,
@@ -38,12 +37,12 @@ const ProjectItem = ({
         <div className="flex items-center">
           <span onClick={() => setIsSelected(!isSelected)}>
             {isSelected ? (
-              <BiCheckSquare
+              <BsSquareFill
                 size={18}
                 className="cursor-pointer  mr-2 lg:inline hover:text-white"
               />
             ) : (
-              <BiSquareRounded
+              <BsSquare
                 size={18}
                 className="cursor-pointer  mr-2 lg:inline hover:text-white"
               />
