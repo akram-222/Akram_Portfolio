@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineBook } from "react-icons/ai";
-import { BiGitRepoForked, BiCheckbox, BiCheckboxSquare } from "react-icons/bi";
-import { BsDashCircle, BsPlusCircle } from "react-icons/bs";
+import {
+  BiGitRepoForked,
+  BiCheckbox,
+  BiCheckboxSquare,
+  BiPlusCircle,
+} from "react-icons/bi";
+import { BsDashCircle } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 const ProjectItem = ({
   name,
@@ -38,18 +43,18 @@ const ProjectItem = ({
           <span onClick={() => setIsSelected(!isSelected)}>
             {isSelected ? (
               <BiCheckboxSquare
-                size={18}
-                className="cursor-pointer  mr-2 lg:inline hover:text-white"
+                size={24}
+                className="cursor-pointer  lg:inline hover:text-white"
               />
             ) : (
               <BiCheckbox
-                size={18}
-                className="cursor-pointer  mr-2 lg:inline hover:text-white"
+                size={24}
+                className="cursor-pointer lg:inline hover:text-white"
               />
             )}
           </span>
-          <BsPlusCircle
-            size={18}
+          <BiPlusCircle
+            size={22}
             className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 hover:text-white"
           />
           <Link
