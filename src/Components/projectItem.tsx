@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
-import { BiGitRepoForked } from "react-icons/bi";
-import { BsDashCircle } from "react-icons/bs";
+import { BiGitRepoForked, BiSquareRounded } from "react-icons/bi";
+import { BsDashCircle, BsPlusCircle } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 const ProjectItem = ({
   name,
@@ -16,29 +16,44 @@ const ProjectItem = ({
   repoConfig,
   currentHomePage,
   setCurrentHomePage,
-  homepage
+  homepage,
+  git_url,
 }) => {
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
-    <tr 
-   
-    // onDoubleClick={
-    //   ()=> {
-    //     setCurrentHomePage(homepage)
-    //   }
-    // }
-     
-    className="text-gray-400 group hover:bg-card border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20">
+    <tr
+      // onDoubleClick={
+      //   ()=> {
+      //     setCurrentHomePage(homepage)
+      //   }
+      // }
+
+      className="text-gray-400 group hover:bg-card border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20"
+    >
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
-        <Link to={name.toLowerCase()} className="flex items-center justify-between">
-        <div className="flex  items-center">
-          {indexingSys}. {name}
-          <em className="ml-2 text-gray-400/30 hidden lg:inline opacity-0 group-hover:opacity-100 text-xs">
+        <div className="flex items-center">
+          <BiSquareRounded
+            size={18}
+            className="cursor-pointer  mr-2 lg:inline hover:text-white"
+          />
+          <BsPlusCircle
+            size={18}
+            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 hover:text-white"
+          />
+          <Link
+            to={name.toLowerCase()}
+            className="flex items-center justify-between underline-offset-2 hover:underline hover:text-blue-400"
+          >
+            {indexingSys}. {name}
+          </Link>
+          <a
+            href={git_url}
+            className="ml-2 italic text-blue-400/30 hover:text-blue-400 hidden lg:inline opacity-0 group-hover:opacity-100 text-xs"
+          >
             #{id}
-          </em>
+          </a>
         </div>
-        </Link>
       </td>
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex">

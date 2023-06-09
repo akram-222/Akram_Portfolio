@@ -52,7 +52,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
         {sidebarItems[1].map((i) => (
           <MenuItem key={i.id} item={i} onClick={setSelected} />
         ))}
-        <div className="flex-grow" />
+        {/* <div className="flex-grow" />
         <div className="w-full p-3 h-28 hidden sm:block sm:h-20 xl:h-32">
           <div
             className="rounded-xl w-full h-full px-3 sm:px-0 xl:px-3 overflow-hidden"
@@ -60,8 +60,8 @@ function Sidebar({ onSidebarHide, showSidebar }) {
               backgroundImage:
                 "url('https://assets.codepen.io/3685267/res-react-dash-usage-card.svg')",
             }}
-          >
-            <div className="block sm:hidden xl:block pt-3">
+          > 
+             <div className="block sm:hidden xl:block pt-3">
               <div className="font-bold text-gray-300 text-sm">Used Space</div>
               <div className="text-gray-500 text-xs">
                 Admin updated 09:12 am November 08,2020
@@ -95,7 +95,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
                   />
                 </svg>
               </div>
-            </div>
+            </div> 
 
             <div className="hidden sm:block xl:hidden ">
               <svg
@@ -120,10 +120,10 @@ function Sidebar({ onSidebarHide, showSidebar }) {
                   strokeWidth="6"
                 />
               </svg>
-            </div>
-          </div>
-        </div>
-      </div>
+            </div> 
+           </div> 
+         </div>*/}
+      </div> 
     </div>
   );
 }
