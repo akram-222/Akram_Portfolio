@@ -31,14 +31,14 @@ const ProjectItem = ({
       className="text-gray-400 group hover:bg-card border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20"
     >
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
-        <div className="flex  items-center">
+        <div className="flex items-center">
           <BsPlusCircle
             size={16}
-            className="cursor-pointer hidden mx-2 lg:inline opacity-0 group-hover:opacity-100 hover:text-white"
+            className="cursor-pointer group-hover:animate-fade-in hidden mx-2 lg:inline opacity-0 group-hover:opacity-100 hover:text-white"
           />
           <Link
             to={name.toLowerCase()}
-            className="mx-2 flex items-center hover:animate-fade-in justify-between underline-offset-2 hover:underline hover:text-blue-400"
+            className="mx-2 flex items-center justify-between underline-offset-2 hover:underline hover:text-blue-400"
           >
             {indexingSys}. {name}
           </Link>
