@@ -33,7 +33,7 @@ const ProjectItem = ({
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex items-center">
           <BsPlusCircle
-            size={16}
+            size={18}
             className="cursor-pointer group-hover:animate-fade-in hidden mx-2 lg:inline opacity-0 group-hover:opacity-100 hover:text-white"
           />
           <Link
