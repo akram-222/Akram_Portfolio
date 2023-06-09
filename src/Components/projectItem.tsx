@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
-import { BiGitRepoForked } from "react-icons/bi";
+import { BiGitRepoForked, BiSquareRounded } from "react-icons/bi";
 import { BsDashCircle, BsPlusCircle } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 const ProjectItem = ({
@@ -32,13 +32,17 @@ const ProjectItem = ({
     >
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex items-center">
-          <BsPlusCircle
+          <BiSquareRounded
             size={18}
-            className="cursor-pointer group-hover:animate-fade-in hidden mx-2 lg:inline opacity-0 group-hover:opacity-100 hover:text-white"
+            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline hover:text-white"
           />
+          {/* <BsPlusCircle
+            size={18}
+            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline opacity-0 group-hover:opacity-100 hover:text-white"
+          /> */}
           <Link
             to={name.toLowerCase()}
-            className="mx-2 flex items-center justify-between underline-offset-2 hover:underline hover:text-blue-400"
+            className="flex items-center justify-between underline-offset-2 hover:underline hover:text-blue-400"
           >
             {indexingSys}. {name}
           </Link>
