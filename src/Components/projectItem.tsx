@@ -34,7 +34,7 @@ const ProjectItem = ({
         <div className="flex items-center">
           <BiSquareRounded
             size={18}
-            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline hover:text-white"
+            className="cursor-pointer  mr-2 lg:inline hover:text-white"
           />
           <BsPlusCircle
             size={18}
