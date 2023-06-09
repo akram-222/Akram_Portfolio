@@ -36,10 +36,10 @@ const ProjectItem = ({
             size={18}
             className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline hover:text-white"
           />
-          {/* <BsPlusCircle
+          <BsPlusCircle
             size={18}
             className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline opacity-0 group-hover:opacity-100 hover:text-white"
-          /> */}
+          />
           <Link
             to={name.toLowerCase()}
             className="flex items-center justify-between underline-offset-2 hover:underline hover:text-blue-400"
