@@ -38,7 +38,7 @@ const ProjectItem = ({
           />
           <Link
             to={name.toLowerCase()}
-            className="mx-2 flex items-center justify-between underline-offset-2 hover:underline hover:text-blue-400"
+            className="mx-2 flex items-center hover:animate-fade-in justify-between underline-offset-2 hover:underline hover:text-blue-400"
           >
             {indexingSys}. {name}
           </Link>
