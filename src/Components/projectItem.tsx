@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
+import { useState } from "react";
+import { AiOutlineBook } from "react-icons/ai";
 import { BiGitRepoForked, BiSquareRounded } from "react-icons/bi";
 import { BsDashCircle, BsPlusCircle } from "react-icons/bs";
+import { BiCheckSquare } from "react-icons/bi";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 const ProjectItem = ({
   name,
@@ -19,6 +21,7 @@ const ProjectItem = ({
   homepage,
   html_url,
 }) => {
+  const [isSelected, setIsSelected] = useState(false);
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
@@ -33,10 +36,19 @@ const ProjectItem = ({
     >
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex items-center">
-          <BiSquareRounded
-            size={18}
-            className="cursor-pointer  mr-2 lg:inline hover:text-white"
-          />
+          <span onClick={() => setIsSelected(!isSelected)}>
+            {isSelected ? (
+              <BiCheckSquare
+                size={18}
+                className="cursor-pointer  mr-2 lg:inline hover:text-white"
+              />
+            ) : (
+              <BiSquareRounded
+                size={18}
+                className="cursor-pointer  mr-2 lg:inline hover:text-white"
+              />
+            )}
+          </span>
           <BsPlusCircle
             size={18}
             className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 hover:text-white"
