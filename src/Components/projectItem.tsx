@@ -34,11 +34,11 @@ const ProjectItem = ({
         <div className="flex  items-center">
           <BsPlusCircle
             size={16}
-            className="cursor hidden mx-2 lg:inline opacity-0 group-hover:opacity-100"
+            className="cursor-pointer hidden mx-2 lg:inline opacity-0 group-hover:opacity-100 hover:text-white"
           />
           <Link
             to={name.toLowerCase()}
-            className="flex items-center justify-between underline-offset-2 hover:underline hover:text-blue-400"
+            className="mx-2 flex items-center justify-between underline-offset-2 hover:underline hover:text-blue-400"
           >
             {indexingSys}. {name}
           </Link>
