@@ -6,15 +6,15 @@ import Skelton from "../Components/Skelton";
 import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import {BsFilterRight} from "react-icons/bs"
+import { BsFilterRight } from "react-icons/bs";
 // import SearchComponent from "../Components/search comp/SearchComponent";
 
 const Projects = ({ onSidebarHide }) => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 12, page: 1 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
-  const [isVisible,setVisibility] = useState(false);
-  const [currentHomePage,setCurrentHomePage] = useState('')
+  const [isVisible, setVisibility] = useState(false);
+  const [currentHomePage, setCurrentHomePage] = useState("");
   useEffect(() => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
@@ -24,11 +24,8 @@ const Projects = ({ onSidebarHide }) => {
   }, [repoConfig]);
 
   return (
-    <div
-      className="animate-fade-in p-2 flex-col items-start w-full flex-wrap"
-      
-    >
-       {/* <iframe style={{
+    <div className="animate-fade-in p-2 flex-col items-start w-full flex-wrap">
+      {/* <iframe style={{
 
 zIndex: '-1',
 opacity: '0.3',
@@ -72,7 +69,7 @@ mixBlendMode: 'overlay'
               <div className="ml-auto text-gray-500 text-xs sm:inline-flex hidden items-center">
                 <span className="mr-3">Page {repoConfig.page} of 4</span>
                 <button
-                disabled={repoConfig.page === 1?true:false}
+                  disabled={repoConfig.page === 1 ? true : false}
                   onClick={() => {
                     setLoad(true);
                     setRepoConfig({
@@ -80,12 +77,14 @@ mixBlendMode: 'overlay'
                       page: repoConfig.page === 1 ? 1 : repoConfig.page - 1,
                     });
                   }}
-                  className={`${repoConfig.page === 1?"opacity-10":""} inline-flex mr-2 items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0`}
+                  className={`${
+                    repoConfig.page === 1 ? "opacity-10" : ""
+                  } inline-flex mr-2 items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0`}
                 >
                   <FaChevronLeft />
                 </button>
                 <button
-                disabled={repoConfig.page === 4?true:false}
+                  disabled={repoConfig.page === 4 ? true : false}
                   onClick={() => {
                     setLoad(true);
                     setRepoConfig({
@@ -93,7 +92,9 @@ mixBlendMode: 'overlay'
                       page: repoConfig.page === 4 ? 4 : repoConfig.page + 1,
                     });
                   }}
-                  className={`${repoConfig.page === 4?"opacity-10":""} inline-flex items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0`}
+                  className={`${
+                    repoConfig.page === 4 ? "opacity-10" : ""
+                  } inline-flex items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0`}
                 >
                   <FaChevronRight />
                 </button>
@@ -101,33 +102,38 @@ mixBlendMode: 'overlay'
             </div>
             <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
-                      <tr>
-                          <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
-                          <div className="flex justify-between items-center">
-                          <span>Project Name</span> 
-                          <BsFilterRight className="cursor-pointer" size='16' onClick={()=>setVisibility(!isVisible)}/>
-                          </div>
-                          </th>
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
-                          <div className="flex justify-between items-center">
-                          <span>Language</span> 
-                          {/* <BsFilterRight size='16' /> */}
-                          </div>
-                          </th>
-                        <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
-                          <div className="flex justify-between items-center">
-                          <span>Info</span> 
-                          {/* <BsFilterRight size='16' /> */}
-                          </div>
-                          </th>
-                        <th className="p-3 px-4 border-b  text-white bg-card border-b-gray-600/60">
-                          <div className="flex justify-between items-center">
-                          <span>Date</span> 
-                          {/* <BsFilterRight size='16' /> */}
-                          </div>
-                          </th>
-              </tr> </thead>
-               {(isVisible ? <FilterProjects repos={repos}/>:null)}
+                <tr>
+                  <th className="p-3 w-[45%] px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
+                    <div className="flex justify-between items-center">
+                      <span>Project Name</span>
+                      <BsFilterRight
+                        className="cursor-pointer"
+                        size="16"
+                        onClick={() => setVisibility(!isVisible)}
+                      />
+                    </div>
+                  </th>
+                  <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
+                    <div className="flex justify-between items-center">
+                      <span>Language</span>
+                      {/* <BsFilterRight size='16' /> */}
+                    </div>
+                  </th>
+                  <th className="p-3 px-4 border-b border-r text-white bg-card border-b-gray-500/60 border-r-gray-600/20">
+                    <div className="flex justify-between items-center">
+                      <span>Info</span>
+                      {/* <BsFilterRight size='16' /> */}
+                    </div>
+                  </th>
+                  <th className="p-3 px-4 border-b  text-white bg-card border-b-gray-600/60">
+                    <div className="flex justify-between items-center">
+                      <span>Date</span>
+                      {/* <BsFilterRight size='16' /> */}
+                    </div>
+                  </th>
+                </tr>{" "}
+              </thead>
+              {isVisible ? <FilterProjects repos={repos} /> : null}
               {/* <thead>
                 <tr className="text-gray-400">
                   {["Name", "Language", "Details", "Date"].map(
@@ -164,7 +170,8 @@ mixBlendMode: 'overlay'
                         visibility,
                         has_issues,
                         forks_count,
-                        homepage
+                        homepage,
+                        git_url,
                       },
                       i: number
                     ) => (
