@@ -44,18 +44,18 @@ const ProjectItem = ({
             {isSelected ? (
               <BiCheckboxSquare
                 size={24}
-                className="cursor-pointer  lg:inline hover:text-white"
+                className="animate-fade-in cursor-pointer  lg:inline hover:text-white"
               />
             ) : (
               <BiCheckbox
                 size={24}
-                className="cursor-pointer lg:inline hover:text-white"
+                className="animate-fade-in cursor-pointer lg:inline hover:text-white"
               />
             )}
           </span>
           <BiPlusCircle
             size={22}
-            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 hover:text-white"
+            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
           />
           <Link
             to={name.toLowerCase()}
