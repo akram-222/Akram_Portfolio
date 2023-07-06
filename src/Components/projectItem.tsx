@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
-import { AiOutlineBook, AiOutlineInfoCircle } from "react-icons/ai";
-import { BiGitRepoForked, BiSquareRounded } from "react-icons/bi";
-import { BsDashCircle, BsPlusCircle } from "react-icons/bs";
+import { useState } from "react";
+import { AiOutlineBook } from "react-icons/ai";
+import {
+  BiGitRepoForked,
+  BiCheckbox,
+  BiCheckboxSquare,
+  BiPlusCircle,
+} from "react-icons/bi";
+import { BsDashCircle } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 const ProjectItem = ({
   name,
@@ -17,8 +23,9 @@ const ProjectItem = ({
   currentHomePage,
   setCurrentHomePage,
   homepage,
-  git_url,
+  html_url,
 }) => {
+  const [isSelected, setIsSelected] = useState(false);
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
   return (
@@ -33,13 +40,22 @@ const ProjectItem = ({
     >
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex items-center">
-          <BiSquareRounded
-            size={18}
-            className="cursor-pointer  mr-2 lg:inline hover:text-white"
-          />
-          <BsPlusCircle
-            size={18}
-            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 hover:text-white"
+          <span onClick={() => setIsSelected(!isSelected)}>
+            {isSelected ? (
+              <BiCheckboxSquare
+                size={24}
+                className="animate-fade-in cursor-pointer  lg:inline hover:text-white"
+              />
+            ) : (
+              <BiCheckbox
+                size={24}
+                className="animate-fade-in cursor-pointer lg:inline hover:text-white"
+              />
+            )}
+          </span>
+          <BiPlusCircle
+            size={20}
+            className="cursor-pointer group-hover:animate-fade-in hidden mr-2 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
           />
           <Link
             to={name.toLowerCase()}
@@ -48,7 +64,8 @@ const ProjectItem = ({
             {indexingSys}. {name}
           </Link>
           <a
-            href={git_url}
+            href={html_url}
+            target={"blank"}
             className="ml-2 italic text-blue-400/30 hover:text-blue-400 hidden lg:inline opacity-0 group-hover:opacity-100 text-xs"
           >
             #{id}

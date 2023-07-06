@@ -171,7 +171,7 @@ mixBlendMode: 'overlay'
                         has_issues,
                         forks_count,
                         homepage,
-                        git_url,
+                        html_url,
                       },
                       i: number
                     ) => (
@@ -191,6 +191,7 @@ mixBlendMode: 'overlay'
                           currentHomePage={currentHomePage}
                           setCurrentHomePage={setCurrentHomePage}
                           homepage={homepage}
+                          html_url={html_url}
                         />
                       </>
                     )
