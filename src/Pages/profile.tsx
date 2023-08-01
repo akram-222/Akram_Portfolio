@@ -8,6 +8,9 @@ const Profile = () => {
     <>
       <div className="w-full mb-4">
         <div className="bg-white dark:bg-[#171717] mt-4 shadow rounded-lg px-6 py-4">
+          <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
+            ⚡ Followers list
+          </h2>
           <FollowersList />
         </div>
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
