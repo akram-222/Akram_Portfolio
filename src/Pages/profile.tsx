@@ -1,7 +1,7 @@
 import FollowersList from "../Components/FollowersList";
 import ProfileSubSection from "../Components/profileSubSection";
 import ProfileSubSection2 from "../Components/profileSubSection2";
-improt ExpandableCards from "../Components/expandableCards/expandableCards.tsx"
+import ExpandableCards from "../Components/expandableCards/expandableCards";
 import { allRepos, topContributedRepos } from "../Utils/localeData/repos";
 import { tools } from "../Utils/localeData/tools";
 const Profile = () => {
@@ -99,7 +99,7 @@ const Profile = () => {
           <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
             🚀 Some of my Pens
           </h2>
-          
+
           <ExpandableCards />
           {/* <div className="flex px-8 gap-2 items-center justify-center flex-wrap">
             <a

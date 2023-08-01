@@ -1,4 +1,4 @@
-import "expandableCards.css";
+import "./expandableCards.css";
 const ExpandableCards = () => {
   return (
     <div className="container">
