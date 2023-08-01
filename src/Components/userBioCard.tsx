@@ -79,13 +79,13 @@ const UserBioCard = ({ userInfo }) => {
                     src="https://img.shields.io/badge/-LeetCode-FFA116?logo=LeetCode&logoColor=black"
                   />
                 </a>
-                {/* Medium */}
-                <a href="https://dev.to/akram_ak">
+                {/* Whats' app */}
+                {/*   <a href='https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale'> */}
+                <a href="https://wa.me/00201158541832?text=Hi Akram 👋, I'm Interest to work with you">
                   <img
-                    className=""
-                    alt="Dev.to"
-                    title="Blog"
-                    src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
+                    alt="Whats' app"
+                    title="Msg me"
+                    src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
                   />
                 </a>
                 {/* Stackoverflow */}
@@ -106,13 +106,14 @@ const UserBioCard = ({ userInfo }) => {
                     src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
                   />
                 </a>
-                {/* Whats' app */}
-                {/*   <a href='https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale'> */}
-                <a href="https://wa.me/00201158541832?text=Hi Akram 👋, I'm Interest to work with you">
+
+                {/* Medium */}
+                <a href="https://dev.to/akram_ak">
                   <img
-                    alt="Whats' app"
-                    title="Msg me"
-                    src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
+                    className=""
+                    alt="Dev.to"
+                    title="Blog"
+                    src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
                   />
                 </a>
               </div>
