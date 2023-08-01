@@ -2,6 +2,8 @@ import FollowersList from "../Components/FollowersList";
 import ProfileSubSection from "../Components/profileSubSection";
 import ProfileSubSection2 from "../Components/profileSubSection2";
 import ExpandableCards from "../Components/expandableCards/expandableCards";
+import EducationTimeLine from "../Components/EducationTimeLine";
+import Skills from "../Components/Skills";
 import { allRepos, topContributedRepos } from "../Utils/localeData/repos";
 import { tools } from "../Utils/localeData/tools";
 const Profile = () => {
@@ -13,7 +15,12 @@ const Profile = () => {
             ⚡ Followers list
           </h2>
           <FollowersList />
+
         </div>
+        <div className="flex gap-2 mt-3">
+        <Skills />
+        <EducationTimeLine />
+      </div>
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           ⚡ Recent GitHub Activity
         </h2>
@@ -71,6 +78,7 @@ const Profile = () => {
             />
           </a>
         </div>
+        
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>

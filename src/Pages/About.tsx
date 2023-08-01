@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import EducationTimeLine from "../Components/EducationTimeLine";
+
 import FollowersList from "../Components/FollowersList";
 import PageTitle from "../Components/PageTitle";
-import Skills from "../Components/Skills";
 import Spinner from "../Components/Spinner";
 import UserBioCard from "../Components/userBioCard";
 import { __getUserInfo } from "../Utils/github/__getUserInfo";
@@ -32,11 +31,9 @@ const About = ({ onSidebarHide }) => {
         premium_star="Personal Info"
       />
       <UserBioCard userInfo={userInfo} />
+     
       <Profile />
-      {/* <div className="flex gap-2">
-        <Skills />
-        <EducationTimeLine />
-      </div> */}
+      
     </div>
   );
 };
