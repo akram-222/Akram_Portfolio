@@ -13,7 +13,7 @@ const ProfileSubSection2 = ({ h3Content, list }: reposList) => {
           <a
             key={i}
             href={`https://github.com/Ak-ram/${item}`}
-            className="w-2/5"
+            className="w-[48%]"
           >
             <img
               // width={278}
