@@ -13,10 +13,11 @@ const ProfileSubSection2 = ({ h3Content, list }: reposList) => {
           <a
             key={i}
             href={`https://github.com/Ak-ram/${item}`}
-            className="w-[48%]"
+            // className="xs:w-max-[48%]"
           >
             <img
-              // width={278}
+              // width={260}
+              className="sm:w-max-[260px]"
               src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=Ak-ram&repo=${item}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=${
                 i === 0 ? false : true
               }&border_color=F85D7F&icon_color=F8D866&show_icons=true`}
