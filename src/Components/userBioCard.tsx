@@ -11,7 +11,7 @@ const UserBioCard = ({ userInfo }) => {
           />
         </h1>
 
-        <div className="flex-col md:flex-row inline-flex justify-between">
+        <div className="flex flex-col md:flex-row inline-flex justify-between">
           {/*Previous font: Silkscreen*/}
           <div className="md:w-[30%]">
             <img
