@@ -57,12 +57,6 @@ const ExpandableCards = () => {
             <h4 className="title">CSS Shadow Animation</h4>
           </div>
         </div>
-        <div className="card">
-          <img src="https://source.unsplash.com/fd1cQ3mmBTE/" alt="" />
-          <div className="info">
-            <h4 className="title">Kauai, Hawaii</h4>
-          </div>
-        </div>
       </div>
     </div>
   );
