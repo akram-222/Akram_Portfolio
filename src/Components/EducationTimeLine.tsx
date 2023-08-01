@@ -2,8 +2,8 @@ import { BsDownload } from "react-icons/bs";
 import { educationData } from "../Utils/localeData/educationData";
 const EducationTimeLine = () => {
   return (
-    <div className="flex">
-      <h3 className="border-gray-600/30 border font-bold bg-indigo-200 text-black dark:bg-card p-2 rounded-t-lg mb-1 dark:text-gray-100">
+    <div className="flex flex-col">
+      <h3 className="mb-5 border-gray-600/30 border font-bold bg-indigo-200 text-black dark:bg-card p-2 rounded-t-lg dark:text-gray-100">
         <span className="text-gray-400/30">#4</span> Education
       </h3>
       <ol className="relative border-l ml-4 lg:ml-0 border-gray-200 dark:border-gray-700">
