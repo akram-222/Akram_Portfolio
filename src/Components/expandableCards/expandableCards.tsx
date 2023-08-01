@@ -1,7 +1,7 @@
 import "./expandableCards.css";
 const ExpandableCards = () => {
   return (
-    <div className="container">
+    <div className="expandableContainer h-auto">
       <div className="gallery">
         <div className="card">
           <img src="https://source.unsplash.com/4hMET7vYTAQ/" alt="" />

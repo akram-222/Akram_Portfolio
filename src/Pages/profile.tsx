@@ -173,7 +173,7 @@ const Profile = () => {
             </a>
           </div> */}
         </div>
-        //////////////////////////////////////////////////////////////////////////
+
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           🛠️ My favorite tools
         </h2>
