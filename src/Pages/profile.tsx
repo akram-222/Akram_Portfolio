@@ -16,7 +16,7 @@ const Profile = () => {
           </h2>
           <FollowersList />
         </div>
-        <div className="flex gap-2 mt-3">
+        <div className="flex flex-col lg:flex-row gap-8 mt-3">
           <Skills />
           <EducationTimeLine />
         </div>

@@ -9,7 +9,8 @@ const Skills = () => {
       <h3 className="border-gray-600/30 border font-bold bg-indigo-200 text-black dark:bg-card p-2 rounded-t-lg mb-1 dark:text-gray-100">
         <span className="text-gray-400/30">#3</span> Skills List
       </h3>
-      <div className="bg-white dark:bg-[#171717]">
+      <div className="bg-white dark:bg-[#171717]" 
+      style={{'height':'calc(100% - 50px)'}}>
         <ul className="flex justify-between flex-wrap text-sm font-medium text-center dark:border-b dark:border-[#353535]">
           {skillsTab?.map(({ tabName, tabIcon }, index) => (
             <li

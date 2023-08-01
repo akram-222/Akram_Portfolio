@@ -3,7 +3,7 @@ import { educationData } from "../Utils/localeData/educationData";
 const EducationTimeLine = () => {
   return (
     <>
-      <ol className="relative border-l border-gray-200 dark:border-gray-700">
+      <ol className="relative border-l ml-4 lg:ml-0 border-gray-200 dark:border-gray-700">
         {educationData?.map(
           (
             {
