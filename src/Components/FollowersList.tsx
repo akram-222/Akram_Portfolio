@@ -10,7 +10,6 @@ const FollowersList = () => {
     __getFollowersList().then((data) => {
       setFollowersList(data);
       setLoading(false);
-      console.log(data);
     });
   }, []);
   return (
