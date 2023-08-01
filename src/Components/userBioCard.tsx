@@ -30,27 +30,29 @@ const UserBioCard = ({ userInfo }) => {
             {/* Social icons section */}
           </div>
           <div className="md:w-[50%]">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-col gap-2">
               <h2 className="text-xl w-full border-b border-gray-600/30">
                 Statistics
               </h2>
-              <div className="font-semibold text-center mx-4">
-                <p className="dark:text-blue-400 font-bold">
-                  {userInfo.public_repos}
-                </p>
-                <span className="text-gray-400">Repos</span>
-              </div>
-              <div className="font-semibold text-center mx-4">
-                <p className="dark:text-blue-400 font-bold">
-                  {userInfo.followers}
-                </p>
-                <span className="text-gray-400">Followers</span>
-              </div>
-              <div className="font-semibold text-center mx-4">
-                <p className="dark:text-blue-400 font-bold">
-                  {userInfo.following}
-                </p>
-                <span className="text-gray-400">Folowing</span>
+              <div className="flex justify-evenly">
+                <div className="font-semibold text-center mx-4">
+                  <p className="dark:text-blue-400 font-bold">
+                    {userInfo.public_repos}
+                  </p>
+                  <span className="text-gray-400">Repos</span>
+                </div>
+                <div className="font-semibold text-center mx-4">
+                  <p className="dark:text-blue-400 font-bold">
+                    {userInfo.followers}
+                  </p>
+                  <span className="text-gray-400">Followers</span>
+                </div>
+                <div className="font-semibold text-center mx-4">
+                  <p className="dark:text-blue-400 font-bold">
+                    {userInfo.following}
+                  </p>
+                  <span className="text-gray-400">Folowing</span>
+                </div>
               </div>
             </div>
             {/* LinkedIn */}
