@@ -6,49 +6,46 @@ import cp4 from "../../assests/cp4.png";
 import cp5 from "../../assests/cp5.png";
 import cp6 from "../../assests/cp6.png";
 const ExpandableCards = () => {
+  const pens = [
+    {
+      title: "JS Arrow Animation",
+      src: cp1,
+    },
+    {
+      title: "Space CSS Animation",
+      src: cp2,
+    },
+    {
+      title: "Holy Grail Flexbox Layout",
+      src: cp3,
+    },
+    {
+      title: "CSS Clock Animation",
+      src: cp4,
+    },
+    {
+      title: "JS Tooltip Effect",
+      src: cp5,
+    },
+    {
+      title: "CSS Shadow Animation",
+      src: cp6,
+    },
+  ];
   return (
     <div className="expandableContainer h-auto">
       <div className="gallery">
-        <div className="card">
-          <img
-            // src="https://user-images.githubusercontent.com/69124951/197331108-aff1dcef-1b6a-4c1a-96b7-ea95b00ec482.gif"
-            src={cp1}
-            alt=""
-          />
-          <div className="info">
-            <h4 className="title">JS Arrow Animation</h4>
-          </div>
-        </div>
-        <div className="card">
-          <img src={cp2} alt="" />
-          <div className="info">
-            <h4 className="title">Space CSS Animation</h4>
-          </div>
-        </div>
-        <div className="card">
-          <img src={cp3} alt="Holy Grail Flexbox Layout" />
-          <div className="info">
-            <h4 className="title">Holy Grail Flexbox Layout</h4>
-          </div>
-        </div>
-        <div className="card">
-          <img src={cp4} alt="CSS Clock Animation" />
-          <div className="info">
-            <h4 className="title">CSS Clock Animation</h4>
-          </div>
-        </div>
-        <div className="card">
-          <img src={cp5} alt="JS Tooltip Effect" />
-          <div className="info">
-            <h4 className="title">JS Tooltip Effect</h4>
-          </div>
-        </div>
-        <div className="card">
-          <img src={cp6} alt="css shadow animation" />
-          <div className="info">
-            <h4 className="title">CSS Shadow Animation</h4>
-          </div>
-        </div>
+        {pens &&
+          pens.map(({ title, src }) => {
+            return (
+              <div className="card">
+                <img src={src} alt={title} />
+                <div className="info">
+                  <h4 className="title">{title}</h4>
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
