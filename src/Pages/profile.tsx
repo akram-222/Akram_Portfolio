@@ -15,12 +15,11 @@ const Profile = () => {
             ⚡ Followers list
           </h2>
           <FollowersList />
-
         </div>
         <div className="flex gap-2 mt-3">
-        <Skills />
-        <EducationTimeLine />
-      </div>
+          <Skills />
+          <EducationTimeLine />
+        </div>
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           ⚡ Recent GitHub Activity
         </h2>
@@ -78,7 +77,7 @@ const Profile = () => {
             />
           </a>
         </div>
-        
+
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>
@@ -109,7 +108,6 @@ const Profile = () => {
           </h2>
 
           <ExpandableCards />
-         
         </div>
 
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
