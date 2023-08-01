@@ -11,9 +11,9 @@ const UserBioCard = ({ userInfo }) => {
           />
         </h1>
 
-        <div className="inline-flex justify-between">
+        <div className="flex-col md:flex-row inline-flex justify-between">
           {/*Previous font: Silkscreen*/}
-          <div className="w-[30%]">
+          <div className="md:w-[30%]">
             <img
               className="m-auto h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow"
               src={userInfo.avatar_url}
@@ -28,7 +28,7 @@ const UserBioCard = ({ userInfo }) => {
 
             {/* Social icons section */}
           </div>
-          <div className="w-[50%]">
+          <div className="md:w-[50%]">
             <div className="flex flex-wrap gap-2">
               <h2 className="text-xl w-full border-b border-gray-600/30">
                 Statistics
