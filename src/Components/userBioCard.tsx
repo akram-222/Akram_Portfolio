@@ -2,16 +2,17 @@ const UserBioCard = ({ userInfo }) => {
   return (
     <>
       <div className="flex w-full flex-wrap dark:bg-card p-8 rounded-lg">
-        <h1 className="flex w-full mb-5 gap-2 justify-start items-center text-3xl text-white font-bold">
+        <h1 className="flex w-full mb-5 gap-2 justify-start items-center text-center text-3xl text-white font-bold">
           Welcome to Akram's profile!
           <img
             src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
             width={28}
             alt="wavy hand"
+            className="hidden md:block"
           />
         </h1>
 
-        <div className="flex flex-col md:flex-row inline-flex justify-between">
+        <div className="flex flex-col md:flex-row justify-between">
           {/*Previous font: Silkscreen*/}
           <div className="md:w-[30%]">
             <img
