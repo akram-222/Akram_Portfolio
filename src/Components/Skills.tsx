@@ -28,7 +28,7 @@ const Skills = () => {
             </li>
           ))}
         </ul>
-        <div className="tabContent h-48 overflow-auto">
+        <div className="tabContent h-80 overflow-auto">
           {skillsTabContent[currentIndex]}
         </div>
       </div>
