@@ -29,7 +29,7 @@ const UserBioCard = ({ userInfo }) => {
 
             {/* Social icons section */}
           </div>
-          <div className="md:w-[50%]">
+          <div className="md:w-[50%] mt-3">
             <div className="flex flex-col gap-2">
               <h2 className="text-xl w-full border-b border-gray-600/30">
                 Statistics
@@ -88,6 +88,15 @@ const UserBioCard = ({ userInfo }) => {
                     src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white"
                   />
                 </a>
+                {/* Medium */}
+                <a href="https://dev.to/akram_ak">
+                  <img
+                    className=""
+                    alt="Dev.to"
+                    title="Blog"
+                    src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
+                  />
+                </a>
                 {/* Stackoverflow */}
                 <a href="https://stackoverflow.com/users/14151211/akram-ashraf">
                   <img
@@ -104,16 +113,6 @@ const UserBioCard = ({ userInfo }) => {
                     alt="Gmail"
                     title="Mail me"
                     src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white"
-                  />
-                </a>
-
-                {/* Medium */}
-                <a href="https://dev.to/akram_ak">
-                  <img
-                    className=""
-                    alt="Dev.to"
-                    title="Blog"
-                    src="https://img.shields.io/badge/dev.to-0A0A0A?logo=devdotto&logoColor=white"
                   />
                 </a>
               </div>

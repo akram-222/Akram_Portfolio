@@ -1,6 +1,7 @@
 import FollowersList from "../Components/FollowersList";
 import ProfileSubSection from "../Components/profileSubSection";
 import ProfileSubSection2 from "../Components/profileSubSection2";
+improt ExpandableCards from "../Components/expandableCards/expandableCards.tsx"
 import { allRepos, topContributedRepos } from "../Utils/localeData/repos";
 import { tools } from "../Utils/localeData/tools";
 const Profile = () => {
@@ -76,7 +77,6 @@ const Profile = () => {
         {Object.keys(allRepos)?.map((item) => (
           <ProfileSubSection2 h3Content={item} list={allRepos[item]} />
         ))}
-
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📕 Top projects I've contributed to
         </h2>
@@ -84,11 +84,12 @@ const Profile = () => {
         <div className="">
           <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
             {Object.keys(topContributedRepos)?.map((item) => (
-              <a href={`https://github.com/${item}`}
-              className="w-full xs:w-[48%] md:w-[30%]"
+              <a
+                href={`https://github.com/${item}`}
+                className="w-full xs:w-[48%] md:w-[30%]"
               >
                 <img
-                  className='w-full'
+                  className="w-full"
                   src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${topContributedRepos[item]}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true`}
                   alt="github-social-media-repo"
                 />
@@ -98,8 +99,9 @@ const Profile = () => {
           <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
             🚀 Some of my Pens
           </h2>
-          {/* CSS Shadow Animation */}
-          <div className="flex px-8 gap-2 items-center justify-center flex-wrap">
+          
+          <ExpandableCards />
+          {/* <div className="flex px-8 gap-2 items-center justify-center flex-wrap">
             <a
               href="https://codepen.io/Akr-am/pen/JjvedzJ"
               title="CSS Shadow Animation"
@@ -111,7 +113,7 @@ const Profile = () => {
                 className="w-full h-full"
               />
             </a>
-            {/* JS Arrow Animation */}
+           
             <a
               href="https://codepen.io/Akr-am/pen/gOXKemZ"
               title="JS Arrow Animation"
@@ -123,7 +125,7 @@ const Profile = () => {
                 className="w-full h-full"
               />
             </a>
-            {/* Space CSS Animation*/}
+           
             <a
               href="https://codepen.io/Akr-am/full/jOVvJGV"
               title="Space CSS Animation"
@@ -135,7 +137,7 @@ const Profile = () => {
                 className="w-full h-full"
               />
             </a>
-            {/* Holy Grail Flexbox Layout */}
+           
             <a
               href="https://codepen.io/Akr-am/pen/ZEBYWyX"
               title="Holy Grail Flexbox Layout"
@@ -147,7 +149,6 @@ const Profile = () => {
                 className="w-full h-full"
               />
             </a>
-            {/* CSS Clock Animation*/}
             <a
               href="https://codepen.io/Akr-am/pen/abBMwBb"
               title="CSS Clock Animation"
@@ -159,7 +160,6 @@ const Profile = () => {
                 className="w-full h-full"
               />
             </a>
-            {/* JS Tooltip Effect*/}
             <a
               href="https://codepen.io/Akr-am/full/QWKyQZx"
               title="JS Tooltip Effect"
@@ -171,8 +171,9 @@ const Profile = () => {
                 className="w-full h-full"
               />
             </a>
-          </div>
+          </div> */}
         </div>
+        //////////////////////////////////////////////////////////////////////////
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           🛠️ My favorite tools
         </h2>
