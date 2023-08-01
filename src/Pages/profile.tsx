@@ -84,9 +84,11 @@ const Profile = () => {
         <div className="">
           <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
             {Object.keys(topContributedRepos)?.map((item) => (
-              <a href={`https://github.com/${item}`}>
+              <a href={`https://github.com/${item}`}
+              className="w-full xs:w-[48%] md:w-[30%]"
+              >
                 <img
-                  width={278}
+                  className='w-full'
                   src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${topContributedRepos[item]}&theme=react&bg_color=171717&title_color=F85D7F&hide_border=true&icon_color=F8D866&show_icons=true`}
                   alt="github-social-media-repo"
                 />
