@@ -101,77 +101,7 @@ const Profile = () => {
           </h2>
 
           <ExpandableCards />
-          {/* <div className="flex px-8 gap-2 items-center justify-center flex-wrap">
-            <a
-              href="https://codepen.io/Akr-am/pen/JjvedzJ"
-              title="CSS Shadow Animation"
-              className="w-[32%] h-48"
-            >
-              <img
-                src="https://user-images.githubusercontent.com/69124951/197283827-24c8ffa8-c3ca-4bf6-ad7e-14449fac5cf7.gif"
-                alt="css shadow animation"
-                className="w-full h-full"
-              />
-            </a>
-           
-            <a
-              href="https://codepen.io/Akr-am/pen/gOXKemZ"
-              title="JS Arrow Animation"
-              className="w-[32%] h-48"
-            >
-              <img
-                src="https://user-images.githubusercontent.com/69124951/197331108-aff1dcef-1b6a-4c1a-96b7-ea95b00ec482.gif"
-                alt="JS Arrow Animation"
-                className="w-full h-full"
-              />
-            </a>
-           
-            <a
-              href="https://codepen.io/Akr-am/full/jOVvJGV"
-              title="Space CSS Animation"
-              className="w-[32%] h-48"
-            >
-              <img
-                src="https://user-images.githubusercontent.com/69124951/197331573-90233082-d163-4d5c-bdeb-981ed62acf72.gif"
-                alt="Space CSS Animation"
-                className="w-full h-full"
-              />
-            </a>
-           
-            <a
-              href="https://codepen.io/Akr-am/pen/ZEBYWyX"
-              title="Holy Grail Flexbox Layout"
-              className="w-[32%] h-48"
-            >
-              <img
-                src="https://user-images.githubusercontent.com/69124951/197389695-6c30e4a0-e19a-44e1-b2b6-89f0116455c6.gif"
-                alt="Space CSS Animation"
-                className="w-full h-full"
-              />
-            </a>
-            <a
-              href="https://codepen.io/Akr-am/pen/abBMwBb"
-              title="CSS Clock Animation"
-              className="min-w-[32%] h-48"
-            >
-              <img
-                src="https://user-images.githubusercontent.com/69124951/197332571-059ad37c-d4a5-4c5f-a214-c6da19f1f8f2.gif"
-                alt="CSS Clock Animation"
-                className="w-full h-full"
-              />
-            </a>
-            <a
-              href="https://codepen.io/Akr-am/full/QWKyQZx"
-              title="JS Tooltip Effect"
-              className=" h-48"
-            >
-              <img
-                src="https://user-images.githubusercontent.com/69124951/197332978-1246b10e-0f0f-4dc4-9c3a-e9f3837efac0.gif"
-                alt="CSS Clock Animation"
-                className="w-full h-full"
-              />
-            </a>
-          </div> */}
+         
         </div>
 
         <h2 className="w-full my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
