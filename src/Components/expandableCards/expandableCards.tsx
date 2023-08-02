@@ -7,7 +7,7 @@ import cp4 from "../../assests/cp4.png";
 import cp5 from "../../assests/cp5.png";
 import cp6 from "../../assests/cp6.png";
 const ExpandableCards = () => {
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const pens = [
     {
       title: "JS Arrow Animation",
