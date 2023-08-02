@@ -1,4 +1,4 @@
-import {useState,useEffect} from "react"
+import { useState, useEffect } from "react";
 import logo from "../assests/a.gif";
 const SplashScreen = () => {
   const randomQuery = Math.random().toString(36).substring(7); // Generate a random query string -the reason mentioned below-
@@ -15,7 +15,7 @@ const SplashScreen = () => {
           display: "flex",
           alignItems: "center",
           justifyItems: "center",
-          background: "#232323",
+          // background: "#232323",
         }}
       >
         <div
@@ -25,6 +25,7 @@ const SplashScreen = () => {
             backgroundPosition: "center",
             width: "100%",
             height: "100%",
+            backgroundSize: "cover",
           }}
         ></div>
       </div>
@@ -32,9 +33,6 @@ const SplashScreen = () => {
   );
 };
 export default SplashScreen;
-
-
-
 
 // If you're using a GIF image as a splash screen in your React app and it doesn't work sometimes when you refresh the page, it could be due to browser caching.
 

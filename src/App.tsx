@@ -48,7 +48,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsTimeOut(true);
-    }, 5000);
+    }, 7000);
   }, []);
   // useEffect(() => {
   //   if (
@@ -67,7 +67,7 @@ const App = () => {
       <div className="flex bg-white dark:bg-gray-900/10">
         <Tooltip />
         {isTimeout ? null : <SplashScreen />}
-        {/* <SplashScreen /> */}
+        {/* <SplashScreen/> */}
         <BrowserRouter>
           <Sidebar
             onSidebarHide={() => {
