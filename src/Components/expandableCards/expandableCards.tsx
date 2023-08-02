@@ -7,7 +7,7 @@ import cp4 from "../../assests/cp4.png";
 import cp5 from "../../assests/cp5.png";
 import cp6 from "../../assests/cp6.png";
 const ExpandableCards = () => {
-  const [isHovering, setIsHovering] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
   const pens = [
     {
       title: "JS Arrow Animation",
@@ -44,14 +44,14 @@ const ExpandableCards = () => {
     <div className="expandableContainer h-auto">
       <div className="gallery">
         {pens &&
-          pens.map(({ title, src1, src2 }) => {
+          pens.map(({ title, src1, src2 },index) => {
             return (
               <div
                 className="card"
-                onMouseOver={() => setIsHovering(true)}
-                onMouseOut={() => setIsHovering(false)}
+                onMouseOver={() => setHoveredItem(index)}
+                onMouseOut={() => setHoveredItem(null)}
               >
-                <img src={isHovering ? src2 : src1} alt={title} />
+                <img src={hoveredItem === index ? src2 : src1} alt={title} />
                 <div className="info">
                   <h4 className="title">{title}</h4>
                 </div>
