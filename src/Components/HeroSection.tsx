@@ -1,5 +1,16 @@
+import { useEffect } from "react";
 import { BiChevronRight } from "react-icons/bi";
 const HeroSection = () => {
+  useEffect(() => {
+    const canvas = document.getElementById("myCanvas") as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d")!;
+    const gradient = ctx.createLinearGradient(0,100,20,0);
+    gradient.addColorStop(0,'red')
+    gradient.addColorStop(1,'orange')
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = gradient;
+    ctx.strokeRect(0, 0, canvas.width, canvas.height);
+  }, []);
   return (
     <>
       <section className="relative mb-5">
@@ -9,7 +20,8 @@ const HeroSection = () => {
             backgroundImage: `url("https://www.transparenttextures.com/patterns/food.png")`,
           }}
         ></div>
-        <div className=" pb-1 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-8">
+        <div className="pb-1 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-8">
+          <canvas id="myCanvas" width="100%" height="100%"></canvas>
           <h1 className="mb-4 pt-3 text-3xl dark:text-white font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl">
             We invest in the{" "}
             <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
