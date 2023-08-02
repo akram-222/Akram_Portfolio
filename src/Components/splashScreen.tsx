@@ -15,7 +15,7 @@ const SplashScreen = () => {
           display: "flex",
           alignItems: "center",
           justifyItems: "center",
-          // background: "#232323",
+          background: "#232323",
         }}
       >
         <div
@@ -25,7 +25,6 @@ const SplashScreen = () => {
             backgroundPosition: "center",
             width: "100%",
             height: "100%",
-            backgroundSize: "cover",
           }}
         ></div>
       </div>

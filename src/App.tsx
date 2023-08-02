@@ -48,7 +48,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsTimeOut(true);
-    }, 7000);
+    }, 6000);
   }, []);
   // useEffect(() => {
   //   if (
