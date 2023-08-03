@@ -9,6 +9,7 @@ const Blog = ({ onSidebarHide }) => {
     <div className="animate-fade-in flex-grow">
       <PageTitle
         onSidebarHide={onSidebarHide}
+        
         title={"Blog"}
         subtitle={
           <>
