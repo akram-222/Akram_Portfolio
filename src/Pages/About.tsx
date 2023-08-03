@@ -17,7 +17,7 @@ const About = ({ onSidebarHide }) => {
     });
   }, []);
   return (
-    <div className="animate-fade-in p-2">
+    <div className="animate-fade-in">
       <PageTitle
         className={""}
         onSidebarHide={onSidebarHide}
@@ -31,9 +31,8 @@ const About = ({ onSidebarHide }) => {
         premium_star="Personal Info"
       />
       <UserBioCard userInfo={userInfo} />
-     
+
       <Profile />
-      
     </div>
   );
 };

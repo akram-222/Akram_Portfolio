@@ -70,7 +70,7 @@ const RepoDetails = ({ onSidebarHide }) => {
           <Spinner className={"w-14"} />
         </div>
       ) : (
-        <div className="flex-col flex items-start p-2 w-full h-full flex-wrap">
+        <div className="flex-col flex items-start w-full h-full flex-wrap">
           <PageTitle
             className={"mb-10 h-fit"}
             onSidebarHide={onSidebarHide}

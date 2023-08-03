@@ -24,7 +24,7 @@ const Projects = ({ onSidebarHide }) => {
   }, [repoConfig]);
 
   return (
-    <div className="animate-fade-in p-2 flex-col items-start w-full flex-wrap">
+    <div className="animate-fade-in flex-col items-start w-full flex-wrap">
       {/* <iframe style={{
 
 zIndex: '-1',
