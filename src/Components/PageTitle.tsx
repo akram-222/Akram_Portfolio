@@ -13,7 +13,7 @@ const PageTitle = ({
   return (
     <>
       <div
-        className={`${className} py-3 px-2 flex flex-col w-full justify-between`}
+        className={`${className} px-2 flex flex-col w-full justify-between`}
       >
         <BreadCrumb />
         <div className="">
