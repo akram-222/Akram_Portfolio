@@ -7,7 +7,7 @@ const HeroSection = () => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
-    setMousePosition( x: -mouseX / 10, y: -mouseY / 10 });
+    setMousePosition({ x: -mouseX / 10, y: -mouseY / 10 });
     console.log(mousePosition);
   };
 
