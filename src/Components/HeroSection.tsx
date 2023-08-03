@@ -19,9 +19,8 @@ const HeroSection = () => {
           className="w-full h-full shadow-xl absolute grayscale opacity-20"
           style={{
             backgroundImage: `url("https://www.transparenttextures.com/patterns/food.png")`,
-            backgroundPoxsition: `${mousePosition.y / 2}px ${
-              mousePosition.y / 2
-            }px`,
+            backgroundPosition: `${mousePosition.y}px ${mousePosition.y}px`,
+            transition: `all .4s ease-in-out`,
           }}
         ></div>
         <div className="pb-1 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-8">
