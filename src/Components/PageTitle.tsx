@@ -4,6 +4,7 @@ import { AiOutlineDoubleRight } from "react-icons/ai";
 import { CgMenuLeft } from "react-icons/cg";
 const PageTitle = ({
   onSidebarHide,
+  data,
   title,
   subtitle,
   premium_star,
@@ -13,7 +14,7 @@ const PageTitle = ({
   return (
     <>
       <div className={`${className} px-2 flex flex-col w-full justify-between`}>
-        <BreadCrumb onSidebarHide={onSidebarHide} />
+        <BreadCrumb data={data} />
         <div className="">
           <div className="flex items-center">
             <div className="text-3xl font-bold text-white">{title}</div>
@@ -31,13 +32,6 @@ const PageTitle = ({
             ) : (
               ""
             )}
-            <button
-              onClick={onSidebarHide}
-              type="button"
-              // className={`ml-auto block sm:hidden`}
-            >
-              <CgMenuLeft size={20} />
-            </button>
           </div>
           <div className="flex items-center">
             <AiOutlineDoubleRight size={16} />
