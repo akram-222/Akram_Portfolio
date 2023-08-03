@@ -4,13 +4,11 @@ import PageTitle from "../Components/PageTitle";
 import PinArticle from "../Components/PinArticle";
 import HeroSection from "../Components/HeroSection";
 const Blog = ({ onSidebarHide }) => {
-  const [data, setData] = useState(["nnnn"]);
   const { devBlogs } = useDevBlogs();
   return (
     <div className="animate-fade-in flex-grow">
       <PageTitle
         onSidebarHide={onSidebarHide}
-        data={data}
         title={"Blog"}
         subtitle={
           <>

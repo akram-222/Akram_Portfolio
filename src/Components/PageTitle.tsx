@@ -4,7 +4,6 @@ import { AiOutlineDoubleRight } from "react-icons/ai";
 import { CgMenuLeft } from "react-icons/cg";
 const PageTitle = ({
   onSidebarHide,
-  data,
   title,
   subtitle,
   premium_star,
@@ -14,7 +13,7 @@ const PageTitle = ({
   return (
     <>
       <div className={`${className} px-2 flex flex-col w-full justify-between`}>
-        <BreadCrumb data={data} />
+        <BreadCrumb />
         <div className="">
           <div className="flex items-center">
             <div className="text-3xl font-bold text-white">{title}</div>

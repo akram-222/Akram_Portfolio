@@ -1,5 +1,5 @@
 import { BsLayoutSidebarInset } from "react-icons/bs";
-const BreadCrumb = ({ data }) => {
+const BreadCrumb = () => {
   return (
     <nav
       className="flex border border-gray-600/20 mb-3 py-1 px-3 rounded hidden sm:block"
@@ -9,11 +9,6 @@ const BreadCrumb = ({ data }) => {
         <li className="cursor-pointer inline-flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
           <BsLayoutSidebarInset size={23} />
         </li>
-        {data?.map((item) => (
-          <li className="cursor-pointer inline-flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-            {item}
-          </li>
-        ))}
       </ol>
     </nav>
   );
