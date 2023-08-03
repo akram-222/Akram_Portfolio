@@ -20,7 +20,6 @@ const HeroSection = () => {
           style={{
             backgroundImage: `url("https://www.transparenttextures.com/patterns/food.png")`,
             backgroundPosition: `${mousePosition.y}px ${mousePosition.y}px`,
-            transition: `all .4s ease-in-out`,
           }}
         ></div>
         <div className="pb-1 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-8">
