@@ -6,18 +6,18 @@ const PinArticle = ({
   url,
   tagList,
   social_image,
-}) => {
+},index) => {
   return (
     <a
       className={`${className} bg-card border border-gray-600/30 rounded text-white overflow-hidden group min-h-[100px] relative inline-block`}
-      style={{
-        backgroundImage: `url('https://w7.pngwing.com/pngs/800/772/png-transparent-background-notes-color-notes-music-cartoon-background.png'})`,
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-      }}
+      // style={{
+      //   backgroundImage: `url(https://as1.ftcdn.net/v2/jpg/03/00/65/80/1000_F_300658058_93tCyxBdkospk5Gj4o4hkmy8CvcfwbCv.jpg)`,
+      //   backgroundSize: "cover",
+      //   backgroundAttachment: "fixed",
+      // }}
       href={url}
     >
-      <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10"></div>
+      <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 group-hover:-translate-y-full transition">{index}</div>
       <div className="p-4 absolute transition translate-y-full group-hover:translate-y-0 bottom-0 left-0 w-full bg-card z-20 flex flex-col justify-end">
         <h2 className="overflow-hidden whitespace-nowrap overflow-ellipsis font-semibold text-sm md:text-lg text-gray-100 leading-tight w-[90%]">
           {title}
