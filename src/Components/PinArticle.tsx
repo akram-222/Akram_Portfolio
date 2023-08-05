@@ -1,7 +1,16 @@
-const PinArticle = ({ className, title, createdAt, user, url, tagList }) => {
+const PinArticle = ({
+  className,
+  title,
+  createdAt,
+  user,
+  url,
+  tagList,
+  social_image,
+}) => {
   return (
     <a
       className={`${className} rounded-xl min-h-[100px] relative inline-block`}
+      style={{ backgroundImage: `${social_image}` }}
       href={url}
     >
       <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10"></div>
