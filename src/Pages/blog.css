@@ -2,7 +2,7 @@
   height: 500px;
   display: grid;
   grid-auto-columns: 1fr;
-  gap: 1em;
+  gap: 0.5em;
   grid-template-areas:
     "one one two  "
     "one one three  "
