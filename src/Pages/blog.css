@@ -6,7 +6,7 @@
   grid-template-areas:
     "one one two  "
     "one one three  "
-    "four four four  ";
+    "four four three  ";
 }
 
 .grid-item:nth-child(1) {
