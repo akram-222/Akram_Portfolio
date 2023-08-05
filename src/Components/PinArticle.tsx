@@ -10,11 +10,11 @@ const PinArticle = ({
   return (
     <a
       className={`${className} bg-card border border-gray-600/30 rounded text-white overflow-hidden group min-h-[100px] relative inline-block`}
-      // style={{
-      //   backgroundImage: `url(${social_image})`,
-      //   backgroundSize: "cover",
-      //   backgroundAttachment: "fixed",
-      // }}
+      style={{
+        backgroundImage: `url('https://w7.pngwing.com/pngs/800/772/png-transparent-background-notes-color-notes-music-cartoon-background.png'})`,
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+      }}
       href={url}
     >
       <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10"></div>
