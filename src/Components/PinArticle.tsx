@@ -6,7 +6,9 @@ const PinArticle = ({ className, title, createdAt, user, url, tagList }) => {
     >
       <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10"></div>
       <div className="p-4 absolute bottom-0 left-0 w-full h-full z-20 flex flex-col justify-end">
-        <h2 className="font-semibold text-sm sm:text-lg text-gray-100 leading-tight">{title}</h2>
+        <h2 className="font-semibold text-sm md:text-lg text-gray-100 leading-tight">
+          {title}
+        </h2>
         <div className="flex mt-3">
           <img
             alt=""
