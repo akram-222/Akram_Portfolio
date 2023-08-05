@@ -19,11 +19,11 @@ const PinArticle = ({
     >
       <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10"></div>
       <div className="p-4 absolute transition translate-y-full group-hover:translate-y-0 bottom-0 left-0 w-full bg-card z-20 flex flex-col justify-end">
-        <h2 className="overflow-hidden font-semibold text-sm md:text-lg text-gray-100 leading-tight w-[90%]" 
-        style={{
-          text-wrap: nowrap;
-          text-overflow: ellipsis;
-        }}
+        <h2
+          className="overflow-hidden overflow-ellipsis font-semibold text-sm md:text-lg text-gray-100 leading-tight w-[90%]"
+          style={{
+            textWrap: "nowrap",
+          }}
         >
           {title}
         </h2>
