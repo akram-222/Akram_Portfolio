@@ -31,23 +31,6 @@
 .grid-item:nth-child(6) {
   grid-area: six;
 }
-@media (max-width: 940px) {
-  .grid-container {
-    grid-template-areas:
-      "one one two  "
-      "three three three  "
-      "four four four four four";
-  }
-}
-
-@media (max-width: 640px) {
-  .grid-container {
-    grid-template-areas:
-      "one one two two two"
-      "three three three"
-      "four four four four four";
-  }
-}
 
 @media (max-width: 460px) {
   .grid-container {
@@ -55,6 +38,8 @@
       "one"
       "two"
       "three"
-      "four";
+      "four"
+      "five"
+      "six";
   }
 }
