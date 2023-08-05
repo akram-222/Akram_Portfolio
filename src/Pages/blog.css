@@ -2,11 +2,12 @@
   height: 500px;
   display: grid;
   grid-auto-columns: 1fr;
-  gap: 1em;
+  gap: 0.5em;
   grid-template-areas:
     "one one two  "
     "one one three  "
-    "four four four  ";
+    "six four three  "
+    "six five five  ";
 }
 
 .grid-item:nth-child(1) {
@@ -24,7 +25,12 @@
 .grid-item:nth-child(4) {
   grid-area: four;
 }
-
+.grid-item:nth-child(5) {
+  grid-area: five;
+}
+.grid-item:nth-child(6) {
+  grid-area: six;
+}
 @media (max-width: 940px) {
   .grid-container {
     grid-template-areas:
