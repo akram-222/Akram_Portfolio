@@ -18,7 +18,7 @@ const PinArticle = ({
       href={url}
     >
       <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10"></div>
-      <div className="p-4 absolute transition translate-y-full group-hover:translate-y-0 bottom-0 left-0 w-full h-full z-20 flex flex-col justify-end">
+      <div className="p-4 absolute transition translate-y-full group-hover:translate-y-0 bottom-0 left-0 w-full bg-details z-20 flex flex-col justify-end">
         <h2 className="font-semibold text-sm md:text-lg text-gray-100 leading-tight">
           {title}
         </h2>
