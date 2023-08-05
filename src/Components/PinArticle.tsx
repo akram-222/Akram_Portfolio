@@ -9,12 +9,12 @@ const PinArticle = ({
 }) => {
   return (
     <a
-      className={`${className} overflow-hidden group rounded-xl min-h-[100px] relative inline-block`}
-      // style={{
-      //   backgroundImage: `url(${social_image})`,
-      //   backgroundSize: "cover",
-      //   backgroundAttachment: "fixed",
-      // }}
+      className={`${className} bg-card border border-gray-600/30 rounded text-white overflow-hidden group min-h-[100px] relative inline-block`}
+      style={{
+        backgroundImage: `url(${social_image})`,
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+      }}
       href={url}
     >
       <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10"></div>
