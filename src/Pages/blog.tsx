@@ -65,14 +65,12 @@ const Blog = ({ onSidebarHide }) => {
       />
       <div className="w-full">
         <HeroSection />
-        <div className="flex flex-wrap justify-between px-2 lg:p-0">
+        <div className="flex overflow-x-auto justify-between px-2 lg:p-0">
           {pinnedBlogs.map(
             ({ title, created_at, user, url, tag_list, social_image }, i) => (
               <PinArticle
                 key={`pinned-${i}`}
-                className={`w-full xs:w-[50%] md:w-[32%] h-40 xl:h-48 pinArticleWall pinArticleWall-${
-                  i + 1
-                } shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
+                className={`w-full mx-1 xs:w-[50%] md:w-[32%] h-40 xl:h-48 pinArticleWall shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
                 title={title}
                 createdAt={created_at}
                 user={user}
