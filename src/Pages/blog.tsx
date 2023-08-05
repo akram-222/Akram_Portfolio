@@ -77,7 +77,7 @@ const Blog = ({ onSidebarHide }) => {
                 url={url}
                 tagList={tag_list}
                 social_image={social_image}
-                index={i}
+                index={i + 1}
               />
             )
           )}
@@ -97,7 +97,7 @@ const Blog = ({ onSidebarHide }) => {
                   url={url}
                   social_image={social_image}
                   tagList={tag_list}
-                  index={i}
+                  index={i + 4}
                 />
               )
             )}
