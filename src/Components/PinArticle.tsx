@@ -18,7 +18,10 @@ const PinArticle = ({
       // }}
       href={url}
     >
-      <div className="rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 group-hover:-translate-y-full transition">
+      <div
+        style={{ fontFamily: "emoji" }}
+        className="text-5xl font-bold flex items-center justify-center rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 group-hover:-translate-y-full transition"
+      >
         {index}
       </div>
       <div className="p-4 absolute transition translate-y-full group-hover:translate-y-0 bottom-0 left-0 w-full bg-card z-20 flex flex-col justify-end">
