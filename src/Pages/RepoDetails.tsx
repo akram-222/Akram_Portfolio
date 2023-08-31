@@ -181,27 +181,47 @@ const RepoDetails = ({ onSidebarHide }) => {
 
     fetchData();
   }, []);
-
   const onClick = useCallback(() => {
     setRunning(true);
-
-    setTimeout(() => {
-      confetti({
-        particleCount: 100,
-        startVelocity: 30,
-        spread: 360,
-        angle: 40,
-        origin: {
-          x: 0.5,
-          y: 0,
-        },
-      });
-    }, 2000);
-
+  
+    // First setTimeout
     setTimeout(() => {
       setRunning(false);
-    }, 1000);
+  
+      // Second setTimeout
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          startVelocity: 30,
+          spread: 360,
+          angle: 40,
+          origin: {
+            x: 0.5,
+            y: 0,
+          },
+        });
+      }, 0);
+    }, 12000);
   }, []);
+  // const onClick = useCallback(() => {
+  //   setRunning(true);
+  //   setTimeout(() => {
+  //     confetti({
+  //       particleCount: 100,
+  //       startVelocity: 30,
+  //       spread: 360,
+  //       angle: 40,
+  //       origin: {
+  //         x: 0.5,
+  //         y: 0,
+  //       },
+  //     });
+  //   }, 2000);
+
+  //   setTimeout(() => {
+  //     setRunning(false);
+  //   }, 1000);
+  // }, []);
 
   return (
     <>
@@ -235,7 +255,7 @@ const RepoDetails = ({ onSidebarHide }) => {
               onClick={onClick}
               className="m-auto transition-all h-9 group overflow-hidden flex gap-2 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
             >
-              <span className="mt-1">Download</span>
+              <span className="mt-1 w-20">{isRun?"Cancel":"Download"}</span>
               <a
                 ref={downloadBtnRef}
                 className={`${
