@@ -36,18 +36,18 @@ const ThemeSwitcherBtn = () => {
   }, []);
   return (
     <>
-      <div className="bg-blue-600 dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
+      <div className="bg-blue-600 flex-nowrap dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl w-full flex items-center justify-start sm:justify-center xl:justify-start">
         <button
           onClick={() => changeMode()}
           type="button"
-          className={`flex items-center justify-center xl:justify-start w-full h-full dark:text-gray-400 text-sm p-2.5`}
+          className={`flex flex-nowrap items-center justify-center xl:justify-start w-full h-full dark:text-gray-400 text-sm p-2.5`}
         >
           {!isDark ? (
             <BsSun size={30} className="animate-fade-in-top text-white" />
           ) : (
             <BsMoon size={30} className="animate-fade-in-top text-white" />
           )}
-          <div className="block sm:hidden xl:block ml-3">
+          <div className="block sm:hidden xl:block ml-3 flex flex-shrink-0">
             <div className="text-sm font-bold text-white">
               Convert mode to :
             </div>

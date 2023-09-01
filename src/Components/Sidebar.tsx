@@ -54,7 +54,7 @@ function Sidebar() {
         {sidebarItems[1].map((i) => (
           <MenuItem key={i.id} item={i} onClick={setSelected} />
         ))}
-       <div className="flex-grow" />
+       {/* <div className="flex-grow" /> */}
         <div className="w-full p-3 h-28 hidden sm:block sm:h-20 xl:h-32">
           <div
             className="rounded-xl w-full h-full px-3 sm:px-0 xl:px-3 overflow-hidden"
