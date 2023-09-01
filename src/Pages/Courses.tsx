@@ -10,7 +10,7 @@ const Courses = () => {
   }
   const [eventsList, setEventsList] = useState<eventType[]>([]);
   return (
-    <div className="animate-fade-in">
+    <div className="animate-fade-in w-full">
       <PageTitle
         className={""}
         title="Courses"
@@ -24,7 +24,7 @@ const Courses = () => {
         premium_star="Front-end"
       />
       <section className="flex w-full h-full relative">
-        <h1>This is a list of course notes</h1>
+        <h1 className='w-full text-2xl text-blue-100 uppercase font-bold'>This is a list of course notes</h1>
       </section>
     </div>
   );
