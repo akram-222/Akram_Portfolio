@@ -23,8 +23,8 @@ const Courses = () => {
         is_premium={true}
         premium_star="Front-end"
       />
-      <section className="flex w-full h-full relative">
-        <h1 className='w-full text-2xl text-blue-100 uppercase font-bold'>This is a list of course notes</h1>
+      <section className="flex w-full h-full relative p-5 border border-dashed border-gray-600/60 mt-4">
+        <h1 className='w-full text-center text-2xl text-blue-100 uppercase font-bold'>"This is a list of course notes"</h1>
       </section>
     </div>
   );
