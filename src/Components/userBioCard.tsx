@@ -2,8 +2,8 @@ import cat from "../assests/cat.png";
 const UserBioCard = ({ userInfo }) => {
   return (
     <>
-      <div className="flex relative w-full flex-wrap dark:bg-card p-8 rounded-lg">
-        <img className="absolute -top-[60px] right-10 w-14" src={cat} />
+      <div className="flex relative mt-2 w-full flex-wrap dark:bg-card p-8 rounded-lg">
+        {/* <img className="absolute -top-[60px] right-10 w-14" src={cat} /> */}
         <h1 className="flex w-full mb-5 gap-2 justify-center md:justify-start items-center text-center text-3xl text-white font-bold">
           Welcome to Akram's profile!
           <img
