@@ -1,4 +1,4 @@
-const SocialShareButton = ({url,platform}) => {
+const SocialShareButton = ({url,platform,children}) => {
 
   return (
     <button
@@ -12,7 +12,7 @@ const SocialShareButton = ({url,platform}) => {
         );
       }}
     >
-      Share on Twitter
+      {children}
     </button>
   );
 };
