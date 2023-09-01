@@ -5,7 +5,7 @@ import Sidebar from "./Components/Sidebar";
 import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
 import Dashboard from "./Pages/Dashboard";
-import Status from "./Pages/Status";
+import Courses from "./Pages/Courses";
 import Search from "./Pages/Search";
 import Tooltip from "./Components/Tooltip";
 import RepoDetails from "./Pages/RepoDetails";
@@ -114,9 +114,9 @@ const App = () => {
                   );
                 })}
                 <Route
-                  path="/status"
+                  path="/courses"
                   element={
-                    <Status
+                    <Courses
                       
                     />
                   }

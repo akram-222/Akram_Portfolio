@@ -57,7 +57,7 @@ const sidebarItems = [
     },
     {
       id: "4",
-      title: "Status",
+      title: "Courses",
       notifications: false,
       icon: (
         <BsTagsFill size={30} className="text-blue-400 dark:text-blue-400" />
