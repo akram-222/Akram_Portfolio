@@ -19,11 +19,11 @@ function Sidebar() {
 
   
   return (
-    <div className={`${isSidebarOpen ? "sm:w-20 xl:w-60":"w-0"} sm:block flex-shrink-0`}>
+    <div className={`${isSidebarOpen ? "sm:w-20 xl:w-60":"w-0 "} transition sm:block flex-shrink-0`}>
     <div
       className={`
-        fixed inset-y-0 left-0 bg-gray-200 flex border-r border-gray-300 dark:border-transparent dark:bg-card w-full sm:w-20 xl:w-60 flex-col z-10
-      ${isSidebarOpen ? "flex":"hidden"}
+        fixed inset-y-0 left-0 bg-gray-200 transition flex border-r border-gray-300 dark:border-transparent dark:bg-card  flex-col z-10
+      ${isSidebarOpen ?  "sm:w-20 xl:w-60":"w-0 "}
         `}
     >
       <div className="flex-shrink-0 overflow-hidden p-2">

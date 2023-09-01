@@ -64,8 +64,8 @@ const App = () => {
             
             <Sidebar
           
-          />.
-          
+          />
+        
             <div className="bg-1 p-2 relative flex-grow flex flex-wrap">
               <Routes>
                 {isLogging ? (

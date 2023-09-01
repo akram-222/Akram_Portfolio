@@ -1,4 +1,4 @@
-import { BsLayoutSidebarInset } from "react-icons/bs";
+import { TbLayoutSidebarLeftExpand,TbLayoutSidebarRightExpand } from "react-icons/tb";
 import {useState,useContext} from 'react';
 import {SidebarContext } from "../Contexts/sidebarContext"
 const BreadCrumb = () => {
@@ -13,7 +13,7 @@ const BreadCrumb = () => {
     >
       <ol className="flex sticky top-0 p-1 justify-between w-full items-center space-x-1 md:space-x-3">
         <li onClick={toggleSidebar} className="cursor-pointer inline-flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-          <BsLayoutSidebarInset size={23} />
+          {isSidebarOpen ?<TbLayoutSidebarRightExpand size={23} />:<TbLayoutSidebarLeftExpand size={23} />}
         </li>
       </ol>
     </nav>
