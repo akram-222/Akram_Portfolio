@@ -17,7 +17,6 @@ import About from "./Pages/About";
 import Footer from "./Components/Footer";
 import Terminal from "./Components/cmd/terminal";
 const App = () => {
-  const [showSidebar, onSetShowSidebar] = useState(false);
   const [isLogging, setIsLogging] = useState(false);
   const [isTimeout, setIsTimeOut] = useState(false);
   const [theme, setTheme] = useState("dark");
@@ -50,18 +49,7 @@ const App = () => {
       setIsTimeOut(true);
     }, 5000);
   }, []);
-  // useEffect(() => {
-  //   if (
-  //     localStorage.getItem("color-theme") === "dark" ||
-  //     (!("color-theme" in localStorage) &&
-  //       window.matchMedia("(prefers-color-scheme: dark)").matches)
-  //   ) {
-  //     document.documentElement.classList.add("dark");
-  //     localStorage.setItem("color-theme", "dark");
-  //   } else {
-  //     document.documentElement.classList.remove("dark");
-  //   }
-  // }, []);
+
   return (
     <DevBlogsContextProvider>
       <div className="flex bg-white dark:bg-gray-900/10">
@@ -70,10 +58,7 @@ const App = () => {
         {/* <SplashScreen/> */}
         <BrowserRouter>
           <Sidebar
-            onSidebarHide={() => {
-              onSetShowSidebar(false);
-            }}
-            showSidebar={showSidebar}
+          
           />
           <div className="flex min-h-screen w-full">
             <div className="w-full hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
@@ -86,9 +71,7 @@ const App = () => {
                     path="/dashboard"
                     element={
                       <Dashboard
-                        onSidebarHide={() => {
-                          onSetShowSidebar(true);
-                        }}
+                       
                       />
                     }
                   />
@@ -97,9 +80,7 @@ const App = () => {
                   path="/projects"
                   element={
                     <Projects
-                      onSidebarHide={() => {
-                        onSetShowSidebar(true);
-                      }}
+                     
                     />
                   }
                 />
@@ -107,9 +88,7 @@ const App = () => {
                   path="projects/:repoName"
                   element={
                     <RepoDetails
-                      onSidebarHide={() => {
-                        onSetShowSidebar(true);
-                      }}
+                     
                     />
                   }
                 />
@@ -117,9 +96,7 @@ const App = () => {
                   path="/search"
                   element={
                     <Search
-                      onSidebarHide={() => {
-                        onSetShowSidebar(true);
-                      }}
+                      
                     />
                   }
                 />
@@ -130,9 +107,7 @@ const App = () => {
                       path={route}
                       element={
                         <About
-                          onSidebarHide={() => {
-                            onSetShowSidebar(true);
-                          }}
+                         
                         />
                       }
                     />
@@ -142,9 +117,7 @@ const App = () => {
                   path="/status"
                   element={
                     <Status
-                      onSidebarHide={() => {
-                        onSetShowSidebar(true);
-                      }}
+                      
                     />
                   }
                 />
@@ -152,9 +125,7 @@ const App = () => {
                   path="/blog"
                   element={
                     <Blog
-                      onSidebarHide={() => {
-                        onSetShowSidebar(true);
-                      }}
+                     
                     />
                   }
                 />
@@ -167,9 +138,7 @@ const App = () => {
                         <Login
                           setIsLogging={setIsLogging}
                           isLogging={isLogging}
-                          onSidebarHide={() => {
-                            onSetShowSidebar(true);
-                          }}
+                         
                         />
                       }
                     />

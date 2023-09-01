@@ -1,5 +1,4 @@
 import { AiFillPieChart } from "react-icons/ai";
-import listPng from "../assests/sidebar/list/list.png";
 import {
   BsFillGearFill,
   BsStars,
@@ -29,7 +28,7 @@ const sidebarItems = [
       title: "Projects",
       notifications: false,
       icon: (
-        <img src={listPng} className="w-30" alt="projects list"/>
+        <FaFeatherAlt size={30} className="text-lime-400 dark:text-lime-400" />
       ),
       bgColor: "bg-lime-900 dark:bg-lime-900",
       textColor: "text-lime-900 dark:text-lime-900",

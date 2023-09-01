@@ -9,7 +9,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { BsFilterRight } from "react-icons/bs";
 // import SearchComponent from "../Components/search comp/SearchComponent";
 
-const Projects = ({ onSidebarHide }) => {
+const Projects = () => {
   const [repoConfig, setRepoConfig] = useState({ per_page: 12, page: 1 });
   const [repos, setRepos] = useState([]);
   const [isLoad, setLoad] = useState(true);
@@ -36,7 +36,6 @@ mixBlendMode: 'overlay'
         */}
       <PageTitle
         className={"mb-10 h-fit"}
-        onSidebarHide={onSidebarHide}
         title="Projects"
         subtitle={
           <>

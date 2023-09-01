@@ -8,12 +8,11 @@ import Segmentation from "../Components/Segmentation";
 // import Goals from "../Components/Goals";
 import SearchBtn from "../Components/search comp/searchBtn";
 
-const Dashboard = ({ onSidebarHide }) => {
+const Dashboard = () => {
   return (
     <>
       <PageTitle
         className={""}
-        onSidebarHide={onSidebarHide}
         title="Dashboard"
         subtitle={
           <>

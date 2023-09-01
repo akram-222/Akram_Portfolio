@@ -42,14 +42,13 @@ const SubscriptionForm = () => {
   );
 };
 
-const Blog = ({ onSidebarHide }) => {
+const Blog = () => {
   const { devBlogs } = useDevBlogs();
   const pinnedBlogs = devBlogs?.slice(2, 5) ?? [];
   const remainingBlogs = devBlogs?.slice(5) ?? [];
   return (
     <div className="animate-fade-in flex-grow">
       <PageTitle
-        onSidebarHide={onSidebarHide}
         title="Blog"
         subtitle={
           <>

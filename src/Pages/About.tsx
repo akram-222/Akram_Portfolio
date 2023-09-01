@@ -7,7 +7,7 @@ import UserBioCard from "../Components/userBioCard";
 import { __getUserInfo } from "../Utils/github/__getUserInfo";
 import Profile from "./profile";
 
-const About = ({ onSidebarHide }) => {
+const About = () => {
   const [userInfo, setUserInfo] = useState<any>({});
   const [isLoad, setLoading] = useState(true);
   useEffect(() => {
@@ -20,7 +20,6 @@ const About = ({ onSidebarHide }) => {
     <div className="animate-fade-in">
       <PageTitle
         className={""}
-        onSidebarHide={onSidebarHide}
         title="About"
         subtitle={
           <>

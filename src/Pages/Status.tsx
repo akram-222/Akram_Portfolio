@@ -2,7 +2,7 @@ import { useState } from "react";
 import Calendar from "../Components/Calendar";
 import CalendarEvents from "../Components/CalendarEvents";
 import PageTitle from "../Components/PageTitle";
-const Status = ({ onSidebarHide }) => {
+const Status = () => {
   interface eventType {
     title: string;
     isDone: boolean;
@@ -13,7 +13,6 @@ const Status = ({ onSidebarHide }) => {
     <div className="animate-fade-in">
       <PageTitle
         className={""}
-        onSidebarHide={onSidebarHide}
         title="Status"
         subtitle={
           <>

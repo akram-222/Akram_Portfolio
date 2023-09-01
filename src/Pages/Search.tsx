@@ -3,7 +3,7 @@ import SearchInput from "../Components/SearchInput";
 import SearchResultItem from "../Components/SearchResultItem";
 import SearchPreferences from "../Components/SearchPreferences";
 import { BsGear } from "react-icons/bs";
-function Search({ onSidebarHide }) {
+function Search() {
   const [isSearchOptionHidden, setSearchOptionHidden] = useState(true);
   const toggleSearchOptionVisibility = () =>
     setSearchOptionHidden(!isSearchOptionHidden);

@@ -5,7 +5,7 @@ import sidebarItems from "./SidebarItems";
 import logo from "../assests/a.png";
 import ThemeSwitcherBtn from "./themeSwitcherBtn";
 import { BsXCircle } from "react-icons/bs";
-function Sidebar({ onSidebarHide, showSidebar }) {
+function Sidebar() {
   const [selected, setSelected] = useState("0");
   const { dashOffset, indicatorWidth, precentage } = useSpring({
     dashOffset: 26.015,
@@ -19,7 +19,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
     <div
       className={`
         fixed inset-y-0 left-0 bg-gray-200 border-r border-gray-300 dark:border-transparent dark:bg-card w-full sm:w-20 xl:w-60 sm:flex flex-col z-10
-        ${showSidebar ? "flex" : "hidden"}
+       ${sessionStorage.getItem("isOpen") ? "flex":"hidden"}
       `}
     >
       <div className="flex-shrink-0 overflow-hidden p-2">
@@ -33,9 +33,7 @@ function Sidebar({ onSidebarHide, showSidebar }) {
             Akram Ashraf A.
           </div>
           <div className="flex-grow sm:hidden xl:block" />
-          <button onClick={onSidebarHide} type="button" className={`sm:hidden`}>
-            <BsXCircle size={20} />
-          </button>
+         
         </div>
       </div>
       <div className="flex-grow overflow-x-hidden overflow-y-auto flex flex-col">

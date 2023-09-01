@@ -10,7 +10,7 @@ import { octokit } from "../Utils/github/OctokitConstructor";
 import { BsDownload, BsCheck, BsEye } from "react-icons/bs";
 import { BiLoader } from "react-icons/bi";
 
-const RepoDetails = ({ onSidebarHide }) => {
+const RepoDetails = () => {
   const params = useParams();
   const downloadBtnRef = useRef<HTMLAnchorElement | null>(null);
   const [currentRepo, setCurrentRepo] = useState<any>(null);
@@ -74,7 +74,6 @@ const RepoDetails = ({ onSidebarHide }) => {
         <div className="flex-col flex items-start w-full h-full flex-wrap">
           <PageTitle
             className={"mb-10 h-fit"}
-            onSidebarHide={onSidebarHide}
             title={currentRepo.name}
             subtitle={
               <>

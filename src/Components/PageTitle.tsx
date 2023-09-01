@@ -3,7 +3,7 @@ import { BsFillStarFill } from "react-icons/bs";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 import { CgMenuLeft } from "react-icons/cg";
 const PageTitle = ({
-  onSidebarHide,
+  
   title,
   subtitle,
   premium_star,

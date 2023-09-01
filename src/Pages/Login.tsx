@@ -9,7 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import logo from "../assests/a.png";
 import PageTitle from "../Components/PageTitle";
-const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
+const Login = ({ isLogging, setIsLogging }) => {
   const accessTokenInputFeild = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
   const [accessTokenVal, setAccessTokenVal] = useState("");
@@ -52,7 +52,6 @@ const Login = ({ isLogging, setIsLogging, onSidebarHide }) => {
     <div className="animate-fade-in w-full">
       <PageTitle
         className={""}
-        onSidebarHide={onSidebarHide}
         title="Login Page"
         subtitle={
           <>
