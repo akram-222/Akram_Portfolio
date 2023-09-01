@@ -23,8 +23,14 @@ const Courses = () => {
         is_premium={true}
         premium_star="Front-end"
       />
-      <section className="flex w-full h-full relative p-5 border border-dashed border-gray-600/60 mt-4">
-        <h1 className='w-full text-center text-2xl text-blue-100 uppercase font-bold'>"This is a list of course notes"</h1>
+      <section className="flex flex-col w-full h-full relative p-5 border border-dashed border-gray-600/60 mt-4">
+        <h1 className='w-full text-center text-2xl text-blue-100 uppercase font-bold'>"This is a collection of course notes."</h1>
+      <div className="flex flex-wrap gap-4 items-center mt-5">
+        <div className="w-36  h-36 rounded-lg shadow-xl cursor-pointer bg-details p-2 hover:rotate-[-10deg] hover:bg-card">1</div>
+        <div className="w-36  h-36 rounded-lg shadow-xl cursor-pointer bg-details p-2 hover:rotate-[-10deg] hover:bg-card">1</div>
+        <div className="w-36  h-36 rounded-lg shadow-xl cursor-pointer bg-details p-2 hover:rotate-[-10deg] hover:bg-card">1</div>
+        <div className="w-36  h-36 rounded-lg shadow-xl cursor-pointer bg-details p-2 hover:rotate-[-10deg] hover:bg-card">1</div>
+        </div>
       </section>
     </div>
   );
