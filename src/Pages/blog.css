@@ -4,9 +4,10 @@
   grid-auto-columns: 1fr;
   gap: 0.5em;
   grid-template-areas:
-    "one one two  "
-    "one one three  "
-    "four four three  ";
+   grid-template-areas:
+"one one two  two"
+"one one three  three"
+"four four three  three"
 }
 
 .grid-item:nth-child(1) {
@@ -24,18 +25,19 @@
 
 @media (max-width: 940px) {
   .grid-container {
-    grid-template-areas:
-      "one one two  "
-      "three three three  "
-      "four four four four four";
+   grid-template-areas:
+"one one two  two"
+"one one three  three"
+"four four three  three"
   }
 }
 @media (max-width: 640px) {
   .grid-container {
-    grid-template-areas:
-      "one one two two two"
-      "three three three"
-      "four four four four four";
+  grid-template-areas:
+"one one two two"
+"one one two two"
+"three three four four"
+"three three four four"
   }
 }
 @media (max-width: 460px) {
