@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect,useContext } from "react";
 import Sidebar from "./Components/Sidebar";
 import NotFoundRoute from "./Pages/404";
 import Projects from "./Pages/Projects";
@@ -59,13 +59,13 @@ const App = () => {
         {isTimeout ? null : <SplashScreen />}
         {/* <SplashScreen/> */}
         <BrowserRouter>
-          <Sidebar
-          
-          />
+        
           <div className="flex min-h-screen w-full">
-            <div className="w-full hidden sm:block sm:w-20 xl:w-60 flex-shrink-0">
-              .
-            </div>
+            
+            <Sidebar
+          
+          />.
+          
             <div className="bg-1 p-2 relative flex-grow flex flex-wrap">
               <Routes>
                 {isLogging ? (
