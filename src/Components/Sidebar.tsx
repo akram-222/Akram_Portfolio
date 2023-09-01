@@ -19,21 +19,21 @@ function Sidebar() {
 
   
   return (
-    <div className={`${isSidebarOpen ? "sm:w-20 xl:w-60":""} w-0 transition-all duration-300 sm:block flex-shrink-0`}>
+    // <div className={`${isSidebarOpen ? "sm:w-20 xl:w-60":""} w-0 transition-all duration-500 sm:block flex-shrink-0`}>
     <div
       className={`
-        fixed inset-y-0 left-0 bg-gray-200 transition-all duration-200 sm:w-20 xl:w-60  flex border-r border-gray-300 dark:border-transparent dark:bg-card  flex-col z-10
-      ${isSidebarOpen ?  "":"-translate-x-full"}
+      sm:block flex-shrink-0 inset-y-0 left-0 bg-gray-200 flex-nowrap transition-all duration-500  flex border-r border-gray-300 dark:border-transparent dark:bg-card  flex-col z-10
+      ${isSidebarOpen ?  "sm:w-20 xl:w-60 opacity-100":"w-0 opacity-0"}
         `}
     >
       <div className="flex-shrink-0 overflow-hidden p-2">
-        <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 border-b border-gray-400/50">
+        <div className="flex flex-nowrap items-center h-full sm:justify-center xl:justify-start p-2 border-b border-gray-400/50">
           <img
             src={logo}
             className="w-[40px] mix-blend-difference dark:mix-blend-unset"
             alt="logo"
           />
-          <div className="hidden ml-2 xl:block font-bold text-xl dark:text-white">
+          <div className="hidden whitespace-nowrap ml-2 xl:block font-bold text-xl dark:text-white">
             Akram Ashraf A.
           </div>
           <div className="flex-grow sm:hidden xl:block" />
@@ -127,7 +127,7 @@ function Sidebar() {
          </div>
       </div> 
     </div>
-    </div>
+    // </div>
   );
 }
 
