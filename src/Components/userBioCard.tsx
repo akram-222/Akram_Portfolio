@@ -14,7 +14,7 @@ const UserBioCard = ({ userInfo }) => {
           />
         </h1>
 
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex w-full flex-col md:flex-row justify-between">
           {/*Previous font: Silkscreen*/}
           <div className="md:w-[30%]">
             <img
@@ -23,18 +23,18 @@ const UserBioCard = ({ userInfo }) => {
               alt=""
             />
             {/* Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg */}
-            <img
+            {/* <img
               className="m-auto mt-2"
               src="https://readme-typing-svg.herokuapp.com?font=Fira+code&size=22&duration=2000&pause=1000&color=DDE43F&background=2A2E3424&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;Blogger+%26+Content+Writer;Always+learning+new+things"
               alt="auto-typing"
-            />
+            /> */}
 
             {/* Social icons section */}
           </div>
           <div className="md:w-[50%] mt-3">
             <div className="flex flex-col gap-2">
               <h2 className="text-xl w-full border-b border-gray-600/30">
-                Statistics
+                Github Profile Statistics
               </h2>
               <div className="flex justify-evenly">
                 <div className="font-semibold text-center mx-4">
