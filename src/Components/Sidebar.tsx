@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import { config, useSpring, animated } from "react-spring";
+import {SidebarContext} from "../Contexts/sidebarContext"
 import MenuItem from "./MenuItem";
 import sidebarItems from "./SidebarItems";
 import logo from "../assests/a.png";
@@ -14,13 +15,15 @@ function Sidebar() {
     from: { dashOffset: 113.113, indicatorWidth: 0, precentage: 0 },
     config: config.molasses,
   });
+  const { isSidebarOpen, toggleSidebar } = useContext(SidebarContext);
 
+  
   return (
     <div
       className={`
-        fixed inset-y-0 left-0 bg-gray-200 border-r border-gray-300 dark:border-transparent dark:bg-card w-full sm:w-20 xl:w-60 sm:flex flex-col z-10
-       ${sessionStorage.getItem("isOpen") ? "flex":"hidden"}
-      `}
+        fixed inset-y-0 left-0 bg-gray-200 flex border-r border-gray-300 dark:border-transparent dark:bg-card w-full sm:w-20 xl:w-60 flex-col z-10
+      ${isSidebarOpen ? "flex":"hidden"}
+        `}
     >
       <div className="flex-shrink-0 overflow-hidden p-2">
         <div className="flex items-center h-full sm:justify-center xl:justify-start p-2 border-b border-gray-400/50">

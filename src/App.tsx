@@ -12,6 +12,7 @@ import RepoDetails from "./Pages/RepoDetails";
 import SplashScreen from "./Components/splashScreen";
 import Blog from "./Pages/blog";
 import { DevBlogsContextProvider } from "./Contexts/DEVAPIContext";
+import { SidebarProvider } from "./Contexts/sidebarContext";
 import Login from "./Pages/Login";
 import About from "./Pages/About";
 import Footer from "./Components/Footer";
@@ -51,6 +52,7 @@ const App = () => {
   }, []);
 
   return (
+    <SidebarProvider>
     <DevBlogsContextProvider>
       <div className="flex bg-white dark:bg-gray-900/10">
         <Tooltip />
@@ -164,6 +166,7 @@ const App = () => {
         </BrowserRouter>
       </div>
     </DevBlogsContextProvider>
+    </SidebarProvider>
   );
 };
 
