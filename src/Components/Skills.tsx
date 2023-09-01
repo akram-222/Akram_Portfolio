@@ -5,7 +5,7 @@ const Skills = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div className="">
+    <div className="xl:w-[80%]">
       <h3 className="border-gray-600/30 border font-bold bg-indigo-200 text-black dark:bg-card p-2 rounded-t-lg mb-1 dark:text-gray-100">
         <span className="text-gray-400/30">#3</span> Skills List
       </h3>
@@ -28,7 +28,7 @@ const Skills = () => {
             </li>
           ))}
         </ul>
-        <div className="tabContent h-80 overflow-auto">
+        <div className="tabContent h-[25rem] overflow-auto">
           {skillsTabContent[currentIndex]}
         </div>
       </div>
