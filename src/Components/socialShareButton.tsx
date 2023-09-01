@@ -1,5 +1,4 @@
-const SocialShareButton = () => {
-  const url = 'https://example.com';
+const SocialShareButton = ({url,platform}) => {
 
   return (
     <button
@@ -7,7 +6,7 @@ const SocialShareButton = () => {
       className="btn btn-primary"
       onClick={() => {
         window.open(
-          'https://twitter.com/intent/tweet?url=' + url,
+          platform + url,
           '_blank',
           'width=500,height=400'
         );

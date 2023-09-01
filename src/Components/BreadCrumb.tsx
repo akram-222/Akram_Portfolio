@@ -1,11 +1,13 @@
 import { TbLayoutSidebarLeftExpand,TbLayoutSidebarRightExpand } from "react-icons/tb";
 import {useState,useContext} from 'react';
-import SocialShareButton from "./SocialShareButton"
+import {useLocation} from "react-router-dom";
+import SocialShareButton from "./socialShareButton"
 import {SidebarContext } from "../Contexts/sidebarContext";
 // import {ShareSocial} from 'react-share-social' 
 
 const BreadCrumb = () => {
- 
+  const location = useLocation();
+  const currentRoute = location.pathname.slice(1, location.pathname.length);
   const { isSidebarOpen, toggleSidebar } = useContext(SidebarContext);
 
   return (
@@ -19,7 +21,7 @@ const BreadCrumb = () => {
           {isSidebarOpen ?<TbLayoutSidebarRightExpand size={23} />:<TbLayoutSidebarLeftExpand size={23} />}
         </li>
         <li className="cursor-pointer inline-flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-       <SocialShareButton />
+       <SocialShareButton url={currentRoute} platform='https://twitter.com/intent/tweet?url='/>
    
    
     </li>
