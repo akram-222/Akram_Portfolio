@@ -19,10 +19,10 @@ function Sidebar() {
 
   
   return (
-    <div className={`${isSidebarOpen ? "sm:w-20 xl:w-60":""} w-0 transition-all duration-700 delay-300 sm:block flex-shrink-0`}>
+    <div className={`${isSidebarOpen ? "sm:w-20 xl:w-60":""} w-0 transition-all duration-300 sm:block flex-shrink-0`}>
     <div
       className={`
-        fixed inset-y-0 left-0 bg-gray-200 transition-all duration-700 sm:w-20 xl:w-60  flex border-r border-gray-300 dark:border-transparent dark:bg-card  flex-col z-10
+        fixed inset-y-0 left-0 bg-gray-200 transition-all duration-200 sm:w-20 xl:w-60  flex border-r border-gray-300 dark:border-transparent dark:bg-card  flex-col z-10
       ${isSidebarOpen ?  "":"-translate-x-full"}
         `}
     >
