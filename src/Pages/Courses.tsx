@@ -25,11 +25,12 @@ const Courses = () => {
       />
       <section className="flex flex-col w-full h-full relative p-5 border border-dashed border-gray-600/60 mt-4">
         <h1 className='w-full text-center text-2xl text-blue-100 uppercase font-bold'>"This is a collection of course notes."</h1>
-      <div className="flex flex-wrap gap-4 items-center mt-5">
-        <div className="w-36  h-36 rounded-lg shadow-xl cursor-pointer bg-details p-2 hover:rotate-[-10deg] hover:bg-card">1</div>
-        <div className="w-36  h-36 rounded-lg shadow-xl cursor-pointer bg-details p-2 hover:rotate-[-10deg] hover:bg-card">1</div>
-        <div className="w-36  h-36 rounded-lg shadow-xl cursor-pointer bg-details p-2 hover:rotate-[-10deg] hover:bg-card">1</div>
-        <div className="w-36  h-36 rounded-lg shadow-xl cursor-pointer bg-details p-2 hover:rotate-[-10deg] hover:bg-card">1</div>
+      <div className="flex flex-wrap gap-7 items-center mt-5">
+        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[10deg] rotate-[-10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-blue-400">HTML</div>
+        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[10deg] rotate-[-10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-blue-400">CSS</div>
+        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[10deg] rotate-[-10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-blue-400">SASS</div>
+        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[10deg] rotate-[-10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-blue-400">JavaScript</div>
+        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[10deg] rotate-[-10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-blue-400">TypeScript</div>
         </div>
       </section>
     </div>
