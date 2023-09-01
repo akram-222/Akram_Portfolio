@@ -20,7 +20,7 @@ const PinArticle = ({
     >
       <div
         style={{ fontFamily: "emoji" }}
-        className="text-5xl font-bold flex items-center justify-center rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 group-hover:-translate-y-full transition ease-in duration-500"
+        className={`text-gray-400 text-5xl font-bold flex items-center justify-center rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 group-hover:-translate-y-full transition ease-in duration-500`}
       >
         {index}
       </div>

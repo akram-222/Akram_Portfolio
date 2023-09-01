@@ -6,7 +6,7 @@ import HeroSection from "../Components/HeroSection";
 import "./blog.css";
 const SubscriptionForm = () => {
   return (
-    <div className="w-full dark:bg-[#171717] p-4 mb-4 h-full border border-gray-600/30">
+    <div className="w-full rounded-md dark:bg-[#171717] p-4 mb-4 h-full border border-gray-600/30">
       <h5 className="mx-auto xs:w-fit sm:w-full mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
         Subscribe
       </h5>
@@ -102,7 +102,7 @@ const Blog = () => {
             )}
           </div>
 
-          <div className="w-full lg:w-1/3 px-3 tilt-in-right-1">
+          <div className="w-full lg:w-1/3 tilt-in-right-1">
             <SubscriptionForm />
           </div>
         </div>
