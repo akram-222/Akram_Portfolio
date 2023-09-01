@@ -23,14 +23,14 @@ const Courses = () => {
         is_premium={true}
         premium_star="Front-end"
       />
-      <section className="flex flex-col w-full h-full relative p-5 border border-dashed border-gray-600/60 mt-4">
+      <section className="flex flex-col w-full py-8 relative p-5 border border-dashed border-gray-600/60 mt-4">
         <h1 className='w-full text-center text-2xl text-blue-100 uppercase font-bold'>"This is a collection of course notes."</h1>
       <div className="flex flex-wrap gap-7 items-center justify-evenly mt-5">
-        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[-10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-red-400">HTML</div>
-        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-cyan-400">CSS</div>
-        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[-10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-pink-400">SASS</div>
-        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-yellow-400">JavaScript</div>
-        <div className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[-10deg] hover:bg-card flex justify-center items-center font-bold text-2xl hover:text-blue-400">TypeScript</div>
+        <a href="https://drive.google.com/drive/folders/1-grqXDjWYGLax2baBo8uTXVSoIh1o-_m?usp=sharing" className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold text-2xl border border-transparent hover:border-red-400 hover:text-red-400">HTML</a>
+        <a className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[15deg] hover:bg-card flex justify-center items-center font-bold text-2xl border border-transparent hover:border-cyan-400 hover:text-cyan-400">CSS</a>
+        <a className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold text-2xl border border-transparent hover:border-pink-400 hover:text-pink-400">SASS</a>
+        <a href="https://drive.google.com/drive/folders/1n2qeZbG-2JiMoAJXQbJMYCeywjKbIVRN?usp=sharing" className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[15deg] hover:bg-card flex justify-center items-center font-bold text-2xl border border-transparent hover:border-yellow-400 hover:text-yellow-400">JavaScript</a>
+        <a className="w-36  h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold text-2xl border border-transparent hover:border-blue-400 hover:text-blue-400">TypeScript</a>
         </div>
       </section>
     </div>
