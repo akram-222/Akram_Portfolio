@@ -62,9 +62,7 @@ const App = () => {
         
           <div className="flex min-h-screen w-full">
             
-            <Sidebar
-          
-          />
+            <Sidebar/>
         
             <div className="bg-1 p-2 relative flex-grow flex flex-wrap">
               <Routes>
