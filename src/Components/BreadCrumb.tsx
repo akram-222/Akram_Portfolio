@@ -1,7 +1,8 @@
 import { TbLayoutSidebarLeftExpand,TbLayoutSidebarRightExpand } from "react-icons/tb";
 import {useState,useContext} from 'react';
+import SocialShareButton from "./SocialShareButton"
 import {SidebarContext } from "../Contexts/sidebarContext";
-import {ShareSocial} from 'react-share-social' 
+// import {ShareSocial} from 'react-share-social' 
 
 const BreadCrumb = () => {
  
@@ -18,22 +19,9 @@ const BreadCrumb = () => {
           {isSidebarOpen ?<TbLayoutSidebarRightExpand size={23} />:<TbLayoutSidebarLeftExpand size={23} />}
         </li>
         <li className="cursor-pointer inline-flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-        <ShareSocial 
-     url ="url_to_share.com"
-     socialTypes={['facebook','twitter',]}
-   />
-   <ShareSocial 
-     url ="url_to_share.com"
-     socialTypes={['linkedin']}
-   />
-   <SocialShare
-      network="twitter"
-      url={window.location.href}
-      title="Share this article on Twitter"
-      urlParams={{
-        text: window.document.querySelector('h1').textContent.slice(0, 100),
-      }}
-    />
+       <SocialShareButton />
+   
+   
     </li>
       </ol>
     </nav>
