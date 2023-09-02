@@ -20,7 +20,7 @@ const BreadCrumb = () => {
         <li onClick={toggleSidebar} className="cursor-pointer hidden sm:inline-flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
           {isSidebarOpen ?<TbLayoutSidebarRightExpand size={23} />:<TbLayoutSidebarLeftExpand size={23} />}
         </li>
-        <li className="mr-2 dark:text-gray-400 text-sm font-bold flex items-center border-gray-400/50 border-l-2 pl-2">
+        <li className="whitespace-nowrap text-xs mr-2 dark:text-gray-400 sm:text-sm font-bold flex items-center border-gray-400/50 border-l-2 pl-2">
 Share the current page on         </li>
         <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
        <SocialShareButton url={currentRoute} platform='https://twitter.com/intent/tweet?url='>
