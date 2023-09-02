@@ -12,7 +12,7 @@ const PageTitle = ({
 }) => {
   return (
     <>
-      <div className={`${className} px-2 flex flex-col w-full justify-between`}>
+      <div className={`${className} p-2 flex flex-col w-full justify-between`}>
         <BreadCrumb />
         <div className="">
           <div className="flex items-center">

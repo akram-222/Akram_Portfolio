@@ -24,17 +24,17 @@ const BreadCrumb = () => {
 Share the current page on         </li>
         <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
        <SocialShareButton url={currentRoute} platform='https://twitter.com/intent/tweet?url='>
-        <TbBrandTwitter size="23"/>
+        <TbBrandTwitter className="sm:w-5 sm:h-5"/>
         </SocialShareButton>
     </li>
     <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
         <SocialShareButton url={currentRoute} platform='https://www.linkedin.com/shareArticle?mini=true&url='>
-        <TbBrandLinkedin size="23"/>
+        <TbBrandLinkedin className="sm:w-5 sm:h-5"/>
         </SocialShareButton>
     </li>
     <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
         <SocialShareButton url={currentRoute} platform='https://www.facebook.com/sharer/sharer.php?u='>
-        <TbBrandFacebook size="20"/>
+        <TbBrandFacebook className="sm:w-5 sm:h-5"/>
         </SocialShareButton>
     </li>
       </ol>
