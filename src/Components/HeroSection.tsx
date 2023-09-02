@@ -45,7 +45,7 @@ const HeroSection = () => {
                 href="https://dev.to/ak_ram"
                 className="cursor-pointer group flex items-center dark:text-blue-400 dark:hover:underline font-medium"
               >
-               Check out our latest posts.
+               Check out <span className="ml-1 hidden sm:inline-block">{" "}our latest posts.</span>
                 <BiChevronRight
                   className={"text-white transition group-hover:translate-x-1"}
                   size={20}
