@@ -13,7 +13,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="relative mb-5">
+      <section className="relative mb-8 sm:mb-5">
         <div
           onMouseMove={handleMouseMove}
           className="w-full h-full shadow-xl absolute grayscale opacity-20"

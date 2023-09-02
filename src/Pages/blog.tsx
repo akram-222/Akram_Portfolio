@@ -1,5 +1,6 @@
 import { useDevBlogs } from "../Contexts/DEVAPIContext";
 import { useState } from "react";
+import {BsStars} from 'react-icons/bs';
 import PageTitle from "../Components/PageTitle";
 import PinArticle from "../Components/PinArticle";
 import HeroSection from "../Components/HeroSection";
@@ -49,17 +50,17 @@ const Blog = () => {
   return (
     <div className="animate-fade-in flex-grow">
       <PageTitle
-        title="Blog"
+        title={<><BsStars className="text-premium-yellow" size="30"/> Blog</>}
         subtitle={
           <>
-            <span className="">Total Articles: </span>
+            <span className="font-bold text-xs sm:text-sm">Total Articles: </span>
             <span className="text-blue-400 font-bold">
               {devBlogs?.length ?? 0}
             </span>
           </>
         }
-        is_premium={true}
-        premium_star="DEV.to articles"
+        is_premium={false}
+        premium_star=""
         className="h-fit"
       />
       <div className="w-full">

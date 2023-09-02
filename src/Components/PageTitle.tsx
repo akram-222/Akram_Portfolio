@@ -16,7 +16,7 @@ const PageTitle = ({
         <BreadCrumb />
         <div className="">
           <div className="flex items-center">
-            <div className="text-3xl font-bold text-white">{title}</div>
+            <div className="text-2xl flex sm:text-3xl font-bold text-white">{title}</div>
             {/* <Icon path="res-react-dash-premium-star" /> */}
             {is_premium ? (
               <div className="flex items-center p-2 bg-card ml-2 rounded-xl">

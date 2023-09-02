@@ -14,20 +14,20 @@ const NotFoundRoute = () => {
     );
   }, [navigate]);
 
-  useEffect(() => {
-    if (timeLeft === 0) {
-      console.log("TIME LEFT IS 0");
-      setTimeLeft(0);
-      navigate("/dashboard");
-      return;
-    }
+  // useEffect(() => {
+  //   if (timeLeft === 0) {
+  //     console.log("TIME LEFT IS 0");
+  //     setTimeLeft(0);
+  //     navigate("/dashboard");
+  //     return;
+  //   }
 
-    const intervalId = setInterval(() => {
-      setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
-    }, 1000);
+  //   const intervalId = setInterval(() => {
+  //     setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
+  //   }, 1000);
 
-    return () => clearInterval(intervalId);
-  }, [timeLeft, navigate]);
+  //   return () => clearInterval(intervalId);
+  // }, [timeLeft, navigate]);
 
   const memoizedSidebarItems = useMemo(
     () => [...sidebarItems[0], ...sidebarItems[1]],
