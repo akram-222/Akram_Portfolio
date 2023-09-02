@@ -16,25 +16,25 @@ const BreadCrumb = () => {
       className="flex border border-gray-600/50 mb-3 py-1 px-3 rounded sm:block"
       aria-label="Breadcrumb"
     >
-      <ol className="flex sticky top-0 p-1 gap-2 w-full space-x-1 md:space-x-3">
+      <ol className="flex sticky top-0 p-1 gap-2 w-full md:space-x-3">
         <li onClick={toggleSidebar} className="cursor-pointer hidden sm:inline-flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
           {isSidebarOpen ?<TbLayoutSidebarRightExpand size={23} />:<TbLayoutSidebarLeftExpand size={23} />}
         </li>
-        <li className="mr-2 dark:text-gray-400 text-sm font-bold flex items-center border-l-2 pl-2">
+        <li className="mr-2 dark:text-gray-400 text-sm font-bold flex items-center border-gray-400/50 border-l-2 pl-2">
 Share the current page on         </li>
         <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
        <SocialShareButton url={currentRoute} platform='https://twitter.com/intent/tweet?url='>
-        <TbBrandTwitter size="25"/>
+        <TbBrandTwitter size="23"/>
         </SocialShareButton>
     </li>
     <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
         <SocialShareButton url={currentRoute} platform='https://www.linkedin.com/shareArticle?mini=true&url='>
-        <TbBrandLinkedin size="25"/>
+        <TbBrandLinkedin size="23"/>
         </SocialShareButton>
     </li>
     <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
         <SocialShareButton url={currentRoute} platform='https://www.facebook.com/sharer/sharer.php?u='>
-        <TbBrandFacebook size="23"/>
+        <TbBrandFacebook size="20"/>
         </SocialShareButton>
     </li>
       </ol>
