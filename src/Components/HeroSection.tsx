@@ -23,13 +23,13 @@ const HeroSection = () => {
           }}
         ></div>
         <div className="pb-1 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-8">
-          <h1 className="mb-4 pt-3 text-3xl dark:text-white font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl">
-            We invest in the{" "}
-            <span className="text-2xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
+          <h1 className="flex whitespace-nowrap flex-col justify-center gap-2 items-center sm:flex-row mb-4 pt-3 dark:text-white font-extrabold tracking-tight leading-none text-5xl lg:text-6xl">
+            <span>We invest in the{" "}</span>
+            <span className="text-3xl whitespace-nowrap md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
               world’s potential
             </span>
           </h1>
-          <p className="mb-8 sm:text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+          <p className="text-xs mb-8 sm:text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
            At Our Blog, we cover a wide range of frontend technology issues.{" "}
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
