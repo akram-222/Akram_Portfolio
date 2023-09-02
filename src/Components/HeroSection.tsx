@@ -23,9 +23,9 @@ const HeroSection = () => {
           }}
         ></div>
         <div className="pb-1 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-8">
-          <h1 className="flex whitespace-nowrap flex-col justify-center gap-2 items-center sm:flex-row mb-4 pt-3 dark:text-white font-extrabold tracking-tight leading-none text-5xl lg:text-6xl">
-            <span>We invest in the{" "}</span>
-            <span className="text-3xl whitespace-nowrap md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
+          <h1 className="flex whitespace-nowrap flex-col justify-center gap-x-2 items-center sm:flex-row mb-4 pt-3 dark:text-white font-extrabold tracking-tight leading-none ">
+            <span className="text-4xl lg:text-6xl">We invest in the{" "}</span>
+            <span className="text-2xl whitespace-nowrap font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
               world’s potential
             </span>
           </h1>
