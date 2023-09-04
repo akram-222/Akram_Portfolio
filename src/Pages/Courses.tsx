@@ -31,6 +31,7 @@ const Courses = () => {
         <a target="_blank" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-pink-400 hover:text-pink-400">SASS</a>
         <a target="_blank" href="https://drive.google.com/drive/folders/1n2qeZbG-2JiMoAJXQbJMYCeywjKbIVRN?usp=sharing" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-yellow-400 hover:text-yellow-400">JavaScript</a>
         <a target="_blank" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-blue-400 hover:text-blue-400">TypeScript</a>
+        <a target="_blank" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-blue-400 hover:text-blue-400">Networks</a>
         </div>
       </section>
     </div>
