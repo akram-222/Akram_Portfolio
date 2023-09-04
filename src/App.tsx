@@ -60,11 +60,11 @@ const App = () => {
         {/* <SplashScreen/> */}
         <BrowserRouter>
         
-          <div className="flex min-h-screen w-full">
+          <div className="flex h-screen w-full">
             
             <Sidebar/>
         
-            <div className="bg-1 sm:p-2 relative flex-grow flex flex-wrap">
+            <div className="bg-1 sm:p-2 relative flex-grow overflow-auto flex flex-wrap">
               <Routes>
                 {isLogging ? (
                   <Route
