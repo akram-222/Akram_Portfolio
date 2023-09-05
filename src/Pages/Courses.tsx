@@ -17,21 +17,60 @@ const Courses = () => {
         subtitle={
           <>
             <span className="text-green-500 mr-2">Handwritten :</span>
-            <span className="text-gray-500">Course Notes to Improve Your Understanding</span>
+            <span className="text-gray-500">
+              Course Notes{" "}
+              <span className="hidden sm:inline-block">
+                to Improve Your Understanding
+              </span>
+            </span>
           </>
         }
         is_premium={true}
         premium_star="Front-end"
       />
-      <section className="flex flex-col w-full py-8 relative p-5 border border-dashed border-gray-600/60 mt-4">
-        <h1 className='w-full text-center text-2xl text-blue-100 uppercase font-bold'>"This is a collection of course notes."</h1>
-      <div className="flex flex-wrap gap-7 items-center justify-evenly mt-8">
-        <a target="_blank" href="https://drive.google.com/drive/folders/1-grqXDjWYGLax2baBo8uTXVSoIh1o-_m?usp=sharing" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-red-400 hover:text-red-400">HTML</a>
-        <a target="_blank" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-cyan-400 hover:text-cyan-400">CSS</a>
-        <a target="_blank" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-pink-400 hover:text-pink-400">SASS</a>
-        <a target="_blank" href="https://drive.google.com/drive/folders/1n2qeZbG-2JiMoAJXQbJMYCeywjKbIVRN?usp=sharing" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-yellow-400 hover:text-yellow-400">JavaScript</a>
-        <a target="_blank" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-blue-400 hover:text-blue-400">TypeScript</a>
-        <a target="_blank" className="w-24 h-24 sm:w-36  sm:h-36 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-blue-400 hover:text-blue-400">Networks</a>
+      <section className="flex flex-col w-full py-8 relative p-5 mt-4">
+        <h1 className="w-full text-center sm:text-2xl text-blue-100 uppercase font-bold">
+          "This is a collection of course notes."
+        </h1>
+        <div className="flex flex-wrap gap-3 lg:gap-7 items-center lg:justify-center mt-8">
+          <a
+            target="_blank"
+            href="https://drive.google.com/drive/folders/1-grqXDjWYGLax2baBo8uTXVSoIh1o-_m?usp=sharing"
+            className="text-xs sm:text-base w-full xs:w-20 xs:h-20 sm:w-24 sm:h-24 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-red-400 hover:text-red-400"
+          >
+            HTML
+          </a>
+          <a
+            target="_blank"
+            className="text-xs sm:text-base w-full xs:w-20 xs:h-20 sm:w-24 sm:h-24 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-cyan-400 hover:text-cyan-400"
+          >
+            CSS
+          </a>
+          <a
+            target="_blank"
+            className="text-xs sm:text-base w-full xs:w-20 xs:h-20 sm:w-24 sm:h-24 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-pink-400 hover:text-pink-400"
+          >
+            SASS
+          </a>
+          <a
+            target="_blank"
+            href="https://drive.google.com/drive/folders/1n2qeZbG-2JiMoAJXQbJMYCeywjKbIVRN?usp=sharing"
+            className="text-xs sm:text-base w-full xs:w-20 xs:h-20 sm:w-24 sm:h-24 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-yellow-400 hover:text-yellow-400"
+          >
+            JavaScript
+          </a>
+          <a
+            target="_blank"
+            className="text-xs sm:text-base w-full xs:w-20 xs:h-20 sm:w-24 sm:h-24 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-blue-400 hover:text-blue-400"
+          >
+            TypeScript
+          </a>
+          <a
+            target="_blank"
+            className="text-xs sm:text-base w-full xs:w-20 xs:h-20 sm:w-24 sm:h-24 rounded-lg transition shadow-xl cursor-pointer bg-details p-2 hover:rotate-[0deg] lg:rotate-[-15deg] hover:bg-card flex justify-center items-center font-bold sm:text-2xl border border-transparent hover:border-blue-400 hover:text-blue-400"
+          >
+            Networks
+          </a>
         </div>
       </section>
     </div>

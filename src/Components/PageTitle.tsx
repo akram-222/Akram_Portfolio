@@ -32,7 +32,7 @@ const PageTitle = ({
               ""
             )}
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center text-xs lg:text-sm">
             <AiOutlineDoubleRight size={16} />
             <div className="ml-2">{subtitle}</div>
           </div>
