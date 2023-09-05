@@ -17,6 +17,7 @@ import Login from "./Pages/Login";
 import About from "./Pages/About";
 import Footer from "./Components/Footer";
 import Terminal from "./Components/cmd/terminal";
+import Navigations from "./Pages/navigations";
 const App = () => {
   const [isLogging, setIsLogging] = useState(false);
   const [isTimeout, setIsTimeOut] = useState(false);
@@ -144,6 +145,7 @@ const App = () => {
                     />
                   );
                 })}
+                <Route path="/navigations" element={<Navigations />} />
                 <Route path="/*" element={<NotFoundRoute />} />
                 <Route
                   path="/terminal"

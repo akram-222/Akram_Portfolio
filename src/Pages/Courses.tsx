@@ -34,7 +34,7 @@ const Courses = () => {
         <h1 className="w-full text-center sm:text-2xl text-blue-100 uppercase font-bold">
           This is a collection of course notes
         </h1>
-        <div className="flex flex-wrap gap-3 lg:gap-7 items-center lg:justify-center mt-8">
+        <div className="flex flex-wrap gap-3 lg:gap-8 items-center lg:justify-center mt-8">
           <a
             target="_blank"
             href="https://drive.google.com/drive/folders/1-grqXDjWYGLax2baBo8uTXVSoIh1o-_m?usp=sharing"

@@ -1,38 +1,29 @@
 
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import sidebarItems from "../Components/SidebarItems";
-import { IoBuildOutline } from "react-icons/io5";
+import Navigations from "./navigations";
 
 const NotFoundRoute = () => {
   const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(5);
 
-  const handleClick = useCallback(() => {
-    navigate(
-      "https://codesandbox.io/p/github/Ak-ram/Akram_Portfolio/master?file=/src/Pages/404.tsx:42,31&workspaceId=5db083f1-dc8b-45bf-b1bf-960b916c2bee"
-    );
-  }, [navigate]);
 
-  // useEffect(() => {
-  //   if (timeLeft === 0) {
-  //     console.log("TIME LEFT IS 0");
-  //     setTimeLeft(0);
-  //     navigate("/dashboard");
-  //     return;
-  //   }
+  useEffect(() => {
+    if (timeLeft === 0) {
+      console.log("TIME LEFT IS 0");
+      setTimeLeft(0);
+      navigate("/dashboard");
+      return;
+    }
 
-  //   const intervalId = setInterval(() => {
-  //     setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
-  //   }, 1000);
+    const intervalId = setInterval(() => {
+      setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
+    }, 1000);
 
-  //   return () => clearInterval(intervalId);
-  // }, [timeLeft, navigate]);
+    return () => clearInterval(intervalId);
+  }, [timeLeft, navigate]);
 
-  const memoizedSidebarItems = useMemo(
-    () => [...sidebarItems[0], ...sidebarItems[1]],
-    []
-  );
+ 
 
   return (
     <div className="animate-fade-in w-full">
@@ -42,7 +33,7 @@ const NotFoundRoute = () => {
       {/* <!-- drawer component --> */}
       <div className="flex justify-center flex-col min-h-full w-full  p-10">
         <div
-          onClick={handleClick}
+          // onClick={handleClick}
           className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold"
         >
           404
@@ -74,32 +65,7 @@ const NotFoundRoute = () => {
           Browse one of our Components
         </h2>
         <div className="flex flex-wrap gap-3 item-center justify-center mt-3">
-          {memoizedSidebarItems.map((item, i) => (
-            <div
-              key={i}
-              onClick={() => navigate(`/${item.title.toLocaleLowerCase()}`)}
-              className={`overflow-hidden relative dark:hover:bg-[#050708]/10 w-[45%] sm:w-1/4 p-4 rounded-lg cursor-pointer border border-gray-600/60 dark:bg-gray-700/20 dark:border-gray-700/50`}
-            >
-              {i === 4 ? (
-                <div className="bottom-1 right-1 absolute text-xs text-yellow-500">
-                  <span className="">Building...</span>
-                  {/* <IoBuildOutline size={20} /> */}
-                </div>
-              ) : (
-                ""
-              )}
-              <div
-                className={`p-2 mx-auto mb-2 max-w-[48px] ${item.bgColor} rounded-full w-18 h-18`}
-              >
-                {item.icon}
-              </div>
-              <div
-                className={`hidden xs:block font-extrabold text-center text-gray-500 ${item.textColor}`}
-              >
-                {item.title}
-              </div>
-            </div>
-          ))}
+         <Navigations />
         </div>
       </div>
     </div>
