@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Calendar from "../Components/Calendar";
+import {BsJournalBookmark } from 'react-icons/bs';
 import CalendarEvents from "../Components/CalendarEvents";
 import PageTitle from "../Components/PageTitle";
 const Courses = () => {
@@ -13,11 +14,12 @@ const Courses = () => {
     <div className="animate-fade-in w-full">
       <PageTitle
         className={""}
-        title="Courses"
+        title={<>  <BsJournalBookmark size={25} className="mr-2" />Courses</>}
         subtitle={
           <>
             <span className="text-green-500 mr-2">Handwritten :</span>
             <span className="text-gray-500">
+            
               Course Notes{" "}
               <span className="hidden sm:inline-block">
                 to Improve Your Understanding
@@ -25,12 +27,12 @@ const Courses = () => {
             </span>
           </>
         }
-        is_premium={true}
-        premium_star="Front-end"
+        is_premium={false}
+        premium_star=""
       />
       <section className="flex flex-col w-full py-8 relative p-5 mt-4">
         <h1 className="w-full text-center sm:text-2xl text-blue-100 uppercase font-bold">
-          "This is a collection of course notes."
+          This is a collection of course notes
         </h1>
         <div className="flex flex-wrap gap-3 lg:gap-7 items-center lg:justify-center mt-8">
           <a
