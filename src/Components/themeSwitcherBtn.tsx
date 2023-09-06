@@ -36,7 +36,7 @@ const ThemeSwitcherBtn = () => {
   }, []);
   return (
     <>
-      <div className="bg-blue-600 w-12 h-12 lg:w-full flex-nowrap dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl flex items-center justify-start sm:justify-center xl:justify-start">
+      <div className="bg-blue-600 lg:w-full flex-nowrap dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl flex items-center justify-start sm:justify-center xl:justify-start">
         <button
           onClick={() => changeMode()}
           type="button"
@@ -49,7 +49,7 @@ const ThemeSwitcherBtn = () => {
           )}
           <div className="block sm:hidden xl:block ml-3 flex flex-shrink-0">
             <div className="text-sm font-bold text-white">
-              Convert mode to :
+              Convert mode to
             </div>
             <div className="text-sm text-left text-gray-400">
               {localStorage.getItem("color-theme") || "light"} mode

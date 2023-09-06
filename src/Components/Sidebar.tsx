@@ -44,7 +44,7 @@ function Sidebar() {
         </Link>
       </div>
       <div className="flex-grow overflow-x-hidden overflow-y-auto flex flex-col">
-        <div className="w-full p-3 h-24 sm:h-20 xl:h-24 hidden sm:block flex-shrink-0">
+        <div className="w-full p-3 hidden sm:block flex-shrink-0">
           <ThemeSwitcherBtn />
         </div>
         {sidebarItems[0].map((i) => (
