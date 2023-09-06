@@ -36,7 +36,7 @@ const BreadCrumb = () => {
             )}
           </div>
         </li>
-        <li className="whitespace-nowrap hidden xs:inline-block text-xs mr-2 dark:text-gray-400 sm:text-sm font-bold flex items-center">
+        <li className="whitespace-nowrap hidden xs:inline-block text-xs mr-2 dark:text-gray-400 sm:text-sm lg:text-base font-bold flex items-center">
           Share the current page on{" "}
         </li>
         <li className="flex ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">

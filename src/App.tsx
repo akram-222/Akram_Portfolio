@@ -57,7 +57,7 @@ const App = () => {
     <DevBlogsContextProvider>
       <div className="flex bg-white dark:bg-gray-900/10">
         <Tooltip />
-        {isTimeout ? null : <SplashScreen />}
+        {/* {isTimeout ? null : <SplashScreen />} */}
         {/* <SplashScreen/> */}
         <BrowserRouter>
         
