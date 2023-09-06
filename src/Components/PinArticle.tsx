@@ -11,18 +11,20 @@ const PinArticle = ({
   return (
     <a
       className={`${className} bg-card border border-gray-600/30 rounded text-white overflow-hidden group min-h-[100px] relative inline-block`}
-      // style={{
-      //   backgroundImage: `url(https://as1.ftcdn.net/v2/jpg/03/00/65/80/1000_F_300658058_93tCyxBdkospk5Gj4o4hkmy8CvcfwbCv.jpg)`,
-      //   backgroundSize: "cover",
-      //   backgroundAttachment: "fixed",
-      // }}
+   
       href={url}
     >
       <div
-        style={{ fontFamily: "emoji" }}
+        style={{
+          backgroundImage: `url(${social_image})`,
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'
+        }}
         className={`text-gray-400 text-5xl font-bold flex items-center justify-center rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 group-hover:-translate-y-full transition ease-in duration-500`}
       >
-        {index}
+      
       </div>
       <div className="p-4 absolute transition ease-in duration-500 translate-y-full group-hover:translate-y-0 bottom-0 left-0 w-full bg-card z-20 flex flex-col justify-end">
         <h2 className="overflow-hidden whitespace-nowrap overflow-ellipsis font-semibold text-sm md:text-lg text-gray-100 leading-tight w-[90%]">
