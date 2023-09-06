@@ -47,11 +47,9 @@
 
 .sidebar-item-selected {
   color: rgb(255, 255, 255) !important;
-  border-right: 5px solid rgb(255, 255, 255) !important;
+  /* border-right: 5px solid rgb(255, 255, 255) !important; */
 }
-.sidebar-item {
-  border-right: 2px solid transparent;
-}
+
 /* .sidebar-item:hover { */
 /* color: #a1a0a0; */
 /* } */

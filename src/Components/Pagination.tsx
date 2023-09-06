@@ -69,7 +69,7 @@ const Pagination = ({
     }
   };
   return (
-    <div className={`${className} flex w-full my-5 mr-8 space-x-2 justify-end text-xs`}>
+    <div className={`${className} flex w-full mr-3 mb-3 space-x-2 justify-end text-xs`}>
       {/* prev button */}
       <button 
         disabled={repoConfig.page === 1}
@@ -83,7 +83,7 @@ const Pagination = ({
         <button 
           key={page}
           onClick={() => handlePageChange(page)}
-          className="inline-flex items-center h-6 w-6 xs:h-8 xs:w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none"
+          className="inline-flex items-center w-5 h-5 md:h-6 md:w-6 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none"
         >
           {page}
         </button>

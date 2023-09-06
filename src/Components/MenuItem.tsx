@@ -17,7 +17,7 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
       className={`${
         title.toLowerCase() === currentRoute
           ? "sidebar-item-selected dark:bg-details"
-          : "sidebar-item"
+          : ""
       } text-gray-800 group py-2 flex-nowrap dark:text-gray-500/80 hover:text-gray-600 dark:hover:text-gray-100 w-full flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer`}
       onClick={() => onClick(id)}
     >

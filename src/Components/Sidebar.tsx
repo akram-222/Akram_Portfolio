@@ -24,7 +24,7 @@ function Sidebar() {
     <div
       className={`
         sm:block flex-shrink-0 inset-y-0 hidden left-0 bg-gray-200 flex-nowrap transition-all duration-500  border-r border-gray-300 dark:border-transparent dark:bg-card  flex-col z-10
-        ${isSidebarOpen ? "sm:w-20 xl:w-60 opacity-100" : "w-0 opacity-0"}
+        ${isSidebarOpen ? " xl:w-60 opacity-100" : "w-0 opacity-0"}
       `}
     >
       <div className="flex-shrink-0 overflow-hidden p-2">

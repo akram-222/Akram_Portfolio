@@ -54,50 +54,16 @@ mixBlendMode: 'overlay'
       <div className="flex w-full flex-col lg:flex-row">
         <div className="projects-list w-full flex flex-wrap gap-2">
           <div className="w-full">
-            <div className="flex relative items-center mb-7">
-              {/* <SearchComponent list={repos} /> */}
-              {/* <Combobox
-                options={[
-                  "Name",
-                  "Language",
-                  "Description",
-                  "Visibility",
-                  "Date",
-                ]}
-              /> */}
-              <div className="ml-auto text-gray-500 text-xs sm:inline-flex hidden items-center">
-                <span className="mr-3">Page {repoConfig.page} of 4</span>
-                <button
-                  disabled={repoConfig.page === 1 ? true : false}
-                  onClick={() => {
-                    setLoad(true);
-                    setRepoConfig({
-                      ...repoConfig,
-                      page: repoConfig.page === 1 ? 1 : repoConfig.page - 1,
-                    });
-                  }}
-                  className={`${
-                    repoConfig.page === 1 ? "opacity-10" : ""
-                  } inline-flex mr-2 items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0`}
-                >
-                  <FaChevronLeft />
-                </button>
-                <button
-                  disabled={repoConfig.page === 4 ? true : false}
-                  onClick={() => {
-                    setLoad(true);
-                    setRepoConfig({
-                      ...repoConfig,
-                      page: repoConfig.page === 4 ? 4 : repoConfig.page + 1,
-                    });
-                  }}
-                  className={`${
-                    repoConfig.page === 4 ? "opacity-10" : ""
-                  } inline-flex items-center h-8 w-8 justify-center text-gray-400 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none py-0`}
-                >
-                  <FaChevronRight />
-                </button>
-              </div>
+            <div className="flex relative items-center">
+            
+              <Pagination
+                isLoad={isLoad}
+                setLoad={setLoad}
+                repoConfig={repoConfig}
+                setRepoConfig={setRepoConfig}
+                repos={repos}
+                className="w-full"
+              />
             </div>
             <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
@@ -114,7 +80,9 @@ mixBlendMode: 'overlay'
                   </th>
                   <th className="flex items-center justify-center xs:block p-3 border-r text-white bg-card border-r-gray-600/20">
                     <div className="flex justify-between items-center">
-                      <span>Lang<span className="hidden xs:inline-block">uage</span></span>
+                      <span>
+                        Lang<span className="hidden xs:inline-block">uage</span>
+                      </span>
                       {/* <BsFilterRight size='16' /> */}
                     </div>
                   </th>
@@ -199,14 +167,6 @@ mixBlendMode: 'overlay'
               </tbody>
             </table>
           </div>
-          <Pagination
-            isLoad={isLoad}
-            setLoad={setLoad}
-            repoConfig={repoConfig}
-            setRepoConfig={setRepoConfig}
-            repos={repos}
-            className="w-full"
-          />
         </div>
         {/* <div className=" order-first lg:order-last filters lg:flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">
           <Filter />
