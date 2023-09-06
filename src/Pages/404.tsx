@@ -8,20 +8,20 @@ const NotFoundRoute = () => {
   const [timeLeft, setTimeLeft] = useState(5);
 
 
-  useEffect(() => {
-    if (timeLeft === 0) {
-      console.log("TIME LEFT IS 0");
-      setTimeLeft(0);
-      navigate("/dashboard");
-      return;
-    }
+  // useEffect(() => {
+  //   if (timeLeft === 0) {
+  //     console.log("TIME LEFT IS 0");
+  //     setTimeLeft(0);
+  //     navigate("/dashboard");
+  //     return;
+  //   }
 
-    const intervalId = setInterval(() => {
-      setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
-    }, 1000);
+  //   const intervalId = setInterval(() => {
+  //     setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
+  //   }, 1000);
 
-    return () => clearInterval(intervalId);
-  }, [timeLeft, navigate]);
+  //   return () => clearInterval(intervalId);
+  // }, [timeLeft, navigate]);
 
  
 
@@ -31,7 +31,7 @@ const NotFoundRoute = () => {
         <span className="text-white font-bold">{timeLeft}</span>
       </div>
       {/* <!-- drawer component --> */}
-      <div className="flex justify-center flex-col min-h-full w-full  p-10">
+      <div className="flex justify-center flex-col min-h-full w-full py-10 px-4">
         <div
           // onClick={handleClick}
           className="text-5xl mb-7 text-center text-blue-600 font-dark font-bold"
@@ -61,11 +61,9 @@ const NotFoundRoute = () => {
           </span>
           <hr className="flex-grow my-8 h-px bg-gray-200 border-0 dark:bg-gray-700" />
         </div>
-        <h2 className="text-center text-gray-500 font-semibold">
-          Browse one of our Components
-        </h2>
+       
         <div className="flex flex-wrap gap-3 item-center justify-center mt-3">
-         <Navigations />
+         <Navigations/>
         </div>
       </div>
     </div>

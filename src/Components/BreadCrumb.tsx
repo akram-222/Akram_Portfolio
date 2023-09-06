@@ -19,13 +19,13 @@ const BreadCrumb = () => {
 
   return (
     <nav
-      className="flex border border-gray-600/50 mb-3 py-1 px-3 rounded sm:block"
+      className="flex border border-gray-600/50 mb-3 px-3 rounded sm:block"
       aria-label="Breadcrumb"
     >
-      <ol className="flex sticky top-0 p-1 gap-2 w-full md:space-x-3">
+      <ol className="flex items-center p-1 gap-2 w-full md:space-x-3">
         <li
           onClick={toggleSidebar}
-          className="cursor-pointer items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          className="cursor-pointer border-gray-400/50 border-r-2 pr-2  flex items-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         >
           <Link to={'/navigations'}><BsFillGridFill className="sm:hidden" size={17} /></Link>
           <div className="hidden sm:inline-flex">
@@ -36,28 +36,31 @@ const BreadCrumb = () => {
             )}
           </div>
         </li>
-        <li className="whitespace-nowrap text-xs mr-2 dark:text-gray-400 sm:text-sm font-bold flex items-center border-gray-400/50 border-l-2 pl-2">
+        <li className="whitespace-nowrap hidden xs:inline-block text-xs mr-2 dark:text-gray-400 sm:text-sm font-bold flex items-center">
           Share the current page on{" "}
         </li>
-        <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+        <li className="flex ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
           <SocialShareButton
             url={currentRoute}
+    
             platform="https://twitter.com/intent/tweet?url="
           >
             <TbBrandTwitter className="sm:w-5 sm:h-5" />
           </SocialShareButton>
         </li>
-        <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+        <li className="flex ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
           <SocialShareButton
             url={currentRoute}
+    
             platform="https://www.linkedin.com/shareArticle?mini=true&url="
           >
             <TbBrandLinkedin className="sm:w-5 sm:h-5" />
           </SocialShareButton>
         </li>
-        <li className="ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+        <li className="flex ml-0 cursor-pointer inline-flex font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
           <SocialShareButton
             url={currentRoute}
+    
             platform="https://www.facebook.com/sharer/sharer.php?u="
           >
             <TbBrandFacebook className="sm:w-5 sm:h-5" />
