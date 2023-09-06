@@ -35,7 +35,7 @@ mixBlendMode: 'overlay'
        title="W3Schools Free Online Web Tutorials"></iframe> 
         */}
       <PageTitle
-        className={"mb-10 h-fit"}
+        className={"h-fit"}
         title="Projects"
         subtitle={
           <>
