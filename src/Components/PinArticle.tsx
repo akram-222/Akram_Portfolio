@@ -22,11 +22,11 @@ const PinArticle = ({
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center'
         }}
-        className={`text-gray-400 text-5xl font-bold flex items-center justify-center rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 group-hover:-translate-y-full transition ease-in duration-500`}
+        className={`text-gray-400 text-5xl font-bold flex items-center justify-center rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 transition duration-200`}
       >
       
       </div>
-      <div className="p-4 absolute transition ease-in duration-500 translate-y-full group-hover:translate-y-0 bottom-0 left-0 w-full bg-card z-20 flex flex-col justify-end">
+      <div className="p-4 absolute transition ease-in opacity-90 duration-200 translate-y-full group-hover:translate-y-0 bottom-0 left-0 w-full bg-card z-20 flex flex-col justify-end">
         <h2 className="overflow-hidden whitespace-nowrap overflow-ellipsis font-semibold text-sm md:text-lg text-gray-100 leading-tight w-[90%]">
           {title}
         </h2>
