@@ -42,9 +42,9 @@
 @media (max-width: 460px) {
   .grid-container {
     grid-template-areas:
-      "one"
-      "two"
-      "three"
-      "four";
+      "one one two two"
+      "three three four four"
+      "five five six six"
+      "seven seven eight eight"
   }
 }

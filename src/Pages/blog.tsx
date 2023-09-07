@@ -90,7 +90,7 @@ const Blog = () => {
                   key={`pinned-${i}`}
                   className={`grid-item div${
                     i + 1
-                  } flex justify-center items-center shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
+                  } flex justify-center items-center  shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
                   title={title}
                   createdAt={created_at}
                   user={user}

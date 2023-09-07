@@ -16,13 +16,13 @@ const PinArticle = ({
     >
       <div
         style={{
-          backgroundImage: `url(${social_image})`,
-          backgroundSize: "cover",
+          backgroundImage: `url(https://${social_image.split("/https://")[1]})`,
+          backgroundSize: "contain",
           backgroundAttachment: "fixed",
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center'
         }}
-        className={`text-gray-400 text-5xl font-bold flex items-center justify-center rounded-xl bg-gradient-to-tr from-[#101010] w-full h-full z-10 transition duration-200`}
+        className={`text-gray-400 text-5xl font-bold flex items-center justify-center bg-gradient-to-tr from-[#101010] w-full h-full z-10 transition duration-200`}
       >
       
       </div>
