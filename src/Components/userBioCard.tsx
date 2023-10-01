@@ -4,19 +4,20 @@ const UserBioCard = ({ userInfo }) => {
     <>
       <div className="flex relative mt-2 w-full flex-wrap dark:bg-card p-8 rounded-lg">
         {/* <img className="absolute -top-[60px] right-10 w-14" src={cat} /> */}
-        <h1 className="flex w-full mb-5 gap-2 justify-center md:justify-start items-center text-center text-3xl text-white font-bold">
-          Welcome to Akram's profile!
-          <img
-            src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
-            width={28}
-            alt="wavy hand"
-            className="hidden sm:block"
-          />
-        </h1>
+
 
         <div className="flex w-full flex-col md:flex-row justify-between">
           {/*Previous font: Silkscreen*/}
-          <div className="md:w-[30%]">
+          <div className="">
+            <h1 className="flex w-full mb-5 gap-2 justify-center md:justify-start items-center text-center text-3xl text-white font-bold">
+              Welcome to Akram's profile!
+              <img
+                src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
+                width={28}
+                alt="wavy hand"
+                className="hidden sm:block"
+              />
+            </h1>
             <img
               className="m-auto h-48 w-48 dark:mix-blend-difference	dark:border dark:border-[#353535] rounded-full shadow"
               src={userInfo.avatar_url}
@@ -32,7 +33,9 @@ const UserBioCard = ({ userInfo }) => {
             {/* Social icons section */}
           </div>
           <div className="md:w-[50%] mt-3">
-            <div className="flex flex-col gap-2">
+            <h2 className="text-xl border-b my-4 border-gray-600/30">About</h2>
+            <p className="overflow-auto h-24 text-ellipsis">I’m a frontend developer who is keen on creating user-friendly interfaces for websites and mobile applications. I have a strong technical background in HTML, CSS, and JavaScript, as well as experience with React and Angular frameworks. I’m passionate about creating clean, responsive designs that are both visually appealing and easy to use. In my previous role, I was responsible for redesigning the company’s website, which resulted in a 40% increase in mobile traffic. I’m excited to bring my skills and experience to your team and help create innovative solutions that meet your customers’ needs.</p>
+            {/* <div className="flex flex-col gap-2">
               <h2 className="text-xl w-full border-b border-gray-600/30">
                 Github Profile Statistics
               </h2>
@@ -56,7 +59,7 @@ const UserBioCard = ({ userInfo }) => {
                   <span className="text-gray-400">Folowing</span>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* LinkedIn */}
 
             <div>
