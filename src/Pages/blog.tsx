@@ -48,7 +48,7 @@ const Blog = () => {
   const pinnedBlogs = devBlogs?.slice(0, 3) ?? [];
   const remainingBlogs = devBlogs?.slice(5) ?? [];
   const [tagList, setTagList] = useState<string[]>([]);
-
+  const [filteredTag, setFilteredTag] = useState<string>('')
   useEffect(() => {
     const updatedTagList = remainingBlogs.reduce(
       (tags, { tag_list }) => [...tags, ...tag_list],
@@ -59,6 +59,9 @@ const Blog = () => {
 
     setTagList(uniqueTagList);
   }, [remainingBlogs, tagList]);
+  const handleAllButtonClick = () => {
+    setFilteredTag('');
+  };
   return (
     <div className="animate-fade-in flex-grow">
       <PageTitle
@@ -77,18 +80,14 @@ const Blog = () => {
       />
       <div className="w-full">
         <HeroSection />
-
         <div className="flex items-center justify-center py-4 md:py-8 flex-wrap gap-4">
-          <button type="button" className=" text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30">All Topics</button>
+          <button onClick={handleAllButtonClick} type="button" className=" text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30">All Topics</button>
           {tagList?.map(tag =>
-            <button type="button" className=" text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30">{tag.charAt(0).toUpperCase() + tag.slice(1)}</button>
-          )
-
-          }
+            <button onClick={() => setFilteredTag(tag)} type="button" className=" text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30" key={tag}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</button>
+          )}
         </div>
 
-
-        <div className="flex overflow-x-auto justify-between px-2 lg:p-0">
+        {/* <div className="flex overflow-x-auto justify-between px-2 lg:p-0">
           {pinnedBlogs.map(
             ({ title, created_at, user, url, tag_list, social_image }, i) => (
               <PinArticle
@@ -104,10 +103,26 @@ const Blog = () => {
               />
             )
           )}
-        </div>
+        </div> */}
         <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-5">
           <div className="grid-container w-full">
-            {remainingBlogs.map(
+            {remainingBlogs
+              .filter(({ tag_list }) => tag_list.includes(filteredTag) || filteredTag === '')
+              .map(({ id, title, created_at, user, url, tag_list, social_image, i }) => (
+                <PinArticle
+                  key={`pinned-${i}`}
+                  className={`grid-item div${i + 1
+                    } flex justify-center items-center  shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
+                  title={title}
+                  createdAt={created_at}
+                  user={user}
+                  url={url}
+                  social_image={social_image}
+                  tagList={tag_list}
+                  index={i + 4}
+                />
+              ))}
+            {/* {remainingBlogs.map(
               ({ title, created_at, user, url, tag_list, social_image }, i) => {
                 return (
                   <PinArticle
@@ -124,7 +139,7 @@ const Blog = () => {
                   />
                 )
               }
-            )}
+            )} */}
           </div>
 
           <div className="w-full lg:w-1/3 tilt-in-right-1">
