@@ -1,6 +1,6 @@
 import { useDevBlogs } from "../Contexts/DEVAPIContext";
-import { useState } from "react";
-import {BsStars} from 'react-icons/bs';
+import { useEffect, useState } from "react";
+import { BsStars } from 'react-icons/bs';
 import PageTitle from "../Components/PageTitle";
 import PinArticle from "../Components/PinArticle";
 import HeroSection from "../Components/HeroSection";
@@ -45,12 +45,24 @@ const SubscriptionForm = () => {
 
 const Blog = () => {
   const { devBlogs } = useDevBlogs();
-  const pinnedBlogs = devBlogs?.slice(2, 5) ?? [];
+  const pinnedBlogs = devBlogs?.slice(0, 3) ?? [];
   const remainingBlogs = devBlogs?.slice(5) ?? [];
+  const [tagList, setTagList] = useState<string[]>([]);
+
+  useEffect(() => {
+    const updatedTagList = remainingBlogs.reduce(
+      (tags, { tag_list }) => [...tags, ...tag_list],
+      tagList
+    );
+    // Remove duplicates from the updatedTagList array
+    const uniqueTagList = [...new Set(updatedTagList)];
+
+    setTagList(uniqueTagList);
+  }, [remainingBlogs, tagList]);
   return (
     <div className="animate-fade-in flex-grow">
       <PageTitle
-        title={<><BsStars className="text-premium-yellow" size="30"/> Blog</>}
+        title={<><BsStars className="text-premium-yellow" size="30" /> Blog</>}
         subtitle={
           <>
             <span className="font-bold text-xs sm:text-sm">Total Articles: </span>
@@ -65,6 +77,17 @@ const Blog = () => {
       />
       <div className="w-full">
         <HeroSection />
+
+        <div className="flex items-center justify-center py-4 md:py-8 flex-wrap gap-4">
+          <button type="button" className=" text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30">All Topics</button>
+          {tagList?.map(tag =>
+            <button type="button" className=" text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30">{tag.charAt(0).toUpperCase() + tag.slice(1)}</button>
+          )
+
+          }
+        </div>
+
+
         <div className="flex overflow-x-auto justify-between px-2 lg:p-0">
           {pinnedBlogs.map(
             ({ title, created_at, user, url, tag_list, social_image }, i) => (
@@ -85,21 +108,22 @@ const Blog = () => {
         <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-5">
           <div className="grid-container w-full">
             {remainingBlogs.map(
-              ({ title, created_at, user, url, tag_list, social_image }, i) => (
-                <PinArticle
-                  key={`pinned-${i}`}
-                  className={`grid-item div${
-                    i + 1
-                  } flex justify-center items-center  shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
-                  title={title}
-                  createdAt={created_at}
-                  user={user}
-                  url={url}
-                  social_image={social_image}
-                  tagList={tag_list}
-                  index={i + 4}
-                />
-              )
+              ({ title, created_at, user, url, tag_list, social_image }, i) => {
+                return (
+                  <PinArticle
+                    key={`pinned-${i}`}
+                    className={`grid-item div${i + 1
+                      } flex justify-center items-center  shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
+                    title={title}
+                    createdAt={created_at}
+                    user={user}
+                    url={url}
+                    social_image={social_image}
+                    tagList={tag_list}
+                    index={i + 4}
+                  />
+                )
+              }
             )}
           </div>
 
