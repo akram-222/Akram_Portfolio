@@ -3,7 +3,7 @@ const SocialShareButton = ({url,platform,children}) => {
   return (
     <button
       type="button"
-      className="btn btn-primary"
+      className=" btn-primary"
       onClick={() => {
         window.open(
           platform + url,

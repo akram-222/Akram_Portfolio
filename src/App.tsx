@@ -65,7 +65,7 @@ const App = () => {
             
             <Sidebar/>
         
-            <div className="bg-1 sm:p-2 relative flex-grow overflow-auto flex flex-wrap">
+            <div className="dark:bg-1 sm:p-2 relative flex-grow overflow-auto flex flex-wrap">
               <Routes>
                 {isLogging ? (
                   <Route

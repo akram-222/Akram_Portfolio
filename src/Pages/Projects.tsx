@@ -75,8 +75,8 @@ mixBlendMode: 'overlay'
             </div>
             <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
-                <tr className="border-b border-b-gray-500/60">
-                  <th className="p-3 w-[45%] border-r text-white bg-card border-r-gray-600/20">
+                <tr className="border-b border-b-gray-500/60 bg-card">
+                  <th className="p-3 w-[45%] border-r text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>Project Name</span>
                       <BsFilterRight
@@ -86,7 +86,7 @@ mixBlendMode: 'overlay'
                       />
                     </div>
                   </th>
-                  <th className="flex items-center justify-center xs:block p-3 border-r text-white bg-card border-r-gray-600/20">
+                  <th className="flex items-center justify-center xs:block p-3 border-r text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>
                         Lang<span className="hidden xs:inline-block">uage</span>
@@ -94,13 +94,13 @@ mixBlendMode: 'overlay'
                       {/* <BsFilterRight size='16' /> */}
                     </div>
                   </th>
-                  <th className="p-3 border-r text-white bg-card border-r-gray-600/20">
+                  <th className="p-3 border-r text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>Info</span>
                       {/* <BsFilterRight size='16' /> */}
                     </div>
                   </th>
-                  <th className="w-full p-3 hidden sm:inline-block  text-white bg-card">
+                  <th className="w-full p-3 hidden sm:inline-block  text-white">
                     <div className="flex justify-between items-center">
                       <span>Date</span>
                       {/* <BsFilterRight size='16' /> */}

@@ -2,7 +2,7 @@ import cat from "../assests/cat.png";
 const UserBioCard = ({ userInfo }) => {
   return (
     <>
-      <div className="flex relative mt-2 w-full flex-wrap dark:bg-card p-8 rounded-lg">
+      <div className="animate-fade-in-top border border-gray-600/30 drop-shadow-[0_0px_2px_black] flex relative mt-2 w-full flex-wrap dark:bg-card p-8 rounded-lg">
         {/* <img className="absolute -top-[60px] right-10 w-14" src={cat} /> */}
 
 
@@ -64,7 +64,7 @@ const UserBioCard = ({ userInfo }) => {
 
             <div>
               <h2 className="text-xl border-b my-4 border-gray-600/30">
-                Contact with me
+                Contact me
               </h2>
               <div className="socials text-center flex items-center flex-wrap self-start gap-2">
                 <a href="https://www.linkedin.com/in/ak-ram/">

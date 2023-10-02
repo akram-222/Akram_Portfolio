@@ -16,9 +16,9 @@ function MenuItem({ item: { id, title, notifications }, onClick }) {
       }
       className={`${
         title.toLowerCase() === currentRoute
-          ? "sidebar-item-selected dark:bg-details"
-          : ""
-      } text-gray-800 group py-2 flex-nowrap dark:text-gray-500/80 hover:text-gray-600 dark:hover:text-gray-100 w-full flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer`}
+          ? "bg-gray-50 dark:bg-gray-700/20 dark:text-white"
+          : "dark:text-gray-500/80"
+      } text-gray-800 group py-2 flex-nowrap  hover:text-gray-600 dark:hover:text-gray-100 w-full flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer`}
       onClick={() => onClick(id)}
     >
       <SidebarIcons id={id} />
