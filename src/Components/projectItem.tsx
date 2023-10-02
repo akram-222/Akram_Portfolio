@@ -52,10 +52,10 @@ const ProjectItem = ({
       //   }
       // }
 
-      className="hover:shadow-xl animate-fade-in text-gray-400 group hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700/30  border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20"
+      className="hover:shadow-xl animate-fade-in text-gray-400 group hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700/30  border-b border-b-gray-200 border-0 xs:border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20"
     >
 
-      <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
+      <td className="sm:p-3 p-3 border-r border-r-gray-600/10">
         <div className="flex items-center">
           <span onClick={() =>
             window.open(
@@ -77,7 +77,7 @@ const ProjectItem = ({
           >
             <BsCloudDownload
               size={18}
-              className="cursor-pointer group-hover:animate-fade-in hidden mx-2 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
+              className="cursor-pointer group-hover:animate-fade-in mx-2 lg:inline transition-all xs:w-0 xs:group-hover:w-5 xs:opacity-0 xs:group-hover:opacity-100 hover:text-white"
             />
           </a>
           <span onClick={() => {
@@ -85,12 +85,12 @@ const ProjectItem = ({
             setRepoToViewIndex(i)
           }}>
             <BsDisplay size={19}
-              className="cursor-pointer group-hover:animate-fade-in hidden mr-3 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
+              className="cursor-pointer group-hover:animate-fade-in mr-3 lg:inline transition-all xs:w-0 xs:group-hover:w-5 xs:opacity-0 group-hover:opacity-100 hover:text-white"
             />
           </span>
           <span
             // to={name.toLowerCase()}
-            className="flex whitespace-nowrap items-center justify-between"
+            className="flex order-first flex-grow xs:order-last whitespace-nowrap items-center justify-between"
           >
             {indexingSys}. {name}
           </span>
@@ -103,12 +103,12 @@ const ProjectItem = ({
           </a>
         </div>
       </td>
-      <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
+      <td className="hidden xs:table-cell sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex m-auto w-fit xs:w-full">
           {fork ? (
             <>
               <BiGitRepoForked size={18} className="text-green-500" />
-              <span className="xs:block  hidden ml-2">Frok</span>
+              <span className="ml-2">Frok</span>
             </>
           ) : language ? (
             <>
@@ -117,23 +117,23 @@ const ProjectItem = ({
                 src={`https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/${language?.toLowerCase()}/${language?.toLowerCase()}.png`}
                 alt={language}
               />
-              <span className="xs:block  hidden ml-2">{language}</span>
+              <span className="ml-2">{language}</span>
             </>
           ) : name.toLowerCase() === "Ak-ram".toLocaleLowerCase() ? (
             <>
               <AiOutlineBook size={18} className="dark:text-blue-500" />
-              <span className="xs:block  hidden ml-2">README File</span>
+              <span className="ml-2">README File</span>
             </>
           ) : (
             <>
               <BsDashCircle size={18} className="dark:text-red-500" />
-              <span className="xs:block  hidden ml-2"> Empty Repo</span>
+              <span className="ml-2"> Empty Repo</span>
             </>
           )}
         </div>
       </td>
 
-      <td className=" sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
+      <td className="hidden xs:table-cell sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <span className="text-xs text-gray-600 mr-1">{forksCount}</span>
         <BiGitRepoForked
           size={18}
@@ -161,7 +161,7 @@ const ProjectItem = ({
           />
         )}
       </td>
-      <td className="flex hidden sm:inline-block sm:p-3 py-2 px-1">
+      <td className="flex hidden sm:table-cell sm:p-3 py-2 px-1">
         <div className="flex items-center">
           <div className="sm:flex flex-col">
             {new Date(createdAt).toLocaleDateString("en-US", {

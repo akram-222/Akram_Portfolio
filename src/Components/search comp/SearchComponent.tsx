@@ -33,12 +33,12 @@ const SearchComponent = ({ list }) => {
 
   return (
     <div className="relative text-white">
-      Porject name:
+      Looking For:
       <input
         onBlur={() => setTimeout(() => setIsHidden(true), 200)}
         type={"search"}
         onChange={(e) => filtering(e)}
-        className="mt-1 cursor-text flex items-center block px-2 py-1 overflow-hidden text-black dark:text-white text-sm w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500/30"
+        className="mt-1 cursor-text flex items-center block px-2 py-1 overflow-hidden text-black dark:text-white sm:text-sm w-[220px] border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-transparent dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500/30"
         placeholder="Search..."
         ref={inputFeild}
         value={searchVal}
@@ -48,14 +48,14 @@ const SearchComponent = ({ list }) => {
           isHidden ? "" : ""
         }  border-gray-400/50 h-56 overflow-auto z-20 mt-2  dark:bg-card dark:text-gray-300 w-full rounded`}
       >
-        <span className="text-xs text-yellow-400 block pt-3 pb-2 border-b border-b-gray-600/30">
+        <span className=" text-yellow-400 block pt-3 pb-2 border-b border-b-gray-600/30">
           Suggestions: {filteredList.length}
         </span>
         {filteredList.length ? (
           filteredList?.map((item, i: number) => (
             <li
               key={i}
-              className="group slide-bottom p-2 flex items-center gap-2 cursor-pointer text-sm hover:bg-gray-700/20"
+              className="group slide-bottom p-2 flex items-center gap-2 cursor-pointer sm:text-sm hover:bg-gray-700/20"
               onClick={() => {
                 setSearchVal(item.name);
                 setIsHidden(true);

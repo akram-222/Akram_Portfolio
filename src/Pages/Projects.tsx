@@ -57,7 +57,7 @@ mixBlendMode: 'overlay'
         is_premium={false}
         premium_star=""
       />
-      <div className="flex w-full flex-col lg:flex-row">
+      <div className="flex w-full flex-col lg:flex-row p-2">
         <div className="projects-list w-full flex flex-wrap gap-2">
           <div className="w-full">
             <div className="flex relative items-center">
@@ -84,7 +84,7 @@ mixBlendMode: 'overlay'
                       />
                     </div>
                   </th>
-                  <th className="flex items-center justify-center xs:block p-3 border-r text-white border-r-gray-600/20">
+                  <th className="flex items-center justify-center hidden xs:table-cell p-3 border-r text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>
                         Lang<span className="hidden xs:inline-block">uage</span>
@@ -92,13 +92,13 @@ mixBlendMode: 'overlay'
                       {/* <BsFilterRight size='16' /> */}
                     </div>
                   </th>
-                  <th className="p-3 border-r text-white border-r-gray-600/20">
+                  <th className="p-3 border-r hidden xs:table-cell text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>Info</span>
                       {/* <BsFilterRight size='16' /> */}
                     </div>
                   </th>
-                  <th className="w-full p-3 hidden sm:inline-block  text-white">
+                  <th className="p-3 hidden sm:table-cell  text-white">
                     <div className="flex justify-between items-center">
                       <span>Date</span>
                       {/* <BsFilterRight size='16' /> */}
