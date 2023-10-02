@@ -7,6 +7,7 @@ import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { BsFilterRight } from "react-icons/bs";
+import Viewer from "../Components/viewer/viewer";
 // import SearchComponent from "../Components/search comp/SearchComponent";
 
 

@@ -1,12 +1,11 @@
 import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineBook } from "react-icons/ai";
 import {
-  BiGitRepoForked,
+  BiGitRepoForked, BiSlideshow,
 
 } from "react-icons/bi";
-import { BsDashCircle, BsCloudDownload, BsLink45Deg } from "react-icons/bs";
+import { BsDashCircle, BsCloudDownload, BsLink45Deg, BsDisplay } from "react-icons/bs";
 import { VscIssueDraft, VscIssues } from "react-icons/vsc";
 const ProjectItem = ({
   name,
@@ -24,23 +23,22 @@ const ProjectItem = ({
   homepage,
   html_url,
 }) => {
-  const [isSelected, setIsSelected] = useState(false);
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
-    const Confiite = ()=>{
-      setTimeout(() => {
-        confetti({
-          particleCount: 100,
-          startVelocity: 30,
-          spread: 360,
-          angle: 40,
-          origin: {
-            x: 0.5,
-            y: 0,
-          },
-        });
-      }, 1000);
-    }
+  const Confiite = () => {
+    setTimeout(() => {
+      confetti({
+        particleCount: 100,
+        startVelocity: 30,
+        spread: 360,
+        angle: 40,
+        origin: {
+          x: 0.5,
+          y: 0,
+        },
+      });
+    }, 1000);
+  }
   return (
     <tr
       // onDoubleClick={
@@ -51,31 +49,37 @@ const ProjectItem = ({
 
       className="text-gray-400 group hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700/30  border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20"
     >
+
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex items-center">
-          <span  onClick={() =>
-                window.open(
-                  html_url,
-                  "_blank",
-                  // "width=500,height=300,toolbar=no"
-                )
-              }>
+          <span onClick={() =>
+            window.open(
+              html_url,
+              "_blank",
+              // "width=500,height=300,toolbar=no"
+            )
+          }>
             <BsLink45Deg
               size={19}
-              
+
               className="animate-fade-in cursor-pointer lg:inline hover:text-white"
             />
           </span>
           <a
             className={`flex flex-col gap-3 transition-all group-hover:animate-pulse`}
-          href={`https://github.com/Ak-ram/${name}/archive/refs/heads/master.zip`}
-          onClick={Confiite}
+            href={`https://github.com/Ak-ram/${name}/archive/refs/heads/master.zip`}
+            onClick={Confiite}
           >
             <BsCloudDownload
               size={18}
               className="cursor-pointer group-hover:animate-fade-in hidden mx-2 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
             />
           </a>
+          <span>
+            <BsDisplay size={19}
+              className="cursor-pointer group-hover:animate-fade-in hidden mr-3 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
+             />
+          </span>
           <span
             // to={name.toLowerCase()}
             className="flex whitespace-nowrap items-center justify-between"
