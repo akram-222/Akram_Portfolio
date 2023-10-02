@@ -36,7 +36,7 @@ const ProjectItem = ({
       //   }
       // }
 
-      className="text-gray-400 group hover:text-gray-900 hover:bg-gray-200  border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20"
+      className="text-gray-400 group hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700/30  border-b border-b-gray-200 border-l-4 dark:border-l-transparent dark:hover-border-l-5 dark:hover:border-l-blue-400 dark:border-gray-600/20"
     >
       <td className="sm:p-3 py-2 px-1 border-r border-r-gray-600/10">
         <div className="flex items-center">

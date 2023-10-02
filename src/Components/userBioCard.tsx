@@ -2,7 +2,7 @@ import cat from "../assests/cat.png";
 const UserBioCard = ({ userInfo }) => {
   return (
     <>
-      <div className="animate-fade-in-top border border-gray-600/30 drop-shadow-[0_0px_2px_black] flex relative mt-2 w-full flex-wrap dark:bg-card p-8 rounded-lg">
+      <div className="animate-fade-in-top border border-gray-600/30  flex relative mt-2 w-full flex-wrap dark:bg-card p-8 rounded-lg">
         {/* <img className="absolute -top-[60px] right-10 w-14" src={cat} /> */}
 
 
