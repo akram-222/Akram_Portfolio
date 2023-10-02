@@ -59,6 +59,8 @@ const Blog = () => {
             onClick={handleAllButtonClick}
           >
             All Topics
+            <span className={`${filteredTag ===  '' ?"" : 'hidden'} ml-2 text-sm text-yellow-400 underline underline-offset-4`}>{filterRes.length}</span>
+
           </button>
           {tagList?.map(tag =>
             <button
@@ -68,7 +70,7 @@ const Blog = () => {
               onClick={() => handleTagButtonClick(tag)}
             >
               {tag.charAt(0).toUpperCase() + tag.slice(1)}
-              <span className={`${filteredTag === tag ? '' : 'hidden'}`}>{filterRes.length}</span>
+              <span className={`${filteredTag === tag ? '' : 'hidden'} ml-2 text-sm text-yellow-400 underline underline-offset-4`}>{filterRes.length}</span>
             </button>
           )}
         </div>
