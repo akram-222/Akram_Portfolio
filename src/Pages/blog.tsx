@@ -68,10 +68,10 @@ const Blog = () => {
               onClick={() => handleTagButtonClick(tag)}
             >
               {tag.charAt(0).toUpperCase() + tag.slice(1)}
+              <span className={`${filteredTag === tag ? '' : 'hidden'}`}>{filterRes.length}</span>
             </button>
           )}
         </div>
-        <span>{filterRes.lenght} matches </span>
         <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-5">
           <div className="flex items-center justify-center gap-4 h-[600px] overflow-auto flex-wrap w-full">
             {filterRes.map(({ id, title, created_at, user, url, tag_list, social_image, i }) => (
