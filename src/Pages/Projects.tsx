@@ -61,15 +61,15 @@ mixBlendMode: 'overlay'
         <div className="projects-list w-full flex flex-wrap gap-2">
           <div className="w-full">
             <div className="flex relative items-center">
-
-              <Pagination
-                isLoad={isLoad}
-                setLoad={setLoad}
-                repoConfig={repoConfig}
-                setRepoConfig={setRepoConfig}
-                repos={repos}
-                className="w-full"
-              />
+             
+                <Pagination
+                  isLoad={isLoad}
+                  setLoad={setLoad}
+                  repoConfig={repoConfig}
+                  setRepoConfig={setRepoConfig}
+                  repos={repos}
+                  className={`${isView?"hidden":""} w-full`}
+                />
             </div>
             {isView ? <RepoDetails repos={repos} repoToViewIndex={repoToViewIndex} setViewer={setViewer} /> : <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
