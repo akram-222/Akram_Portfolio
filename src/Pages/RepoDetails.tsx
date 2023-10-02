@@ -11,14 +11,14 @@ const RepoDetails = ({ repoToViewIndex, setViewer, repos }) => {
   //   },4000)
   // },[activeItem])
   return (
-    <div className='repoDetails bg-white dark:bg-card rounded-md p-6'>
-      <header className='flex justify-between items-center mb-10'>
+    <div className='repoDetails rounded-md p-6'>
+      <header className='flex justify-between bg-white dark:bg-card p-5 rounded-lg mb-2 items-center mb-10'>
       <h1  className='text-2xl font-bold text-white'>{name.toUpperCase()}</h1>
       <span className='group cursor-pointer' onClick={() => { setViewer(false) }} >
 <BsArrowLeftShort className='group-hover:animate-rubberband text-blue-400 border border-gray-600/60 rounded bg-details transition' size={30}/>
 </span>
       </header>
-      <div id="custom-controls-gallery" className="relative w-full" data-carousel="slide">
+      <div id="custom-controls-gallery" className="rounded-lg pb-5 bg-white dark:bg-card relative w-full" data-carousel="slide">
         {/* <!-- Carousel wrapper --> */}
         <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
           {[1, 2, 3, 4].map((i) => <div className={`${i === activeItem ? "" : 'hidden'} duration-700 ease-in-out`} data-carousel-item>
