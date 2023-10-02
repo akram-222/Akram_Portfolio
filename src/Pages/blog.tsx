@@ -8,7 +8,7 @@ import "./blog.css";
 const SubscriptionForm = () => {
   return (
     <div className="w-full rounded-md dark:bg-[#171717] p-4 mb-4 h-full border border-gray-600/30">
-      <h5 className="mx-auto xs:w-fit sm:w-full mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
+      <h5 className="mx-auto xs:w-fit sm:w-full mb-4 font-bold relative text-lg dark:text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
         Subscribe
       </h5>
       <p className="mx-auto xs:w-fit sm:w-full text-gray-400 text-xs sm:text-sm">
@@ -25,7 +25,7 @@ const SubscriptionForm = () => {
           />
           <div className="controls flex gap-1">
             <button
-              className="flex-shrink-0 dark:bg-card border-gray-700 border sm:border-2 dark:hover:bg-gray-700 text-white py-1 px-1 sm:px-2 rounded"
+              className="flex-shrink-0 dark:bg-card border-gray-700 border sm:border-2 dark:hover:bg-gray-700 dark:text-white py-1 px-1 sm:px-2 rounded"
               type="button"
             >
               Sign Up

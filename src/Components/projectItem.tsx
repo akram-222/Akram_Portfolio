@@ -76,7 +76,7 @@ const ProjectItem = ({
         <div className="flex m-auto w-fit xs:w-full">
           {fork ? (
             <>
-              <BiGitRepoForked size={18} className="dark:text-green-500" />
+              <BiGitRepoForked size={18} className="text-green-500" />
               <span className="xs:block  hidden ml-2">Frok</span>
             </>
           ) : language ? (
@@ -106,7 +106,7 @@ const ProjectItem = ({
         <span className="text-xs text-gray-600 mr-1">{forksCount}</span>
         <BiGitRepoForked
           size={18}
-          className="inline dark:text-green-500 mr-1"
+          className="inline text-green-500 mr-1"
         />
         {/* {visibility === "public" ? (
           <AiOutlineEye size={23} className="inline dark:text-green-500 mx-1" />
@@ -120,13 +120,13 @@ const ProjectItem = ({
           <VscIssues
             data-hint="has open issues"
             size={18}
-            className="showHint inline dark:text-green-500 mx-1"
+            className="showHint inline text-green-500 mx-1"
           />
         ) : (
           <VscIssueDraft
             data-hint="has no issues"
             size={18}
-            className="showHint inline dark:text-red-500 mx-1"
+            className="showHint inline text-red-500 mx-1"
           />
         )}
       </td>

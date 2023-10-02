@@ -75,7 +75,7 @@ mixBlendMode: 'overlay'
             </div>
             <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
-                <tr className="border-b border-b-gray-500/60 bg-card">
+                <tr className="border-b border-b-gray-500/60 bg-gray-700 dark:bg-card">
                   <th className="p-3 w-[45%] border-r text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>Project Name</span>
