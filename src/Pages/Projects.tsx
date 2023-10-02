@@ -8,6 +8,7 @@ import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { BsFilterRight } from "react-icons/bs";
 import RepoDetails from "./RepoDetails";
+import Swipeable from "../Components/swipeable";
 // import SearchComponent from "../Components/search comp/SearchComponent";
 
 
@@ -20,7 +21,9 @@ const Projects = () => {
   const [isVisible, setVisibility] = useState(false);
   const [currentHomePage, setCurrentHomePage] = useState("");
   const [isView, setViewer] = useState(false)
-  const [repoToViewIndex, setrepoToViewIndex] = useState(0)
+  const [repoToViewIndex, setrepoToViewIndex] = useState(0);
+
+
   useEffect(() => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
@@ -29,17 +32,26 @@ const Projects = () => {
     });
   }, [repoConfig]);
 
-  return (
-    <div className="animate-fade-in flex-col items-start w-full flex-wrap">
-      {/* <iframe style={{
+  const onSwipeLeft = () => {
+    console.log('Swiped left!');
+  };
 
-zIndex: '-1',
-opacity: '0.3',
-mixBlendMode: 'overlay'
-       }} src={currentHomePage} 
-       className="absolute h-full w-full"
-       title="W3Schools Free Online Web Tutorials"></iframe> 
-        */}
+  const onSwipeRight = () => {
+    console.log('Swiped right!');
+  };
+
+  const onSwipeUp = () => {
+    console.log('Swiped up!');
+  };
+
+  const onSwipeDown = () => {
+    console.log('Swiped down!');
+  };
+
+  return (
+    <div className="animate-fade-in flex-col items-start w-full flex-wrap"
+    >
+
       <PageTitle
         className={"h-fit"}
         title="Projects"
@@ -61,53 +73,55 @@ mixBlendMode: 'overlay'
         <div className="projects-list w-full flex flex-wrap gap-2">
           <div className="w-full">
             <div className="flex relative items-center">
-             
-                <Pagination
-                  isLoad={isLoad}
-                  setLoad={setLoad}
-                  repoConfig={repoConfig}
-                  setRepoConfig={setRepoConfig}
-                  repos={repos}
-                  className={`${isView?"hidden":""} w-full`}
-                />
+
+              <Pagination
+                isLoad={isLoad}
+                setLoad={setLoad}
+                repoConfig={repoConfig}
+                setRepoConfig={setRepoConfig}
+                repos={repos}
+                className={`${isView ? "hidden" : ""} w-full`}
+              />
             </div>
-            {isView ? <RepoDetails repos={repos} repoToViewIndex={repoToViewIndex} setViewer={setViewer} /> : <table className="w-full text-left text-xs md:text-sm ">
-              <thead className="mb-2">
-                <tr className="border-b border-b-gray-500/60 bg-gray-700 dark:bg-card">
-                  <th className="p-3 w-[45%] border-r text-white border-r-gray-600/20">
-                    <div className="flex justify-between items-center">
-                      <span>Project Name</span>
-                      <BsFilterRight
-                        className="cursor-pointer"
-                        size="16"
-                        onClick={() => setVisibility(!isVisible)}
-                      />
-                    </div>
-                  </th>
-                  <th className="flex items-center justify-center hidden xs:table-cell p-3 border-r text-white border-r-gray-600/20">
-                    <div className="flex justify-between items-center">
-                      <span>
-                        Lang<span className="hidden xs:inline-block">uage</span>
-                      </span>
-                      {/* <BsFilterRight size='16' /> */}
-                    </div>
-                  </th>
-                  <th className="p-3 border-r hidden xs:table-cell text-white border-r-gray-600/20">
-                    <div className="flex justify-between items-center">
-                      <span>Info</span>
-                      {/* <BsFilterRight size='16' /> */}
-                    </div>
-                  </th>
-                  <th className="p-3 hidden sm:table-cell  text-white">
-                    <div className="flex justify-between items-center">
-                      <span>Date</span>
-                      {/* <BsFilterRight size='16' /> */}
-                    </div>
-                  </th>
-                </tr>{" "}
-              </thead>
-              {isVisible ? <FilterProjects repos={repos} /> : null}
-              {/* <thead>
+            {isView ? <RepoDetails repos={repos} repoToViewIndex={repoToViewIndex} setViewer={setViewer} /> : <Swipeable onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} onSwipeUp={onSwipeUp} onSwipeDown={onSwipeDown}>
+              <div className="table-container overflow-auto w-full h-full">
+                <table className="w-full text-left text-xs md:text-sm ">
+                  <thead className="mb-2">
+                    <tr className="border-b border-b-gray-500/60 bg-gray-700 dark:bg-card">
+                      <th className="p-3 w-[45%] border-r text-white border-r-gray-600/20">
+                        <div className="flex justify-between items-center">
+                          <span>Project Name</span>
+                          <BsFilterRight
+                            className="cursor-pointer"
+                            size="16"
+                            onClick={() => setVisibility(!isVisible)}
+                          />
+                        </div>
+                      </th>
+                      <th className="flex items-center justify-center hidden xs:table-cell p-3 border-r text-white border-r-gray-600/20">
+                        <div className="flex justify-between items-center">
+                          <span>
+                            Lang<span className="hidden xs:inline-block">uage</span>
+                          </span>
+                          {/* <BsFilterRight size='16' /> */}
+                        </div>
+                      </th>
+                      <th className="p-3 border-r hidden xs:table-cell text-white border-r-gray-600/20">
+                        <div className="flex justify-between items-center">
+                          <span>Info</span>
+                          {/* <BsFilterRight size='16' /> */}
+                        </div>
+                      </th>
+                      <th className="p-3 hidden sm:table-cell  text-white">
+                        <div className="flex justify-between items-center">
+                          <span>Date</span>
+                          {/* <BsFilterRight size='16' /> */}
+                        </div>
+                      </th>
+                    </tr>{" "}
+                  </thead>
+                  {isVisible ? <FilterProjects repos={repos} /> : null}
+                  {/* <thead>
                 <tr className="text-gray-400">
                   {["Name", "Language", "Details", "Date"].map(
                     (item, index) => (
@@ -121,61 +135,63 @@ mixBlendMode: 'overlay'
                   )}
                 </tr>
               </thead> */}
-              <tbody className="text-gray-600 dark:text-gray-100">
-                {/* <Skelton
+                  <tbody className="text-gray-600 dark:text-gray-100">
+                    {/* <Skelton
                     number={repoConfig.per_page}
                     className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717] dark:border-[#353535]`}
                   /> */}
-                {isLoad ? (
-                  <Skelton
-                    number={repoConfig.per_page - 1}
-                    className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717]/30 dark:border-[#353535]`}
-                  />
-                ) : (
-                  repos?.map(
-                    (
-                      {
-                        name,
-                        id,
-                        created_at,
-                        language,
-                        fork,
-                        visibility,
-                        has_issues,
-                        forks_count,
-                        homepage,
-                        html_url,
-                      },
-                      i: number
-                    ) => (
-                      <>
-                        <ProjectItem
-                          key={i}
-                          name={name}
-                          id={id}
-                          language={language}
-                          fork={fork}
-                          visibility={visibility}
-                          hasIssues={has_issues}
-                          forksCount={forks_count}
-                          i={i}
-                          createdAt={created_at}
-                          repoConfig={repoConfig}
-                          currentHomePage={currentHomePage}
-                          setCurrentHomePage={setCurrentHomePage}
-                          homepage={homepage}
-                          html_url={html_url}
-                          isView={isView}
-                          setViewer={setViewer}
-                          repoToViewIndex={repoToViewIndex}
-                          setRepoToViewIndex={setrepoToViewIndex}
-                        />
-                      </>
-                    )
-                  )
-                )}
-              </tbody>
-            </table>}
+                    {isLoad ? (
+                      <Skelton
+                        number={repoConfig.per_page - 1}
+                        className={`border relative w-full xs:w-[49%] md:w-[32%] bg-white shadow-md dark:bg-[#171717]/30 dark:border-[#353535]`}
+                      />
+                    ) : (
+                      repos?.map(
+                        (
+                          {
+                            name,
+                            id,
+                            created_at,
+                            language,
+                            fork,
+                            visibility,
+                            has_issues,
+                            forks_count,
+                            homepage,
+                            html_url,
+                          },
+                          i: number
+                        ) => (
+                          <>
+                            <ProjectItem
+                              key={i}
+                              name={name}
+                              id={id}
+                              language={language}
+                              fork={fork}
+                              visibility={visibility}
+                              hasIssues={has_issues}
+                              forksCount={forks_count}
+                              i={i}
+                              createdAt={created_at}
+                              repoConfig={repoConfig}
+                              currentHomePage={currentHomePage}
+                              setCurrentHomePage={setCurrentHomePage}
+                              homepage={homepage}
+                              html_url={html_url}
+                              isView={isView}
+                              setViewer={setViewer}
+                              repoToViewIndex={repoToViewIndex}
+                              setRepoToViewIndex={setrepoToViewIndex}
+                            />
+                          </>
+                        )
+                      )
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </Swipeable>}
 
 
           </div>
