@@ -12,20 +12,26 @@ const Blog = () => {
   const pinnedBlogs = devBlogs?.slice(0, 3) ?? [];
   const remainingBlogs = devBlogs?.slice(5) ?? [];
   const [tagList, setTagList] = useState<string[]>([]);
-  const [filteredTag, setFilteredTag] = useState<string>('')
+  const [filteredTag, setFilteredTag] = useState<string>('');
+
   useEffect(() => {
     const updatedTagList = remainingBlogs.reduce(
       (tags, { tag_list }) => [...tags, ...tag_list],
       tagList
     );
-    // Remove duplicates from the updatedTagList array
     const uniqueTagList = [...new Set(updatedTagList)];
 
     setTagList(uniqueTagList);
   }, [remainingBlogs, tagList]);
+
+  const handleTagButtonClick = (tag: string) => {
+    setFilteredTag(tag);
+  };
+
   const handleAllButtonClick = () => {
     setFilteredTag('');
   };
+  const filterRes = devBlogs && devBlogs?.filter(({ tag_list }) => tag_list.includes(filteredTag) || filteredTag === '');
   return (
     <div className="animate-fade-in flex-grow">
       <PageTitle
@@ -42,35 +48,46 @@ const Blog = () => {
         premium_star=""
         className="h-fit"
       />
+
       <div className="w-full">
         <HeroSection />
+
         <div className="flex items-center justify-center py-4 md:py-8 flex-wrap gap-4">
-          <button onClick={handleAllButtonClick} type="button" className=" text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30">All Topics</button>
+          <button
+            type="button"
+            className={`text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30 ${filteredTag === '' ? 'text-white' : ''}`}
+            onClick={handleAllButtonClick}
+          >
+            All Topics
+          </button>
           {tagList?.map(tag =>
-            <button onClick={() => setFilteredTag(tag)} type="button" className=" text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30" key={tag}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</button>
+            <button
+              key={tag}
+              type="button"
+              className={`text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30 ${filteredTag === tag ? 'text-white' : ''}`}
+              onClick={() => handleTagButtonClick(tag)}
+            >
+              {tag.charAt(0).toUpperCase() + tag.slice(1)}
+            </button>
           )}
         </div>
+        <span>{filterRes.lenght} matches </span>
         <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-5">
-          <div className="grid-container w-full">
-            {devBlogs && devBlogs?.filter(({ tag_list }) => tag_list.includes(filteredTag) || filteredTag === '')
-              .map(({ id, title, created_at, user, url, tag_list, social_image, i }) => (
-                <PinArticle
-                  key={`pinned-${i}`}
-                  className={`grid-item div${i + 1
-                    } flex justify-center items-center  shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
-                  title={title}
-                  createdAt={created_at}
-                  user={user}
-                  url={url}
-                  social_image={social_image}
-                  tagList={tag_list}
-                  index={i + 4}
-                />
-              ))}
-
+          <div className="flex items-center justify-center gap-4 h-[600px] overflow-auto flex-wrap w-full">
+            {filterRes.map(({ id, title, created_at, user, url, tag_list, social_image, i }) => (
+              <PinArticle
+                key={`pinned-${i}`}
+                className={`div${i + 1} flex w-full sm:w-[330px] h-[250px] justify-center items-center shrink-0 mb-2 sm:shrink-1 slide-bottom`}
+                title={title}
+                createdAt={created_at}
+                user={user}
+                url={url}
+                social_image={social_image}
+                tagList={tag_list}
+                index={i + 4}
+              />
+            ))}
           </div>
-
-
         </div>
       </div>
     </div>
