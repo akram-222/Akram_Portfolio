@@ -1,3 +1,4 @@
+//@ts-ignore
 import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
 import { useState } from "react";
 import { AiOutlineBook } from "react-icons/ai";
@@ -22,6 +23,10 @@ const ProjectItem = ({
   setCurrentHomePage,
   homepage,
   html_url,
+  isView,
+  setViewer,
+  repoToViewIndex,
+  setRepoToViewIndex
 }) => {
   const indexingSys =
     i + 1 + repoConfig.per_page * (repoConfig.page - 1) || i + 1;
@@ -75,10 +80,13 @@ const ProjectItem = ({
               className="cursor-pointer group-hover:animate-fade-in hidden mx-2 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
             />
           </a>
-          <span>
+          <span onClick={() => {
+            setViewer(true)
+            setRepoToViewIndex(i)
+          }}>
             <BsDisplay size={19}
               className="cursor-pointer group-hover:animate-fade-in hidden mr-3 lg:inline transition-all w-0 group-hover:w-5 opacity-0 group-hover:opacity-100 hover:text-white"
-             />
+            />
           </span>
           <span
             // to={name.toLowerCase()}

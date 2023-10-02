@@ -18,7 +18,6 @@ import About from "./Pages/About";
 import Footer from "./Components/Footer";
 import Terminal from "./Components/cmd/terminal";
 import Navigations from "./Pages/navigations";
-import Viewer from "./Components/viewer/viewer";
 const App = () => {
   const [isLogging, setIsLogging] = useState(false);
   const [isTimeout, setIsTimeOut] = useState(false);
@@ -165,7 +164,6 @@ const App = () => {
             </div>
           </div>
         </BrowserRouter>
-      <Viewer/>
       </div>
     </DevBlogsContextProvider>
     </SidebarProvider>
