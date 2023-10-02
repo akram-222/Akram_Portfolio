@@ -4,7 +4,7 @@ window.addEventListener("mouseover", () => {
   for (let i = 0; i < ele.length; i++) {
     ele[i].onmousemove = (e) => {
       hint.classList.remove("hidden");
-      hint.style.left = `${e.pageX - 50}px`;
+      hint.style.left = `${e.pageX - 20}px`;
       hint.style.top = `${
         e.pageY - hint.getBoundingClientRect().height - 10
       }px`;
