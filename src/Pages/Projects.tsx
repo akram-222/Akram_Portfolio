@@ -120,7 +120,7 @@ const Projects = () => {
             </div>
             {isView ? <RepoDetails repos={repos} repoToViewIndex={repoToViewIndex} setViewer={setViewer} />
               :
-              <Swipeable onSwipeLeft={e => onSwipeLeft(e)} onSwipeRight={(e) => onSwipeRight(e)} >
+              <Swipeable onSwipeTop={onSwipeUp} onSwipeDown={onSwipeDown} onSwipeLeft={e => onSwipeLeft(e)} onSwipeRight={(e) => onSwipeRight(e)} >
                 <div className="table-container overflow-auto w-full h-full">
                   <span className={`${isMobile && !isTimeOut ? '' : "hidden"} handSwiper text-white absolute z-[9999] top-0 left-0 w-full h-full backdrop-blur-[1px]`}>
                     <MdSwipe className="animate-swipe absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" size={70} /></span>
