@@ -20,13 +20,13 @@ const Swipeable = ({ children, onSwipeLeft, onSwipeRight, onSwipeDown, onSwipeTo
       const diffY = startY - endY;
 
       if (diffX > 150) {
-        onSwipeLeft && onSwipeLeft();
+        onSwipeLeft && onSwipeLeft(e);
       } else if (diffX < -150) {
-        onSwipeRight && onSwipeRight();
+        onSwipeRight && onSwipeRight(e);
       } else if (diffY > 150) {
-        onSwipeTop && onSwipeTop();
+        onSwipeTop && onSwipeTop(e);
       } else if (diffY < -150) { 
-        onSwipeDown && onSwipeDown();
+        onSwipeDown && onSwipeDown(e);
       }
     };
 
