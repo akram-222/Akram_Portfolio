@@ -1,27 +1,11 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
+
 const Swipeable = ({ children, onSwipeLeft, onSwipeRight, onSwipeUp, onSwipeDown }) => {
   const ref = useRef(null);
   const [initialX, setInitialX] = useState(null);
   const [initialY, setInitialY] = useState(null);
 
-  useEffect(() => {
-    const container = ref.current! as HTMLElement;
-
-    container.addEventListener('touchstart', startTouch, { passive: true });
-    container.addEventListener('touchmove', moveTouch, { passive: true });
-
-    return () => {
-      container.removeEventListener('touchstart', startTouch);
-      container.removeEventListener('touchmove', moveTouch);
-    };
-  }, [ref]);
-
-  function startTouch(e) {
-    setInitialX(e.touches[0].clientX);
-    setInitialY(e.touches[0].clientY);
-  }
-
-  function moveTouch(e) {
+  const moveTouch = useCallback((e) => {
     if (initialX === null || initialY === null) {
       return;
     }
@@ -56,6 +40,23 @@ const Swipeable = ({ children, onSwipeLeft, onSwipeRight, onSwipeUp, onSwipeDown
     setInitialY(null);
 
     e.preventDefault();
+  }, [initialX, initialY, onSwipeLeft, onSwipeRight, onSwipeUp, onSwipeDown]);
+
+  useEffect(() => {
+    const container = ref.current! as HTMLElement;
+
+    container.addEventListener('touchstart', startTouch, false);
+    container.addEventListener('touchmove', moveTouch, false);
+
+    return () => {
+      container.removeEventListener('touchstart', startTouch);
+      container.removeEventListener('touchmove', moveTouch);
+    };
+  }, [ref, moveTouch]);
+
+  function startTouch(e) {
+    setInitialX(e.touches[0].clientX);
+    setInitialY(e.touches[0].clientY);
   }
 
   return <div ref={ref}>{children}</div>;

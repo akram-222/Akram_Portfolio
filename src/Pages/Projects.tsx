@@ -28,7 +28,7 @@ const Projects = () => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
       setLoad(false);
-      console.log(fetchedRepos);
+      // console.log(fetchedRepos);
     });
   }, [repoConfig]);
 
@@ -118,7 +118,7 @@ const Projects = () => {
                           {/* <BsFilterRight size='16' /> */}
                         </div>
                       </th>
-                    </tr>{" "}
+                    </tr>
                   </thead>
                   {isVisible ? <FilterProjects repos={repos} /> : null}
                   {/* <thead>
@@ -126,7 +126,7 @@ const Projects = () => {
                   {["Name", "Language", "Details", "Date"].map(
                     (item, index) => (
                       <th
-                        key={index}
+                        key={item}
                         className="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800"
                       >
                         {item}
@@ -162,9 +162,8 @@ const Projects = () => {
                           },
                           i: number
                         ) => (
-                          <>
                             <ProjectItem
-                              key={i}
+                              key={id}
                               name={name}
                               id={id}
                               language={language}
@@ -184,7 +183,7 @@ const Projects = () => {
                               repoToViewIndex={repoToViewIndex}
                               setRepoToViewIndex={setrepoToViewIndex}
                             />
-                          </>
+                          
                         )
                       )
                     )}
