@@ -53,6 +53,7 @@ const ExpandableCards = () => {
           pens.map(({ title, src1, src2, href }, index) => {
             return (
               <a
+              key={`${title}_${index}`}
                 className="card block"
                 onMouseOver={() => setHoveredItem(index)}
                 onMouseOut={() => setHoveredItem(null)}
