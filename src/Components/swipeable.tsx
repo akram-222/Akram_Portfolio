@@ -39,7 +39,7 @@ const Swipeable = ({ children, onSwipeLeft, onSwipeRight, onSwipeDown, onSwipeTo
     };
   }, [onSwipeLeft, onSwipeRight, onSwipeDown, onSwipeTop]); // added onSwipeTop
 
-  return <div ref={ref}>{children}</div>;
+  return <div ref={ref} className='w-full'>{children}</div>;
 };
 
 export default Swipeable;
