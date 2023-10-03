@@ -81,8 +81,8 @@ const Profile = () => {
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📘 My top open source projects
         </h2>
-        {Object.keys(allRepos)?.map((item) => (
-          <ProfileSubSection2 h3Content={item} list={allRepos[item]} />
+        {Object.keys(allRepos)?.map((item,i) => (
+          <ProfileSubSection2 key={i} h3Content={item} list={allRepos[item]} />
         ))}
         <h2 className="my-4 border border-gray-600/30 p-1.5 pt-2 text-2xl text-white">
           📕 Top projects I've contributed to
@@ -90,8 +90,9 @@ const Profile = () => {
         {/* Small repo cards https://github.com/DenverCoder1/github-readme-stats (fork of anuraghazra/github-readme-stats) */}
         <div className="">
           <div className="ml-8 flex flex-wrap items-center justify-start gap-3">
-            {Object.keys(topContributedRepos)?.map((item) => (
+            {Object.keys(topContributedRepos)?.map((item,i) => (
               <a
+              key={i}
                 href={`https://github.com/${item}`}
                 className="w-full xs:w-[48%] md:w-[30%]"
               >

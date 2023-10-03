@@ -80,6 +80,7 @@ const ProjectItem = ({
               className="cursor-pointer group-hover:animate-fade-in mx-2 lg:inline transition-all xs:w-0 xs:group-hover:w-5 xs:opacity-0 xs:group-hover:opacity-100 hover:text-white"
             />
           </a>
+          {/* This Element */}
           <span onClick={() => {
             setViewer(true)
             setRepoToViewIndex(i)

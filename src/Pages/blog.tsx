@@ -62,9 +62,9 @@ const Blog = () => {
             <span className={`${filteredTag ===  '' ?"" : 'hidden'} ml-2 text-sm text-yellow-400 underline underline-offset-4`}>{filterRes.length}</span>
 
           </button>
-          {tagList?.map(tag =>
+          {tagList?.map((tag,i) =>
             <button
-              key={tag}
+              key={`${tag}_${i}`}
               type="button"
               className={`text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30 ${filteredTag === tag ? 'text-white' : ''}`}
               onClick={() => handleTagButtonClick(tag)}
