@@ -45,10 +45,11 @@
   background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
 }
 
-.sidebar-item-selected {
+/* .sidebar-item-selected {
   color: rgb(255, 255, 255) !important;
-  /* border-right: 5px solid rgb(255, 255, 255) !important; */
-}
+
+} 
+*/
 
 /* .sidebar-item:hover { */
 /* color: #a1a0a0; */

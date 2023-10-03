@@ -1,139 +1,54 @@
-//@ts-ignore
-import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
-import { useEffect, useState, useCallback, useRef } from "react";
-import { useParams } from "react-router-dom";
-import PageTitle from "../Components/PageTitle";
-import Spinner from "../Components/Spinner";
-import { __getRepo } from "../Utils/github/__searchForRepo";
-import { __getReadMeFile } from "../Utils/github/__getReadMeFile";
-import { octokit } from "../Utils/github/OctokitConstructor";
-import { BsDownload, BsCheck, BsEye } from "react-icons/bs";
-import { BiLoader } from "react-icons/bi";
-
-const RepoDetails = () => {
-  const params = useParams();
-  const downloadBtnRef = useRef<HTMLAnchorElement | null>(null);
-  const [currentRepo, setCurrentRepo] = useState<any>(null);
-  const [readmeFile, setReadmeFile] = useState<any>({
-    content: "",
-    size: 0,
-  });
-  const [readmeFileContent, setReadmeFileContent] = useState<string>("");
-  const [isLoad, setLoad] = useState(true);
-  const [isRun, setRunning] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedRepo = await __getRepo(params.repoName!);
-      setCurrentRepo(fetchedRepo);
-      setLoad(false);
-
-      const fetchedReadme = await __getReadMeFile(params.repoName!);
-      setReadmeFile(fetchedReadme);
-
-      const decodedContent = atob(fetchedReadme.content);
-      const markdownResponse = await octokit.request("POST /markdown", {
-        text: decodedContent,
-      });
-
-      setReadmeFileContent(markdownResponse.data);
-    };
-
-    fetchData();
-  }, []);
-  const onClick = useCallback(() => {
-    setRunning(true);
-  
-    // First setTimeout
-    setTimeout(() => {
-      setRunning(false);
-  
-      // Second setTimeout
-      setTimeout(() => {
-        confetti({
-          particleCount: 100,
-          startVelocity: 30,
-          spread: 360,
-          angle: 40,
-          origin: {
-            x: 0.5,
-            y: 0,
-          },
-        });
-      }, 0);
-    }, 2000);
-  }, []);
-
+import { useEffect, useState } from 'react';
+import logo from '../assests/a.png';
+import RepoMoreOptions from '../Components/repoMoreOptions';
+import { BsArrowLeftShort, BsImage } from 'react-icons/bs';
+const RepoDetails = ({ repoToViewIndex, setViewer, repos }) => {
+  const { name } = repos[repoToViewIndex];
+  const [activeItem, setActiveItem] = useState(1);
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     setActiveItem(activeItem+1)
+  //   },4000)
+  // },[activeItem])
   return (
-    <>
-      {isLoad ? (
-        <div className="flex w-full h-full items-center justify-center">
-          <Spinner className={"w-14"} />
+    <div className='repoDetails rounded-md p-6'>
+      <header className='flex justify-between bg-gray-200 dark:bg-card p-5 rounded-lg mb-2 items-center'>
+      <h1  className='text-2xl font-bold dark:text-white'>{name.toUpperCase()}</h1>
+      <span className='group cursor-pointer' onClick={() => { setViewer(false) }} >
+<BsArrowLeftShort className='group-hover:animate-rubberband text-blue-400 border border-gray-600/60 rounded bg-white dark:bg-[#161b22] transition' size={30}/>
+
+</span>
+      </header>
+      <div id="custom-controls-gallery" className="rounded-lg pb-5 bg-gray-200 dark:bg-card relative w-full" data-carousel="slide">
+        {/* <!-- Carousel wrapper --> */}
+        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+          {[1, 2, 3, 4].map((i) => <div className={`${i === activeItem ? "" : 'hidden'} duration-700 ease-in-out`} data-carousel-item>
+            {/* <img src={`https://flowbite.s3.amazonaws.com/docs/gallery/square/image-${i}.jpg`} className="animate-fade-in absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="" /> */}
+          <div className="animate-fade-in absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"><BsImage size={100} /></div>
+          </div>)}
+
         </div>
-      ) : (
-        <div className="flex-col flex items-start w-full h-full flex-wrap">
-          <PageTitle
-            className={"mb-10 h-fit"}
-            title={currentRepo.name}
-            subtitle={
-              <>
-                <span className="text-green-500 mr-2">id :</span>
-                <a
-                  className="text-sm text-blue-400 hover:underline"
-                  href={currentRepo.clone_url}
-                >
-                  #{currentRepo.id}
-                </a>
-              </>
-            }
-            is_premium={true}
-            premium_star="GitHub Repos"
-          />
-
-          <div className="flex items-center justify-center gap-2">
-            <button
-              onClick={onClick}
-              className="m-auto transition-all h-9 group overflow-hidden flex gap-2 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
-            >
-              <span className="mt-1 w-20">{isRun?"Cancel":"Download"}</span>
-              <a
-                ref={downloadBtnRef}
-                className={`${
-                  isRun ? "translate-y-4" : "-translate-y-4"
-                } flex flex-col gap-3 transition-all group-hover:animate-pulse`}
-                href={`https://github.com/Ak-ram/${currentRepo.name}/archive/refs/heads/master.zip`}
-              >
-                <BsCheck size={20} />
-                <BsDownload size={20} />
-              </a>
-            </button>
-
-            <button
-              onClick={() =>
-                window.open(
-                  currentRepo.homepage,
-                  "_blank",
-                  "width=500,height=300,toolbar=no"
-                )
-              }
-              className="m-auto transition-all h-9 group overflow-hidden flex gap-2 items-center bg-[#050708] p-2 text-sm font-bold text-white rounded"
-            >
-              <span className="mt-1">Preview</span>
-              <a className={`transition-all`}>
-                <BsEye size={20} />
-              </a>
-            </button>
-          </div>
-
-          {/* <div
-            className="readme"
-            dangerouslySetInnerHTML={{
-              __html: readmeFileContent,
-            }}
-          ></div> */}
+        <div className="flex justify-center items-center pt-4">
+          <button onClick={() => { activeItem > 1 ? setActiveItem(activeItem - 1) : null }} type="button" className="flex justify-center items-center mr-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span className="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+              <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5H1m0 0 4 4M1 5l4-4" />
+              </svg>
+              <span className="sr-only">Previous</span>
+            </span>
+          </button>
+          <button onClick={() => { activeItem < 4 ? setActiveItem(activeItem + 1) : null }} type="button" className="flex justify-center items-center h-full cursor-pointer group focus:outline-none" data-carousel-next>
+            <span className="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+              <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+              </svg>
+              <span className="sr-only">Next</span>
+            </span>
+          </button>
         </div>
-      )}
-    </>
+      </div>
+      <RepoMoreOptions />
+    </div>
   );
 };
 

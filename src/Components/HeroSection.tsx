@@ -16,7 +16,7 @@ const HeroSection = () => {
       <section className="relative mb-8 sm:mb-5">
         <div
           onMouseMove={handleMouseMove}
-          className="w-full h-full shadow-xl absolute grayscale opacity-20"
+          className="w-full h-full shadow-xl absolute grayscale dark:opacity-20"
           style={{
             backgroundImage: `url("https://www.transparenttextures.com/patterns/food.png")`,
             backgroundPosition: `${mousePosition.y}px ${mousePosition.y}px`,

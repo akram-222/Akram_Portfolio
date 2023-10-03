@@ -36,7 +36,7 @@ const ThemeSwitcherBtn = () => {
   }, []);
   return (
     <>
-      <div className="bg-blue-600 lg:w-full flex-nowrap dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl flex items-center justify-start sm:justify-center xl:justify-start">
+      <div className="bg-gray-700 lg:w-full flex-nowrap dark:bg-gray-700/20 shadow-xl dark:shadow-sm rounded-full xl:rounded-xl flex items-center justify-start sm:justify-center xl:justify-start">
         <button
           onClick={() => changeMode()}
           type="button"

@@ -7,12 +7,8 @@ import { __getListOfRepos } from "../Utils/github/__getListOfRepos";
 import Pagination from "../Components/Pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { BsFilterRight } from "react-icons/bs";
+import RepoDetails from "./RepoDetails";
 // import SearchComponent from "../Components/search comp/SearchComponent";
-
-
-
-
-
 
 
 
@@ -23,6 +19,8 @@ const Projects = () => {
   const [isLoad, setLoad] = useState(true);
   const [isVisible, setVisibility] = useState(false);
   const [currentHomePage, setCurrentHomePage] = useState("");
+  const [isView, setViewer] = useState(false)
+  const [repoToViewIndex, setrepoToViewIndex] = useState(0)
   useEffect(() => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
       setRepos(fetchedRepos);
@@ -59,24 +57,24 @@ mixBlendMode: 'overlay'
         is_premium={false}
         premium_star=""
       />
-      <div className="flex w-full flex-col lg:flex-row">
+      <div className="flex w-full flex-col lg:flex-row p-2">
         <div className="projects-list w-full flex flex-wrap gap-2">
           <div className="w-full">
             <div className="flex relative items-center">
-            
-              <Pagination
-                isLoad={isLoad}
-                setLoad={setLoad}
-                repoConfig={repoConfig}
-                setRepoConfig={setRepoConfig}
-                repos={repos}
-                className="w-full"
-              />
+             
+                <Pagination
+                  isLoad={isLoad}
+                  setLoad={setLoad}
+                  repoConfig={repoConfig}
+                  setRepoConfig={setRepoConfig}
+                  repos={repos}
+                  className={`${isView?"hidden":""} w-full`}
+                />
             </div>
-            <table className="w-full text-left text-xs md:text-sm ">
+            {isView ? <RepoDetails repos={repos} repoToViewIndex={repoToViewIndex} setViewer={setViewer} /> : <table className="w-full text-left text-xs md:text-sm ">
               <thead className="mb-2">
-                <tr className="border-b border-b-gray-500/60">
-                  <th className="p-3 w-[45%] border-r text-white bg-card border-r-gray-600/20">
+                <tr className="border-b border-b-gray-500/60 bg-gray-700 dark:bg-card">
+                  <th className="p-3 w-[45%] border-r text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>Project Name</span>
                       <BsFilterRight
@@ -86,7 +84,7 @@ mixBlendMode: 'overlay'
                       />
                     </div>
                   </th>
-                  <th className="flex items-center justify-center xs:block p-3 border-r text-white bg-card border-r-gray-600/20">
+                  <th className="flex items-center justify-center hidden xs:table-cell p-3 border-r text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>
                         Lang<span className="hidden xs:inline-block">uage</span>
@@ -94,13 +92,13 @@ mixBlendMode: 'overlay'
                       {/* <BsFilterRight size='16' /> */}
                     </div>
                   </th>
-                  <th className="p-3 border-r text-white bg-card border-r-gray-600/20">
+                  <th className="p-3 border-r hidden xs:table-cell text-white border-r-gray-600/20">
                     <div className="flex justify-between items-center">
                       <span>Info</span>
                       {/* <BsFilterRight size='16' /> */}
                     </div>
                   </th>
-                  <th className="w-full p-3 hidden sm:inline-block  text-white bg-card">
+                  <th className="p-3 hidden sm:table-cell  text-white">
                     <div className="flex justify-between items-center">
                       <span>Date</span>
                       {/* <BsFilterRight size='16' /> */}
@@ -167,13 +165,19 @@ mixBlendMode: 'overlay'
                           setCurrentHomePage={setCurrentHomePage}
                           homepage={homepage}
                           html_url={html_url}
+                          isView={isView}
+                          setViewer={setViewer}
+                          repoToViewIndex={repoToViewIndex}
+                          setRepoToViewIndex={setrepoToViewIndex}
                         />
                       </>
                     )
                   )
                 )}
               </tbody>
-            </table>
+            </table>}
+
+
           </div>
         </div>
         {/* <div className=" order-first lg:order-last filters lg:flex-grow dark:bg-[#171717] rounded-lg px-4 py-4 mb-2">

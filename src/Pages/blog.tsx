@@ -1,56 +1,41 @@
 import { useDevBlogs } from "../Contexts/DEVAPIContext";
-import { useState } from "react";
-import {BsStars} from 'react-icons/bs';
+import { useEffect, useState } from "react";
+import { BsStars } from 'react-icons/bs';
 import PageTitle from "../Components/PageTitle";
 import PinArticle from "../Components/PinArticle";
 import HeroSection from "../Components/HeroSection";
 import "./blog.css";
-const SubscriptionForm = () => {
-  return (
-    <div className="w-full rounded-md dark:bg-[#171717] p-4 mb-4 h-full border border-gray-600/30">
-      <h5 className="mx-auto xs:w-fit sm:w-full mb-4 font-bold relative text-lg text-gray-100 after:content-[' '] after:left-[0px] after:bottom-[-4px] after:w-[80px] after:h-[2px] after:absolute dark:after:bg-gray-400">
-        Subscribe
-      </h5>
-      <p className="mx-auto xs:w-fit sm:w-full text-gray-400 text-xs sm:text-sm">
-        Subscribe to our newsletter. We deliver the best health related articles
-        to your inbox
-      </p>
-      <form className="mt-3 text-xs sm:text-sm">
-        <div className="flex-wrap xs:justify-center sm:justify-start items-center flex">
-          <input
-            className="mb-2 border-b placeholder:italic placeholder:text-slate-500 dark:border-[#353535] appearance-none bg-transparent dark:text-gray-100 mr-3 py-1 px-2 leading-tight focus:outline-none"
-            type="text"
-            placeholder="ashrfakrm64@gmail.com"
-            aria-label="Full name"
-          />
-          <div className="controls flex gap-1">
-            <button
-              className="flex-shrink-0 dark:bg-card border-gray-700 border sm:border-2 dark:hover:bg-gray-700 text-white py-1 px-1 sm:px-2 rounded"
-              type="button"
-            >
-              Sign Up
-            </button>
-            <button
-              className="flex-shrink-0 border-transparent border-4 text-rose-400 hover:text-rose-700 py-1 px-2 rounded"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  );
-};
+
 
 const Blog = () => {
   const { devBlogs } = useDevBlogs();
-  const pinnedBlogs = devBlogs?.slice(2, 5) ?? [];
+  const pinnedBlogs = devBlogs?.slice(0, 3) ?? [];
   const remainingBlogs = devBlogs?.slice(5) ?? [];
+  const [tagList, setTagList] = useState<string[]>([]);
+  const [filteredTag, setFilteredTag] = useState<string>('');
+
+  useEffect(() => {
+    const updatedTagList = remainingBlogs.reduce(
+      (tags, { tag_list }) => [...tags, ...tag_list],
+      tagList
+    );
+    const uniqueTagList = [...new Set(updatedTagList)];
+
+    setTagList(uniqueTagList);
+  }, [remainingBlogs, tagList]);
+
+  const handleTagButtonClick = (tag: string) => {
+    setFilteredTag(tag);
+  };
+
+  const handleAllButtonClick = () => {
+    setFilteredTag('');
+  };
+  const filterRes = devBlogs && devBlogs?.filter(({ tag_list }) => tag_list.includes(filteredTag) || filteredTag === '');
   return (
     <div className="animate-fade-in flex-grow">
       <PageTitle
-        title={<><BsStars className="text-premium-yellow" size="30"/> Blog</>}
+        title={<><BsStars className="text-premium-yellow" size="30" /> Blog</>}
         subtitle={
           <>
             <span className="font-bold text-xs sm:text-sm">Total Articles: </span>
@@ -63,48 +48,47 @@ const Blog = () => {
         premium_star=""
         className="h-fit"
       />
+
       <div className="w-full">
         <HeroSection />
-        <div className="flex overflow-x-auto justify-between px-2 lg:p-0">
-          {pinnedBlogs.map(
-            ({ title, created_at, user, url, tag_list, social_image }, i) => (
+
+        <div className="flex items-center justify-center py-4 md:py-8 flex-wrap gap-4">
+          <button
+            type="button"
+            className={`text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30 ${filteredTag === '' ? 'text-white' : ''}`}
+            onClick={handleAllButtonClick}
+          >
+            All Topics
+            <span className={`${filteredTag ===  '' ?"" : 'hidden'} ml-2 text-sm text-yellow-400 underline underline-offset-4`}>{filterRes.length}</span>
+
+          </button>
+          {tagList?.map(tag =>
+            <button
+              key={tag}
+              type="button"
+              className={`text-base py-2 px-4 rounded dark:hover:text-white dark:bg-card border-gray-600/30 ${filteredTag === tag ? 'text-white' : ''}`}
+              onClick={() => handleTagButtonClick(tag)}
+            >
+              {tag.charAt(0).toUpperCase() + tag.slice(1)}
+              <span className={`${filteredTag === tag ? '' : 'hidden'} ml-2 text-sm text-yellow-400 underline underline-offset-4`}>{filterRes.length}</span>
+            </button>
+          )}
+        </div>
+        <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-5">
+          <div className="flex items-center justify-center gap-4 h-[600px] overflow-auto flex-wrap w-full">
+            {filterRes.map(({ id, title, created_at, user, url, tag_list, social_image, i }) => (
               <PinArticle
                 key={`pinned-${i}`}
-                className={`w-full mx-1 xs:w-[50%] md:w-[32%] h-40 xl:h-48 pinArticleWall shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
+                className={`div${i + 1} flex w-full sm:w-[330px] h-[250px] justify-center items-center shrink-0 mb-2 sm:shrink-1 slide-bottom`}
                 title={title}
                 createdAt={created_at}
                 user={user}
                 url={url}
-                tagList={tag_list}
                 social_image={social_image}
-                index={i + 1}
+                tagList={tag_list}
+                index={i + 4}
               />
-            )
-          )}
-        </div>
-        <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-5">
-          <div className="grid-container w-full">
-            {remainingBlogs.map(
-              ({ title, created_at, user, url, tag_list, social_image }, i) => (
-                <PinArticle
-                  key={`pinned-${i}`}
-                  className={`grid-item div${
-                    i + 1
-                  } flex justify-center items-center  shrink-0 mb-2 sm:shrink-1 tilt-in-right-1`}
-                  title={title}
-                  createdAt={created_at}
-                  user={user}
-                  url={url}
-                  social_image={social_image}
-                  tagList={tag_list}
-                  index={i + 4}
-                />
-              )
-            )}
-          </div>
-
-          <div className="w-full lg:w-1/3 tilt-in-right-1">
-            <SubscriptionForm />
+            ))}
           </div>
         </div>
       </div>
