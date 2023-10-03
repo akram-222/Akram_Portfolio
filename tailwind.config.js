@@ -207,6 +207,25 @@ module.exports = {
             transform: "scale(1)",
           },
         },
+        "swipe": {
+
+          "0%": {
+            transform: "translateX(-100%)",
+            opacity: 0
+          },
+          "50%": {
+            opacity: 1,
+            transform: "translateX(-50%)",
+
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+            opacity: 0
+          }
+        }
+
+
+
       },
       animation: {
         "ping-once": "ping .2s linear 1",
@@ -221,6 +240,7 @@ module.exports = {
         "scale-out-hor-left": "scale-out-hor-left 1s linear 0s 1 normal none",
         "scale-in-hor-left": "scale-in-hor-left .4s linear 0s 1 normal none",
         "pulse-zoomout": "pulse-zoomout 0.8s linear 0s infinite reverse both ",
+        "swipe":'swipe 2s linear infinite'
       },
     },
     screens: {
