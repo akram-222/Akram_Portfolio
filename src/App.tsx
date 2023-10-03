@@ -19,6 +19,7 @@ import Footer from "./Components/Footer";
 import Terminal from "./Components/cmd/terminal";
 import Navigations from "./Pages/navigations";
 import Swipeable from "./Components/swipeable";
+import { BsEmojiSmile } from "react-icons/bs";
 const App = () => {
   const [isLogging, setIsLogging] = useState(false);
   const [isTimeout, setIsTimeOut] = useState(false);
@@ -73,7 +74,11 @@ const App = () => {
               <Sidebar />
 
               <div className="dark:bg-1 sm:p-2 relative flex-grow overflow-auto flex flex-wrap">
-                <div className={`${swipeY ? "" : "hidden"} w-full flex items-center justify-center dark:bg-gray-700/20 py-1`}><button className="text-xs font-bold text-red-400 border rounded dark:border-[#353535] dark:bg-[#161b22] px-2 py-1" onClick={() => window.location.reload()}>Reload <IoReloadSharp className="ml-2" size={18} /></button></div>
+                <div className={`${swipeY ? "" : "hidden"} gap-2 w-full flex items-center justify-center dark:bg-gray-700/20 py-1`}>
+                  <button className="animate-fade-in text-xs font-bold text-red-400 border rounded dark:border-[#353535] dark:bg-[#161b22] px-2 py-1 flex items-center justify-center" onClick={() => window.location.reload()}>Reload <IoReloadSharp className="ml-2" size={16} /></button>
+                  <button className="animate-fade-in text-xs font-bold border rounded dark:border-[#353535]  px-2 py-1 flex items-center justify-center" onClick={() => setSwipeY(false)}>Keep <BsEmojiSmile className="ml-2" size={16} /></button>
+                  
+                  </div>
                 <Swipeable onSwipeTop={e => onSwipeUp(e)} onSwipeDown={e => onSwipeDown(e)} onSwipeLeft={e => onSwipeLeft(e)} onSwipeRight={(e) => onSwipeRight(e)} >
                   <Routes>
                     {isLogging ? (
