@@ -57,7 +57,7 @@ const Pagination = ({
     }
   };
 
-  const handleNextPage = () => {
+   const handleNextPage = () => {
     const nextPage = repoConfig.page + 1;
     if (nextPage <= 4 && pageCache[nextPage]) {
       setRepoConfig(prev => ({
@@ -101,4 +101,4 @@ const Pagination = ({
   );
 }
 
-export default Pagination;
+export default Pagination

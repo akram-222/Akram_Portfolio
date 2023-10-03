@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import PageTitle from "../Components/PageTitle";
 import ProjectItem from "../Components/projectItem";
 import FilterProjects from "../Components/FilterProjects";
@@ -22,7 +22,7 @@ const Projects = () => {
   const [currentHomePage, setCurrentHomePage] = useState("");
   const [isView, setViewer] = useState(false)
   const [repoToViewIndex, setrepoToViewIndex] = useState(0);
-
+  const [deltaX,setDeltaX] = useState<number>(0)
 
   useEffect(() => {
     __getListOfRepos(repoConfig).then((fetchedRepos) => {
@@ -32,12 +32,24 @@ const Projects = () => {
     });
   }, [repoConfig]);
 
-  const onSwipeLeft = () => {
-    console.log('Swiped left!');
+  const onSwipeLeft = (e) => {
+    console.log('Swiped left'); // **
+    let nextPage = (repoConfig.page + 1);
+    if (nextPage <= 4)
+    setRepoConfig(prev => ({
+        ...prev,
+        page: nextPage
+      }));
   };
 
-  const onSwipeRight = () => {
+  const onSwipeRight = (e) => {
     console.log('Swiped right!');
+    let prevPage = (repoConfig.page - 1);
+    if (prevPage >= 1)
+      setRepoConfig(prev => ({
+        ...prev,
+        page: prevPage
+      }));
   };
 
   const onSwipeUp = () => {
@@ -83,7 +95,9 @@ const Projects = () => {
                 className={`${isView ? "hidden" : ""} w-full`}
               />
             </div>
-            {isView ? <RepoDetails repos={repos} repoToViewIndex={repoToViewIndex} setViewer={setViewer} /> : <Swipeable onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} onSwipeUp={onSwipeUp} onSwipeDown={onSwipeDown}>
+            {isView ? <RepoDetails repos={repos} repoToViewIndex={repoToViewIndex} setViewer={setViewer} /> 
+            : 
+            <Swipeable onSwipeLeft={e=>onSwipeLeft(e)} onSwipeRight={(e)=>onSwipeRight(e)} >
               <div className="table-container overflow-auto w-full h-full">
                 <table className="w-full text-left text-xs md:text-sm ">
                   <thead className="mb-2">
@@ -162,28 +176,28 @@ const Projects = () => {
                           },
                           i: number
                         ) => (
-                            <ProjectItem
-                              key={id}
-                              name={name}
-                              id={id}
-                              language={language}
-                              fork={fork}
-                              visibility={visibility}
-                              hasIssues={has_issues}
-                              forksCount={forks_count}
-                              i={i}
-                              createdAt={created_at}
-                              repoConfig={repoConfig}
-                              currentHomePage={currentHomePage}
-                              setCurrentHomePage={setCurrentHomePage}
-                              homepage={homepage}
-                              html_url={html_url}
-                              isView={isView}
-                              setViewer={setViewer}
-                              repoToViewIndex={repoToViewIndex}
-                              setRepoToViewIndex={setrepoToViewIndex}
-                            />
-                          
+                          <ProjectItem
+                            key={id}
+                            name={name}
+                            id={id}
+                            language={language}
+                            fork={fork}
+                            visibility={visibility}
+                            hasIssues={has_issues}
+                            forksCount={forks_count}
+                            i={i}
+                            createdAt={created_at}
+                            repoConfig={repoConfig}
+                            currentHomePage={currentHomePage}
+                            setCurrentHomePage={setCurrentHomePage}
+                            homepage={homepage}
+                            html_url={html_url}
+                            isView={isView}
+                            setViewer={setViewer}
+                            repoToViewIndex={repoToViewIndex}
+                            setRepoToViewIndex={setrepoToViewIndex}
+                          />
+
                         )
                       )
                     )}
